@@ -9,21 +9,13 @@ const QuemSomos = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="order-2 md:order-1">
             <p className="text-gray-700 mb-4">
-              Somos uma comunidade cristã dedicada ao amor e à fé. A MBdA
-              Reconciliação é um local de encontro, reflexão e transformação
-              espiritual, onde todos são bem-vindos para crescer na fé e
-              desenvolver um relacionamento mais profundo com Deus.
+              Somos o Ministério Bíblico da Reconciliação, uma comunidade cristã dedicada ao amor, à fé e à transformação espiritual. Nosso ministério é um espaço de encontro, reflexão e crescimento, onde todos são bem-vindos a desenvolver um relacionamento mais profundo com Deus.
             </p>
             <p className="text-gray-700 mb-4">
-              Nossa missão é levar a mensagem de Cristo a todas as pessoas,
-              promovendo a reconciliação com Deus e o próximo. Buscamos ser uma
-              igreja relevante, que aplica os princípios bíblicos à vida
-              contemporânea.
+              Nossa missão é proclamar a mensagem de Cristo a todas as pessoas, promovendo a reconciliação com Deus e com o próximo. Buscamos ser uma igreja relevante, que vive e aplica os princípios bíblicos na realidade do mundo atual.
             </p>
             <p className="text-gray-700">
-              Valorizamos a autenticidade, a comunhão e o discipulado. Somos uma
-              família espiritual que caminha unida, apoiando uns aos outros e
-              servindo à comunidade ao nosso redor.
+              Valorizamos a autenticidade, a comunhão e o discipulado. Somos uma família espiritual que caminha unida, apoiando uns aos outros e servindo com amor à comunidade ao nosso redor.
             </p>
           </div>
           <div className="order-1 md:order-2">
