@@ -24,7 +24,7 @@ Follow these steps:
 
 ```sh
 # Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+git clone <[YOUR_GIT_URL](https://lovable.dev/projects/e3eb2f73-d7b6-479c-8b52-4a83a9e6fb35)>
 
 # Step 2: Navigate to the project directory.
 cd <YOUR_PROJECT_NAME>
