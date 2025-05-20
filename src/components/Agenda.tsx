@@ -1,41 +1,47 @@
 
 import React from "react";
+import { Clock, Calendar } from "lucide-react";
 
 const eventos = [
   {
     id: 1,
-    title: "Culto de Domingo",
+    title: "Oração",
     day: "Domingo",
-    time: "18:00",
-    location: "Templo Principal"
+    time: "08:00",
+    location: "Presencial",
+    description: "Momento dedicado à oração"
   },
   {
     id: 2,
-    title: "Culto de Oração",
-    day: "Terça-feira",
-    time: "19:30",
-    location: "Salão de Oração"
+    title: "Escola Bíblica",
+    day: "Domingo",
+    time: "09:00",
+    location: "Presencial",
+    description: "Estudo e aprendizado da Palavra de Deus"
   },
   {
     id: 3,
-    title: "Estudo Bíblico",
-    day: "Quinta-feira",
-    time: "19:30",
-    location: "Templo Principal"
+    title: "Ministração da Palavra",
+    day: "Domingo",
+    time: "11:00",
+    location: "Presencial",
+    description: "Culto principal de pregação"
   },
   {
     id: 4,
-    title: "Ensaio do Coral",
-    day: "Sábado",
-    time: "16:00",
-    location: "Sala de Música"
+    title: "Oração e Palavra",
+    day: "Quarta-feira",
+    time: "20:00",
+    location: "Presencial",
+    description: "Culto de meio de semana"
   },
   {
     id: 5,
-    title: "Encontro de Jovens",
-    day: "Sábado",
-    time: "19:00",
-    location: "Espaço Jovem"
+    title: "Oração e Palavra",
+    day: "Sexta-feira",
+    time: "20:00",
+    location: "Online",
+    description: "Culto online de encerramento da semana"
   }
 ];
 
@@ -57,22 +63,32 @@ const Agenda = () => {
                 <div className="flex flex-wrap justify-between items-center">
                   <div>
                     <h3 className="text-lg font-bold text-primary">{evento.title}</h3>
-                    <p className="text-gray-600">{evento.location}</p>
+                    <p className="text-gray-600">{evento.description}</p>
                   </div>
                   <div className="flex items-center mt-2 sm:mt-0">
-                    <div className="bg-primary/10 text-primary rounded-md px-3 py-1 text-sm font-medium mr-2">
+                    <div className="bg-primary/10 text-primary rounded-md px-3 py-1 text-sm font-medium mr-2 flex items-center">
+                      <Calendar className="w-4 h-4 mr-1" />
                       {evento.day}
                     </div>
-                    <div className="bg-secondary/10 text-secondary rounded-md px-3 py-1 text-sm font-medium">
-                      {evento.time}
+                    <div className="bg-secondary/10 text-secondary rounded-md px-3 py-1 text-sm font-medium flex items-center">
+                      <Clock className="w-4 h-4 mr-1" />
+                      {evento.time}h
                     </div>
                   </div>
+                </div>
+                <div className="mt-2">
+                  <span className={`text-sm font-medium px-2 py-1 rounded ${evento.location === "Online" ? "bg-blue-100 text-blue-700" : "bg-green-100 text-green-700"}`}>
+                    {evento.location}
+                  </span>
                 </div>
               </div>
             ))}
           </div>
           <p className="text-center mt-8 text-gray-600 italic">
             Venha participar de nossas atividades! Todos são bem-vindos.
+          </p>
+          <p className="text-center mt-4 text-primary font-medium">
+            Rua: Oswaldo Aranha, 790 - Jd. Maravilha - Vic. Carvalho - Guarujá
           </p>
         </div>
       </div>
