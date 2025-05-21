@@ -19,11 +19,17 @@ const Hero = () => {
     >
       <div className="absolute inset-0 bg-primary/40"></div>
       <div className="relative z-10 text-center p-4">
-        <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 animate-fade-in">
-          MBdA Reconciliação
+        <h1 className="mb-2 animate-fade-in">
+          <span className="text-4xl md:text-5xl font-bold text-white block">
+            Ministério Bíblico da
+          </span>
+          <span className="text-5xl md:text-7xl font-bold text-amber-400 block mt-2 relative inline-block">
+            Reconciliação
+            <span className="block h-1 bg-amber-400 w-full mt-2 mx-auto"></span>
+          </span>
         </h1>
-        <p className="text-xl md:text-2xl text-white mb-8 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: "0.2s" }}>
-          Juntos na Fé, Transformando Vidas
+        <p className="text-xl md:text-2xl text-white mb-8 max-w-2xl mx-auto mt-6 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+          Igreja cristã voltada ao ensino profundo da Palavra de Deus, comunhão familiar e edificação espiritual.
         </p>
         <button
           onClick={scrollToQuemSomos}

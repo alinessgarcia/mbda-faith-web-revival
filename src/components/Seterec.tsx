@@ -23,7 +23,7 @@ const Seterec = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="https://wa.me/+5511987654321"
+                href="https://wa.me/+5513981766263"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-secondary flex items-center justify-center"
