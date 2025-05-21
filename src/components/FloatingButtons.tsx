@@ -5,13 +5,13 @@ import { MapPin } from "lucide-react";
 const FloatingButtons = () => {
   return (
     <>
-      {/* WhatsApp Button */}
+      {/* Aconselhamento Button */}
       <a
-        href="https://wa.me/+5511987654321"
+        href="https://wa.me/+5513981856625"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed right-4 md:right-6 bottom-20 md:bottom-24 z-40 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition-all"
-        aria-label="WhatsApp"
+        aria-label="Aconselhamento"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

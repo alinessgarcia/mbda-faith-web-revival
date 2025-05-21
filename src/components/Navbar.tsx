@@ -4,20 +4,8 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  // Removed isScrolled state and conditional styling since we want the glass effect always visible
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -27,15 +15,23 @@ const Navbar = () => {
     setIsOpen(false);
   };
 
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      const offsetPosition = section.offsetTop - 100; // Adjust offset as needed
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+      closeMenu();
+    }
+  };
+
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "glass-effect py-2" : "bg-transparent py-4"
-      }`}
-    >
+    <nav className="fixed top-0 left-0 right-0 z-50 glass-effect py-2">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex justify-between items-center">
-          <Link to="/" className="flex items-center">
+          <Link to="/" className="flex items-center" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
             <img
               src="https://via.placeholder.com/150x50.webp?text=MBdA+Logo"
               alt="MBdA Reconciliação Logo"
@@ -45,33 +41,33 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-6">
-            <a href="#quem-somos" className="nav-link">
+            <button onClick={() => scrollToSection("quem-somos")} className="nav-link">
               Quem Somos
-            </a>
-            <a href="#declaracao-de-fe" className="nav-link">
+            </button>
+            <button onClick={() => scrollToSection("declaracao-de-fe")} className="nav-link">
               Declaração de Fé
-            </a>
-            <a href="#devocional" className="nav-link">
+            </button>
+            <button onClick={() => scrollToSection("devocional")} className="nav-link">
               Devocional
-            </a>
-            <a href="#estudos-biblicos" className="nav-link">
+            </button>
+            <button onClick={() => scrollToSection("estudos-biblicos")} className="nav-link">
               Estudos Bíblicos
-            </a>
-            <a href="#seterec" className="nav-link">
+            </button>
+            <button onClick={() => scrollToSection("seterec")} className="nav-link">
               S.E.T.E.R.E.C
-            </a>
-            <a href="#agenda" className="nav-link">
+            </button>
+            <button onClick={() => scrollToSection("agenda")} className="nav-link">
               Agenda
-            </a>
-            <a href="#espaco-familia" className="nav-link">
+            </button>
+            <button onClick={() => scrollToSection("espaco-familia")} className="nav-link">
               Espaço Família
-            </a>
-            <a href="#midia" className="nav-link">
+            </button>
+            <button onClick={() => scrollToSection("midia")} className="nav-link">
               Mídia
-            </a>
-            <a href="#contato" className="nav-link">
+            </button>
+            <button onClick={() => scrollToSection("contato")} className="nav-link">
               Contato
-            </a>
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -110,69 +106,60 @@ const Navbar = () => {
         {isOpen && (
           <div className="md:hidden mt-4 glass-effect rounded-lg p-4 animate-fade-in">
             <div className="flex flex-col space-y-4">
-              <a
-                href="#quem-somos"
+              <button
+                onClick={() => scrollToSection("quem-somos")}
                 className="nav-link"
-                onClick={closeMenu}
               >
                 Quem Somos
-              </a>
-              <a
-                href="#declaracao-de-fe"
+              </button>
+              <button
+                onClick={() => scrollToSection("declaracao-de-fe")}
                 className="nav-link"
-                onClick={closeMenu}
               >
                 Declaração de Fé
-              </a>
-              <a
-                href="#devocional"
+              </button>
+              <button
+                onClick={() => scrollToSection("devocional")}
                 className="nav-link"
-                onClick={closeMenu}
               >
                 Devocional
-              </a>
-              <a
-                href="#estudos-biblicos"
+              </button>
+              <button
+                onClick={() => scrollToSection("estudos-biblicos")}
                 className="nav-link"
-                onClick={closeMenu}
               >
                 Estudos Bíblicos
-              </a>
-              <a
-                href="#seterec"
+              </button>
+              <button
+                onClick={() => scrollToSection("seterec")}
                 className="nav-link"
-                onClick={closeMenu}
               >
                 S.E.T.E.R.E.C
-              </a>
-              <a
-                href="#agenda"
+              </button>
+              <button
+                onClick={() => scrollToSection("agenda")}
                 className="nav-link"
-                onClick={closeMenu}
               >
                 Agenda
-              </a>
-              <a
-                href="#espaco-familia"
+              </button>
+              <button
+                onClick={() => scrollToSection("espaco-familia")}
                 className="nav-link"
-                onClick={closeMenu}
               >
                 Espaço Família
-              </a>
-              <a
-                href="#midia"
+              </button>
+              <button
+                onClick={() => scrollToSection("midia")}
                 className="nav-link"
-                onClick={closeMenu}
               >
                 Mídia
-              </a>
-              <a
-                href="#contato"
+              </button>
+              <button
+                onClick={() => scrollToSection("contato")}
                 className="nav-link"
-                onClick={closeMenu}
               >
                 Contato
-              </a>
+              </button>
             </div>
           </div>
         )}
