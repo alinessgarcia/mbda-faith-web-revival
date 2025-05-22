@@ -1,28 +1,41 @@
 
-import React from "react";
+import React, { useState } from "react";
+import VideoDialog from "./VideoDialog";
 
 const estudos = [
   {
     id: 1,
     title: "Fundamentos da Fé",
     image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    link: "#estudo1"
+    videoUrl: "https://youtu.be/c-8f_9w8OWA"
   },
   {
     id: 2,
     title: "O Livro de Apocalipse",
     image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    link: "#estudo2"
+    videoUrl: "https://www.youtube.com/watch?v=KdfnoeaPMv0"
   },
   {
     id: 3,
     title: "Os Salmos",
     image: "https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    link: "#estudo3"
+    videoUrl: "https://www.youtube.com/watch?v=E1CqSwpaStI"
   }
 ];
 
 const EstudosBiblicos = () => {
+  const [videoDialogOpen, setVideoDialogOpen] = useState(false);
+  const [currentVideoUrl, setCurrentVideoUrl] = useState("");
+
+  const openVideoDialog = (videoUrl: string) => {
+    setCurrentVideoUrl(videoUrl);
+    setVideoDialogOpen(true);
+  };
+
+  const closeVideoDialog = () => {
+    setVideoDialogOpen(false);
+  };
+
   return (
     <section id="estudos-biblicos" className="section-padding bg-white">
       <div className="container mx-auto">
@@ -33,10 +46,10 @@ const EstudosBiblicos = () => {
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {estudos.map((estudo) => (
-            <a
+            <div
               key={estudo.id}
-              href={estudo.link}
-              className="card group hover:scale-105 transition-transform duration-300"
+              className="card group hover:scale-105 transition-transform duration-300 cursor-pointer"
+              onClick={() => openVideoDialog(estudo.videoUrl)}
             >
               <div className="relative h-48 overflow-hidden">
                 <img
@@ -51,7 +64,7 @@ const EstudosBiblicos = () => {
               </div>
               <div className="p-4">
                 <p className="text-primary font-medium flex items-center justify-end">
-                  Acessar Estudo
+                  Assistir Vídeo
                   <svg
                     className="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1"
                     fill="none"
@@ -68,10 +81,16 @@ const EstudosBiblicos = () => {
                   </svg>
                 </p>
               </div>
-            </a>
+            </div>
           ))}
         </div>
       </div>
+
+      <VideoDialog 
+        isOpen={videoDialogOpen} 
+        onClose={closeVideoDialog} 
+        videoUrl={currentVideoUrl} 
+      />
     </section>
   );
 };
