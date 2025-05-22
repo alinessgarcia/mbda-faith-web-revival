@@ -4,37 +4,37 @@ import React from "react";
 const fotos = [
   {
     id: 1,
-    src: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+    src: "https://i.imgur.com/1bd0bfn.png",
     alt: "Culto de Adoração",
     type: "image"
   },
   {
     id: 2,
-    src: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+    src: "https://i.imgur.com/1bd0bfn.png",
     alt: "Batismo",
     type: "image"
   },
   {
     id: 3,
-    src: "https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+    src: "https://i.imgur.com/1bd0bfn.png",
     alt: "Pregação",
     type: "image"
   },
   {
     id: 4,
-    src: "https://images.unsplash.com/photo-1466442929976-97f336a657be?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+    src: "https://i.imgur.com/1bd0bfn.png",
     alt: "Grupo de Louvor",
     type: "image"
   },
   {
     id: 5,
-    src: "https://images.unsplash.com/photo-1472396961693-142e6e269027?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+    src: "https://i.imgur.com/1bd0bfn.png",
     alt: "Evento Especial",
     type: "image"
   },
   {
     id: 6,
-    src: "https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+    src: "https://i.imgur.com/1bd0bfn.png",
     alt: "Escola Dominical",
     type: "image"
   }
@@ -54,16 +54,11 @@ const Midia = () => {
             <div key={item.id} className="card overflow-hidden group">
               <div className="relative h-64">
                 {item.type === "image" ? (
-                  <>
-                    <img
-                      src={item.src}
-                      alt={item.alt}
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                      <p className="text-white p-4">{item.alt}</p>
-                    </div>
-                  </>
+                  <img
+                    src={item.src}
+                    alt={item.alt}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
                 ) : (
                   <div className="w-full h-full flex justify-center items-center bg-gray-100">
                     <span>Vídeo não disponível</span>

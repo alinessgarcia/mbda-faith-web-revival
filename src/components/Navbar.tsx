@@ -1,11 +1,9 @@
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
-  // Removed isScrolled state and conditional styling since we want the glass effect always visible
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -15,10 +13,18 @@ const Navbar = () => {
     setIsOpen(false);
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+    closeMenu();
+  };
+
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
     if (section) {
-      const offsetPosition = section.offsetTop - 100; // Adjust offset as needed
+      const offsetPosition = section.offsetTop - 100;
       window.scrollTo({
         top: offsetPosition,
         behavior: "smooth"
@@ -31,16 +37,23 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 glass-effect py-2">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex justify-between items-center">
-          <Link to="/" className="flex items-center" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+          <div 
+            className="flex items-center cursor-pointer" 
+            onClick={scrollToTop}
+          >
             <img
-              src="https://via.placeholder.com/150x50.webp?text=MBdA+Logo"
+              src="https://i.imgur.com/SWj1IpT.png"
               alt="MBdA Reconciliação Logo"
               className="h-10 md:h-12"
             />
-          </Link>
+            <span className="ml-2 text-primary font-bold font-roboto text-lg md:text-xl">MBdaR</span>
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-6">
+            <button onClick={scrollToTop} className="nav-link">
+              Início
+            </button>
             <button onClick={() => scrollToSection("quem-somos")} className="nav-link">
               Quem Somos
             </button>
@@ -64,6 +77,9 @@ const Navbar = () => {
             </button>
             <button onClick={() => scrollToSection("midia")} className="nav-link">
               Mídia
+            </button>
+            <button onClick={() => scrollToSection("sites-sugestivos")} className="nav-link">
+              Sites
             </button>
             <button onClick={() => scrollToSection("contato")} className="nav-link">
               Contato
@@ -106,6 +122,12 @@ const Navbar = () => {
         {isOpen && (
           <div className="md:hidden mt-4 glass-effect rounded-lg p-4 animate-fade-in">
             <div className="flex flex-col space-y-4">
+              <button
+                onClick={scrollToTop}
+                className="nav-link"
+              >
+                Início
+              </button>
               <button
                 onClick={() => scrollToSection("quem-somos")}
                 className="nav-link"
@@ -153,6 +175,12 @@ const Navbar = () => {
                 className="nav-link"
               >
                 Mídia
+              </button>
+              <button
+                onClick={() => scrollToSection("sites-sugestivos")}
+                className="nav-link"
+              >
+                Sites
               </button>
               <button
                 onClick={() => scrollToSection("contato")}

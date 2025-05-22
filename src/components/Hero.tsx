@@ -2,13 +2,6 @@
 import React from "react";
 
 const Hero = () => {
-  const scrollToQuemSomos = () => {
-    const quemSomosSection = document.getElementById("quem-somos");
-    if (quemSomosSection) {
-      quemSomosSection.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <section
       className="relative min-h-screen flex items-center justify-center bg-cover bg-center"
@@ -23,7 +16,7 @@ const Hero = () => {
           <span className="text-4xl md:text-5xl font-bold text-white block">
             Ministério Bíblico da
           </span>
-          <span className="text-5xl md:text-7xl font-bold text-amber-400 block mt-2 relative inline-block">
+          <span className="text-5xl md:text-7xl font-bold text-amber-400 block mt-0.5 relative inline-block">
             Reconciliação
             <span className="block h-1 bg-amber-400 w-full mt-2 mx-auto"></span>
           </span>
@@ -31,13 +24,6 @@ const Hero = () => {
         <p className="text-xl md:text-2xl text-white mb-8 max-w-2xl mx-auto mt-6 animate-fade-in" style={{ animationDelay: "0.2s" }}>
           Igreja cristã voltada ao ensino profundo da Palavra de Deus, comunhão familiar e edificação espiritual.
         </p>
-        <button
-          onClick={scrollToQuemSomos}
-          className="btn-secondary animate-fade-in"
-          style={{ animationDelay: "0.4s" }}
-        >
-          Conheça Mais
-        </button>
       </div>
     </section>
   );
