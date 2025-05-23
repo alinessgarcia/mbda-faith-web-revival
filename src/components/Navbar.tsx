@@ -1,7 +1,6 @@
 
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Radio } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -91,7 +90,7 @@ const Navbar = () => {
               rel="noopener noreferrer"
               className="nav-link flex items-center"
             >
-              <Radio className="h-5 w-5 mr-1" />
+              <img src="https://imgur.com/XPME80F.png" alt="Rádio Pão Diário" className="h-5 w-5 mr-1" />
               <span className="sr-only">Rádio Pão Diário</span>
             </a>
           </div>
@@ -204,7 +203,7 @@ const Navbar = () => {
                 rel="noopener noreferrer"
                 className="nav-link flex items-center"
               >
-                <Radio className="h-5 w-5 mr-1" />
+                <img src="https://imgur.com/XPME80F.png" alt="Rádio Pão Diário" className="h-5 w-5 mr-1" />
                 <span>Rádio Pão Diário</span>
               </a>
             </div>

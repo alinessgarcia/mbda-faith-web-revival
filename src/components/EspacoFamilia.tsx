@@ -4,31 +4,31 @@ import React, { useState } from "react";
 const imagens = [
   {
     id: 1,
-    src: "https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    src: "https://imgur.com/SWiMFCc.jpg",
     alt: "Família em culto",
     caption: "Momento de adoração em família"
   },
   {
     id: 2,
-    src: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    src: "https://imgur.com/OC3A2Wl.jpg",
     alt: "Crianças na igreja",
     caption: "Ministério infantil em ação"
   },
   {
     id: 3,
-    src: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    src: "https://imgur.com/uUNhosM.jpg",
     alt: "Jovens em atividade",
     caption: "Encontro de jovens e adolescentes"
   },
   {
     id: 4,
-    src: "https://images.unsplash.com/photo-1466442929976-97f336a657be?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    src: "https://imgur.com/5buQFsX.jpg",
     alt: "Casais em retiro",
     caption: "Retiro de casais 2023"
   },
   {
     id: 5,
-    src: "https://images.unsplash.com/photo-1472396961693-142e6e269027?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    src: "https://imgur.com/bj3MMMJ.jpg",
     alt: "Celebração familiar",
     caption: "Celebração especial para famílias"
   }
