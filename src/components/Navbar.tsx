@@ -1,6 +1,7 @@
 
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { Radio } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -84,6 +85,15 @@ const Navbar = () => {
             <button onClick={() => scrollToSection("contato")} className="nav-link">
               Contato
             </button>
+            <a 
+              href="https://ministeriospaodiario.com.br/radio" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="nav-link flex items-center"
+            >
+              <Radio className="h-5 w-5 mr-1" />
+              <span className="sr-only">Rádio Pão Diário</span>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -188,6 +198,15 @@ const Navbar = () => {
               >
                 Contato
               </button>
+              <a 
+                href="https://ministeriospaodiario.com.br/radio" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="nav-link flex items-center"
+              >
+                <Radio className="h-5 w-5 mr-1" />
+                <span>Rádio Pão Diário</span>
+              </a>
             </div>
           </div>
         )}

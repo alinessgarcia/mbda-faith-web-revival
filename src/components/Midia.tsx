@@ -1,46 +1,31 @@
 
 import React from "react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
-const fotos = [
-  {
-    id: 1,
-    src: "https://i.imgur.com/1bd0bfn.png",
-    alt: "Culto de Adoração",
-    type: "image"
-  },
-  {
-    id: 2,
-    src: "https://i.imgur.com/1bd0bfn.png",
-    alt: "Batismo",
-    type: "image"
-  },
-  {
-    id: 3,
-    src: "https://i.imgur.com/1bd0bfn.png",
-    alt: "Pregação",
-    type: "image"
-  },
-  {
-    id: 4,
-    src: "https://i.imgur.com/1bd0bfn.png",
-    alt: "Grupo de Louvor",
-    type: "image"
-  },
-  {
-    id: 5,
-    src: "https://i.imgur.com/1bd0bfn.png",
-    alt: "Evento Especial",
-    type: "image"
-  },
-  {
-    id: 6,
-    src: "https://i.imgur.com/1bd0bfn.png",
-    alt: "Escola Dominical",
-    type: "image"
-  }
+const imagens = [
+  "https://raw.githubusercontent.com/alinessgarcia/mbda-faith-web-revival/e006e4aadea1147cd8570f5caa629f98096459b7/public/images/imagem1.png",
+  "https://raw.githubusercontent.com/alinessgarcia/mbda-faith-web-revival/e006e4aadea1147cd8570f5caa629f98096459b7/public/images/imagem-2.png",
+  "https://raw.githubusercontent.com/alinessgarcia/mbda-faith-web-revival/e006e4aadea1147cd8570f5caa629f98096459b7/public/images/imagem-3.png",
+  "https://raw.githubusercontent.com/alinessgarcia/mbda-faith-web-revival/e006e4aadea1147cd8570f5caa629f98096459b7/public/images/imagem-4.png",
+  "https://raw.githubusercontent.com/alinessgarcia/mbda-faith-web-revival/e006e4aadea1147cd8570f5caa629f98096459b7/public/images/imagem-5.png",
+  "https://raw.githubusercontent.com/alinessgarcia/mbda-faith-web-revival/e006e4aadea1147cd8570f5caa629f98096459b7/public/images/imagem-6.png",
+  "https://raw.githubusercontent.com/alinessgarcia/mbda-faith-web-revival/cc6f3e59d27753e031cd501dff65dad7c576ffb5/public/images/imagem-7.png",
+  "https://raw.githubusercontent.com/alinessgarcia/mbda-faith-web-revival/cc6f3e59d27753e031cd501dff65dad7c576ffb5/public/images/imagem-8.png",
+  "https://raw.githubusercontent.com/alinessgarcia/mbda-faith-web-revival/caa29c24081adcd974c15b80376122bb03621079/public/images/imagem-9.jpg"
 ];
 
 const Midia = () => {
+  const plugin = React.useRef(
+    Autoplay({ delay: 3000, stopOnInteraction: true })
+  );
+
   return (
     <section id="midia" className="section-padding bg-white">
       <div className="container mx-auto">
@@ -49,28 +34,48 @@ const Midia = () => {
           Confira fotos e vídeos dos momentos especiais em nossa igreja.
         </p>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {fotos.map((item) => (
-            <div key={item.id} className="card overflow-hidden group">
-              <div className="relative h-64">
-                {item.type === "image" ? (
-                  <img
-                    src={item.src}
-                    alt={item.alt}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                ) : (
-                  <div className="w-full h-full flex justify-center items-center bg-gray-100">
-                    <span>Vídeo não disponível</span>
+        <div className="max-w-4xl mx-auto px-10">
+          <Carousel 
+            className="w-full"
+            plugins={[plugin.current]}
+            opts={{
+              align: "center",
+              loop: true,
+            }}
+            onMouseEnter={() => {
+              if (plugin.current) plugin.current.stop();
+            }}
+            onMouseLeave={() => {
+              if (plugin.current) plugin.current.reset();
+            }}
+          >
+            <CarouselContent>
+              {imagens.map((src, index) => (
+                <CarouselItem key={index}>
+                  <div className="p-1">
+                    <div className="overflow-hidden rounded-lg">
+                      <img
+                        src={src}
+                        alt={`Imagem da igreja ${index + 1}`}
+                        className="w-full h-[300px] md:h-[500px] object-cover transition-all hover:scale-105 duration-300"
+                      />
+                    </div>
                   </div>
-                )}
-              </div>
-            </div>
-          ))}
-        </div>
-        
-        <div className="text-center mt-8">
-          <button className="btn-primary">Ver Mais</button>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="left-2" />
+            <CarouselNext className="right-2" />
+          </Carousel>
+          
+          <div className="flex justify-center mt-4">
+            {imagens.map((_, index) => (
+              <span
+                key={index}
+                className={`h-2 w-2 mx-1 rounded-full bg-gray-300`}
+              ></span>
+            ))}
+          </div>
         </div>
       </div>
     </section>

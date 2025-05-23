@@ -4,21 +4,21 @@ import React from "react";
 const sites = [
   {
     id: 1,
-    name: "Portal Cristão",
-    description: "Conteúdos e notícias sobre o mundo cristão",
-    url: "#site1"
+    name: "Livros - CPAD",
+    description: "Conteúdos e livros cristãos para crescimento espiritual",
+    url: "https://www.cpad.com.br/Livros"
   },
   {
     id: 2,
     name: "Bíblia Online",
     description: "Leitura e estudo da Bíblia em várias traduções",
-    url: "#site2"
+    url: "https://www.bibliaonline.com.br"
   },
   {
     id: 3,
-    name: "Recursos para Líderes",
+    name: "Capacitando Líderes e Igrejas",
     description: "Materiais para líderes e professores da escola dominical",
-    url: "#site3"
+    url: "https://www.youtube.com/watch?v=tcAkbXRVgH0"
   }
 ];
 

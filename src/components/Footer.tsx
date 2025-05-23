@@ -23,9 +23,10 @@ const Footer = () => {
               comunhão familiar e edificação espiritual.
             </p>
             <p className="text-white/80">
-              Rua Exemplo, 123 - Bairro<br />
-              Cidade - Estado<br />
-              CEP: 00000-000
+              Av. Osvaldo Aranha, nº800<br />
+              Jardim Alvorada (Vicente de Carvalho)<br />
+              Guarujá/SP<br />
+              CEP: 11470-100
             </p>
           </div>
           
