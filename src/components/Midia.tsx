@@ -10,15 +10,14 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 
 const imagens = [
-  "https://raw.githubusercontent.com/alinessgarcia/mbda-faith-web-revival/e006e4aadea1147cd8570f5caa629f98096459b7/public/images/imagem1.png",
-  "https://raw.githubusercontent.com/alinessgarcia/mbda-faith-web-revival/e006e4aadea1147cd8570f5caa629f98096459b7/public/images/imagem-2.png",
-  "https://raw.githubusercontent.com/alinessgarcia/mbda-faith-web-revival/e006e4aadea1147cd8570f5caa629f98096459b7/public/images/imagem-3.png",
-  "https://raw.githubusercontent.com/alinessgarcia/mbda-faith-web-revival/e006e4aadea1147cd8570f5caa629f98096459b7/public/images/imagem-4.png",
-  "https://raw.githubusercontent.com/alinessgarcia/mbda-faith-web-revival/e006e4aadea1147cd8570f5caa629f98096459b7/public/images/imagem-5.png",
-  "https://raw.githubusercontent.com/alinessgarcia/mbda-faith-web-revival/e006e4aadea1147cd8570f5caa629f98096459b7/public/images/imagem-6.png",
-  "https://raw.githubusercontent.com/alinessgarcia/mbda-faith-web-revival/cc6f3e59d27753e031cd501dff65dad7c576ffb5/public/images/imagem-7.png",
-  "https://raw.githubusercontent.com/alinessgarcia/mbda-faith-web-revival/cc6f3e59d27753e031cd501dff65dad7c576ffb5/public/images/imagem-8.png",
-  "https://raw.githubusercontent.com/alinessgarcia/mbda-faith-web-revival/caa29c24081adcd974c15b80376122bb03621079/public/images/imagem-9.jpg"
+  "https://i.imgur.com/Sz282uc.png",
+  "https://imgur.com/oRcynkU.jpg",
+  "https://imgur.com/UihVgu7.jpg",
+  "https://imgur.com/eDZmKvs.jpg",
+  "https://imgur.com/alXxJYG.jpg",
+  "https://imgur.com/Ts6zMu2.jpg",
+  "https://imgur.com/v0LXMts.jpg",
+  "https://imgur.com/ZQkBSsG.jpg"
 ];
 
 const Midia = () => {

@@ -7,10 +7,11 @@ const QuemSomos = () => {
       id="quem-somos" 
       className="section-padding relative flex items-center"
       style={{
-        backgroundImage: "url('https://raw.githubusercontent.com/alinessgarcia/mbda-faith-web-revival/e006e4aadea1147cd8570f5caa629f98096459b7/public/images/imagem1.png')",
+        backgroundImage: "url('https://imgur.com/PVSNBoJ.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
-        minHeight: "100vh"
+        minHeight: "100vh",
+        backgroundColor: "#003087" // Added blue background that matches the site's primary color
       }}
     >
       <div className="absolute inset-0 bg-black/50"></div>

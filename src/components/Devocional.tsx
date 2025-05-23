@@ -18,7 +18,7 @@ const Devocional = () => {
         <div className="w-full max-w-4xl mx-auto mb-10 aspect-video shadow-lg">
           <iframe 
             className="w-full h-full rounded-lg"
-            src="https://www.youtube.com/embed/videoseries?list=PLXiZJQ9yS4LcVl-7fj3Xx2o1u1XzqB2Hj" 
+            src="https://www.youtube.com/embed/gi5HSqTdDBA?t=186&autoplay=1" 
             title="Devocionais da Reconciliação"
             frameBorder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
