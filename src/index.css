@@ -67,15 +67,39 @@
   }
   
   .btn-primary {
-    @apply bg-primary text-white px-6 py-3 rounded-md hover:bg-primary/90 transition-all;
+    @apply bg-primary text-white px-6 py-3 rounded-md transition-all duration-300 shadow-md;
+  }
+  
+  .btn-primary:hover {
+    @apply bg-primary/90 transform -translate-y-1 shadow-lg;
+  }
+  
+  .btn-primary:active {
+    @apply transform translate-y-0 shadow-md border-2 border-blue-300;
   }
   
   .btn-secondary {
-    @apply bg-secondary text-white px-6 py-3 rounded-md hover:bg-secondary/90 transition-all;
+    @apply bg-secondary text-white px-6 py-3 rounded-md transition-all duration-300 shadow-md;
+  }
+  
+  .btn-secondary:hover {
+    @apply bg-secondary/90 transform -translate-y-1 shadow-lg;
+  }
+  
+  .btn-secondary:active {
+    @apply transform translate-y-0 shadow-md border-2 border-blue-300;
   }
   
   .nav-link {
-    @apply text-primary hover:text-secondary transition-colors relative focus:outline-none bg-transparent text-left;
+    @apply text-primary hover:text-secondary transition-all duration-300 relative focus:outline-none bg-transparent text-left;
+  }
+  
+  .nav-link:hover {
+    @apply transform -translate-y-0.5;
+  }
+  
+  .nav-link:active {
+    @apply border-2 border-blue-300 rounded px-2 py-1;
   }
   
   .nav-link::after {

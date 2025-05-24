@@ -81,17 +81,25 @@ const Navbar = () => {
             <button onClick={() => scrollToSection("sites-sugestivos")} className="nav-link">
               Sites
             </button>
+            <a 
+              href="https://blogdambdareconciliacao.lovable.app/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="nav-link"
+            >
+              Blog
+            </a>
             <button onClick={() => scrollToSection("contato")} className="nav-link">
               Contato
             </button>
             <a 
-              href="https://ministeriospaodiario.com.br/radio" 
+              href="https://hinosantigos.com.br/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="nav-link flex items-center"
             >
-              <img src="https://imgur.com/XPME80F.png" alt="Rádio Pão Diário" className="h-5 w-5 mr-1" />
-              <span className="sr-only">Rádio Pão Diário</span>
+              <img src="https://imgur.com/XPME80F.png" alt="Hinos Antigos" className="h-5 w-5 mr-1" />
+              <span className="sr-only">Hinos Antigos</span>
             </a>
           </div>
 
@@ -191,6 +199,15 @@ const Navbar = () => {
               >
                 Sites
               </button>
+              <a 
+                href="https://blogdambdareconciliacao.lovable.app/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="nav-link"
+                onClick={closeMenu}
+              >
+                Blog
+              </a>
               <button
                 onClick={() => scrollToSection("contato")}
                 className="nav-link"
@@ -198,13 +215,14 @@ const Navbar = () => {
                 Contato
               </button>
               <a 
-                href="https://ministeriospaodiario.com.br/radio" 
+                href="https://hinosantigos.com.br/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="nav-link flex items-center"
+                onClick={closeMenu}
               >
-                <img src="https://imgur.com/XPME80F.png" alt="Rádio Pão Diário" className="h-5 w-5 mr-1" />
-                <span>Rádio Pão Diário</span>
+                <img src="https://imgur.com/XPME80F.png" alt="Hinos Antigos" className="h-5 w-5 mr-1" />
+                <span>Hinos Antigos</span>
               </a>
             </div>
           </div>

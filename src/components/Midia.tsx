@@ -10,14 +10,14 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 
 const imagens = [
-  "https://i.imgur.com/Sz282uc.png",
-  "https://imgur.com/oRcynkU.jpg",
-  "https://imgur.com/UihVgu7.jpg",
-  "https://imgur.com/eDZmKvs.jpg",
-  "https://imgur.com/alXxJYG.jpg",
-  "https://imgur.com/Ts6zMu2.jpg",
-  "https://imgur.com/v0LXMts.jpg",
-  "https://imgur.com/ZQkBSsG.jpg"
+  "https://imgur.com/bh6SMuG.jpg",
+  "https://imgur.com/b08x0ym.jpg",
+  "https://imgur.com/RdEljQr.jpg",
+  "https://imgur.com/zCz6Cuj.jpg",
+  "https://imgur.com/JYkWhFl.jpg",
+  "https://imgur.com/W1VxzK0.jpg",
+  "https://imgur.com/GGTtB1C.jpg",
+  "https://imgur.com/fjP7ueb.jpg"
 ];
 
 const Midia = () => {
@@ -56,7 +56,7 @@ const Midia = () => {
                       <img
                         src={src}
                         alt={`Imagem da igreja ${index + 1}`}
-                        className="w-full h-[300px] md:h-[500px] object-cover transition-all hover:scale-105 duration-300"
+                        className="w-full h-[300px] md:h-[400px] object-cover transition-all hover:scale-105 duration-300"
                       />
                     </div>
                   </div>
