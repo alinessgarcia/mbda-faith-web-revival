@@ -10,14 +10,14 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 
 const imagens = [
-  "https://imgur.com/bh6SMuG.jpg",
-  "https://imgur.com/b08x0ym.jpg",
-  "https://imgur.com/RdEljQr.jpg",
-  "https://imgur.com/zCz6Cuj.jpg",
-  "https://imgur.com/JYkWhFl.jpg",
-  "https://imgur.com/W1VxzK0.jpg",
-  "https://imgur.com/GGTtB1C.jpg",
-  "https://imgur.com/fjP7ueb.jpg"
+  "https://i.imgur.com/Sz282uc.png",
+  "https://imgur.com/oRcynkU.jpg",
+  "https://imgur.com/UihVgu7.jpg",
+  "https://imgur.com/eDZmKvs.jpg",
+  "https://imgur.com/alXxJYG.jpg",
+  "https://imgur.com/Ts6zMu2.jpg",
+  "https://imgur.com/v0LXMts.jpg",
+  "https://imgur.com/ZQkBSsG.jpg"
 ];
 
 const Midia = () => {
