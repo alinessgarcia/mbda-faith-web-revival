@@ -17,12 +17,12 @@ const Footer = () => {
       <div className="container mx-auto py-10 px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4 text-white">MBdaReconciliação</h3>
-            <p className="mb-2 text-white">
+            <h3 className="text-xl font-bold mb-4">MBdaReconciliação</h3>
+            <p className="mb-2">
               Igreja cristã voltada ao ensino profundo da Palavra de Deus,<br />
               comunhão familiar e edificação espiritual.
             </p>
-            <p className="text-white">
+            <p className="text-white/80">
               Av. Osvaldo Aranha, nº800<br />
               Jardim Alvorada (Vicente de Carvalho)<br />
               Guarujá/SP<br />
@@ -31,10 +31,10 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="text-xl font-bold mb-4 text-white">Links Rápidos</h3>
+            <h3 className="text-xl font-bold mb-4">Links Rápidos</h3>
             <ul className="space-y-2">
               <li>
-                <button onClick={scrollToTop} className="hover:text-secondary transition-colors text-white">
+                <button onClick={scrollToTop} className="hover:text-secondary transition-colors">
                   Voltar ao Início
                 </button>
               </li>
@@ -43,7 +43,7 @@ const Footer = () => {
                   href="https://maps.app.goo.gl/zbXh9cc38umsD9bU7" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="hover:text-secondary transition-colors text-white"
+                  className="hover:text-secondary transition-colors"
                 >
                   Endereço
                 </a>
@@ -52,8 +52,8 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="text-xl font-bold mb-4 text-white">Horários</h3>
-            <ul className="space-y-2 text-white">
+            <h3 className="text-xl font-bold mb-4">Horários</h3>
+            <ul className="space-y-2">
               <li>Domingo: 08:00hrs / 09:00hrs / 11:00hrs</li>
               <li>Terça-feira: 20:00hrs (SETEREC)</li>
               <li>Quarta-feira: 20:00hrs Oração e Palavra</li>
@@ -83,7 +83,7 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="mt-10 pt-6 border-t border-white/20 text-center text-white">
+        <div className="mt-10 pt-6 border-t border-white/20 text-center text-white/70">
           <p>
             &copy; {currentYear} MBdaReconciliação - Todos os direitos reservados
           </p>

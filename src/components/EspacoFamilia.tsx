@@ -1,26 +1,49 @@
 
-import React from "react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
+import React, { useState } from "react";
 
 const imagens = [
-  "https://imgur.com/1fZWqMo.jpg",
-  "https://imgur.com/TIDseK2.jpg",
-  "https://imgur.com/BVnMETR.jpg",
-  "https://imgur.com/zgYqFbx.jpg",
-  "https://imgur.com/qAmQVDC.jpg"
+  {
+    id: 1,
+    src: "https://imgur.com/SWiMFCc.jpg",
+    alt: "Família em culto",
+    caption: "Momento de adoração em família"
+  },
+  {
+    id: 2,
+    src: "https://imgur.com/OC3A2Wl.jpg",
+    alt: "Crianças na igreja",
+    caption: "Ministério infantil em ação"
+  },
+  {
+    id: 3,
+    src: "https://imgur.com/uUNhosM.jpg",
+    alt: "Jovens em atividade",
+    caption: "Encontro de jovens e adolescentes"
+  },
+  {
+    id: 4,
+    src: "https://imgur.com/5buQFsX.jpg",
+    alt: "Casais em retiro",
+    caption: "Retiro de casais 2023"
+  },
+  {
+    id: 5,
+    src: "https://imgur.com/bj3MMMJ.jpg",
+    alt: "Celebração familiar",
+    caption: "Celebração especial para famílias"
+  }
 ];
 
 const EspacoFamilia = () => {
-  const plugin = React.useRef(
-    Autoplay({ delay: 3000, stopOnInteraction: true })
-  );
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev === imagens.length - 1 ? 0 : prev + 1));
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev === 0 ? imagens.length - 1 : prev - 1));
+  };
 
   return (
     <section id="espaco-familia" className="section-padding bg-gray-50">
@@ -31,46 +54,78 @@ const EspacoFamilia = () => {
           Confira alguns momentos especiais das atividades para famílias em nossa igreja.
         </p>
         
-        <div className="max-w-4xl mx-auto px-10">
-          <Carousel 
-            className="w-full"
-            plugins={[plugin.current]}
-            opts={{
-              align: "center",
-              loop: true,
-            }}
-            onMouseEnter={() => {
-              if (plugin.current) plugin.current.stop();
-            }}
-            onMouseLeave={() => {
-              if (plugin.current) plugin.current.reset();
-            }}
-          >
-            <CarouselContent>
-              {imagens.map((src, index) => (
-                <CarouselItem key={index}>
-                  <div className="p-1">
-                    <div className="overflow-hidden rounded-lg">
-                      <img
-                        src={src}
-                        alt={`Imagem da família ${index + 1}`}
-                        className="w-full h-[300px] md:h-[500px] object-cover transition-all hover:scale-105 duration-300"
-                      />
-                    </div>
+        <div className="relative max-w-5xl mx-auto">
+          <div className="overflow-hidden rounded-lg shadow-lg">
+            <div
+              className="flex transition-transform duration-500 ease-out h-96"
+              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+            >
+              {imagens.map((imagem) => (
+                <div key={imagem.id} className="min-w-full h-full relative">
+                  <img
+                    src={imagem.src}
+                    alt={imagem.alt}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute bottom-0 left-0 right-0 bg-black/60 p-4">
+                    <p className="text-white text-center">{imagem.caption}</p>
                   </div>
-                </CarouselItem>
+                </div>
               ))}
-            </CarouselContent>
-            <CarouselPrevious className="left-2" />
-            <CarouselNext className="right-2" />
-          </Carousel>
-          
-          <div className="flex justify-center mt-4">
+            </div>
+          </div>
+
+          <button
+            onClick={prevSlide}
+            className="absolute top-1/2 left-4 -translate-y-1/2 p-2 rounded-full bg-white/80 hover:bg-white shadow-md z-10"
+            aria-label="Imagem anterior"
+          >
+            <svg
+              className="w-6 h-6 text-primary"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </button>
+          <button
+            onClick={nextSlide}
+            className="absolute top-1/2 right-4 -translate-y-1/2 p-2 rounded-full bg-white/80 hover:bg-white shadow-md z-10"
+            aria-label="Próxima imagem"
+          >
+            <svg
+              className="w-6 h-6 text-primary"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
+
+          <div className="flex justify-center mt-4 space-x-2">
             {imagens.map((_, index) => (
-              <span
+              <button
                 key={index}
-                className={`h-2 w-2 mx-1 rounded-full bg-gray-300`}
-              ></span>
+                onClick={() => setCurrentSlide(index)}
+                className={`w-3 h-3 rounded-full transition-colors ${
+                  currentSlide === index ? "bg-primary" : "bg-gray-300"
+                }`}
+                aria-label={`Ir para imagem ${index + 1}`}
+              />
             ))}
           </div>
         </div>
