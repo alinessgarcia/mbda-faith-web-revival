@@ -18,12 +18,38 @@ import ChatBox from "../components/ChatBox";
 
 const Index = () => {
   useEffect(() => {
-    document.title = "MBdA Reconciliação - Igreja Cristã";
+    // SEO improvements
+    document.title = "MBdA Reconciliação - Igreja Cristã | Ministério Bíblico da Reconciliação";
     
-    // Meta tags - Usando meta elements apenas como exemplo, já que React não pode modificar <head> diretamente sem helmet
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute("content", "Comunidade cristã transformando vidas");
+    // Meta description
+    const metaDescription = document.querySelector('meta[name="description"]') || document.createElement('meta');
+    metaDescription.setAttribute("name", "description");
+    metaDescription.setAttribute("content", "Igreja cristã em Guarujá/SP dedicada ao ensino da Palavra de Deus, comunhão familiar e crescimento espiritual. Conheça o Ministério Bíblico da Reconciliação.");
+    if (!document.querySelector('meta[name="description"]')) {
+      document.head.appendChild(metaDescription);
+    }
+    
+    // Meta keywords
+    const metaKeywords = document.querySelector('meta[name="keywords"]') || document.createElement('meta');
+    metaKeywords.setAttribute("name", "keywords");
+    metaKeywords.setAttribute("content", "igreja cristã, ministério bíblico, reconciliação, Guarujá, São Paulo, comunhão, família, palavra de Deus");
+    if (!document.querySelector('meta[name="keywords"]')) {
+      document.head.appendChild(metaKeywords);
+    }
+
+    // Open Graph tags
+    const ogTitle = document.querySelector('meta[property="og:title"]') || document.createElement('meta');
+    ogTitle.setAttribute("property", "og:title");
+    ogTitle.setAttribute("content", "MBdA Reconciliação - Igreja Cristã");
+    if (!document.querySelector('meta[property="og:title"]')) {
+      document.head.appendChild(ogTitle);
+    }
+
+    const ogDescription = document.querySelector('meta[property="og:description"]') || document.createElement('meta');
+    ogDescription.setAttribute("property", "og:description");
+    ogDescription.setAttribute("content", "Igreja cristã voltada ao ensino profundo da Palavra de Deus, comunhão familiar e edificação espiritual.");
+    if (!document.querySelector('meta[property="og:description"]')) {
+      document.head.appendChild(ogDescription);
     }
   }, []);
 

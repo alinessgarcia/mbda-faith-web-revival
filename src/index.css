@@ -67,27 +67,27 @@
   }
   
   .btn-primary {
-    @apply bg-primary text-white px-6 py-3 rounded-md transition-all duration-300 shadow-md;
+    @apply bg-primary text-white px-6 py-3 rounded-md transition-all duration-300 shadow-md hover:shadow-xl;
   }
   
   .btn-primary:hover {
-    @apply bg-primary/90 transform -translate-y-1 shadow-lg;
+    @apply bg-primary/90 transform -translate-y-1;
   }
   
   .btn-primary:active {
-    @apply transform translate-y-0 shadow-md border-2 border-blue-300;
+    @apply transform translate-y-0 shadow-md border-2 border-blue-300 ring-2 ring-blue-200;
   }
   
   .btn-secondary {
-    @apply bg-secondary text-white px-6 py-3 rounded-md transition-all duration-300 shadow-md;
+    @apply bg-secondary text-white px-6 py-3 rounded-md transition-all duration-300 shadow-md hover:shadow-xl;
   }
   
   .btn-secondary:hover {
-    @apply bg-secondary/90 transform -translate-y-1 shadow-lg;
+    @apply bg-secondary/90 transform -translate-y-1;
   }
   
   .btn-secondary:active {
-    @apply transform translate-y-0 shadow-md border-2 border-blue-300;
+    @apply transform translate-y-0 shadow-md border-2 border-blue-300 ring-2 ring-blue-200;
   }
   
   .nav-link {
@@ -99,7 +99,7 @@
   }
   
   .nav-link:active {
-    @apply border-2 border-blue-300 rounded px-2 py-1;
+    @apply border-2 border-blue-300 rounded px-2 py-1 ring-2 ring-blue-200;
   }
   
   .nav-link::after {
@@ -120,5 +120,50 @@
 
   .font-roboto {
     font-family: 'Roboto', sans-serif;
+  }
+
+  /* Enhanced animations */
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.6s ease-out forwards;
+  }
+
+  /* Smooth scrolling improvements */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  /* Focus improvements for accessibility */
+  button:focus-visible,
+  a:focus-visible {
+    @apply outline-2 outline-offset-2 outline-blue-500;
+  }
+
+  /* Loading animation */
+  .loading-shimmer {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
   }
 }
