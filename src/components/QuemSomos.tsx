@@ -1,4 +1,3 @@
-
 import React from "react";
 
 const QuemSomos = () => {
@@ -61,8 +60,8 @@ const QuemSomos = () => {
               <div className="absolute -inset-1 bg-gradient-to-r from-amber-400 to-secondary rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-300"></div>
               <div className="relative bg-white/10 backdrop-blur-sm p-4 rounded-2xl border border-white/20">
                 <img
-                  src="https://images.unsplash.com/photo-1472396961693-142e6e269027?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                  alt="Comunidade MBdA Reconciliação reunida em oração e comunhão"
+                  src="https://i.imgur.com/SWiMFCc.jpg"
+                  alt="Igreja MBdA Reconciliação - Vista da fachada e ambiente da comunidade cristã"
                   className="rounded-xl shadow-2xl object-cover h-[400px] w-full transition-transform duration-300 group-hover:scale-105"
                   loading="lazy"
                 />
