@@ -29,7 +29,7 @@ const Hero = () => {
           </span>
         </h1>
         <p className="text-xl md:text-2xl lg:text-3xl text-white/95 mb-8 max-w-4xl mx-auto mt-8 animate-fade-in leading-relaxed drop-shadow-md" style={{ animationDelay: "0.2s" }}>
-          Igreja cristã voltada ao ensino profundo da Palavra de Deus, comunhão familiar e edificação espiritual.
+          Somos uma Igreja Cristã voltada ao ensino profundo da Palavra de Deus, comunhão familiar e edificação espiritual.
         </p>
         
         {/* Call to action button */}
