@@ -47,10 +47,9 @@ const Seterec = () => {
           </div>
           <div className="order-first md:order-last mb-8 md:mb-0">
             <img
-              src="/images/seterec-editado.png" alt="Seterec Editado" />"
-              alt="S.E.T.E.R.E.C - Seminário Teológico de Reconciliação Cristã"
-              className="rounded-lg shadow-lg w-full h-[400px] object-cover"
-            />
+  src="/images/seterec-editado.png"
+  alt="S.E.T.E.R.E.C - Seminário Teológico de Reconciliação Cristã"
+  className="rounded-lg shadow-lg w-full h-[400px] object-cover" />
           </div>
         </div>
       </div>
