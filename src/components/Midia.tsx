@@ -50,7 +50,7 @@ const Midia = () => {
   );
 
   return (
-    <section id="midia" className="section-padding bg-gradient-to-br from-white to-gray-50">
+    <section id="midia" className="section-padding bg-blue-50">
       <div className="container mx-auto">
         <div className="text-center mb-12 animate-fade-in">
           <h2 className="section-title">Mídia</h2>
