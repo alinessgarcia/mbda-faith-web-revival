@@ -6,19 +6,19 @@ const estudos = [
   {
     id: 1,
     title: "Fundamentos da Fé",
-    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "/imagem/fundamentos.jpg",
     videoUrl: "https://youtu.be/c-8f_9w8OWA"
   },
   {
     id: 2,
     title: "O Livro de Apocalipse",
-    image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "/imagem/apocalipse.jpg",
     videoUrl: "https://www.youtube.com/watch?v=KdfnoeaPMv0"
   },
   {
     id: 3,
     title: "Os Salmos",
-    image: "https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "/imagem/os-salmos.jpg",
     videoUrl: "https://www.youtube.com/watch?v=E1CqSwpaStI"
   }
 ];
