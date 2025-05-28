@@ -93,7 +93,7 @@ const Navbar = () => {
               Contato
             </button>
             <a 
-              href="https://hinosantigos.com.br/" 
+              href="https://www.ipb.org.br/projetos-radio-ipb.php" 
               target="_blank" 
               rel="noopener noreferrer"
               className="nav-link flex items-center"
@@ -215,7 +215,7 @@ const Navbar = () => {
                 Contato
               </button>
               <a 
-                href="https://hinosantigos.com.br/" 
+                href="https://www.ipb.org.br/projetos-radio-ipb.php" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="nav-link flex items-center"

@@ -40,7 +40,7 @@ const QuemSomos = () => {
               {/* Stats or highlights */}
               <div className="grid grid-cols-3 gap-4 mt-8 pt-6 border-t border-white/20">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-amber-400">15+</div>
+                  <div className="text-2xl font-bold text-amber-400">22+</div>
                   <div className="text-white/80 text-sm">Anos de Ministério</div>
                 </div>
                 <div className="text-center">
@@ -48,7 +48,7 @@ const QuemSomos = () => {
                   <div className="text-white/80 text-sm">Famílias</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-amber-400">7</div>
+                  <div className="text-2xl font-bold text-amber-400">3</div>
                   <div className="text-white/80 text-sm">Cultos Semanais</div>
                 </div>
               </div>
