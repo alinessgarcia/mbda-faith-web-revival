@@ -50,7 +50,7 @@ const EstudosBiblicos = () => {
               key={estudo.id}
               className="card group hover:scale-105 transition-transform duration-300 cursor-pointer"
               onClick={() => openVideoDialog(estudo.videoUrl)}
-            >// ...existing code...
+            >
 <div className="relative h-48 md:h-56 lg:h-64 overflow-hidden flex items-center justify-center bg-gray-100">
   <img
     src={estudo.image}
@@ -62,7 +62,7 @@ const EstudosBiblicos = () => {
     {estudo.title}
   </h3>
 </div>
-// ...existing code...
+
               <div className="p-4">
                 <p className="text-primary font-medium flex items-center justify-end">
                   Assistir Vídeo
