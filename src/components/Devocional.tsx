@@ -48,7 +48,7 @@ const Devocional = () => {
           </a>
           
           <a 
-            href="https://hinosantigos.com.br/" 
+            href="https://www.ipb.org.br/projetos-radio-ipb.php" 
             target="_blank" 
             rel="noopener noreferrer" 
             className="btn-secondary flex items-center justify-center gap-2 max-w-xs group"
