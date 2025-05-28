@@ -6,19 +6,19 @@ const estudos = [
   {
     id: 1,
     title: "Fundamentos da Fé",
-    image: "/imagem/fundamentos.jpg",
+    image: "/images/fundamentos.jpg",
     videoUrl: "https://youtu.be/c-8f_9w8OWA"
   },
   {
     id: 2,
     title: "O Livro de Apocalipse",
-    image: "/imagem/apocalipse.jpg",
+    image: "/images/apocalipse.jpg",
     videoUrl: "https://www.youtube.com/watch?v=KdfnoeaPMv0"
   },
   {
     id: 3,
     title: "Os Salmos",
-    image: "/imagem/os-salmos.jpg",
+    image: "/images/os-salmos.jpg",
     videoUrl: "https://www.youtube.com/watch?v=E1CqSwpaStI"
   }
 ];
