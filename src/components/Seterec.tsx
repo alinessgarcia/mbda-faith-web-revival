@@ -4,7 +4,13 @@ import { Link } from "react-router-dom";
 
 const Seterec = () => {
   return (
-    <section id="seterec" className="section-padding bg-linear-gradient(135deg, #003087 0%, #004DA8 50%, #0066CC 100%)">
+    <section
+  id="seterec"
+  className="section-padding"
+  style={{
+    background: "linear-gradient(135deg, #003087 0%, #004DA8 50%, #0066CC 100%)",
+  }}
+>
       <div className="container mx-auto">
         <h2 className="section-title">S.E.T.E.R.E.C</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
