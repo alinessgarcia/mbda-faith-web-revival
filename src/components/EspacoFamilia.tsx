@@ -38,7 +38,7 @@ const EspacoFamilia = () => {
   );
 
   return (
-    <section id="espaco-familia" className="section-padding bg-gradient-to-br from-gray-50 to-white">
+    <section id="espaco-familia" className="section-padding bg-blue-50">
       <div className="container mx-auto">
         <div className="text-center mb-12 animate-fade-in">
           <h2 className="section-title">Espaço Família</h2>
