@@ -93,7 +93,7 @@ const DeclaracaoDeFe = () => {
   };
 
   return (
-    <section id="declaracao-de-fe" className="section-padding bg-white">
+    <section id="declaracao-de-fe" className="section-padding bg-blue-50">
       <div className="container mx-auto text-center">
         <h2 className="section-title">Declaração de Fé</h2>
         <p className="text-gray-700 max-w-3xl mx-auto mb-8">
