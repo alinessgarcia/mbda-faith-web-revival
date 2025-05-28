@@ -49,7 +49,7 @@ const Seterec = () => {
             <img
   src="/images/banner-seterec-novo.png"
   alt="S.E.T.E.R.E.C - Seminário Teológico da Reconciliação"
-  className="rounded-lg shadow-lg w-full h-[400px] object-cover" />
+  className="rounded-lg shadow-lg w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl mx-auto h-auto object-contain" />
           </div>
         </div>
       </div>
