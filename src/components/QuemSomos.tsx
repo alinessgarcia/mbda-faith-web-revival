@@ -6,7 +6,7 @@ const QuemSomos = () => {
       id="quem-somos" 
       className="section-padding relative flex items-center min-h-screen bg-gradient-to-r from-blue-800 to-blue-400"
   
-    >
+    ><div className="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-black/30"></div>
       {/* Decorative elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/10 via-transparent to-transparent"></div>
