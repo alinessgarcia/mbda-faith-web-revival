@@ -4,7 +4,7 @@ const QuemSomos = () => {
   return (
     <section
       id="quem-somos"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-blue-400"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-blue-50"
     >
       
       {/* Elementos decorativos */}
