@@ -6,7 +6,7 @@ const QuemSomos = () => {
       id="quem-somos" 
       className="section-padding relative flex items-center min-h-screen"
       style={{
-        background: "linear-gradient(180deg,rgb(27, 89, 202) 0%,rgb(20, 69, 143) 50%,rgb(15, 46, 92) 100%)",
+        background: "linear-gradient(135deg, #003087 0%, #004DA8 50%, #0066CC 100%)",
       }}
     >
       {/* Decorative elements */}
