@@ -1,80 +1,38 @@
-import React from "react";
-
-const QuemSomos = () => {
-  return (
-    <section
-      id="quem-somos"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-r from-blue-800 to-blue-400"
-    >
-      <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-black/30"></div>
-      {/* Elementos decorativos */}
-      <div className="absolute inset-0 opacity-5 pointer-events-none">
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/10 via-transparent to-transparent"></div>
-        <div className="absolute top-1/3 right-10 w-32 h-32 bg-secondary rounded-full blur-2xl animate-pulse"></div>
-        <div
-          className="absolute bottom-1/4 left-10 w-24 h-24 bg-amber-400 rounded-full blur-2xl animate-pulse"
-          style={{ animationDelay: "1.5s" }}
-        ></div>
-      </div>
-      <div className="container mx-auto relative z-10">
-        <div className="flex flex-col items-center max-w-fit mx-auto mb-12">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 drop-shadow-lg text-white">
-            Quem Somos
-          </h2>
-          <div className="h-1 w-full bg-[#FFFFFF] rounded-full"></div>
-        </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div
-            className="order-2 lg:order-1 animate-fade-in"
-            style={{ animationDelay: "0.2s" }}
-          >
-            <div className="bg-black/70 backdrop-blur-sm rounded-2xl p-8 border border-white/20 shadow-2xl">
-              <p className="text-white/95 mb-6 text-lg leading-relaxed">
-                Somos o Ministério Bíblico da Reconciliação, uma comunidade cristã dedicada ao amor, à fé e à transformação espiritual. Nosso ministério é um espaço de encontro, reflexão e crescimento, onde todos são bem-vindos a desenvolver um relacionamento mais profundo com Deus.
-              </p>
-              <p className="text-white/95 mb-6 text-lg leading-relaxed">
-                Nossa missão é proclamar a mensagem de Cristo a todas as pessoas, promovendo a reconciliação com Deus e com o próximo. Buscamos ser uma igreja relevante, que vive e aplica os princípios bíblicos na realidade do mundo atual.
-              </p>
-              <p className="text-white/95 text-lg leading-relaxed">
-                Valorizamos a autenticidade, a comunhão e o discipulado. Somos uma família espiritual que caminha unida, apoiando uns aos outros e servindo com amor à comunidade ao nosso redor.
-              </p>
-              {/* Stats or highlights */}
-              <div className="grid grid-cols-3 gap-4 mt-8 pt-6 border-t border-white/20">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-amber-400">22+</div>
-                  <div className="text-white/80 text-sm">Anos de Ministério</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-secondary">500+</div>
-                  <div className="text-white/80 text-sm">Famílias</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-amber-400">3</div>
-                  <div className="text-white/80 text-sm">Cultos Semanais</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            className="order-1 lg:order-2 animate-fade-in"
-            style={{ animationDelay: "0.4s" }}
-          >
-            <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-amber-400 to-secondary rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-300"></div>
-              <div className="relative bg-white/10 backdrop-blur-sm p-4 rounded-2xl border border-white/20">
-                <img
-                  src="https://i.imgur.com/SWiMFCc.jpg"
-                  alt="Igreja MBdA Reconciliação - Vista da fachada e ambiente da comunidade cristã"
-                  className="rounded-xl shadow-2xl object-cover h-[400px] w-full transition-transform duration-300 group-hover:scale-105"
-                  loading="lazy"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-export default QuemSomos;
+// ...existing code...
+<div
+  className="order-1 lg:order-2 animate-fade-in"
+  style={{ animationDelay: "0.4s" }}
+>
+  <div className="relative group">
+    <div className="absolute -inset-1 bg-gradient-to-r from-amber-400 to-secondary rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-300"></div>
+    <div className="relative bg-white/10 backdrop-blur-sm p-4 rounded-2xl border border-white/20">
+      <img
+        src="https://i.imgur.com/SWiMFCc.jpg"
+        alt="Igreja MBdA Reconciliação - Vista da fachada e ambiente da comunidade cristã"
+        className="rounded-xl shadow-2xl object-cover h-[400px] w-full transition-transform duration-300 group-hover:scale-105"
+        loading="lazy"
+      />
+    </div>
+    {/* Botão Google Maps */}
+    <div className="flex justify-center mt-6">
+      <a
+        href="https://www.google.com/maps?q=igreja+mbda+reconciliacao"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-2 px-6 py-3 bg-white text-[#4285F4] font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all border border-gray-200 hover:bg-gray-50"
+        style={{ fontFamily: 'Roboto, Arial, sans-serif', fontSize: '1.1rem', letterSpacing: 0.2 }}
+      >
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <g>
+            <path d="M21.6 12.227c0-1.023-.082-2.047-.254-3.047H12v5.77h5.41a4.63 4.63 0 0 1-2.01 3.04v2.52h3.24c1.89-1.74 2.96-4.31 2.96-8.283z" fill="#4285F4"/>
+            <path d="M12 22c2.7 0 4.97-.89 6.63-2.41l-3.24-2.52c-.9.6-2.07.96-3.39.96-2.6 0-4.8-1.76-5.59-4.13H3.06v2.59A9.98 9.98 0 0 0 12 22z" fill="#34A853"/>
+            <path d="M6.41 13.9A5.99 5.99 0 0 1 6 12c0-.66.11-1.3.3-1.9V7.51H3.06A9.98 9.98 0 0 0 2 12c0 1.64.39 3.19 1.06 4.49l3.35-2.59z" fill="#FBBC05"/>
+            <path d="M12 6.58c1.47 0 2.78.51 3.81 1.51l2.85-2.85C16.97 3.89 14.7 3 12 3A9.98 9.98 0 0 0 3.06 7.51l3.35 2.59C7.2 8.34 9.4 6.58 12 6.58z" fill="#EA4335"/>
+          </g>
+        </svg>
+        Google Maps
+      </a>
+    </div>
+  </div>
+</div>
+// ...existing code...
