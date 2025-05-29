@@ -53,7 +53,7 @@ const ContatoForm = () => {
   };
 
   return (
-    <section id="contato" className="section-padding bg-white">
+    <section id="contato" className="section-padding bg-blue-50">
       <div className="container mx-auto">
         <h2 className="section-title">Contato</h2>
         <p className="text-gray-700 max-w-3xl mx-auto mb-8 text-center">
