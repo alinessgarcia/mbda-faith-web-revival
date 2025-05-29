@@ -4,7 +4,7 @@ const QuemSomos = () => {
   return (
     <section
       id="quem-somos"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-r from-blue-800 to-blue-400"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-blue-400"
     >
       <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-black/30"></div>
       {/* Elementos decorativos */}
