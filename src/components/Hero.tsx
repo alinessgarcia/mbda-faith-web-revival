@@ -25,19 +25,18 @@ const Hero = () => {
       </div>
       {/* Conteúdo */}
       <div className="relative z-40 text-center p-4 max-w-5xl mx-auto">
-        <h1 className="mb-0 animate-fade-in">
-          <span className="text-2xl md:text-5xl lg:text-6xl font-bold text-blue block drop-shadow-lg">
-            Ministério Bíblico da
-          </span>
-          <span className="text-6xl md:text-8xl lg:text-9xl font-bold text-white block mt-1 relative inline-block drop-shadow-xl tracking-tight">
-            Reconciliação
-            <span className="block h-1 bg-blue w-full mt-2 mx-auto rounded-full shadow-lg"></span>
-          </span>
-        </h1>
-
-        <p className="text-xl md:text-2xl lg:text-3xl text-white/95 mb-8 max-w-4xl mx-auto mt-8 animate-fade-in leading-relaxed drop-shadow-md" style={{ animationDelay: "0.2s" }}>
-          Somos uma Igreja Cristã voltada ao ensino profundo da Palavra de Deus, comunhão familiar e edificação espiritual.
-        </p>
+        <h1 className="mb-0 animate-fade-in leading-tight">
+  <span className="text-2xl md:text-5xl lg:text-6xl font-bold text-blue block drop-shadow-lg mb-0">
+    Ministério Bíblico da
+  </span>
+  <span className="text-6xl md:text-8xl lg:text-9xl font-bold text-white block mt-0.5 relative inline-block drop-shadow-xl tracking-tight">
+    Reconciliação
+    <span className="block h-1 bg-blue w-full mt-2 mx-auto rounded-full shadow-lg"></span>
+  </span>
+</h1>
+<p className="text-xl md:text-2xl lg:text-3xl text-white/95 mb-8 max-w-4xl mx-auto mt-4 animate-fade-in leading-snug drop-shadow-md" style={{ animationDelay: "0.2s" }}>
+  Somos uma Igreja Cristã voltada ao ensino profundo da Palavra de Deus, comunhão familiar e edificação espiritual.
+</p>
 
         <div className="animate-fade-in" style={{ animationDelay: "0.4s" }}>
           <a 
