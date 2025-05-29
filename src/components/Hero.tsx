@@ -21,7 +21,7 @@ const Hero = () => {
 </span>
       <span className="text-6xl md:text-8xl lg:text-9xl font-bold text-amber-400 block mt-0.5 relative inline-block drop-shadow-xl tracking-tight">
         Reconciliação
-        <span className="block h-1 bg-blue w-full mt-2 mx-auto rounded-full shadow-lg"></span>
+        <span className="block h-1 bg-gradient-to-r from-amber-400 to-amber-300 w-full mt-2 mx-auto rounded-full shadow-lg"></span>
       </span>
     </h1>
 
