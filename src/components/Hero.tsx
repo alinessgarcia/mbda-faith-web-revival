@@ -4,11 +4,8 @@ import React from "react";
 const Hero = () => {
   return (
     <section
-  className="relative min-h-screen flex items-center justify-center overflow-hidden bg-blue-600"
-  
+  className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white" 
 >
-  <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-black/30"></div>
-
   <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-black/30"></div>
 <div className="absolute inset-0 opacity-10">
   <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white rounded-full blur-3xl animate-pulse"></div>
@@ -20,9 +17,9 @@ const Hero = () => {
       <span className="text-3xl md:text-5xl lg:text-6xl font-bold text-white block drop-shadow-lg">
   Ministério Bíblico da
 </span>
-      <span className="text-6xl md:text-8xl lg:text-9xl font-bold text-amber-400 block mt-0.5 relative inline-block drop-shadow-xl tracking-tight">
+      <span className="text-6xl md:text-8xl lg:text-9xl font-bold text-blue-900 block mt-0.5 relative inline-block drop-shadow-xl tracking-tight">
         Reconciliação
-        <span className="block h-1 bg-gradient-to-r from-amber-400 to-amber-300 w-full mt-2 mx-auto rounded-full shadow-lg"></span>
+        <span className="block h-1 bg-blue-900 w-full mt-2 mx-auto rounded-full shadow-lg"></span>
       </span>
     </h1>
 
