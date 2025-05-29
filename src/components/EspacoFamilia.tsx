@@ -11,23 +11,23 @@ import Autoplay from "embla-carousel-autoplay";
 
 const imagens = [
   {
-    src: "https://imgur.com/1fZWqMo.jpg",
+    src: "/images/escolinha1.jpg",
     alt: "Atividade especial para famílias na MBdA Reconciliação"
   },
   {
-    src: "https://imgur.com/TIDseK2.jpg",
+    src: "/images/escolinha2.jpg",
     alt: "Encontro familiar na igreja MBdA Reconciliação"
   },
   {
-    src: "https://imgur.com/BVnMETR.jpg",
+    src: "/images/escolinha3.jpg",
     alt: "Celebração familiar na MBdA Reconciliação"
   },
   {
-    src: "https://imgur.com/zgYqFbx.jpg",
+    src: "/images/escolinha4.jpg",
     alt: "Momento de comunhão familiar na igreja"
   },
   {
-    src: "https://imgur.com/qAmQVDC.jpg",
+    src: "/images/culto1.jpg",
     alt: "Evento especial do Espaço Família MBdA"
   }
 ];
@@ -75,7 +75,7 @@ const EspacoFamilia = () => {
                           <img
                             src={imagem.src}
                             alt={imagem.alt}
-                            className="w-full h-[400px] object-cover transition-all hover:scale-105 duration-500"
+                            className="w-full h-56 sm:h-72 md:h-80 lg:h-[400px] object-cover transition-all hover:scale-105 duration-500"
                             loading="lazy"
                           />
                         </div>
