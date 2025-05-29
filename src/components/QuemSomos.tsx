@@ -5,7 +5,7 @@ const QuemSomos = () => {
     <section 
       id="quem-somos" 
       className="section-padding relative flex items-center min-h-screen bg-blue-100"
-      
+  
     >
       {/* Decorative elements */}
       <div className="absolute inset-0 opacity-5">
