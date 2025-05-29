@@ -64,7 +64,7 @@ const QuemSomos = () => {
               <div className="relative bg-white/10 backdrop-blur-sm p-4 rounded-2xl border border-white/20">
                 <img
                   src="https://i.imgur.com/SWiMFCc.jpg"
-                  alt="Igreja MBdA Reconciliação - Vista da fachada e ambiente da comunidade cristã"
+                  alt="Igreja MBdaReconciliação - Vista da fachada e ambiente da comunidade cristã"
                   className="rounded-xl shadow-2xl object-cover h-[400px] w-full transition-transform duration-300 group-hover:scale-105"
                   loading="lazy"
                 />
