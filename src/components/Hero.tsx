@@ -17,9 +17,9 @@ const Hero = () => {
       <span className="text-3xl md:text-5xl lg:text-6xl font-bold text-white block drop-shadow-lg">
   Ministério Bíblico da
 </span>
-      <span className="text-6xl md:text-8xl lg:text-9xl font-bold text-sky-500 block mt-0.5 relative inline-block drop-shadow-xl tracking-tight">
+      <span className="text-6xl md:text-8xl lg:text-9xl font-bold text-blue block mt-0.5 relative inline-block drop-shadow-xl tracking-tight">
         Reconciliação
-        <span className="block h-1 bg-black w-full mt-2 mx-auto rounded-full shadow-lg"></span>
+        <span className="block h-1 bg-blue w-full mt-2 mx-auto rounded-full shadow-lg"></span>
       </span>
     </h1>
 
