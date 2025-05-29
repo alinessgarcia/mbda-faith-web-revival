@@ -26,7 +26,7 @@ const QuemSomos = () => {
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 shadow-2xl">
+            <div className="bg-black/100 backdrop-blur-sm rounded-2xl p-8 border border-white/20 shadow-2xl">
               <p className="text-white/95 mb-6 text-lg leading-relaxed">
                 Somos o Ministério Bíblico da Reconciliação, uma comunidade cristã dedicada ao amor, à fé e à transformação espiritual. Nosso ministério é um espaço de encontro, reflexão e crescimento, onde todos são bem-vindos a desenvolver um relacionamento mais profundo com Deus.
               </p>
