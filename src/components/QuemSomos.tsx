@@ -4,7 +4,7 @@ const QuemSomos = () => {
   return (
     <section 
       id="quem-somos" 
-      className="section-padding relative flex items-center min-h-screen bg-blue-100"
+      className="section-padding relative flex items-center min-h-screen bg-gradient-to-r from-blue-800 to-blue-400"
   
     >
       {/* Decorative elements */}
