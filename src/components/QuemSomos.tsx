@@ -62,12 +62,19 @@ const QuemSomos = () => {
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-amber-400 to-secondary rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-300"></div>
               <div className="relative bg-white/10 backdrop-blur-sm p-4 rounded-2xl border border-white/20">
-                <img
-                  src="https://i.imgur.com/SWiMFCc.jpg"
-                  alt="Igreja MBdaReconciliação - Vista da fachada e ambiente da comunidade cristã"
-                  className="rounded-xl shadow-2xl object-cover h-[400px] w-full transition-transform duration-300 group-hover:scale-105"
-                  loading="lazy"
-                />
+  <a
+    href="https://www.google.com/maps?q=igreja+mbda+reconciliacao"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Abrir localização no Google Maps"
+  >
+    <img
+      src="https://i.imgur.com/SWiMFCc.jpg"
+      alt="Igreja MBdaReconciliação - Vista da fachada e ambiente da comunidade cristã"
+      className="rounded-xl shadow-2xl object-cover h-[400px] w-full transition-transform duration-300 group-hover:scale-105 cursor-pointer"
+      loading="lazy"
+    />
+  </a>
               </div>
             </div>
           </div>
