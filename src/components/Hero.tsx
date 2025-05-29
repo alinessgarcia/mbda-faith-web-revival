@@ -15,19 +15,21 @@ const Hero = () => {
         }}
       ></div>
       {/* Overlay preto translúcido */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-black/30 z-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-black/30 via-transparent to-black/40 z-10"></div>
+      {/* Overlay azul escuro translúcido */}
+      <div className="absolute inset-0 bg-blue-900/60 z-20"></div>
       {/* Círculos decorativos */}
-      <div className="absolute inset-0 opacity-10 z-20">
+      <div className="absolute inset-0 opacity-10 z-30">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-amber-400 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }}></div>
       </div>
       {/* Conteúdo */}
-      <div className="relative z-30 text-center p-4 max-w-5xl mx-auto">
+      <div className="relative z-40 text-center p-4 max-w-5xl mx-auto">
         <h1 className="mb-0 animate-fade-in">
           <span className="text-3xl md:text-5xl lg:text-6xl font-bold text-white block drop-shadow-lg">
             Ministério Bíblico da
           </span>
-          <span className="text-6xl md:text-8xl lg:text-9xl font-bold text-blue block mt-0.5 relative inline-block drop-shadow-xl tracking-tight">
+          <span className="text-6xl md:text-8xl lg:text-9xl font-bold text-blue block mt-1 relative inline-block drop-shadow-xl tracking-tight">
             Reconciliação
             <span className="block h-1 bg-blue w-full mt-2 mx-auto rounded-full shadow-lg"></span>
           </span>
