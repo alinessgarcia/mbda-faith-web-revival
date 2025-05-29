@@ -4,7 +4,7 @@ const QuemSomos = () => {
   return (
     <section 
       id="quem-somos" 
-      className="section-padding relative flex items-center min-h-screen bg-gradient-to-r from-blue-800 to-blue-400"
+      className="section-padding relative flex items-center min-h-screen bg-gradient-to-r from-blue-500 to-blue-200"
   
     ><div className="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-black/30"></div>
       {/* Decorative elements */}
@@ -17,8 +17,7 @@ const QuemSomos = () => {
       <div className="container mx-auto relative z-10">
         <div className="flex flex-col items-center max-w-fit mx-auto mb-12">
   <h2
-    className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 drop-shadow-lg"
-    style={{ color: "#004996" }}
+    className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 drop-shadow-lg text-white"
   >
     Quem Somos
   </h2>
