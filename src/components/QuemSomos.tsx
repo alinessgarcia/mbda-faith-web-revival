@@ -21,7 +21,7 @@ const QuemSomos = () => {
   >
     Quem Somos
   </h2>
-  <div className="h-1 w-full bg-[#004996] rounded-full"></div>
+  <div className="h-1 w-full bg-[#FFFFFF] rounded-full"></div>
 </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
