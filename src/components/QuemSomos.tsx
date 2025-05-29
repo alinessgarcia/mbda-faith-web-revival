@@ -2,13 +2,7 @@ import React from "react";
 
 const QuemSomos = () => {
   return (
-    <section 
-      id="quem-somos" 
-      className="section-padding relative flex items-center min-h-screen"
-      style={{
-        background: "linear-gradient(180deg, #003087 0%, #002966 50%, #001F4D 100%)",
-      }}
-    >
+    <section id="estudos-biblicos" className="section-padding bg-blue-50">
       {/* Decorative elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/10 via-transparent to-transparent"></div>
