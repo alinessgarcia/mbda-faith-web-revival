@@ -9,10 +9,11 @@ const Hero = () => {
 >
   <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-black/30"></div>
 
-  <div className="absolute inset-0 opacity-10">
-    <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white rounded-full blur-3xl animate-pulse"></div>
-    <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-amber-400 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }}></div>
-  </div>
+  <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-black/30"></div>
+<div className="absolute inset-0 opacity-10">
+  <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white rounded-full blur-3xl animate-pulse"></div>
+  <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-amber-400 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }}></div>
+</div>
 
   <div className="relative z-10 text-center p-4 max-w-5xl mx-auto">
     <h1 className="mb-0 animate-fade-in">
