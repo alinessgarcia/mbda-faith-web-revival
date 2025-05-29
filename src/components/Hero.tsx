@@ -4,10 +4,8 @@ import React from "react";
 const Hero = () => {
   return (
     <section
-  className="relative min-h-screen flex items-center justify-center overflow-hidden"
-  style={{
-    background: "linear-gradient(135deg, #003087 0%, #004DA8 50%, #0066CC 100%)",
-  }}
+  className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-r from-blue-800 to-blue-400"
+  
 >
   <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-black/30"></div>
 
