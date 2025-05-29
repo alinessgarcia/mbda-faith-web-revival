@@ -24,7 +24,7 @@ const sites = [
 
 const SitesSugestivos = () => {
   return (
-    <section id="sites-sugestivos" className="section-padding bg-blue-50">
+    <section id="sites-sugestivos" className="section-padding bg-blue-200">
       <div className="container mx-auto">
         <h2 className="section-title">Sites Sugestivos</h2>
         <p className="text-gray-700 max-w-3xl mx-auto mb-8 text-center">
