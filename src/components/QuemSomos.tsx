@@ -17,15 +17,15 @@ const QuemSomos = () => {
       </div>
       
       <div className="container mx-auto relative z-10">
-        <div className="text-center mb-12 animate-fade-in">
-          <h2
-  className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 drop-shadow-lg"
-  style={{ color: "#004996" }}
->
-  Quem Somos
-</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-secondary mx-auto rounded-full"></div>
-        </div>
+        <div className="flex flex-col items-center max-w-fit mx-auto">
+  <h2
+    className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 drop-shadow-lg"
+    style={{ color: "#004996" }}
+  >
+    Quem Somos
+  </h2>
+  <div className="h-1 w-full bg-[#004996] rounded-full"></div>
+</div>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1 animate-fade-in" style={{ animationDelay: "0.2s" }}>
