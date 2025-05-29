@@ -4,10 +4,8 @@ const QuemSomos = () => {
   return (
     <section 
       id="quem-somos" 
-      className="section-padding relative flex items-center min-h-screen"
-      style={{
-        background: "linear-gradient(135deg, #DBEAFE 100%)",
-      }}
+      className="section-padding relative flex items-center min-h-screen bg-blue-100"
+      
     >
       {/* Decorative elements */}
       <div className="absolute inset-0 opacity-5">
