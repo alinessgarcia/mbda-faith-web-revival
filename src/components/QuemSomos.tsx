@@ -17,7 +17,7 @@ const QuemSomos = () => {
       </div>
       
       <div className="container mx-auto relative z-10">
-        <div className="flex flex-col items-center max-w-fit mx-auto">
+        <div className="flex flex-col items-center max-w-fit mx-auto mb-12">
   <h2
     className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 drop-shadow-lg"
     style={{ color: "#004996" }}
