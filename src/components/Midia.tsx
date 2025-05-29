@@ -11,15 +11,15 @@ import Autoplay from "embla-carousel-autoplay";
 
 const imagens = [
   {
-    src: "https://imgur.com/bh6SMuG.jpg",
+    src: "/images/agenda.jpg",
     alt: "Momento especial da comunidade MBdA Reconciliação"
   },
   {
-    src: "https://imgur.com/b08x0ym.jpg", 
+    src: "/images/atos-dos-apostolos.jpg", 
     alt: "Celebração na igreja MBdA Reconciliação"
   },
   {
-    src: "https://imgur.com/RdEljQr.jpg",
+    src: "/images/casamento3.jpg",
     alt: "Atividade da igreja MBdA Reconciliação"
   },
   {
@@ -86,7 +86,7 @@ const Midia = () => {
                           <img
                             src={imagem.src}
                             alt={imagem.alt}
-                            className="w-full h-[400px] object-cover transition-all hover:scale-105 duration-500"
+                            className="w-full h-56 sm:h-72 md:h-80 lg:h-[400px] object-cover transition-all hover:scale-105 duration-500"
                             loading="lazy"
                           />
                         </div>
