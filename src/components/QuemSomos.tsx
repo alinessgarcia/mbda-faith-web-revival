@@ -13,17 +13,17 @@ const QuemSomos = () => {
 </div>
       <div className="container mx-auto relative z-10">
         <div className="flex flex-col items-center max-w-fit mx-auto mb-12">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 drop-shadow-lg text-gray-700">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 drop-shadow-lg text-blue">
             Quem Somos
           </h2>
-          <div className="h-1 w-full bg-gray-700 rounded-full"></div>
+          <div className="h-1 w-full bg-blue rounded-full"></div>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div
             className="order-2 lg:order-1 animate-fade-in"
             style={{ animationDelay: "0.2s" }}
           >
-            <div className="bg-black/70 backdrop-blur-sm rounded-2xl p-8 border border-white/20 shadow-2xl">
+            <div className="bg-black/28 backdrop-blur-sm rounded-2xl p-8 border border-white/20 shadow-2xl">
               <p className="text-white/95 mb-6 text-lg leading-relaxed">
                 Somos o Ministério Bíblico da Reconciliação, uma comunidade cristã dedicada ao amor, à fé e à transformação espiritual. Nosso ministério é um espaço de encontro, reflexão e crescimento, onde todos são bem-vindos a desenvolver um relacionamento mais profundo com Deus.
               </p>
