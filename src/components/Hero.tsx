@@ -27,7 +27,7 @@ const Hero = () => {
       <div className="relative z-40 text-center p-4 max-w-5xl mx-auto">
         <h1 className="mb-0 animate-fade-in leading-tight">
   <span className="text-2xl md:text-5xl lg:text-6xl font-bold text-blue-300 block drop-shadow-lg mb-0">
-    inistério Bíblico da
+    Ministério Bíblico da
   </span>
   <span className="text-6xl md:text-8xl lg:text-9xl font-bold text-white block mt-0 relative inline-block drop-shadow-xl tracking-tight">
     Reconciliação
