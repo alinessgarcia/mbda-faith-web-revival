@@ -4,7 +4,7 @@ const QuemSomos = () => {
   return (
     <section
       id="quem-somos"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-blue-100"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-blue-200"
     >
       {/* Elementos decorativos */}
 <div className="absolute inset-0 opacity-10">
@@ -55,7 +55,7 @@ const QuemSomos = () => {
             style={{ animationDelay: "0.4s" }}
           >
             <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-amber-400 to-secondary rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-300"></div>
+              <div className="absolute -inset-1 bg-black to-secondary rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-300"></div>
               <div className="relative bg-white/10 backdrop-blur-sm p-4 rounded-2xl border border-white/20">
   <a
     href="https://www.google.com/maps?q=igreja+mbda+reconciliacao"
