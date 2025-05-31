@@ -93,12 +93,13 @@ const DeclaracaoDeFe = () => {
   };
 
   return (
-    <section id="declaracao-de-fe" className="section-padding bg-blue-50">
+    <section id="declaracao-de-fe" className="section-padding bg-blue-50" pt-0>
       <div className="container mx-auto text-center pt-0">
+        <div className="mb-12 animate-fade-in"></div>
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 drop-shadow-lg text-blue-900 mt-0">
       Declaração de Fé
     </h2>
-        <p className="text-blue-900 max-w-3xl mx-auto mb-8">
+        <p className="text-blue-900 font-bold max-w-3xl mx-auto mb-8 text-center">
           Nossa fé é fundamentada nas Escrituras Sagradas. Confira nossa declaração
           de fé para conhecer os princípios que norteiam nossa comunidade.
         </p>
@@ -118,13 +119,13 @@ const DeclaracaoDeFe = () => {
                 {declaracoes[currentDeclaracao].content}
               </p>
               <div className="flex justify-between items-center">
-                <span className="text-sm text-gray-500">
+                <span className="text-sm text-blue-900">
                   {currentDeclaracao + 1} de {declaracoes.length}
                 </span>
                 <div className="flex space-x-4">
                   <button
                     onClick={prevDeclaracao}
-                    className="p-2 rounded-full bg-gray-200 hover:bg-gray-300"
+                    className="p-2 rounded-full bg-blue-900 hover:bg-blue-300"
                     aria-label="Item anterior"
                   >
                     <svg
@@ -135,41 +136,42 @@ const DeclaracaoDeFe = () => {
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M15 19l-7-7 7-7"
-                      />
-                    </svg>
-                  </button>
-                  <button
-                    onClick={nextDeclaracao}
-                    className="p-2 rounded-full bg-gray-200 hover:bg-gray-300"
-                    aria-label="Próximo item"
-                  >
-                    <svg
-                      className="w-5 h-5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 5l7 7-7 7"
-                      />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </DialogContent>
-        </Dialog>
-      </div>
-    </section>
-  );
+  strokeLinecap="round"
+  strokeLinejoin="round"
+  strokeWidth={2}
+  d="M15 19l-7-7 7-7"
+/>
+</svg>
+</button>
+
+<button
+  onClick={nextDeclaracao}
+  className="p-2 rounded-full bg-gray-200 hover:bg-gray-300"
+  aria-label="Próximo item"
+>
+  <svg
+    className="w-5 h-5"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M9 5l7 7-7 7"
+    />
+  </svg>
+</button>
+</div>
+</div>
+</div>
+</DialogContent>
+</Dialog>
+</div>
+</section>
+);
 };
 
 export default DeclaracaoDeFe;

@@ -5,14 +5,13 @@ import { Youtube, Radio } from "lucide-react";
 const Devocional = () => {
   return (
     <section id="devocional" className="section-padding bg-blue-50">
-      <div className="container mx-auto text-center">
+      <div className="container mx-auto text-center pt-0">
         <div className="mb-12 animate-fade-in">
-          <h2 className="section-title">Devocional</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full mb-6"></div>
-          <p className="text-gray-700 max-w-3xl mx-auto mb-4 text-lg">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 drop-shadow-lg text-blue-900 mt-0">
+      Devocional
+    </h2>
+          <p className="text-blue-900 font-bold max-w-3xl mx-auto mb-8 text-center">
             Reflexões e devocionais para fortalecer sua caminhada com Deus.
-          </p>
-          <p className="text-gray-700 max-w-3xl mx-auto mb-8">
             Medite nestas palavras diariamente e cresça em sua fé através dos nossos conteúdos.
           </p>
         </div>
