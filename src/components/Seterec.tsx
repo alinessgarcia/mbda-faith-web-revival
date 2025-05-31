@@ -5,17 +5,21 @@ import { Link } from "react-router-dom";
 const Seterec = () => {
   return (
     <section id="seterec" className="section-padding bg-blue-200">
-      <div className="container mx-auto">
-        <h2 className="section-title">S.E.T.E.R.E.C</h2>
+      <div className="container text-center mx-auto mp-0">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 drop-shadow-lg text-blue-900 mt-0">
+      S.E.T.E.R.E.C</h2>
+      <h2 className="text-1xl md:text-2xl lg:text-3xl font-bold mb-4 drop-shadow-lg text-blue-900 mt-0">
+      Seminário Teológico de Reconciliação
+    </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div>
-            <p className="text-gray-700 mb-4">
+            <p className="text-blue-900 font-bold mb-4">
               O S.E.T.E.R.E.C (Seminário Teológico de Reconciliação Cristã) é um
               programa de formação e capacitação para líderes cristãos. Baseado em
               princípios bíblicos sólidos, o seminário prepara discípulos para
               servir a igreja e a comunidade com excelência.
             </p>
-            <p className="text-gray-700 mb-8">
+            <p className="text-blue-900 font-bold mb-8">
               Oferecemos cursos em diversas áreas do ministério cristão, incluindo
               teologia, liderança, aconselhamento, missões e muito mais. Nossos
               professores são ministros experientes e qualificados, comprometidos
