@@ -94,9 +94,11 @@ const DeclaracaoDeFe = () => {
 
   return (
     <section id="declaracao-de-fe" className="section-padding bg-blue-50">
-      <div className="container mx-auto text-center">
-        <h2 className="section-title">Declaração de Fé</h2>
-        <p className="text-gray-700 max-w-3xl mx-auto mb-8">
+      <div className="container mx-auto text-center pt-0">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 drop-shadow-lg text-blue-900 mt-0">
+      Declaração de Fé
+    </h2>
+        <p className="text-blue-900 max-w-3xl mx-auto mb-8">
           Nossa fé é fundamentada nas Escrituras Sagradas. Confira nossa declaração
           de fé para conhecer os princípios que norteiam nossa comunidade.
         </p>
