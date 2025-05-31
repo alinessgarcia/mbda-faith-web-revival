@@ -13,10 +13,10 @@ const QuemSomos = () => {
 </div>
       <div className="container mx-auto relative z-10">
         <div className="flex flex-col items-center max-w-fit mx-auto mb-12">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 drop-shadow-lg text-gray-700">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 drop-shadow-lg text-blue-900">
             Quem Somos
           </h2>
-          <div className="h-1 w-full bg-gray-700 rounded-full"></div>
+          <div className="h-1 w-full bg-blue-900 rounded-full"></div>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div
