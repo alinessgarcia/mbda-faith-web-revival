@@ -7,6 +7,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Seterec from "./pages/Seterec";
 import NotFound from "./pages/NotFound";
+import CookieConsent from "./components/CookieConsent";
+
 
 const queryClient = new QueryClient();
 
@@ -15,11 +17,11 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      <CookieConsent />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/seterec" element={<Seterec />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
