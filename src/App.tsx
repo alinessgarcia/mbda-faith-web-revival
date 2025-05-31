@@ -9,7 +9,6 @@ import Seterec from "./pages/Seterec";
 import NotFound from "./pages/NotFound";
 import CookieConsent from "./components/CookieConsent";
 
-
 const queryClient = new QueryClient();
 
 const App = () => (
