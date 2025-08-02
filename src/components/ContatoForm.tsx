@@ -1,8 +1,15 @@
 
-import React, { useState } from "react";
+import { useState } from "react";
+import { Send, CheckCircle, AlertCircle } from "lucide-react";
+
+interface FormData {
+  nome: string;
+  email: string;
+  mensagem: string;
+}
 
 const ContatoForm = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     nome: "",
     email: "",
     mensagem: ""
