@@ -19,7 +19,7 @@ import ChatBox from "../components/ChatBox";
 const Index = () => {
   useEffect(() => {
     // SEO improvements
-    document.title = "MBdA Reconciliação - Igreja Cristã | Ministério Bíblico da Reconciliação";
+    document.title = "MBdaR - Ministério Bíblico da Reconciliação | Site Oficial";
     
     // Meta description
     const metaDescription = document.querySelector('meta[name="description"]') || document.createElement('meta');
