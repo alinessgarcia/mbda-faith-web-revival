@@ -57,7 +57,7 @@ const Index = () => {
     <div className="min-h-screen">
       <Navbar />
       <Hero />
-      <main>
+      <main className="mt-0">
         <QuemSomos />
         <DeclaracaoDeFe />
         <Devocional />
