@@ -2,7 +2,7 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden -mt-20 pt-20">
       {/* Imagem de fundo */}
       <div
         className="absolute inset-0 w-full h-full"
@@ -14,10 +14,8 @@ const Hero = () => {
           zIndex: 0,
         }}
       ></div>
-      {/* Overlay preto translúcido */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-transparent to-black/60 z-10"></div>
-      {/* Overlay azul escuro translúcido - Deploy funcionando! */}
-      <div className="absolute inset-0 bg-blue-900/60 z-20"></div>
+      {/* Overlay profissional */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-blue-900/70 to-slate-800/90 z-10"></div>
       {/* Círculos decorativos */}
       <div className="absolute inset-0 opacity-10 z-30">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white rounded-full blur-3xl animate-pulse"></div>
@@ -25,17 +23,17 @@ const Hero = () => {
       </div>
       {/* Conteúdo */}
       <div className="relative z-40 text-center p-4 max-w-5xl mx-auto">
-        <h1 className="mb-0 animate-fade-in leading-tight">
-          <span className="text-2xl md:text-5xl lg:text-6xl font-bold text-blue-300 block drop-shadow-lg mb-0">
-            Ministério Bíblico daaaaaaaaaa
+        <h1 className="mb-6 animate-fade-in leading-tight">
+          <span className="text-3xl md:text-5xl lg:text-7xl font-extrabold text-white block drop-shadow-2xl mb-2 tracking-tight">
+            Ministério Bíblico da
           </span>
           <span className="text-6xl md:text-8xl lg:text-9xl font-bold text-white block mt-0 relative inline-block drop-shadow-xl tracking-tight">
-            Reconciliaçãooooooooooooooooo
+            Reconciliação
             <span className="block h-1 bg-blue w-full mt-2 mx-auto rounded-full shadow-lg"></span>
           </span>
         </h1>
         <p className="text-xl md:text-2xl lg:text-3xl text-white/95 mb-8 max-w-4xl mx-auto mt-0 animate-fade-in leading-snug drop-shadow-md" style={{ animationDelay: "0.2s" }}>
-          Somos uma Igreja Cristã voltada ao ensino profundo da Palavra de Deus, comunhão familiar e edificação espiritual..........
+          Somos uma Igreja Cristã voltada ao ensino profundo da Palavra de Deus, comunhão familiar e edificação espiritual.
         </p>
 
         <div className="animate-fade-in" style={{ animationDelay: "0.4s" }}>
@@ -43,7 +41,7 @@ const Hero = () => {
             href="#quem-somos"
             className="inline-flex items-center bg-amber-400 hover:bg-amber-300 text-primary font-bold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-amber-300/50"
           >
-            Conheça Nossa Igreja..............
+            Conheça Nossa Igreja
             <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
             </svg>
