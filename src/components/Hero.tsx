@@ -2,7 +2,7 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden -mt-20 pt-20">
+    <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Imagem de fundo */}
       <div
         className="absolute inset-0 w-full h-full"
