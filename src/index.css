@@ -5,10 +5,27 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Reset para eliminar espaços em branco */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
+    
+    /* Cores personalizadas para glassmorphism */
+    --primary-blue: #0091eb;
+    --primary-blue-dark: #006bb3;
+    --primary-blue-light: #33a3ef;
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
@@ -44,7 +61,7 @@
     @apply bg-white text-foreground font-sans;
   }
 
-  section {
+  section:not(.hero-section) {
     scroll-margin-top: 120px;
     min-height: 100vh;
     display: flex;
@@ -112,6 +129,30 @@
   
   .glass-effect {
     @apply backdrop-blur-lg bg-white/90 shadow-md;
+  }
+  
+  /* Glassmorphism moderno */
+  .glass-blue {
+    background: rgba(0, 145, 235, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 145, 235, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 145, 235, 0.1);
+  }
+  
+  .glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+  
+  .gradient-blue {
+    background: linear-gradient(135deg, #0091eb 0%, #006bb3 100%);
+  }
+  
+  .gradient-blue-glass {
+    background: linear-gradient(135deg, rgba(0, 145, 235, 0.8) 0%, rgba(0, 107, 179, 0.9) 100%);
+    backdrop-filter: blur(10px);
   }
   
   .card {

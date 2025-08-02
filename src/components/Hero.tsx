@@ -2,7 +2,7 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section className="hero-section relative h-screen flex items-center justify-center overflow-hidden -mt-20 pt-20" style={{ zIndex: 9999 }}>
       {/* Imagem de fundo */}
       <div
         className="absolute inset-0 w-full h-full"
@@ -14,8 +14,8 @@ const Hero = () => {
           zIndex: 0,
         }}
       ></div>
-      {/* Overlay profissional */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-blue-900/70 to-slate-800/90 z-10"></div>
+      {/* Overlay glassmorphism com gradiente azul */}
+      <div className="absolute inset-0 gradient-blue-glass z-10"></div>
       {/* Círculos decorativos */}
       <div className="absolute inset-0 opacity-10 z-30">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white rounded-full blur-3xl animate-pulse"></div>
