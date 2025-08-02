@@ -154,6 +154,76 @@ body, html {
     background: linear-gradient(135deg, rgba(0, 145, 235, 0.8) 0%, rgba(0, 107, 179, 0.9) 100%);
     backdrop-filter: blur(10px);
   }
+
+  /* Hero específico */
+  .hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+  }
+
+  .hero-bg {
+    background-image: url('/images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .hero-decorative-circle-1 {
+    animation-delay: 0s;
+  }
+
+  .hero-decorative-circle-2 {
+    animation-delay: 1s;
+  }
+
+  .hero-content-delay-1 {
+    animation-delay: 0.2s;
+  }
+
+  .hero-content-delay-2 {
+    animation-delay: 0.4s;
+  }
+
+  /* Delays de animação reutilizáveis */
+  .animate-delay-100 {
+    animation-delay: 0.1s;
+  }
+
+  .animate-delay-200 {
+    animation-delay: 0.2s;
+  }
+
+  .animate-delay-300 {
+    animation-delay: 0.3s;
+  }
+
+  .animate-delay-400 {
+    animation-delay: 0.4s;
+  }
+
+  .animate-delay-500 {
+    animation-delay: 0.5s;
+  }
+
+  /* Componentes específicos */
+  .section-container {
+    @apply relative min-h-screen flex items-center justify-center overflow-hidden;
+  }
+
+  .decorative-circles {
+    @apply absolute inset-0 opacity-10;
+  }
+
+  .decorative-circle-white {
+    @apply absolute top-1/4 left-1/4 w-96 h-96 bg-white rounded-full blur-3xl animate-pulse;
+  }
+
+  .decorative-circle-gray {
+    @apply absolute bottom-1/4 right-1/4 w-64 h-64 bg-gray-400 rounded-full blur-3xl animate-pulse;
+    animation-delay: 1s;
+  }
   
   .card {
     @apply rounded-lg shadow-md overflow-hidden bg-white transition-all hover:shadow-lg;

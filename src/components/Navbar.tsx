@@ -1,44 +1,33 @@
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { Menu, X } from "lucide-react";
+import { useScrollTo } from "../hooks/useScrollTo";
+import { NAVIGATION_ITEMS } from "../constants";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { scrollToTop, scrollToSection } = useScrollTo();
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  const toggleMenu = () => setIsOpen(!isOpen);
+  const closeMenu = () => setIsOpen(false);
 
-  const closeMenu = () => {
-    setIsOpen(false);
-  };
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
+  const handleScrollToTop = () => {
+    scrollToTop();
     closeMenu();
   };
 
-  const scrollToSection = (sectionId: string) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      const offsetPosition = section.offsetTop - 100;
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
-      closeMenu();
-    }
+  const handleScrollToSection = (sectionId: string) => {
+    scrollToSection(sectionId);
+    closeMenu();
   };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 glass-blue py-2">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex justify-between items-center">
-          <div 
-            className="flex items-center cursor-pointer" 
+          <div
+            className="flex items-center cursor-pointer"
             onClick={scrollToTop}
           >
             <img
@@ -81,9 +70,9 @@ const Navbar = () => {
             <button onClick={() => scrollToSection("sites-sugestivos")} className="nav-link">
               Sites
             </button>
-            <a 
-              href="https://blogdambdareconciliacao.lovable.app/" 
-              target="_blank" 
+            <a
+              href="https://blogdambdareconciliacao.lovable.app/"
+              target="_blank"
               rel="noopener noreferrer"
               className="nav-link"
             >
@@ -92,9 +81,9 @@ const Navbar = () => {
             <button onClick={() => scrollToSection("contato")} className="nav-link">
               Contato
             </button>
-            <a 
-              href="https://www.ipb.org.br/projetos-radio-ipb.php" 
-              target="_blank" 
+            <a
+              href="https://www.ipb.org.br/projetos-radio-ipb.php"
+              target="_blank"
               rel="noopener noreferrer"
               className="nav-link flex items-center"
             >
@@ -199,9 +188,9 @@ const Navbar = () => {
               >
                 Sites
               </button>
-              <a 
-                href="https://blogdambdareconciliacao.lovable.app/" 
-                target="_blank" 
+              <a
+                href="https://blogdambdareconciliacao.lovable.app/"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="nav-link"
                 onClick={closeMenu}
@@ -214,9 +203,9 @@ const Navbar = () => {
               >
                 Contato
               </button>
-              <a 
-                href="https://www.ipb.org.br/projetos-radio-ipb.php" 
-                target="_blank" 
+              <a
+                href="https://www.ipb.org.br/projetos-radio-ipb.php"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="nav-link flex items-center"
                 onClick={closeMenu}

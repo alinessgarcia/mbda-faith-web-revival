@@ -1,16 +1,11 @@
 
-import React from "react";
 import { Link } from "react-router-dom";
+import { useScrollTo } from "../hooks/useScrollTo";
+import { CONTACT_INFO, SOCIAL_LINKS } from "../constants";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-  };
+  const { scrollToTop } = useScrollTo();
 
   return (
     <footer className="bg-primary text-white">
