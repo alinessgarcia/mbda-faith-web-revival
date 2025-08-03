@@ -350,6 +350,31 @@ html {
 
   .text-yellow-title {
     color: #ffb700;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+  }
+
+  .text-yellow-title:hover {
+    color: #009dff;
+    transform: translateY(2px);
+  }
+
+  .text-yellow-title::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #009dff;
+    transition: width 0.3s ease;
+  }
+
+  .text-yellow-title:hover::after {
+    width: 95%;
   }
 
   .bg-yellow-custom {
