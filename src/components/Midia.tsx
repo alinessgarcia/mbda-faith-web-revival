@@ -50,13 +50,17 @@ const Midia = () => {
   );
 
   return (
-    <section id="midia" className="section-padding bg-blue-50">
+    <section id="midia" className="section-padding bg-white">
       <div className="container mx-auto">
-        <div className="text-center mb-12 animate-fade-in">
-          <h2 className="section-title">Mídia</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full mb-6"></div>
-          <p className="text-gray-700 max-w-3xl mx-auto text-lg">
-            Confira fotos e vídeos dos momentos especiais em nossa igreja.
+        {/* Título com glassmorphism */}
+        <div className="text-center mb-16">
+          <div className="glass-card-modern inline-block px-8 py-4 mb-6">
+            <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold text-yellow-custom drop-shadow-lg">
+              📸 Mídia
+            </h2>
+          </div>
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+            Confira fotos e vídeos dos momentos especiais em nossa igreja
           </p>
         </div>
         

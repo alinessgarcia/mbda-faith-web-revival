@@ -60,13 +60,19 @@ const ContatoForm = () => {
   };
 
   return (
-    <section id="contato" className="section-padding bg-blue-50">
+    <section id="contato" className="section-padding bg-white">
       <div className="container mx-auto">
-        <h2 className="section-title">Contato</h2>
-        <p className="text-gray-700 max-w-3xl mx-auto mb-8 text-center">
-          Entre em contato conosco para mais informações ou para compartilhar
-          sua mensagem. Estamos aqui para ajudar!
-        </p>
+        {/* Título com glassmorphism */}
+        <div className="text-center mb-16">
+          <div className="glass-card-modern inline-block px-8 py-4 mb-6">
+            <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold text-yellow-custom drop-shadow-lg">
+              📞 Contato
+            </h2>
+          </div>
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+            Entre em contato conosco para mais informações ou compartilhar sua mensagem
+          </p>
+        </div>
         
         <div className="max-w-2xl mx-auto bg-gray-50 p-6 md:p-8 rounded-lg shadow-sm">
           {submitSuccess && (

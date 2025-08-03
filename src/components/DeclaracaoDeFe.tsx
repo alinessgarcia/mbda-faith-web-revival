@@ -1,6 +1,7 @@
 
-import React, { useState } from "react";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { useState } from "react";
+import { BookOpen, ChevronLeft, ChevronRight } from "lucide-react";
+import { Modal } from "./ui/Modal";
 
 const declaracoes = [
   {
@@ -81,7 +82,7 @@ const declaracoes = [
 ];
 
 const DeclaracaoDeFe = () => {
-  const [open, setOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentDeclaracao, setCurrentDeclaracao] = useState(0);
 
   const nextDeclaracao = () => {
@@ -93,85 +94,75 @@ const DeclaracaoDeFe = () => {
   };
 
   return (
-    <section id="declaracao-de-fe" className="section-padding bg-blue-50" pt-0>
-      <div className="container mx-auto text-center pt-0">
-        <div className="mb-12 animate-fade-in"></div>
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 drop-shadow-lg text-blue-900 mt-0">
-      Declaração de Fé
-    </h2>
-        <p className="text-blue-900 font-bold max-w-3xl mx-auto mb-8 text-center">
-          Nossa fé é fundamentada nas Escrituras Sagradas. Confira nossa declaração
-          de fé para conhecer os princípios que norteiam nossa comunidade.
-        </p>
-        <button onClick={() => setOpen(true)} className="btn-primary">
-          Ver Declaração de Fé
-        </button>
+    <>
+      <section id="declaracao-de-fe" className="section-padding bg-white">
+        <div className="container mx-auto">
+          {/* Título */}
+          <div className="text-center mb-16">
+            <div className="glass-card-modern inline-block px-8 py-4 mb-6">
+              <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold text-yellow-custom drop-shadow-lg">
+                📖 Declaração de Fé
+              </h2>
+            </div>
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto mb-8">
+              Nossa fé é fundamentada nas Escrituras Sagradas. Confira nossa declaração
+              de fé para conhecer os princípios que norteiam nossa comunidade.
+            </p>
+            
+            {/* Botão glassmorphism */}
+            <button 
+              onClick={() => setIsModalOpen(true)} 
+              className="glass-card-modern px-8 py-4 font-bold text-blue-600 hover:text-blue-700 transition-colors inline-flex items-center"
+            >
+              <BookOpen className="w-6 h-6 mr-2" />
+              Ver Declaração de Fé
+            </button>
+          </div>
+        </div>
+      </section>
 
-        <Dialog open={open} onOpenChange={setOpen}>
-          <DialogContent className="max-w-3xl max-h-[80vh] overflow-y-auto">
-            <DialogHeader>
-              <DialogTitle className="text-xl font-bold text-primary">
-                {declaracoes[currentDeclaracao].title}
-              </DialogTitle>
-            </DialogHeader>
-            <div className="p-6">
-              <p className="text-gray-700 mb-6">
-                {declaracoes[currentDeclaracao].content}
-              </p>
-              <div className="flex justify-between items-center">
-                <span className="text-sm text-blue-900">
-                  {currentDeclaracao + 1} de {declaracoes.length}
-                </span>
-                <div className="flex space-x-4">
-                  <button
-                    onClick={prevDeclaracao}
-                    className="p-2 rounded-full bg-blue-900 hover:bg-blue-300"
-                    aria-label="Item anterior"
-                  >
-                    <svg
-                      className="w-5 h-5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-  strokeLinecap="round"
-  strokeLinejoin="round"
-  strokeWidth={2}
-  d="M15 19l-7-7 7-7"
-/>
-</svg>
-</button>
-
-<button
-  onClick={nextDeclaracao}
-  className="p-2 rounded-full bg-gray-200 hover:bg-gray-300"
-  aria-label="Próximo item"
->
-  <svg
-    className="w-5 h-5"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2}
-      d="M9 5l7 7-7 7"
-    />
-  </svg>
-</button>
-</div>
-</div>
-</div>
-</DialogContent>
-</Dialog>
-</div>
-</section>
-);
+      {/* Modal glassmorphism */}
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title={declaracoes[currentDeclaracao].title}
+        size="xl"
+      >
+        <div className="space-y-6 text-white">
+          <div className="bg-white/10 rounded-lg p-6">
+            <p className="text-white/90 leading-relaxed text-lg">
+              {declaracoes[currentDeclaracao].content}
+            </p>
+          </div>
+          
+          {/* Navegação */}
+          <div className="flex justify-between items-center pt-6 border-t border-white/20">
+            <span className="text-white/80">
+              {currentDeclaracao + 1} de {declaracoes.length}
+            </span>
+            
+            <div className="flex space-x-4">
+              <button
+                onClick={prevDeclaracao}
+                className="glass-card-agenda p-3 rounded-full hover:bg-white/20 transition-colors"
+                aria-label="Item anterior"
+              >
+                <ChevronLeft className="w-5 h-5 text-white" />
+              </button>
+              
+              <button
+                onClick={nextDeclaracao}
+                className="glass-card-agenda p-3 rounded-full hover:bg-white/20 transition-colors"
+                aria-label="Próximo item"
+              >
+                <ChevronRight className="w-5 h-5 text-white" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </Modal>
+    </>
+  );
 };
 
 export default DeclaracaoDeFe;

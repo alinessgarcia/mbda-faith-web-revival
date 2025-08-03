@@ -1,69 +1,80 @@
 
-import React from "react";
+import { ExternalLink, Globe, BookOpen } from "lucide-react";
 
 const sites = [
   {
     id: 1,
     name: "Livros - CPAD",
     description: "Conteúdos e livros cristãos para crescimento espiritual",
-    url: "https://www.cpad.com.br/Livros"
+    url: "https://www.cpad.com.br/Livros",
+    icon: BookOpen
   },
   {
     id: 2,
     name: "Bíblia Online",
     description: "Leitura e estudo da Bíblia em várias traduções",
-    url: "https://www.bibliaonline.com.br"
+    url: "https://www.bibliaonline.com.br",
+    icon: BookOpen
   },
   {
     id: 3,
     name: "Capacitando Líderes e Igrejas",
     description: "Materiais para líderes e professores da escola dominical",
-    url: "https://www.youtube.com/watch?v=tcAkbXRVgH0"
+    url: "https://www.youtube.com/watch?v=tcAkbXRVgH0",
+    icon: Globe
   }
 ];
 
 const SitesSugestivos = () => {
   return (
-    <section id="sites-sugestivos" className="section-padding bg-blue-200">
-      <div className="container mx-auto">
-        <h2 className="section-title">Sites Sugestivos</h2>
-        <p className="text-gray-700 max-w-3xl mx-auto mb-8 text-center">
-          Confira alguns sites que recomendamos para crescimento espiritual e
-          informação.
-        </p>
+    <section id="sites-sugestivos" className="section-padding bg-white relative overflow-hidden">
+      {/* Background decorativo glassmorphism */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-10 left-10 w-64 h-64 bg-blue-400 rounded-full blur-3xl animate-pulse shape-blob" />
+        <div className="absolute bottom-10 right-10 w-48 h-48 bg-purple-400 rounded-full blur-3xl animate-pulse shape-blob animate-delay-300" />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-green-400 rounded-full blur-3xl animate-pulse shape-blob animate-delay-500" />
+      </div>
+
+      <div className="container mx-auto relative z-10">
+        {/* Título */}
+        <div className="text-center mb-16">
+          <div className="glass-card-modern inline-block px-8 py-4 mb-6">
+            <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold text-yellow-custom drop-shadow-lg">
+              🌐 Sites Sugestivos
+            </h2>
+          </div>
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+            Confira alguns sites que recomendamos para crescimento espiritual e informação
+          </p>
+        </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {sites.map((site) => (
-            <a
-              key={site.id}
-              href={site.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow border border-gray-100"
-            >
-              <h3 className="text-lg font-bold text-primary mb-2">{site.name}</h3>
-              <p className="text-gray-600 mb-4">{site.description}</p>
-              <div className="flex justify-end">
-                <span className="text-secondary inline-flex items-center text-sm font-medium">
-                  Visitar Site
-                  <svg
-                    className="w-4 h-4 ml-1"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </span>
-              </div>
-            </a>
-          ))}
+        {/* Cards glassmorphism */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          {sites.map((site, index) => {
+            const IconComponent = site.icon;
+            return (
+              <a
+                key={site.id}
+                href={site.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="glass-card-modern p-8 group animate-fade-in"
+                style={{ animationDelay: `${index * 0.2}s` }}
+              >
+                <div className="flex items-center mb-4">
+                  <IconComponent className="w-8 h-8 text-blue-600 mr-3" />
+                  <h3 className="text-xl font-bold text-gray-800">{site.name}</h3>
+                </div>
+                
+                <p className="text-gray-700 mb-6 leading-relaxed">{site.description}</p>
+                
+                <div className="flex items-center justify-end text-blue-600 font-medium group-hover:text-blue-700 transition-colors">
+                  <span className="mr-2">Visitar Site</span>
+                  <ExternalLink className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </a>
+            );
+          })}
         </div>
       </div>
     </section>
