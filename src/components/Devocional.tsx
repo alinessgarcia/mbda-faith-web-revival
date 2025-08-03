@@ -4,15 +4,17 @@ import { Youtube, Radio } from "lucide-react";
 
 const Devocional = () => {
   return (
-    <section id="devocional" className="section-padding bg-blue-50">
+    <section id="devocional" className="section-padding bg-white">
       <div className="container mx-auto text-center pt-0">
-        <div className="mb-12 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 drop-shadow-lg text-blue-900 mt-0">
-      Devocional
-    </h2>
-          <p className="text-blue-900 font-bold max-w-3xl mx-auto mb-8 text-center">
-            Reflexões e devocionais para fortalecer sua caminhada com Deus.
-            Medite nestas palavras diariamente e cresça em sua fé através dos nossos conteúdos.
+        {/* Título com glassmorphism */}
+        <div className="text-center mb-16">
+          <div className="glass-card-modern inline-block px-8 py-4 mb-6">
+            <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold text-yellow-custom drop-shadow-lg">
+              🙏 Devocional
+            </h2>
+          </div>
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+            Reflexões e devocionais para fortalecer sua caminhada com Deus
           </p>
         </div>
         

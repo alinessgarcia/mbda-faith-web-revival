@@ -159,7 +159,10 @@ const Navbar = () => {
                 Estudos Bíblicos
               </button>
               <button
-                onClick={() => scrollToSection("seterec")}
+                onClick={() => {
+                  scrollToSection("seterec");
+                  closeMenu();
+                }}
                 className="nav-link"
               >
                 S.E.T.E.R.E.C

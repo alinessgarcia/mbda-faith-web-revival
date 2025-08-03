@@ -37,15 +37,20 @@ const EstudosBiblicos = () => {
   };
 
   return (
-    <section id="estudos-biblicos" className="section-padding bg-blue-200">
+    <section id="estudos-biblicos" className="section-padding bg-white">
       <div className="container mx-auto text-center pt-0">
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 drop-shadow-lg text-blue-900">
-          Estudos Bíblicos
-          </h2>
-        <p className="text-blue-900 font-bold max-w-3xl mx-auto mb-8 text-center">
-          Aprofunde seu conhecimento na Palavra de Deus através de nossos estudos
-          bíblicos. Materiais preparados com cuidado para edificação espiritual.
-        </p>
+        {/* Título */}
+        <div className="text-center mb-16">
+          <div className="glass-card-modern inline-block px-8 py-4 mb-6">
+            <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold text-yellow-custom drop-shadow-lg">
+              📚 Estudos Bíblicos
+            </h2>
+          </div>
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+            Aprofunde seu conhecimento na Palavra de Deus através de nossos estudos
+            bíblicos preparados com cuidado para edificação espiritual
+          </p>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {estudos.map((estudo) => (
             <div

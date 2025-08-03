@@ -26,7 +26,7 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
 
 // Informações de contato
 export const CONTACT_INFO: ContactInfo = {
-  address: "Guarujá, São Paulo",
+  address: "Av. Osvaldo Aranha, nº790 - Jardim Maravilha (Vicente de Carvalho) - Guarujá/SP - CEP: 11470-100",
   phone: "(13) 99999-9999",
   email: "contato@mbdareconciliacao.com.br",
   whatsapp: "5513999999999"
@@ -40,7 +40,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
     icon: "facebook"
   },
   {
-    platform: "Instagram", 
+    platform: "Instagram",
     url: "https://instagram.com/mbdareconciliacao",
     icon: "instagram"
   },
@@ -60,12 +60,57 @@ export const THEME_COLORS = {
   },
   secondary: {
     amber: '#f59e0b',
-    amberLight: '#fbbf24'
+    amberLight: '#fbbf24',
+    yellow: '#eab308', // Para títulos como "Agenda Semanal"
+    lime: '#84cc16'    // Verde limão para destaques
   },
   neutral: {
     white: '#ffffff',
     gray100: '#f3f4f6',
     gray800: '#1f2937',
     gray900: '#111827'
+  },
+  // Cores por dia da semana
+  schedule: {
+    sunday: '#f97316',    // Laranja
+    wednesday: '#eab308', // Amarelo
+    friday: '#8b5cf6',    // Roxo
+    seterec: '#06b6d4'    // Ciano
   }
 } as const;
+
+// Agenda da igreja
+export const CHURCH_SCHEDULE = [
+  {
+    day: 'Domingo',
+    color: THEME_COLORS.schedule.sunday,
+    activities: [
+      { time: '08h', activity: 'Oração', type: 'Presencial', icon: '🙏' },
+      { time: '09h', activity: 'Escola Bíblica', type: 'Presencial', icon: '📚' },
+      { time: '11h', activity: 'Ministração da Palavra', type: 'Presencial', icon: '✝️' },
+    ],
+    special: '1º Domingo do mês: Ceia do Senhor 🕊️'
+  },
+  {
+    day: 'Quarta-feira',
+    color: THEME_COLORS.schedule.wednesday,
+    activities: [
+      { time: '20h', activity: 'Oração e Palavra', type: 'Presencial', icon: '🙏' }
+    ]
+  },
+  {
+    day: 'Sexta-feira',
+    color: THEME_COLORS.schedule.friday,
+    activities: [
+      { time: '20h', activity: 'Oração e Palavra', type: 'Online (quando anunciado)', icon: '💻' }
+    ],
+    special: 'Última sexta do mês: Culto da Família 👨‍👩‍👧‍👦'
+  },
+  {
+    day: 'Terças e Quintas',
+    color: THEME_COLORS.schedule.seterec,
+    activities: [
+      { time: '19h', activity: 'S.E.T.E.R.E.C', type: 'Seminário Teológico', icon: '🎓' }
+    ]
+  }
+];

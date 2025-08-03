@@ -2,7 +2,7 @@ const QuemSomos = () => {
   return (
     <section
       id="quem-somos"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-blue-50"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white"
     >
       {/* Elementos decorativos */}
       <div className="absolute inset-0 opacity-10">
@@ -10,10 +10,14 @@ const QuemSomos = () => {
         <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-gray-400 rounded-full blur-3xl animate-pulse hero-decorative-circle-2" />
       </div>
       <div className="container mx-auto relative z-10">
-        <div className="flex flex-col items-center max-w-fit mx-auto mb-12">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 drop-shadow-lg text-blue-900">
-            Quem Somos
-          </h2>
+        {/* Título com glassmorphism */}
+        <div className="text-center mb-16">
+          <div className="glass-card-modern inline-block px-8 py-4 mb-6">
+            <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold text-yellow-custom drop-shadow-lg">
+              ⛪ Quem Somos
+            </h2>
+          </div>
+         
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div

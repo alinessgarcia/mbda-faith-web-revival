@@ -1,96 +1,83 @@
 
-import React from "react";
-import { Clock, Calendar } from "lucide-react";
-
-const eventos = [
-  {
-    id: 1,
-    title: "Oração",
-    day: "Domingo",
-    time: "08:00",
-    location: "Presencial",
-    description: "Momento dedicado à oração"
-  },
-  {
-    id: 2,
-    title: "Escola Bíblica",
-    day: "Domingo",
-    time: "09:00",
-    location: "Presencial",
-    description: "Estudo e aprendizado da Palavra de Deus"
-  },
-  {
-    id: 3,
-    title: "Ministração da Palavra",
-    day: "Domingo",
-    time: "11:00",
-    location: "Presencial",
-    description: "Culto principal de pregação"
-  },
-  {
-    id: 4,
-    title: "Oração e Palavra",
-    day: "Quarta-feira",
-    time: "20:00",
-    location: "Presencial",
-    description: "Culto de meio de semana"
-  },
-  {
-    id: 5,
-    title: "Oração e Palavra",
-    day: "Sexta-feira",
-    time: "20:00",
-    location: "Online",
-    description: "Culto online de encerramento da semana"
-  }
-];
+import { Calendar, Clock, MapPin, Users } from "lucide-react";
+import { CHURCH_SCHEDULE, CONTACT_INFO } from "../constants";
 
 const Agenda = () => {
   return (
-    <section id="agenda" className="section-padding bg-blue-50">
-      <div className="container mx-auto">
-        <h2 className="section-title">Agenda da Igreja</h2>
-        <p className="text-gray-700 max-w-3xl mx-auto mb-8 text-center">
-          Confira nossa programação semanal e junte-se a nós nos cultos e atividades.
-        </p>
-        <div className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-1 gap-4">
-            {eventos.map((evento) => (
-              <div
-                key={evento.id}
-                className="bg-gray-50 rounded-lg shadow-sm p-4 hover:shadow-md transition-shadow"
-              >
-                <div className="flex flex-wrap justify-between items-center">
-                  <div>
-                    <h3 className="text-lg font-bold text-primary">{evento.title}</h3>
-                    <p className="text-gray-600">{evento.description}</p>
-                  </div>
-                  <div className="flex items-center mt-2 sm:mt-0">
-                    <div className="bg-primary/10 text-primary rounded-md px-3 py-1 text-sm font-medium mr-2 flex items-center">
-                      <Calendar className="w-4 h-4 mr-1" />
-                      {evento.day}
-                    </div>
-                    <div className="bg-secondary/10 text-secondary rounded-md px-3 py-1 text-sm font-medium flex items-center">
-                      <Clock className="w-4 h-4 mr-1" />
-                      {evento.time}h
-                    </div>
-                  </div>
-                </div>
-                <div className="mt-2">
-                  <span className={`text-sm font-medium px-2 py-1 rounded ${evento.location === "Online" ? "bg-blue-100 text-blue-700" : "bg-green-100 text-green-700"}`}>
-                    {evento.location}
-                  </span>
-                </div>
-              </div>
-            ))}
+    <section id="agenda" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
+      {/* Background decorativo menor */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-1/4 left-1/4 w-48 h-48 bg-blue-400 rounded-full blur-3xl animate-pulse shape-blob" />
+        <div className="absolute bottom-1/4 right-1/4 w-32 h-32 bg-yellow-400 rounded-full blur-3xl animate-pulse shape-blob animate-delay-300" />
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        {/* Título com glassmorphism */}
+        <div className="text-center mb-16">
+          <div className="glass-card-modern inline-block px-8 py-4 mb-6">
+            <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold text-yellow-custom drop-shadow-lg">
+              📅 Agenda Semanal
+            </h2>
           </div>
-          <p className="text-center mt-8 text-gray-600 italic">
-            Venha participar de nossas atividades! Todos são bem-vindos.
-          </p>
-          <p className="text-center mt-4 text-primary font-medium">
-            Rua: Oswaldo Aranha, 790 - Jd. Maravilha - Vic. Carvalho - Guarujá
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+            Nossa rotina de fé: momentos de oração, ensino e comunhão
           </p>
         </div>
+
+        {/* Grid de cards da agenda */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {CHURCH_SCHEDULE.map((schedule, index) => (
+            <div
+              key={schedule.day}
+              className="glass-card-agenda p-6 animate-fade-in"
+              style={{
+                backgroundImage: `linear-gradient(135deg, ${schedule.color}20 0%, ${schedule.color}10 100%)`
+              }}
+              
+            >
+              {/* Cabeçalho do dia */}
+              <div className="flex items-center mb-4">
+                <div 
+                  className="w-4 h-4 rounded-full mr-3"
+                  style={{ backgroundColor: schedule.color }}
+                />
+                <h3 className="text-2xl font-bold text-gray-800">
+                  {schedule.day}
+                </h3>
+              </div>
+
+              {/* Atividades */}
+              <div className="space-y-3 mb-4">
+                {schedule.activities.map((activity, actIndex) => (
+                  <div key={actIndex} className="flex items-center justify-between bg-white/30 rounded-lg p-3">
+                    <div className="flex items-center">
+                      <span className="text-2xl mr-3">{activity.icon}</span>
+                      <div>
+                        <p className="font-semibold text-gray-800">{activity.activity}</p>
+                        <p className="text-sm text-gray-600">{activity.type}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center bg-lime text-white px-3 py-1 rounded-full text-sm font-bold">
+                      <Clock className="w-4 h-4 mr-1" />
+                      {activity.time}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Informação especial */}
+              {schedule.special && (
+                <div className="bg-white/40 rounded-lg p-3 border-l-4" style={{ borderColor: schedule.color }}>
+                  <p className="text-sm font-medium text-gray-700">
+                    ✨ {schedule.special}
+                  </p>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+
+
       </div>
     </section>
   );

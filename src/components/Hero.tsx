@@ -2,21 +2,9 @@ import { ChevronDown } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="hero-section flex items-center justify-center overflow-hidden mt-16">
-      {/* Imagem de fundo */}
-      <div className="absolute inset-0 w-full h-full hero-bg z-0" />
-
-      {/* Overlay glassmorphism com gradiente azul */}
-      <div className="absolute inset-0 gradient-blue-glass z-10" />
-
-      {/* Círculos decorativos */}
-      <div className="absolute inset-0 opacity-10 z-30">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white rounded-full blur-3xl animate-pulse hero-decorative-circle-1" />
-        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-amber-400 rounded-full blur-3xl animate-pulse hero-decorative-circle-2" />
-      </div>
-
+    <section className="hero-section hero-bg">
       {/* Conteúdo */}
-      <div className="relative z-40 text-center max-w-5xl mx-auto">
+      <div className="relative z-10 text-center max-w-5xl mx-auto px-4">
         <h1 className="mb-6 animate-fade-in leading-tight">
           <span className="text-3xl md:text-5xl lg:text-7xl font-extrabold text-white block drop-shadow-2xl mb-2 tracking-tight">
             Ministério Bíblico da
