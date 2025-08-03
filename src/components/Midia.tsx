@@ -54,7 +54,7 @@ const Midia = () => {
       <div className="container mx-auto">
         {/* Título com glassmorphism */}
         <div className="text-center mb-16">
-          <div className="glass-card-modern inline-block px-8 py-4 mb-6">
+          <div className="glass-card-modern inline-block px-8 py-4 mb-6 bg-white/90">
             <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold text-yellow-title drop-shadow-lg">
               📸 Mídia
             </h2>

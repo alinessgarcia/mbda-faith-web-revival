@@ -27,7 +27,7 @@ const Seterec = () => {
 
             {/* Texto centralizado */}
             <div className="mb-12">
-              <div className="glass-card-modern inline-block p-8 max-w-4xl">
+              <div className="glass-card-modern inline-block p-8 max-w-4xl bg-white/90">
                 <div className="flex items-center justify-center mb-4">
                   <GraduationCap className="w-8 h-8 text-blue-600 mr-3" />
                   <h3 className="text-2xl font-bold text-gray-800">Formação Teológica</h3>
