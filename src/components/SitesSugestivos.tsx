@@ -57,7 +57,7 @@ const SitesSugestivos = () => {
                 href={site.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="glass-card-modern p-8 group animate-fade-in"
+                className="glass-card-modern p-8 group animate-fade-in bg-white/90"
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
                 <div className="flex items-center mb-4">
