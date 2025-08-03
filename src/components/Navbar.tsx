@@ -35,7 +35,7 @@ const Navbar = () => {
               alt="MBdA Reconciliação Logo"
               className="h-10 md:h-12"
             />
-            <span className="ml-2 text-primary font-bold font-roboto text-lg md:text-xl">MBdaR</span>
+            <span className="ml-2 text-white font-bold font-roboto text-lg md:text-xl transition-all duration-300 hover:text-yellow-custom drop-shadow-sm">MBdaR</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -126,7 +126,7 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden mt-4 glass-effect rounded-lg p-4 animate-fade-in">
+          <div className="md:hidden mt-4 glass-blue rounded-lg p-4 animate-fade-in">
             <div className="flex flex-col space-y-4">
               <button
                 onClick={scrollToTop}

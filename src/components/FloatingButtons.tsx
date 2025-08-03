@@ -26,7 +26,7 @@ const FloatingButtons = () => {
 
       {/* Location Button */}
       <a
-        href="https://maps.google.com/?q=igreja+mbda+reconciliacao"
+        href="https://share.google/EHGmpIZA2tg4CKlzP"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed left-4 md:left-6 bottom-4 z-40 bg-primary text-white p-3 rounded-full shadow-lg hover:bg-primary/90 transition-all"

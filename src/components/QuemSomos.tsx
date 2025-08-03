@@ -2,7 +2,7 @@ const QuemSomos = () => {
   return (
     <section
       id="quem-somos"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-light-blue"
     >
       {/* Elementos decorativos */}
       <div className="absolute inset-0 opacity-10">
@@ -12,12 +12,12 @@ const QuemSomos = () => {
       <div className="container mx-auto relative z-10">
         {/* Título com glassmorphism */}
         <div className="text-center mb-16">
-          <div className="glass-card-modern inline-block px-8 py-4 mb-6">
-            <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold text-yellow-custom drop-shadow-lg">
+          
+            <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold text-yellow-title drop-shadow-lg">
               ⛪ Quem Somos
             </h2>
-          </div>
-         
+          
+
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div
@@ -57,9 +57,9 @@ const QuemSomos = () => {
           >
             <div className="relative group">
               <div className="absolute -inset-1 bg-black to-secondary rounded-3xl blur opacity-30 group-hover:opacity-50 transition duration-300"></div>
-              <div className="relative bg-white/10 backdrop-blur-sm p-8 rounded-3xl border border-white/20">
+              
                 <a
-                  href="https://www.google.com/maps?q=igreja+mbda+reconciliacao"
+                  href="https://share.google/EHGmpIZA2tg4CKlzP"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Abrir localização no Google Maps"
@@ -76,7 +76,7 @@ const QuemSomos = () => {
             </div>
           </div>
         </div>
-      </div>
+      
     </section>
   );
 };

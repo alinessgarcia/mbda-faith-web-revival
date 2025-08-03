@@ -4,16 +4,16 @@ import { Youtube, Radio } from "lucide-react";
 
 const Devocional = () => {
   return (
-    <section id="devocional" className="section-padding bg-white">
+    <section id="devocional" className="section-padding bg-light-blue">
       <div className="container mx-auto text-center pt-0">
         {/* Título com glassmorphism */}
         <div className="text-center mb-16">
-          <div className="glass-card-modern inline-block px-8 py-4 mb-6">
-            <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold text-yellow-custom drop-shadow-lg">
+          
+          <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold text-yellow-title drop-shadow-lg mb-4">
               🙏 Devocional
             </h2>
-          </div>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+          
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto mt-4">
             Reflexões e devocionais para fortalecer sua caminhada com Deus
           </p>
         </div>

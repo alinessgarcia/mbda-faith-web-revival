@@ -76,7 +76,7 @@ html {
   }
 }
 
-@layer components {}
+@layer components {
   .section-padding {
     @apply py-20 px-4 md:px-8 lg:px-16;
   }
@@ -114,11 +114,14 @@ html {
   }
 
   .nav-link {
-    @apply text-primary hover:text-secondary transition-all duration-300 relative focus:outline-none bg-transparent text-left;
+    @apply text-white transition-all duration-300 relative focus:outline-none bg-transparent text-left;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
   }
 
   .nav-link:hover {
     @apply transform -translate-y-0.5;
+    color: #ffb700;
   }
 
   .nav-link:active {
@@ -126,7 +129,8 @@ html {
   }
 
   .nav-link::after {
-    @apply content-[''] absolute w-0 h-0.5 bg-secondary left-0 -bottom-1 transition-all duration-300;
+    @apply content-[''] absolute w-0 h-0.5 left-0 -bottom-1 transition-all duration-300;
+    background-color: #ffb700;
   }
 
   .nav-link:hover::after {
@@ -159,7 +163,7 @@ html {
   }
 
   .gradient-blue-glass {
-    background: linear-gradient(135deg, rgba(0, 145, 235, 0.8) 0%, rgba(0, 107, 179, 0.9) 100%);
+    background: linear-gradient(135deg, rgba(0, 145, 235, 0.4) 0%, rgba(0, 107, 179, 0.5) 100%);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
   }
@@ -172,7 +176,7 @@ html {
     z-index: 1;
     overflow: hidden;
   }
-  
+
   .hero-bg {
     background-image: url('/images/hero-bg.jpg');
     background-size: cover;
@@ -181,13 +185,17 @@ html {
     width: 100%;
     height: 100%;
   }
-  
-  .hero-overlay {
+
+  .hero-bg::before {
+    content: '';
     position: absolute;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* você controla aqui a opacida*
-  }  
-  
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+  }
 
   .hero-decorative-circle-1 {
     animation-delay: 0s;
@@ -264,12 +272,10 @@ html {
 
   /* Cards com glassmorphism REAL - mais transparente */
   .glass-card-modern {
-    background: linear-gradient(
-      135deg,
-      rgba(28, 168, 255, 0.3),
-      rgba(20, 143, 219, 0.3),
-      rgba(0, 102, 166, 0.3)
-    );
+    background: linear-gradient(135deg,
+        rgba(28, 168, 255, 0.3),
+        rgba(20, 143, 219, 0.3),
+        rgba(0, 102, 166, 0.3));
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -277,7 +283,7 @@ html {
     border-radius: 16px;
     transition: all 0.3s ease;
   }
-  
+
 
   .glass-card-modern:hover {
     background: rgba(255, 255, 255, 0.15);
@@ -339,11 +345,19 @@ html {
   }
 
   .text-yellow-custom {
-    color: #eab308;
+    color: #ffb700;
+  }
+
+  .text-yellow-title {
+    color: #ffb700;
   }
 
   .bg-yellow-custom {
     background-color: #eab308;
+  }
+
+  .bg-light-blue {
+    background-color: #c7e9ff;
   }
 
   .card {

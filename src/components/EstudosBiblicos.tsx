@@ -37,16 +37,16 @@ const EstudosBiblicos = () => {
   };
 
   return (
-    <section id="estudos-biblicos" className="section-padding bg-white">
+    <section id="estudos-biblicos" className="section-padding bg-light-blue">
       <div className="container mx-auto text-center pt-0">
         {/* Título */}
         <div className="text-center mb-16">
-          <div className="glass-card-modern inline-block px-8 py-4 mb-6">
-            <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold text-yellow-custom drop-shadow-lg">
+          
+        <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold text-yellow-title drop-shadow-lg mb-4">
               📚 Estudos Bíblicos
             </h2>
-          </div>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+          
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto mt-4">
             Aprofunde seu conhecimento na Palavra de Deus através de nossos estudos
             bíblicos preparados com cuidado para edificação espiritual
           </p>

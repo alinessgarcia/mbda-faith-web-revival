@@ -27,7 +27,7 @@ const sites = [
 
 const SitesSugestivos = () => {
   return (
-    <section id="sites-sugestivos" className="section-padding bg-white relative overflow-hidden">
+    <section id="sites-sugestivos" className="section-padding bg-light-blue relative overflow-hidden">
       {/* Background decorativo glassmorphism */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-10 left-10 w-64 h-64 bg-blue-400 rounded-full blur-3xl animate-pulse shape-blob" />
@@ -37,16 +37,15 @@ const SitesSugestivos = () => {
 
       <div className="container mx-auto relative z-10">
         {/* Título */}
-        <div className="text-center mb-16">
-          <div className="glass-card-modern inline-block px-8 py-4 mb-6">
-            <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold text-yellow-custom drop-shadow-lg">
-              🌐 Sites Sugestivos
+      <div className="text-center mb-16">
+       <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold text-yellow-title drop-shadow-lg mb-6">
+         🌐 Sites Sugestivos
             </h2>
-          </div>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+               <p className="text-xl text-gray-700 max-w-3xl mx-auto">
             Confira alguns sites que recomendamos para crescimento espiritual e informação
           </p>
-        </div>
+           </div>
+
         
         {/* Cards glassmorphism */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
