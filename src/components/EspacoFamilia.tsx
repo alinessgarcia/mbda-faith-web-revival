@@ -38,12 +38,12 @@ const EspacoFamilia = () => {
   );
 
   return (
-    <section id="espaco-familia" className="section-padding bg-white">
+    <section id="espaco-familia" className="section-padding bg-light-blue">
       <div className="container mx-auto">
         {/* Título com glassmorphism */}
         <div className="text-center mb-16">
           <div className="glass-card-modern inline-block px-8 py-4 mb-6">
-            <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold text-yellow-custom drop-shadow-lg">
+            <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold text-yellow-title drop-shadow-lg">
               👨‍👩‍👧‍👦 Espaço Família
             </h2>
           </div>

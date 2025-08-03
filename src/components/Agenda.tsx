@@ -4,7 +4,7 @@ import { CHURCH_SCHEDULE, CONTACT_INFO } from "../constants";
 
 const Agenda = () => {
   return (
-    <section id="agenda" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
+    <section id="agenda" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-light-blue">
       {/* Background decorativo menor */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-1/4 left-1/4 w-48 h-48 bg-blue-400 rounded-full blur-3xl animate-pulse shape-blob" />
@@ -14,14 +14,11 @@ const Agenda = () => {
       <div className="container mx-auto px-4 relative z-10">
         {/* Título com glassmorphism */}
         <div className="text-center mb-16">
-          <div className="glass-card-modern inline-block px-8 py-4 mb-6">
-            <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold text-yellow-custom drop-shadow-lg">
+          
+            <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold text-yellow-title drop-shadow-lg">
               📅 Agenda Semanal
             </h2>
-          </div>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-            Nossa rotina de fé: momentos de oração, ensino e comunhão
-          </p>
+          
         </div>
 
         {/* Grid de cards da agenda */}

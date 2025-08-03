@@ -4,12 +4,12 @@ const Hero = () => {
   return (
     <section className="hero-section hero-bg">
       {/* Conteúdo */}
-      <div className="relative z-10 text-center max-w-5xl mx-auto px-4">
+      <div className="relative z-20 text-center max-w-5xl mx-auto px-4">
         <h1 className="mb-6 animate-fade-in leading-tight">
           <span className="text-3xl md:text-5xl lg:text-7xl font-extrabold text-white block drop-shadow-2xl mb-2 tracking-tight">
             Ministério Bíblico da
           </span>
-          <span className="text-6xl md:text-8xl lg:text-9xl font-bold text-white block mt-0 relative inline-block drop-shadow-xl tracking-tight">
+          <span className="text-6xl md:text-8xl lg:text-9xl font-bold text-yellow-custom block mt-0 relative inline-block drop-shadow-xl tracking-tight">
             Reconciliação
             <span className="block h-1 bg-blue-400 w-full mt-2 mx-auto rounded-full shadow-lg" />
           </span>

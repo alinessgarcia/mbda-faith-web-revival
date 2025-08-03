@@ -95,16 +95,16 @@ const DeclaracaoDeFe = () => {
 
   return (
     <>
-      <section id="declaracao-de-fe" className="section-padding bg-white">
+      <section id="declaracao-de-fe" className="section-padding bg-light-blue">
         <div className="container mx-auto">
           {/* Título */}
           <div className="text-center mb-16">
-            <div className="glass-card-modern inline-block px-8 py-4 mb-6">
-              <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold text-yellow-custom drop-shadow-lg">
+            
+          <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold text-yellow-title drop-shadow-lg mb-4">
                 📖 Declaração de Fé
               </h2>
-            </div>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto mb-8">
+            
+              <p className="text-xl text-gray-700 max-w-3xl mx-auto mt-4">
               Nossa fé é fundamentada nas Escrituras Sagradas. Confira nossa declaração
               de fé para conhecer os princípios que norteiam nossa comunidade.
             </p>
@@ -112,7 +112,7 @@ const DeclaracaoDeFe = () => {
             {/* Botão glassmorphism */}
             <button 
               onClick={() => setIsModalOpen(true)} 
-              className="glass-card-modern px-8 py-4 font-bold text-blue-600 hover:text-blue-700 transition-colors inline-flex items-center"
+              className="glass-card-modern px-8 py-4 font-bold text-blue-600 hover:text-blue-700 transition-colors inline-flex items-center mt-8"
             >
               <BookOpen className="w-6 h-6 mr-2" />
               Ver Declaração de Fé
