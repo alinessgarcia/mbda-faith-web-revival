@@ -27,17 +27,17 @@ const Seterec = () => {
 
             {/* Texto centralizado */}
             <div className="mb-12">
-              <div className="glass-card-modern inline-block p-8 max-w-4xl hover:bg-black/20 transition-all duration-300">
+              <div className="glass-card-modern inline-block p-8 max-w-4xl">
                 <div className="flex items-center justify-center mb-4">
-                  <GraduationCap className="w-8 h-8 text-blue-600 mr-3" />
-                  <h3 className="text-2xl font-bold text-gray-800 no-hover">Formação Teológica</h3>
+                  <GraduationCap className="w-8 h-8 text-lime mr-3" />
+                  <h3 className="text-2xl font-bold text-yellow-custom no-hover">Formação Teológica</h3>
                 </div>
                 <p className="text-white leading-relaxed mb-4">
                   O S.E.T.E.R.E.C é um programa de formação e capacitação para líderes cristãos.
                   Baseado em princípios bíblicos sólidos, prepara discípulos para servir a igreja
                   e a comunidade com excelência.
                 </p>
-                <p className="text-yellow-title leading-relaxed">
+                <p className="text-yellow-custom leading-relaxed">
                   Oferecemos cursos em diversas áreas do ministério cristão, com professores
                   experientes e qualificados.
                 </p>
@@ -47,18 +47,18 @@ const Seterec = () => {
             {/* Cards de cursos centralizados */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
               <div className="glass-card-agenda p-8 text-center">
-                <BookOpen className="w-10 h-10 text-blue-600 mx-auto mb-4" />
-                <h4 className="font-bold text-gray-800 mb-3 text-lg">Teologia</h4>
+                <BookOpen className="w-10 h-10 text-lime mx-auto mb-4" />
+                <h4 className="font-bold text-yellow-custom mb-3 text-lg">Teologia</h4>
                 <p className="text-white">Fundamentos bíblicos e doutrinários</p>
               </div>
               <div className="glass-card-agenda p-8 text-center">
-                <Users className="w-10 h-10 text-blue-600 mx-auto mb-4" />
-                <h4 className="font-bold text-gray-800 mb-3 text-lg">Liderança</h4>
+                <Users className="w-10 h-10 text-lime mx-auto mb-4" />
+                <h4 className="font-bold text-yellow-custom mb-3 text-lg">Liderança</h4>
                 <p className="text-white">Gestão ministerial e pastoral</p>
               </div>
               <div className="glass-card-agenda p-8 text-center">
-                <Award className="w-10 h-10 text-blue-600 mx-auto mb-4" />
-                <h4 className="font-bold text-gray-800 mb-3 text-lg">Aconselhamento</h4>
+                <Award className="w-10 h-10 text-lime mx-auto mb-4" />
+                <h4 className="font-bold text-yellow-custom mb-3 text-lg">Aconselhamento</h4>
                 <p className="text-white">Técnicas pastorais e cuidado</p>
               </div>
             </div>
@@ -71,14 +71,14 @@ const Seterec = () => {
                 href="https://wa.me/5513981517913"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="glass-card-agenda px-8 py-4 text-center font-bold text-green-600 hover:text-green-700 transition-colors flex items-center justify-center"
+                className="glass-card-agenda px-8 py-4 text-center font-bold text-lime hover:text-white transition-colors flex items-center justify-center"
               >
                 📱 WhatsApp
               </a>
               <button
                 type="button"
                 onClick={() => setIsModalOpen(true)}
-                className="glass-card-modern px-8 py-4 font-bold text-blue-600 hover:text-blue-700 transition-colors"
+                className="glass-card-modern px-8 py-4 font-bold text-white hover:text-blue-light transition-colors"
               >
                 📖 Saiba Mais
               </button>

@@ -57,17 +57,17 @@ const SitesSugestivos = () => {
                 href={site.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="glass-card-modern p-8 group animate-fade-in hover:bg-black/20 transition-all duration-300"
+                className="glass-card-modern p-8 group animate-fade-in"
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
                 <div className="flex items-center mb-4">
-                  <IconComponent className="w-8 h-8 text-blue-600 mr-3" />
-                  <h3 className="text-xl font-bold text-gray-800">{site.name}</h3>
+                  <IconComponent className="w-8 h-8 text-lime mr-3" />
+                  <h3 className="text-xl font-bold text-yellow-title">{site.name}</h3>
                 </div>
                 
                 <p className="text-white mb-6 leading-relaxed">{site.description}</p>
                 
-                <div className="flex items-center justify-end text-blue-600 font-medium group-hover:text-blue-700 transition-colors">
+                <div className="flex items-center justify-end text-white font-medium group-hover:text-blue-light transition-colors">
                   <span className="mr-2">Visitar Site</span>
                   <ExternalLink className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </div>
