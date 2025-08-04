@@ -26,18 +26,16 @@ const Agenda = () => {
           {CHURCH_SCHEDULE.map((schedule, index) => (
             <div
               key={schedule.day}
-              className="glass-card-agenda p-6 animate-fade-in"
+              className="glass-card-agenda p-6 animate-fade-in agenda-card"
               style={{
-                backgroundImage: `linear-gradient(135deg, ${schedule.color}20 0%, ${schedule.color}10 100%)`
-              }}
-
+                '--schedule-color': schedule.color,
+                '--schedule-color-light': `${schedule.color}20`,
+                '--schedule-color-lighter': `${schedule.color}10`
+              } as React.CSSProperties}
             >
               {/* Cabeçalho do dia */}
               <div className="flex items-center mb-4">
-                <div
-                  className="w-4 h-4 rounded-full mr-3"
-                  style={{ backgroundColor: schedule.color }}
-                />
+                <div className="w-4 h-4 rounded-full mr-3 agenda-day-indicator" />
                 <h3 className="text-2xl font-bold text-yellow-title">
                   {schedule.day}
                 </h3>
@@ -51,7 +49,7 @@ const Agenda = () => {
                       <span className="text-2xl mr-3">{activity.icon}</span>
                       <div>
                         <p className="font-semibold text-white">{activity.activity}</p>
-                        <p className="text-sm text-white">{activity.type}</p>
+                        <p className="text-sm text-yellow-custom">{activity.type}</p>
                       </div>
                     </div>
                     <div className="flex items-center bg-lime text-white px-3 py-1 rounded-full text-sm font-bold">
@@ -64,7 +62,7 @@ const Agenda = () => {
 
               {/* Informação especial */}
               {schedule.special && (
-                <div className="bg-white/40 rounded-lg p-3 border-l-4" style={{ borderColor: schedule.color }}>
+                <div className="bg-white/40 rounded-lg p-3 border-l-4 agenda-special-border">
                   <p className="text-sm font-medium text-white">
                     ✨ {schedule.special}
                   </p>

@@ -18,8 +18,8 @@ const Footer = () => {
               comunhão familiar e edificação espiritual.
             </p>
             <p className="text-white/80">
-              Av. Osvaldo Aranha, nº800<br />
-              Jardim Alvorada (Vicente de Carvalho)<br />
+              Av. Osvaldo Aranha, nº790<br />
+              Jardim Maravilha (Vicente de Carvalho)<br />
               Guarujá/SP<br />
               CEP: 11470-100
             </p>

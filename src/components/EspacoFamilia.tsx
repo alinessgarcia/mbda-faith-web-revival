@@ -42,7 +42,7 @@ const EspacoFamilia = () => {
       <div className="container mx-auto">
         {/* Título com glassmorphism */}
         <div className="text-center mb-16">
-          <div className="glass-card-modern inline-block px-8 py-4 mb-6 hover:bg-black/20 transition-all duration-300">
+          <div className="glass-card-modern inline-block px-8 py-4 mb-6">
             <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold text-yellow-title drop-shadow-lg">
               👨‍👩‍👧‍👦 Espaço Família
             </h2>

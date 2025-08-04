@@ -289,7 +289,7 @@ html {
 
 
   .glass-card-modern:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(0, 0, 0, 0.35);
     transform: translateY(-5px);
     box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
   }
@@ -305,7 +305,7 @@ html {
   }
 
   .glass-card-agenda:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.35);
     transform: translateY(-3px);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
   }
@@ -339,6 +339,14 @@ html {
   }
 
   /* Cores específicas */
+  .text-blue-light {
+    color: #00e1ff;
+  }
+  
+  .text-blue-light2 {
+    color: #00aec5;
+  }
+
   .text-lime {
     color: #84cc16;
   }
@@ -348,7 +356,20 @@ html {
   }
 
   .text-yellow-custom {
-    color: #ffb700;
+    color: #fffb00;
+  }
+
+  /* Classes dinâmicas para agenda */
+  .agenda-card {
+    background-image: linear-gradient(135deg, var(--schedule-color-light) 0%, var(--schedule-color-lighter) 100%);
+  }
+
+  .agenda-day-indicator {
+    background-color: var(--schedule-color);
+  }
+
+  .agenda-special-border {
+    border-left-color: var(--schedule-color);
   }
 
   .text-yellow-title {
