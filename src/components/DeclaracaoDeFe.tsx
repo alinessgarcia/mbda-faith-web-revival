@@ -95,24 +95,24 @@ const DeclaracaoDeFe = () => {
 
   return (
     <>
-      <section id="declaracao-de-fe" className="section-padding bg-light-blue">
+      <section id="declaracao-de-fe" className="section-padding">
         <div className="container mx-auto">
           {/* Título */}
           <div className="text-center mb-16">
-            
-          <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold text-yellow-title drop-shadow-lg mb-4">
-                📖 Declaração de Fé
-              </h2>
-            
-              <p className="text-xl text-gray-700 max-w-3xl mx-auto mt-4">
+
+            <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold text-title-white drop-shadow-lg mb-4">
+              📖 Declaração de Fé
+            </h2>
+
+            <p className="text-xl text-white max-w-3xl mx-auto mt-4">
               Nossa fé é fundamentada nas Escrituras Sagradas. Confira nossa declaração
               de fé para conhecer os princípios que norteiam nossa comunidade.
             </p>
-            
+
             {/* Botão glassmorphism */}
-            <button 
-              onClick={() => setIsModalOpen(true)} 
-              className="glass-card-modern px-8 py-4 font-bold text-blue-600 hover:text-blue-700 transition-colors inline-flex items-center mt-8"
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="glass-card-modern px-8 py-4 font-bold text-white hover:text-yellow transition-colors inline-flex items-center mt-8"
             >
               <BookOpen className="w-6 h-6 mr-2" />
               Ver Declaração de Fé
@@ -134,13 +134,13 @@ const DeclaracaoDeFe = () => {
               {declaracoes[currentDeclaracao].content}
             </p>
           </div>
-          
+
           {/* Navegação */}
           <div className="flex justify-between items-center pt-6 border-t border-white/20">
             <span className="text-white/80">
               {currentDeclaracao + 1} de {declaracoes.length}
             </span>
-            
+
             <div className="flex space-x-4">
               <button
                 onClick={prevDeclaracao}
@@ -149,7 +149,7 @@ const DeclaracaoDeFe = () => {
               >
                 <ChevronLeft className="w-5 h-5 text-white" />
               </button>
-              
+
               <button
                 onClick={nextDeclaracao}
                 className="glass-card-agenda p-3 rounded-full hover:bg-white/20 transition-colors"

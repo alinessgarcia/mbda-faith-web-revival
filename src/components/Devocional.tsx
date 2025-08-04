@@ -4,7 +4,7 @@ import { Youtube, Radio } from "lucide-react";
 
 const Devocional = () => {
   return (
-    <section id="devocional" className="section-padding bg-light-blue">
+    <section id="devocional" className="section-padding" style={{ backgroundColor: 'rgba(0, 140, 227, 0.7)' }}>
       <div className="container mx-auto text-center pt-0">
         {/* Título com glassmorphism */}
         <div className="text-center mb-16">
@@ -13,7 +13,7 @@ const Devocional = () => {
               🙏 Devocional
             </h2>
           
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto mt-4">
+          <p className="text-xl text-white max-w-3xl mx-auto mt-4">
             Reflexões e devocionais para fortalecer sua caminhada com Deus
           </p>
         </div>

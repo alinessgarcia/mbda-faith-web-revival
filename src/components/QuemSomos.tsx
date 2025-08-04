@@ -2,21 +2,17 @@ const QuemSomos = () => {
   return (
     <section
       id="quem-somos"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-light-blue"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      style={{ backgroundColor: 'rgba(0, 140, 227, 0.7)' }}
     >
-      {/* Elementos decorativos */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-gray-400 rounded-full blur-3xl animate-pulse hero-decorative-circle-2" />
-      </div>
       <div className="container mx-auto relative z-10">
         {/* Título com glassmorphism */}
         <div className="text-center mb-16">
-          
-            <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold text-yellow-title drop-shadow-lg">
-              ⛪ Quem Somos
-            </h2>
-          
+
+          <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold text-yellow-title drop-shadow-lg">
+            ⛪ Quem Somos
+          </h2>
+
 
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -57,26 +53,26 @@ const QuemSomos = () => {
           >
             <div className="relative group">
               <div className="absolute -inset-1 bg-black to-secondary rounded-3xl blur opacity-30 group-hover:opacity-50 transition duration-300"></div>
-              
-                <a
-                  href="https://share.google/EHGmpIZA2tg4CKlzP"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Abrir localização no Google Maps"
-                >
-                  <img
-                    src="https://i.imgur.com/SWiMFCc.jpg"
-                    alt="Igreja MBdaReconciliação - Vista da fachada e ambiente da comunidade cristã"
-                    className="rounded-2xl shadow-2xl object-cover w-full h-full min-h-[350px] transition-transform duration-300 group-hover:scale-105 cursor-pointer"
-                    loading="lazy"
-                    style={{ aspectRatio: "1/1" }}
-                  />
-                </a>
-              </div>
+
+              <a
+                href="https://share.google/EHGmpIZA2tg4CKlzP"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Abrir localização no Google Maps"
+              >
+                <img
+                  src="https://i.imgur.com/SWiMFCc.jpg"
+                  alt="Igreja MBdaReconciliação - Vista da fachada e ambiente da comunidade cristã"
+                  className="rounded-2xl shadow-2xl object-cover w-full h-full min-h-[350px] transition-transform duration-300 group-hover:scale-105 cursor-pointer"
+                  loading="lazy"
+                  style={{ aspectRatio: "1/1" }}
+                />
+              </a>
             </div>
           </div>
         </div>
-      
+      </div>
+
     </section>
   );
 };
