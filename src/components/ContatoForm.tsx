@@ -64,12 +64,12 @@ const ContatoForm = () => {
       <div className="container mx-auto">
         {/* Título com glassmorphism */}
         <div className="text-center mb-16">
-          
-            <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold text-yellow-title drop-shadow-lg">
-              📞 Contato
-            </h2>
+
+          <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold text-yellow-title drop-shadow-lg">
+            📞 Contato
+          </h2>
         </div>
-        
+
         <div className="max-w-2xl mx-auto bg-gray-50 p-6 md:p-8 rounded-lg shadow-sm">
           {submitSuccess && (
             <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-6">
@@ -78,7 +78,7 @@ const ContatoForm = () => {
               </span>
             </div>
           )}
-          
+
           {submitError && (
             <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-6">
               <span className="block sm:inline">
@@ -86,7 +86,7 @@ const ContatoForm = () => {
               </span>
             </div>
           )}
-          
+
           <form onSubmit={handleSubmit}>
             <div className="mb-4">
               <label
@@ -105,7 +105,7 @@ const ContatoForm = () => {
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent"
               />
             </div>
-            
+
             <div className="mb-4">
               <label
                 htmlFor="email"
@@ -123,7 +123,7 @@ const ContatoForm = () => {
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent"
               />
             </div>
-            
+
             <div className="mb-6">
               <label
                 htmlFor="mensagem"
@@ -141,7 +141,7 @@ const ContatoForm = () => {
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent"
               ></textarea>
             </div>
-            
+
             <div className="text-center">
               <button
                 type="submit"
