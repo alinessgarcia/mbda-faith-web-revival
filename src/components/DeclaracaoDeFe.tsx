@@ -95,7 +95,7 @@ const DeclaracaoDeFe = () => {
 
   return (
     <>
-      <section id="declaracao-de-fe" className="section-padding">
+      <section id="declaracao-de-fe" className="section-padding bg-black/60">
         <div className="container mx-auto">
           {/* Título */}
           <div className="text-center mb-16">

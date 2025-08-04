@@ -95,7 +95,7 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={toggleMenu}
-            className="md:hidden text-primary focus:outline-none"
+            className="md:hidden text-white focus:outline-none"
             aria-label="Menu"
           >
             <svg
