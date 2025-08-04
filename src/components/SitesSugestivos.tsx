@@ -27,7 +27,7 @@ const sites = [
 
 const SitesSugestivos = () => {
   return (
-    <section id="sites-sugestivos" className="section-padding bg-light-blue relative overflow-hidden">
+    <section id="sites-sugestivos" className="section-padding relative overflow-hidden">
       {/* Background decorativo glassmorphism */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-10 left-10 w-64 h-64 bg-blue-400 rounded-full blur-3xl animate-pulse shape-blob" />
@@ -41,7 +41,7 @@ const SitesSugestivos = () => {
        <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold text-yellow-title drop-shadow-lg mb-6">
          🌐 Sites Sugestivos
             </h2>
-               <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+               <p className="text-xl text-white max-w-3xl mx-auto">
             Confira alguns sites que recomendamos para crescimento espiritual e informação
           </p>
            </div>
@@ -57,7 +57,7 @@ const SitesSugestivos = () => {
                 href={site.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="glass-card-modern p-8 group animate-fade-in bg-white/90"
+                className="glass-card-modern p-8 group animate-fade-in hover:bg-black/20 transition-all duration-300"
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
                 <div className="flex items-center mb-4">
@@ -65,7 +65,7 @@ const SitesSugestivos = () => {
                   <h3 className="text-xl font-bold text-gray-800">{site.name}</h3>
                 </div>
                 
-                <p className="text-gray-700 mb-6 leading-relaxed">{site.description}</p>
+                <p className="text-white mb-6 leading-relaxed">{site.description}</p>
                 
                 <div className="flex items-center justify-end text-blue-600 font-medium group-hover:text-blue-700 transition-colors">
                   <span className="mr-2">Visitar Site</span>

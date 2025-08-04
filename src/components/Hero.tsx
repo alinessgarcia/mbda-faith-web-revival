@@ -2,7 +2,7 @@ import { ChevronDown } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="hero-section hero-bg">
+    <section className="hero-section">
       {/* Conteúdo */}
       <div className="relative z-20 text-center max-w-5xl mx-auto px-4">
         <h1 className="mb-6 animate-fade-in leading-tight">
@@ -11,7 +11,7 @@ const Hero = () => {
           </span>
           <span className="text-6xl md:text-8xl lg:text-9xl font-bold text-yellow-custom block mt-0 relative inline-block drop-shadow-xl tracking-tight">
             Reconciliação
-            <span className="block h-1 bg-blue-400 w-full mt-2 mx-auto rounded-full shadow-lg" />
+
           </span>
         </h1>
 

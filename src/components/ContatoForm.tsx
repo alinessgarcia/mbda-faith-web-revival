@@ -60,7 +60,7 @@ const ContatoForm = () => {
   };
 
   return (
-    <section id="contato" className="section-padding bg-light-blue">
+    <section id="contato" className="section-padding" style={{ backgroundColor: 'rgba(0, 140, 227, 0.7)' }}>
       <div className="container mx-auto">
         {/* Título com glassmorphism */}
         <div className="text-center mb-16">
@@ -91,7 +91,7 @@ const ContatoForm = () => {
             <div className="mb-4">
               <label
                 htmlFor="nome"
-                className="block text-gray-700 font-medium mb-2"
+                className="block text-white font-medium mb-2"
               >
                 Nome:
               </label>
@@ -109,7 +109,7 @@ const ContatoForm = () => {
             <div className="mb-4">
               <label
                 htmlFor="email"
-                className="block text-gray-700 font-medium mb-2"
+                className="block text-white font-medium mb-2"
               >
                 E-mail:
               </label>
@@ -127,7 +127,7 @@ const ContatoForm = () => {
             <div className="mb-6">
               <label
                 htmlFor="mensagem"
-                className="block text-gray-700 font-medium mb-2"
+                className="block text-white font-medium mb-2"
               >
                 Mensagem:
               </label>

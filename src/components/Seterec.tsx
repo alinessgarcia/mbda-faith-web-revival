@@ -8,16 +8,16 @@ const Seterec = () => {
 
   return (
     <>
-      <section id="seterec" className="section-padding bg-light-blue">
+      <section id="seterec" className="section-padding" style={{ backgroundColor: 'rgba(0, 140, 227, 0.7)' }}>
         <div className="container mx-auto">
           {/* Título */}
           <div className="text-center mb-16">
-            
-          <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold text-yellow-title drop-shadow-lg mb-4">
-                🎓 S.E.T.E.R.E.C
-              </h2>
-            
-              <p className="text-xl text-gray-700 max-w-3xl mx-auto mt-4">
+
+            <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold text-yellow-title drop-shadow-lg mb-4">
+              🎓 S.E.T.E.R.E.C
+            </h2>
+
+            <p className="text-xl text-white max-w-3xl mx-auto mt-4">
               (Seminário Teológico da Reconciliação)
             </p>
           </div>
@@ -27,17 +27,17 @@ const Seterec = () => {
 
             {/* Texto centralizado */}
             <div className="mb-12">
-              <div className="glass-card-modern inline-block p-8 max-w-4xl bg-white/90">
+              <div className="glass-card-modern inline-block p-8 max-w-4xl hover:bg-black/20 transition-all duration-300">
                 <div className="flex items-center justify-center mb-4">
                   <GraduationCap className="w-8 h-8 text-blue-600 mr-3" />
-                  <h3 className="text-2xl font-bold text-gray-800">Formação Teológica</h3>
+                  <h3 className="text-2xl font-bold text-gray-800 no-hover">Formação Teológica</h3>
                 </div>
-                <p className="text-gray-700 leading-relaxed mb-4">
+                <p className="text-white leading-relaxed mb-4">
                   O S.E.T.E.R.E.C é um programa de formação e capacitação para líderes cristãos.
                   Baseado em princípios bíblicos sólidos, prepara discípulos para servir a igreja
                   e a comunidade com excelência.
                 </p>
-                <p className="text-gray-700 leading-relaxed">
+                <p className="text-yellow-title leading-relaxed">
                   Oferecemos cursos em diversas áreas do ministério cristão, com professores
                   experientes e qualificados.
                 </p>
@@ -49,17 +49,17 @@ const Seterec = () => {
               <div className="glass-card-agenda p-8 text-center">
                 <BookOpen className="w-10 h-10 text-blue-600 mx-auto mb-4" />
                 <h4 className="font-bold text-gray-800 mb-3 text-lg">Teologia</h4>
-                <p className="text-gray-600">Fundamentos bíblicos e doutrinários</p>
+                <p className="text-white">Fundamentos bíblicos e doutrinários</p>
               </div>
               <div className="glass-card-agenda p-8 text-center">
                 <Users className="w-10 h-10 text-blue-600 mx-auto mb-4" />
                 <h4 className="font-bold text-gray-800 mb-3 text-lg">Liderança</h4>
-                <p className="text-gray-600">Gestão ministerial e pastoral</p>
+                <p className="text-white">Gestão ministerial e pastoral</p>
               </div>
               <div className="glass-card-agenda p-8 text-center">
                 <Award className="w-10 h-10 text-blue-600 mx-auto mb-4" />
                 <h4 className="font-bold text-gray-800 mb-3 text-lg">Aconselhamento</h4>
-                <p className="text-gray-600">Técnicas pastorais e cuidado</p>
+                <p className="text-white">Técnicas pastorais e cuidado</p>
               </div>
             </div>
 
