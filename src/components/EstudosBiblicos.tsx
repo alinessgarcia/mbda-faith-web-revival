@@ -37,7 +37,7 @@ const EstudosBiblicos = () => {
   };
 
   return (
-    <section id="estudos-biblicos" className="section-padding">
+    <section id="estudos-biblicos" className="section-padding bg-black/60">
       <div className="container mx-auto text-center pt-0">
         {/* Título */}
         <div className="text-center mb-16">

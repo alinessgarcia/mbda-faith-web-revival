@@ -27,7 +27,7 @@ const sites = [
 
 const SitesSugestivos = () => {
   return (
-    <section id="sites-sugestivos" className="section-padding relative overflow-hidden">
+    <section id="sites-sugestivos" className="section-padding relative overflow-hidden bg-black/60">
       {/* Background decorativo glassmorphism */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-10 left-10 w-64 h-64 bg-blue-400 rounded-full blur-3xl animate-pulse shape-blob" />

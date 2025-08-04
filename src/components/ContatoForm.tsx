@@ -91,7 +91,7 @@ const ContatoForm = () => {
             <div className="mb-4">
               <label
                 htmlFor="nome"
-                className="block text-white font-medium mb-2"
+                className="block text-black-custom font-medium mb-2"
               >
                 Nome:
               </label>
@@ -109,7 +109,7 @@ const ContatoForm = () => {
             <div className="mb-4">
               <label
                 htmlFor="email"
-                className="block text-white font-medium mb-2"
+                className="block text-black-custom font-medium mb-2"
               >
                 E-mail:
               </label>
@@ -127,7 +127,7 @@ const ContatoForm = () => {
             <div className="mb-6">
               <label
                 htmlFor="mensagem"
-                className="block text-white font-medium mb-2"
+                className="block text-black-custom font-medium mb-2"
               >
                 Mensagem:
               </label>

@@ -342,7 +342,7 @@ html {
   .text-blue-light {
     color: #00e1ff;
   }
-  
+
   .text-blue-light2 {
     color: #00aec5;
   }
@@ -357,6 +357,10 @@ html {
 
   .text-yellow-custom {
     color: #fffb00;
+  }
+
+  .text-black-custom {
+    color: #141414;
   }
 
   /* Classes dinâmicas para agenda */
@@ -401,17 +405,22 @@ html {
     width: 95%;
   }
 
-  .text-title-white {
-    color: #ffb700;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    position: relative;
-    display: inline-block;
-  }
-
   .text-title-white:hover {
     color: white;
     transform: translateY(2px);
+  }
+
+  /* Títulos para seções vazadas - efeito sutil */
+  .title-with-border {
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    display: inline-block;
+  }
+
+  .subtitle-with-border {
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    display: inline-block;
   }
 
   .text-title-white::after {
@@ -432,6 +441,10 @@ html {
 
   .bg-yellow-custom {
     background-color: #eab308;
+  }
+
+  .bg-orange-custom {
+    background-color: #ff9100;
   }
 
   .bg-light-blue {

@@ -11,21 +11,21 @@ const BackgroundVideo = () => {
 
     checkMobile();
     window.addEventListener('resize', checkMobile);
-    
+
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  const videoSrc = isMobile ? "/videos/hero-bg-mobile-animado.mp4" : "/videos/hero2-animado.mp4";
+  const videoSrc = isMobile ? "/videos/hero-video-mobile.mp4" : "/videos/hero-video.mp4";
   const imageSrc = isMobile ? "/images/hero-bg-mobile.jpg" : "/images/hero-bg.jpg";
 
   if (!useVideo) {
     return (
-      <div 
+      <div
         className="fixed inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ 
+        style={{
           backgroundImage: `url(${imageSrc})`,
           backgroundAttachment: isMobile ? 'scroll' : 'fixed',
-          zIndex: -1 
+          zIndex: -1
         }}
       />
     );
@@ -41,8 +41,8 @@ const BackgroundVideo = () => {
         preload="metadata"
         className="w-full h-full object-cover"
         poster={imageSrc}
-        style={{ 
-          objectPosition: isMobile ? 'center center' : 'center top'
+        style={{
+          objectPosition: isMobile ? 'center' : 'center bottom',
         }}
         onError={() => {
           console.log('❌ Video failed, switching to image');

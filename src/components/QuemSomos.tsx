@@ -7,7 +7,7 @@ const QuemSomos = () => {
     >
       <div className="container mx-auto relative z-10">
         {/* Título com glassmorphism */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 pt-8 md:pt-0">
 
           <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold text-yellow-title drop-shadow-lg">
             ⛪ Quem Somos
