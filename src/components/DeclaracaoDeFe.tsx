@@ -100,7 +100,7 @@ const DeclaracaoDeFe = () => {
           {/* Título */}
           <div className="text-center mb-16">
 
-            <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold text-title-white drop-shadow-lg mb-4">
+            <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold text-yellow-title drop-shadow-lg mb-4">
               📖 Declaração de Fé
             </h2>
 
