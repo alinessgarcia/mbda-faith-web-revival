@@ -4,7 +4,7 @@ const Hero = () => {
   return (
     <section className="hero-section bg-black/60">
       {/* Conteúdo */}
-      <div className="relative z-20 text-left w-full pl-8 pr-4 flex items-start justify-start h-full pt-32">
+      <div className="relative z-20 text-left w-full pl-8 pr-4 flex items-start justify-start h-full hero-content-position">
         <div className="max-w-3xl">
           <h1 className="mb-2 md:mb-4 animate-fade-in leading-tight">
             <span className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-white block drop-shadow-2xl mb-0 md:mb-1 tracking-tight">
