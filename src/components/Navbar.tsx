@@ -70,12 +70,12 @@ const Navbar = () => {
             <button onClick={() => scrollToSection("sites-sugestivos")} className="nav-link" type="button">
               Sites
             </button>
-            <a
-              href="/blog/"
+            <Link
+              to="/blog"
               className="nav-link"
             >
               Blog
-            </a>
+            </Link>
             <button onClick={() => scrollToSection("contato")} className="nav-link" type="button">
               Contato
             </button>
@@ -199,13 +199,13 @@ const Navbar = () => {
               >
                 Sites
               </button>
-              <a
-                href="/blog/"
+              <Link
+                to="/blog"
                 className="nav-link"
                 onClick={closeMenu}
               >
                 Blog
-              </a>
+              </Link>
               <button
                 onClick={() => scrollToSection("contato")}
                 className="nav-link"
