@@ -114,7 +114,7 @@ html {
   }
 
   .nav-link {
-    @apply text-white transition-all duration-300 relative focus:outline-none bg-transparent text-left;
+    @apply text-yellow-custom transition-all duration-300 relative focus:outline-none bg-transparent text-left;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
   }
@@ -135,6 +135,152 @@ html {
 
   .nav-link:hover::after {
     @apply w-full;
+  }
+
+  .radio-icon {
+    color: #fffb00;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+    transition: all 0.3s ease;
+  }
+
+  .radio-icon:hover {
+    color: #ffb700;
+    transform: translateY(-2px);
+  }
+
+  .background-video-container {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+  }
+
+  .background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .background-video-mobile {
+    object-position: center;
+  }
+
+  .background-video-desktop {
+    object-position: center bottom;
+  }
+
+  .background-image {
+    position: fixed;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+
+  .background-image-mobile {
+    background-attachment: scroll;
+  }
+
+  .background-image-desktop {
+    background-attachment: fixed;
+  }
+
+  /* Desktop Animation Styles */
+  .desktop-animation-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .desktop-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .desktop-bg-static {
+    z-index: 1;
+  }
+
+  .desktop-cloud-1 {
+    z-index: 2;
+    animation: float-cloud-1 20s ease-in-out infinite;
+  }
+
+  .desktop-cloud-2 {
+    z-index: 3;
+    animation: float-cloud-2 25s ease-in-out infinite;
+  }
+
+  .desktop-clock {
+    z-index: 4;
+    animation: gentle-sway 8s ease-in-out infinite;
+  }
+
+  .desktop-pointer {
+    z-index: 5;
+    animation: rotate-pointer 60s linear infinite;
+    transform-origin: center;
+  }
+
+  /* Animações */
+  @keyframes float-cloud-1 {
+    0%, 100% { 
+      transform: translateX(0px) translateY(0px); 
+    }
+    25% { 
+      transform: translateX(30px) translateY(-10px); 
+    }
+    50% { 
+      transform: translateX(-20px) translateY(5px); 
+    }
+    75% { 
+      transform: translateX(15px) translateY(-5px); 
+    }
+  }
+
+  @keyframes float-cloud-2 {
+    0%, 100% { 
+      transform: translateX(0px) translateY(0px); 
+    }
+    30% { 
+      transform: translateX(-25px) translateY(8px); 
+    }
+    60% { 
+      transform: translateX(35px) translateY(-12px); 
+    }
+    90% { 
+      transform: translateX(-10px) translateY(3px); 
+    }
+  }
+
+  @keyframes gentle-sway {
+    0%, 100% { 
+      transform: rotate(0deg) scale(1); 
+    }
+    50% { 
+      transform: rotate(1deg) scale(1.02); 
+    }
+  }
+
+  @keyframes rotate-pointer {
+    0% { 
+      transform: rotate(0deg); 
+    }
+    100% { 
+      transform: rotate(360deg); 
+    }
+  }
+
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .desktop-animation-container {
+      display: none;
+    }
   }
 
   .glass-effect {
@@ -194,8 +340,19 @@ html {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
+  }
+
+  .hero-content-position {
+    padding-top: 8rem; /* pt-32 para desktop */
+  }
+
+  /* Mobile: desce 30% mais */
+  @media (max-width: 768px) {
+    .hero-content-position {
+      padding-top: calc(8rem + 30vh); /* pt-32 + 30% da altura da tela */
+    }
   }
 
 
@@ -377,7 +534,7 @@ html {
   }
 
   .text-yellow-title {
-    color: #ffb700;
+    color: #fffb00;
     transition: all 0.3s ease;
     cursor: pointer;
     position: relative;

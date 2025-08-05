@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Radio } from "lucide-react";
 import { useScrollTo } from "../hooks/useScrollTo";
 import { NAVIGATION_ITEMS } from "../constants";
 
@@ -35,50 +35,48 @@ const Navbar = () => {
               alt="MBdA Reconciliação Logo"
               className="h-10 md:h-12"
             />
-            <span className="ml-2 text-white font-bold font-roboto text-lg md:text-xl transition-all duration-300 hover:text-yellow-custom drop-shadow-sm">MBdaR</span>
+            <span className="ml-2 nav-link font-bold font-roboto text-lg md:text-xl">MBdaR</span>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-6">
-            <button onClick={scrollToTop} className="nav-link">
+            <button onClick={scrollToTop} className="nav-link" type="button">
               Início
             </button>
-            <button onClick={() => scrollToSection("quem-somos")} className="nav-link">
+            <button onClick={() => scrollToSection("quem-somos")} className="nav-link" type="button">
               Quem Somos
             </button>
-            <button onClick={() => scrollToSection("declaracao-de-fe")} className="nav-link">
+            <button onClick={() => scrollToSection("declaracao-de-fe")} className="nav-link" type="button">
               Declaração de Fé
             </button>
-            <button onClick={() => scrollToSection("devocional")} className="nav-link">
+            <button onClick={() => scrollToSection("devocional")} className="nav-link" type="button">
               Devocional
             </button>
-            <button onClick={() => scrollToSection("estudos-biblicos")} className="nav-link">
+            <button onClick={() => scrollToSection("estudos-biblicos")} className="nav-link" type="button">
               Estudos Bíblicos
             </button>
-            <button onClick={() => scrollToSection("seterec")} className="nav-link">
+            <button onClick={() => scrollToSection("seterec")} className="nav-link" type="button">
               S.E.T.E.R.E.C
             </button>
-            <button onClick={() => scrollToSection("agenda")} className="nav-link">
+            <button onClick={() => scrollToSection("agenda")} className="nav-link" type="button">
               Agenda
             </button>
-            <button onClick={() => scrollToSection("espaco-familia")} className="nav-link">
+            <button onClick={() => scrollToSection("espaco-familia")} className="nav-link" type="button">
               Espaço Família
             </button>
-            <button onClick={() => scrollToSection("midia")} className="nav-link">
+            <button onClick={() => scrollToSection("midia")} className="nav-link" type="button">
               Mídia
             </button>
-            <button onClick={() => scrollToSection("sites-sugestivos")} className="nav-link">
+            <button onClick={() => scrollToSection("sites-sugestivos")} className="nav-link" type="button">
               Sites
             </button>
             <a
-              href="https://blogdambdareconciliacao.lovable.app/"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/blog/"
               className="nav-link"
             >
               Blog
             </a>
-            <button onClick={() => scrollToSection("contato")} className="nav-link">
+            <button onClick={() => scrollToSection("contato")} className="nav-link" type="button">
               Contato
             </button>
             <a
@@ -87,7 +85,7 @@ const Navbar = () => {
               rel="noopener noreferrer"
               className="nav-link flex items-center"
             >
-              <img src="https://imgur.com/XPME80F.png" alt="Hinos Antigos" className="h-5 w-5 mr-1" />
+              <Radio className="h-5 w-5 mr-1 radio-icon" />
               <span className="sr-only">Hinos Antigos</span>
             </a>
           </div>
@@ -131,30 +129,35 @@ const Navbar = () => {
               <button
                 onClick={scrollToTop}
                 className="nav-link"
+                type="button"
               >
                 Início
               </button>
               <button
                 onClick={() => scrollToSection("quem-somos")}
                 className="nav-link"
+                type="button"
               >
                 Quem Somos
               </button>
               <button
                 onClick={() => scrollToSection("declaracao-de-fe")}
                 className="nav-link"
+                type="button"
               >
                 Declaração de Fé
               </button>
               <button
                 onClick={() => scrollToSection("devocional")}
                 className="nav-link"
+                type="button"
               >
                 Devocional
               </button>
               <button
                 onClick={() => scrollToSection("estudos-biblicos")}
                 className="nav-link"
+                type="button"
               >
                 Estudos Bíblicos
               </button>
@@ -164,37 +167,40 @@ const Navbar = () => {
                   closeMenu();
                 }}
                 className="nav-link"
+                type="button"
               >
                 S.E.T.E.R.E.C
               </button>
               <button
                 onClick={() => scrollToSection("agenda")}
                 className="nav-link"
+                type="button"
               >
                 Agenda
               </button>
               <button
                 onClick={() => scrollToSection("espaco-familia")}
                 className="nav-link"
+                type="button"
               >
                 Espaço Família
               </button>
               <button
                 onClick={() => scrollToSection("midia")}
                 className="nav-link"
+                type="button"
               >
                 Mídia
               </button>
               <button
                 onClick={() => scrollToSection("sites-sugestivos")}
                 className="nav-link"
+                type="button"
               >
                 Sites
               </button>
               <a
-                href="https://blogdambdareconciliacao.lovable.app/"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/blog/"
                 className="nav-link"
                 onClick={closeMenu}
               >
@@ -203,6 +209,7 @@ const Navbar = () => {
               <button
                 onClick={() => scrollToSection("contato")}
                 className="nav-link"
+                type="button"
               >
                 Contato
               </button>
@@ -213,7 +220,7 @@ const Navbar = () => {
                 className="nav-link flex items-center"
                 onClick={closeMenu}
               >
-                <img src="https://imgur.com/XPME80F.png" alt="Hinos Antigos" className="h-5 w-5 mr-1" />
+                <Radio className="h-5 w-5 mr-1 radio-icon" />
                 <span>Hinos Antigos</span>
               </a>
             </div>
