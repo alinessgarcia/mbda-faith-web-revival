@@ -1,6 +1,49 @@
 
 import React from "react";
 import { Youtube, Radio } from "lucide-react";
+import { videoConfig, VideoConfig } from "../config/devocional";
+
+// Função para detectar se é URL do YouTube
+const isYouTubeUrl = (url: string) => {
+  return url.includes('youtube.com') || url.includes('youtu.be');
+};
+
+// Componente para renderizar o player apropriado
+const VideoPlayer = ({ config }: { config: VideoConfig }) => {
+  const { type, src, title } = config;
+  
+  // Auto-detecta o tipo se não especificado
+  const videoType = type === "auto" ? (isYouTubeUrl(src) ? "youtube" : "local") : type;
+  
+  if (videoType === "youtube") {
+    return (
+      <iframe 
+        className="w-full h-full"
+        src={src}
+        title={title}
+        frameBorder="0" 
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowFullScreen
+        loading="lazy"
+      />
+    );
+  }
+  
+  // Vídeo local
+  return (
+    <video 
+      className="w-full h-full object-cover"
+      controls
+      preload="metadata"
+      title={title}
+    >
+      <source src={src} type="video/mp4" />
+      <source src={src} type="video/webm" />
+      <source src={src} type="video/ogg" />
+      Seu navegador não suporta o elemento de vídeo.
+    </video>
+  );
+};
 
 const Devocional = () => {
   return (
@@ -23,15 +66,7 @@ const Devocional = () => {
           <div className="relative group">
             <div className="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-lg blur opacity-20 group-hover:opacity-30 transition duration-300"></div>
             <div className="relative aspect-video shadow-2xl rounded-lg overflow-hidden">
-              <iframe 
-                className="w-full h-full"
-                src="https://www.youtube.com/embed/gi5HSqTdDBA?t=186" 
-                title="Devocionais da Reconciliação - Ministério Bíblico da Reconciliação"
-                frameBorder="0" 
-                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowFullScreen
-                loading="lazy"
-              ></iframe>
+              <VideoPlayer config={videoConfig} />
             </div>
           </div>
         </div>
