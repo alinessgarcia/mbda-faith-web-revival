@@ -1,6 +1,8 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Send, CheckCircle, AlertCircle } from "lucide-react";
+import emailjs from '@emailjs/browser';
+import { EMAILJS_CONFIG } from '../config/emailjs';
 
 interface FormData {
   nome: string;
@@ -18,6 +20,11 @@ const ContatoForm = () => {
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState(false);
 
+  // Inicializar EmailJS
+  useEffect(() => {
+    emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
+  }, []);
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -34,15 +41,27 @@ const ContatoForm = () => {
     setSubmitError(false);
 
     try {
-      const response = await fetch("https://formspree.io/f/myzwanve", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(formData)
-      });
+      // Debug: vamos ver se as configurações estão corretas
+      console.log('EmailJS Config:', EMAILJS_CONFIG);
+      console.log('Form Data:', formData);
+      
+      // Usando EmailJS - formato mais simples
+      const templateParams = {
+        name: formData.nome,
+        email: formData.email,
+        message: formData.mensagem
+      };
+      
+      const result = await emailjs.send(
+        EMAILJS_CONFIG.SERVICE_ID,
+        EMAILJS_CONFIG.TEMPLATE_ID,
+        templateParams,
+        EMAILJS_CONFIG.PUBLIC_KEY
+      );
+      
+      console.log('EmailJS Result:', result);
 
-      if (response.ok) {
+      if (result.status === 200) {
         setSubmitSuccess(true);
         setFormData({ nome: "", email: "", mensagem: "" });
         setTimeout(() => {

@@ -1,4 +1,4 @@
-import { SEOConfig, NavigationItem, SocialLink, ContactInfo } from '../types';
+import { SEOConfig, NavigationItem, SocialLink } from '../types';
 
 // Configurações SEO centralizadas
 export const SEO_CONFIG: SEOConfig = {
@@ -24,13 +24,7 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
   { id: "contato", label: "Contato", href: "#contato" }
 ];
 
-// Informações de contato
-export const CONTACT_INFO: ContactInfo = {
-  address: "Av. Osvaldo Aranha, nº790 - Jardim Maravilha (Vicente de Carvalho) - Guarujá/SP - CEP: 11470-100",
-  phone: "(13) 99999-9999",
-  email: "contato@mbdareconciliacao.com.br",
-  whatsapp: "5513999999999"
-};
+// CONTACT_INFO removido - não estava sendo usado (dados hardcoded no Footer)
 
 // Links sociais
 export const SOCIAL_LINKS: SocialLink[] = [
@@ -51,66 +45,52 @@ export const SOCIAL_LINKS: SocialLink[] = [
   }
 ];
 
-// Cores do tema
-export const THEME_COLORS = {
-  primary: {
-    blue: '#0091eb',
-    blueDark: '#006bb3',
-    blueLight: '#33a3ef'
-  },
-  secondary: {
-    amber: '#f59e0b',
-    amberLight: '#fbbf24',
-    yellow: '#eab308', // Para títulos como "Agenda Semanal"
-    lime: '#84cc16'    // Verde limão para destaques
-  },
-  neutral: {
-    white: '#ffffff',
-    gray100: '#f3f4f6',
-    gray800: '#1f2937',
-    gray900: '#111827'
-  },
-  // Cores por dia da semana
-  schedule: {
-    sunday: '#f97316',    // Laranja
-    wednesday: '#eab308', // Amarelo
-    friday: '#8b5cf6',    // Roxo
-    seterec: '#06b6d4'    // Ciano
-  }
+// Cores simplificadas - apenas as realmente usadas
+const SCHEDULE_COLORS = {
+  sunday: '#f97316',    // Laranja
+  wednesday: '#eab308', // Amarelo
+  friday: '#8b5cf6',    // Roxo
+  seterec: '#06b6d4'    // Ciano
 } as const;
 
 // Agenda da igreja
 export const CHURCH_SCHEDULE = [
+  // COLUNA ESQUERDA (3 cards)
+  {
+    day: 'Terças e Quintas',
+    color: SCHEDULE_COLORS.seterec,
+    activities: [
+      { time: '19h', activity: 'S.E.T.E.R.E.C', type: 'Seminário Teológico', icon: '🎓' }
+    ],
+    position: 'left'
+  },
+  {
+    day: 'Quarta-feira',
+    color: SCHEDULE_COLORS.wednesday,
+    activities: [
+      { time: '20h', activity: 'Oração e Palavra', type: 'Presencial', icon: '🙏' }
+    ],
+    position: 'left'
+  },
+  {
+    day: 'Sexta-feira',
+    color: SCHEDULE_COLORS.friday,
+    activities: [
+      { time: '20h', activity: 'Oração e Palavra', type: 'Online (quando anunciado)', icon: '💻' }
+    ],
+    position: 'left'
+  },
+  // COLUNA DIREITA (1 card grande)
   {
     day: 'Domingo',
-    color: THEME_COLORS.schedule.sunday,
+    color: SCHEDULE_COLORS.sunday,
     activities: [
       { time: '08h', activity: 'Oração', type: 'Presencial', icon: '🙏' },
       { time: '09h', activity: 'Escola Bíblica', type: 'Presencial', icon: '📚' },
       { time: '11h', activity: 'Ministração da Palavra', type: 'Presencial', icon: '✝️' },
     ],
-    special: '1º Domingo do mês: Ceia do Senhor 🕊️'
-  },
-  {
-    day: 'Quarta-feira',
-    color: THEME_COLORS.schedule.wednesday,
-    activities: [
-      { time: '20h', activity: 'Oração e Palavra', type: 'Presencial', icon: '🙏' }
-    ]
-  },
-  {
-    day: 'Sexta-feira',
-    color: THEME_COLORS.schedule.friday,
-    activities: [
-      { time: '20h', activity: 'Oração e Palavra', type: 'Online (quando anunciado)', icon: '💻' }
-    ],
-    special: 'Última sexta do mês: Culto da Família 👨‍👩‍👧‍👦'
-  },
-  {
-    day: 'Terças e Quintas',
-    color: THEME_COLORS.schedule.seterec,
-    activities: [
-      { time: '19h', activity: 'S.E.T.E.R.E.C', type: 'Seminário Teológico', icon: '🎓' }
-    ]
+    special: '1º Domingo do mês: Ceia do Senhor 🕊️',
+    specialExtra: 'Último Domingo do mês: Culto da Família 👨‍👩‍👧‍👦',
+    position: 'right'
   }
 ];

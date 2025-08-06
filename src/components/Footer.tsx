@@ -1,7 +1,7 @@
 
 import { Link } from "react-router-dom";
 import { useScrollTo } from "../hooks/useScrollTo";
-import { CONTACT_INFO, SOCIAL_LINKS } from "../constants";
+import { SOCIAL_LINKS } from "../constants";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();

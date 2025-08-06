@@ -348,7 +348,7 @@ footer p {
     }
 
     body {
-        padding-top: 150px;
+        padding-top: 180px; /* Aumentado para evitar sobreposição do header no mobile */
     }
 
     .devocional {
