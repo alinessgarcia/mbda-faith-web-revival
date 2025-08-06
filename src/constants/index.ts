@@ -60,7 +60,7 @@ export const CHURCH_SCHEDULE = [
     day: 'Terças e Quintas',
     color: SCHEDULE_COLORS.seterec,
     activities: [
-      { time: '19h', activity: 'S.E.T.E.R.E.C', type: 'Seminário Teológico', icon: '🎓' }
+      { time: '20h', activity: 'S.E.T.E.R.E.C', type: 'Seminário Teológico', icon: '🎓' }
     ],
     position: 'left'
   },
