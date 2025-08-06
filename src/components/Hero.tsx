@@ -2,9 +2,9 @@ import { ChevronDown } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="hero-section bg-black/60">
+    <section className="hero-section bg-black/60 relative">
       {/* Conteúdo */}
-      <div className="relative z-20 text-left w-full pl-8 pr-4 flex items-start justify-start h-full hero-content-position">
+      <div className="relative z-20 text-left w-full pl-8 pr-4 flex items-start justify-start h-full hero-content-position hero-content-desktop-lower">
         <div className="max-w-3xl">
           <h1 className="mb-2 md:mb-4 animate-fade-in leading-tight">
             <span className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-white block drop-shadow-2xl mb-2 md:mb-2 tracking-tight translate-y-2 md:translate-y-2">
@@ -17,7 +17,7 @@ const Hero = () => {
 
           <p className="text-lg md:text-xl lg:text-2xl text-white mb-2 md:mb-12 animate-fade-in leading-relaxed drop-shadow-md hero-content-delay-1 tracking-wider">
             <b>Somos uma Igreja Cristã voltada ao ensino profundo da Palavra de Deus, comunhão familiar e edificação espiritual.</b>
-
+            
           </p>
 
           <div className="animate-fade-in hero-content-delay-2">

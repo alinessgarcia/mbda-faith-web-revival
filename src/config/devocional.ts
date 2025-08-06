@@ -10,8 +10,8 @@ export interface VideoConfig {
 // CONFIGURAÇÃO ATUAL - Altere aqui para mudar o vídeo
 export const videoConfig: VideoConfig = {
   type: "youtube", // "youtube", "local" ou "auto"
-  src: "https://www.youtube.com/embed/gi5HSqTdDBA?t=186",
-  title: "Devocionais da Reconciliação - Ministério Bíblico da Reconciliação"
+  src: "https://www.youtube.com/embed/fi_cvV6wRiU",
+  title: "Devocional - Ministério Bíblico da Reconciliação"
 };
 
 // EXEMPLOS DE CONFIGURAÇÃO:

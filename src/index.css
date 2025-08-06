@@ -366,6 +366,13 @@ html {
     }
   }
 
+  /* Desktop: desce conteúdo 50% a mais */
+  @media (min-width: 769px) {
+    .hero-content-desktop-lower {
+      padding-top: calc(6rem + 25vh); /* Padding original + 50% da tela */
+    }
+  }
+
 
 
   .hero-decorative-circle-1 {
