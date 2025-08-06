@@ -51,12 +51,12 @@ const EspacoFamilia = () => {
             Valorizamos as famílias e acreditamos que elas são a base da sociedade
           </p>
         </div>
-        
+
         <div className="max-w-4xl mx-auto px-10 animate-fade-in" style={{ animationDelay: "0.2s" }}>
           <div className="relative group">
             <div className="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-lg blur opacity-20 group-hover:opacity-30 transition duration-300"></div>
             <div className="relative">
-              <Carousel 
+              <Carousel
                 className="w-full"
                 plugins={[plugin.current]}
                 opts={{
@@ -91,7 +91,7 @@ const EspacoFamilia = () => {
               </Carousel>
             </div>
           </div>
-          
+
           <div className="flex justify-center mt-6">
             {imagens.map((_, index) => (
               <span
