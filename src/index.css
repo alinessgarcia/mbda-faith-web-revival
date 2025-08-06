@@ -281,6 +281,17 @@ html {
     .desktop-animation-container {
       display: none;
     }
+    
+    /* Fix para barrinhas do nav-link no mobile */
+    .nav-link::after {
+      left: 50% !important;
+      transform: translateX(-50%) !important;
+      max-width: 60px !important; /* Barrinha menor e centralizada */
+    }
+    
+    .nav-link:hover::after {
+      width: 60px !important; /* Tamanho fixo e menor no hover para mobile */
+    }
   }
 
   .glass-effect {
@@ -345,13 +356,13 @@ html {
   }
 
   .hero-content-position {
-    padding-top: 3.9rem; /* Subiu mais 30%: 5.6 * 0.7 = 3.9rem */
+    padding-top: 6rem; /* Ajustado para não colar no navbar desktop */
   }
 
   /* Mobile: desce 30% mais */
   @media (max-width: 768px) {
     .hero-content-position {
-      padding-top: calc(3.9rem + 14.7vh); /* Subiu mais 30%: 21vh * 0.7 = 14.7vh */
+      padding-top: calc(3.9rem + 14.7vh); /* Mobile mantém como estava */
     }
   }
 

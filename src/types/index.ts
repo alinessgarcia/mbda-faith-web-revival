@@ -19,9 +19,4 @@ export interface SocialLink {
   icon: string;
 }
 
-export interface ContactInfo {
-  address: string;
-  phone: string;
-  email: string;
-  whatsapp: string;
-}
+// ContactInfo removido - não estava sendo usado

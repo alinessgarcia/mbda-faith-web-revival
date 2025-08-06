@@ -134,28 +134,40 @@ const Navbar = () => {
                 Início
               </button>
               <button
-                onClick={() => scrollToSection("quem-somos")}
+                onClick={() => {
+                  scrollToSection("quem-somos");
+                  closeMenu();
+                }}
                 className="nav-link"
                 type="button"
               >
                 Quem Somos
               </button>
               <button
-                onClick={() => scrollToSection("declaracao-de-fe")}
+                onClick={() => {
+                  scrollToSection("declaracao-de-fe");
+                  closeMenu();
+                }}
                 className="nav-link"
                 type="button"
               >
                 Declaração de Fé
               </button>
               <button
-                onClick={() => scrollToSection("devocional")}
+                onClick={() => {
+                  scrollToSection("devocional");
+                  closeMenu();
+                }}
                 className="nav-link"
                 type="button"
               >
                 Devocional
               </button>
               <button
-                onClick={() => scrollToSection("estudos-biblicos")}
+                onClick={() => {
+                  scrollToSection("estudos-biblicos");
+                  closeMenu();
+                }}
                 className="nav-link"
                 type="button"
               >
@@ -172,28 +184,40 @@ const Navbar = () => {
                 S.E.T.E.R.E.C
               </button>
               <button
-                onClick={() => scrollToSection("agenda")}
+                onClick={() => {
+                  scrollToSection("agenda");
+                  closeMenu();
+                }}
                 className="nav-link"
                 type="button"
               >
                 Agenda
               </button>
               <button
-                onClick={() => scrollToSection("espaco-familia")}
+                onClick={() => {
+                  scrollToSection("espaco-familia");
+                  closeMenu();
+                }}
                 className="nav-link"
                 type="button"
               >
                 Espaço Família
               </button>
               <button
-                onClick={() => scrollToSection("midia")}
+                onClick={() => {
+                  scrollToSection("midia");
+                  closeMenu();
+                }}
                 className="nav-link"
                 type="button"
               >
                 Mídia
               </button>
               <button
-                onClick={() => scrollToSection("sites-sugestivos")}
+                onClick={() => {
+                  scrollToSection("sites-sugestivos");
+                  closeMenu();
+                }}
                 className="nav-link"
                 type="button"
               >
@@ -207,7 +231,10 @@ const Navbar = () => {
                 Blog
               </a>
               <button
-                onClick={() => scrollToSection("contato")}
+                onClick={() => {
+                  scrollToSection("contato");
+                  closeMenu();
+                }}
                 className="nav-link"
                 type="button"
               >
