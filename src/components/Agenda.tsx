@@ -23,7 +23,7 @@ const Agenda = () => {
 
         {/* Layout customizado: Esquerda (3 cards) + Direita (1 card grande) */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          
+
           {/* COLUNA ESQUERDA - 3 cards pequenos */}
           <div className="space-y-6">
             {CHURCH_SCHEDULE.filter(schedule => schedule.position === 'left').map((schedule, index) => (
