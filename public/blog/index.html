@@ -1,152 +1,417 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blog - Ministério Bíblico da Reconciliação</title>
+
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
+  <!-- Header fixo -->
   <header class="header-fixo">
-    <div class="header-logo" onclick="scrollToTop()">
-      <img src="../images/logo-maio.png" alt="MBdA Reconciliação Logo" class="logo-img">
-      <span class="logo-text">MBdaR</span>
+    <div class="header-logo" onclick="window.location.href='/'">
+      <img src="/images/logo-maio.png" alt="Logo MBdaR" class="logo-img">
+      <span class="logo-text">MBdaReconciliação</span>
     </div>
     <div class="header-content">
       <h1>📖 Blog da Reconciliação</h1>
       <h2>Abrigo no temporal - Paul David Tripp</h2>
     </div>
-    <button class="btn-inicio" onclick="scrollToTop()">
+    <button class="btn-inicio" onclick="window.location.href='/'">
       Início
     </button>
   </header>
 
-  <script>
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  </script>
+  <div class="container">
 
-  <main class="container">
-    
-    <!-- Seção do Livro em Destaque -->
-    <section class="livro-destaque">
-      <h2>📚 Livro em Destaque</h2>
-      <div class="livro-card">
-        <div class="livro-info">
-          <h3>Abrigos do Salmo 27</h3>
-          <p class="autor">Uma jornada de fé e proteção divina</p>
-          <p class="descricao">
-            Descubra os sete abrigos espirituais que Deus oferece em meio às tempestades da vida. 
-            Este livro explora profundamente o Salmo 27, revelando como encontrar segurança, 
-            paz e direção na presença do Senhor.
-          </p>
-          <div class="livro-acoes">
-            <span class="preco">Disponível no Kindle</span>
-          </div>
+    <!-- Cabeçalho do Livro -->
+    <div class="livro-header">
+      <div class="livro-info">
+        <div class="livro-capa">
+          <img src="https://m.media-amazon.com/images/I/81cOaIh5z7L._SL1500_.jpg" alt="Capa do livro Abrigo no temporal"
+            class="capa-img">
         </div>
-        <div class="livro-preview">
-          <div class="livro-capa">
-            <span class="livro-emoji">📖</span>
-            <h4>Salmo 27</h4>
-            <p>Abrigos em Deus</p>
-          </div>
+        <div class="livro-detalhes">
+          <h1 class="livro-titulo">📖 Abrigo no temporal</h1>
+          <p class="livro-autor">por <strong>Paul David Tripp</strong></p>
+          <p class="livro-subtitulo">52 reflexões sobre o salmo 27</p>
         </div>
       </div>
-    </section>
 
+      <div class="livro-introducao">
+        <h3>✨ Sobre o livro</h3>
+        <p>Existe um lugar seguro, mesmo quando a vida parece sem direção. Existe descanso, mesmo quando não há onde
+          repousar. Existe esperança, mesmo quando a dor insiste.</p>
+        <p><em>Abrigo no temporal</em> é um convite a reencontrar essa esperança. Em 52 reflexões sobre o salmo 27, Paul
+          Tripp nos guia a um lugar de refúgio, renovação e paz.</p>
+        <p><strong>Leia com calma. Deixe cada página tocar seu coração. E descubra, dia após dia, que há um Deus em quem
+            podemos nos abrigar.</strong></p>
+      </div>
+    </div>
 
+    <h2>🏠 Os 10 Primeiros Abrigos</h2>
+    <p class="intro-abrigos">Clique em cada abrigo para ler a reflexão completa</p>
 
-    <!-- Seção de Devocionais -->
-    <section id="devocionais" class="secao-posts">
-      <h2>🙏 Devocionais Recentes</h2>
-      
-      <article class="devocional">
-        <div class="post-meta">
-          <span class="data">📅 Janeiro 2025</span>
-          <span class="categoria-tag">Devocional</span>
-        </div>
-        <h3>Abrigo #1 – O Senhor é minha luz e salvação</h3>
-        <p class="versiculo">Salmo 27:1 – "O Senhor é a minha luz e a minha salvação; de quem terei medo?"</p>
-        <blockquote>
-          "Quando o medo se levanta, a luz da revelação de Deus dissipa as trevas da dúvida."
-        </blockquote>
-        <p>
-          Este primeiro abrigo trata da confiança inabalável em Deus como fonte de luz e proteção. Assim como a luz afasta a escuridão, o Senhor dissipa o medo e a insegurança de nossa alma.
-        </p>
-        <div class="aplicacao">
-          <strong>💡 Aplicação prática:</strong> Confie em Deus nos momentos de ansiedade. Ore declarando que Ele é sua luz e segurança. Escreva versículos sobre confiança e leia ao acordar.
-        </div>
-        <div class="perguntas">
-          <strong>❓ Perguntas de reflexão:</strong>
-          <ul>
-            <li>Em quais áreas você tem sentido medo ultimamente?</li>
-            <li>Como pode lembrar da luz de Deus quando tudo parece escuro?</li>
-          </ul>
-        </div>
-      </article>
+    <!-- Grid de Abrigos -->
+    <div class="abrigos-grid">
 
-      <article class="devocional">
-        <div class="post-meta">
-          <span class="data">📅 Janeiro 2025</span>
-          <span class="categoria-tag">Devocional</span>
+      <div class="abrigo-card" onclick="openModal(1)">
+        <div class="abrigo-header">
+          <span class="abrigo-numero">#1</span>
+          <div class="abrigo-icon">💡</div>
         </div>
-        <h3>Abrigo #2 – Mesmo que um exército me cerque</h3>
-        <p class="versiculo">Salmo 27:3 – "Ainda que um exército se acampe contra mim, não se atemorizará o meu coração."</p>
-        <blockquote>
-          "A presença de Deus se torna trincheira em meio ao campo de batalha."
-        </blockquote>
-        <p>
-          Davi declara que, mesmo em meio à ameaça real de guerra, seu coração permanece firme. O segredo está na presença de Deus, que nos blinda por dentro.
-        </p>
-        <div class="aplicacao">
-          <strong>💡 Aplicação prática:</strong> Quando se sentir pressionado, lembre-se: a maior segurança não está fora, mas dentro de você, onde Deus habita.
+        <h3>O Senhor é minha luz e salvação</h3>
+        <p class="versiculo">📖 Salmo 27:1</p>
+        <p class="chamada">Deus é luz em tempos de escuridão e medo.</p>
+        <div class="card-footer">
+          <span>Clique para ler mais</span>
+          <div class="read-indicator"></div>
         </div>
-        <div class="perguntas">
-          <strong>❓ Perguntas de reflexão:</strong>
-          <ul>
-            <li>Você tem enfrentado guerras emocionais ou espirituais?</li>
-            <li>Como pode descansar sabendo que Deus é seu escudo?</li>
-          </ul>
-        </div>
-      </article>
+      </div>
 
-      <article class="devocional">
-        <div class="post-meta">
-          <span class="data">📅 Janeiro 2025</span>
-          <span class="categoria-tag">Devocional</span>
+      <div class="abrigo-card" onclick="openModal(2)">
+        <div class="abrigo-header">
+          <span class="abrigo-numero">#2</span>
+          <div class="abrigo-icon">🛡️</div>
         </div>
-        <h3>Abrigo #3 – Uma coisa peço ao Senhor</h3>
-        <p class="versiculo">Salmo 27:4 – "Uma coisa peço ao Senhor, e a buscarei: que eu possa morar na casa do Senhor todos os dias da minha vida."</p>
-        <blockquote>
-          "A verdadeira satisfação está em buscar primeiro o Reino de Deus."
-        </blockquote>
-        <p>
-          Davi revela o segredo de uma vida plena: ter uma única prioridade - estar na presença de Deus. Quando nossa busca se concentra no essencial, tudo mais encontra seu devido lugar.
-        </p>
-        <div class="aplicacao">
-          <strong>💡 Aplicação prática:</strong> Defina sua "uma coisa" diária. Reserve tempo para estar na presença de Deus através da oração, leitura bíblica e adoração.
+        <h3>Refúgio contra os ataques</h3>
+        <p class="versiculo">📖 Salmo 27:2</p>
+        <p class="chamada">Mesmo quando pessoas se levantam contra nós, Deus permanece.</p>
+        <div class="card-footer">
+          <span>Clique para ler mais</span>
+          <div class="read-indicator"></div>
         </div>
-        <div class="perguntas">
-          <strong>❓ Perguntas de reflexão:</strong>
-          <ul>
-            <li>Qual é a "uma coisa" que você mais busca na vida?</li>
-            <li>Como pode priorizar mais tempo na presença de Deus?</li>
-          </ul>
+      </div>
+
+      <div class="abrigo-card" onclick="openModal(3)">
+        <div class="abrigo-header">
+          <span class="abrigo-numero">#3</span>
+          <div class="abrigo-icon">💪</div>
         </div>
-      </article>
-    </section>
+        <h3>O coração firme diante da guerra</h3>
+        <p class="versiculo">📖 Salmo 27:3</p>
+        <p class="chamada">Mesmo em guerra, o coração pode ter paz.</p>
+        <div class="card-footer">
+          <span>Clique para ler mais</span>
+          <div class="read-indicator"></div>
+        </div>
+      </div>
 
+      <div class="abrigo-card" onclick="openModal(4)">
+        <div class="abrigo-header">
+          <span class="abrigo-numero">#4</span>
+          <div class="abrigo-icon">🏠</div>
+        </div>
+        <h3>O desejo de estar com Deus</h3>
+        <p class="versiculo">📖 Salmo 27:4</p>
+        <p class="chamada">O maior abrigo não é um lugar, mas uma presença.</p>
+        <div class="card-footer">
+          <span>Clique para ler mais</span>
+          <div class="read-indicator"></div>
+        </div>
+      </div>
 
+      <div class="abrigo-card" onclick="openModal(5)">
+        <div class="abrigo-header">
+          <span class="abrigo-numero">#5</span>
+          <div class="abrigo-icon">🙈</div>
+        </div>
+        <h3>Deus me esconderá</h3>
+        <p class="versiculo">📖 Salmo 27:5</p>
+        <p class="chamada">Deus sabe como esconder você quando tudo parece exposto.</p>
+        <div class="card-footer">
+          <span>Clique para ler mais</span>
+          <div class="read-indicator"></div>
+        </div>
+      </div>
 
-  </main>
+      <div class="abrigo-card" onclick="openModal(6)">
+        <div class="abrigo-header">
+          <span class="abrigo-numero">#6</span>
+          <div class="abrigo-icon">👑</div>
+        </div>
+        <h3>Cabeça erguida acima dos inimigos</h3>
+        <p class="versiculo">📖 Salmo 27:6</p>
+        <p class="chamada">Quando Deus te levanta, ninguém pode te rebaixar.</p>
+        <div class="card-footer">
+          <span>Clique para ler mais</span>
+          <div class="read-indicator"></div>
+        </div>
+      </div>
 
-  <footer>
-    <p>&copy; 2025 Ministério Bíblico da Reconciliação | Desenvolvido para edificação da fé</p>
-    <a href="../" class="btn-voltar">
-      🏠 Voltar ao Site Principal
-    </a>
+      <div class="abrigo-card" onclick="openModal(7)">
+        <div class="abrigo-header">
+          <span class="abrigo-numero">#7</span>
+          <div class="abrigo-icon">🗣️</div>
+        </div>
+        <h3>Ouve, Senhor, a minha voz</h3>
+        <p class="versiculo">📖 Salmo 27:7</p>
+        <p class="chamada">Deus ouve orações feitas com sinceridade.</p>
+        <div class="card-footer">
+          <span>Clique para ler mais</span>
+          <div class="read-indicator"></div>
+        </div>
+      </div>
+
+      <div class="abrigo-card" onclick="openModal(8)">
+        <div class="abrigo-header">
+          <span class="abrigo-numero">#8</span>
+          <div class="abrigo-icon">👁️</div>
+        </div>
+        <h3>Buscarei a tua face</h3>
+        <p class="versiculo">📖 Salmo 27:8</p>
+        <p class="chamada">A face de Deus é mais importante que Suas mãos.</p>
+        <div class="card-footer">
+          <span>Clique para ler mais</span>
+          <div class="read-indicator"></div>
+        </div>
+      </div>
+
+      <div class="abrigo-card" onclick="openModal(9)">
+        <div class="abrigo-header">
+          <span class="abrigo-numero">#9</span>
+          <div class="abrigo-icon">🤗</div>
+        </div>
+        <h3>Não me abandones</h3>
+        <p class="versiculo">📖 Salmo 27:9-10</p>
+        <p class="chamada">Deus nunca rejeita os que O buscam.</p>
+        <div class="card-footer">
+          <span>Clique para ler mais</span>
+          <div class="read-indicator"></div>
+        </div>
+      </div>
+
+      <div class="abrigo-card" onclick="openModal(10)">
+        <div class="abrigo-header">
+          <span class="abrigo-numero">#10</span>
+          <div class="abrigo-icon">⏰</div>
+        </div>
+        <h3>Espera no Senhor</h3>
+        <p class="versiculo">📖 Salmo 27:13-14</p>
+        <p class="chamada">Esperar não é perda de tempo quando você espera por Deus.</p>
+        <div class="card-footer">
+          <span>Clique para ler mais</span>
+          <div class="read-indicator"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Nota sobre próximos abrigos -->
+    <div class="proximos-abrigos">
+      <h3>📅 Próximos Abrigos</h3>
+      <p>Os próximos abrigos serão publicados em breve. Continue acompanhando nosso blog para mais reflexões sobre o
+        Salmo 27.</p>
+    </div>
+
+  </div>
+
+  <!-- Rodapé do Blog -->
+  <footer class="blog-footer">
+    <div class="footer-content">
+      <div class="footer-info">
+        <h3>📖 Blog da Reconciliação</h3>
+        <p>Reflexões baseadas no livro "Abrigo no temporal" de Paul David Tripp</p>
+      </div>
+      <div class="footer-actions">
+        <button class="btn-voltar-site" onclick="window.location.href='/'">
+          🏠 Voltar ao Site
+        </button>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Ministério Bíblico da Reconciliação - Todos os direitos reservados</p>
+    </div>
   </footer>
+
+  <!-- Modal para Abrigos -->
+  <div id="abrigoModal" class="modal-overlay" style="display: none;" onclick="closeModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <div class="header-content-modal">
+          <h2 id="modalTitulo"></h2>
+          <p class="versiculo" id="modalVersiculo"></p>
+        </div>
+        <button class="close-btn" onclick="closeModal()" type="button" aria-label="Fechar modal">×</button>
+      </div>
+      <div class="modal-body">
+        <div class="chamada-destaque">
+          <p id="modalChamada"></p>
+        </div>
+
+        <div class="modal-section">
+          <h3>📝 Reflexão</h3>
+          <p class="texto-principal" id="modalTexto"></p>
+        </div>
+
+        <div class="modal-section">
+          <h3>🎯 Aplicação Prática</h3>
+          <div class="aplicacao-box">
+            <p id="modalAplicacao"></p>
+          </div>
+        </div>
+
+        <div class="modal-section">
+          <h3>🤔 Perguntas de Reflexão</h3>
+          <ul class="reflexoes-list" id="modalReflexoes"></ul>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <p>📚 Baseado no livro "Abrigo no temporal" por Paul David Tripp</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Dados dos Abrigos
+    const abrigos = {
+      1: {
+        titulo: "Abrigo #1 – O Senhor é minha luz e salvação",
+        versiculo: "📖 Salmo 27:1",
+        chamada: "Deus é luz em tempos de escuridão e medo.",
+        texto: "Davi começa com uma poderosa afirmação de fé: \"O Senhor é a minha luz e a minha salvação\". Em tempos de trevas emocionais, ansiedade e confusão, Deus se apresenta como Aquele que dissipa as sombras. Ele não apenas oferece salvação espiritual, mas também uma presença iluminadora em meio à insegurança.",
+        aplicacao: "Escreva esse versículo em um papel e coloque em um lugar visível da casa. Relembre que nenhuma escuridão é maior do que a luz de Deus.",
+        reflexoes: [
+          "Que áreas da sua vida hoje parecem escuras?",
+          "O que você tem feito com seus medos?"
+        ]
+      },
+      2: {
+        titulo: "Abrigo #2 – Refúgio contra os ataques",
+        versiculo: "📖 Salmo 27:2",
+        chamada: "Mesmo quando pessoas se levantam contra nós, Deus permanece.",
+        texto: "O salmista fala de adversários reais, gente que quer sua queda. Ainda assim, ele descansa. O verdadeiro refúgio não está na ausência de luta, mas na presença de Deus que o protege.",
+        aplicacao: "Lembre-se que sua segurança não está nas circunstâncias, mas em quem está com você nelas.",
+        reflexoes: [
+          "Quem ou o que tem atacado sua paz ultimamente?",
+          "Como você pode confiar em Deus como escudo?"
+        ]
+      },
+      3: {
+        titulo: "Abrigo #3 – O coração firme diante da guerra",
+        versiculo: "📖 Salmo 27:3",
+        chamada: "Mesmo em guerra, o coração pode ter paz.",
+        texto: "Davi afirma que mesmo se um exército se acampar ao seu redor, seu coração não temerá. A verdadeira segurança vem de dentro – da presença de Deus habitando em nós.",
+        aplicacao: "Em momentos de pressão, ore: \"Senhor, fortalece meu coração por dentro\".",
+        reflexoes: [
+          "Você está em meio a alguma batalha?",
+          "Onde está firmada sua coragem?"
+        ]
+      },
+      4: {
+        titulo: "Abrigo #4 – O desejo de estar com Deus",
+        versiculo: "📖 Salmo 27:4",
+        chamada: "O maior abrigo não é um lugar, mas uma presença.",
+        texto: "Mais do que proteção, Davi deseja comunhão. O seu pedido é: estar na casa do Senhor. A presença de Deus é o maior abrigo da alma.",
+        aplicacao: "Separe um tempo diário só para estar com Deus em silêncio.",
+        reflexoes: [
+          "O que você tem buscado mais: ajuda ou a presença do Ajudador?"
+        ]
+      },
+      5: {
+        titulo: "Abrigo #5 – Deus me esconderá",
+        versiculo: "📖 Salmo 27:5",
+        chamada: "Deus sabe como esconder você quando tudo parece exposto.",
+        texto: "Há momentos em que parece que o mundo inteiro nos observa cair. Mas Deus, como Pai cuidadoso, nos esconde na segurança da Sua graça.",
+        aplicacao: "Medite em como Deus te guardou em situações passadas. Ele continua sendo seu esconderijo.",
+        reflexoes: [
+          "Você já sentiu que Deus te livrou em silêncio?"
+        ]
+      },
+      6: {
+        titulo: "Abrigo #6 – Cabeça erguida acima dos inimigos",
+        versiculo: "📖 Salmo 27:6",
+        chamada: "Quando Deus te levanta, ninguém pode te rebaixar.",
+        texto: "Deus ergue a cabeça do seu povo. Mesmo cercado, Davi louva. Esse é o efeito do abrigo divino: liberdade interior mesmo na prisão exterior.",
+        aplicacao: "Louve a Deus mesmo em tempos difíceis. Isso muda sua postura interior.",
+        reflexoes: [
+          "O que você tem feito quando se sente cercado?"
+        ]
+      },
+      7: {
+        titulo: "Abrigo #7 – Ouve, Senhor, a minha voz",
+        versiculo: "📖 Salmo 27:7",
+        chamada: "Deus ouve orações feitas com sinceridade.",
+        texto: "Davi clama por misericórdia e pede que o Senhor o escute. A oração é o caminho para transformar angústia em abrigo.",
+        aplicacao: "Hoje, ore com total transparência. Deus não se ofende com sua dor, Ele a acolhe.",
+        reflexoes: [
+          "Você tem sido sincero com Deus em suas orações?"
+        ]
+      },
+      8: {
+        titulo: "Abrigo #8 – Buscarei a tua face",
+        versiculo: "📖 Salmo 27:8",
+        chamada: "A face de Deus é mais importante que Suas mãos.",
+        texto: "Buscar a face do Senhor é buscar intimidade, não apenas bênçãos. Davi responde ao chamado interior para adoração profunda.",
+        aplicacao: "Em vez de orar pedindo coisas, apenas adore a Deus hoje.",
+        reflexoes: [
+          "Você busca a presença de Deus ou apenas o que Ele pode dar?"
+        ]
+      },
+      9: {
+        titulo: "Abrigo #9 – Não me abandones",
+        versiculo: "📖 Salmo 27:9-10",
+        chamada: "Deus nunca rejeita os que O buscam.",
+        texto: "Davi admite o medo do abandono. Mas mesmo que pai e mãe o deixem, Deus o acolherá. Um abrigo para quem carrega rejeições profundas.",
+        aplicacao: "Reafirme em voz alta: \"O Senhor me acolhe.\" Isso cura a alma.",
+        reflexoes: [
+          "Você carrega feridas de abandono?",
+          "Já se sentiu acolhido por Deus?"
+        ]
+      },
+      10: {
+        titulo: "Abrigo #10 – Espera no Senhor",
+        versiculo: "📖 Salmo 27:13-14",
+        chamada: "Esperar não é perda de tempo quando você espera por Deus.",
+        texto: "A espera em Deus não é passiva. É uma esperança ativa que transforma. Mesmo sem respostas, Davi confia que verá a bondade do Senhor.",
+        aplicacao: "Mude sua oração: de \"quando vai acontecer?\" para \"me sustenta enquanto espero\".",
+        reflexoes: [
+          "Em que área da sua vida você está esperando?",
+          "O que Deus quer ensinar nesse tempo?"
+        ]
+      }
+    };
+
+    function openModal(id) {
+      const abrigo = abrigos[id];
+      if (!abrigo) return;
+
+      document.getElementById('modalTitulo').textContent = abrigo.titulo;
+      document.getElementById('modalVersiculo').textContent = abrigo.versiculo;
+      document.getElementById('modalChamada').textContent = `"${abrigo.chamada}"`;
+      document.getElementById('modalTexto').textContent = abrigo.texto;
+      document.getElementById('modalAplicacao').textContent = abrigo.aplicacao;
+
+      const reflexoesList = document.getElementById('modalReflexoes');
+      reflexoesList.innerHTML = '';
+      abrigo.reflexoes.forEach(reflexao => {
+        const li = document.createElement('li');
+        li.textContent = reflexao;
+        reflexoesList.appendChild(li);
+      });
+
+      document.getElementById('abrigoModal').style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(event) {
+      if (event && event.target !== event.currentTarget) return;
+      document.getElementById('abrigoModal').style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    // Fechar modal com ESC
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') {
+        closeModal();
+      }
+    });
+  </script>
+
 </body>
+
 </html>

@@ -25,9 +25,9 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 glass-blue py-2">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between md:justify-start items-center">
           <div
-            className="flex items-center cursor-pointer"
+            className="flex items-center cursor-pointer md:mr-8"
             onClick={scrollToTop}
           >
             <img
@@ -35,11 +35,14 @@ const Navbar = () => {
               alt="MBdA Reconciliação Logo"
               className="h-10 md:h-12"
             />
-            <span className="ml-2 nav-link font-bold font-roboto text-lg md:text-xl">MBdaR</span>
+            <span className="ml-2 nav-link font-bold font-roboto text-lg md:text-xl">
+              <span className="md:hidden">MBdaReconciliação</span>
+              <span className="hidden md:inline">MBdaR</span>
+            </span>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-6">
+          <div className="hidden md:flex space-x-6 flex-1">
             <button onClick={scrollToTop} className="nav-link" type="button">
               Início
             </button>
