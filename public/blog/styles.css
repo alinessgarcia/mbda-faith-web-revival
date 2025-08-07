@@ -545,10 +545,492 @@ do Livro em Destaque */
 
 
 
+/* Cabeçalho do Livro */
+.livro-header {
+    background: rgba(255, 255, 255, 0.95);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-top: 10%;
+    margin-bottom: 3rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.livro-info {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.livro-capa {
+    flex-shrink: 0;
+}
+
+.capa-img {
+    width: 120px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.livro-detalhes h1.livro-titulo {
+    color: var(--primary);
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.livro-autor {
+    color: var(--gray-medium);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.livro-subtitulo {
+    color: var(--primary);
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+.livro-introducao {
+    border-top: 2px solid var(--yellow-custom);
+    padding-top: 1.5rem;
+}
+
+.livro-introducao h3 {
+    color: var(--primary);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.livro-introducao p {
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    color: var(--black-custom);
+}
+
+/* Grid de Abrigos */
+.intro-abrigos {
+    text-align: center;
+    color: var(--gray-medium);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.abrigos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.abrigo-card {
+    background: rgba(255, 255, 255, 0.92);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.abrigo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    border-left-color: var(--yellow-custom);
+}
+
+.abrigo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.abrigo-numero {
+    background: var(--primary);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.abrigo-icon {
+    font-size: 1.5rem;
+    background: rgba(255, 251, 0, 0.2);
+    padding: 0.5rem;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.abrigo-card h3 {
+    color: var(--primary);
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+    font-weight: bold;
+    line-height: 1.3;
+}
+
+.abrigo-card .versiculo {
+    color: var(--secondary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+}
+
+.abrigo-card .chamada {
+    color: var(--gray-medium);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.card-footer span {
+    color: var(--gray-medium);
+    font-size: 0.9rem;
+}
+
+.read-indicator {
+    width: 8px;
+    height: 8px;
+    background: var(--secondary);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.abrigo-card:hover .read-indicator {
+    transform: scale(1.5);
+    background: var(--yellow-custom);
+}
+
+/* Modal Glassmorphism */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 1rem;
+}
+
+.modal-content {
+    background: rgba(255, 255, 255, 0.15);
+    -webkit-backdrop-filter: blur(30px);
+    backdrop-filter: blur(30px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 24px;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    max-width: 700px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: modalIn 0.3s ease-out;
+}
+
+.modal-header {
+    padding: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.header-content-modal {
+    flex: 1;
+}
+
+.modal-header h2 {
+    color: white;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.modal-header .versiculo {
+    color: #00e1ff;
+    font-weight: 600;
+}
+
+.modal-body {
+    padding: 2rem;
+}
+
+.modal-section {
+    margin-bottom: 2rem;
+}
+
+.modal-section h3 {
+    color: #fffb00;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.chamada-destaque {
+    background: linear-gradient(135deg, rgba(0, 145, 235, 0.3), rgba(138, 92, 246, 0.3));
+    border-left: 4px solid #00e1ff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+}
+
+.chamada-destaque p {
+    color: white;
+    font-size: 1.1rem;
+    font-style: italic;
+    font-weight: 500;
+    margin: 0;
+}
+
+.texto-principal {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+.aplicacao-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border-left: 3px solid #84cc16;
+}
+
+.aplicacao-box p {
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+    line-height: 1.6;
+}
+
+.reflexoes-list {
+    list-style: none;
+    padding: 0;
+}
+
+.reflexoes-list li {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 2px solid rgba(255, 165, 0, 0.5);
+    margin-bottom: 0.8rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.reflexoes-list li::before {
+    content: counter(item) ". ";
+    counter-increment: item;
+    color: #ffa500;
+    font-weight: bold;
+}
+
+.reflexoes-list {
+    counter-reset: item;
+}
+
+.modal-footer {
+    text-align: center;
+    padding: 1rem 2rem 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.modal-footer p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.close-btn {
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 1;
+    flex-shrink: 0; /* Não encolhe */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.close-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
 /* Responsividade para novas seções */
 @media (max-width: 768px) {
+    .livro-info {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .livro-detalhes h1.livro-titulo {
+        font-size: 2rem;
+    }
+    
+    .abrigos-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .modal-content {
+        margin: 1rem;
+        max-height: 85vh;
+    }
+    
+    .modal-header,
+    .modal-body {
+        padding: 1.5rem;
+    }
+    
     .livro-card {
         grid-template-columns: 1fr;
+    }
+}
+
+/* Seção próximos abrigos */
+.proximos-abrigos {
+    background: rgba(255, 255, 255, 0.95);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    padding: 2rem;
+    margin-top: 3rem;
+    text-align: center;
+    border-left: 4px solid var(--yellow-custom);
+}
+
+.proximos-abrigos h3 {
+    color: var(--primary);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.proximos-abrigos p {
+    color: var(--gray-medium);
+    line-height: 1.6;
+}
+
+/* Rodapé do Blog */
+.blog-footer {
+    background: var(--primary);
+    color: white;
+    margin-top: 4rem;
+    padding: 3rem 0 1rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.footer-info h3 {
+    color: var(--yellow-custom);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-info p {
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+}
+
+.btn-voltar-site {
+    background: var(--yellow-custom);
+    color: var(--primary);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 251, 0, 0.3);
+}
+
+.btn-voltar-site:hover {
+    background: #ffb700;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 251, 0, 0.4);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 2rem;
+    padding: 1rem 2rem 0;
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Responsividade do rodapé */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+    
+    .footer-info h3 {
+        font-size: 1.3rem;
+    }
+    
+    .btn-voltar-site {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
         text-align: center;
     }
 
