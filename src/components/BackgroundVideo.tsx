@@ -14,7 +14,7 @@ const BackgroundVideo = () => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  const imageSrc = isMobile ? "/images/mobile-site.png" : "/images/desktop-hero.png";
+  const imageSrc = isMobile ? "/images/mobile-site.jpg" : "/images/desktop-hero.png";
 
   return (
     <div
