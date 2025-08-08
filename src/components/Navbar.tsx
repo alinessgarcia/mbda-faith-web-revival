@@ -1,9 +1,7 @@
 
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { Menu, X, Radio } from "lucide-react";
+import { Radio } from "lucide-react";
 import { useScrollTo } from "../hooks/useScrollTo";
-import { NAVIGATION_ITEMS } from "../constants";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);

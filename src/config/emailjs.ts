@@ -2,9 +2,9 @@
 // Agora que a dependência foi instalada, podemos usar!
 
 export const EMAILJS_CONFIG = {
-  SERVICE_ID: 'service_j2rcgbd',
-  TEMPLATE_ID: 'template_ps1vxah',
-  PUBLIC_KEY: 'X1cKWT3OTz3QZf-7r',
+  SERVICE_ID: import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_j2rcgbd',
+  TEMPLATE_ID: import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_ps1vxah',
+  PUBLIC_KEY: import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'X1cKWT3OTz3QZf-7r',
 };
 
 // INSTRUÇÕES:
