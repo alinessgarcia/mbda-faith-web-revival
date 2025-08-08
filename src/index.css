@@ -229,50 +229,64 @@ html {
 
   /* Animações */
   @keyframes float-cloud-1 {
-    0%, 100% { 
-      transform: translateX(0px) translateY(0px); 
+
+    0%,
+    100% {
+      transform: translateX(0px) translateY(0px);
     }
-    25% { 
-      transform: translateX(30px) translateY(-10px); 
+
+    25% {
+      transform: translateX(30px) translateY(-10px);
     }
-    50% { 
-      transform: translateX(-20px) translateY(5px); 
+
+    50% {
+      transform: translateX(-20px) translateY(5px);
     }
-    75% { 
-      transform: translateX(15px) translateY(-5px); 
+
+    75% {
+      transform: translateX(15px) translateY(-5px);
     }
   }
 
   @keyframes float-cloud-2 {
-    0%, 100% { 
-      transform: translateX(0px) translateY(0px); 
+
+    0%,
+    100% {
+      transform: translateX(0px) translateY(0px);
     }
-    30% { 
-      transform: translateX(-25px) translateY(8px); 
+
+    30% {
+      transform: translateX(-25px) translateY(8px);
     }
-    60% { 
-      transform: translateX(35px) translateY(-12px); 
+
+    60% {
+      transform: translateX(35px) translateY(-12px);
     }
-    90% { 
-      transform: translateX(-10px) translateY(3px); 
+
+    90% {
+      transform: translateX(-10px) translateY(3px);
     }
   }
 
   @keyframes gentle-sway {
-    0%, 100% { 
-      transform: rotate(0deg) scale(1); 
+
+    0%,
+    100% {
+      transform: rotate(0deg) scale(1);
     }
-    50% { 
-      transform: rotate(1deg) scale(1.02); 
+
+    50% {
+      transform: rotate(1deg) scale(1.02);
     }
   }
 
   @keyframes rotate-pointer {
-    0% { 
-      transform: rotate(0deg); 
+    0% {
+      transform: rotate(0deg);
     }
-    100% { 
-      transform: rotate(360deg); 
+
+    100% {
+      transform: rotate(360deg);
     }
   }
 
@@ -281,16 +295,18 @@ html {
     .desktop-animation-container {
       display: none;
     }
-    
+
     /* Fix para barrinhas do nav-link no mobile */
     .nav-link::after {
       left: 50% !important;
       transform: translateX(-50%) !important;
-      max-width: 60px !important; /* Barrinha menor e centralizada */
+      max-width: 60px !important;
+      /* Barrinha menor e centralizada */
     }
-    
+
     .nav-link:hover::after {
-      width: 60px !important; /* Tamanho fixo e menor no hover para mobile */
+      width: 60px !important;
+      /* Tamanho fixo e menor no hover para mobile */
     }
   }
 
@@ -356,20 +372,23 @@ html {
   }
 
   .hero-content-position {
-    padding-top: 6rem; /* Ajustado para não colar no navbar desktop */
+    padding-top: 6rem;
+    /* Ajustado para não colar no navbar desktop */
   }
 
   /* Mobile: desce 30% mais */
   @media (max-width: 768px) {
     .hero-content-position {
-      padding-top: calc(3.9rem + 14.7vh); /* Mobile mantém como estava */
+      padding-top: calc(3.9rem + 14.7vh);
+      /* Mobile mantém como estava */
     }
   }
 
   /* Desktop: desce conteúdo 50% a mais */
   @media (min-width: 769px) {
     .hero-content-desktop-lower {
-      padding-top: calc(6rem + 25vh); /* Padding original + 50% da tela */
+      padding-top: calc(6rem + 25vh);
+      /* Padding original + 50% da tela */
     }
   }
 
@@ -684,10 +703,10 @@ html {
 
 /* Modal glassmorphism */
 .glass-modal {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(30px);
   -webkit-backdrop-filter: blur(30px);
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.1);
   border-radius: 24px;
   box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.4);
 }
@@ -707,4 +726,128 @@ html {
 
 .animate-modal-in {
   animation: modalIn 0.3s ease-out;
+}
+
+/* =
+==== STICKER ANIMADO ===== */
+.sticker-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.sticker-track {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  animation: slideLeft 80s linear infinite; /* Muito mais lento */
+  width: calc(200% + 200px); /* Largura extra para loop suave */
+  justify-content: space-around; /* Espaçamento uniforme */
+}
+
+.sticker-item {
+  flex-shrink: 0;
+  margin: 0 4rem; /* Espaçamento maior para melhor visualização */
+  opacity: 0.85;
+  transition: all 0.3s ease;
+}
+
+.sticker-item:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Container da logo com círculo animado */
+.sticker-logo-container {
+  position: relative;
+  display: inline-block;
+}
+
+.sticker-image {
+  width: 80px; /* PADRONIZADO - mesmo tamanho para todos */
+  height: 80px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+}
+
+/* Círculo animado PADRONIZADO - mesmo tamanho para todos */
+.sticker-ring {
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  width: 86px; /* Diminuído e padronizado */
+  height: 86px;
+  border: 2px solid transparent;
+  border-top: 2px solid #fffb00;
+  border-right: 2px solid #fffb00;
+  border-radius: 50%;
+  animation: ringRotate 10s linear infinite; /* Ainda mais lento */
+  z-index: 1;
+}
+
+/* Animação de movimento da direita para esquerda - ciclo infinito suave */
+@keyframes slideLeft {
+  0% {
+    transform: translateX(20%); /* Começa mais próximo para iniciar mais rápido */
+  }
+
+  100% {
+    transform: translateX(-100%); /* Vai até sair completamente para loop perfeito */
+  }
+}
+
+/* Responsividade do sticker - PADRONIZADO */
+@media (max-width: 768px) {
+  .sticker-image {
+    width: 60px; /* PADRONIZADO - mesmo tamanho para todos no mobile */
+    height: 60px;
+  }
+  
+  .sticker-ring {
+    width: 66px; /* PADRONIZADO - mesmo tamanho para todos no mobile */
+    height: 66px;
+    top: -3px;
+    left: -3px;
+  }
+
+  .sticker-item {
+    margin: 0 2rem; /* Espaçamento coerente no mobile */
+  }
+
+  .sticker-track {
+    animation-duration: 60s; /* Ainda mais lento no mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .sticker-image {
+    width: 50px; /* PADRONIZADO - mesmo tamanho para todos no mobile pequeno */
+    height: 50px;
+  }
+  
+  .sticker-ring {
+    width: 56px; /* PADRONIZADO - mesmo tamanho para todos no mobile pequeno */
+    height: 56px;
+    top: -3px;
+    left: -3px;
+  }
+
+  .sticker-item {
+    margin: 0 1.5rem; /* Espaçamento coerente no mobile pequeno */
+  }
+}
+
+/* Animação do círculo (igual à splash screen) */
+@keyframes ringRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
