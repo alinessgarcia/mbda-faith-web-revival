@@ -742,13 +742,13 @@ html {
   align-items: center;
   height: 100%;
   animation: slideLeft 80s linear infinite; /* Muito mais lento */
-  width: calc(200% + 200px); /* Largura extra para loop suave */
+  width: calc(400% + 400px); /* Largura maior para 16 stickers */
   justify-content: space-around; /* Espaçamento uniforme */
 }
 
 .sticker-item {
   flex-shrink: 0;
-  margin: 0 4rem; /* Espaçamento maior para melhor visualização */
+  margin: 0 2.5rem; /* Espaçamento reduzido para loop contínuo */
   opacity: 0.85;
   transition: all 0.3s ease;
 }
@@ -816,7 +816,7 @@ html {
   }
 
   .sticker-item {
-    margin: 0 2rem; /* Espaçamento coerente no mobile */
+    margin: 0 1.5rem; /* Espaçamento reduzido no mobile */
   }
 
   .sticker-track {
@@ -838,7 +838,7 @@ html {
   }
 
   .sticker-item {
-    margin: 0 1.5rem; /* Espaçamento coerente no mobile pequeno */
+    margin: 0 1rem; /* Espaçamento ainda menor no mobile pequeno */
   }
 }
 

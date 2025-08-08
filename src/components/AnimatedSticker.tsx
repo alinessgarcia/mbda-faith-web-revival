@@ -1,5 +1,5 @@
 const AnimatedSticker = () => {
-  // Array de 8 elementos intercalados - PADRONIZADO
+  // Array de 16 elementos para loop infinito perfeito - PADRONIZADO
   const stickerImages = [
     // Primeira sequência
     { src: '/images/logo-maio.png', alt: 'Logo MBdaR', type: 'logo' },
@@ -14,7 +14,33 @@ const AnimatedSticker = () => {
       alt: 'Cruz Cristã', 
       type: 'logo' 
     },
-    // Segunda sequência (para loop infinito)
+    // Segunda sequência
+    { src: '/images/logo-maio.png', alt: 'Logo MBdaR', type: 'logo' },
+    { 
+      src: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTQwIDEwTDQwIDcwTTE1IDMwTDY1IDMwIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K', 
+      alt: 'Cruz Cristã', 
+      type: 'logo' 
+    },
+    { src: '/images/recom-fm.png', alt: 'Recom FM', type: 'logo' },
+    { 
+      src: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTQwIDEwTDQwIDcwTTE1IDMwTDY1IDMwIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K', 
+      alt: 'Cruz Cristã', 
+      type: 'logo' 
+    },
+    // Terceira sequência
+    { src: '/images/logo-maio.png', alt: 'Logo MBdaR', type: 'logo' },
+    { 
+      src: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTQwIDEwTDQwIDcwTTE1IDMwTDY1IDMwIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K', 
+      alt: 'Cruz Cristã', 
+      type: 'logo' 
+    },
+    { src: '/images/recom-fm.png', alt: 'Recom FM', type: 'logo' },
+    { 
+      src: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTQwIDEwTDQwIDcwTTE1IDMwTDY1IDMwIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K', 
+      alt: 'Cruz Cristã', 
+      type: 'logo' 
+    },
+    // Quarta sequência
     { src: '/images/logo-maio.png', alt: 'Logo MBdaR', type: 'logo' },
     { 
       src: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTQwIDEwTDQwIDcwTTE1IDMwTDY1IDMwIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K', 
