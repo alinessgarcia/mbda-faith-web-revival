@@ -1,5 +1,4 @@
 import { ChevronDown } from "lucide-react";
-import AnimatedSticker from "./AnimatedSticker";
 
 const Hero = () => {
   return (
@@ -32,8 +31,7 @@ const Hero = () => {
         </div>
       </div>
       
-      {/* Sticker animado na parte inferior */}
-      <AnimatedSticker />
+
     </section>
   );
 };
