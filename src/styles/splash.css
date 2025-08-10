@@ -99,7 +99,7 @@
 }
 
 .splash-title {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
   font-size: 2.5rem;
   font-weight: bold;
   color: #fffb00;
@@ -111,7 +111,7 @@
 }
 
 .splash-subtitle {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
   font-size: 1.2rem;
   color: rgba(255, 255, 255, 0.9);
   font-weight: 300;
