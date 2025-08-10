@@ -11,36 +11,28 @@ import Autoplay from "embla-carousel-autoplay";
 
 const imagens = [
   {
-    src: "/images/agenda.jpg",
-    alt: "Momento especial da comunidade MBdA Reconciliação"
+    src: "/images/atos-dos-apostolos.jpg",
+    alt: "Estudo bíblico de Atos dos Apóstolos na MBdA Reconciliação"
   },
   {
-    src: "/images/atos-dos-apostolos.jpg", 
-    alt: "Celebração na igreja MBdA Reconciliação"
+    src: "/images/ceia2.jpg",
+    alt: "Santa Ceia na igreja MBdA Reconciliação"
   },
   {
-    src: "/images/casamento3.jpg",
-    alt: "Atividade da igreja MBdA Reconciliação"
+    src: "/images/ebd.jpg",
+    alt: "Escola Bíblica Dominical da MBdA Reconciliação"
   },
   {
-    src: "https://imgur.com/zCz6Cuj.jpg",
-    alt: "Evento especial da comunidade MBdA"
+    src: "/images/familia.jpg",
+    alt: "Momento em família na igreja MBdA Reconciliação"
   },
   {
-    src: "https://imgur.com/JYkWhFl.jpg",
-    alt: "Encontro da igreja MBdA Reconciliação"
+    src: "/images/5solas.jpg",
+    alt: "As 5 Solas da Reforma Protestante - MBdA Reconciliação"
   },
   {
-    src: "https://imgur.com/W1VxzK0.jpg",
-    alt: "Momento de adoração na MBdA Reconciliação"
-  },
-  {
-    src: "https://imgur.com/GGTtB1C.jpg",
-    alt: "Atividade comunitária da igreja MBdA"
-  },
-  {
-    src: "https://imgur.com/fjP7ueb.jpg",
-    alt: "Celebração especial da MBdA Reconciliação"
+    src: "/images/reforma-protestante.jpg",
+    alt: "Celebração da Reforma Protestante na MBdA Reconciliação"
   }
 ];
 
@@ -63,12 +55,12 @@ const Midia = () => {
             Confira fotos e vídeos dos momentos especiais em nossa igreja
           </p>
         </div>
-        
-        <div className="max-w-4xl mx-auto px-10 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+
+        <div className="max-w-7xl mx-auto px-10 animate-fade-in" style={{ animationDelay: "0.2s" }}>
           <div className="relative group">
             <div className="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-lg blur opacity-20 group-hover:opacity-30 transition duration-300"></div>
             <div className="relative">
-              <Carousel 
+              <Carousel
                 className="w-full"
                 plugins={[plugin.current]}
                 opts={{
@@ -90,7 +82,7 @@ const Midia = () => {
                           <img
                             src={imagem.src}
                             alt={imagem.alt}
-                            className="w-full h-56 sm:h-72 md:h-80 lg:h-[400px] object-cover transition-all hover:scale-105 duration-500"
+                            className="w-full h-72 sm:h-96 md:h-[450px] lg:h-[700px] xl:h-[800px] object-cover"
                             loading="lazy"
                           />
                         </div>
@@ -103,7 +95,7 @@ const Midia = () => {
               </Carousel>
             </div>
           </div>
-          
+
           <div className="flex justify-center mt-6">
             {imagens.map((_, index) => (
               <span
