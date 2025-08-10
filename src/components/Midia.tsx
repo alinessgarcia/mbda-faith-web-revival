@@ -11,27 +11,33 @@ import Autoplay from "embla-carousel-autoplay";
 
 const imagens = [
   {
-    src: "/images/atos-dos-apostolos.jpg",
+    srcDesktop: "/images/atos-desktop.jpg",
+    srcMobile: "/images/atos-mobile.jpg",
     alt: "Estudo bíblico de Atos dos Apóstolos na MBdA Reconciliação"
   },
   {
-    src: "/images/ceia2.jpg",
+    srcDesktop: "/images/ceia2.jpg",
+    srcMobile: "/images/ceia-mobile.jpg",
     alt: "Santa Ceia na igreja MBdA Reconciliação"
   },
   {
-    src: "/images/ebd.jpg",
+    srcDesktop: "/images/ebd.jpg",
+    srcMobile: "/images/ebd-mobile.jpg",
     alt: "Escola Bíblica Dominical da MBdA Reconciliação"
   },
   {
-    src: "/images/familia.jpg",
+    srcDesktop: "/images/familia.jpg",
+    srcMobile: "/images/familia-mobile.jpg",
     alt: "Momento em família na igreja MBdA Reconciliação"
   },
   {
-    src: "/images/5solas.jpg",
+    srcDesktop: "/images/5solas-desktop.jpg",
+    srcMobile: "/images/5solas-mobile.jpg",
     alt: "As 5 Solas da Reforma Protestante - MBdA Reconciliação"
   },
   {
-    src: "/images/reforma-protestante.jpg",
+    srcDesktop: "/images/reforma-desktop.jpg",
+    srcMobile: "/images/reforma-mobile.jpg",
     alt: "Celebração da Reforma Protestante na MBdA Reconciliação"
   }
 ];
@@ -79,10 +85,18 @@ const Midia = () => {
                     <CarouselItem key={index}>
                       <div className="p-1">
                         <div className="overflow-hidden rounded-lg shadow-xl">
+                          {/* Imagem para mobile */}
                           <img
-                            src={imagem.src}
+                            src={imagem.srcMobile}
                             alt={imagem.alt}
-                            className="w-full h-72 sm:h-96 md:h-[450px] lg:h-[700px] xl:h-[800px] object-cover"
+                            className="block sm:hidden w-full h-72 object-cover"
+                            loading="lazy"
+                          />
+                          {/* Imagem para desktop */}
+                          <img
+                            src={imagem.srcDesktop}
+                            alt={imagem.alt}
+                            className="hidden sm:block w-full h-96 md:h-[450px] lg:h-[700px] xl:h-[800px] object-cover"
                             loading="lazy"
                           />
                         </div>
