@@ -29,7 +29,21 @@ const VideoPlayer = ({ config }: { config: VideoConfig }) => {
     );
   }
   
-  // Vídeo local
+  // Vídeo local ou placeholder para YouTube bloqueado
+  if (src.includes('youtu')) {
+    return (
+      <div className="w-full h-full bg-gradient-to-br from-blue-600 to-blue-800 flex flex-col items-center justify-center cursor-pointer hover:from-blue-700 hover:to-blue-900 transition-all duration-300"
+           onClick={() => window.open(src, '_blank')}>
+        <div className="text-white text-center">
+          <div className="text-6xl mb-4">▶️</div>
+          <h3 className="text-xl font-bold mb-2">Assista no YouTube</h3>
+          <p className="text-sm opacity-90">Clique para assistir o devocional</p>
+          <p className="text-xs opacity-75 mt-2">"{title}"</p>
+        </div>
+      </div>
+    );
+  }
+  
   return (
     <video 
       className="w-full h-full object-cover"
