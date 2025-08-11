@@ -5,21 +5,21 @@ import VideoDialog from "./VideoDialog";
 const estudos = [
   {
     id: 1,
-    title: "Fundamentos da Fé",
+    title: "LAB - Fundamentos da nossa fé - Leonardo Silva",
     image: "/images/fundamentos.jpg",
-    videoUrl: "https://youtu.be/c-8f_9w8OWA"
+    videoUrl: "/videos/fundamentosda-nossa-fe.mp4" // Substitua pelo nome do seu arquivo
   },
   {
     id: 2,
-    title: "O Livro de Apocalipse",
+    title: "Panorama do Apocalipse - Pr Hernandes Dias Lopes",
     image: "/images/apocalipse.jpg",
-    videoUrl: "https://www.youtube.com/watch?v=KdfnoeaPMv0"
+    videoUrl: "/videos/apocalipse.mp4" // Substitua pelo nome do seu arquivo
   },
   {
     id: 3,
-    title: "Os Salmos",
+    title: "Livro de Salmos",
     image: "/images/os-salmos.jpg",
-    videoUrl: "https://www.youtube.com/watch?v=E1CqSwpaStI"
+    videoUrl: "/videos/salmos.mp4" // Substitua pelo nome do seu arquivo
   }
 ];
 
@@ -41,12 +41,12 @@ const EstudosBiblicos = () => {
       <div className="container mx-auto text-center pt-0">
         {/* Título */}
         <div className="text-center mb-16">
-          
-        <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold text-yellow-title drop-shadow-lg mb-4">
-              📚 Estudos Bíblicos
-            </h2>
-          
-            <p className="text-xl text-white max-w-3xl mx-auto mt-4">
+
+          <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold text-yellow-title drop-shadow-lg mb-4">
+            📚 Estudos Bíblicos
+          </h2>
+
+          <p className="text-xl text-white max-w-3xl mx-auto mt-4">
             Aprofunde seu conhecimento na Palavra de Deus através de nossos estudos
             bíblicos preparados com cuidado para edificação espiritual
           </p>
@@ -58,17 +58,17 @@ const EstudosBiblicos = () => {
               className="card group hover:scale-105 transition-transform duration-300 cursor-pointer"
               onClick={() => openVideoDialog(estudo.videoUrl)}
             >
-<div className="relative h-48 md:h-56 lg:h-64 overflow-hidden flex items-center justify-center bg-gray-100">
-  <img
-    src={estudo.image}
-    alt={estudo.title}
-    className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
-  />
-  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-  <h3 className="absolute bottom-4 left-4 text-white text-xl font-bold">
-    {estudo.title}
-  </h3>
-</div>
+              <div className="relative h-48 md:h-56 lg:h-64 overflow-hidden flex items-center justify-center bg-gray-100">
+                <img
+                  src={estudo.image}
+                  alt={estudo.title}
+                  className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <h3 className="absolute bottom-4 left-4 text-white text-xl font-bold">
+                  {estudo.title}
+                </h3>
+              </div>
 
               <div className="p-4">
                 <p className="text-primary font-medium flex items-center justify-end">
@@ -94,10 +94,10 @@ const EstudosBiblicos = () => {
         </div>
       </div>
 
-      <VideoDialog 
-        isOpen={videoDialogOpen} 
-        onClose={closeVideoDialog} 
-        videoUrl={currentVideoUrl} 
+      <VideoDialog
+        isOpen={videoDialogOpen}
+        onClose={closeVideoDialog}
+        videoUrl={currentVideoUrl}
       />
     </section>
   );

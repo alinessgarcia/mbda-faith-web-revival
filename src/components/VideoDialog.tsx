@@ -16,7 +16,10 @@ interface VideoDialogProps {
 }
 
 const VideoDialog = ({ isOpen, onClose, videoUrl }: VideoDialogProps) => {
-  // Extract video ID and convert regular URL to embed URL
+  // Detecta se é vídeo local ou YouTube
+  const isLocalVideo = videoUrl.startsWith('/videos/');
+  
+  // Extract video ID and convert regular URL to embed URL (para YouTube)
   const getEmbedUrl = (url: string) => {
     let videoId = "";
 
@@ -38,15 +41,31 @@ const VideoDialog = ({ isOpen, onClose, videoUrl }: VideoDialogProps) => {
         <DialogOverlay className="bg-black/80" />
         <DialogContent className="sm:max-w-[800px] p-0 bg-transparent border-none">
           <div className="aspect-video w-full">
-            <iframe
-              width="100%"
-              height="100%"
-              src={getEmbedUrl(videoUrl)}
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
+            {isLocalVideo ? (
+              // Player para vídeo local
+              <video
+                width="100%"
+                height="100%"
+                controls
+                autoPlay
+                className="w-full h-full"
+              >
+                <source src={videoUrl} type="video/mp4" />
+                <source src={videoUrl} type="video/webm" />
+                Seu navegador não suporta o elemento de vídeo.
+              </video>
+            ) : (
+              // Player para YouTube
+              <iframe
+                width="100%"
+                height="100%"
+                src={getEmbedUrl(videoUrl)}
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            )}
           </div>
           <DialogClose
             onClick={onClose}
