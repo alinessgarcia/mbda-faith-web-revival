@@ -11,23 +11,33 @@ import Autoplay from "embla-carousel-autoplay";
 
 const imagens = [
   {
-    src: "/images/escolinha1.jpg",
+    srcDesktop: "/images/familia-desktop.jpg",
+    srcMobile: "/images/familia-mobile-copy.jpg",
+    alt: "Momento especial das famílias na MBdA Reconciliação"
+  },
+  {
+    srcDesktop: "/images/escolinha1.jpg",
+    srcMobile: "/images/escolinha1.jpg",
     alt: "Atividade especial para famílias na MBdA Reconciliação"
   },
   {
-    src: "/images/escolinha2.jpg",
+    srcDesktop: "/images/escolinha2.jpg",
+    srcMobile: "/images/escolinha2.jpg",
     alt: "Encontro familiar na igreja MBdA Reconciliação"
   },
   {
-    src: "/images/escolinha3.jpg",
+    srcDesktop: "/images/escolinha3.jpg",
+    srcMobile: "/images/escolinha3.jpg",
     alt: "Celebração familiar na MBdA Reconciliação"
   },
   {
-    src: "/images/escolinha4.jpg",
+    srcDesktop: "/images/escolinha4.jpg",
+    srcMobile: "/images/escolinha4.jpg",
     alt: "Momento de comunhão familiar na igreja"
   },
   {
-    src: "/images/culto1.jpg",
+    srcDesktop: "/images/culto1.jpg",
+    srcMobile: "/images/culto1.jpg",
     alt: "Evento especial do Espaço Família MBdA"
   }
 ];
@@ -52,7 +62,7 @@ const EspacoFamilia = () => {
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto px-10 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+        <div className="w-full sm:max-w-7xl mx-auto px-2 sm:px-10 animate-fade-in" style={{ animationDelay: "0.2s" }}>
           <div className="relative group">
             <div className="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-lg blur opacity-20 group-hover:opacity-30 transition duration-300"></div>
             <div className="relative">
@@ -75,10 +85,18 @@ const EspacoFamilia = () => {
                     <CarouselItem key={index}>
                       <div className="p-1">
                         <div className="overflow-hidden rounded-lg shadow-xl">
+                          {/* Imagem para mobile */}
                           <img
-                            src={imagem.src}
+                            src={imagem.srcMobile}
                             alt={imagem.alt}
-                            className="w-full h-56 sm:h-72 md:h-80 lg:h-[400px] object-cover transition-all hover:scale-105 duration-500"
+                            className="block sm:hidden w-full h-72 object-cover"
+                            loading="lazy"
+                          />
+                          {/* Imagem para desktop */}
+                          <img
+                            src={imagem.srcDesktop}
+                            alt={imagem.alt}
+                            className="hidden sm:block w-full h-96 md:h-[450px] lg:h-[700px] xl:h-[800px] object-cover"
                             loading="lazy"
                           />
                         </div>
