@@ -52,7 +52,7 @@ const Devocional = () => {
         {/* Título com glassmorphism */}
         <div className="text-center mb-16">
           
-          <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold text-yellow-title drop-shadow-lg mb-4">
+          <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold text-yellow-title drop-shadow-lg mb-4" style={{ fontFamily: "'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif", whiteSpace: 'nowrap' }}>
               🙏 Devocional
             </h2>
           
