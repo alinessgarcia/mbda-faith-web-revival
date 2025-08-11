@@ -12,7 +12,7 @@ import Autoplay from "embla-carousel-autoplay";
 const imagens = [
   {
     srcDesktop: "/images/atos-desktop.jpg",
-    srcMobile: "/images/atos-mobile.jpg",
+    srcMobile: "/images/atos-mobile2.jpg",
     alt: "Estudo bíblico de Atos dos Apóstolos na MBdA Reconciliação"
   },
   {
@@ -22,7 +22,7 @@ const imagens = [
   },
   {
     srcDesktop: "/images/ebd.jpg",
-    srcMobile: "/images/ebd-mobile.jpg",
+    srcMobile: "/images/ebd-mobile2.jpg",
     alt: "Escola Bíblica Dominical da MBdA Reconciliação"
   },
   {
@@ -32,7 +32,7 @@ const imagens = [
   },
   {
     srcDesktop: "/images/5solas-desktop.jpg",
-    srcMobile: "/images/5solas-mobile.jpg",
+    srcMobile: "/images/5solas-mobile2.jpg",
     alt: "As 5 Solas da Reforma Protestante - MBdA Reconciliação"
   },
   {
@@ -62,7 +62,7 @@ const Midia = () => {
           </p>
         </div>
 
-        <div className="max-w-7xl mx-auto px-10 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+        <div className="w-full sm:max-w-7xl mx-auto px-2 sm:px-10 animate-fade-in" style={{ animationDelay: "0.2s" }}>
           <div className="relative group">
             <div className="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-lg blur opacity-20 group-hover:opacity-30 transition duration-300"></div>
             <div className="relative">
