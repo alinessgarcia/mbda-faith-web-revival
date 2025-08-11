@@ -7,7 +7,7 @@ const Hero = () => {
       <div className="relative z-20 text-left w-full pl-8 pr-4 flex items-start justify-start h-full hero-content-position hero-content-desktop-lower">
         <div className="max-w-3xl">
           <h1 className="mb-2 md:mb-4 animate-fade-in leading-tight">
-            <span className="text-4xl md:text-7xl lg:text-7xl font-extrabold text-white block drop-shadow-2xl mb-2 md:mb-0 tracking-tight translate-y-2 md:translate-y-2">
+            <span className="text-4xl md:text-7xl lg:text-7xl font-extrabold text-white block drop-shadow-2xl mb-2 md:mb-0 tracking-tight translate-y-2 md:translate-y-2" style={{ whiteSpace: 'nowrap' }}>
               Ministério Bíblico da
             </span>
             <span className="text-6xl md:text-9xl lg:text-12xl font-bold text-yellow-custom block -mt-2 md:-mt-2 drop-shadow-xl tracking-tight">
@@ -30,7 +30,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      
+
 
     </section>
   );
