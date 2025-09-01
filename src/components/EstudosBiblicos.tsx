@@ -7,7 +7,7 @@ const estudos = [
     id: 1,
     title: "Livre Arbítrio - Augustus Nicodemus",
     image: "https://img.youtube.com/vi/u2R0dCZTFfM/maxresdefault.jpg", // Imagem de capa do YouTube
-    videoUrl: "https://www.youtube.com/watch?v=u2R0dCZTFfM" // Substitua pelo nome do seu arquivo
+    videoUrl: "https://www.youtube.com/embed/u2R0dCZTFfM" // Substitua pelo nome do seu arquivo
   },
   {
     id: 2,
