@@ -5,9 +5,9 @@ import VideoDialog from "./VideoDialog";
 const estudos = [
   {
     id: 1,
-    title: "LAB - Fundamentos da nossa fé - Leonardo Silva",
-    image: "/images/fundamentos.jpg",
-    videoUrl: "/videos/fundamentosda-nossa-fe.mp4" // Substitua pelo nome do seu arquivo
+    title: "A Guerra Já Começou! E a maioria dos cristãos sequer percebeu... - Augustus Nicodemus",
+    image: "https://img.youtube.com/vi/yV-1qzzWfm4/maxresdefault.jpg", // Imagem de capa do YouTube
+    videoUrl: "https://www.youtube.com/watch?v=yV-1qzzWfm4" // Substitua pelo nome do seu arquivo
   },
   {
     id: 2,
