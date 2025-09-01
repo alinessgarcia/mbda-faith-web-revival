@@ -1,3 +1,5 @@
+# security.yml
+
 name: Security Scan
 
 on:
@@ -13,6 +15,10 @@ jobs:
   security-scan:
     name: Security Vulnerability Scan
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write
+      actions: read
     
     steps:
     - name: Checkout code
@@ -28,7 +34,7 @@ jobs:
       run: npm ci
       
     - name: Run npm audit
-      run: npm audit --audit-level high
+      run: npm audit --audit-level=high
       continue-on-error: true
       
     - name: Run security scan with Snyk
@@ -37,7 +43,7 @@ jobs:
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       with:
-        args: --severity-threshold=high
+        command: code test --sarif-file-output=snyk.sarif
         
     - name: Upload Snyk results to GitHub Code Scanning
       uses: github/codeql-action/upload-sarif@v3
