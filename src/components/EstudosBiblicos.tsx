@@ -12,14 +12,14 @@ const estudos = [
   {
     id: 2,
     title: "Panorama do Apocalipse - Pr Hernandes Dias Lopes",
-    image: "/images/apocalipse.jpg",
-    videoUrl: "/videos/apocalipse.mp4" // Substitua pelo nome do seu arquivo
+    image: "https://img.youtube.com/vi/KdfnoeaPMv0/maxresdefault.jpg",
+    videoUrl: "https://www.youtube.com/embed/KdfnoeaPMv0" // Substitua pelo nome do seu arquivo
   },
   {
     id: 3,
-    title: "Livro de Salmos",
-    image: "/images/os-salmos.jpg",
-    videoUrl: "/videos/salmos.mp4" // Substitua pelo nome do seu arquivo
+    title: "AS REFORMAS EVANGÉLICAS - Luiz Sayão",
+    image: "https://img.youtube.com/vi/_xEjtLTdcuQ/maxresdefault.jpg",
+    videoUrl: "https://www.youtube.com/embed/_xEjtLTdcuQ" // Substitua pelo nome do seu arquivo
   }
 ];
 
