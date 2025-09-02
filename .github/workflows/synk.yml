@@ -1,0 +1,49 @@
+# Nome do seu workflow. Aparecerá na aba "Actions" do GitHub.
+name: Snyk Security Scan
+
+# Define quando o workflow deve rodar.
+on:
+  # Roda quando houver um push para a branch 'main'.
+  push:
+    branches: [ "main" ]
+  # Roda também quando um pull request for aberto para a branch 'main'.
+  pull_request:
+    branches: [ "main" ]
+
+# Define as permissões necessárias para o workflow.
+permissions:
+  contents: read # para clonar o repositório
+  security-events: write # para enviar os resultados de segurança para o GitHub
+
+# Define os "jobs" ou tarefas que o workflow executará.
+jobs:
+  snyk:
+    # O nome do job.
+    name: Snyk Vulnerability Scan
+    # A máquina virtual que será usada para rodar o job.
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Clona o seu repositório para a máquina virtual.
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Instala as dependências do seu projeto (necessário para o Snyk analisar).
+      - name: Install dependencies
+        run: npm install
+
+      # 3. Configura a ferramenta de linha de comando do Snyk.
+      - name: Setup Snyk CLI
+        uses: snyk/actions/setup@master
+
+      # 4. Roda o teste de vulnerabilidades do Snyk.
+      #    Ele usará o token que você adicionou nos segredos.
+      - name: Run Snyk to check for vulnerabilities
+        run: snyk test --all-projects --sarif-file-output=snyk.sarif
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+
+      # 5. Envia os resultados para a aba "Security" do GitHub.
+      - name: Upload result to GitHub Code Scanning
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: snyk.sarif

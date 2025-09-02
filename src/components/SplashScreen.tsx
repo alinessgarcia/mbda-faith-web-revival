@@ -29,7 +29,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
       <div className="splash-content">
         <div className="splash-logo-container">
           <img
-            src="https://i.imgur.com/SWj1IpT.png"
+            src="/images/logo-maio.png"
             alt="MBdaR Logo"
             className={`splash-logo ${logoLoaded ? 'loaded' : ''}`}
             onLoad={() => setLogoLoaded(true)}

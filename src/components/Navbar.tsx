@@ -29,7 +29,7 @@ const Navbar = () => {
             onClick={scrollToTop}
           >
             <img
-              src="https://i.imgur.com/SWj1IpT.png"
+              src="/images/logo-maio.png"
               alt="MBdA Reconciliação Logo"
               className="h-10 md:h-12"
             />
