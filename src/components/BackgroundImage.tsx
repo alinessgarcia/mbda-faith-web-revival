@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const BackgroundVideo = () => {
+const BackgroundImage = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -28,4 +28,4 @@ const BackgroundVideo = () => {
 
 };
 
-export default BackgroundVideo;
+export default BackgroundImage;

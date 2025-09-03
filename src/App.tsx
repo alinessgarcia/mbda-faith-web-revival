@@ -10,7 +10,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Blog from "./components/Blog";
 import CookieConsent from "./components/CookieConsent";
-import BackgroundVideo from "./components/BackgroundVideo";
+import BackgroundImage from "./components/BackgroundImage";
 import SplashScreen from "./components/SplashScreen";
 import "./styles/splash.css";
 
@@ -30,7 +30,7 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <BackgroundVideo />
+        <BackgroundImage />
         <Toaster />
         <Sonner />
         <CookieConsent />
