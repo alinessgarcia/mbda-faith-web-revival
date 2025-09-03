@@ -6,6 +6,8 @@ import {
   DialogPortal,
   DialogOverlay,
   DialogClose,
+  DialogTitle,
+  DialogDescription,
 } from "@/components/ui/dialog";
 import { X } from "lucide-react";
 
@@ -40,6 +42,8 @@ const VideoDialog = ({ isOpen, onClose, videoUrl }: VideoDialogProps) => {
       <DialogPortal>
         <DialogOverlay className="bg-black/80" />
         <DialogContent className="sm:max-w-[800px] p-0 bg-transparent border-none">
+          <DialogTitle className="sr-only">Reproduzir Vídeo</DialogTitle>
+          <DialogDescription className="sr-only">Player de vídeo para reproduzir conteúdo</DialogDescription>
           <div className="aspect-video w-full">
             {isLocalVideo ? (
               // Player para vídeo local
