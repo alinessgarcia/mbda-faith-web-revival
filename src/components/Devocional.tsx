@@ -11,8 +11,8 @@ interface VideoConfig {
 // Configuração do vídeo - altere aqui para trocar o vídeo
 const videoConfig: VideoConfig = {
   type: "local",
-  src: "/videos/devocional-ofrutodafe.mp4",
-  title: "Devocional - O Fruto da Fé - Ministério Bíblico da Reconciliação"
+  src: "/videos/aobrigatoriedade-de-evangelizar.mp4",
+  title: "Devocional - A Obrigatoriedade de Evangelizar - Ministério Bíblico da Reconciliação"
 };
 
 // Função para detectar se é URL do YouTube
