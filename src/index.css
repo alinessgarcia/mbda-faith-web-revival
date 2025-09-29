@@ -187,162 +187,6 @@ html {
     background-attachment: fixed;
   }
 
-  /* Desktop Animation Styles */
-  .desktop-animation-container {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-  }
-
-  .desktop-layer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .desktop-bg-static {
-    z-index: 1;
-  }
-
-  .desktop-cloud-1 {
-    z-index: 2;
-    animation: float-cloud-1 20s ease-in-out infinite;
-  }
-
-  .desktop-cloud-2 {
-    z-index: 3;
-    animation: float-cloud-2 25s ease-in-out infinite;
-  }
-
-  .desktop-clock {
-    z-index: 4;
-    animation: gentle-sway 8s ease-in-out infinite;
-  }
-
-  .desktop-pointer {
-    z-index: 5;
-    animation: rotate-pointer 60s linear infinite;
-    transform-origin: center;
-  }
-
-  /* Animações */
-  @keyframes float-cloud-1 {
-
-    0%,
-    100% {
-      transform: translateX(0px) translateY(0px);
-    }
-
-    25% {
-      transform: translateX(30px) translateY(-10px);
-    }
-
-    50% {
-      transform: translateX(-20px) translateY(5px);
-    }
-
-    75% {
-      transform: translateX(15px) translateY(-5px);
-    }
-  }
-
-  @keyframes float-cloud-2 {
-
-    0%,
-    100% {
-      transform: translateX(0px) translateY(0px);
-    }
-
-    30% {
-      transform: translateX(-25px) translateY(8px);
-    }
-
-    60% {
-      transform: translateX(35px) translateY(-12px);
-    }
-
-    90% {
-      transform: translateX(-10px) translateY(3px);
-    }
-  }
-
-  @keyframes gentle-sway {
-
-    0%,
-    100% {
-      transform: rotate(0deg) scale(1);
-    }
-
-    50% {
-      transform: rotate(1deg) scale(1.02);
-    }
-  }
-
-  @keyframes rotate-pointer {
-    0% {
-      transform: rotate(0deg);
-    }
-
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-
-  /* Responsividade */
-  @media (max-width: 768px) {
-    .desktop-animation-container {
-      display: none;
-    }
-
-    /* Fix para barrinhas do nav-link no mobile */
-    .nav-link::after {
-      left: 50% !important;
-      transform: translateX(-50%) !important;
-      max-width: 60px !important;
-      /* Barrinha menor e centralizada */
-    }
-
-    .nav-link:hover::after {
-      width: 60px !important;
-      /* Tamanho fixo e menor no hover para mobile */
-    }
-  }
-
-  .glass-effect {
-    @apply backdrop-blur-lg bg-white/90 shadow-md;
-  }
-
-  /* Glassmorphism moderno */
-  .glass-blue {
-    background: rgba(0, 145, 235, 0.1);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(0, 145, 235, 0.2);
-    box-shadow: 0 8px 32px rgba(0, 145, 235, 0.1);
-  }
-
-  .glass-card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  }
-
-  .gradient-blue {
-    background: linear-gradient(135deg, #0091eb 0%, #006bb3 100%);
-  }
-
-  .gradient-blue-glass {
-    background: linear-gradient(135deg, rgba(0, 145, 235, 0.4) 0%, rgba(0, 107, 179, 0.5) 100%);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-  }
-
   /* Hero específico */
   .hero-section {
     position: relative;
@@ -351,8 +195,6 @@ html {
     z-index: 1;
     overflow: hidden;
   }
-
-
 
   @media (max-width: 768px) {
     .hero-bg {
@@ -375,26 +217,19 @@ html {
 
   .hero-content-position {
     padding-top: 6rem;
-    /* Ajustado para não colar no navbar desktop */
   }
 
-  /* Mobile: desce 30% mais */
   @media (max-width: 768px) {
     .hero-content-position {
       padding-top: calc(3.9rem + 14.7vh);
-      /* Mobile mantém como estava */
     }
   }
 
-  /* Desktop: desce conteúdo 50% a mais */
   @media (min-width: 769px) {
     .hero-content-desktop-lower {
       padding-top: calc(6rem + 25vh);
-      /* Padding original + 50% da tela */
     }
   }
-
-
 
   .hero-decorative-circle-1 {
     animation-delay: 0s;
@@ -412,148 +247,8 @@ html {
     animation-delay: 0.4s;
   }
 
-  /* Fix para títulos do Hero */
   .hero-section h1 span {
     font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif !important;
-  }
-
-  /* Delays de animação reutilizáveis */
-  .animate-delay-100 {
-    animation-delay: 0.1s;
-  }
-
-  .animate-delay-200 {
-    animation-delay: 0.2s;
-  }
-
-  .animate-delay-300 {
-    animation-delay: 0.3s;
-  }
-
-  .animate-delay-400 {
-    animation-delay: 0.4s;
-  }
-
-  .animate-delay-500 {
-    animation-delay: 0.5s;
-  }
-
-  /* Componentes específicos */
-  .section-container {
-    @apply relative min-h-screen flex items-center justify-center overflow-hidden;
-  }
-
-  .decorative-circles {
-    @apply absolute inset-0 opacity-10;
-  }
-
-  .decorative-circle-white {
-    @apply absolute top-1/4 left-1/4 w-96 h-96 bg-white rounded-full blur-3xl animate-pulse;
-  }
-
-  .decorative-circle-gray {
-    @apply absolute bottom-1/4 right-1/4 w-64 h-64 bg-gray-400 rounded-full blur-3xl animate-pulse;
-    animation-delay: 1s;
-  }
-
-  /* Gradientes personalizados */
-  .gradient-hero {
-    background: linear-gradient(135deg, rgba(0, 145, 235, 0.8) 0%, rgba(0, 107, 179, 0.9) 100%);
-  }
-
-  .gradient-section {
-    background: linear-gradient(135deg, #0091eb 0%, #006bb3 50%, #004d82 100%);
-    position: relative;
-  }
-
-  .gradient-section::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%, rgba(255, 255, 255, 0.05) 100%);
-    pointer-events: none;
-  }
-
-  /* Cards com glassmorphism REAL - mais transparente */
-  .glass-card-modern {
-    background: linear-gradient(135deg,
-        rgba(28, 168, 255, 0.3),
-        rgba(20, 143, 219, 0.3),
-        rgba(0, 102, 166, 0.3));
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    border-radius: 16px;
-    transition: all 0.3s ease;
-  }
-
-
-  .glass-card-modern:hover {
-    background: rgba(0, 0, 0, 0.35);
-    transform: translateY(-5px);
-    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
-  }
-
-  .glass-card-agenda {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
-    transition: all 0.3s ease;
-  }
-
-  .glass-card-agenda:hover {
-    background: rgba(0, 0, 0, 0.35);
-    transform: translateY(-3px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-  }
-
-  /* Shapes decorativos */
-  .shape-blob {
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-    animation: blob 7s ease-in-out infinite;
-  }
-
-  @keyframes blob {
-    0% {
-      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-    }
-
-    25% {
-      border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%;
-    }
-
-    50% {
-      border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%;
-    }
-
-    75% {
-      border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%;
-    }
-
-    100% {
-      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-    }
-  }
-
-  /* Cores específicas */
-  .text-blue-light {
-    color: #00e1ff;
-  }
-
-  .text-blue-light2 {
-    color: #00aec5;
-  }
-
-  .text-lime {
-    color: #84cc16;
-  }
-
-  .bg-lime {
-    background-color: #84cc16;
   }
 
   .text-yellow-custom {
@@ -564,92 +259,34 @@ html {
     color: #141414;
   }
 
-  /* Classes dinâmicas para agenda */
-  .agenda-card {
-    background-image: linear-gradient(135deg, var(--schedule-color-light) 0%, var(--schedule-color-lighter) 100%);
+  .glass-effect {
+    @apply backdrop-blur-lg bg-white/90 shadow-md;
   }
 
-  .agenda-day-indicator {
-    background-color: var(--schedule-color);
+  .glass-blue {
+    background: rgba(0, 145, 235, 0.1);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 145, 235, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 145, 235, 0.1);
   }
 
-  .agenda-special-border {
-    border-left-color: var(--schedule-color);
+  .glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   }
 
-  .text-yellow-title {
-    color: #fffb00;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    position: relative;
-    display: inline-block;
+  .gradient-blue {
+    background: linear-gradient(135deg, #0091eb 0%, #006bb3 100%);
   }
 
-  .text-yellow-title:hover {
-    color: white;
-    transform: translateY(2px);
-  }
-
-  .text-yellow-title::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 3px;
-    bottom: -8px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: white;
-    transition: width 0.3s ease;
-  }
-
-  .text-yellow-title:hover::after {
-    width: 95%;
-  }
-
-  .text-title-white:hover {
-    color: white;
-    transform: translateY(2px);
-  }
-
-  /* Títulos para seções vazadas - efeito sutil */
-  .title-with-border {
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    display: inline-block;
-  }
-
-  .subtitle-with-border {
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-    display: inline-block;
-  }
-
-  .text-title-white::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 3px;
-    bottom: -8px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: white;
-    transition: width 0.3s ease;
-  }
-
-  .text-title-white:hover::after {
-    width: 95%;
-  }
-
-  .bg-yellow-custom {
-    background-color: #eab308;
-  }
-
-  .bg-orange-custom {
-    background-color: #ff9100;
-  }
-
-  .bg-light-blue {
-    background-color: #c7e9ff;
+  .gradient-blue-glass {
+    background: linear-gradient(135deg, rgba(0, 145, 235, 0.4) 0%, rgba(0, 107, 179, 0.5) 100%);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
   }
 
   .card {
@@ -660,13 +297,11 @@ html {
     font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
   }
 
-  /* Enhanced animations */
   @keyframes fade-in-up {
     from {
       opacity: 0;
       transform: translateY(30px);
     }
-
     to {
       opacity: 1;
       transform: translateY(0);
@@ -677,54 +312,46 @@ html {
     animation: fade-in-up 0.6s ease-out forwards;
   }
 
-  /* Smooth scrolling improvements */
-  @media (prefers-reduced-motion: no-preference) {
-    html {
-      scroll-behavior: smooth;
-    }
-  }
-
-  /* Focus improvements for accessibility */
   button:focus-visible,
   a:focus-visible {
     @apply outline-2 outline-offset-2 outline-blue-500;
   }
+}
 
-  /* Loading animation */
-  .loading-shimmer {
-    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-    background-size: 200% 100%;
-    animation: shimmer 2s infinite;
-  }
+/* News Slider Styles */
+.news-slider-height {
+  height: calc(100vh - 120px);
+  max-height: 600px;
+}
 
-  @keyframes shimmer {
-    0% {
-      background-position: -200% 0;
-    }
+.news-slider-container {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0 0 0 12px;
+}
 
-    100% {
-      background-position: 200% 0;
-    }
+@media (max-width: 768px) {
+  .news-slider-height {
+    display: none;
   }
 }
 
 /* Modal glassmorphism */
 .glass-modal {
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(30px);
   -webkit-backdrop-filter: blur(30px);
+  backdrop-filter: blur(30px);
   border: 2px solid rgba(255, 255, 255, 0.1);
   border-radius: 24px;
   box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
-/* Animação do modal */
 @keyframes modalIn {
   from {
     opacity: 0;
     transform: scale(0.9) translateY(20px);
   }
-
   to {
     opacity: 1;
     transform: scale(1) translateY(0);

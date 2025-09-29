@@ -25,7 +25,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex justify-between md:justify-start items-center">
           <div
-            className="flex items-center cursor-pointer md:mr-8"
+            className="flex items-center cursor-pointer md:mr-16"
             onClick={scrollToTop}
           >
             <img
@@ -33,7 +33,7 @@ const Navbar = () => {
               alt="MBdA Reconciliação Logo"
               className="h-10 md:h-12"
             />
-            <span className="ml-2 nav-link font-bold font-roboto text-lg md:text-xl">
+            <span className="nav-link font-bold font-roboto text-lg md:text-xl ml-1">
               <span className="md:hidden">MBdaReconciliação</span>
               <span className="hidden md:inline">MBdaR</span>
             </span>

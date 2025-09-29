@@ -1,37 +1,12 @@
-import { ChevronDown } from "lucide-react";
+import NewsSlider from "./NewsSlider";
 
 const Hero = () => {
   return (
     <section className="hero-section bg-black/60 relative">
-      {/* Conteúdo */}
-      <div className="relative z-20 text-left w-full pl-8 pr-4 flex items-start justify-start h-full hero-content-position hero-content-desktop-lower">
-        <div className="max-w-3xl">
-          <h1 className="mb-2 md:mb-4 animate-fade-in leading-tight">
-            <span className="text-4xl md:text-7xl lg:text-7xl font-extrabold text-white block drop-shadow-2xl mb-2 md:mb-0 tracking-tight translate-y-2 md:translate-y-2" style={{ whiteSpace: 'nowrap' }}>
-              Ministério Bíblico da
-            </span>
-            <span className="text-6xl md:text-9xl lg:text-12xl font-bold text-yellow-custom block -mt-2 md:-mt-2 drop-shadow-xl tracking-tight">
-              Reconciliação
-            </span>
-          </h1>
-
-          <p className="text-lg md:text-xl lg:text-2xl text-white mb-4 md:mb-6 animate-fade-in leading-snug drop-shadow-md hero-content-delay-1 tracking-wider">
-            <b>Somos uma Igreja Cristã voltada ao ensino profundo da Palavra de Deus, comunhão familiar e edificação espiritual.</b>
-          </p>
-
-          <div className="animate-fade-in hero-content-delay-2">
-            <a
-              href="#quem-somos"
-              className="inline-flex items-center bg-yellow-custom hover:bg-orange-custom text-primary font-bold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-amber-300/50"
-            >
-              Conheça Nossa Igreja
-              <ChevronDown className="ml-2 w-5 h-5" />
-            </a>
-          </div>
-        </div>
+      {/* News Slider - Full Width */}
+      <div className="absolute inset-0 z-30">
+        <NewsSlider />
       </div>
-
-
     </section>
   );
 };
