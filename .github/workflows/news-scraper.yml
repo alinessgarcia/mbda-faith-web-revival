@@ -7,6 +7,9 @@ on:
     - cron: '0 10,22 * * *'
   workflow_dispatch: # Permite execução manual
 
+permissions:
+  contents: write
+
 jobs:
   scrape-news:
     runs-on: ubuntu-latest
@@ -14,6 +17,9 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
+      with:
+        persist-credentials: true
+        ref: main
       
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -34,9 +40,17 @@ jobs:
         python news_scraper.py
         
     - name: Commit and push if changes
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
+        git config --global user.email "action@github.com"
+        git config --global user.name "GitHub Action"
+        git fetch origin main
+        git checkout -B main
         git add src/data/christian_news.json
-        git diff --staged --quiet || git commit -m "Update news data - $(date)"
-        git push
+        if ! git diff --staged --quiet; then
+          git commit -m "chore: update news data - $(date -u +"%Y-%m-%dT%H:%M:%SZ")"
+          git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git HEAD:main
+        else
+          echo "No changes to commit."
+        fi
