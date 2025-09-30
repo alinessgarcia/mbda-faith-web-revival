@@ -2,12 +2,37 @@ import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, ExternalLink, RefreshCw } from "lucide-react";
 import { loadChristianNews, refreshChristianNews, NewsItem } from "../api/newsApi";
 
+// Adiciona suporte a slides de banner intercalados com notícias
+type BannerSlide = { kind: "banner"; data: { src: string; alt?: string; link?: string } };
+type NewsSlide = { kind: "news"; data: NewsItem };
+type SlideItem = BannerSlide | NewsSlide;
+
 const NewsSlider: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [newsItems, setNewsItems] = useState<NewsItem[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isRefreshing, setIsRefreshing] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  // Definição dos banners e construção da lista combinada de slides (notícias + banners)
+  const bannerSlides: BannerSlide[] = [
+    { kind: "banner", data: { src: "/images/banner1-slide.png", alt: "Banner 1" } },
+  ];
+
+  const slides: SlideItem[] = (() => {
+    const newsSlides: SlideItem[] = newsItems.map((n) => ({ kind: "news", data: n }));
+    if (bannerSlides.length === 0) return newsSlides;
+    const result: SlideItem[] = [];
+    let bIndex = 0;
+    newsSlides.forEach((s, i) => {
+      result.push(s);
+      if ((i + 1) % 2 === 0 && bIndex < bannerSlides.length) {
+        result.push(bannerSlides[bIndex]);
+        bIndex++;
+      }
+    });
+    return result;
+  })();
 
   // Load news data on component mount
   useEffect(() => {
@@ -48,23 +73,23 @@ const NewsSlider: React.FC = () => {
 
   // Auto-slide functionality
   useEffect(() => {
-    if (newsItems.length === 0) return;
-    
+    if (slides.length === 0) return;
+
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % newsItems.length);
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 10000); // Change slide every 10 seconds (slower)
 
     return () => clearInterval(interval);
-  }, [newsItems.length]);
+  }, [slides.length]);
 
   const nextSlide = () => {
-    if (newsItems.length === 0) return;
-    setCurrentSlide((prev) => (prev + 1) % newsItems.length);
+    if (slides.length === 0) return;
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
   };
 
   const prevSlide = () => {
-    if (newsItems.length === 0) return;
-    setCurrentSlide((prev) => (prev - 1 + newsItems.length) % newsItems.length);
+    if (slides.length === 0) return;
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
   const goToSlide = (index: number) => {
@@ -154,69 +179,81 @@ const NewsSlider: React.FC = () => {
 
         {/* Slides */}
         <div className="relative h-full overflow-hidden">
-          {newsItems.map((item, index) => (
+          {slides.map((slide, index) => (
             <div
-              key={`${item.source}-${index}`}
+              key={`slide-${slide.kind}-${index}`}
               className={`absolute inset-0 transition-all duration-700 ease-in-out ${
                 index === currentSlide
-                  ? 'opacity-100 translate-x-0'
+                  ? "opacity-100 translate-x-0"
                   : index < currentSlide
-                  ? 'opacity-0 -translate-x-full'
-                  : 'opacity-0 translate-x-full'
+                  ? "opacity-0 -translate-x-full"
+                  : "opacity-0 translate-x-full"
               }`}
             >
               <div className="h-full flex items-center">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full px-8">
-                  {/* Coluna de Imagem - apenas se houver imagem da raspagem */}
-                  {item.image_url && item.image_url.startsWith('http') && (
-                    <div className="flex items-center justify-center">
-                      <div className="relative w-full max-w-md aspect-video rounded-lg overflow-hidden shadow-2xl">
-                        <img 
-                          src={item.image_url} 
-                          alt={item.title}
-                          className="w-full h-full object-cover"
-                          onError={(e) => {
-                            // Se a imagem falhar, esconde a coluna
-                            e.currentTarget.parentElement?.parentElement?.remove();
-                          }}
-                        />
-                        
-                        {/* Overlay com categoria */}
-                        <div className="absolute top-4 left-4">
-                          <div className="inline-block px-3 py-1 bg-yellow-500/90 text-black text-xs font-semibold rounded-full backdrop-blur-sm">
-                            {item.category}
+                {slide.kind === "news" ? (
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full px-8">
+                    {/* Coluna de Imagem - apenas se houver imagem da raspagem */}
+                    {slide.data.image_url && (
+                      <div className="flex items-center justify-center">
+                        <div className="relative w-full max-w-md aspect-video rounded-lg overflow-hidden shadow-2xl">
+                          <img
+                            src={slide.data.image_url}
+                            alt={slide.data.title}
+                            className="w-full h-full object-cover"
+                            onError={(e) => {
+                              // Se a imagem falhar, esconde a coluna
+                              e.currentTarget.parentElement?.parentElement?.remove();
+                            }}
+                          />
+
+                          {/* Overlay com categoria */}
+                          <div className="absolute top-4 left-4">
+                            <div className="inline-block px-3 py-1 bg-yellow-500/90 text-black text-xs font-semibold rounded-full backdrop-blur-sm">
+                              {slide.data.category}
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  )}
-                  
-                  {/* Coluna de Conteúdo - ajusta largura baseada na presença de imagem */}
-                  <div className={`flex flex-col justify-center space-y-6 ${
-                    item.image_url && item.image_url.startsWith('http') ? '' : 'col-span-full text-center'
-                  }`}>
-                    <h3 className="text-3xl lg:text-4xl font-bold text-white leading-tight">
-                       {item.title}
-                    </h3>
-                     
-                    <p className="text-gray-200 text-lg leading-relaxed line-clamp-4">
-                       {item.summary}
-                    </p>
-                     
-                    <div className="flex items-center justify-between pt-4">
-                      <span className="text-sm text-gray-300 font-medium">{item.source}</span>
-                      <a
-                        href={item.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 bg-yellow-500 hover:bg-yellow-600 text-black px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
-                      >
-                        Ler mais
-                        <ExternalLink className="w-4 h-4" />
-                      </a>
+                    )}
+
+                    {/* Coluna de Conteúdo - ajusta largura baseada na presença de imagem */}
+                    <div
+                      className={`flex flex-col justify-center space-y-6 ${
+                        slide.data.image_url ? "" : "col-span-full text-center"
+                      }`}
+                    >
+                      <h3 className="text-3xl lg:text-4xl font-bold text-white leading-tight">
+                        {slide.data.title}
+                      </h3>
+
+                      <p className="text-gray-200 text-lg leading-relaxed line-clamp-4">
+                        {slide.data.summary}
+                      </p>
+
+                      <div className="flex items-center justify-between pt-4">
+                        <span className="text-sm text-gray-300 font-medium">{slide.data.source}</span>
+                        <a
+                          href={slide.data.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 bg-yellow-500 hover:bg-yellow-600 text-black px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
+                        >
+                          Ler mais
+                          <ExternalLink className="w-4 h-4" />
+                        </a>
+                      </div>
                     </div>
                   </div>
-                </div>
+                ) : (
+                  <div className="w-full h-full">
+                    <img
+                      src={slide.data.src}
+                      alt={slide.data.alt ?? "Banner"}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                )}
               </div>
             </div>
           ))}
@@ -224,14 +261,12 @@ const NewsSlider: React.FC = () => {
 
         {/* Slide Indicators */}
         <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex space-x-2 z-20">
-          {newsItems.map((_, index) => (
+          {slides.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentSlide(index)}
-              className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                index === currentSlide
-                  ? 'bg-yellow-400 w-6'
-                  : 'bg-white/40 hover:bg-white/60'
+              className={`h-2 rounded-full transition-all duration-300 ${
+                index === currentSlide ? "bg-yellow-400 w-6" : "bg-white/40 w-2 hover:bg-white/60"
               }`}
             />
           ))}
@@ -242,3 +277,5 @@ const NewsSlider: React.FC = () => {
 };
 
 export default NewsSlider;
+
+// Remover qualquer bloco duplicado abaixo (inserido por engano)
