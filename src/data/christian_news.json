@@ -1,9 +1,10 @@
 {
-  "last_updated": "2025-09-30T10:51:08.107544",
-  "total_articles": 4,
+  "last_updated": "2025-09-30T14:56:03.550918",
+  "total_articles": 11,
   "sources": [
-    "BBC News Brasil - Arqueologia",
     "Cafetorah - Notícias de Israel",
+    "BBC News Brasil - Arqueologia",
+    "Revista Galileu - Arqueologia",
     "BBC News Brasil"
   ],
   "articles": [
@@ -12,7 +13,7 @@
       "summary": "Mulheres em Gaza denunciam exploração sexual em troca de ajuda humanitária Relatos revelam que alimentos e assistência estão sendo usados como moeda de troca em meio à crise humanitária. Histórias de ...",
       "url": "https://cafetorah.com/gaza-exploracao-sexual-em-meio-a-guerra/",
       "source": "Cafetorah - Notícias de Israel",
-      "date": "Tue, 30 Sep 2025 10:50:41 GMT",
+      "date": "Tue, 30 Sep 2025 14:55:32 GMT",
       "category": "Israel e Oriente Médio",
       "image_url": "https://cafetorah.com/wp-content/uploads/2025/09/pexels-mart-production-7699317.jpg"
     },
@@ -21,27 +22,90 @@
       "summary": "Se queres paz, prepara-te para a guerraSi vis pacem, para bellum  Flavio Vegécio Renato, Século V Nas últimas semanas observamos um conjunto de eventos que, tomados em conjunto, explicam por que anali...",
       "url": "https://cafetorah.com/a-beira-da-tempestade-o-mundo-caminha-para-um-conflito-global/",
       "source": "Cafetorah - Notícias de Israel",
-      "date": "Tue, 30 Sep 2025 10:50:44 GMT",
+      "date": "Tue, 30 Sep 2025 14:55:35 GMT",
       "category": "Israel e Oriente Médio",
       "image_url": "https://cafetorah.com/wp-content/uploads/2025/09/ai-generated-7834228_1920.jpg"
     },
     {
-      "title": "Os obstáculos que o plano de paz de Trump para Gaza enfrenta",
+      "title": "Por que Brasil faz exercício militar na Amazônia com novo míssil e blindados",
       "summary": "",
-      "url": "https://www.bbc.com/portuguese/articles/c04qxkkn6zlo",
+      "url": "https://www.bbc.com/portuguese/articles/cgl1djy0j4go",
       "source": "BBC News Brasil",
-      "date": "Tue, 30 Sep 2025 10:50:55 GMT",
+      "date": "Tue, 30 Sep 2025 14:55:45 GMT",
       "category": "Arqueologia e História",
-      "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/ed3e/live/8f22f550-9d9b-11f0-92db-77261a15b9d2.jpg"
+      "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/fe96/live/fb5ceee0-9df7-11f0-8be3-951c01645535.jpg"
+    },
+    {
+      "title": "Vídeo, Venezuela dá armas a civis contra 'ameaça militar' dos EUA, Duration 1,55",
+      "summary": "",
+      "url": "https://www.bbc.com/portuguese/articles/crkj1yglyx6o",
+      "source": "BBC News Brasil",
+      "date": "Tue, 30 Sep 2025 14:55:45 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/c438/live/0a2c1100-9e14-11f0-928c-71dbb8619e94.jpg"
+    },
+    {
+      "title": "Super-ricos pagam menos Imposto de Renda que classe média desde 2009, revela estudo inédito",
+      "summary": "",
+      "url": "https://www.bbc.com/portuguese/articles/cwylj82e09eo",
+      "source": "BBC News Brasil",
+      "date": "Tue, 30 Sep 2025 14:55:45 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/49d8/live/5ed0a370-9dd2-11f0-92db-77261a15b9d2.jpg"
+    },
+    {
+      "title": "O que é o metanol, substância ilegal em bebidas e suspeita de ter contaminado jovens em SP",
+      "summary": "",
+      "url": "https://www.bbc.com/portuguese/articles/cy041pd8ne3o",
+      "source": "BBC News Brasil",
+      "date": "Tue, 30 Sep 2025 14:55:46 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/d35c/live/c1d43050-9d18-11f0-928c-71dbb8619e94.jpg"
+    },
+    {
+      "title": "Crânio de milhões de anos reescreve a história da evolução humana, segundo cientistas",
+      "summary": "",
+      "url": "https://www.bbc.com/portuguese/articles/cj9zrjv8rn3o",
+      "source": "BBC News Brasil - Arqueologia",
+      "date": "Tue, 30 Sep 2025 14:55:48 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/7293/live/6123b2f0-865f-11f0-8c3f-f11535c1796a.jpg"
     },
     {
       "title": "A recém-descoberta cidade desértica no Peru que está reescrevendo a história das Américas",
       "summary": "",
       "url": "https://www.bbc.com/portuguese/articles/c0ezqr047rno",
       "source": "BBC News Brasil - Arqueologia",
-      "date": "Tue, 30 Sep 2025 10:50:57 GMT",
+      "date": "Tue, 30 Sep 2025 14:55:48 GMT",
       "category": "Arqueologia e História",
       "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/e968/live/9f6a0930-9279-11f0-8447-89d0c49c75e5.jpg"
+    },
+    {
+      "title": "Aenaria: a fascinante história da cidade italiana que desapareceu há 2 mil anos após uma erupção vulcânica",
+      "summary": "",
+      "url": "https://www.bbc.com/portuguese/articles/cpv07371vl1o",
+      "source": "BBC News Brasil - Arqueologia",
+      "date": "Tue, 30 Sep 2025 14:55:48 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/6d76/live/f40c0a30-60cc-11f0-a40e-a1af2950b220.jpg"
+    },
+    {
+      "title": "As tatuagens de 2,5 mil anos encontradas em múmia congelada",
+      "summary": "",
+      "url": "https://www.bbc.com/portuguese/articles/crm4nkzj37po",
+      "source": "BBC News Brasil - Arqueologia",
+      "date": "Tue, 30 Sep 2025 14:55:48 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/bd26/live/a255d9c0-6d72-11f0-8dbd-f3d32ebd3327.jpg"
+    },
+    {
+      "title": "Leopardo mumificado em caverna é primeiro grande felino encontrado dessa forma",
+      "summary": "",
+      "url": "https://revistagalileu.globo.com/ciencia/arqueologia/noticia/2025/09/leopardo-mumificado-achado-em-caverna-e-primeiro-grande-felino-preservado-dessa-maneira.ghtml",
+      "source": "Revista Galileu - Arqueologia",
+      "date": "Tue, 30 Sep 2025 14:55:51 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://s2-galileu.glbimg.com/DavmxpVTaCvGtUiwfTUJy4iEVOk=/1200x/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_fde5cd494fb04473a83fa5fd57ad4542/internal_photos/bs/2025/K/j/lAIyTXRh6KJxPfTEcFYg/sei-267475934.jpg"
     }
   ]
 }

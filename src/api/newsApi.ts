@@ -26,6 +26,26 @@ class NewsAPI {
   private cache: NewsItem[] | null = null;
   private cacheExpiry: number = 0;
   private readonly CACHE_DURATION = 30 * 60 * 1000; // 30 minutes in milliseconds
+  private readonly MAX_AGE_MS = 48 * 60 * 60 * 1000; // 48 hours in milliseconds
+  private readonly MIN_ARTICLES = 6; // Ensure we always show at least this many
+
+  private isRecent(dateStr?: string): boolean {
+    if (!dateStr) return false;
+    const ts = Date.parse(dateStr);
+    if (isNaN(ts)) return false;
+    return (Date.now() - ts) <= this.MAX_AGE_MS;
+  }
+
+  private mergeWithFallback(items: NewsItem[], minCount: number): NewsItem[] {
+    if (items.length >= minCount) return items;
+    const fallback = this.getFallbackNews();
+    const existing = new Set(items.map(i => i.url));
+    for (const f of fallback) {
+      if (!existing.has(f.url)) items.push(f);
+      if (items.length >= minCount) break;
+    }
+    return items;
+  }
 
   /**
    * Load news data from Supabase or fallback to local JSON
@@ -38,40 +58,54 @@ class NewsAPI {
         return this.cache;
       }
 
-      console.log('📰 Loading fresh news data from Supabase');
+      console.log('📰 Loading fresh news data');
       
-      // Try to load from Supabase first
-      const { data: supabaseNews, error } = await supabase
-        .from('news_articles')
-        .select('*')
-        .order('created_at', { ascending: false })
-        .limit(20);
+      // Try to load from Supabase first if available
+      if (supabase) {
+        const { data: supabaseNews, error } = await supabase
+          .from('news_articles')
+          .select('*')
+          .order('created_at', { ascending: false })
+          .limit(20);
 
-      if (!error && supabaseNews && supabaseNews.length > 0) {
-        // Convert Supabase data to NewsItem format
-        const newsItems: NewsItem[] = supabaseNews.map((article: NewsArticle) => ({
-          title: article.title,
-          summary: article.summary,
-          url: article.url,
-          source: article.source,
-          date: article.date,
-          category: article.category,
-          image_url: article.image_url
-        }));
+        if (!error && supabaseNews && supabaseNews.length > 0) {
+          // Filter by recency (use created_at when available, otherwise date)
+          const recentArticles = supabaseNews.filter((article: NewsArticle) => {
+            const tsStr = article.created_at || article.date;
+            return this.isRecent(tsStr);
+          });
 
-        // Update cache
-        this.cache = newsItems;
-        this.cacheExpiry = Date.now() + this.CACHE_DURATION;
-        
-        console.log(`📰 Loaded ${newsItems.length} articles from Supabase`);
-        return newsItems;
-      } else {
-        console.warn('No data from Supabase, trying local JSON fallback');
-        return this.loadFromLocalJSON();
+          // Convert Supabase data to NewsItem format
+          let newsItems: NewsItem[] = recentArticles.map((article: NewsArticle) => ({
+            title: article.title,
+            summary: article.summary,
+            url: article.url,
+            source: article.source,
+            date: article.date,
+            category: article.category,
+            image_url: article.image_url
+          }));
+
+          // Ensure minimum number of articles using themed fallback
+          newsItems = this.mergeWithFallback(newsItems, this.MIN_ARTICLES);
+
+          // Update cache
+          this.cache = newsItems;
+          this.cacheExpiry = Date.now() + this.CACHE_DURATION;
+          
+          console.log(`📰 Loaded ${newsItems.length} recent articles from Supabase`);
+          return newsItems;
+        } else {
+          console.warn('No data from Supabase or error occurred, trying local JSON fallback');
+          return this.loadFromLocalJSON();
+        }
       }
+
+      // If Supabase not configured, use local JSON
+      return this.loadFromLocalJSON();
       
     } catch (error) {
-      console.error('Error loading news from Supabase:', error);
+      console.error('Error loading news:', error);
       return this.loadFromLocalJSON();
     }
   }
@@ -92,13 +126,32 @@ class NewsAPI {
       }
 
       const newsData: NewsData = await response.json();
+
+      // If the JSON itself is older than 48h, consider it stale and use fallback
+      const lastUpdatedTs = Date.parse(newsData.last_updated);
+      const isJsonStale = isNaN(lastUpdatedTs) ? true : (Date.now() - lastUpdatedTs) > this.MAX_AGE_MS;
+      if (isJsonStale) {
+        console.warn('Local JSON is stale (>48h), using themed fallback news');
+        const fallbackItems = this.getFallbackNews();
+        this.cache = fallbackItems;
+        this.cacheExpiry = Date.now() + this.CACHE_DURATION;
+        return fallbackItems;
+      }
+      
+      // Filter articles older than 48h using article.date (fallback to last_updated if missing)
+      let filtered = (newsData.articles || []).filter(a => {
+        return this.isRecent(a.date || newsData.last_updated);
+      });
+
+      // Ensure minimum number of articles using themed fallback
+      filtered = this.mergeWithFallback(filtered, this.MIN_ARTICLES);
       
       // Update cache
-      this.cache = newsData.articles;
+      this.cache = filtered;
       this.cacheExpiry = Date.now() + this.CACHE_DURATION;
       
-      console.log(`📰 Loaded ${newsData.articles.length} articles from local JSON`);
-      return newsData.articles;
+      console.log(`📰 Loaded ${filtered.length} recent articles from local JSON`);
+      return filtered;
       
     } catch (error) {
       console.error('Error loading local news data:', error);
@@ -136,34 +189,10 @@ class NewsAPI {
         category: 'Bíblia e Teologia'
       },
       {
-        title: 'Missionários brasileiros expandem trabalho na África',
-        summary: 'Organizações missionárias brasileiras relatam crescimento significativo do trabalho evangelístico no continente africano.',
-        url: 'https://www.guiame.com.br/missoes-brasil-africa/',
-        source: 'Guiame',
-        date: new Date().toISOString(),
-        category: 'Missões'
-      },
-      {
-        title: 'CPAD lança nova série de estudos sobre período intertestamentário',
-        summary: 'Casa Publicadora das Assembleias de Deus apresenta material didático sobre os 400 anos entre o Antigo e Novo Testamento.',
-        url: 'https://www.cpadnews.com.br/estudos-intertestamentario/',
-        source: 'CPAD News',
-        date: new Date().toISOString(),
-        category: 'Educação Cristã'
-      },
-      {
-        title: 'Descoberta de manuscrito antigo confirma texto bíblico',
-        summary: 'Pesquisadores encontram fragmento de manuscrito que corrobora a precisão da transmissão do texto bíblico ao longo dos séculos.',
-        url: 'https://www.cristianismohoje.com.br/manuscrito-biblico-descoberta/',
-        source: 'Cristianismo Hoje',
-        date: new Date().toISOString(),
-        category: 'Arqueologia Bíblica'
-      },
-      {
-        title: 'Igreja brasileira cresce em meio a desafios sociais',
-        summary: 'Pesquisa revela crescimento da igreja evangélica brasileira e seu papel na transformação social das comunidades.',
-        url: 'https://www.guiame.com.br/igreja-brasil-crescimento/',
-        source: 'Guiame',
+        title: 'Igreja brasileira cresce em engajamento social nas comunidades',
+        summary: 'Pastores e líderes relatam aumento na participação em projetos sociais e de reconciliação em diversas cidades.',
+        url: 'https://www.gospelprime.com.br/igreja-brasileira-engajamento-social/',
+        source: 'Gospel Prime',
         date: new Date().toISOString(),
         category: 'Igreja no Brasil'
       },

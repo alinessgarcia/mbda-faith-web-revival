@@ -81,7 +81,7 @@ class NewsScheduler:
             logger.info(f"📊 News data is {age_hours:.1f} hours old")
             
             # If data is older than 2 hours, refresh it
-            if age_hours > 2:
+            if age_hours > 1:
                 logger.info("🔄 News data is stale, refreshing...")
                 self.run_news_scraper()
             else:
@@ -92,14 +92,13 @@ class NewsScheduler:
     
     def start_scheduler(self):
         """Start the news refresh scheduler"""
-        logger.info("🚀 Starting News Scheduler...")
-        logger.info("📅 Schedule: Every 2 hours")
+        logger.info("📅 Schedule: Every 1 hour")
         
         # Run initial check
         self.check_news_freshness()
         
-        # Schedule regular updates every 2 hours
-        schedule.every(2).hours.do(self.run_news_scraper)
+        # Schedule regular updates every 1 hour
+        schedule.every().hour.do(self.run_news_scraper)
         
         # Also schedule a daily check at 6 AM and 6 PM
         schedule.every().day.at("06:00").do(self.run_news_scraper)

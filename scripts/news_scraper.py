@@ -9,9 +9,9 @@ import requests
 from bs4 import BeautifulSoup
 import json
 import time
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 import re
-from urllib.parse import urljoin, urlparse
+from urllib.parse import urljoin, urlparse, quote, parse_qs, unquote
 import logging
 from typing import List, Dict, Optional
 import os
@@ -23,6 +23,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 # Supabase imports
 from supabase import create_client, Client
 from dotenv import load_dotenv
+from dateutil import parser as dateutil_parser
 
 # Load environment variables
 load_dotenv(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '.env.local'))
@@ -132,8 +133,48 @@ class ChristianNewsScraper:
                 'name': 'National Geographic Brasil - Arqueologia',
                 'url': 'https://www.nationalgeographicbrasil.com/assunto/temas/historia/arqueologia',
                 'categories': ['arqueologia', 'historia', 'ciencia']
+            },
+            'google_news': {
+                'name': 'Google News',
+                'queries': [
+                    {'label': 'Arqueologia Bíblica', 'q': '"arqueologia bíblica" OR "biblical archaeology" OR "manuscritos do Mar Morto" OR "Dead Sea Scrolls" OR Qumran OR Israel arqueologia', 'category': 'Arqueologia e História'},
+                    {'label': 'Cristãos Perseguidos', 'q': '"cristãos perseguidos" OR "igreja perseguida" OR "Portas Abertas" OR site:portasabertas.org.br', 'category': 'Igreja Perseguida'},
+                    {'label': 'Reconciliação Cristã', 'q': '"reconciliação cristã" OR "perdão bíblico" OR "unidade da igreja"', 'category': 'Ministério da Reconciliação'},
+                    {'label': 'Período Interbíblico', 'q': '"período interbíblico" OR intertestamental OR Macabeus', 'category': 'História Bíblica'},
+                    {'label': 'Patrística', 'q': 'patrística OR "pais da igreja" OR Agostinho OR Orígenes OR Tertuliano', 'category': 'História da Igreja'},
+                    {'label': 'Escavações Bíblicas', 'q': '"escavações bíblicas" OR "arqueologia bíblica" OR Qumran OR "cidade de Davi" OR "Jerusalém antiga"', 'category': 'Arqueologia Bíblica'},
+                    {'label': 'Idade Média', 'q': '"idade média" OR medieval OR "história da igreja medieval" OR "reforma protestante"', 'category': 'História da Igreja'},
+                    {'label': 'Debates Teológicos', 'q': '"debates teológicos" OR "controvérsias teológicas" OR soteriologia OR "livre arbítrio" OR predestinação', 'category': 'Teologia'},
+                    {'label': 'Calvinismo', 'q': 'calvinismo OR reformado OR "João Calvino"', 'category': 'Teologia Reformada'},
+                    {'label': 'Arminianismo', 'q': 'arminianismo OR "Jacó Armínio" OR "livre arbítrio"', 'category': 'Teologia'},
+                    {'label': 'Seitas da Época de Jesus', 'q': 'fariseus OR saduceus OR essênios OR zelotes OR "seitas da época de Jesus"', 'category': 'Contexto Histórico'},
+                    {'label': 'Usos e Costumes da Bíblia', 'q': '"usos e costumes da bíblia" OR "costumes bíblicos" OR "contexto judaico" OR "cultura bíblica"', 'category': 'Contexto Cultural'}
+                ]
             }
         }
+
+    def parse_article_date(self, date_str: Optional[str]) -> Optional[datetime]:
+        try:
+            if not date_str:
+                return None
+            dt = dateutil_parser.parse(str(date_str))
+            if dt.tzinfo is not None:
+                dt = dt.astimezone(timezone.utc).replace(tzinfo=None)
+            return dt
+        except Exception:
+            return None
+
+    def is_recent_article(self, article: Dict, max_age_hours: int = 48) -> bool:
+        dt = None
+        if 'date' in article:
+            dt = self.parse_article_date(article.get('date'))
+        if dt is None:
+            return True
+        age = datetime.utcnow() - dt
+        return age <= timedelta(hours=max_age_hours)
+
+    def filter_recent_articles(self, articles: List[Dict], max_age_hours: int = 48) -> List[Dict]:
+        return [a for a in articles if self.is_recent_article(a, max_age_hours=max_age_hours)]
 
     def filter_content_for_reconciliation(self, news_list: List[Dict]) -> List[Dict]:
         """Filter news content to align with Reconciliation brotherhood values"""
@@ -154,9 +195,16 @@ class ChristianNewsScraper:
             'oriente médio', 'middle east', 'sionismo', 'zionism', 'judeus', 'jews',
             'arqueologia', 'archaeology', 'história antiga', 'ancient history', 'egito', 'egypt',
             'mesopotâmia', 'mesopotamia', 'israel antigo', 'ancient israel', 'jericó', 'jericho',
-            'jerusalém antiga', 'ancient jerusalem', 'mar morto', 'dead sea', 'qurã', 'qumran', 'caverna', 'cave',
+            'jerusalém antiga', 'ancient jerusalem', 'mar morto', 'dead sea', 'qumran', 'caverna', 'cave',
             'manuscritos do mar morto', 'dead sea scrolls', 'tabernáculo', 'templo', 'arqueólogos', 'archaeologists',
             'escavação', 'excavation', 'achados', 'finds', 'descoberta', 'discovery', 'civilizações', 'civilizations'
+            # Novos temas solicitados
+            'período interbíblico', 'intertestamental', 'patrística', 'pais da igreja',
+            'escavações bíblicas', 'idade média', 'história da igreja',
+            'debates teológicos', 'controvérsias teológicas',
+            'arminianismo',
+            'fariseus', 'saduceus', 'essênios', 'zelotes',
+            'usos e costumes da bíblia', 'costumes bíblicos', 'cultura bíblica', 'cultura judaica'
         ]
         
         # Keywords to avoid (prosperity gospel, extreme charismatic, liberal theology)
@@ -166,6 +214,15 @@ class ChristianNewsScraper:
             'barganhar com deus', 'bargain with god', 'milagres financeiros',
             'unção do riso', 'holy laughter', 'cair no espírito', 'slain in spirit',
             'profetadas', 'prophetic words', 'revelações extras', 'extra revelations'
+        ]
+        
+        # Whitelist de domínios confiáveis
+        trusted_domains = [
+            'gospelprime.com.br', 'guiame.com.br', 'portasabertas.org.br',
+            'cafetorah.com', 'folhagospel.com', 'cpadnews.com.br', 'cpad.com.br',
+            'bbc.com', 'bbc.co.uk', 'bbc.com.br', 'cnnbrasil.com.br',
+            'nationalgeographic.com', 'nationalgeographicbrasil.com', 'abril.com.br',
+            'uol.com.br', 'terra.com.br'
         ]
         
         filtered_news = []
@@ -181,13 +238,34 @@ class ChristianNewsScraper:
             # Check for negative keywords
             has_negative = any(keyword.lower() in content for keyword in negative_keywords)
             
-            # Include if has positive content and no negative content
-            # OR if it's from trusted reformed sources
+            # Fonte confiável por nome
             trusted_sources = ['Voltemos ao Evangelho', 'Monergismo', 'Portas Abertas', 
                               'Portas Abertas - Cristãos Perseguidos', 'Cafetorah - Notícias de Israel',
                               'Folha Gospel']
             
-            if (has_positive and not has_negative) or article['source'] in trusted_sources:
+            # Verificar domínio do link
+            domain = ''
+            try:
+                domain = urlparse(article.get('url', '')).netloc.lower()
+            except Exception:
+                domain = ''
+            domain_is_trusted = any(domain.endswith(d) for d in trusted_domains if d)
+            
+            # Regras de aprovação:
+            # - possui palavras positivas e não possui negativas
+            # - OU é de fonte confiável por nome
+            # - OU é de domínio confiável
+            # - Para Google News (Temas): permitir se (has_positive OU domínio confiável) e não negativo
+            is_google_news = str(article.get('source', '')).startswith('Google News - ')
+            if is_google_news:
+                if (has_positive or domain_is_trusted) and not has_negative:
+                    filtered_news.append(article)
+                    logger.info(f"✅ Approved (Google News) article: {article['title'][:50]}...")
+                else:
+                    logger.info(f"❌ Filtered out (Google News) article: {article['title'][:50]}...")
+                continue
+            
+            if (has_positive and not has_negative) or (article['source'] in trusted_sources) or domain_is_trusted:
                 filtered_news.append(article)
                 logger.info(f"✅ Approved article: {article['title'][:50]}...")
             else:
@@ -846,6 +924,56 @@ class ChristianNewsScraper:
             logger.error(f"Error scraping National Geographic Brasil Arqueologia: {e}")
         return news_list
 
+    def scrape_google_news(self) -> List[Dict]:
+        """Scrape Google News RSS para temas específicos (pt-BR)"""
+        news_list = []
+        try:
+            base = "https://news.google.com/rss/search"
+            queries = self.sources.get('google_news', {}).get('queries', [])
+            for qconf in queries:
+                label = qconf.get('label', '')
+                query = qconf.get('q', '')
+                category = qconf.get('category', 'Notícias')
+                if not query:
+                    continue
+                url = f"{base}?q={quote(query)}&hl=pt-BR&gl=BR&ceid=BR:pt"
+                response = self.session.get(url, timeout=10)
+                if response.status_code == 200:
+                    soup = BeautifulSoup(response.content, 'xml')
+                    items = soup.find_all('item')[:6]
+                    for item in items:
+                        try:
+                            title = self.clean_text(item.title.text if item.title else '')
+                            link_raw = item.link.text if item.link else ''
+                            # Extrair URL original quando possível (news.google.com com parâmetro url=)
+                            link = link_raw
+                            try:
+                                parsed = urlparse(link_raw)
+                                qs = parse_qs(parsed.query)
+                                if 'url' in qs and len(qs['url']) > 0:
+                                    link = unquote(qs['url'][0])
+                            except Exception:
+                                link = link_raw
+                            description = self.clean_text(item.description.text if item.description else '')
+                            pub_date = item.pubDate.text if item.pubDate else datetime.now().strftime('%a, %d %b %Y %H:%M:%S GMT')
+                            if title and link:
+                                image_url = self.extract_image_from_content(link)
+                                news_list.append({
+                                    'title': title,
+                                    'summary': description[:200] + '...' if len(description) > 200 else description,
+                                    'url': link,
+                                    'source': f"Google News - {label}" if label else 'Google News',
+                                    'date': pub_date,
+                                    'category': category,
+                                    'image_url': image_url
+                                })
+                        except Exception as e:
+                            logger.warning(f"Error parsing Google News item for '{label}': {e}")
+                            continue
+        except Exception as e:
+            logger.error(f"Error scraping Google News: {e}")
+        return news_list
+
     def get_fallback_news(self) -> List[Dict]:
         """Provide high-quality fallback news aligned with reformed theology and Reconciliation brotherhood"""
         return [
@@ -903,7 +1031,8 @@ class ChristianNewsScraper:
             ('BBC News Brasil - Arqueologia', self.scrape_bbc_arqueologia),
             ('Revista Galileu - Arqueologia', self.scrape_galileu_arqueologia),
             ('CNN Brasil - Arqueologia', self.scrape_cnnbrasil_arqueologia),
-            ('National Geographic Brasil - Arqueologia', self.scrape_nationalgeo_br_arqueologia)
+            ('National Geographic Brasil - Arqueologia', self.scrape_nationalgeo_br_arqueologia),
+            ('Google News (Temas)', self.scrape_google_news)
         ]
         
         for source_name, scraper_func in scrapers:
@@ -935,30 +1064,36 @@ class ChristianNewsScraper:
         # Apply content filter for Reconciliation brotherhood
         logger.info("Applying content filter for Reconciliation brotherhood...")
         filtered_news = self.filter_content_for_reconciliation(unique_news)
+
+        # Apply 48-hour staleness filter server-side
+        recent_filtered_news = self.filter_recent_articles(filtered_news, max_age_hours=48)
         
-        # If filtered news is too few, add some fallback content
-        if len(filtered_news) < 3:
-            logger.info("Adding fallback news due to insufficient filtered content")
+        # If filtered recent news is too few, add some fallback content
+        if len(recent_filtered_news) < 3:
+            logger.info("Adding fallback news due to insufficient recent filtered content")
             fallback_news = self.get_fallback_news()
-            filtered_news.extend(fallback_news)
+            # Fallback items have current datetime, still run through recent filter for consistency
+            recent_filtered_news.extend(self.filter_recent_articles(fallback_news, max_age_hours=48))
             # Remove duplicates again
             seen_titles = set()
             final_news = []
-            for news in filtered_news:
+            for news in recent_filtered_news:
                 if news['title'] not in seen_titles:
                     seen_titles.add(news['title'])
                     final_news.append(news)
-            filtered_news = final_news
+            recent_filtered_news = final_news
         
-        logger.info(f"Final filtered articles for Reconciliation: {len(filtered_news)}")
-        return filtered_news
+        logger.info(f"Final filtered articles for Reconciliation: {len(recent_filtered_news)}")
+        return recent_filtered_news
 
     def save_news_to_json(self, news_data: List[Dict], filename: str = 'christian_news.json'):
         """Save news data to JSON file and Supabase"""
         try:
             # Save to Supabase first
             if self.supabase:
-                self.save_to_supabase(news_data)
+                # Only save recent articles to Supabase
+                recent_news = self.filter_recent_articles(news_data, max_age_hours=48)
+                self.save_to_supabase(recent_news)
             
             # Create data directory if it doesn't exist (src)
             data_dir = os.path.join(os.path.dirname(__file__), '..', 'src', 'data')
@@ -971,7 +1106,7 @@ class ChristianNewsScraper:
                 'last_updated': datetime.now().isoformat(),
                 'total_articles': len(news_data),
                 'sources': list(set([article['source'] for article in news_data])),
-                'articles': news_data
+                'articles': self.filter_recent_articles(news_data, max_age_hours=48)
             }
             
             # Write to src/data
@@ -1004,6 +1139,9 @@ class ChristianNewsScraper:
             # Prepare data for Supabase
             supabase_data = []
             for article in news_data:
+                # Skip stale articles (>48h)
+                if not self.is_recent_article(article, max_age_hours=48):
+                    continue
                 # Check if article already exists
                 existing = self.supabase.table('news_articles').select('id').eq('url', article['url']).execute()
                 
@@ -1022,9 +1160,9 @@ class ChristianNewsScraper:
             if supabase_data:
                 # Insert new articles
                 result = self.supabase.table('news_articles').insert(supabase_data).execute()
-                logger.info(f"Successfully saved {len(supabase_data)} new articles to Supabase")
+                logger.info(f"Successfully saved {len(supabase_data)} new recent articles to Supabase")
             else:
-                logger.info("No new articles to save to Supabase")
+                logger.info("No new recent articles to save to Supabase")
                 
         except Exception as e:
             logger.error(f"Error saving to Supabase: {e}")
