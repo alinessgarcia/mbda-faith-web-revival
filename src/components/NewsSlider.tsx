@@ -3,7 +3,7 @@ import { ChevronLeft, ChevronRight, ExternalLink, RefreshCw } from "lucide-react
 import { loadChristianNews, refreshChristianNews, NewsItem } from "../api/newsApi";
 
 // Adiciona suporte a slides de banner intercalados com notícias
-type BannerSlide = { kind: "banner"; data: { src: string; alt?: string; link?: string } };
+type BannerSlide = { kind: "banner"; data: { src: string; alt?: string; link?: string; title?: string; description?: string; lines?: string[] } };
 type NewsSlide = { kind: "news"; data: NewsItem };
 type SlideItem = BannerSlide | NewsSlide;
 
@@ -16,7 +16,7 @@ const NewsSlider: React.FC = () => {
 
   // Definição dos banners e construção da lista combinada de slides (notícias + banners)
   const bannerSlides: BannerSlide[] = [
-    { kind: "banner", data: { src: "/images/banner1-slide.png", alt: "Banner 1" } },
+    { kind: "banner", data: { src: "/images/banner1-slide.png", alt: "Seminário Teológico", title: "Seminário Teológico da Reconciliação", description: "Outubro — Sábado 16h às 20h | Domingo 9h às 13h", lines: ["Local: Reconciliação — Av. Oswaldo Aranha, 790 - Vicente de Carvalho (Guarujá)", "Ministração: Pr. Luiz Carlos Aparecido — Apoio: Jarbel Cavalcante"] } },
   ];
 
   const slides: SlideItem[] = (() => {
@@ -137,7 +137,7 @@ const NewsSlider: React.FC = () => {
       <div 
         className="absolute inset-0 opacity-40"
         style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.3'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.3'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
           filter: 'contrast(1.5) brightness(0.7)'
         }}
       />
@@ -161,7 +161,7 @@ const NewsSlider: React.FC = () => {
         {/* Navigation Arrows */}
         <button
           onClick={prevSlide}
-          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-3 transition-all duration-300 group"
+          className="hidden md:block absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-3 transition-all duration-300 group"
           title="Notícia anterior"
           aria-label="Ir para a notícia anterior"
         >
@@ -170,7 +170,7 @@ const NewsSlider: React.FC = () => {
 
         <button
           onClick={nextSlide}
-          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-3 transition-all duration-300 group"
+          className="hidden md:block absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-3 transition-all duration-300 group"
           title="Próxima notícia"
           aria-label="Ir para a próxima notícia"
         >
@@ -246,12 +246,61 @@ const NewsSlider: React.FC = () => {
                     </div>
                   </div>
                 ) : (
-                  <div className="w-full h-full">
-                    <img
-                      src={slide.data.src}
-                      alt={slide.data.alt ?? "Banner"}
-                      className={`w-full h-full ${slide.data.src.includes('banner1-slide.png') ? 'object-contain md:object-cover' : 'object-cover'}`}
-                    />
+                  <div className="w-full">
+                    {/* Mobile: mostrar banner no mesmo tamanho das imagens das notícias e textos abaixo */}
+                    <div className="block md:hidden w-full px-8 pt-10 pb-6">
+                      <div className="flex items-center justify-center">
+                        <div className="relative w-full max-w-md aspect-video rounded-lg overflow-hidden shadow-2xl">
+                          <img
+                            src={slide.data.src}
+                            alt={slide.data.alt ?? "Banner"}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      </div>
+
+                      {/* Textos extraídos do banner */}
+                      <div className="mt-6 space-y-6 text-left">
+                        {slide.data.title && (
+                          <h3 className="text-3xl lg:text-4xl font-bold text-white leading-tight">
+                            {slide.data.title}
+                          </h3>
+                        )}
+                        {slide.data.description && (
+                          <p className="text-gray-200 text-lg leading-relaxed">
+                            {slide.data.description}
+                          </p>
+                        )}
+                        {slide.data.lines && slide.data.lines.length > 0 && (
+                          <div className="space-y-1">
+                            {slide.data.lines.map((ln, i) => (
+                              <p key={i} className="text-gray-300 text-sm">
+                                {ln}
+                              </p>
+                            ))}
+                          </div>
+                        )}
+                        {slide.data.link && (
+                          <a
+                            href={slide.data.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 bg-yellow-500 hover:bg-yellow-600 text-black px-5 py-2.5 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
+                          >
+                            Saiba mais
+                          </a>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Desktop/Tablet: manter o comportamento atual com imagem ocupando toda a área */}
+                    <div className="hidden md:block w-full pt-6">
+                      <img
+                        src={slide.data.src}
+                        alt={slide.data.alt ?? "Banner"}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
                   </div>
                 )}
               </div>
