@@ -83,7 +83,8 @@ class NewsAPI {
     try {
       console.log('📰 Loading from local JSON file');
       
-      const response = await fetch('/src/data/christian_news.json');
+      // Use JSON em /public/data para funcionar em produção e desenvolvimento
+      const response = await fetch('/data/christian_news.json');
       
       if (!response.ok) {
         console.warn('Failed to load local news data, using hardcoded fallback');

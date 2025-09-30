@@ -734,7 +734,7 @@ class ChristianNewsScraper:
             if self.supabase:
                 self.save_to_supabase(news_data)
             
-            # Create data directory if it doesn't exist
+            # Create data directory if it doesn't exist (src)
             data_dir = os.path.join(os.path.dirname(__file__), '..', 'src', 'data')
             os.makedirs(data_dir, exist_ok=True)
             
@@ -748,10 +748,19 @@ class ChristianNewsScraper:
                 'articles': news_data
             }
             
+            # Write to src/data
             with open(filepath, 'w', encoding='utf-8') as f:
                 json.dump(output_data, f, ensure_ascii=False, indent=2)
-            
             logger.info(f"News data saved to {filepath}")
+            
+            # Also write to public/data for frontend to fetch in production
+            public_data_dir = os.path.join(os.path.dirname(__file__), '..', 'public', 'data')
+            os.makedirs(public_data_dir, exist_ok=True)
+            public_filepath = os.path.join(public_data_dir, filename)
+            with open(public_filepath, 'w', encoding='utf-8') as pf:
+                json.dump(output_data, pf, ensure_ascii=False, indent=2)
+            logger.info(f"News data saved to {public_filepath}")
+            
             return filepath
             
         except Exception as e:

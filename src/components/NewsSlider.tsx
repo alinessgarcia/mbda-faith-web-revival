@@ -250,7 +250,7 @@ const NewsSlider: React.FC = () => {
                     <img
                       src={slide.data.src}
                       alt={slide.data.alt ?? "Banner"}
-                      className="w-full h-full object-cover"
+                      className={`w-full h-full ${slide.data.src.includes('banner1-slide.png') ? 'object-contain md:object-cover' : 'object-cover'}`}
                     />
                   </div>
                 )}
