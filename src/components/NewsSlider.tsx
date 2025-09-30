@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight, ExternalLink, RefreshCw } from "lucide-react";
 import { loadChristianNews, refreshChristianNews, NewsItem } from "../api/newsApi";
 
@@ -34,12 +34,7 @@ const NewsSlider: React.FC = () => {
     return result;
   })();
 
-  // Load news data on component mount
-  useEffect(() => {
-    loadNews();
-  }, []);
-
-  const loadNews = async () => {
+  const loadNews = useCallback(async () => {
     try {
       setIsLoading(true);
       setError(null);
@@ -54,8 +49,13 @@ const NewsSlider: React.FC = () => {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, []);
 
+  // Carregar notícias ao montar o componente
+  useEffect(() => {
+    loadNews();
+  }, [loadNews]);
+  
   const handleRefreshNews = async () => {
     try {
       setIsRefreshing(true);
@@ -326,5 +326,3 @@ const NewsSlider: React.FC = () => {
 };
 
 export default NewsSlider;
-
-// Remover qualquer bloco duplicado abaixo (inserido por engano)
