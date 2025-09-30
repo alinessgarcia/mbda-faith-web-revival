@@ -107,6 +107,31 @@ class ChristianNewsScraper:
                 'url': 'https://radio93.com.br/noticias/giro-cristao/',
                 'rss': 'https://radio93.com.br/categoria/giro-cristao/feed/',
                 'categories': ['noticias-cristas', 'igreja', 'evangelicos', 'reconciliacao']
+            },
+            'bbc_portuguese': {
+                'name': 'BBC News Brasil',
+                'url': 'https://www.bbc.com/portuguese',
+                'categories': ['mundo', 'ciencia', 'arqueologia', 'historia']
+            },
+            'bbc_arqueologia': {
+                'name': 'BBC News Brasil - Arqueologia',
+                'url': 'https://www.bbc.com/portuguese/topics/c06gq6k4vk3t',
+                'categories': ['arqueologia', 'historia']
+            },
+            'galileu_arqueologia': {
+                'name': 'Revista Galileu - Arqueologia',
+                'url': 'https://revistagalileu.globo.com/ciencia/arqueologia/',
+                'categories': ['ciencia', 'arqueologia', 'historia']
+            },
+            'cnnbrasil_arqueologia': {
+                'name': 'CNN Brasil - Arqueologia',
+                'url': 'https://www.cnnbrasil.com.br/tudo-sobre/arqueologia/',
+                'categories': ['arqueologia', 'historia', 'ciencia']
+            },
+            'nationalgeo_br_arqueologia': {
+                'name': 'National Geographic Brasil - Arqueologia',
+                'url': 'https://www.nationalgeographicbrasil.com/assunto/temas/historia/arqueologia',
+                'categories': ['arqueologia', 'historia', 'ciencia']
             }
         }
 
@@ -126,7 +151,12 @@ class ChristianNewsScraper:
             'bíblia', 'bible', 'escrituras', 'scripture', 'palavra de deus', 'word of god',
             'oração', 'prayer', 'jejum', 'fasting', 'adoração', 'worship',
             'israel', 'jerusalem', 'jerusalém', 'profecia', 'prophecy', 'escatologia', 'eschatology',
-            'oriente médio', 'middle east', 'sionismo', 'zionism', 'judeus', 'jews'
+            'oriente médio', 'middle east', 'sionismo', 'zionism', 'judeus', 'jews',
+            'arqueologia', 'archaeology', 'história antiga', 'ancient history', 'egito', 'egypt',
+            'mesopotâmia', 'mesopotamia', 'israel antigo', 'ancient israel', 'jericó', 'jericho',
+            'jerusalém antiga', 'ancient jerusalem', 'mar morto', 'dead sea', 'qurã', 'qumran', 'caverna', 'cave',
+            'manuscritos do mar morto', 'dead sea scrolls', 'tabernáculo', 'templo', 'arqueólogos', 'archaeologists',
+            'escavação', 'excavation', 'achados', 'finds', 'descoberta', 'discovery', 'civilizações', 'civilizations'
         ]
         
         # Keywords to avoid (prosperity gospel, extreme charismatic, liberal theology)
@@ -625,6 +655,197 @@ class ChristianNewsScraper:
             
         return news_list
 
+    def scrape_bbc_portuguese(self) -> List[Dict]:
+        """Scrape notícias gerais da BBC News Brasil"""
+        news_list = []
+        try:
+            url = self.sources['bbc_portuguese']['url']
+            response = self.session.get(url, timeout=10)
+            if response.status_code == 200:
+                soup = BeautifulSoup(response.content, 'html.parser')
+                # Tenta diferentes padrões de blocos de promoção/stream usados pela BBC
+                articles = soup.find_all(['article', 'div'], class_=re.compile(r'(Promo|promo|article|lx-stream|gs-c-promo)', re.I))[:8]
+                for article in articles:
+                    try:
+                        title_elem = article.find(['h3', 'h2', 'a'], class_=re.compile(r'(promo-heading|gs-c-promo-heading|lx-stream-post)', re.I)) or article.find(['h3', 'h2'])
+                        link_elem = article.find('a', href=True)
+                        summary_elem = article.find(['p', 'div'], class_=re.compile(r'(summary|promo-summary|gs-c-promo-summary|lx-stream-post-body)', re.I))
+                        if not link_elem and title_elem and title_elem.name == 'a':
+                            link_elem = title_elem
+                        if title_elem and link_elem:
+                            title = self.clean_text(title_elem.get_text())
+                            link = urljoin(url, link_elem['href'])
+                            summary = self.clean_text(summary_elem.get_text() if summary_elem else '')
+                            image_url = self.extract_image_from_content(link)
+                            if title and len(title) > 10:
+                                news_list.append({
+                                    'title': title,
+                                    'summary': summary[:200] + '...' if len(summary) > 200 else summary,
+                                    'url': link,
+                                    'source': 'BBC News Brasil',
+                                    'date': datetime.now().strftime('%a, %d %b %Y %H:%M:%S GMT'),
+                                    'category': 'Arqueologia e História',
+                                    'image_url': image_url
+                                })
+                    except Exception as e:
+                        logger.warning(f"Error parsing BBC Portuguese item: {e}")
+                        continue
+        except Exception as e:
+            logger.error(f"Error scraping BBC Portuguese: {e}")
+        return news_list
+
+    def scrape_bbc_arqueologia(self) -> List[Dict]:
+        """Scrape notícias da BBC no tópico de Arqueologia"""
+        news_list = []
+        try:
+            url = self.sources['bbc_arqueologia']['url']
+            response = self.session.get(url, timeout=10)
+            if response.status_code == 200:
+                soup = BeautifulSoup(response.content, 'html.parser')
+                articles = soup.find_all(['article', 'div'], class_=re.compile(r'(Promo|promo|article|lx-stream|gs-c-promo)', re.I))[:8]
+                for article in articles:
+                    try:
+                        title_elem = article.find(['h3', 'h2', 'a'], class_=re.compile(r'(promo-heading|gs-c-promo-heading|lx-stream-post)', re.I)) or article.find(['h3', 'h2'])
+                        link_elem = article.find('a', href=True)
+                        summary_elem = article.find(['p', 'div'], class_=re.compile(r'(summary|promo-summary|gs-c-promo-summary|lx-stream-post-body)', re.I))
+                        if not link_elem and title_elem and title_elem.name == 'a':
+                            link_elem = title_elem
+                        if title_elem and link_elem:
+                            title = self.clean_text(title_elem.get_text())
+                            link = urljoin(url, link_elem['href'])
+                            summary = self.clean_text(summary_elem.get_text() if summary_elem else '')
+                            image_url = self.extract_image_from_content(link)
+                            if title and len(title) > 10:
+                                news_list.append({
+                                    'title': title,
+                                    'summary': summary[:200] + '...' if len(summary) > 200 else summary,
+                                    'url': link,
+                                    'source': 'BBC News Brasil - Arqueologia',
+                                    'date': datetime.now().strftime('%a, %d %b %Y %H:%M:%S GMT'),
+                                    'category': 'Arqueologia e História',
+                                    'image_url': image_url
+                                })
+                    except Exception as e:
+                        logger.warning(f"Error parsing BBC Arqueologia item: {e}")
+                        continue
+        except Exception as e:
+            logger.error(f"Error scraping BBC Arqueologia: {e}")
+        return news_list
+
+    def scrape_galileu_arqueologia(self) -> List[Dict]:
+        """Scrape notícias de Arqueologia da Revista Galileu"""
+        news_list = []
+        try:
+            url = self.sources['galileu_arqueologia']['url']
+            response = self.session.get(url, timeout=10)
+            if response.status_code == 200:
+                soup = BeautifulSoup(response.content, 'html.parser')
+                articles = soup.find_all(['article', 'div'], class_=re.compile(r'(post|article|materia|card)', re.I))[:8]
+                for article in articles:
+                    try:
+                        title_elem = article.find(['h3', 'h2', 'a'])
+                        link_elem = article.find('a', href=True)
+                        summary_elem = article.find(['p', 'div'], class_=re.compile(r'(summary|excerpt|description|deck)', re.I))
+                        if not link_elem and title_elem and title_elem.name == 'a':
+                            link_elem = title_elem
+                        if title_elem and link_elem:
+                            title = self.clean_text(title_elem.get_text())
+                            link = urljoin(url, link_elem['href'])
+                            summary = self.clean_text(summary_elem.get_text() if summary_elem else '')
+                            image_url = self.extract_image_from_content(link)
+                            if title and len(title) > 10:
+                                news_list.append({
+                                    'title': title,
+                                    'summary': summary[:200] + '...' if len(summary) > 200 else summary,
+                                    'url': link,
+                                    'source': 'Revista Galileu - Arqueologia',
+                                    'date': datetime.now().strftime('%a, %d %b %Y %H:%M:%S GMT'),
+                                    'category': 'Arqueologia e História',
+                                    'image_url': image_url
+                                })
+                    except Exception as e:
+                        logger.warning(f"Error parsing Galileu Arqueologia item: {e}")
+                        continue
+        except Exception as e:
+            logger.error(f"Error scraping Galileu Arqueologia: {e}")
+        return news_list
+
+    def scrape_cnnbrasil_arqueologia(self) -> List[Dict]:
+        """Scrape notícias de Arqueologia da CNN Brasil"""
+        news_list = []
+        try:
+            url = self.sources['cnnbrasil_arqueologia']['url']
+            response = self.session.get(url, timeout=10)
+            if response.status_code == 200:
+                soup = BeautifulSoup(response.content, 'html.parser')
+                articles = soup.find_all(['article', 'div'], class_=re.compile(r'(post|article|card|tags-list|news)', re.I))[:8]
+                for article in articles:
+                    try:
+                        title_elem = article.find(['h3', 'h2', 'a'])
+                        link_elem = article.find('a', href=True)
+                        summary_elem = article.find(['p', 'div'], class_=re.compile(r'(summary|excerpt|description)', re.I))
+                        if not link_elem and title_elem and title_elem.name == 'a':
+                            link_elem = title_elem
+                        if title_elem and link_elem:
+                            title = self.clean_text(title_elem.get_text())
+                            link = urljoin(url, link_elem['href'])
+                            summary = self.clean_text(summary_elem.get_text() if summary_elem else '')
+                            image_url = self.extract_image_from_content(link)
+                            if title and len(title) > 10:
+                                news_list.append({
+                                    'title': title,
+                                    'summary': summary[:200] + '...' if len(summary) > 200 else summary,
+                                    'url': link,
+                                    'source': 'CNN Brasil - Arqueologia',
+                                    'date': datetime.now().strftime('%a, %d %b %Y %H:%M:%S GMT'),
+                                    'category': 'Arqueologia e História',
+                                    'image_url': image_url
+                                })
+                    except Exception as e:
+                        logger.warning(f"Error parsing CNN Brasil Arqueologia item: {e}")
+                        continue
+        except Exception as e:
+            logger.error(f"Error scraping CNN Brasil Arqueologia: {e}")
+        return news_list
+
+    def scrape_nationalgeo_br_arqueologia(self) -> List[Dict]:
+        """Scrape notícias de Arqueologia da National Geographic Brasil"""
+        news_list = []
+        try:
+            url = self.sources['nationalgeo_br_arqueologia']['url']
+            response = self.session.get(url, timeout=10)
+            if response.status_code == 200:
+                soup = BeautifulSoup(response.content, 'html.parser')
+                articles = soup.find_all(['article', 'div'], class_=re.compile(r'(post|article|card|listing|item)', re.I))[:8]
+                for article in articles:
+                    try:
+                        title_elem = article.find(['h3', 'h2', 'a'])
+                        link_elem = article.find('a', href=True)
+                        summary_elem = article.find(['p', 'div'], class_=re.compile(r'(summary|excerpt|description)', re.I))
+                        if not link_elem and title_elem and title_elem.name == 'a':
+                            link_elem = title_elem
+                        if title_elem and link_elem:
+                            title = self.clean_text(title_elem.get_text())
+                            link = urljoin(url, link_elem['href'])
+                            summary = self.clean_text(summary_elem.get_text() if summary_elem else '')
+                            image_url = self.extract_image_from_content(link)
+                            if title and len(title) > 10:
+                                news_list.append({
+                                    'title': title,
+                                    'summary': summary[:200] + '...' if len(summary) > 200 else summary,
+                                    'url': link,
+                                    'source': 'National Geographic Brasil - Arqueologia',
+                                    'date': datetime.now().strftime('%a, %d %b %Y %H:%M:%S GMT'),
+                                    'category': 'Arqueologia e História',
+                                    'image_url': image_url
+                                })
+                    except Exception as e:
+                        logger.warning(f"Error parsing National Geographic Brasil Arqueologia item: {e}")
+                        continue
+        except Exception as e:
+            logger.error(f"Error scraping National Geographic Brasil Arqueologia: {e}")
+        return news_list
+
     def get_fallback_news(self) -> List[Dict]:
         """Provide high-quality fallback news aligned with reformed theology and Reconciliation brotherhood"""
         return [
@@ -677,7 +898,12 @@ class ChristianNewsScraper:
             ('Cafetorah - Notícias de Israel', self.scrape_cafetorah_israel),
             ('Folha Gospel', self.scrape_folha_gospel),
             ('Radio 93 - Giro Cristão', self.scrape_radio93),
-            ('CPAD News', self.scrape_cpad_news)
+            ('CPAD News', self.scrape_cpad_news),
+            ('BBC News Brasil', self.scrape_bbc_portuguese),
+            ('BBC News Brasil - Arqueologia', self.scrape_bbc_arqueologia),
+            ('Revista Galileu - Arqueologia', self.scrape_galileu_arqueologia),
+            ('CNN Brasil - Arqueologia', self.scrape_cnnbrasil_arqueologia),
+            ('National Geographic Brasil - Arqueologia', self.scrape_nationalgeo_br_arqueologia)
         ]
         
         for source_name, scraper_func in scrapers:

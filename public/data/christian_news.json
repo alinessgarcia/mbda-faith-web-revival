@@ -1,100 +1,47 @@
 {
-  "last_updated": "2025-09-30T04:25:35.137020",
-  "total_articles": 10,
+  "last_updated": "2025-09-30T10:23:12.266634",
+  "total_articles": 4,
   "sources": [
-    "Folha Gospel",
+    "BBC News Brasil - Arqueologia",
+    "BBC News Brasil",
     "Cafetorah - Notícias de Israel"
   ],
   "articles": [
+    {
+      "title": "Gaza: exploração sexual em meio a guerra",
+      "summary": "Mulheres em Gaza denunciam exploração sexual em troca de ajuda humanitária Relatos revelam que alimentos e assistência estão sendo usados como moeda de troca em meio à crise humanitária. Histórias de ...",
+      "url": "https://cafetorah.com/gaza-exploracao-sexual-em-meio-a-guerra/",
+      "source": "Cafetorah - Notícias de Israel",
+      "date": "Tue, 30 Sep 2025 10:22:43 GMT",
+      "category": "Israel e Oriente Médio",
+      "image_url": "https://cafetorah.com/wp-content/uploads/2025/09/pexels-mart-production-7699317.jpg"
+    },
     {
       "title": "À Beira da Tempestade: O mundo caminha para um conflito global",
       "summary": "Se queres paz, prepara-te para a guerraSi vis pacem, para bellum  Flavio Vegécio Renato, Século V Nas últimas semanas observamos um conjunto de eventos que, tomados em conjunto, explicam por que anali...",
       "url": "https://cafetorah.com/a-beira-da-tempestade-o-mundo-caminha-para-um-conflito-global/",
       "source": "Cafetorah - Notícias de Israel",
-      "date": "Tue, 30 Sep 2025 04:25:18 GMT",
+      "date": "Tue, 30 Sep 2025 10:22:45 GMT",
       "category": "Israel e Oriente Médio",
       "image_url": "https://cafetorah.com/wp-content/uploads/2025/09/ai-generated-7834228_1920.jpg"
     },
     {
-      "title": "Por que as negociações com o Hamas não avançam de verdade?",
-      "summary": "Nos últimos meses, o noticiário tem sido tomado por manchetes sobre avanços significativos nas negociações entre Israel e o Hamas, mediadas por EUA, Egito e Qatar. Planos complexos, documentos com dez...",
-      "url": "https://cafetorah.com/por-que-as-negociacoes-com-o-hamas-nao-avancam-de-verdade/",
-      "source": "Cafetorah - Notícias de Israel",
-      "date": "Tue, 30 Sep 2025 04:25:19 GMT",
-      "category": "Israel e Oriente Médio",
-      "image_url": "https://cafetorah.com/wp-content/uploads/2019/03/soldado-da-idf-na-fronteira-com-gaza-4.jpg"
+      "title": "Os obstáculos que o plano de paz de Trump para Gaza enfrenta",
+      "summary": "",
+      "url": "https://www.bbc.com/portuguese/articles/c04qxkkn6zlo",
+      "source": "BBC News Brasil",
+      "date": "Tue, 30 Sep 2025 10:22:56 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/ed3e/live/8f22f550-9d9b-11f0-92db-77261a15b9d2.jpg"
     },
     {
-      "title": "Eli Soares celebra sua 8ª indicação ao Grammy Latino",
-      "summary": "Com mais de uma década de carreira, Eli Soares se consolidou como uma das vozes mais marcantes e criativas do gospel nacional. Sua capacidade de unir tradição e modernidade, aliada a uma entrega since...",
-      "url": "https://folhagospel.com/eli-soares-celebra-sua-8a-indicacao-ao-grammy-latino/",
-      "source": "Folha Gospel",
-      "date": "Tue, 30 Sep 2025 00:00:48 +0000",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2025/09/Eli-Soares2-e1759190326109.jpeg"
-    },
-    {
-      "title": "Manual bíblico contra a ansiedade propõe reencontro com a verdadeira paz",
-      "summary": "Em uma cultura marcada pela pressa, problemas emocionais generalizados e pressão por alto desempenho, o pastor Tiago Chagas se volta aos estudos bíblicos para responder a uma das dores mais urgentes d...",
-      "url": "https://folhagospel.com/manual-biblico-contra-a-ansiedade-propoe-reencontro-com-a-verdadeira-paz/",
-      "source": "Folha Gospel",
-      "date": "Mon, 29 Sep 2025 23:41:56 +0000",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2025/09/Livro-Jesus-para-Ansiosos.jpg"
-    },
-    {
-      "title": "Câmara Municipal de Salvador aprova projeto de lei contra cristofobia",
-      "summary": "A Câmara Municipal de Salvador aprovou, na última quarta-feira (24), um projeto de lei inédito no Brasil que busca coibir a chamada cristofobia na capital baiana. A iniciativa é de autoria do vereador...",
-      "url": "https://folhagospel.com/camara-municipal-de-salvador-aprova-projeto-de-lei-contra-cristofobia/",
-      "source": "Folha Gospel",
-      "date": "Mon, 29 Sep 2025 23:14:36 +0000",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2025/09/image-33-e1759187578802.png"
-    },
-    {
-      "title": "Relatório destaca discriminação contra prisioneiros cristãos no Paquistão",
-      "summary": "Um novo relatório sugere que prisioneiros cristãos e hindus em prisões podem enfrentar discriminação no Paquistão. Esperança atrás das grades foi o resultado de um estudo de três anos realizado pela C...",
-      "url": "https://folhagospel.com/relatorio-destaca-discriminacao-contra-prisioneiros-cristaos-no-paquistao/",
-      "source": "Folha Gospel",
-      "date": "Mon, 29 Sep 2025 11:15:00 +0000",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2024/12/Preso-lendo-a-Biblia-na-cadeia-Foto-reproducao.jpg"
-    },
-    {
-      "title": "Ataque a tiros em templo mórmon termina com mortes, feridos e incêndio criminoso",
-      "summary": "Atualização: Subiu para quatro o número de mortos no ataque a uma igreja no estado Michigan, nos Estados Unidos, na manhã deste domingo (28). A informação foi divulgada pelo chefe de polícia do municí...",
-      "url": "https://folhagospel.com/ataque-a-tiros-em-templo-mormon-termina-com-duas-mortes-varios-feridos-e-incendio-criminoso/",
-      "source": "Folha Gospel",
-      "date": "Mon, 29 Sep 2025 01:13:49 +0000",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2025/09/image-32-e1759108398988.png"
-    },
-    {
-      "title": "Templo da Assembleia de Deus é alvo de ataque criminoso",
-      "summary": "Uma igreja Assembleia de Deus  AD Viva, localizada no bairro Ypê, em Sumaré (SP), foi alvo de um ataque criminoso na madrugada de quinta-feira (25). Criminosos quebraram uma janela de vidro e jogaram ...",
-      "url": "https://folhagospel.com/templo-da-assembleia-de-deus-e-alvo-de-ataque-criminoso/",
-      "source": "Folha Gospel",
-      "date": "Sat, 27 Sep 2025 17:00:00 +0000",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2025/09/image-31.png"
-    },
-    {
-      "title": "Igreja de Gaza se recusam a evacuar apesar do alerta de genocídio da ONU",
-      "summary": "A única igreja católica em Gaza se recusou a evacuar, depois que a ONU declarou que a situação na região era um genocídio. Muitos cristãos estão permanecendo para cuidar dos feridos e doentes, apesar ...",
-      "url": "https://folhagospel.com/igreja-de-gaza-se-recusam-a-evacuar-apesar-do-alerta-de-genocidio-da-onu/",
-      "source": "Folha Gospel",
-      "date": "Fri, 26 Sep 2025 13:10:00 +0000",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2023/10/Escombros-de-um-predio-em-Gaza-derrubado-por-missil-israelense-Foto-Reproducao.jpg"
-    },
-    {
-      "title": "Mulher é estuprada por se tornar cristã e mãe é espancada até ficar inconsciente na Índia",
-      "summary": "Parentes hindus de uma mulher cristã de 20 anos no centro da Índia a estupraram e quase mataram sua mãe por sua fé em Cristo, disseram fontes. Desde que começamos a frequentar a igreja, há seis anos, ...",
-      "url": "https://folhagospel.com/mulher-e-estuprada-por-se-tornar-crista-e-mae-e-espancada-ate-ficar-inconsciente-na-india/",
-      "source": "Folha Gospel",
-      "date": "Fri, 26 Sep 2025 11:50:00 +0000",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2025/09/image-30.png"
+      "title": "A recém-descoberta cidade desértica no Peru que está reescrevendo a história das Américas",
+      "summary": "",
+      "url": "https://www.bbc.com/portuguese/articles/c0ezqr047rno",
+      "source": "BBC News Brasil - Arqueologia",
+      "date": "Tue, 30 Sep 2025 10:22:58 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/e968/live/9f6a0930-9279-11f0-8447-89d0c49c75e5.jpg"
     }
   ]
 }
