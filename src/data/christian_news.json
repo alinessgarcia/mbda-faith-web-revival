@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-10-02T10:26:09.626228",
+  "last_updated": "2025-10-02T22:23:06.673595",
   "total_articles": 12,
   "sources": [
     "Cafetorah - Notícias de Israel",
@@ -12,7 +12,7 @@
       "summary": "Mulheres em Gaza denunciam exploração sexual em troca de ajuda humanitária Relatos revelam que alimentos e assistência estão sendo usados como moeda de troca em meio à crise humanitária. Histórias de ...",
       "url": "https://cafetorah.com/gaza-exploracao-sexual-em-meio-a-guerra/",
       "source": "Cafetorah - Notícias de Israel",
-      "date": "Thu, 02 Oct 2025 10:25:14 GMT",
+      "date": "Thu, 02 Oct 2025 22:22:14 GMT",
       "category": "Israel e Oriente Médio",
       "image_url": "https://cafetorah.com/wp-content/uploads/2025/09/pexels-mart-production-7699317.jpg"
     },
@@ -21,9 +21,54 @@
       "summary": "Se queres paz, prepara-te para a guerraSi vis pacem, para bellum  Flavio Vegécio Renato, Século V Nas últimas semanas observamos um conjunto de eventos que, tomados em conjunto, explicam por que anali...",
       "url": "https://cafetorah.com/a-beira-da-tempestade-o-mundo-caminha-para-um-conflito-global/",
       "source": "Cafetorah - Notícias de Israel",
-      "date": "Thu, 02 Oct 2025 10:25:17 GMT",
+      "date": "Thu, 02 Oct 2025 22:22:15 GMT",
       "category": "Israel e Oriente Médio",
       "image_url": "https://cafetorah.com/wp-content/uploads/2025/09/ai-generated-7834228_1920.jpg"
+    },
+    {
+      "title": "Ataque em sinagoga durante Yom Kipur deixa ao menos 2 mortos e 4 feridos, na Inglaterra",
+      "summary": "Duas pessoas morreram e três ficaram gravemente feridas após um homem atropelar e esfaquear pedestres em frente a uma sinagoga no bairro de Crumpsall, no norte de Manchester, na Inglaterra, nesta quin...",
+      "url": "https://folhagospel.com/ataque-em-sinagoga-durante-yom-kipur-deixa-ao-menos-2-mortos-e-4-feridos-na-inglaterra/",
+      "source": "Folha Gospel",
+      "date": "Thu, 02 Oct 2025 16:45:15 +0000",
+      "category": "Notícias Cristãs",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2025/10/image-2.png"
+    },
+    {
+      "title": "Quase metade dos adultos americanos não acredita que a Bíblia seja literalmente verdadeira, mostra estudo",
+      "summary": "Embora maiorias significativas de evangélicos, protestantes negros e americanos no Sul continuem a se apegar à crença literal nas Escrituras, um novo estudo descobriu que quase metade dos adultos amer...",
+      "url": "https://folhagospel.com/quase-metade-dos-adultos-americanos-nao-acredita-que-a-biblia-seja-literalmente-verdadeira-mostra-estudo/",
+      "source": "Folha Gospel",
+      "date": "Thu, 02 Oct 2025 12:43:32 +0000",
+      "category": "Notícias Cristãs",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2024/01/Jovens-estudando-a-Biblia-Foto-canva.jpg"
+    },
+    {
+      "title": "Justiça suspende lei que permite Bíblia como material complementar em escolas de BH",
+      "summary": "O Tribunal de Justiça de Minas Gerais (TJMG) suspendeu a lei municipal que permitia o uso da Bíblia como material complementar nas escolas de Belo Horizonte. A decisão foi tomada pela desembargadora T...",
+      "url": "https://folhagospel.com/justica-suspende-lei-que-permite-biblia-como-material-complementar-em-escolas-de-bh/",
+      "source": "Folha Gospel",
+      "date": "Thu, 02 Oct 2025 12:29:47 +0000",
+      "category": "Notícias Cristãs",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2023/06/Sala-de-aula-com-Biblia-sobre-uma-bancada-Foto-IA-do-Canva-Pro.jpg"
+    },
+    {
+      "title": "Bandidos usaram nome da Assembleia de Deus para aplicar golpes nos fiéis",
+      "summary": "A Igreja Assembleia de Deus Ministério Madureira  Campo de Juara, municípo de Mato Grosso, emitiu um importante aviso para a comunidade nesta semana, alertando sobre a possibilidade de golpes envolven...",
+      "url": "https://folhagospel.com/bandidos-usaram-nome-da-assembleia-de-deus-para-aplicar-golpes-nos-fieis/",
+      "source": "Folha Gospel",
+      "date": "Thu, 02 Oct 2025 12:17:30 +0000",
+      "category": "Notícias Cristãs",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2025/10/image-1.png"
+    },
+    {
+      "title": "Tribunal mantém sentenças para cinco cristãos no Irã",
+      "summary": "Um tribunal de apelações em Teerã confirmou as sentenças de prisão de cinco cristãos acusados de propaganda por envolvimento em atividades religiosas, relata um grupo de vigilância. Os cinco  Hessamud...",
+      "url": "https://folhagospel.com/tribunal-mantem-sentencas-para-cinco-cristaos-no-ira/",
+      "source": "Folha Gospel",
+      "date": "Thu, 02 Oct 2025 11:40:23 +0000",
+      "category": "Notícias Cristãs",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2025/08/Bandeira-do-Ira-sobre-a-capital-Teera-Foto-Canva-Pro.jpg"
     },
     {
       "title": "The Chosen bate recorde mundial e entra para o Guinness Book",
@@ -51,51 +96,6 @@
       "date": "Wed, 01 Oct 2025 13:40:23 +0000",
       "category": "Notícias Cristãs",
       "image_url": "https://folhagospel.com/wp-content/uploads/2025/02/Culto-em-igreja-nos-EUA.jpg"
-    },
-    {
-      "title": "Muçulmanos tentam tomar escola cristã no Sudão",
-      "summary": "Uma tentativa de anos de ocupação de uma escola cristã no Sudão continuou neste mês, mesmo com pessoas deslocadas pela guerra se refugiando nas instalações, disseram fontes. Um grupo de interesse come...",
-      "url": "https://folhagospel.com/muculmanos-tentam-tomar-escola-crista-no-sudao/",
-      "source": "Folha Gospel",
-      "date": "Wed, 01 Oct 2025 09:45:00 +0000",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2025/10/Criancas-em-uma-escola-no-Sudao-Foto-canva-pro.jpg"
-    },
-    {
-      "title": "Franklin Graham atrai 14.000 pessoas ao Festival da Esperança na Bélgica",
-      "summary": "Mais de 14.000 cristãos e não crentes lotaram uma arena na Bélgica no último fim de semana para participar de um Festival da Esperança. O evento gratuito foi organizado por 620 igrejas evangélicas bel...",
-      "url": "https://folhagospel.com/franklin-graham-atrai-14-000-pessoas-ao-festival-da-esperanca-na-belgica/",
-      "source": "Folha Gospel",
-      "date": "Tue, 30 Sep 2025 15:25:29 +0000",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2025/09/image-37-scaled-e1759245821710.png"
-    },
-    {
-      "title": "Líderes cristãos lançam a Declaração de Westminster de 2025 para recristianizar a Grã-Bretanha",
-      "summary": "Líderes cristãos e teólogos se uniram para assinar uma declaração que visa recristianizar a Grã-Bretanha. A Declaração de Westminster de 2025, assinada no fim de semana, espera proteger o debate em to...",
-      "url": "https://folhagospel.com/lideres-cristaos-lancam-a-declaracao-de-westminster-de-2025-para-recristianizar-a-gra-bretanha/",
-      "source": "Folha Gospel",
-      "date": "Tue, 30 Sep 2025 15:19:02 +0000",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2025/09/Catedral-de-Sao-Paulo-e-uma-bandeira-da-Gra-Bretanha.jpg"
-    },
-    {
-      "title": "Marcha para Jesus na Guatemala pede unidade e transformação do país",
-      "summary": "Pelo terceiro ano consecutivo, a capital da Guatemala foi palco da grande Marcha para Jesus , um evento que reuniu centenas de pessoas de diversas igrejas e denominações para um dia de fé e unidade. D...",
-      "url": "https://folhagospel.com/marcha-para-jesus-na-guatemala-pede-unidade-e-transformacao-do-pais/",
-      "source": "Folha Gospel",
-      "date": "Tue, 30 Sep 2025 14:51:46 +0000",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2025/09/image-36-e1759243859629.png"
-    },
-    {
-      "title": "Cuba: Cristãos transferem seu culto para as ruas após tentativa de censura",
-      "summary": "Centenas de fiéis evangélicos foram forçados a interromper um culto em Cuba devido à intervenção das autoridades locais, mas responderam transferindo seu culto para a rua pública, em um ato visível de...",
-      "url": "https://folhagospel.com/cuba-cristaos-transferem-seu-culto-para-as-ruas-apos-tentativa-de-censura/",
-      "source": "Folha Gospel",
-      "date": "Tue, 30 Sep 2025 14:46:04 +0000",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2025/09/image-35-e1759243471702.png"
     },
     {
       "title": "Imigração brasileira impulsiona crescimento de evangélicos em Portugal",
