@@ -1,9 +1,9 @@
 {
-  "last_updated": "2025-10-01T22:23:50.507607",
-  "total_articles": 14,
+  "last_updated": "2025-10-02T10:26:09.626228",
+  "total_articles": 12,
   "sources": [
-    "Folha Gospel",
     "Cafetorah - Notícias de Israel",
+    "Folha Gospel",
     "Radio 93 - Giro Cristão"
   ],
   "articles": [
@@ -12,7 +12,7 @@
       "summary": "Mulheres em Gaza denunciam exploração sexual em troca de ajuda humanitária Relatos revelam que alimentos e assistência estão sendo usados como moeda de troca em meio à crise humanitária. Histórias de ...",
       "url": "https://cafetorah.com/gaza-exploracao-sexual-em-meio-a-guerra/",
       "source": "Cafetorah - Notícias de Israel",
-      "date": "Wed, 01 Oct 2025 22:22:57 GMT",
+      "date": "Thu, 02 Oct 2025 10:25:14 GMT",
       "category": "Israel e Oriente Médio",
       "image_url": "https://cafetorah.com/wp-content/uploads/2025/09/pexels-mart-production-7699317.jpg"
     },
@@ -21,7 +21,7 @@
       "summary": "Se queres paz, prepara-te para a guerraSi vis pacem, para bellum  Flavio Vegécio Renato, Século V Nas últimas semanas observamos um conjunto de eventos que, tomados em conjunto, explicam por que anali...",
       "url": "https://cafetorah.com/a-beira-da-tempestade-o-mundo-caminha-para-um-conflito-global/",
       "source": "Cafetorah - Notícias de Israel",
-      "date": "Wed, 01 Oct 2025 22:22:59 GMT",
+      "date": "Thu, 02 Oct 2025 10:25:17 GMT",
       "category": "Israel e Oriente Médio",
       "image_url": "https://cafetorah.com/wp-content/uploads/2025/09/ai-generated-7834228_1920.jpg"
     },
@@ -98,38 +98,20 @@
       "image_url": "https://folhagospel.com/wp-content/uploads/2025/09/image-35-e1759243471702.png"
     },
     {
+      "title": "Imigração brasileira impulsiona crescimento de evangélicos em Portugal",
+      "summary": "Igrejas evangélicas estão em pleno crescimento no país. The post Imigração brasileira impulsiona crescimento de evangélicos em Portugal appeared first on Rádio 93FM-RJ.",
+      "url": "https://radio93.com.br/noticias/giro-cristao/imigracao-brasileira-impulsiona-crescimento-de-evangelicos-em-portugal/",
+      "source": "Radio 93 - Giro Cristão",
+      "date": "Thu, 02 Oct 2025 03:05:36 +0000",
+      "category": "Notícias Cristãs",
+      "image_url": ""
+    },
+    {
       "title": "Itapecerica da Serra terá Monte de Oração",
       "summary": "Local servirá para vigílias, cultos ao ar livre e retiros. The post Itapecerica da Serra terá Monte de Oração appeared first on Rádio 93FM-RJ.",
       "url": "https://radio93.com.br/noticias/giro-cristao/itapecerica-da-serra-tera-monte-de-oracao/",
       "source": "Radio 93 - Giro Cristão",
       "date": "Wed, 01 Oct 2025 03:05:22 +0000",
-      "category": "Notícias Cristãs",
-      "image_url": ""
-    },
-    {
-      "title": "Justiça de Minas suspende lei que autorizava uso da Bíblia nas escolas após pedido do PSOL",
-      "summary": "Partido questionou a legalidade da norma. The post Justiça de Minas suspende lei que autorizava uso da Bíblia nas escolas após pedido do PSOL appeared first on Rádio 93FM-RJ.",
-      "url": "https://radio93.com.br/noticias/giro-cristao/justica-de-minas-suspende-lei-que-autorizava-uso-da-biblia-nas-escolas-apos-pedido-do-psol/",
-      "source": "Radio 93 - Giro Cristão",
-      "date": "Wed, 01 Oct 2025 00:00:58 +0000",
-      "category": "Notícias Cristãs",
-      "image_url": ""
-    },
-    {
-      "title": "Polícia interrompe culto em anfiteatro em Cuba",
-      "summary": "Diferentes igrejas se uniram para alugar local. The post Polícia interrompe culto em anfiteatro em Cuba appeared first on Rádio 93FM-RJ.",
-      "url": "https://radio93.com.br/noticias/giro-cristao/policia-interrompe-culto-em-anfiteatro-em-cuba/",
-      "source": "Radio 93 - Giro Cristão",
-      "date": "Tue, 30 Sep 2025 09:00:09 +0000",
-      "category": "Notícias Cristãs",
-      "image_url": ""
-    },
-    {
-      "title": "Incêndio criminoso destrói templo de Assembleia de Deus em São Paulo",
-      "summary": "Ataque aconteceu de madrugada e polícia civil está investigando. The post Incêndio criminoso destrói templo de Assembleia de Deus em São Paulo appeared first on Rádio 93FM-RJ.",
-      "url": "https://radio93.com.br/noticias/giro-cristao/incendio-criminoso-destroi-templo-de-assembleia-de-deus-em-sao-paulo/",
-      "source": "Radio 93 - Giro Cristão",
-      "date": "Tue, 30 Sep 2025 03:05:18 +0000",
       "category": "Notícias Cristãs",
       "image_url": ""
     }
