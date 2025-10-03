@@ -71,8 +71,33 @@ const NewspaperHeroSlider: React.FC = () => {
 
   const featured = items[current];
   const secondary = useMemo(() => {
-    return items.filter((_, idx) => idx !== current).slice(0, 4);
+    return items.filter((_, idx) => idx !== current);
   }, [items, current]);
+
+  // Organizar notícias secundárias por categoria para as abas
+  const categorizedNews = useMemo(() => {
+    const categories: { [key: string]: NewsItem[] } = {};
+    
+    secondary.forEach(item => {
+      const category = item.category || 'Geral';
+      if (!categories[category]) {
+        categories[category] = [];
+      }
+      categories[category].push(item);
+    });
+
+    return categories;
+  }, [secondary]);
+
+  const categoryTabs = Object.keys(categorizedNews);
+  const [activeTab, setActiveTab] = useState(0);
+
+  // Atualizar aba ativa quando as categorias mudarem
+  useEffect(() => {
+    if (categoryTabs.length > 0 && activeTab >= categoryTabs.length) {
+      setActiveTab(0);
+    }
+  }, [categoryTabs.length, activeTab]);
 
   if (loading) {
     return (
@@ -134,7 +159,7 @@ const NewspaperHeroSlider: React.FC = () => {
 
       {/* Conteúdo do slider */}
       <div className="relative z-10 px-6 pb-6">
-        <div className="mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-3 gap-6 max-h-[calc(100vh-160px)] overflow-hidden">
+        <div className="mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-3 gap-6 min-h-[600px] lg:min-h-[500px]">
           {/* Destaque principal */}
           <div className="lg:col-span-2 bg-neutral-100/5 rounded-md overflow-hidden shadow-2xl">
             {featured && (
@@ -207,32 +232,63 @@ const NewspaperHeroSlider: React.FC = () => {
             )}
           </div>
 
-          {/* Lista lateral de secundárias */}
-          <div className="bg-neutral-100/5 rounded-md overflow-hidden shadow-xl">
-            <div className="p-4 space-y-4 max-h-[calc(100vh-240px)] overflow-auto pt-6 mt-2 border-t border-neutral-700">
-              <h3 className="font-serif text-xl font-bold mb-4 uppercase tracking-wide text-neutral-200">
-                Outras Notícias
-              </h3>
-              {secondary.map((item, i) => (
-                <article key={`${item.url}-${i}`} className="border-l-4 border-neutral-700 pl-4 pb-4">
-                  <a href={item.url} target="_blank" rel="noopener noreferrer">
-                    <h3 className="font-serif text-lg text-neutral-100 hover:text-yellow-200 transition-colors">
-                      {item.title}
-                    </h3>
-                  </a>
-                  <p className="text-neutral-300 text-sm mt-1 line-clamp-3 font-serif">
-                    {item.summary}
-                  </p>
-                  <div className="mt-2 text-neutral-500 text-xs">
-                    <span>{item.source}</span>
-                    {item.date && (
-                      <span className="ml-2">• {new Date(item.date).toLocaleDateString("pt-BR")}</span>
-                    )}
-                  </div>
-                </article>
-              ))}
-              {secondary.length === 0 && (
-                <div className="text-neutral-400 text-sm">Sem notícias adicionais</div>
+          {/* Lista lateral de secundárias com abas */}
+          <div className="bg-neutral-100/5 rounded-md overflow-hidden shadow-xl relative z-20">
+            {/* Abas de categorias */}
+            {categoryTabs.length > 1 && (
+              <div className="flex overflow-x-auto bg-neutral-800/50 border-b border-neutral-700 sticky top-0 z-30">
+                {categoryTabs.map((category, index) => (
+                  <button
+                    key={category}
+                    onClick={() => setActiveTab(index)}
+                    className={`px-4 py-3 text-sm font-medium whitespace-nowrap transition-colors ${
+                      activeTab === index
+                        ? 'bg-yellow-600 text-white border-b-2 border-yellow-400'
+                        : 'text-neutral-300 hover:text-white hover:bg-neutral-700/50'
+                    }`}
+                  >
+                    {category}
+                    <span className="ml-2 text-xs opacity-75">
+                      ({categorizedNews[category]?.length || 0})
+                    </span>
+                  </button>
+                ))}
+              </div>
+            )}
+
+            {/* Conteúdo da aba ativa */}
+            <div className="p-4 space-y-4 max-h-[400px] md:max-h-[500px] lg:max-h-[600px] overflow-y-auto pt-6 mt-2">
+              {categoryTabs.length > 0 ? (
+                <>
+                  <h3 className="font-serif text-xl font-bold mb-4 uppercase tracking-wide text-neutral-200">
+                    {categoryTabs.length > 1 ? categoryTabs[activeTab] : 'Outras Notícias'}
+                  </h3>
+                  {categorizedNews[categoryTabs[activeTab]]?.map((item, i) => (
+                    <article key={`${item.url}-${i}`} className="border-l-4 border-neutral-700 pl-4 pb-4">
+                      <a href={item.url} target="_blank" rel="noopener noreferrer">
+                        <h3 className="font-serif text-lg text-neutral-100 hover:text-yellow-200 transition-colors">
+                          {item.title}
+                        </h3>
+                      </a>
+                      <p className="text-neutral-300 text-sm mt-1 line-clamp-3 font-serif">
+                        {item.summary}
+                      </p>
+                      <div className="mt-2 text-neutral-500 text-xs">
+                        <span>{item.source}</span>
+                        {item.date && (
+                          <span className="ml-2">• {new Date(item.date).toLocaleDateString("pt-BR")}</span>
+                        )}
+                      </div>
+                    </article>
+                  )) || []}
+                </>
+              ) : (
+                <>
+                  <h3 className="font-serif text-xl font-bold mb-4 uppercase tracking-wide text-neutral-200">
+                    Outras Notícias
+                  </h3>
+                  <div className="text-neutral-400 text-sm">Sem notícias adicionais</div>
+                </>
               )}
             </div>
           </div>

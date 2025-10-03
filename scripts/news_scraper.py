@@ -388,6 +388,162 @@ class ChristianNewsScraper:
             
         return news_list
 
+    def scrape_ipb_eventos(self) -> List[Dict]:
+        """Scrape IPB - Igreja Presbiteriana do Brasil eventos"""
+        news_list = []
+        try:
+            query = "IPB Igreja Presbiteriana Brasil eventos teológicos"
+            url = f"https://news.google.com/rss/search?q={query}&hl=pt-BR&gl=BR&ceid=BR:pt-419"
+            response = self.session.get(url, timeout=10)
+            response.raise_for_status()
+            
+            soup = BeautifulSoup(response.content, 'xml')
+            items = soup.find_all('item')[:5]
+            
+            for item in items:
+                try:
+                    title = self.clean_text(item.title.text) if item.title else "Sem título"
+                    link = item.link.text if item.link else ""
+                    description = self.clean_text(item.description.text) if item.description else ""
+                    pub_date = item.pubDate.text if item.pubDate else datetime.now().strftime('%a, %d %b %Y %H:%M:%S GMT')
+                    
+                    if title and link:
+                        news_list.append({
+                            'title': title,
+                            'summary': description[:200] + "..." if len(description) > 200 else description,
+                            'url': link,
+                            'source': 'IPB Eventos',
+                            'date': pub_date,
+                            'category': 'Eventos Teológicos',
+                            'image_url': None
+                        })
+                        
+                except Exception as e:
+                    logger.error(f"Error parsing IPB eventos article: {e}")
+                    continue
+                    
+        except Exception as e:
+            logger.error(f"Error scraping IPB eventos: {e}")
+            
+        return news_list
+
+    def scrape_luis_sayao(self) -> List[Dict]:
+        """Scrape notícias sobre Luís Sayão"""
+        news_list = []
+        try:
+            query = "Luís Sayão teólogo pastor pregador"
+            url = f"https://news.google.com/rss/search?q={query}&hl=pt-BR&gl=BR&ceid=BR:pt-419"
+            response = self.session.get(url, timeout=10)
+            response.raise_for_status()
+            
+            soup = BeautifulSoup(response.content, 'xml')
+            items = soup.find_all('item')[:3]
+            
+            for item in items:
+                try:
+                    title = self.clean_text(item.title.text) if item.title else "Sem título"
+                    link = item.link.text if item.link else ""
+                    description = self.clean_text(item.description.text) if item.description else ""
+                    pub_date = item.pubDate.text if item.pubDate else datetime.now().strftime('%a, %d %b %Y %H:%M:%S GMT')
+                    
+                    if title and link:
+                        news_list.append({
+                            'title': title,
+                            'summary': description[:200] + "..." if len(description) > 200 else description,
+                            'url': link,
+                            'source': 'Luís Sayão',
+                            'date': pub_date,
+                            'category': 'Teólogos',
+                            'image_url': None
+                        })
+                        
+                except Exception as e:
+                    logger.error(f"Error parsing Luís Sayão article: {e}")
+                    continue
+                    
+        except Exception as e:
+            logger.error(f"Error scraping Luís Sayão: {e}")
+            
+        return news_list
+
+    def scrape_hernandes_dias_lopes(self) -> List[Dict]:
+        """Scrape notícias sobre Hernandes Dias Lopes"""
+        news_list = []
+        try:
+            query = "Hernandes Dias Lopes pastor pregador teólogo"
+            url = f"https://news.google.com/rss/search?q={query}&hl=pt-BR&gl=BR&ceid=BR:pt-419"
+            response = self.session.get(url, timeout=10)
+            response.raise_for_status()
+            
+            soup = BeautifulSoup(response.content, 'xml')
+            items = soup.find_all('item')[:3]
+            
+            for item in items:
+                try:
+                    title = self.clean_text(item.title.text) if item.title else "Sem título"
+                    link = item.link.text if item.link else ""
+                    description = self.clean_text(item.description.text) if item.description else ""
+                    pub_date = item.pubDate.text if item.pubDate else datetime.now().strftime('%a, %d %b %Y %H:%M:%S GMT')
+                    
+                    if title and link:
+                        news_list.append({
+                            'title': title,
+                            'summary': description[:200] + "..." if len(description) > 200 else description,
+                            'url': link,
+                            'source': 'Hernandes Dias Lopes',
+                            'date': pub_date,
+                            'category': 'Teólogos',
+                            'image_url': None
+                        })
+                        
+                except Exception as e:
+                    logger.error(f"Error parsing Hernandes Dias Lopes article: {e}")
+                    continue
+                    
+        except Exception as e:
+            logger.error(f"Error scraping Hernandes Dias Lopes: {e}")
+            
+        return news_list
+
+    def scrape_augustus_nicodemus(self) -> List[Dict]:
+        """Scrape notícias sobre Augustus Nicodemus"""
+        news_list = []
+        try:
+            query = "Augustus Nicodemus pastor teólogo reformado"
+            url = f"https://news.google.com/rss/search?q={query}&hl=pt-BR&gl=BR&ceid=BR:pt-419"
+            response = self.session.get(url, timeout=10)
+            response.raise_for_status()
+            
+            soup = BeautifulSoup(response.content, 'xml')
+            items = soup.find_all('item')[:3]
+            
+            for item in items:
+                try:
+                    title = self.clean_text(item.title.text) if item.title else "Sem título"
+                    link = item.link.text if item.link else ""
+                    description = self.clean_text(item.description.text) if item.description else ""
+                    pub_date = item.pubDate.text if item.pubDate else datetime.now().strftime('%a, %d %b %Y %H:%M:%S GMT')
+                    
+                    if title and link:
+                        news_list.append({
+                            'title': title,
+                            'summary': description[:200] + "..." if len(description) > 200 else description,
+                            'url': link,
+                            'source': 'Augustus Nicodemus',
+                            'date': pub_date,
+                            'category': 'Teólogos',
+                            'image_url': None
+                        })
+                        
+                except Exception as e:
+                    logger.error(f"Error parsing Augustus Nicodemus article: {e}")
+                    continue
+                    
+        except Exception as e:
+            logger.error(f"Error scraping Augustus Nicodemus: {e}")
+            
+        return news_list
+
     def scrape_guiame(self) -> List[Dict]:
         """Scrape news from Guiame"""
         news_list = []
@@ -998,6 +1154,948 @@ class ChristianNewsScraper:
             logger.error(f"Error scraping Google News: {e}")
         return news_list
 
+    def scrape_noticias_israel(self) -> List[Dict]:
+        """Scrape news from Notícias de Israel"""
+        news_list = []
+        try:
+            url = 'https://noticiasdeisrael.com.br/'
+            headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
+            response = requests.get(url, headers=headers, timeout=10)
+            response.raise_for_status()
+            
+            soup = BeautifulSoup(response.content, 'html.parser')
+            
+            # Procurar por artigos
+            articles = soup.find_all(['article', 'div'], class_=lambda x: x and any(
+                keyword in x.lower() for keyword in ['post', 'article', 'entry', 'news']
+            ))[:10]
+            
+            for article in articles:
+                try:
+                    # Título
+                    title_elem = article.find(['h1', 'h2', 'h3', 'h4'], class_=lambda x: x and any(
+                        keyword in x.lower() for keyword in ['title', 'headline', 'entry-title']
+                    ))
+                    if not title_elem:
+                        title_elem = article.find(['h1', 'h2', 'h3', 'h4'])
+                    
+                    if not title_elem:
+                        continue
+                        
+                    title = self.clean_text(title_elem.get_text())
+                    if not title or len(title) < 10:
+                        continue
+                    
+                    # Link
+                    link_elem = title_elem.find('a') or article.find('a')
+                    if not link_elem:
+                        continue
+                    link = urljoin(url, link_elem.get('href', ''))
+                    
+                    # Resumo
+                    summary_elem = article.find(['p', 'div'], class_=lambda x: x and any(
+                        keyword in x.lower() for keyword in ['excerpt', 'summary', 'content']
+                    ))
+                    if not summary_elem:
+                        summary_elem = article.find('p')
+                    
+                    summary = self.clean_text(summary_elem.get_text()) if summary_elem else title[:100] + '...'
+                    
+                    # Imagem
+                    image_url = self.extract_image_from_content(link)
+                    if not image_url:
+                        img_elem = article.find('img')
+                        if img_elem and img_elem.get('src'):
+                            image_url = urljoin(url, img_elem.get('src'))
+                    
+                    news_list.append({
+                        'title': title,
+                        'summary': summary[:200] + '...' if len(summary) > 200 else summary,
+                        'url': link,
+                        'source': 'Notícias de Israel',
+                        'date': datetime.now().strftime('%a, %d %b %Y %H:%M:%S GMT'),
+                        'category': 'Israel e Oriente Médio',
+                        'image_url': image_url
+                    })
+                except Exception as e:
+                    logger.warning(f"Error parsing Notícias de Israel item: {e}")
+                    continue
+                    
+        except Exception as e:
+            logger.error(f"Error scraping Notícias de Israel: {e}")
+            
+        return news_list
+
+    def scrape_pulpito_cristao(self) -> List[Dict]:
+        """Scrape news from Púlpito Cristão"""
+        news_list = []
+        try:
+            url = 'https://www.pulpitocristao.com/'
+            headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
+            response = requests.get(url, headers=headers, timeout=10)
+            response.raise_for_status()
+            
+            soup = BeautifulSoup(response.content, 'html.parser')
+            
+            # Procurar por artigos
+            articles = soup.find_all(['article', 'div'], class_=lambda x: x and any(
+                keyword in x.lower() for keyword in ['post', 'article', 'entry', 'news']
+            ))[:10]
+            
+            for article in articles:
+                try:
+                    # Título
+                    title_elem = article.find(['h1', 'h2', 'h3', 'h4'])
+                    if not title_elem:
+                        continue
+                        
+                    title = self.clean_text(title_elem.get_text())
+                    if not title or len(title) < 10:
+                        continue
+                    
+                    # Link
+                    link_elem = title_elem.find('a') or article.find('a')
+                    if not link_elem:
+                        continue
+                    link = urljoin(url, link_elem.get('href', ''))
+                    
+                    # Resumo
+                    summary_elem = article.find('p')
+                    summary = self.clean_text(summary_elem.get_text()) if summary_elem else title[:100] + '...'
+                    
+                    # Imagem
+                    image_url = self.extract_image_from_content(link)
+                    if not image_url:
+                        img_elem = article.find('img')
+                        if img_elem and img_elem.get('src'):
+                            image_url = urljoin(url, img_elem.get('src'))
+                    
+                    news_list.append({
+                        'title': title,
+                        'summary': summary[:200] + '...' if len(summary) > 200 else summary,
+                        'url': link,
+                        'source': 'Púlpito Cristão',
+                        'date': datetime.now().strftime('%a, %d %b %Y %H:%M:%S GMT'),
+                        'category': 'Pregação e Ensino',
+                        'image_url': image_url
+                    })
+                except Exception as e:
+                    logger.warning(f"Error parsing Púlpito Cristão item: {e}")
+                    continue
+                    
+        except Exception as e:
+            logger.error(f"Error scraping Púlpito Cristão: {e}")
+            
+        return news_list
+
+    def scrape_voltemos_evangelho(self) -> List[Dict]:
+        """Scrape news from Voltemos ao Evangelho"""
+        news_list = []
+        try:
+            url = 'https://voltemosaoevangelho.com/'
+            headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
+            response = requests.get(url, headers=headers, timeout=10)
+            response.raise_for_status()
+            
+            soup = BeautifulSoup(response.content, 'html.parser')
+            
+            # Procurar por artigos
+            articles = soup.find_all(['article', 'div'], class_=lambda x: x and any(
+                keyword in x.lower() for keyword in ['post', 'article', 'entry']
+            ))[:10]
+            
+            for article in articles:
+                try:
+                    # Título
+                    title_elem = article.find(['h1', 'h2', 'h3', 'h4'])
+                    if not title_elem:
+                        continue
+                        
+                    title = self.clean_text(title_elem.get_text())
+                    if not title or len(title) < 10:
+                        continue
+                    
+                    # Link
+                    link_elem = title_elem.find('a') or article.find('a')
+                    if not link_elem:
+                        continue
+                    link = urljoin(url, link_elem.get('href', ''))
+                    
+                    # Resumo
+                    summary_elem = article.find('p')
+                    summary = self.clean_text(summary_elem.get_text()) if summary_elem else title[:100] + '...'
+                    
+                    # Imagem
+                    image_url = self.extract_image_from_content(link)
+                    if not image_url:
+                        img_elem = article.find('img')
+                        if img_elem and img_elem.get('src'):
+                            image_url = urljoin(url, img_elem.get('src'))
+                    
+                    news_list.append({
+                        'title': title,
+                        'summary': summary[:200] + '...' if len(summary) > 200 else summary,
+                        'url': link,
+                        'source': 'Voltemos ao Evangelho',
+                        'date': datetime.now().strftime('%a, %d %b %Y %H:%M:%S GMT'),
+                        'category': 'Teologia Reformada',
+                        'image_url': image_url
+                    })
+                except Exception as e:
+                    logger.warning(f"Error parsing Voltemos ao Evangelho item: {e}")
+                    continue
+                    
+        except Exception as e:
+            logger.error(f"Error scraping Voltemos ao Evangelho: {e}")
+            
+        return news_list
+
+    def scrape_ministerio_fiel(self) -> List[Dict]:
+        """Scrape news from Ministério Fiel"""
+        news_list = []
+        try:
+            url = 'https://ministeriofiel.com.br/'
+            headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
+            response = requests.get(url, headers=headers, timeout=10)
+            response.raise_for_status()
+            
+            soup = BeautifulSoup(response.content, 'html.parser')
+            
+            # Procurar por artigos
+            articles = soup.find_all(['article', 'div'], class_=lambda x: x and any(
+                keyword in x.lower() for keyword in ['post', 'article', 'entry']
+            ))[:10]
+            
+            for article in articles:
+                try:
+                    # Título
+                    title_elem = article.find(['h1', 'h2', 'h3', 'h4'])
+                    if not title_elem:
+                        continue
+                        
+                    title = self.clean_text(title_elem.get_text())
+                    if not title or len(title) < 10:
+                        continue
+                    
+                    # Link
+                    link_elem = title_elem.find('a') or article.find('a')
+                    if not link_elem:
+                        continue
+                    link = urljoin(url, link_elem.get('href', ''))
+                    
+                    # Resumo
+                    summary_elem = article.find('p')
+                    summary = self.clean_text(summary_elem.get_text()) if summary_elem else title[:100] + '...'
+                    
+                    # Imagem
+                    image_url = self.extract_image_from_content(link)
+                    if not image_url:
+                        img_elem = article.find('img')
+                        if img_elem and img_elem.get('src'):
+                            image_url = urljoin(url, img_elem.get('src'))
+                    
+                    news_list.append({
+                        'title': title,
+                        'summary': summary[:200] + '...' if len(summary) > 200 else summary,
+                        'url': link,
+                        'source': 'Ministério Fiel',
+                        'date': datetime.now().strftime('%a, %d %b %Y %H:%M:%S GMT'),
+                        'category': 'Teologia e Ensino',
+                        'image_url': image_url
+                    })
+                except Exception as e:
+                    logger.warning(f"Error parsing Ministério Fiel item: {e}")
+                    continue
+                    
+        except Exception as e:
+            logger.error(f"Error scraping Ministério Fiel: {e}")
+            
+        return news_list
+
+    def scrape_biblical_archaeology(self) -> List[Dict]:
+        """Scrape news from Biblical Archaeology Society"""
+        news_list = []
+        try:
+            url = 'https://www.biblicalarchaeology.org/news/'
+            headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
+            response = requests.get(url, headers=headers, timeout=10)
+            response.raise_for_status()
+            
+            soup = BeautifulSoup(response.content, 'html.parser')
+            
+            # Procurar por artigos
+            articles = soup.find_all(['article', 'div'], class_=lambda x: x and any(
+                keyword in x.lower() for keyword in ['post', 'article', 'entry']
+            ))[:10]
+            
+            for article in articles:
+                try:
+                    # Título
+                    title_elem = article.find(['h1', 'h2', 'h3', 'h4'])
+                    if not title_elem:
+                        continue
+                        
+                    title = self.clean_text(title_elem.get_text())
+                    if not title or len(title) < 10:
+                        continue
+                    
+                    # Link
+                    link_elem = title_elem.find('a') or article.find('a')
+                    if not link_elem:
+                        continue
+                    link = urljoin(url, link_elem.get('href', ''))
+                    
+                    # Resumo
+                    summary_elem = article.find('p')
+                    summary = self.clean_text(summary_elem.get_text()) if summary_elem else title[:100] + '...'
+                    
+                    # Imagem
+                    image_url = self.extract_image_from_content(link)
+                    if not image_url:
+                        img_elem = article.find('img')
+                        if img_elem and img_elem.get('src'):
+                            image_url = urljoin(url, img_elem.get('src'))
+                    
+                    news_list.append({
+                        'title': title,
+                        'summary': summary[:200] + '...' if len(summary) > 200 else summary,
+                        'url': link,
+                        'source': 'Biblical Archaeology Society',
+                        'date': datetime.now().strftime('%a, %d %b %Y %H:%M:%S GMT'),
+                        'category': 'Arqueologia Bíblica',
+                        'image_url': image_url
+                    })
+                except Exception as e:
+                    logger.warning(f"Error parsing Biblical Archaeology item: {e}")
+                    continue
+                    
+        except Exception as e:
+            logger.error(f"Error scraping Biblical Archaeology Society: {e}")
+            
+        return news_list
+
+    def scrape_teologia_brasileira(self) -> List[Dict]:
+        """Scrape news from Teologia Brasileira"""
+        news_list = []
+        try:
+            url = 'https://teologiabrasileira.com.br/noticias/'
+            headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
+            response = requests.get(url, headers=headers, timeout=10)
+            response.raise_for_status()
+            
+            soup = BeautifulSoup(response.content, 'html.parser')
+            
+            # Procurar por artigos
+            articles = soup.find_all(['article', 'div'], class_=lambda x: x and any(
+                keyword in x.lower() for keyword in ['post', 'article', 'entry']
+            ))[:10]
+            
+            for article in articles:
+                try:
+                    # Título
+                    title_elem = article.find(['h1', 'h2', 'h3', 'h4'])
+                    if not title_elem:
+                        continue
+                        
+                    title = self.clean_text(title_elem.get_text())
+                    if not title or len(title) < 10:
+                        continue
+                    
+                    # Link
+                    link_elem = title_elem.find('a') or article.find('a')
+                    if not link_elem:
+                        continue
+                    link = urljoin(url, link_elem.get('href', ''))
+                    
+                    # Resumo
+                    summary_elem = article.find('p')
+                    summary = self.clean_text(summary_elem.get_text()) if summary_elem else title[:100] + '...'
+                    
+                    # Imagem
+                    image_url = self.extract_image_from_content(link)
+                    if not image_url:
+                        img_elem = article.find('img')
+                        if img_elem and img_elem.get('src'):
+                            image_url = urljoin(url, img_elem.get('src'))
+                    
+                    news_list.append({
+                        'title': title,
+                        'summary': summary[:200] + '...' if len(summary) > 200 else summary,
+                        'url': link,
+                        'source': 'Teologia Brasileira',
+                        'date': datetime.now().strftime('%a, %d %b %Y %H:%M:%S GMT'),
+                        'category': 'Teologia e Doutrina',
+                        'image_url': image_url
+                    })
+                except Exception as e:
+                    logger.warning(f"Error parsing Teologia Brasileira item: {e}")
+                    continue
+                    
+        except Exception as e:
+            logger.error(f"Error scraping Teologia Brasileira: {e}")
+            
+        return news_list
+
+    def scrape_monergismo(self) -> List[Dict]:
+        """Scrape Monergismo - Teologia Reformada"""
+        news_list = []
+        try:
+            url = "https://www.monergismo.com/"
+            response = self.session.get(url, timeout=10)
+            response.raise_for_status()
+            
+            soup = BeautifulSoup(response.content, 'html.parser')
+            
+            # Find articles
+            articles = soup.find_all(['article', 'div'], class_=['post', 'entry', 'article'])[:5]
+            
+            for article in articles:
+                try:
+                    title_elem = article.find(['h1', 'h2', 'h3', 'h4'], class_=['title', 'entry-title', 'post-title'])
+                    if not title_elem:
+                        title_elem = article.find(['h1', 'h2', 'h3', 'h4'])
+                    
+                    link_elem = title_elem.find('a') if title_elem else None
+                    if not link_elem:
+                        link_elem = article.find('a')
+                    
+                    if title_elem and link_elem:
+                        title = self.clean_text(title_elem.get_text())
+                        link = urljoin(url, link_elem.get('href'))
+                        
+                        # Extract summary
+                        summary_elem = article.find(['p', 'div'], class_=['excerpt', 'summary', 'description'])
+                        if not summary_elem:
+                            summary_elem = article.find('p')
+                        summary = self.clean_text(summary_elem.get_text()) if summary_elem else title[:200] + "..."
+                        
+                        # Extract image
+                        img_elem = article.find('img')
+                        image_url = urljoin(url, img_elem.get('src')) if img_elem else None
+                        
+                        news_list.append({
+                            'title': title,
+                            'summary': summary,
+                            'url': link,
+                            'source': 'Monergismo',
+                            'date': datetime.now().strftime('%a, %d %b %Y %H:%M:%S GMT'),
+                            'category': 'Teologia Reformada',
+                            'image_url': image_url
+                        })
+                        
+                except Exception as e:
+                    logger.error(f"Error parsing Monergismo article: {e}")
+                    continue
+                    
+        except Exception as e:
+            logger.error(f"Error scraping Monergismo: {e}")
+            
+        return news_list
+
+    def scrape_ipb_nacional(self) -> List[Dict]:
+        """Scrape IPB Nacional - Igreja Presbiteriana do Brasil"""
+        news_list = []
+        try:
+            url = "https://ipb.org.br/"
+            response = self.session.get(url, timeout=10)
+            response.raise_for_status()
+            
+            soup = BeautifulSoup(response.content, 'html.parser')
+            
+            # Find news articles
+            articles = soup.find_all(['article', 'div'], class_=['post', 'news', 'noticia'])[:5]
+            
+            for article in articles:
+                try:
+                    title_elem = article.find(['h1', 'h2', 'h3'], class_=['title', 'post-title', 'news-title'])
+                    if not title_elem:
+                        title_elem = article.find(['h1', 'h2', 'h3'])
+                    
+                    link_elem = title_elem.find('a') if title_elem else None
+                    if not link_elem:
+                        link_elem = article.find('a')
+                    
+                    if title_elem and link_elem:
+                        title = self.clean_text(title_elem.get_text())
+                        link = urljoin(url, link_elem.get('href'))
+                        
+                        # Extract summary
+                        summary_elem = article.find(['p', 'div'], class_=['excerpt', 'summary'])
+                        if not summary_elem:
+                            summary_elem = article.find('p')
+                        summary = self.clean_text(summary_elem.get_text()) if summary_elem else title[:200] + "..."
+                        
+                        # Extract image
+                        img_elem = article.find('img')
+                        image_url = urljoin(url, img_elem.get('src')) if img_elem else None
+                        
+                        news_list.append({
+                            'title': title,
+                            'summary': summary,
+                            'url': link,
+                            'source': 'IPB Nacional',
+                            'date': datetime.now().strftime('%a, %d %b %Y %H:%M:%S GMT'),
+                            'category': 'Igreja Presbiteriana',
+                            'image_url': image_url
+                        })
+                        
+                except Exception as e:
+                    logger.error(f"Error parsing IPB Nacional article: {e}")
+                    continue
+                    
+        except Exception as e:
+            logger.error(f"Error scraping IPB Nacional: {e}")
+            
+        return news_list
+
+    def scrape_instituto_mackenzie(self) -> List[Dict]:
+        """Scrape Instituto Mackenzie - Teologia"""
+        news_list = []
+        try:
+            url = "https://www.mackenzie.br/noticias/"
+            response = self.session.get(url, timeout=10)
+            response.raise_for_status()
+            
+            soup = BeautifulSoup(response.content, 'html.parser')
+            
+            # Find news articles
+            articles = soup.find_all(['article', 'div'], class_=['noticia', 'news-item', 'post'])[:5]
+            
+            for article in articles:
+                try:
+                    title_elem = article.find(['h1', 'h2', 'h3'], class_=['title', 'titulo'])
+                    if not title_elem:
+                        title_elem = article.find(['h1', 'h2', 'h3'])
+                    
+                    link_elem = title_elem.find('a') if title_elem else None
+                    if not link_elem:
+                        link_elem = article.find('a')
+                    
+                    if title_elem and link_elem:
+                        title = self.clean_text(title_elem.get_text())
+                        link = urljoin(url, link_elem.get('href'))
+                        
+                        # Extract summary
+                        summary_elem = article.find(['p', 'div'], class_=['resumo', 'excerpt'])
+                        if not summary_elem:
+                            summary_elem = article.find('p')
+                        summary = self.clean_text(summary_elem.get_text()) if summary_elem else title[:200] + "..."
+                        
+                        # Extract image
+                        img_elem = article.find('img')
+                        image_url = urljoin(url, img_elem.get('src')) if img_elem else None
+                        
+                        news_list.append({
+                            'title': title,
+                            'summary': summary,
+                            'url': link,
+                            'source': 'Instituto Mackenzie',
+                            'date': datetime.now().strftime('%a, %d %b %Y %H:%M:%S GMT'),
+                            'category': 'Educação Teológica',
+                            'image_url': image_url
+                        })
+                        
+                except Exception as e:
+                    logger.error(f"Error parsing Instituto Mackenzie article: {e}")
+                    continue
+                    
+        except Exception as e:
+            logger.error(f"Error scraping Instituto Mackenzie: {e}")
+            
+        return news_list
+
+    def scrape_bereianos(self) -> List[Dict]:
+        """Scrape Bereianos - Apologética Cristã"""
+        news_list = []
+        try:
+            url = "https://bereianos.blogspot.com/"
+            response = self.session.get(url, timeout=10)
+            response.raise_for_status()
+            
+            soup = BeautifulSoup(response.content, 'html.parser')
+            
+            # Find blog posts
+            articles = soup.find_all(['article', 'div'], class_=['post', 'blog-post'])[:5]
+            
+            for article in articles:
+                try:
+                    title_elem = article.find(['h1', 'h2', 'h3'], class_=['post-title', 'entry-title'])
+                    if not title_elem:
+                        title_elem = article.find(['h1', 'h2', 'h3'])
+                    
+                    link_elem = title_elem.find('a') if title_elem else None
+                    if not link_elem:
+                        link_elem = article.find('a')
+                    
+                    if title_elem and link_elem:
+                        title = self.clean_text(title_elem.get_text())
+                        link = link_elem.get('href')
+                        
+                        # Extract summary
+                        summary_elem = article.find(['div', 'p'], class_=['post-body', 'entry-content'])
+                        if not summary_elem:
+                            summary_elem = article.find('p')
+                        summary = self.clean_text(summary_elem.get_text()[:300]) if summary_elem else title[:200] + "..."
+                        
+                        # Extract image
+                        img_elem = article.find('img')
+                        image_url = img_elem.get('src') if img_elem else None
+                        
+                        news_list.append({
+                            'title': title,
+                            'summary': summary,
+                            'url': link,
+                            'source': 'Bereianos',
+                            'date': datetime.now().strftime('%a, %d %b %Y %H:%M:%S GMT'),
+                            'category': 'Apologética',
+                            'image_url': image_url
+                        })
+                        
+                except Exception as e:
+                    logger.error(f"Error parsing Bereianos article: {e}")
+                    continue
+                    
+        except Exception as e:
+            logger.error(f"Error scraping Bereianos: {e}")
+            
+        return news_list
+
+    def scrape_cinco_solas(self) -> List[Dict]:
+        """Scrape Cinco Solas - Teologia Reformada"""
+        news_list = []
+        try:
+            url = "https://www.cincosolas.com.br/"
+            response = self.session.get(url, timeout=10)
+            response.raise_for_status()
+            
+            soup = BeautifulSoup(response.content, 'html.parser')
+            
+            # Find articles
+            articles = soup.find_all(['article', 'div'], class_=['post', 'entry'])[:5]
+            
+            for article in articles:
+                try:
+                    title_elem = article.find(['h1', 'h2', 'h3'], class_=['title', 'entry-title'])
+                    if not title_elem:
+                        title_elem = article.find(['h1', 'h2', 'h3'])
+                    
+                    link_elem = title_elem.find('a') if title_elem else None
+                    if not link_elem:
+                        link_elem = article.find('a')
+                    
+                    if title_elem and link_elem:
+                        title = self.clean_text(title_elem.get_text())
+                        link = urljoin(url, link_elem.get('href'))
+                        
+                        # Extract summary
+                        summary_elem = article.find(['p', 'div'], class_=['excerpt', 'summary'])
+                        if not summary_elem:
+                            summary_elem = article.find('p')
+                        summary = self.clean_text(summary_elem.get_text()) if summary_elem else title[:200] + "..."
+                        
+                        # Extract image
+                        img_elem = article.find('img')
+                        image_url = urljoin(url, img_elem.get('src')) if img_elem else None
+                        
+                        news_list.append({
+                            'title': title,
+                            'summary': summary,
+                            'url': link,
+                            'source': 'Cinco Solas',
+                            'date': datetime.now().strftime('%a, %d %b %Y %H:%M:%S GMT'),
+                            'category': 'Teologia Reformada',
+                            'image_url': image_url
+                        })
+                        
+                except Exception as e:
+                    logger.error(f"Error parsing Cinco Solas article: {e}")
+                    continue
+                    
+        except Exception as e:
+            logger.error(f"Error scraping Cinco Solas: {e}")
+            
+        return news_list
+
+    def scrape_patristica(self) -> List[Dict]:
+        """Scrape conteúdo sobre Patrística"""
+        news_list = []
+        try:
+            # Usando Google News para buscar conteúdo sobre patrística
+            query = "patrística+teologia+pais+da+igreja"
+            url = f"https://news.google.com/rss/search?q={query}&hl=pt-BR&gl=BR&ceid=BR:pt-419"
+            
+            response = self.session.get(url, timeout=10)
+            response.raise_for_status()
+            
+            soup = BeautifulSoup(response.content, 'xml')
+            items = soup.find_all('item')[:3]
+            
+            for item in items:
+                try:
+                    title = self.clean_text(item.title.text) if item.title else "Sem título"
+                    link = item.link.text if item.link else ""
+                    description = self.clean_text(item.description.text) if item.description else title[:200] + "..."
+                    pub_date = item.pubDate.text if item.pubDate else datetime.now().strftime('%a, %d %b %Y %H:%M:%S GMT')
+                    
+                    news_list.append({
+                        'title': title,
+                        'summary': description,
+                        'url': link,
+                        'source': 'Patrística News',
+                        'date': pub_date,
+                        'category': 'Patrística',
+                        'image_url': None
+                    })
+                    
+                except Exception as e:
+                    logger.error(f"Error parsing Patrística item: {e}")
+                    continue
+                    
+        except Exception as e:
+            logger.error(f"Error scraping Patrística: {e}")
+            
+        return news_list
+
+    def scrape_arqueologia_biblica_br(self) -> List[Dict]:
+        """Scrape conteúdo sobre Arqueologia Bíblica em português"""
+        news_list = []
+        try:
+            # Usando Google News para buscar conteúdo sobre arqueologia bíblica
+            query = "arqueologia+bíblica+descobertas+israel+jerusalém"
+            url = f"https://news.google.com/rss/search?q={query}&hl=pt-BR&gl=BR&ceid=BR:pt-419"
+            
+            response = self.session.get(url, timeout=10)
+            response.raise_for_status()
+            
+            soup = BeautifulSoup(response.content, 'xml')
+            items = soup.find_all('item')[:5]
+            
+            for item in items:
+                try:
+                    title = self.clean_text(item.title.text) if item.title else "Sem título"
+                    link = item.link.text if item.link else ""
+                    description = self.clean_text(item.description.text) if item.description else title[:200] + "..."
+                    pub_date = item.pubDate.text if item.pubDate else datetime.now().strftime('%a, %d %b %Y %H:%M:%S GMT')
+                    
+                    news_list.append({
+                        'title': title,
+                        'summary': description,
+                        'url': link,
+                        'source': 'Arqueologia Bíblica BR',
+                        'date': pub_date,
+                        'category': 'Arqueologia Bíblica',
+                        'image_url': None
+                    })
+                    
+                except Exception as e:
+                    logger.error(f"Error parsing Arqueologia Bíblica item: {e}")
+                    continue
+                    
+        except Exception as e:
+            logger.error(f"Error scraping Arqueologia Bíblica: {e}")
+            
+        return news_list
+
+    def scrape_calvinismo_arminianismo(self) -> List[Dict]:
+        """Scrape conteúdo sobre Calvinismo e Arminianismo"""
+        news_list = []
+        try:
+            # Usando Google News para buscar conteúdo sobre calvinismo e arminianismo
+            query = "calvinismo+arminianismo+predestinação+livre+arbítrio+teologia"
+            url = f"https://news.google.com/rss/search?q={query}&hl=pt-BR&gl=BR&ceid=BR:pt-419"
+            
+            response = self.session.get(url, timeout=10)
+            response.raise_for_status()
+            
+            soup = BeautifulSoup(response.content, 'xml')
+            items = soup.find_all('item')[:3]
+            
+            for item in items:
+                try:
+                    title = self.clean_text(item.title.text) if item.title else "Sem título"
+                    link = item.link.text if item.link else ""
+                    description = self.clean_text(item.description.text) if item.description else title[:200] + "..."
+                    pub_date = item.pubDate.text if item.pubDate else datetime.now().strftime('%a, %d %b %Y %H:%M:%S GMT')
+                    
+                    # Determine category based on content
+                    category = 'Calvinismo' if 'calvin' in title.lower() or 'predestina' in title.lower() else 'Arminianismo'
+                    
+                    news_list.append({
+                        'title': title,
+                        'summary': description,
+                        'url': link,
+                        'source': 'Teologia Sistemática',
+                        'date': pub_date,
+                        'category': category,
+                        'image_url': None
+                    })
+                    
+                except Exception as e:
+                    logger.error(f"Error parsing Calvinismo/Arminianismo item: {e}")
+                    continue
+                    
+        except Exception as e:
+            logger.error(f"Error scraping Calvinismo/Arminianismo: {e}")
+            
+        return news_list
+
+    def scrape_editora_fiel(self) -> List[Dict]:
+        """Scrape Editora Fiel - Livros e recursos teológicos reformados"""
+        news_list = []
+        try:
+            url = "https://www.editorafiel.com.br/blog/"
+            response = self.session.get(url, timeout=10)
+            response.raise_for_status()
+            
+            soup = BeautifulSoup(response.content, 'html.parser')
+            
+            # Find articles
+            articles = soup.find_all(['article', 'div'], class_=['post', 'entry', 'blog-post'])[:5]
+            
+            for article in articles:
+                try:
+                    title_elem = article.find(['h1', 'h2', 'h3'], class_=['title', 'entry-title', 'post-title'])
+                    if not title_elem:
+                        title_elem = article.find(['h1', 'h2', 'h3'])
+                    
+                    link_elem = title_elem.find('a') if title_elem else None
+                    if not link_elem:
+                        link_elem = article.find('a')
+                    
+                    if title_elem and link_elem:
+                        title = self.clean_text(title_elem.get_text())
+                        link = urljoin(url, link_elem.get('href'))
+                        
+                        # Extract summary
+                        summary_elem = article.find(['p', 'div'], class_=['excerpt', 'summary', 'description'])
+                        if not summary_elem:
+                            summary_elem = article.find('p')
+                        summary = self.clean_text(summary_elem.get_text()) if summary_elem else title[:200] + "..."
+                        
+                        # Extract image
+                        img_elem = article.find('img')
+                        image_url = urljoin(url, img_elem.get('src')) if img_elem else None
+                        
+                        news_list.append({
+                            'title': title,
+                            'summary': summary,
+                            'url': link,
+                            'source': 'Editora Fiel',
+                            'date': datetime.now().strftime('%a, %d %b %Y %H:%M:%S GMT'),
+                            'category': 'Livros Teológicos',
+                            'image_url': image_url
+                        })
+                        
+                except Exception as e:
+                    logger.error(f"Error parsing Editora Fiel article: {e}")
+                    continue
+                    
+        except Exception as e:
+            logger.error(f"Error scraping Editora Fiel: {e}")
+            
+        return news_list
+
+    def scrape_cpad_editora(self) -> List[Dict]:
+        """Scrape CPAD - Casa Publicadora das Assembleias de Deus"""
+        news_list = []
+        try:
+            url = "https://www.cpad.com.br/noticias/"
+            response = self.session.get(url, timeout=10)
+            response.raise_for_status()
+            
+            soup = BeautifulSoup(response.content, 'html.parser')
+            
+            # Find articles
+            articles = soup.find_all(['article', 'div'], class_=['post', 'entry', 'news-item'])[:5]
+            
+            for article in articles:
+                try:
+                    title_elem = article.find(['h1', 'h2', 'h3'], class_=['title', 'entry-title', 'post-title'])
+                    if not title_elem:
+                        title_elem = article.find(['h1', 'h2', 'h3'])
+                    
+                    link_elem = title_elem.find('a') if title_elem else None
+                    if not link_elem:
+                        link_elem = article.find('a')
+                    
+                    if title_elem and link_elem:
+                        title = self.clean_text(title_elem.get_text())
+                        link = urljoin(url, link_elem.get('href'))
+                        
+                        # Extract summary
+                        summary_elem = article.find(['p', 'div'], class_=['excerpt', 'summary', 'description'])
+                        if not summary_elem:
+                            summary_elem = article.find('p')
+                        summary = self.clean_text(summary_elem.get_text()) if summary_elem else title[:200] + "..."
+                        
+                        # Extract image
+                        img_elem = article.find('img')
+                        image_url = urljoin(url, img_elem.get('src')) if img_elem else None
+                        
+                        news_list.append({
+                            'title': title,
+                            'summary': summary,
+                            'url': link,
+                            'source': 'CPAD',
+                            'date': datetime.now().strftime('%a, %d %b %Y %H:%M:%S GMT'),
+                            'category': 'Editora Cristã',
+                            'image_url': image_url
+                        })
+                        
+                except Exception as e:
+                    logger.error(f"Error parsing CPAD article: {e}")
+                    continue
+                    
+        except Exception as e:
+            logger.error(f"Error scraping CPAD: {e}")
+            
+        return news_list
+
+    def scrape_livros_teologicos(self) -> List[Dict]:
+        """Scrape conteúdo sobre livros teológicos recomendados"""
+        news_list = []
+        try:
+            # Usando Google News para buscar conteúdo sobre livros teológicos
+            query = "livros+teológicos+reformados+recomendações"
+            url = f"https://news.google.com/rss/search?q={query}&hl=pt-BR&gl=BR&ceid=BR:pt-419"
+            
+            response = self.session.get(url, timeout=10)
+            response.raise_for_status()
+            
+            soup = BeautifulSoup(response.content, 'xml')
+            items = soup.find_all('item')[:3]
+            
+            for item in items:
+                try:
+                    title = self.clean_text(item.title.text) if item.title else "Sem título"
+                    link = item.link.text if item.link else ""
+                    
+                    # Extract description/summary
+                    description = item.description.text if item.description else title[:200] + "..."
+                    summary = self.clean_text(description)
+                    
+                    # Extract publication date
+                    pub_date = item.pubDate.text if item.pubDate else datetime.now().strftime('%a, %d %b %Y %H:%M:%S GMT')
+                    
+                    news_list.append({
+                        'title': title,
+                        'summary': summary,
+                        'url': link,
+                        'source': 'Livros Teológicos',
+                        'date': pub_date,
+                        'category': 'Literatura Teológica',
+                        'image_url': None
+                    })
+                    
+                except Exception as e:
+                    logger.error(f"Error parsing theological books item: {e}")
+                    continue
+                    
+        except Exception as e:
+            logger.error(f"Error scraping theological books: {e}")
+            
+        return news_list
+
     def get_fallback_news(self) -> List[Dict]:
         """Provide high-quality fallback news aligned with reformed theology and Reconciliation brotherhood"""
         return [
@@ -1047,7 +2145,7 @@ class ChristianNewsScraper:
         if allowlist_env:
             allowed_sources = {s.strip() for s in allowlist_env.split(',') if s.strip()}
         else:
-            # Padrão: apenas fontes de perfil cristão / alinhadas ao site
+            # Padrão: todas as fontes cristãs solicitadas pelo usuário
             allowed_sources = {
                 'Gospel Prime',
                 'Guiame',
@@ -1056,7 +2154,28 @@ class ChristianNewsScraper:
                 'Cafetorah - Notícias de Israel',
                 'Folha Gospel',
                 'Radio 93 - Giro Cristão',
-                'CPAD News'
+                'CPAD News',
+                'Notícias de Israel',
+                'Púlpito Cristão',
+                'Voltemos ao Evangelho',
+                'Ministério Fiel',
+                'Biblical Archaeology Society',
+                'Teologia Brasileira',
+                'Monergismo',
+                'IPB Nacional',
+                'Instituto Mackenzie',
+                'Bereianos',
+                'Cinco Solas',
+                'Patrística News',
+                'Arqueologia Bíblica BR',
+                'Teologia Sistemática',
+                'Editora Fiel',
+                'CPAD Editora',
+                'Livros Teológicos',
+                'IPB Eventos',
+                'Luís Sayão',
+                'Hernandes Dias Lopes',
+                'Augustus Nicodemus'
             }
 
         logger.info(f"Allowed sources: {sorted(list(allowed_sources))}")
@@ -1071,6 +2190,27 @@ class ChristianNewsScraper:
             ('Folha Gospel', self.scrape_folha_gospel),
             ('Radio 93 - Giro Cristão', self.scrape_radio93),
             ('CPAD News', self.scrape_cpad_news),
+            ('Notícias de Israel', self.scrape_noticias_israel),
+            ('Púlpito Cristão', self.scrape_pulpito_cristao),
+            ('Voltemos ao Evangelho', self.scrape_voltemos_evangelho),
+            ('Ministério Fiel', self.scrape_ministerio_fiel),
+            ('Biblical Archaeology Society', self.scrape_biblical_archaeology),
+            ('Teologia Brasileira', self.scrape_teologia_brasileira),
+            ('Monergismo', self.scrape_monergismo),
+            ('IPB Nacional', self.scrape_ipb_nacional),
+            ('Instituto Mackenzie', self.scrape_instituto_mackenzie),
+            ('Bereianos', self.scrape_bereianos),
+            ('Cinco Solas', self.scrape_cinco_solas),
+            ('Patrística News', self.scrape_patristica),
+            ('Arqueologia Bíblica BR', self.scrape_arqueologia_biblica_br),
+            ('Teologia Sistemática', self.scrape_calvinismo_arminianismo),
+            ('Editora Fiel', self.scrape_editora_fiel),
+            ('CPAD Editora', self.scrape_cpad_editora),
+            ('Livros Teológicos', self.scrape_livros_teologicos),
+            ('IPB Eventos', self.scrape_ipb_eventos),
+            ('Luís Sayão', self.scrape_luis_sayao),
+            ('Hernandes Dias Lopes', self.scrape_hernandes_dias_lopes),
+            ('Augustus Nicodemus', self.scrape_augustus_nicodemus),
             ('BBC News Brasil', self.scrape_bbc_portuguese),
             ('BBC News Brasil - Arqueologia', self.scrape_bbc_arqueologia),
             ('Revista Galileu - Arqueologia', self.scrape_galileu_arqueologia),
@@ -1105,8 +2245,8 @@ class ChristianNewsScraper:
                 seen_titles.add(news['title'])
                 unique_news.append(news)
         
-        # Sort by date (most recent first) and limit to 15 items
-        unique_news = unique_news[:15]
+        # Sort by date (most recent first) and limit to 25 items
+        unique_news = unique_news[:25]
         
         # Apply content filter for Reconciliation brotherhood
         logger.info("Applying content filter for Reconciliation brotherhood...")
