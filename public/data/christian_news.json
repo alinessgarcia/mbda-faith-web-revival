@@ -1,10 +1,10 @@
 {
-  "last_updated": "2025-09-30T22:23:48.782609",
-  "total_articles": 12,
+  "last_updated": "2025-10-03T01:27:57.669969",
+  "total_articles": 10,
   "sources": [
     "Cafetorah - Notícias de Israel",
-    "Folha Gospel",
-    "Radio 93 - Giro Cristão"
+    "BBC News Brasil - Arqueologia",
+    "BBC News Brasil"
   ],
   "articles": [
     {
@@ -12,7 +12,7 @@
       "summary": "Mulheres em Gaza denunciam exploração sexual em troca de ajuda humanitária Relatos revelam que alimentos e assistência estão sendo usados como moeda de troca em meio à crise humanitária. Histórias de ...",
       "url": "https://cafetorah.com/gaza-exploracao-sexual-em-meio-a-guerra/",
       "source": "Cafetorah - Notícias de Israel",
-      "date": "Tue, 30 Sep 2025 22:22:51 GMT",
+      "date": "Fri, 03 Oct 2025 01:27:24 GMT",
       "category": "Israel e Oriente Médio",
       "image_url": "https://cafetorah.com/wp-content/uploads/2025/09/pexels-mart-production-7699317.jpg"
     },
@@ -21,99 +21,81 @@
       "summary": "Se queres paz, prepara-te para a guerraSi vis pacem, para bellum  Flavio Vegécio Renato, Século V Nas últimas semanas observamos um conjunto de eventos que, tomados em conjunto, explicam por que anali...",
       "url": "https://cafetorah.com/a-beira-da-tempestade-o-mundo-caminha-para-um-conflito-global/",
       "source": "Cafetorah - Notícias de Israel",
-      "date": "Tue, 30 Sep 2025 22:22:52 GMT",
+      "date": "Fri, 03 Oct 2025 01:27:26 GMT",
       "category": "Israel e Oriente Médio",
       "image_url": "https://cafetorah.com/wp-content/uploads/2025/09/ai-generated-7834228_1920.jpg"
     },
     {
-      "title": "Franklin Graham atrai 14.000 pessoas ao Festival da Esperança na Bélgica",
-      "summary": "Mais de 14.000 cristãos e não crentes lotaram uma arena na Bélgica no último fim de semana para participar de um Festival da Esperança. O evento gratuito foi organizado por 620 igrejas evangélicas bel...",
-      "url": "https://folhagospel.com/franklin-graham-atrai-14-000-pessoas-ao-festival-da-esperanca-na-belgica/",
-      "source": "Folha Gospel",
-      "date": "Tue, 30 Sep 2025 15:25:29 +0000",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2025/09/image-37-scaled-e1759245821710.png"
+      "title": "O caso de pedófilo estuprador brasileiro no centro de polêmica sobre deportações no Reino Unido",
+      "summary": "",
+      "url": "https://www.bbc.com/portuguese/articles/cy7p2pkz8dpo",
+      "source": "BBC News Brasil",
+      "date": "Fri, 03 Oct 2025 01:27:37 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/71b1/live/32d89190-9f96-11f0-b9ae-cbef91e6ae73.jpg"
     },
     {
-      "title": "Líderes cristãos lançam a Declaração de Westminster de 2025 para recristianizar a Grã-Bretanha",
-      "summary": "Líderes cristãos e teólogos se uniram para assinar uma declaração que visa recristianizar a Grã-Bretanha. A Declaração de Westminster de 2025, assinada no fim de semana, espera proteger o debate em to...",
-      "url": "https://folhagospel.com/lideres-cristaos-lancam-a-declaracao-de-westminster-de-2025-para-recristianizar-a-gra-bretanha/",
-      "source": "Folha Gospel",
-      "date": "Tue, 30 Sep 2025 15:19:02 +0000",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2025/09/Catedral-de-Sao-Paulo-e-uma-bandeira-da-Gra-Bretanha.jpg"
+      "title": "Quais são os antídotos para intoxicação por metanol  e como custo interfere nisso",
+      "summary": "",
+      "url": "https://www.bbc.com/portuguese/articles/cvgqz2n350eo",
+      "source": "BBC News Brasil",
+      "date": "Fri, 03 Oct 2025 01:27:37 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/e46d/live/e1a92b50-9f6c-11f0-928c-71dbb8619e94.jpg"
     },
     {
-      "title": "Marcha para Jesus na Guatemala pede unidade e transformação do país",
-      "summary": "Pelo terceiro ano consecutivo, a capital da Guatemala foi palco da grande Marcha para Jesus , um evento que reuniu centenas de pessoas de diversas igrejas e denominações para um dia de fé e unidade. D...",
-      "url": "https://folhagospel.com/marcha-para-jesus-na-guatemala-pede-unidade-e-transformacao-do-pais/",
-      "source": "Folha Gospel",
-      "date": "Tue, 30 Sep 2025 14:51:46 +0000",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2025/09/image-36-e1759243859629.png"
+      "title": "Os conselhos de especialista em surtos por metanol pelo mundo para salvar vítimas: 'É um assassino silencioso'",
+      "summary": "",
+      "url": "https://www.bbc.com/portuguese/articles/cddmpm008n4o",
+      "source": "BBC News Brasil",
+      "date": "Fri, 03 Oct 2025 01:27:37 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/c19f/live/31984fd0-9eda-11f0-9cc3-55b0375a170c.jpg"
     },
     {
-      "title": "Cuba: Cristãos transferem seu culto para as ruas após tentativa de censura",
-      "summary": "Centenas de fiéis evangélicos foram forçados a interromper um culto em Cuba devido à intervenção das autoridades locais, mas responderam transferindo seu culto para a rua pública, em um ato visível de...",
-      "url": "https://folhagospel.com/cuba-cristaos-transferem-seu-culto-para-as-ruas-apos-tentativa-de-censura/",
-      "source": "Folha Gospel",
-      "date": "Tue, 30 Sep 2025 14:46:04 +0000",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2025/09/image-35-e1759243471702.png"
+      "title": "Por que fazendeiros ricos escaparam de aumento de IR proposto por Lula?",
+      "summary": "",
+      "url": "https://www.bbc.com/portuguese/articles/clylwvg2x02o",
+      "source": "BBC News Brasil",
+      "date": "Fri, 03 Oct 2025 01:27:38 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/b045/live/fe8c5ef0-6285-11f0-83d2-4f671b8c1523.jpg"
     },
     {
-      "title": "Jornalista cristã que noticiou pandemia é condenada a mais 4 anos de prisão na China",
-      "summary": "A jornalista cristã Zhang Zhan, que passou quatro anos na prisão por noticiar o início da pandemia em Wuhan, na China, foi condenada novamente pelo governo comunista. Segundo a Christian Solidarity Wo...",
-      "url": "https://folhagospel.com/jornalista-crista-que-noticiou-pandemia-e-condenada-a-mais-4-anos-de-prisao-na-china/",
-      "source": "Folha Gospel",
-      "date": "Tue, 30 Sep 2025 14:27:34 +0000",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2025/09/image-34.png"
+      "title": "Crânio de milhões de anos reescreve a história da evolução humana, segundo cientistas",
+      "summary": "",
+      "url": "https://www.bbc.com/portuguese/articles/cj9zrjv8rn3o",
+      "source": "BBC News Brasil - Arqueologia",
+      "date": "Fri, 03 Oct 2025 01:27:40 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/7293/live/6123b2f0-865f-11f0-8c3f-f11535c1796a.jpg"
     },
     {
-      "title": "Eli Soares celebra sua 8ª indicação ao Grammy Latino",
-      "summary": "Com mais de uma década de carreira, Eli Soares se consolidou como uma das vozes mais marcantes e criativas do gospel nacional. Sua capacidade de unir tradição e modernidade, aliada a uma entrega since...",
-      "url": "https://folhagospel.com/eli-soares-celebra-sua-8a-indicacao-ao-grammy-latino/",
-      "source": "Folha Gospel",
-      "date": "Tue, 30 Sep 2025 00:00:48 +0000",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2025/09/Eli-Soares2-e1759190326109.jpeg"
+      "title": "A recém-descoberta cidade desértica no Peru que está reescrevendo a história das Américas",
+      "summary": "",
+      "url": "https://www.bbc.com/portuguese/articles/c0ezqr047rno",
+      "source": "BBC News Brasil - Arqueologia",
+      "date": "Fri, 03 Oct 2025 01:27:40 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/e968/live/9f6a0930-9279-11f0-8447-89d0c49c75e5.jpg"
     },
     {
-      "title": "Manual bíblico contra a ansiedade propõe reencontro com a verdadeira paz",
-      "summary": "Em uma cultura marcada pela pressa, problemas emocionais generalizados e pressão por alto desempenho, o pastor Tiago Chagas se volta aos estudos bíblicos para responder a uma das dores mais urgentes d...",
-      "url": "https://folhagospel.com/manual-biblico-contra-a-ansiedade-propoe-reencontro-com-a-verdadeira-paz/",
-      "source": "Folha Gospel",
-      "date": "Mon, 29 Sep 2025 23:41:56 +0000",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2025/09/Livro-Jesus-para-Ansiosos.jpg"
+      "title": "Aenaria: a fascinante história da cidade italiana que desapareceu há 2 mil anos após uma erupção vulcânica",
+      "summary": "",
+      "url": "https://www.bbc.com/portuguese/articles/cpv07371vl1o",
+      "source": "BBC News Brasil - Arqueologia",
+      "date": "Fri, 03 Oct 2025 01:27:41 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/6d76/live/f40c0a30-60cc-11f0-a40e-a1af2950b220.jpg"
     },
     {
-      "title": "Câmara Municipal de Salvador aprova projeto de lei contra cristofobia",
-      "summary": "A Câmara Municipal de Salvador aprovou, na última quarta-feira (24), um projeto de lei inédito no Brasil que busca coibir a chamada cristofobia na capital baiana. A iniciativa é de autoria do vereador...",
-      "url": "https://folhagospel.com/camara-municipal-de-salvador-aprova-projeto-de-lei-contra-cristofobia/",
-      "source": "Folha Gospel",
-      "date": "Mon, 29 Sep 2025 23:14:36 +0000",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2025/09/image-33-e1759187578802.png"
-    },
-    {
-      "title": "Polícia interrompe culto em anfiteatro em Cuba",
-      "summary": "Diferentes igrejas se uniram para alugar local. The post Polícia interrompe culto em anfiteatro em Cuba appeared first on Rádio 93FM-RJ.",
-      "url": "https://radio93.com.br/noticias/giro-cristao/policia-interrompe-culto-em-anfiteatro-em-cuba/",
-      "source": "Radio 93 - Giro Cristão",
-      "date": "Tue, 30 Sep 2025 09:00:09 +0000",
-      "category": "Notícias Cristãs",
-      "image_url": ""
-    },
-    {
-      "title": "Incêndio criminoso destrói templo de Assembleia de Deus em São Paulo",
-      "summary": "Ataque aconteceu de madrugada e polícia civil está investigando. The post Incêndio criminoso destrói templo de Assembleia de Deus em São Paulo appeared first on Rádio 93FM-RJ.",
-      "url": "https://radio93.com.br/noticias/giro-cristao/incendio-criminoso-destroi-templo-de-assembleia-de-deus-em-sao-paulo/",
-      "source": "Radio 93 - Giro Cristão",
-      "date": "Tue, 30 Sep 2025 03:05:18 +0000",
-      "category": "Notícias Cristãs",
-      "image_url": ""
+      "title": "As tatuagens de 2,5 mil anos encontradas em múmia congelada",
+      "summary": "",
+      "url": "https://www.bbc.com/portuguese/articles/crm4nkzj37po",
+      "source": "BBC News Brasil - Arqueologia",
+      "date": "Fri, 03 Oct 2025 01:27:41 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/bd26/live/a255d9c0-6d72-11f0-8dbd-f3d32ebd3327.jpg"
     }
   ]
 }

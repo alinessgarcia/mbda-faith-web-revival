@@ -164,7 +164,7 @@ class ChristianNewsScraper:
         except Exception:
             return None
 
-    def is_recent_article(self, article: Dict, max_age_hours: int = 48) -> bool:
+    def is_recent_article(self, article: Dict, max_age_hours: int = 24) -> bool:
         dt = None
         if 'date' in article:
             dt = self.parse_article_date(article.get('date'))
@@ -173,8 +173,32 @@ class ChristianNewsScraper:
         age = datetime.utcnow() - dt
         return age <= timedelta(hours=max_age_hours)
 
-    def filter_recent_articles(self, articles: List[Dict], max_age_hours: int = 48) -> List[Dict]:
+    def filter_recent_articles(self, articles: List[Dict], max_age_hours: int = 24) -> List[Dict]:
         return [a for a in articles if self.is_recent_article(a, max_age_hours=max_age_hours)]
+
+    def cleanup_old_supabase_records(self, max_age_hours: int = 24) -> None:
+        """Remove registros antigos (> max_age_hours) da tabela news_articles no Supabase."""
+        try:
+            if not self.supabase:
+                logger.warning("Supabase não configurado; pulando limpeza.")
+                return
+
+            cutoff = datetime.utcnow() - timedelta(hours=max_age_hours)
+            cutoff_iso = cutoff.isoformat() + 'Z'
+
+            # Prioriza remoção por created_at (timestamptz gerenciado pelo banco)
+            logger.info(f"Limpando registros com created_at < {cutoff_iso}")
+            result = self.supabase.table('news_articles').delete().lt('created_at', cutoff_iso).execute()
+            # Alguns registros antigos podem não ter created_at consistente; como fallback, tente por date quando for formato ISO
+            try:
+                _ = self.supabase.table('news_articles').delete().lt('date', cutoff_iso).execute()
+            except Exception:
+                # Se a coluna 'date' não for compatível com comparação temporal, ignore silenciosamente
+                pass
+
+            logger.info("✅ Limpeza concluída no Supabase (registros >24h removidos)")
+        except Exception as e:
+            logger.error(f"Erro ao limpar registros antigos no Supabase: {e}")
 
     def filter_content_for_reconciliation(self, news_list: List[Dict]) -> List[Dict]:
         """Filter news content to align with Reconciliation brotherhood values"""
@@ -1017,8 +1041,28 @@ class ChristianNewsScraper:
         
         logger.info("Starting news scraping from all sources...")
         
-        # Scrape each source
-        scrapers = [
+        # Allowlist de fontes: pode ser configurado por env NEWS_SOURCES_ALLOWLIST
+        # Exemplo: NEWS_SOURCES_ALLOWLIST="Gospel Prime,Guiame,Portas Abertas,Folha Gospel"
+        allowlist_env = os.getenv('NEWS_SOURCES_ALLOWLIST', '').strip()
+        if allowlist_env:
+            allowed_sources = {s.strip() for s in allowlist_env.split(',') if s.strip()}
+        else:
+            # Padrão: apenas fontes de perfil cristão / alinhadas ao site
+            allowed_sources = {
+                'Gospel Prime',
+                'Guiame',
+                'Portas Abertas',
+                'Portas Abertas - Cristãos Perseguidos',
+                'Cafetorah - Notícias de Israel',
+                'Folha Gospel',
+                'Radio 93 - Giro Cristão',
+                'CPAD News'
+            }
+
+        logger.info(f"Allowed sources: {sorted(list(allowed_sources))}")
+        
+        # Todas as fontes disponíveis no scraper
+        scrapers_all = [
             ('Gospel Prime', self.scrape_gospel_prime),
             ('Guiame', self.scrape_guiame),
             ('Portas Abertas', self.scrape_portas_abertas),
@@ -1034,6 +1078,9 @@ class ChristianNewsScraper:
             ('National Geographic Brasil - Arqueologia', self.scrape_nationalgeo_br_arqueologia),
             ('Google News (Temas)', self.scrape_google_news)
         ]
+
+        # Filtra para rodar apenas as fontes permitidas
+        scrapers = [(name, fn) for (name, fn) in scrapers_all if name in allowed_sources]
         
         for source_name, scraper_func in scrapers:
             try:
@@ -1065,15 +1112,15 @@ class ChristianNewsScraper:
         logger.info("Applying content filter for Reconciliation brotherhood...")
         filtered_news = self.filter_content_for_reconciliation(unique_news)
 
-        # Apply 48-hour staleness filter server-side
-        recent_filtered_news = self.filter_recent_articles(filtered_news, max_age_hours=48)
+        # Apply 24-hour staleness filter server-side
+        recent_filtered_news = self.filter_recent_articles(filtered_news, max_age_hours=24)
         
         # If filtered recent news is too few, add some fallback content
         if len(recent_filtered_news) < 3:
             logger.info("Adding fallback news due to insufficient recent filtered content")
             fallback_news = self.get_fallback_news()
             # Fallback items have current datetime, still run through recent filter for consistency
-            recent_filtered_news.extend(self.filter_recent_articles(fallback_news, max_age_hours=48))
+            recent_filtered_news.extend(self.filter_recent_articles(fallback_news, max_age_hours=24))
             # Remove duplicates again
             seen_titles = set()
             final_news = []
@@ -1092,7 +1139,7 @@ class ChristianNewsScraper:
             # Save to Supabase first
             if self.supabase:
                 # Only save recent articles to Supabase
-                recent_news = self.filter_recent_articles(news_data, max_age_hours=48)
+                recent_news = self.filter_recent_articles(news_data, max_age_hours=24)
                 self.save_to_supabase(recent_news)
             
             # Create data directory if it doesn't exist (src)
@@ -1106,7 +1153,7 @@ class ChristianNewsScraper:
                 'last_updated': datetime.now().isoformat(),
                 'total_articles': len(news_data),
                 'sources': list(set([article['source'] for article in news_data])),
-                'articles': self.filter_recent_articles(news_data, max_age_hours=48)
+                'articles': self.filter_recent_articles(news_data, max_age_hours=24)
             }
             
             # Write to src/data
@@ -1139,8 +1186,8 @@ class ChristianNewsScraper:
             # Prepare data for Supabase
             supabase_data = []
             for article in news_data:
-                # Skip stale articles (>48h)
-                if not self.is_recent_article(article, max_age_hours=48):
+                # Skip stale articles (>24h)
+                if not self.is_recent_article(article, max_age_hours=24):
                     continue
                 # Check if article already exists
                 existing = self.supabase.table('news_articles').select('id').eq('url', article['url']).execute()
@@ -1172,6 +1219,16 @@ def main():
     """Main function to run the news scraper"""
     scraper = ChristianNewsScraper()
     
+    # Permite rodar somente limpeza via argumento CLI
+    if len(sys.argv) > 1 and sys.argv[1].lower() == 'cleanup':
+        try:
+            scraper.cleanup_old_supabase_records(max_age_hours=24)
+            print("✅ Limpeza executada: removidos registros com mais de 24h")
+        except Exception as e:
+            logger.error(f"Erro na limpeza: {e}")
+            print(f"❌ Erro na limpeza: {e}")
+        return
+
     try:
         # Scrape all news
         news_data = scraper.scrape_all_sources()

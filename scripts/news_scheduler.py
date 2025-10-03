@@ -34,6 +34,24 @@ class NewsScheduler:
         self.script_path = os.path.join(script_dir, 'news_scraper.py')
         self.project_root = os.path.dirname(script_dir)
         self.news_file = os.path.join(self.project_root, 'src', 'data', 'christian_news.json')
+
+    def cleanup_supabase(self):
+        """Run cleanup job to delete stale records (>24h) from Supabase"""
+        try:
+            logger.info("🧹 Starting Supabase cleanup (older than 24h)...")
+            result = subprocess.run([
+                sys.executable, self.script_path, 'cleanup'
+            ], capture_output=True, text=True, cwd=script_dir)
+
+            if result.returncode == 0:
+                logger.info("✅ Supabase cleanup completed successfully")
+                if result.stdout:
+                    logger.info(result.stdout.strip())
+            else:
+                logger.error(f"❌ Supabase cleanup failed with return code {result.returncode}")
+                logger.error(f"Error output: {result.stderr}")
+        except Exception as e:
+            logger.error(f"❌ Error running Supabase cleanup: {e}")
         
     def run_news_scraper(self):
         """Run the news scraper script"""
@@ -92,17 +110,20 @@ class NewsScheduler:
     
     def start_scheduler(self):
         """Start the news refresh scheduler"""
-        logger.info("📅 Schedule: Every 1 hour")
+        logger.info("📅 Schedule: Every 1 hour (scraper) + daily cleanup at 02:00")
         
         # Run initial check
         self.check_news_freshness()
         
         # Schedule regular updates every 1 hour
         schedule.every().hour.do(self.run_news_scraper)
-        
+
         # Also schedule a daily check at 6 AM and 6 PM
         schedule.every().day.at("06:00").do(self.run_news_scraper)
         schedule.every().day.at("18:00").do(self.run_news_scraper)
+
+        # Schedule daily cleanup at 02:00 (server time)
+        schedule.every().day.at("02:00").do(self.cleanup_supabase)
         
         logger.info("⏰ Scheduler started. Press Ctrl+C to stop.")
         

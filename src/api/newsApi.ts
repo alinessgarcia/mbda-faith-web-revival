@@ -26,7 +26,7 @@ class NewsAPI {
   private cache: NewsItem[] | null = null;
   private cacheExpiry: number = 0;
   private readonly CACHE_DURATION = 30 * 60 * 1000; // 30 minutes in milliseconds
-  private readonly MAX_AGE_MS = 48 * 60 * 60 * 1000; // 48 hours in milliseconds
+  private readonly MAX_AGE_MS = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
   private readonly MIN_ARTICLES = 6; // Ensure we always show at least this many
 
   private isRecent(dateStr?: string): boolean {
