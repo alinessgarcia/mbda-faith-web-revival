@@ -31,14 +31,61 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         pip install supabase python-dotenv
-        
-    - name: Run news scraper
+        echo "✅ Dependencies installed"
+
+    - name: Environment diagnostics
       env:
+        # Prefer secrets; fall back to repository variables if secrets are not set
         VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
         VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+        VITE_SUPABASE_URL_VAR: ${{ vars.VITE_SUPABASE_URL }}
+        VITE_SUPABASE_ANON_KEY_VAR: ${{ vars.VITE_SUPABASE_ANON_KEY }}
+        NEWS_SOURCES_ALLOWLIST: ${{ secrets.NEWS_SOURCES_ALLOWLIST }}
+        NEWS_SOURCES_ALLOWLIST_VAR: ${{ vars.NEWS_SOURCES_ALLOWLIST }}
       run: |
+        python --version
+        pip list | sed -n '1,50p'
+        echo "Repo root contents:" && ls -la
+        echo "Scripts dir contents:" && ls -la scripts || true
+        if [ -n "$VITE_SUPABASE_URL" ]; then echo "🔒 Supabase URL secret: PRESENT"; else echo "⚠️ Supabase URL secret: MISSING"; fi
+        if [ -n "$VITE_SUPABASE_ANON_KEY" ]; then echo "🔒 Supabase ANON KEY secret: PRESENT"; else echo "⚠️ Supabase ANON KEY secret: MISSING"; fi
+        if [ -n "$VITE_SUPABASE_URL_VAR" ]; then echo "ℹ️ Supabase URL variable: PRESENT"; else echo "ℹ️ Supabase URL variable: MISSING"; fi
+        if [ -n "$VITE_SUPABASE_ANON_KEY_VAR" ]; then echo "ℹ️ Supabase ANON KEY variable: PRESENT"; else echo "ℹ️ Supabase ANON KEY variable: MISSING"; fi
+        if [ -n "$NEWS_SOURCES_ALLOWLIST" ]; then echo "🔒 Allowlist secret: PRESENT"; else echo "ℹ️ Allowlist secret: MISSING"; fi
+        if [ -n "$NEWS_SOURCES_ALLOWLIST_VAR" ]; then echo "ℹ️ Allowlist variable: PRESENT"; else echo "ℹ️ Allowlist variable: MISSING"; fi
+        # Export fallbacks so subsequent steps have them available
+        export VITE_SUPABASE_URL="${VITE_SUPABASE_URL:-$VITE_SUPABASE_URL_VAR}"
+        export VITE_SUPABASE_ANON_KEY="${VITE_SUPABASE_ANON_KEY:-$VITE_SUPABASE_ANON_KEY_VAR}"
+        export NEWS_SOURCES_ALLOWLIST="${NEWS_SOURCES_ALLOWLIST:-$NEWS_SOURCES_ALLOWLIST_VAR}"
+        # Show summary (without revealing secrets)
+        if [ -n "$VITE_SUPABASE_URL" ]; then echo "✅ Using Supabase URL (length $(echo -n "$VITE_SUPABASE_URL" | wc -c))"; else echo "❌ Supabase URL not set"; fi
+        if [ -n "$VITE_SUPABASE_ANON_KEY" ]; then echo "✅ Using Supabase ANON KEY (length $(echo -n "$VITE_SUPABASE_ANON_KEY" | wc -c))"; else echo "❌ Supabase ANON KEY not set"; fi
+        if [ -n "$NEWS_SOURCES_ALLOWLIST" ]; then echo "✅ Using NEWS_SOURCES_ALLOWLIST"; else echo "ℹ️ NEWS_SOURCES_ALLOWLIST not set (defaults applied)"; fi
+        
+    - name: Run news scraper (capture logs)
+      env:
+        # Prefer secrets; allow fallback to repo variables
+        VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+        VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+        VITE_SUPABASE_URL_VAR: ${{ vars.VITE_SUPABASE_URL }}
+        VITE_SUPABASE_ANON_KEY_VAR: ${{ vars.VITE_SUPABASE_ANON_KEY }}
+        NEWS_SOURCES_ALLOWLIST: ${{ secrets.NEWS_SOURCES_ALLOWLIST }}
+        NEWS_SOURCES_ALLOWLIST_VAR: ${{ vars.NEWS_SOURCES_ALLOWLIST }}
+      run: |
+        set -o pipefail
         cd scripts
-        python news_scraper.py
+        export VITE_SUPABASE_URL="${VITE_SUPABASE_URL:-$VITE_SUPABASE_URL_VAR}"
+        export VITE_SUPABASE_ANON_KEY="${VITE_SUPABASE_ANON_KEY:-$VITE_SUPABASE_ANON_KEY_VAR}"
+        export NEWS_SOURCES_ALLOWLIST="${NEWS_SOURCES_ALLOWLIST:-$NEWS_SOURCES_ALLOWLIST_VAR}"
+        python news_scraper.py 2>&1 | tee ../scraper_run.log
+
+    - name: Upload scraper logs
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: scraper-logs-${{ github.run_id }}
+        path: scraper_run.log
+        retention-days: 7
         
     - name: Commit and push if changes
       env:

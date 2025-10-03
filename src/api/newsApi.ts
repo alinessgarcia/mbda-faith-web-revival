@@ -29,6 +29,27 @@ class NewsAPI {
   private readonly MAX_AGE_MS = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
   private readonly MIN_ARTICLES = 6; // Ensure we always show at least this many
 
+  // Allowlist de fontes no frontend para evitar conteúdo irrelevante
+  private readonly allowedSources: Set<string> = (() => {
+    const fromEnv = (import.meta as any)?.env?.VITE_NEWS_SOURCES_ALLOWLIST as string | undefined;
+    const list = (fromEnv || '').split(',').map(s => s.trim()).filter(Boolean);
+    if (list.length > 0) return new Set(list);
+    return new Set([
+      'Gospel Prime',
+      'Guiame',
+      'Portas Abertas',
+      'Portas Abertas - Cristãos Perseguidos',
+      'Cafetorah - Notícias de Israel',
+      'Folha Gospel',
+      'Radio 93 - Giro Cristão',
+      'CPAD News'
+    ]);
+  })();
+
+  private filterByAllowedSources(items: NewsItem[]): NewsItem[] {
+    return items.filter(i => this.allowedSources.has(i.source));
+  }
+
   private isRecent(dateStr?: string): boolean {
     if (!dateStr) return false;
     const ts = Date.parse(dateStr);
@@ -86,6 +107,9 @@ class NewsAPI {
             image_url: article.image_url
           }));
 
+          // Filtrar por allowlist
+          newsItems = this.filterByAllowedSources(newsItems);
+
           // Ensure minimum number of articles using themed fallback
           newsItems = this.mergeWithFallback(newsItems, this.MIN_ARTICLES);
 
@@ -142,6 +166,9 @@ class NewsAPI {
       let filtered = (newsData.articles || []).filter(a => {
         return this.isRecent(a.date || newsData.last_updated);
       });
+
+      // Filtrar por allowlist
+      filtered = this.filterByAllowedSources(filtered);
 
       // Ensure minimum number of articles using themed fallback
       filtered = this.mergeWithFallback(filtered, this.MIN_ARTICLES);
