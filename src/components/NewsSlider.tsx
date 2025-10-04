@@ -2,9 +2,10 @@ import { useState, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight, ExternalLink, RefreshCw } from "lucide-react";
 import { loadChristianNews, refreshChristianNews, NewsItem } from "../api/newsApi";
 
-// Apenas notícias: tipos simplificados
+// Tipos de slides: notícias e banners de imagens
+type BannerSlide = { kind: "banner"; data: { src: string; alt?: string; link?: string } };
 type NewsSlide = { kind: "news"; data: NewsItem };
-type SlideItem = NewsSlide;
+type SlideItem = BannerSlide | NewsSlide;
 
 const NewsSlider: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -13,8 +14,34 @@ const NewsSlider: React.FC = () => {
   const [isRefreshing, setIsRefreshing] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  // Banners desabilitados: exibir somente notícias
-  const bannerSlides: never[] = [];
+  // Banners: utilizar imagens permitidas do diretório public/images
+  // Exclusões: backgrounds, escolinha, blog, logo
+  const allowedBannerFiles: string[] = [
+    "/images/5solas-desktop.jpg",
+    "/images/5solas-mobile2.jpg",
+    "/images/apocalipse.jpg",
+    "/images/atos-desktop.jpg",
+    "/images/atos-mobile2.jpg",
+    "/images/banner1-slide.png",
+    "/images/ceia-mobile.jpg",
+    "/images/ceia2.jpg",
+    "/images/culto1.jpg",
+    "/images/familia-desktop.jpg",
+    "/images/familia-mobile-copy.jpg",
+    "/images/familia-mobile.jpg",
+    "/images/familia.jpg",
+    "/images/fundamentos.jpg",
+    "/images/indentificando-ofrutodafe.jpg",
+    "/images/os-salmos.jpg",
+    "/images/recom-fm.png",
+    "/images/reforma-desktop.jpg",
+    "/images/reforma-mobile.jpg",
+  ];
+
+  const bannerSlides: BannerSlide[] = allowedBannerFiles.map((src) => ({
+    kind: "banner",
+    data: { src, alt: "Banner" },
+  }));
 
   const slides: SlideItem[] = (() => {
     const newsSlides: SlideItem[] = newsItems.map((n) => ({ kind: "news", data: n }));
@@ -256,28 +283,9 @@ const NewsSlider: React.FC = () => {
                         </div>
                       </div>
 
-                      {/* Textos extraídos do banner */}
-                      <div className="mt-6 space-y-6 text-left">
-                        {slide.data.title && (
-                          <h3 className="text-3xl lg:text-4xl font-bold text-white leading-tight">
-                            {slide.data.title}
-                          </h3>
-                        )}
-                        {slide.data.description && (
-                          <p className="text-gray-200 text-lg leading-relaxed">
-                            {slide.data.description}
-                          </p>
-                        )}
-                        {slide.data.lines && slide.data.lines.length > 0 && (
-                          <div className="space-y-1">
-                            {slide.data.lines.map((ln, i) => (
-                              <p key={i} className="text-gray-300 text-sm">
-                                {ln}
-                              </p>
-                            ))}
-                          </div>
-                        )}
-                        {slide.data.link && (
+                      {/* Botão opcional do banner (somente se houver link) */}
+                      {slide.data.link && (
+                        <div className="mt-4 flex justify-center">
                           <a
                             href={slide.data.link}
                             target="_blank"
@@ -286,8 +294,8 @@ const NewsSlider: React.FC = () => {
                           >
                             Saiba mais
                           </a>
-                        )}
-                      </div>
+                        </div>
+                      )}
                     </div>
 
                     {/* Desktop/Tablet: manter o comportamento atual com imagem ocupando toda a área */}
@@ -307,9 +315,11 @@ const NewsSlider: React.FC = () => {
 
         {/* Slide Indicators */}
         <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex space-x-2 z-20">
-          {slides.map((_, index) => (
+          {slides.map((s, index) => (
             <button
-              key={index}
+              type="button"
+              aria-label={`Ir para slide ${index + 1}`}
+              key={s.kind === "news" ? `news-${s.data.url}` : `banner-${s.data.src}`}
               onClick={() => setCurrentSlide(index)}
               className={`h-2 rounded-full transition-all duration-300 ${
                 index === currentSlide ? "bg-yellow-400 w-6" : "bg-white/40 w-2 hover:bg-white/60"
