@@ -2,10 +2,9 @@ import { useState, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight, ExternalLink, RefreshCw } from "lucide-react";
 import { loadChristianNews, refreshChristianNews, NewsItem } from "../api/newsApi";
 
-// Adiciona suporte a slides de banner intercalados com notícias
-type BannerSlide = { kind: "banner"; data: { src: string; alt?: string; link?: string; title?: string; description?: string; lines?: string[] } };
+// Apenas notícias: tipos simplificados
 type NewsSlide = { kind: "news"; data: NewsItem };
-type SlideItem = BannerSlide | NewsSlide;
+type SlideItem = NewsSlide;
 
 const NewsSlider: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -14,10 +13,8 @@ const NewsSlider: React.FC = () => {
   const [isRefreshing, setIsRefreshing] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  // Definição dos banners e construção da lista combinada de slides (notícias + banners)
-  const bannerSlides: BannerSlide[] = [
-    { kind: "banner", data: { src: "/images/banner1-slide.png", alt: "Seminário Teológico", title: "Seminário Teológico da Reconciliação", description: "Outubro — Sábado 16h às 20h | Domingo 9h às 13h", lines: ["Local: Reconciliação — Av. Oswaldo Aranha, 790 - Vicente de Carvalho (Guarujá)", "Ministração: Pr. Luiz Carlos Aparecido — Apoio: Jarbel Cavalcante"] } },
-  ];
+  // Banners desabilitados: exibir somente notícias
+  const bannerSlides: never[] = [];
 
   const slides: SlideItem[] = (() => {
     const newsSlides: SlideItem[] = newsItems.map((n) => ({ kind: "news", data: n }));

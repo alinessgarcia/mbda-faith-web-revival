@@ -1066,6 +1066,78 @@ class ChristianNewsScraper:
             logger.error(f"Error scraping CNN Brasil Arqueologia: {e}")
         return news_list
 
+    def scrape_galileu_daily(self) -> List[Dict]:
+        """Scrape notícias diárias da Revista Galileu (todas as categorias)"""
+        news_list = []
+        try:
+            # URL principal da Revista Galileu
+            url = "https://revistagalileu.globo.com/"
+            response = self.session.get(url, timeout=10)
+            if response.status_code == 200:
+                soup = BeautifulSoup(response.content, 'html.parser')
+                
+                # Buscar artigos nas seções principais
+                articles = soup.find_all(['article', 'div'], class_=re.compile(r'(post|article|materia|card|feed-post)', re.I))[:10]
+                
+                for article in articles:
+                    try:
+                        # Buscar título
+                        title_elem = article.find(['h1', 'h2', 'h3', 'a'], class_=re.compile(r'(title|headline|manchete)', re.I))
+                        if not title_elem:
+                            title_elem = article.find(['h1', 'h2', 'h3'])
+                        if not title_elem:
+                            title_elem = article.find('a', href=True)
+                        
+                        # Buscar link
+                        link_elem = article.find('a', href=True)
+                        if not link_elem and title_elem and title_elem.name == 'a':
+                            link_elem = title_elem
+                        
+                        # Buscar resumo/descrição
+                        summary_elem = article.find(['p', 'div'], class_=re.compile(r'(summary|excerpt|description|deck|subtitle)', re.I))
+                        
+                        if title_elem and link_elem:
+                            title = self.clean_text(title_elem.get_text())
+                            link = urljoin(url, link_elem['href'])
+                            summary = self.clean_text(summary_elem.get_text() if summary_elem else '')
+                            
+                            # Extrair imagem
+                            image_url = None
+                            img_elem = article.find('img')
+                            if img_elem and img_elem.get('src'):
+                                image_url = urljoin(url, img_elem['src'])
+                            
+                            # Determinar categoria baseada no conteúdo
+                            category = 'Ciência e Tecnologia'
+                            title_lower = title.lower()
+                            if any(word in title_lower for word in ['arqueologia', 'história', 'antigo', 'descoberta']):
+                                category = 'Arqueologia e História'
+                            elif any(word in title_lower for word in ['espaço', 'astronomia', 'planeta', 'universo']):
+                                category = 'Astronomia'
+                            elif any(word in title_lower for word in ['saúde', 'medicina', 'doença', 'tratamento']):
+                                category = 'Saúde e Medicina'
+                            elif any(word in title_lower for word in ['meio ambiente', 'clima', 'sustentabilidade', 'natureza']):
+                                category = 'Meio Ambiente'
+                            
+                            if title and len(title) > 10 and 'galileu' not in title.lower():
+                                news_list.append({
+                                    'title': title,
+                                    'summary': summary[:200] + '...' if len(summary) > 200 else summary or title[:200] + '...',
+                                    'url': link,
+                                    'source': 'Revista Galileu',
+                                    'date': datetime.now().strftime('%a, %d %b %Y %H:%M:%S GMT'),
+                                    'category': category,
+                                    'image_url': image_url
+                                })
+                    except Exception as e:
+                        logger.warning(f"Error parsing Galileu daily item: {e}")
+                        continue
+                        
+        except Exception as e:
+            logger.error(f"Error scraping Galileu daily: {e}")
+            
+        return news_list
+
     def scrape_nationalgeo_br_arqueologia(self) -> List[Dict]:
         """Scrape notícias de Arqueologia da National Geographic Brasil"""
         news_list = []
@@ -2175,7 +2247,8 @@ class ChristianNewsScraper:
                 'IPB Eventos',
                 'Luís Sayão',
                 'Hernandes Dias Lopes',
-                'Augustus Nicodemus'
+                'Augustus Nicodemus',
+                'Revista Galileu'
             }
 
         logger.info(f"Allowed sources: {sorted(list(allowed_sources))}")
@@ -2214,6 +2287,7 @@ class ChristianNewsScraper:
             ('BBC News Brasil', self.scrape_bbc_portuguese),
             ('BBC News Brasil - Arqueologia', self.scrape_bbc_arqueologia),
             ('Revista Galileu - Arqueologia', self.scrape_galileu_arqueologia),
+            ('Revista Galileu', self.scrape_galileu_daily),
             ('CNN Brasil - Arqueologia', self.scrape_cnnbrasil_arqueologia),
             ('National Geographic Brasil - Arqueologia', self.scrape_nationalgeo_br_arqueologia),
             ('Google News (Temas)', self.scrape_google_news)
