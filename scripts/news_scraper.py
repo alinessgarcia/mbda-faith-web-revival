@@ -176,6 +176,57 @@ class ChristianNewsScraper:
     def filter_recent_articles(self, articles: List[Dict], max_age_hours: int = 24) -> List[Dict]:
         return [a for a in articles if self.is_recent_article(a, max_age_hours=max_age_hours)]
 
+    def scrape_generic_rss(self, source_name: str, rss_url: str, category: str = 'Notícias Cristãs', limit: int = 10) -> List[Dict]:
+        """Coletor genérico de RSS: normaliza itens para o nosso esquema."""
+        news_list: List[Dict] = []
+        try:
+            headers = {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36',
+                'Accept': 'application/rss+xml, application/xml, text/xml',
+                'Accept-Language': 'pt-BR,pt;q=0.9,en;q=0.8',
+            }
+            response = requests.get(rss_url, headers=headers, timeout=15)
+            if response.status_code != 200:
+                logger.warning(f"Falha ao acessar RSS {source_name}: {response.status_code}")
+                return news_list
+
+            soup = BeautifulSoup(response.content, 'xml')
+            items = soup.find_all('item')[:limit]
+            for item in items:
+                try:
+                    title_elem = item.find('title')
+                    link_elem = item.find('link')
+                    description_elem = item.find('description')
+                    pub_date_elem = item.find('pubDate')
+
+                    if not title_elem or not link_elem:
+                        continue
+
+                    title = self.clean_text(title_elem.get_text())
+                    link = (link_elem.get_text() or '').strip()
+                    summary_raw = description_elem.get_text() if description_elem else ''
+                    summary = self.clean_text(BeautifulSoup(summary_raw, 'html.parser').get_text()) if summary_raw else ''
+                    date = pub_date_elem.get_text() if pub_date_elem else datetime.now().strftime('%a, %d %b %Y %H:%M:%S GMT')
+
+                    image_url = self.extract_image_from_content(link)
+
+                    news_list.append({
+                        'title': title,
+                        'summary': summary[:200] + '...' if len(summary) > 200 else summary,
+                        'url': link,
+                        'source': source_name,
+                        'date': date,
+                        'category': category,
+                        'image_url': image_url
+                    })
+                except Exception as e:
+                    logger.warning(f"Erro ao parsear item de {source_name}: {e}")
+                    continue
+
+        except Exception as e:
+            logger.error(f"Erro ao coletar RSS genérico {source_name}: {e}")
+        return news_list
+
     def cleanup_old_supabase_records(self, max_age_hours: int = 24) -> None:
         """Remove registros antigos (> max_age_hours) da tabela news_articles no Supabase."""
         try:
@@ -2305,18 +2356,42 @@ class ChristianNewsScraper:
                 time.sleep(2)  # Be respectful to servers
             except Exception as e:
                 logger.error(f"Failed to scrape {source_name}: {e}")
+
+        # RSS extras (genéricos) para ampliar cobertura de fontes gratuitas
+        extra_rss_feeds = [
+            ('Folha Gospel', 'https://folhagospel.com/feed/', 'Notícias Cristãs', 8),
+            ('Gospel Prime', 'https://www.gospelprime.com.br/feed/', 'Gospel', 10),
+            ('Guiame', 'https://www.guiame.com.br/rss.xml', 'Gospel', 8),
+            ('Voltemos ao Evangelho', 'https://voltemosaoevangelho.com/blog/feed/', 'Teologia Reformada', 8),
+            ('Ministério Fiel', 'https://ministeriofiel.com.br/feed/', 'Teologia Reformada', 8),
+            ('CPAD News', 'https://www.cpadnews.com.br/feed/', 'Educação Cristã', 6)
+        ]
+
+        for name, url, category, limit in extra_rss_feeds:
+            if name in allowed_sources:
+                try:
+                    logger.info(f"Scraping RSS genérico: {name}")
+                    items = self.scrape_generic_rss(name, url, category=category, limit=limit)
+                    all_news.extend(items)
+                except Exception as e:
+                    logger.warning(f"Falha no RSS genérico {name}: {e}")
         
         # If we don't have enough news, add fallback content
         if len(all_news) < 5:
             logger.info("Adding fallback news due to insufficient scraped content")
             all_news.extend(self.get_fallback_news())
         
-        # Remove duplicates and limit results
+        # Remover duplicatas (título + URL) e limitar resultados
         seen_titles = set()
+        seen_pairs = set()
         unique_news = []
         for news in all_news:
-            if news['title'] not in seen_titles:
-                seen_titles.add(news['title'])
+            title = (news.get('title') or '').strip()
+            url = (news.get('url') or '').strip()
+            key = (title.lower(), url)
+            if title and key not in seen_pairs:
+                seen_pairs.add(key)
+                seen_titles.add(title)
                 unique_news.append(news)
         
         # Sort by date (most recent first) and limit to 25 items

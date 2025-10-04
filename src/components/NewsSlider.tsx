@@ -8,6 +8,7 @@ type NewsSlide = { kind: "news"; data: NewsItem };
 type SlideItem = BannerSlide | NewsSlide;
 
 const NewsSlider: React.FC = () => {
+  const PLACEHOLDER_IMG = "/images/boletim-placeholder.svg";
   const [currentSlide, setCurrentSlide] = useState(0);
   const [newsItems, setNewsItems] = useState<NewsItem[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -43,8 +44,34 @@ const NewsSlider: React.FC = () => {
     data: { src, alt: "Banner" },
   }));
 
+  // Intercalar fontes para evitar blocos de uma mesma origem
+  const roundRobinBySource = (items: NewsItem[]): NewsItem[] => {
+    const groups = new Map<string, NewsItem[]>();
+    items.forEach((it) => {
+      const arr = groups.get(it.source) ?? [];
+      arr.push(it);
+      groups.set(it.source, arr);
+    });
+    const buckets = Array.from(groups.values());
+    const result: NewsItem[] = [];
+    let index = 0;
+    let added = true;
+    while (added) {
+      added = false;
+      for (const bucket of buckets) {
+        if (index < bucket.length) {
+          result.push(bucket[index]);
+          added = true;
+        }
+      }
+      index++;
+    }
+    return result;
+  };
+
   const slides: SlideItem[] = (() => {
-    const newsSlides: SlideItem[] = newsItems.map((n) => ({ kind: "news", data: n }));
+    const balancedNews = roundRobinBySource(newsItems);
+    const newsSlides: SlideItem[] = balancedNews.map((n) => ({ kind: "news", data: n }));
     if (bannerSlides.length === 0) return newsSlides;
     const result: SlideItem[] = [];
     let bIndex = 0;
@@ -217,36 +244,32 @@ const NewsSlider: React.FC = () => {
               <div className="h-full flex items-center">
                 {slide.kind === "news" ? (
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full px-8">
-                    {/* Coluna de Imagem - apenas se houver imagem da raspagem */}
-                    {slide.data.image_url && (
-                      <div className="flex items-center justify-center">
-                        <div className="relative w-full max-w-md aspect-video rounded-lg overflow-hidden shadow-2xl">
-                          <img
-                            src={slide.data.image_url}
-                            alt={slide.data.title}
-                            className="w-full h-full object-cover"
-                            onError={(e) => {
-                              // Se a imagem falhar, esconde a coluna
-                              e.currentTarget.parentElement?.parentElement?.remove();
-                            }}
-                          />
+                    {/* Coluna de Imagem - usa placeholder se faltar ou falhar */}
+                    <div className="flex items-center justify-center">
+                      <div className="relative w-full max-w-md aspect-video rounded-lg overflow-hidden shadow-2xl">
+                        <img
+                          src={slide.data.image_url || PLACEHOLDER_IMG}
+                          alt={slide.data.title || "Boletim da Reconciliação"}
+                          className="w-full h-full object-cover"
+                          onError={(e) => {
+                            // Se a imagem falhar, substitui pelo placeholder
+                            e.currentTarget.src = PLACEHOLDER_IMG;
+                          }}
+                        />
 
-                          {/* Overlay com categoria */}
+                        {/* Overlay com categoria */}
+                        {slide.data.category && (
                           <div className="absolute top-4 left-4">
                             <div className="inline-block px-3 py-1 bg-yellow-500/90 text-black text-xs font-semibold rounded-full backdrop-blur-sm">
                               {slide.data.category}
                             </div>
                           </div>
-                        </div>
+                        )}
                       </div>
-                    )}
+                    </div>
 
-                    {/* Coluna de Conteúdo - ajusta largura baseada na presença de imagem */}
-                    <div
-                      className={`flex flex-col justify-center space-y-6 ${
-                        slide.data.image_url ? "" : "col-span-full text-center"
-                      }`}
-                    >
+                    {/* Coluna de Conteúdo */}
+                    <div className="flex flex-col justify-center space-y-6">
                       <h3 className="text-3xl lg:text-4xl font-bold text-white leading-tight">
                         {slide.data.title}
                       </h3>

@@ -5,6 +5,19 @@
 
 import { supabase, NewsArticle } from '../config/supabase';
 
+// Limite de tempo para tentar Supabase antes de cair para JSON local
+const SUPABASE_TIMEOUT_MS = 5000;
+
+function withTimeout<T>(promise: Promise<T>, ms: number): Promise<T> {
+  return new Promise((resolve, reject) => {
+    const id = setTimeout(() => reject(new Error('SUPABASE_TIMEOUT')), ms);
+    promise.then(
+      (value) => { clearTimeout(id); resolve(value); },
+      (err) => { clearTimeout(id); reject(err); }
+    );
+  });
+}
+
 export interface NewsItem {
   title: string;
   summary: string;
@@ -83,11 +96,22 @@ class NewsAPI {
       
       // Try to load from Supabase first if available
       if (supabase) {
-        const { data: supabaseNews, error } = await supabase
+        // Evitar travamento quando Supabase não responde no preview/ambiente local
+        const supabaseQuery = supabase
           .from('news_articles')
           .select('*')
           .order('created_at', { ascending: false })
           .limit(20);
+
+        let supabaseResp;
+        try {
+          supabaseResp = await withTimeout(supabaseQuery, SUPABASE_TIMEOUT_MS);
+        } catch (e) {
+          console.warn('Supabase timeout/erro, usando JSON local:', e);
+          return this.loadFromLocalJSON();
+        }
+
+        const { data: supabaseNews, error } = supabaseResp as any;
 
         if (!error && supabaseNews && supabaseNews.length > 0) {
           // Filter by recency (use created_at when available, otherwise date)

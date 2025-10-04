@@ -11,6 +11,7 @@ const formatDate = (date: Date) =>
   });
 
 const NewspaperHeroSlider: React.FC = () => {
+  const PLACEHOLDER_IMG = "/images/boletim-placeholder.svg";
   const [items, setItems] = useState<NewsItem[]>([]);
   const [current, setCurrent] = useState(0);
   const [loading, setLoading] = useState(true);
@@ -138,17 +139,14 @@ const NewspaperHeroSlider: React.FC = () => {
               <div className="grid grid-cols-1 md:grid-cols-2">
                 {/* Imagem */}
                 <div className="relative">
-                  {featured.image_url ? (
-                    <img
-                      src={featured.image_url}
-                      alt={featured.title}
-                      className="w-full h-full object-cover sepia-img"
-                    />
-                  ) : (
-                    <div className="w-full h-full bg-neutral-800 flex items-center justify-center">
-                      <span className="text-neutral-400">Sem imagem</span>
-                    </div>
-                  )}
+                  <img
+                    src={featured?.image_url || PLACEHOLDER_IMG}
+                    alt={featured?.title || "Boletim da Reconciliação"}
+                    className="w-full h-full object-cover sepia-img"
+                    onError={(e) => {
+                      e.currentTarget.src = PLACEHOLDER_IMG;
+                    }}
+                  />
                   {featured.category && (
                     <span className="absolute top-4 left-4 bg-yellow-400 text-black text-xs font-bold px-2 py-1 rounded">
                       {featured.category}
