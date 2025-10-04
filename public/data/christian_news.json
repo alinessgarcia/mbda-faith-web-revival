@@ -1,12 +1,11 @@
 {
-  "last_updated": "2025-10-04T01:28:08.718217",
-  "total_articles": 17,
+  "last_updated": "2025-10-04T10:25:11.409180",
+  "total_articles": 9,
   "sources": [
     "Púlpito Cristão",
-    "Monergismo",
-    "Cafetorah - Notícias de Israel",
-    "Voltemos ao Evangelho",
-    "Bereianos"
+    "Folha Gospel",
+    "Radio 93 - Giro Cristão",
+    "Cafetorah - Notícias de Israel"
   ],
   "articles": [
     {
@@ -14,7 +13,7 @@
       "summary": "Mulheres em Gaza denunciam exploração sexual em troca de ajuda humanitária Relatos revelam que alimentos e assistência estão sendo usados como moeda de troca em meio à crise humanitária. Histórias de ...",
       "url": "https://cafetorah.com/gaza-exploracao-sexual-em-meio-a-guerra/",
       "source": "Cafetorah - Notícias de Israel",
-      "date": "Sat, 04 Oct 2025 01:26:26 GMT",
+      "date": "Sat, 04 Oct 2025 10:23:16 GMT",
       "category": "Israel e Oriente Médio",
       "image_url": "https://cafetorah.com/wp-content/uploads/2025/09/pexels-mart-production-7699317.jpg"
     },
@@ -23,144 +22,72 @@
       "summary": "Se queres paz, prepara-te para a guerraSi vis pacem, para bellum  Flavio Vegécio Renato, Século V Nas últimas semanas observamos um conjunto de eventos que, tomados em conjunto, explicam por que anali...",
       "url": "https://cafetorah.com/a-beira-da-tempestade-o-mundo-caminha-para-um-conflito-global/",
       "source": "Cafetorah - Notícias de Israel",
-      "date": "Sat, 04 Oct 2025 01:26:28 GMT",
+      "date": "Sat, 04 Oct 2025 10:23:17 GMT",
       "category": "Israel e Oriente Médio",
       "image_url": "https://cafetorah.com/wp-content/uploads/2025/09/ai-generated-7834228_1920.jpg"
+    },
+    {
+      "title": "Tradução da Bíblia cresce e faz milhões de pessoas receberem as Escrituras em seu próprio idioma",
+      "summary": "O movimento global para tornar a Bíblia disponível em todos os idiomas está ganhando força notável, com novos números mostrando progresso histórico nos esforços de tradução. Divulgadas no Dia Internac...",
+      "url": "https://folhagospel.com/traducao-da-biblia-cresce-e-faz-milhoes-de-pessoas-receberem-as-escrituras-em-seu-proprio-idioma/",
+      "source": "Folha Gospel",
+      "date": "Fri, 03 Oct 2025 17:00:00 +0000",
+      "category": "Notícias Cristãs",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2025/09/image-16.png"
+    },
+    {
+      "title": "Pesquisa revela que milhares de igrejas no Reino Unido podem fechar até 2030",
+      "summary": "Uma pesquisa nacional realizada pela instituição de caridade britânica National Churches Trust levantou preocupações de que até 2.000 igrejas em todo o Reino Unido podem fechar nos próximos cinco anos...",
+      "url": "https://folhagospel.com/pesquisa-revela-que-milhares-de-igrejas-no-reino-unido-podem-fechar-ate-2030/",
+      "source": "Folha Gospel",
+      "date": "Fri, 03 Oct 2025 14:40:00 +0000",
+      "category": "Notícias Cristãs",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2024/07/Porta-de-igreja-fechada-Foto-Canva-pro.jpg"
+    },
+    {
+      "title": "Fotógrafa cristã não é obrigada a trabalhar em casamentos do mesmo sexo, decide tribunal nos EUA",
+      "summary": "Um tribunal federal decidiu a favor de uma fotógrafa cristã que contesta disposições antidiscriminatórias que, segundo ela, a forçariam a trabalhar em casamentos entre pessoas do mesmo sexo, apesar de...",
+      "url": "https://folhagospel.com/fotografa-crista-nao-e-obrigada-a-trabalhar-em-casamentos-do-mesmo-sexo-decide-tribunal-nos-eua/",
+      "source": "Folha Gospel",
+      "date": "Fri, 03 Oct 2025 12:55:00 +0000",
+      "category": "Notícias Cristãs",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2020/08/137975_w_760_5241.jpg"
+    },
+    {
+      "title": "Sarah Mullally é nomeada a primeira mulher arcebispa de Canterbury",
+      "summary": "A Bispa de Londres, Sarah Mullally, foi anunciada como a 106ª Arcebispa de Canterbury após um processo de seleção que durou vários meses. Ela é a primeira mulher arcebispa de Canterbury e, antes de su...",
+      "url": "https://folhagospel.com/sarah-mullally-e-nomeada-a-primeira-mulher-arcebispa-de-canterbury/",
+      "source": "Folha Gospel",
+      "date": "Fri, 03 Oct 2025 12:22:03 +0000",
+      "category": "Notícias Cristãs",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2025/10/image-4.png"
+    },
+    {
+      "title": "Robert Morris passará 6 meses na prisão após se declarar culpado de abuso sexual infantil",
+      "summary": "O pastor Robert Morris, fundador da Gateway Church em Southlake, Texas, passará seis meses na prisão como parte de uma sentença suspensa de 10 anos após se declarar culpado na quinta-feira por abusar ...",
+      "url": "https://folhagospel.com/robert-morris-passara-6-meses-na-prisao-apos-se-declarar-culpado-de-abuso-sexual-infantil/",
+      "source": "Folha Gospel",
+      "date": "Fri, 03 Oct 2025 10:56:26 +0000",
+      "category": "Notícias Cristãs",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2025/10/image-3.png"
+    },
+    {
+      "title": "Quase metade dos americanos enxergam Bíblia como coleção de mitos antigos úteis",
+      "summary": "Pesquisa mostrou que adultos com boa renda têm maior são os que mais pensam dessa forma. The post Quase metade dos americanos enxergam Bíblia como coleção de mitos antigos úteis appeared first on Rádi...",
+      "url": "https://radio93.com.br/noticias/giro-cristao/quase-metade-dos-americanos-enxergam-biblia-como-colecao-de-mitos-antigos-uteis/",
+      "source": "Radio 93 - Giro Cristão",
+      "date": "Sat, 04 Oct 2025 03:05:52 +0000",
+      "category": "Notícias Cristãs",
+      "image_url": ""
     },
     {
       "title": "Win Gudang Toto Bets Without Drama with Low Deposit Capital",
       "summary": "pulpitocristao.com  Welcome to the world of Gudang Toto, where excitement meets opportunity. If youve ever dreamed of striking it rich with low deposit capital, youre in for a treat. Winning at online...",
       "url": "https://pulpitocristao.com/win-gudang-toto-bets-without-drama-with-low-deposit-capital/",
       "source": "Púlpito Cristão",
-      "date": "Sat, 04 Oct 2025 01:26:53 GMT",
+      "date": "Sat, 04 Oct 2025 10:23:40 GMT",
       "category": "Pregação e Ensino",
       "image_url": "https://pulpitocristao.com/wp-content/uploads/2025/08/togel-1.jpg"
-    },
-    {
-      "title": "Quais as promessas de Deus aos que sofrem com a infertilidade?",
-      "summary": "Quais as promessas de Deus aos que sofrem com a infertilidade?...",
-      "url": "https://voltemosaoevangelho.com/blog/2025/10/quais-as-promessas-de-deus-aos-que-sofrem-com-a-infertilidade/",
-      "source": "Voltemos ao Evangelho",
-      "date": "Sat, 04 Oct 2025 01:26:59 GMT",
-      "category": "Teologia Reformada",
-      "image_url": "https://i0.wp.com/voltemosaoevangelho.com/blog/wp-content/uploads/2025/10/nno.png?fit=837%2C470&ssl=1"
-    },
-    {
-      "title": "Quando Deus não nos dá o que tanto pedimos em oração",
-      "summary": "Quando Deus não nos dá o que tanto pedimos em oração...",
-      "url": "https://voltemosaoevangelho.com/blog/2025/10/quando-deus-nao-nos-da-o-que-tanto-pedimos-em-oracao/",
-      "source": "Voltemos ao Evangelho",
-      "date": "Sat, 04 Oct 2025 01:26:59 GMT",
-      "category": "Teologia Reformada",
-      "image_url": "https://i0.wp.com/voltemosaoevangelho.com/blog/wp-content/uploads/2025/09/fnknbv.png?fit=837%2C470&ssl=1"
-    },
-    {
-      "title": "O que o livro de Jonas tem a ver com Jesus?",
-      "summary": "O que o livro de Jonas tem a ver com Jesus?...",
-      "url": "https://voltemosaoevangelho.com/blog/2025/10/o-que-o-livro-de-jonas-tem-a-ver-com-jesus/",
-      "source": "Voltemos ao Evangelho",
-      "date": "Sat, 04 Oct 2025 01:27:00 GMT",
-      "category": "Teologia Reformada",
-      "image_url": "https://i0.wp.com/voltemosaoevangelho.com/blog/wp-content/uploads/2025/09/igyi.png?fit=837%2C470&ssl=1"
-    },
-    {
-      "title": "A coerência e veracidade de Deus na Revelação Geral e Especial",
-      "summary": "A coerência e veracidade de Deus na Revelação Geral e Especial...",
-      "url": "https://voltemosaoevangelho.com/blog/2025/10/a-coerencia-e-veracidade-de-deus-na-revelacao-geral-e-especial/",
-      "source": "Voltemos ao Evangelho",
-      "date": "Sat, 04 Oct 2025 01:27:00 GMT",
-      "category": "Teologia Reformada",
-      "image_url": "https://i0.wp.com/voltemosaoevangelho.com/blog/wp-content/uploads/2025/10/jijp.png?fit=837%2C470&ssl=1"
-    },
-    {
-      "title": "Eu e meu cônjuge seremos melhores amigos no céu?",
-      "summary": "Eu e meu cônjuge seremos melhores amigos no céu?...",
-      "url": "https://voltemosaoevangelho.com/blog/2025/09/eu-e-meu-conjuge-seremos-melhores-amigos-no-ceu/",
-      "source": "Voltemos ao Evangelho",
-      "date": "Sat, 04 Oct 2025 01:27:00 GMT",
-      "category": "Teologia Reformada",
-      "image_url": "https://voltemosaoevangelho.com/blog/wp-content/uploads/2025/09/hjbib.png"
-    },
-    {
-      "title": "A asseidade de Deus",
-      "summary": "A asseidade de Deus...",
-      "url": "https://voltemosaoevangelho.com/blog/2025/09/a-asseidade-de-deus/",
-      "source": "Voltemos ao Evangelho",
-      "date": "Sat, 04 Oct 2025 01:27:00 GMT",
-      "category": "Teologia Reformada",
-      "image_url": "https://i0.wp.com/voltemosaoevangelho.com/blog/wp-content/uploads/2025/09/hfughs.png?fit=837%2C470&ssl=1"
-    },
-    {
-      "title": "Lembrando Voddie Baucham",
-      "summary": "Lembrando Voddie Baucham...",
-      "url": "https://monergismo.com/lembrando-voddie-baucham/",
-      "source": "Monergismo",
-      "date": "Sat, 04 Oct 2025 01:27:19 GMT",
-      "category": "Teologia Reformada",
-      "image_url": "https://i0.wp.com/monergismo.com/wp-content/uploads/2025/09/071755000_1758859315-G1uY03JXwAAcxFU.webp?resize=800%2C450&ssl=1"
-    },
-    {
-      "title": "A perda de nossos heróis e a soberania de um Deus dom",
-      "summary": "A perda de nossos heróis e a soberania de um Deus dom...",
-      "url": "https://monergismo.com/a-perda-de-nossos-herois-e-a-soberania-de-um-deus-dom/",
-      "source": "Monergismo",
-      "date": "Sat, 04 Oct 2025 01:27:19 GMT",
-      "category": "Teologia Reformada",
-      "image_url": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjwvc3ZnPg=="
-    },
-    {
-      "title": "Um tributo a Voddie Baucham: expositor fiel, amigo, guerreiro alegre",
-      "summary": "Um tributo a Voddie Baucham: expositor fiel, amigo, guerreiro alegre...",
-      "url": "https://monergismo.com/um-tributo-a-voddie-baucham-expositor-fiel-amigo-guerreiro-alegre/",
-      "source": "Monergismo",
-      "date": "Sat, 04 Oct 2025 01:27:19 GMT",
-      "category": "Teologia Reformada",
-      "image_url": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjwvc3ZnPg=="
-    },
-    {
-      "title": "Uma vida de excelência",
-      "summary": "Uma vida de excelência...",
-      "url": "https://monergismo.com/uma-vida-de-excelencia/",
-      "source": "Monergismo",
-      "date": "Sat, 04 Oct 2025 01:27:19 GMT",
-      "category": "Teologia Reformada",
-      "image_url": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjwvc3ZnPg=="
-    },
-    {
-      "title": "Voodie T. Baucham Jr., R.I.P (1969-2025)",
-      "summary": "Voodie T. Baucham Jr., R.I.P (1969-2025)...",
-      "url": "https://monergismo.com/rip-voodie-baucham-1969-2025/",
-      "source": "Monergismo",
-      "date": "Sat, 04 Oct 2025 01:27:19 GMT",
-      "category": "Teologia Reformada",
-      "image_url": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjwvc3ZnPg=="
-    },
-    {
-      "title": "Atos 2-5 ensina o socialismo?",
-      "summary": "Dois artigos no blog Sobre Fé, da The Washington Post, explicitamente declaram que o cristianismo é socialista e anticapitalista. O argumento central fornecido por parte de ambos os autores é que a descrição da comunidade cristã primitiva em Atos 2-5, tendo todas as coisas em comum, orden",
-      "url": "https://bereianos.blogspot.com/2019/11/atos-2-5-ensina-o-socialismo-analisar-e.html",
-      "source": "Bereianos",
-      "date": "Sat, 04 Oct 2025 01:27:28 GMT",
-      "category": "Apologética",
-      "image_url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEijjUw2lnYRpOXYMdIdnhD7P4gJgMnZ1qq77jgk3opTtwXhwbFOuui8Qfn4YBAE0-1zyi7zzdjIXWppuo-mliLaq4HjV_Qgm7GBE9Wn8IFeP3YhS8ykd_o20kcIrZBajBfDi9n4BySspJFzPbkg6kbzdxIm2Z6I-TLYyVtFKJkwXPPXC1mVRE6wvRHysFg/s16000/atos2socialismo_700x368px_capaBlog.png"
-    },
-    {
-      "title": "Quem Deve Ensinar no Culto Público?",
-      "summary": "Que fareis, pois, irmãos? Quando vos ajuntais, cada um de vós tem salmo, tem doutrina, tem revelação, tem língua, tem interpretação. Faça-se tudo para edificação. (1 Coríntios 14:26) Aqui o apóstolo Paulo fala sobre o culto público  quando vos ajuntais. Ele lista determinadas coisas que",
-      "url": "https://bereianos.blogspot.com/2019/10/quem-deve-ensinar-no-culto-publico.html",
-      "source": "Bereianos",
-      "date": "Sat, 04 Oct 2025 01:27:28 GMT",
-      "category": "Apologética",
-      "image_url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjPMvzXZ0-nRMB-yiP29Cq39ECCd7axCh7LZ5sFapPeCxeW_CTvo6TzTYbiN3Da2PqjhMAow-tmAh2Oi0szFvxhb7YNapPMLn40UAee1PUdWQe4RAmpIQ9vYDh9cRmTFIeIBbnO8QHMqeAl-imWgLuX0m92PD3Sp0NgvXv9AXooNAK50SxMcwwEC0ekfqs/s700/ensinarcultopublico_700x368px.png"
-    },
-    {
-      "title": "Paradoxos Bíblicos",
-      "summary": "Os crentes mais antigos já devem ter se deparado com disputas teológicas entre arminianos e calvinistas. Para quem não sabe, o debate entre os dois grupos gira em torno, basicamente, da polêmica entre a existência de livre-arbítrio para crer no Evangelho. Os dois grupos recorrem a um compêndio de",
-      "url": "https://bereianos.blogspot.com/2023/08/paradoxos-biblicos.html",
-      "source": "Bereianos",
-      "date": "Sat, 04 Oct 2025 01:27:28 GMT",
-      "category": "Apologética",
-      "image_url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhKTNq8GlNzpoKhBuBVC_EFfUW6_beZiNNA-xx-mOF6WcVXYt6jlHyYCx2diTSCl3b0HRQA_mi_Hs99nd1naTePxRMYNLq7WQjXnIYMHKhAGDWId95RU3nk01UkeujSD2F8kv5uvjA1tuvwD8pM-Na3HRJyVNsUCQusKIaScysic6No1-7d79fTFu4FdRw/s700/Paradoxos-B%C3%ADblicos_700x368.png"
     }
   ]
 }
