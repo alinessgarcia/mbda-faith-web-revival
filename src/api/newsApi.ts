@@ -47,7 +47,9 @@ class NewsAPI {
     const fromEnv = (import.meta as any)?.env?.VITE_NEWS_SOURCES_ALLOWLIST as string | undefined;
     const list = (fromEnv || '').split(',').map(s => s.trim()).filter(Boolean);
     if (list.length > 0) return new Set(list);
+    // Lista padrão ampliada para contemplar fontes teológicas/edificantes usadas pelo scraper
     return new Set([
+      // Notícias gerais cristãs
       'Gospel Prime',
       'Guiame',
       'Portas Abertas',
@@ -55,7 +57,13 @@ class NewsAPI {
       'Cafetorah - Notícias de Israel',
       'Folha Gospel',
       'Radio 93 - Giro Cristão',
-      'CPAD News'
+      'CPAD News',
+      // Conteúdos teológicos e edificantes frequentemente presentes no JSON
+      'Voltemos ao Evangelho',
+      'Bereianos',
+      'Monergismo',
+      'Cinco Solas',
+      'Púlpito Cristão'
     ]);
   })();
 
@@ -133,6 +141,21 @@ class NewsAPI {
 
           // Filtrar por allowlist
           newsItems = this.filterByAllowedSources(newsItems);
+
+          // Se o dataset vindo do Supabase estiver pobre (poucos itens ou sem imagens),
+          // preferimos o JSON local recém gerado pelo scraper para garantir boa experiência visual.
+          const MIN_REQUIRED = 10; // queremos pelo menos 10 itens
+          const MIN_IMAGE_RATIO = 0.6; // pelo menos 60% com imagem
+          const imageCount = newsItems.filter(n => n.image_url && n.image_url.trim() !== '').length;
+          const hasPoorQuality = newsItems.length < MIN_REQUIRED || imageCount < Math.ceil(newsItems.length * MIN_IMAGE_RATIO);
+
+          if (hasPoorQuality) {
+            console.warn(`Supabase retornou ${newsItems.length} itens (imagens: ${imageCount}). Caindo para JSON local por qualidade.`);
+            const localItems = await this.loadFromLocalJSON();
+            this.cache = localItems;
+            this.cacheExpiry = Date.now() + this.CACHE_DURATION;
+            return localItems;
+          }
 
           // Ensure minimum number of articles using themed fallback
           newsItems = this.mergeWithFallback(newsItems, this.MIN_ARTICLES);

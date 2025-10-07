@@ -39,6 +39,17 @@ class ChristianNewsScraper:
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
         })
         
+        # Configurações ajustáveis via ambiente
+        # Quantas horas considerar como "recentes" (padrão 48h) e quantos itens exibir (padrão 30)
+        try:
+            self.max_age_hours = int(os.getenv('NEWS_MAX_AGE_HOURS', '48'))
+        except Exception:
+            self.max_age_hours = 48
+        try:
+            self.max_items = int(os.getenv('NEWS_MAX_ITEMS', '30'))
+        except Exception:
+            self.max_items = 30
+        
         # Initialize Supabase client
         self.supabase_url = os.getenv('VITE_SUPABASE_URL')
         self.supabase_key = os.getenv('VITE_SUPABASE_ANON_KEY')
@@ -362,7 +373,7 @@ class ChristianNewsScraper:
     def extract_image_from_content(self, url: str) -> Optional[str]:
         """Extract the main image from article content"""
         try:
-            response = self.session.get(url, timeout=10)
+            response = self.session.get(url, timeout=15)
             if response.status_code == 200:
                 soup = BeautifulSoup(response.content, 'html.parser')
                 
@@ -370,11 +381,15 @@ class ChristianNewsScraper:
                 image_selectors = [
                     'meta[property="og:image"]',
                     'meta[name="twitter:image"]',
+                    'meta[name="twitter:image:src"]',
+                    'link[rel="image_src"]',
                     '.post-thumbnail img',
                     '.featured-image img',
                     'article img',
                     '.content img',
-                    '.entry-content img'
+                    '.entry-content img',
+                    'img[data-src]',
+                    'img[srcset]'
                 ]
                 
                 for selector in image_selectors:
@@ -386,14 +401,30 @@ class ChristianNewsScraper:
                                 return img_url
                             elif img_url.startswith('/'):
                                 return urljoin(url, img_url)
-                    else:
-                        img_tag = soup.select_one(selector)
-                        if img_tag and img_tag.get('src'):
-                            img_url = img_tag.get('src')
+                    elif selector.startswith('link'):
+                        link_tag = soup.select_one(selector)
+                        if link_tag and link_tag.get('href'):
+                            img_url = link_tag.get('href')
                             if img_url.startswith('http'):
                                 return img_url
                             elif img_url.startswith('/'):
                                 return urljoin(url, img_url)
+                    else:
+                        img_tag = soup.select_one(selector)
+                        if img_tag:
+                            # Preferir src; se não houver, tentar data-src; se houver srcset, pegar a primeira URL
+                            img_url = img_tag.get('src') or img_tag.get('data-src')
+                            if not img_url:
+                                srcset = img_tag.get('srcset')
+                                if srcset:
+                                    # srcset pode conter múltiplas URLs separadas por vírgulas
+                                    first = srcset.split(',')[0].strip().split(' ')[0]
+                                    img_url = first
+                            if img_url:
+                                if img_url.startswith('http'):
+                                    return img_url
+                                elif img_url.startswith('/'):
+                                    return urljoin(url, img_url)
                                 
         except Exception as e:
             logger.warning(f"Error extracting image from {url}: {e}")
@@ -408,7 +439,7 @@ class ChristianNewsScraper:
             response = self.session.get(self.sources['gospel_prime']['rss'], timeout=10)
             if response.status_code == 200:
                 soup = BeautifulSoup(response.content, 'xml')
-                items = soup.find_all('item')[:10]  # Get latest 10 items
+                items = soup.find_all('item')[:20]  # Aumenta para 20 itens recentes
                 
                 for item in items:
                     try:
@@ -2381,7 +2412,7 @@ class ChristianNewsScraper:
             logger.info("Adding fallback news due to insufficient scraped content")
             all_news.extend(self.get_fallback_news())
         
-        # Remover duplicatas (título + URL) e limitar resultados
+        # Remover duplicatas (título + URL)
         seen_titles = set()
         seen_pairs = set()
         unique_news = []
@@ -2393,23 +2424,44 @@ class ChristianNewsScraper:
                 seen_pairs.add(key)
                 seen_titles.add(title)
                 unique_news.append(news)
-        
-        # Sort by date (most recent first) and limit to 25 items
-        unique_news = unique_news[:25]
+
+        # Garantir imagens: tentar preencher imagem ausente; depois filtrar sem imagem
+        for item in unique_news:
+            try:
+                if not item.get('image_url') and item.get('url'):
+                    item['image_url'] = self.extract_image_from_content(item['url'])
+            except Exception:
+                # Ignorar falhas de extração pontuais
+                pass
+        unique_news = [n for n in unique_news if n.get('image_url') and str(n.get('image_url')).startswith('http')]
+
+        # Ordenar por data (mais recentes primeiro)
+        try:
+            unique_news = sorted(
+                unique_news,
+                key=lambda a: self.parse_article_date(a.get('date')) or datetime.utcnow(),
+                reverse=True
+            )
+        except Exception:
+            # Se parsing falhar, manter ordem atual
+            pass
+
+        # Limitar ao número máximo configurado (padrão 30)
+        unique_news = unique_news[:self.max_items]
         
         # Apply content filter for Reconciliation brotherhood
         logger.info("Applying content filter for Reconciliation brotherhood...")
         filtered_news = self.filter_content_for_reconciliation(unique_news)
 
-        # Apply 24-hour staleness filter server-side
-        recent_filtered_news = self.filter_recent_articles(filtered_news, max_age_hours=24)
+        # Aplicar filtro de frescor (padrão 48h) no servidor
+        recent_filtered_news = self.filter_recent_articles(filtered_news, max_age_hours=self.max_age_hours)
         
         # If filtered recent news is too few, add some fallback content
         if len(recent_filtered_news) < 3:
             logger.info("Adding fallback news due to insufficient recent filtered content")
             fallback_news = self.get_fallback_news()
             # Fallback items have current datetime, still run through recent filter for consistency
-            recent_filtered_news.extend(self.filter_recent_articles(fallback_news, max_age_hours=24))
+            recent_filtered_news.extend(self.filter_recent_articles(fallback_news, max_age_hours=self.max_age_hours))
             # Remove duplicates again
             seen_titles = set()
             final_news = []
@@ -2441,8 +2493,8 @@ class ChristianNewsScraper:
             output_data = {
                 'last_updated': datetime.now().isoformat(),
                 'total_articles': len(news_data),
-                'sources': list(set([article['source'] for article in news_data])),
-                'articles': self.filter_recent_articles(news_data, max_age_hours=24)
+                'sources': sorted(list(set([article['source'] for article in news_data]))),
+                'articles': self.filter_recent_articles(news_data, max_age_hours=self.max_age_hours)
             }
             
             # Write to src/data
@@ -2451,7 +2503,8 @@ class ChristianNewsScraper:
             logger.info(f"News data saved to {filepath}")
             
             # Also write to public/data for frontend to fetch in production
-            public_data_dir = os.path.join(os.path.dirname(__file__), '..', 'public', 'data')
+            project_root = os.path.dirname(os.path.dirname(__file__))
+            public_data_dir = os.path.join(project_root, 'public', 'data')
             os.makedirs(public_data_dir, exist_ok=True)
             public_filepath = os.path.join(public_data_dir, filename)
             with open(public_filepath, 'w', encoding='utf-8') as pf:
@@ -2475,8 +2528,8 @@ class ChristianNewsScraper:
             # Prepare data for Supabase
             supabase_data = []
             for article in news_data:
-                # Skip stale articles (>24h)
-                if not self.is_recent_article(article, max_age_hours=24):
+                # Skip stale articles (>{}h)
+                if not self.is_recent_article(article, max_age_hours=self.max_age_hours):
                     continue
                 # Check if article already exists
                 existing = self.supabase.table('news_articles').select('id').eq('url', article['url']).execute()
@@ -2511,8 +2564,8 @@ def main():
     # Permite rodar somente limpeza via argumento CLI
     if len(sys.argv) > 1 and sys.argv[1].lower() == 'cleanup':
         try:
-            scraper.cleanup_old_supabase_records(max_age_hours=24)
-            print("✅ Limpeza executada: removidos registros com mais de 24h")
+            scraper.cleanup_old_supabase_records(max_age_hours=scraper.max_age_hours)
+            print(f"✅ Limpeza executada: removidos registros com mais de {scraper.max_age_hours}h")
         except Exception as e:
             logger.error(f"Erro na limpeza: {e}")
             print(f"❌ Erro na limpeza: {e}")

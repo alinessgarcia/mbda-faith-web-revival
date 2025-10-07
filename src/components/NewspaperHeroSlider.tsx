@@ -222,6 +222,21 @@ const NewspaperHeroSlider: React.FC = () => {
         >
           <ChevronRight className="w-5 h-5 text-white" />
         </button>
+
+        {/* Indicadores de páginas (bolinhas) */}
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-2 z-20">
+          {items.map((_, idx) => (
+            <button
+              key={`dot-${idx}`}
+              type="button"
+              aria-label={`Ir para página ${idx + 1}`}
+              onClick={() => setCurrent(idx)}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                idx === current ? "bg-yellow-400 w-6" : "bg-white/40 w-2 hover:bg-white/60"
+              }`}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
