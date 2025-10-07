@@ -713,50 +713,95 @@ class ChristianNewsScraper:
         """Scrape news from Portas Abertas - Cristãos Perseguidos"""
         news_list = []
         try:
-            url = self.sources['portas_abertas_perseguidos']['url']
-            response = self.session.get(url, timeout=15)
-            if response.status_code == 200:
-                soup = BeautifulSoup(response.content, 'html.parser')
-                
-                # Look for news articles in the persecution section
-                articles = soup.find_all(['article', 'div'], class_=re.compile(r'(post|article|news|item)', re.I))[:8]
-                
-                for article in articles:
-                    try:
-                        # Find title
-                        title_elem = article.find(['h1', 'h2', 'h3', 'h4', 'a'])
-                        if not title_elem:
-                            continue
-                            
-                        # Find link
-                        link_elem = article.find('a', href=True)
-                        if not link_elem and title_elem.name == 'a':
-                            link_elem = title_elem
+            # Try multiple URLs for Portas Abertas
+            urls = [
+                "https://portasabertas.org.br/noticias/cristaos-perseguidos/",
+                "https://portasabertas.org.br/noticias/",
+                "https://portasabertas.org.br/"
+            ]
+            
+            for url in urls:
+                try:
+                    response = self.session.get(url, timeout=15)
+                    if response.status_code == 200:
+                        soup = BeautifulSoup(response.content, 'html.parser')
                         
-                        # Find summary/excerpt
-                        summary_elem = article.find(['p', 'div'], class_=re.compile(r'(excerpt|summary|description|content)', re.I))
+                        # Look for news articles with different selectors
+                        articles = []
+                        selectors = [
+                            ['article', 'div'],
+                            ['div'],
+                            ['section']
+                        ]
                         
-                        if title_elem and link_elem:
-                            title = self.clean_text(title_elem.get_text())
-                            link = urljoin('https://portasabertas.org.br', link_elem['href'])
-                            summary = self.clean_text(summary_elem.get_text() if summary_elem else "")
+                        for selector in selectors:
+                            articles = soup.find_all(selector, class_=re.compile(r'(post|article|news|item|card|noticia)', re.I))[:10]
+                            if articles:
+                                break
+                        
+                        # If no specific articles found, try generic approach
+                        if not articles:
+                            articles = soup.find_all('a', href=True)[:20]
+                        
+                        for article in articles:
+                            try:
+                                # Find title and link
+                                title_elem = None
+                                link_elem = None
+                                
+                                if article.name == 'a':
+                                    link_elem = article
+                                    title_elem = article
+                                else:
+                                    title_elem = article.find(['h1', 'h2', 'h3', 'h4'])
+                                    link_elem = article.find('a', href=True)
+                                    if not link_elem and title_elem and title_elem.find('a'):
+                                        link_elem = title_elem.find('a')
+                                
+                                if title_elem and link_elem:
+                                    title = self.clean_text(title_elem.get_text())
+                                    link = urljoin('https://portasabertas.org.br', link_elem.get('href'))
+                                    
+                                    # Filter relevant content about persecution
+                                    if (title and len(title) > 10 and 
+                                        any(word in title.lower() for word in ['perseguição', 'perseguidos', 'cristãos', 'igreja', 'fé', 'oração', 'mártir', 'prisão', 'tortura', 'china', 'coreia', 'afeganistão', 'irã', 'índia']) and
+                                        'portasabertas.org.br' in link):
+                                        
+                                        # Find summary/excerpt
+                                        summary_elem = article.find(['p', 'div'], class_=re.compile(r'(excerpt|summary|description|content)', re.I))
+                                        if not summary_elem:
+                                            summary_elem = article.find('p')
+                                        summary = self.clean_text(summary_elem.get_text()) if summary_elem else title[:200] + "..."
+                                        
+                                        # Extract image
+                                        image_url = None
+                                        img_elem = article.find('img')
+                                        if img_elem and img_elem.get('src'):
+                                            image_url = urljoin('https://portasabertas.org.br', img_elem.get('src'))
+                                        
+                                        news_list.append({
+                                            'title': title,
+                                            'summary': summary[:200] + "..." if len(summary) > 200 else summary,
+                                            'url': link,
+                                            'source': 'Portas Abertas - Cristãos Perseguidos',
+                                            'date': datetime.now().strftime('%a, %d %b %Y %H:%M:%S GMT'),
+                                            'category': 'Perseguição Religiosa',
+                                            'image_url': image_url
+                                        })
+                                        
+                                        if len(news_list) >= 6:
+                                            break
+                                            
+                            except Exception as e:
+                                logger.warning(f"Error parsing Portas Abertas Perseguidos item: {e}")
+                                continue
+                        
+                        if news_list:
+                            break
                             
-                            # Extract image
-                            image_url = self.extract_image_from_content(link)
-                            
-                            if title and len(title) > 10:
-                                news_list.append({
-                                    'title': title,
-                                    'summary': summary[:200] + "..." if len(summary) > 200 else summary,
-                                    'url': link,
-                                    'source': 'Portas Abertas - Cristãos Perseguidos',
-                                    'date': datetime.now().strftime('%a, %d %b %Y %H:%M:%S GMT'),
-                                    'category': 'Perseguição Religiosa',
-                                    'image_url': image_url
-                                })
-                    except Exception as e:
-                        logger.warning(f"Error parsing Portas Abertas Perseguidos item: {e}")
-                        continue
+                except Exception as e:
+                    logger.warning(f"Error accessing {url}: {e}")
+                    continue
                         
         except Exception as e:
             logger.error(f"Error scraping Portas Abertas Perseguidos: {e}")
@@ -2097,51 +2142,94 @@ class ChristianNewsScraper:
         """Scrape Editora Fiel - Livros e recursos teológicos reformados"""
         news_list = []
         try:
-            url = "https://www.editorafiel.com.br/blog/"
-            response = self.session.get(url, timeout=10)
-            response.raise_for_status()
+            # Try multiple URLs for Editora Fiel
+            urls = [
+                "https://www.editorafiel.com.br/blog/",
+                "https://www.editorafiel.com.br/artigos/",
+                "https://www.editorafiel.com.br/"
+            ]
             
-            soup = BeautifulSoup(response.content, 'html.parser')
-            
-            # Find articles
-            articles = soup.find_all(['article', 'div'], class_=['post', 'entry', 'blog-post'])[:5]
-            
-            for article in articles:
+            for url in urls:
                 try:
-                    title_elem = article.find(['h1', 'h2', 'h3'], class_=['title', 'entry-title', 'post-title'])
-                    if not title_elem:
-                        title_elem = article.find(['h1', 'h2', 'h3'])
-                    
-                    link_elem = title_elem.find('a') if title_elem else None
-                    if not link_elem:
-                        link_elem = article.find('a')
-                    
-                    if title_elem and link_elem:
-                        title = self.clean_text(title_elem.get_text())
-                        link = urljoin(url, link_elem.get('href'))
+                    response = self.session.get(url, timeout=15)
+                    if response.status_code == 200:
+                        soup = BeautifulSoup(response.content, 'html.parser')
                         
-                        # Extract summary
-                        summary_elem = article.find(['p', 'div'], class_=['excerpt', 'summary', 'description'])
-                        if not summary_elem:
-                            summary_elem = article.find('p')
-                        summary = self.clean_text(summary_elem.get_text()) if summary_elem else title[:200] + "..."
+                        # Try different selectors for articles
+                        articles = []
+                        selectors = [
+                            ['article', 'div'], 
+                            ['div'], 
+                            ['section']
+                        ]
                         
-                        # Extract image
-                        img_elem = article.find('img')
-                        image_url = urljoin(url, img_elem.get('src')) if img_elem else None
+                        for selector in selectors:
+                            articles = soup.find_all(selector, class_=re.compile(r'(post|article|blog|entry|item|card)', re.I))[:8]
+                            if articles:
+                                break
                         
-                        news_list.append({
-                            'title': title,
-                            'summary': summary,
-                            'url': link,
-                            'source': 'Editora Fiel',
-                            'date': datetime.now().strftime('%a, %d %b %Y %H:%M:%S GMT'),
-                            'category': 'Livros Teológicos',
-                            'image_url': image_url
-                        })
+                        # If no specific articles found, try generic approach
+                        if not articles:
+                            articles = soup.find_all('a', href=True)[:15]
                         
+                        for article in articles:
+                            try:
+                                # Find title and link
+                                title_elem = None
+                                link_elem = None
+                                
+                                if article.name == 'a':
+                                    link_elem = article
+                                    title_elem = article
+                                else:
+                                    title_elem = article.find(['h1', 'h2', 'h3', 'h4'])
+                                    link_elem = article.find('a', href=True)
+                                    if not link_elem and title_elem and title_elem.find('a'):
+                                        link_elem = title_elem.find('a')
+                                
+                                if title_elem and link_elem:
+                                    title = self.clean_text(title_elem.get_text())
+                                    link = urljoin(url, link_elem.get('href'))
+                                    
+                                    # Filter relevant content
+                                    if (title and len(title) > 10 and 
+                                        any(word in title.lower() for word in ['teologia', 'bíblia', 'cristo', 'deus', 'fé', 'igreja', 'evangelho', 'reforma', 'calvino', 'lutero', 'puritano']) and
+                                        'editorafiel.com.br' in link):
+                                        
+                                        # Extract summary
+                                        summary_elem = article.find(['p', 'div'], class_=re.compile(r'(excerpt|summary|description)', re.I))
+                                        if not summary_elem:
+                                            summary_elem = article.find('p')
+                                        summary = self.clean_text(summary_elem.get_text()) if summary_elem else title[:200] + "..."
+                                        
+                                        # Extract image
+                                        img_elem = article.find('img')
+                                        image_url = None
+                                        if img_elem and img_elem.get('src'):
+                                            image_url = urljoin(url, img_elem.get('src'))
+                                        
+                                        news_list.append({
+                                            'title': title,
+                                            'summary': summary[:200] + "..." if len(summary) > 200 else summary,
+                                            'url': link,
+                                            'source': 'Editora Fiel',
+                                            'date': datetime.now().strftime('%a, %d %b %Y %H:%M:%S GMT'),
+                                            'category': 'Livros Teológicos',
+                                            'image_url': image_url
+                                        })
+                                        
+                                        if len(news_list) >= 5:
+                                            break
+                                            
+                            except Exception as e:
+                                logger.warning(f"Error parsing Editora Fiel article: {e}")
+                                continue
+                        
+                        if news_list:
+                            break
+                            
                 except Exception as e:
-                    logger.error(f"Error parsing Editora Fiel article: {e}")
+                    logger.warning(f"Error accessing {url}: {e}")
                     continue
                     
         except Exception as e:
@@ -2310,7 +2398,6 @@ class ChristianNewsScraper:
                 'Radio 93 - Giro Cristão',
                 'CPAD News',
                 'Notícias de Israel',
-                'Púlpito Cristão',
                 'Voltemos ao Evangelho',
                 'Ministério Fiel',
                 'Biblical Archaeology Society',
@@ -2346,7 +2433,6 @@ class ChristianNewsScraper:
             ('Radio 93 - Giro Cristão', self.scrape_radio93),
             ('CPAD News', self.scrape_cpad_news),
             ('Notícias de Israel', self.scrape_noticias_israel),
-            ('Púlpito Cristão', self.scrape_pulpito_cristao),
             ('Voltemos ao Evangelho', self.scrape_voltemos_evangelho),
             ('Ministério Fiel', self.scrape_ministerio_fiel),
             ('Biblical Archaeology Society', self.scrape_biblical_archaeology),
