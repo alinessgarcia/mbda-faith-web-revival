@@ -249,7 +249,7 @@ const NewsSlider: React.FC = () => {
                       <div className="relative w-full max-w-md aspect-video rounded-lg overflow-hidden shadow-2xl">
                         <img
                           src={slide.data.image_url || PLACEHOLDER_IMG}
-                          alt={slide.data.title || "Boletim da Reconciliação"}
+                          alt={slide.data.title || "Reconciliação News"}
                           className="w-full h-full object-cover"
                           onError={(e) => {
                             // Se a imagem falhar, substitui pelo placeholder

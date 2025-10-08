@@ -10,6 +10,14 @@ const formatDate = (date: Date) =>
     day: "numeric",
   });
 
+// Formatação curta para exibir somente dia, mês e ano
+const formatDateShort = (date: Date) =>
+  date.toLocaleDateString("pt-BR", {
+    day: "2-digit",
+    month: "long",
+    year: "numeric",
+  });
+
 const NewspaperHeroSlider: React.FC = () => {
   const PLACEHOLDER_IMG = "/images/boletim-placeholder.svg";
   const [items, setItems] = useState<NewsItem[]>([]);
@@ -71,6 +79,14 @@ const NewspaperHeroSlider: React.FC = () => {
   };
 
   const featured = items[current];
+  const featuredDate = featured?.date ? new Date(featured.date) : null;
+  const dmy = featuredDate
+    ? {
+        day: featuredDate.toLocaleDateString("pt-BR", { day: "2-digit" }),
+        month: featuredDate.toLocaleDateString("pt-BR", { month: "long" }),
+        year: featuredDate.toLocaleDateString("pt-BR", { year: "numeric" }),
+      }
+    : null;
 
   if (loading) {
     return (
@@ -111,7 +127,7 @@ const NewspaperHeroSlider: React.FC = () => {
         <div className="mx-auto max-w-6xl bg-neutral-100/5 backdrop-blur-sm rounded-md newspaper-border">
           <div className="flex items-center justify-between px-4 py-3">
             <h1 className="text-3xl md:text-4xl font-serif tracking-wider text-yellow-300 drop-shadow">
-              Boletim da Reconciliação
+              Reconciliação News
             </h1>
             <div className="flex items-center gap-3">
               <span className="text-neutral-200 text-sm md:text-base">
@@ -141,7 +157,7 @@ const NewspaperHeroSlider: React.FC = () => {
                 <div className="relative">
                   <img
                     src={featured?.image_url || PLACEHOLDER_IMG}
-                    alt={featured?.title || "Boletim da Reconciliação"}
+                    alt={featured?.title || "Reconciliação News"}
                     className="w-full h-full object-cover sepia-img"
                     onError={(e) => {
                       e.currentTarget.src = PLACEHOLDER_IMG;
@@ -179,10 +195,19 @@ const NewspaperHeroSlider: React.FC = () => {
                   <p className="mt-3 text-neutral-200/90 leading-relaxed dropcap line-clamp-4 font-serif">
                     {featured.summary}
                   </p>
-                  <div className="mt-4 text-neutral-400 text-sm flex items-center flex-wrap gap-3">
-                    <span>{featured.source}</span>
-                    {featured.date && (
-                      <span className="ml-2">• {new Date(featured.date).toLocaleString("pt-BR")}</span>
+                  <div className="mt-4 text-neutral-400 text-sm flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3">
+                    <span className="font-medium text-neutral-300">{featured.source}</span>
+                    {dmy && (
+                      <>
+                        {/* Mobile: dia, mês, ano organizados em linha mais legível */}
+                        <div className="sm:hidden flex items-baseline gap-2 text-neutral-300">
+                          <span className="text-lg font-semibold">{dmy.day}</span>
+                          <span className="text-sm capitalize">{dmy.month}</span>
+                          <span className="text-sm">{dmy.year}</span>
+                        </div>
+                        {/* Desktop/tablet: formato curto em uma única linha */}
+                        <span className="hidden sm:inline">{`${dmy.day} de ${dmy.month} de ${dmy.year}`}</span>
+                      </>
                     )}
                     {/* Botão para navegar à fonte real */}
                     {featured.url && (
