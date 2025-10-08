@@ -71,12 +71,20 @@ jobs:
         VITE_SUPABASE_ANON_KEY_VAR: ${{ vars.VITE_SUPABASE_ANON_KEY }}
         NEWS_SOURCES_ALLOWLIST: ${{ secrets.NEWS_SOURCES_ALLOWLIST }}
         NEWS_SOURCES_ALLOWLIST_VAR: ${{ vars.NEWS_SOURCES_ALLOWLIST }}
+        # Discord webhook integration (optional)
+        NEWS_DISCORD_NOTIFY: 'true'
+        DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        SITE_URL: https://www.igrejadarecon.com.br/
       run: |
         set -o pipefail
         cd scripts
         export VITE_SUPABASE_URL="${VITE_SUPABASE_URL:-$VITE_SUPABASE_URL_VAR}"
         export VITE_SUPABASE_ANON_KEY="${VITE_SUPABASE_ANON_KEY:-$VITE_SUPABASE_ANON_KEY_VAR}"
         export NEWS_SOURCES_ALLOWLIST="${NEWS_SOURCES_ALLOWLIST:-$NEWS_SOURCES_ALLOWLIST_VAR}"
+        # Pass-through optional Discord integration flags
+        export NEWS_DISCORD_NOTIFY="${NEWS_DISCORD_NOTIFY}"
+        export DISCORD_WEBHOOK_URL="${DISCORD_WEBHOOK_URL}"
+        export SITE_URL="${SITE_URL}"
         python news_scraper.py 2>&1 | tee ../scraper_run.log
 
     - name: Upload scraper logs
