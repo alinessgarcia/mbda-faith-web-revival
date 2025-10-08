@@ -1425,67 +1425,7 @@ class ChristianNewsScraper:
             
         return news_list
 
-    def scrape_pulpito_cristao(self) -> List[Dict]:
-        """Scrape news from Púlpito Cristão"""
-        news_list = []
-        try:
-            url = 'https://www.pulpitocristao.com/'
-            headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
-            response = requests.get(url, headers=headers, timeout=10)
-            response.raise_for_status()
-            
-            soup = BeautifulSoup(response.content, 'html.parser')
-            
-            # Procurar por artigos
-            articles = soup.find_all(['article', 'div'], class_=lambda x: x and any(
-                keyword in x.lower() for keyword in ['post', 'article', 'entry', 'news']
-            ))[:10]
-            
-            for article in articles:
-                try:
-                    # Título
-                    title_elem = article.find(['h1', 'h2', 'h3', 'h4'])
-                    if not title_elem:
-                        continue
-                        
-                    title = self.clean_text(title_elem.get_text())
-                    if not title or len(title) < 10:
-                        continue
-                    
-                    # Link
-                    link_elem = title_elem.find('a') or article.find('a')
-                    if not link_elem:
-                        continue
-                    link = urljoin(url, link_elem.get('href', ''))
-                    
-                    # Resumo
-                    summary_elem = article.find('p')
-                    summary = self.clean_text(summary_elem.get_text()) if summary_elem else title[:100] + '...'
-                    
-                    # Imagem
-                    image_url = self.extract_image_from_content(link)
-                    if not image_url:
-                        img_elem = article.find('img')
-                        if img_elem and img_elem.get('src'):
-                            image_url = urljoin(url, img_elem.get('src'))
-                    
-                    news_list.append({
-                        'title': title,
-                        'summary': summary[:200] + '...' if len(summary) > 200 else summary,
-                        'url': link,
-                        'source': 'Púlpito Cristão',
-                        'date': datetime.now().strftime('%a, %d %b %Y %H:%M:%S GMT'),
-                        'category': 'Pregação e Ensino',
-                        'image_url': image_url
-                    })
-                except Exception as e:
-                    logger.warning(f"Error parsing Púlpito Cristão item: {e}")
-                    continue
-                    
-        except Exception as e:
-            logger.error(f"Error scraping Púlpito Cristão: {e}")
-            
-        return news_list
+
 
     def scrape_voltemos_evangelho(self) -> List[Dict]:
         """Scrape news from Voltemos ao Evangelho"""
