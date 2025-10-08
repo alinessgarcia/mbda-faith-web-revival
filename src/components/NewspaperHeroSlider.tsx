@@ -50,7 +50,7 @@ const NewspaperHeroSlider: React.FC = () => {
     if (items.length === 0) return;
     const id = setInterval(() => {
       setCurrent((prev) => (prev + 1) % items.length);
-    }, 12000); // conforme pedido: 12s
+    }, 30000); // ajuste: 30s por slide
     return () => clearInterval(id);
   }, [items.length]);
 

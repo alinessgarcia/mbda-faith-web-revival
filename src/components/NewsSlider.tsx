@@ -128,7 +128,7 @@ const NewsSlider: React.FC = () => {
 
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 10000); // Change slide every 10 seconds (slower)
+    }, 30000); // ajuste: 30s por slide
 
     return () => clearInterval(interval);
   }, [slides.length]);

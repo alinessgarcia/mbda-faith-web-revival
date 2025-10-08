@@ -24,6 +24,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from supabase import create_client, Client
 from dotenv import load_dotenv
 from dateutil import parser as dateutil_parser
+from dateutil import tz
 
 # Load environment variables
 load_dotenv(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '.env.local'))
@@ -31,6 +32,13 @@ load_dotenv(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file_
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
+
+# Integração opcional com Discord via webhook
+try:
+    from scripts.discord_notifier import send_news_to_discord  # type: ignore
+except Exception as _e:
+    send_news_to_discord = None  # fallback quando módulo não está disponível
+    logger.warning(f"Discord notifier não pôde ser importado: {_e}")
 
 class ChristianNewsScraper:
     def __init__(self):
@@ -49,6 +57,18 @@ class ChristianNewsScraper:
             self.max_items = int(os.getenv('NEWS_MAX_ITEMS', '30'))
         except Exception:
             self.max_items = 30
+
+        # Configurações de resumo e timezone
+        try:
+            self.summary_min_chars = int(os.getenv('SUMMARY_MIN_CHARS', '120'))
+        except Exception:
+            self.summary_min_chars = 120
+        try:
+            self.summary_max_chars = int(os.getenv('SUMMARY_MAX_CHARS', '400'))
+        except Exception:
+            self.summary_max_chars = 400
+        self.timezone_name = os.getenv('TIMEZONE', 'America/Sao_Paulo')
+        self.local_tz = tz.gettz(self.timezone_name) or tz.gettz('UTC')
         
         # Initialize Supabase client
         self.supabase_url = os.getenv('VITE_SUPABASE_URL')
@@ -186,6 +206,114 @@ class ChristianNewsScraper:
 
     def filter_recent_articles(self, articles: List[Dict], max_age_hours: int = 24) -> List[Dict]:
         return [a for a in articles if self.is_recent_article(a, max_age_hours=max_age_hours)]
+
+    def _truncate_summary(self, text: str) -> str:
+        """Aplica limite máximo e adiciona reticências se necessário."""
+        if not text:
+            return ""
+        text = self.clean_text(text)
+        if len(text) > self.summary_max_chars:
+            return text[: self.summary_max_chars].rstrip() + "..."
+        return text
+
+    def _fetch_page_soup(self, url: str) -> Optional[BeautifulSoup]:
+        try:
+            if not url:
+                return None
+            resp = self.session.get(url, timeout=12)
+            if resp.status_code != 200:
+                return None
+            return BeautifulSoup(resp.content, 'html.parser')
+        except Exception:
+            return None
+
+    def generate_detailed_summary(self, url: str) -> str:
+        """Gera resumo detalhado a partir de meta description / og:description e, se faltar, dos 2–3 primeiros parágrafos.
+        Retorna texto normalizado e limitado ao tamanho máximo configurado.
+        """
+        soup = self._fetch_page_soup(url)
+        if not soup:
+            return ""
+
+        # 1) meta description / og:description
+        meta_candidates = []
+        try:
+            for tag in soup.find_all('meta'):
+                name = (tag.get('name') or tag.get('property') or '').lower()
+                if name in ['description', 'og:description', 'twitter:description']:
+                    content = self.clean_text(tag.get('content') or '')
+                    if content:
+                        meta_candidates.append(content)
+            if meta_candidates:
+                best = max(meta_candidates, key=len)
+                if len(best) >= max(60, self.summary_min_chars // 2):
+                    return self._truncate_summary(best)
+        except Exception:
+            pass
+
+        # 2) primeiros parágrafos do corpo
+        try:
+            paragraphs = soup.find_all('p')
+            # pegar 3 primeiros parágrafos não muito curtos
+            selected = []
+            for p in paragraphs[:8]:
+                txt = self.clean_text(p.get_text())
+                if len(txt) >= 40:
+                    selected.append(txt)
+                if len(' '.join(selected)) >= self.summary_min_chars:
+                    break
+            candidate = ' '.join(selected).strip()
+            if candidate:
+                return self._truncate_summary(candidate)
+        except Exception:
+            pass
+
+        # 3) fallback vazio
+        return ""
+
+    def ensure_summary(self, article: Dict) -> str:
+        """Garante que o artigo tenha um resumo detalhado e dentro dos limites de tamanho.
+        Se o resumo original for curto ou ausente, tenta gerar a partir da página.
+        """
+        base = self.clean_text(article.get('summary') or '')
+        if len(base) < self.summary_min_chars:
+            detailed = self.generate_detailed_summary(article.get('url') or '')
+            # se ainda curto, usa título como complemento
+            if not detailed or len(detailed) < self.summary_min_chars:
+                title = self.clean_text(article.get('title') or '')
+                combined = (detailed + ' ' + title).strip()
+                base = combined if combined else title
+            else:
+                base = detailed
+        return self._truncate_summary(base)
+
+    def _article_local_date(self, article: Dict) -> Optional[datetime]:
+        dt_utc = self.parse_article_date(article.get('date'))
+        if not dt_utc:
+            return None
+        try:
+            aware_utc = dt_utc.replace(tzinfo=timezone.utc)
+            local = aware_utc.astimezone(self.local_tz)
+            return local
+        except Exception:
+            return None
+
+    def filter_today_articles(self, articles: List[Dict]) -> List[Dict]:
+        """Retorna apenas artigos cuja data local (timezone configurado) é hoje."""
+        today_local = datetime.now(tz=self.local_tz).date()
+        out: List[Dict] = []
+        for a in articles:
+            ld = self._article_local_date(a)
+            if ld and ld.date() == today_local:
+                out.append(a)
+        return out
+
+    def filter_for_output(self, articles: List[Dict]) -> List[Dict]:
+        """Política de saída: prioriza notícias de hoje (timezone configurado); se não houver, usa recentes (<= max_age_hours)."""
+        today = self.filter_today_articles(articles)
+        if today:
+            return today
+        return self.filter_recent_articles(articles, max_age_hours=self.max_age_hours)
 
     def scrape_generic_rss(self, source_name: str, rss_url: str, category: str = 'Notícias Cristãs', limit: int = 10) -> List[Dict]:
         """Coletor genérico de RSS: normaliza itens para o nosso esquema."""
@@ -2475,19 +2603,30 @@ class ChristianNewsScraper:
         # Limitar ao número máximo configurado (padrão 30)
         unique_news = unique_news[:self.max_items]
         
+        # Garantir resumo detalhado
+        for item in unique_news:
+            try:
+                item['summary'] = self.ensure_summary(item)
+            except Exception:
+                # Mantém o que já existe caso falhe
+                item['summary'] = self._truncate_summary(item.get('summary') or '')
+        
         # Apply content filter for Reconciliation brotherhood
         logger.info("Applying content filter for Reconciliation brotherhood...")
         filtered_news = self.filter_content_for_reconciliation(unique_news)
 
-        # Aplicar filtro de frescor (padrão 48h) no servidor
-        recent_filtered_news = self.filter_recent_articles(filtered_news, max_age_hours=self.max_age_hours)
+        # Aplicar política de saída: hoje primeiro, senão recentes (<= max_age_hours)
+        recent_filtered_news = self.filter_for_output(filtered_news)
         
         # If filtered recent news is too few, add some fallback content
         if len(recent_filtered_news) < 3:
             logger.info("Adding fallback news due to insufficient recent filtered content")
             fallback_news = self.get_fallback_news()
-            # Fallback items have current datetime, still run through recent filter for consistency
-            recent_filtered_news.extend(self.filter_recent_articles(fallback_news, max_age_hours=self.max_age_hours))
+            # Garante resumo nos fallbacks também
+            for fb in fallback_news:
+                fb['summary'] = self.ensure_summary(fb)
+            # Fallback items têm data atual; aplicar política de saída para consistência
+            recent_filtered_news.extend(self.filter_for_output(fallback_news))
             # Remove duplicates again
             seen_titles = set()
             final_news = []
@@ -2505,9 +2644,9 @@ class ChristianNewsScraper:
         try:
             # Save to Supabase first
             if self.supabase:
-                # Only save recent articles to Supabase
-                recent_news = self.filter_recent_articles(news_data, max_age_hours=24)
-                self.save_to_supabase(recent_news)
+                # Política de saída: hoje (timezone) primeiro; caso vazio, usa recentes
+                eligible_news = self.filter_for_output(news_data)
+                self.save_to_supabase(eligible_news)
             
             # Create data directory if it doesn't exist (src)
             data_dir = os.path.join(os.path.dirname(__file__), '..', 'src', 'data')
@@ -2518,9 +2657,9 @@ class ChristianNewsScraper:
             # Add metadata
             output_data = {
                 'last_updated': datetime.now().isoformat(),
-                'total_articles': len(news_data),
-                'sources': sorted(list(set([article['source'] for article in news_data]))),
-                'articles': self.filter_recent_articles(news_data, max_age_hours=self.max_age_hours)
+                'total_articles': len(self.filter_for_output(news_data)),
+                'sources': sorted(list(set([article['source'] for article in self.filter_for_output(news_data)]))),
+                'articles': self.filter_for_output(news_data)
             }
             
             # Write to src/data
@@ -2618,6 +2757,36 @@ def main():
                 print("\n📊 Articles by source:")
                 for source, count in sources.items():
                     print(f"  • {source}: {count} articles")
+
+                # Envio opcional ao Discord, se habilitado via ambiente
+                try:
+                    notify_flag = os.getenv('NEWS_DISCORD_NOTIFY', 'false').strip().lower() == 'true'
+                    if notify_flag and send_news_to_discord is not None:
+                        recent_items = scraper.filter_recent_articles(news_data, max_age_hours=scraper.max_age_hours)
+                        # Limita quantidade para evitar excesso no canal
+                        top_items = recent_items[:5]
+                        if top_items:
+                            # Usa o domínio configurável para o link de resumo
+                            site_url = os.getenv('SITE_URL', 'https://www.igrejadarecon.com.br/')
+                            summary_item = {
+                                'title': f"Atualização: {len(recent_items)} artigos coletados",
+                                'summary': 'Envio automático do scraper para o Discord.',
+                                'url': site_url,
+                                'source': 'Scraper Reconciliação',
+                                'date': datetime.now().strftime('%Y-%m-%d %H:%M'),
+                            }
+                            payload_items = [summary_item] + top_items
+                            result = send_news_to_discord(payload_items)
+                            sent = result.get('sent', 0)
+                            failed = result.get('failed', 0)
+                            print(f"🔔 Discord notificado: {sent} lote(s), falhas: {failed}")
+                        else:
+                            print("ℹ️ Nenhum item recente para enviar ao Discord.")
+                    elif notify_flag and send_news_to_discord is None:
+                        print("⚠️ NEWS_DISCORD_NOTIFY=true, mas o módulo de notificação do Discord não está disponível.")
+                except Exception as de:
+                    logger.error(f"Erro ao enviar notificação ao Discord: {de}")
+                    print(f"❌ Erro ao notificar Discord: {de}")
             else:
                 print("❌ Failed to save news data")
         else:
