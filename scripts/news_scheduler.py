@@ -12,6 +12,7 @@ import subprocess
 from datetime import datetime
 import json
 import logging
+import shutil
 
 # Add the scripts directory to Python path
 script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -34,6 +35,7 @@ class NewsScheduler:
         self.script_path = os.path.join(script_dir, 'news_scraper.py')
         self.project_root = os.path.dirname(script_dir)
         self.news_file = os.path.join(self.project_root, 'src', 'data', 'christian_news.json')
+        self.public_news_file = os.path.join(self.project_root, 'public', 'data', 'christian_news.json')
 
     def cleanup_supabase(self):
         """Run cleanup job to delete stale records (>24h) from Supabase"""
@@ -73,6 +75,13 @@ class NewsScheduler:
                         article_count = data.get('total_articles', 0)
                         sources = data.get('sources', [])
                         logger.info(f"📰 Updated with {article_count} articles from {len(sources)} sources")
+                    
+                    # Sync to public directory for frontend consumption
+                    try:
+                        shutil.copy2(self.news_file, self.public_news_file)
+                        logger.info("🔄 Synced news data to public directory")
+                    except Exception as sync_error:
+                        logger.error(f"❌ Failed to sync to public directory: {sync_error}")
                 else:
                     logger.warning("⚠️ News file not found after scraping")
                     
