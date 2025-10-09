@@ -1,9 +1,10 @@
 import { useState, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight, ExternalLink, RefreshCw } from "lucide-react";
 import { loadChristianNews, refreshChristianNews, NewsItem } from "../api/newsApi";
+import { reformationBanners } from "../data/reformation_banners";
 
 // Tipos de slides: notícias e banners de imagens
-type BannerSlide = { kind: "banner"; data: { src: string; alt?: string; link?: string } };
+type BannerSlide = { kind: "banner"; data: { src: string; title?: string; description?: string; category?: string; alt?: string; link?: string } };
 type NewsSlide = { kind: "news"; data: NewsItem };
 type SlideItem = BannerSlide | NewsSlide;
 
@@ -15,33 +16,17 @@ const NewsSlider: React.FC = () => {
   const [isRefreshing, setIsRefreshing] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  // Banners: utilizar imagens permitidas do diretório public/images
-  // Exclusões: backgrounds, escolinha, blog, logo
-  const allowedBannerFiles: string[] = [
-    "/images/5solas-desktop.jpg",
-    "/images/5solas-mobile2.jpg",
-    "/images/apocalipse.jpg",
-    "/images/atos-desktop.jpg",
-    "/images/atos-mobile2.jpg",
-    "/images/banner1-slide.png",
-    "/images/ceia-mobile.jpg",
-    "/images/ceia2.jpg",
-    "/images/culto1.jpg",
-    "/images/familia-desktop.jpg",
-    "/images/familia-mobile-copy.jpg",
-    "/images/familia-mobile.jpg",
-    "/images/familia.jpg",
-    "/images/fundamentos.jpg",
-    "/images/indentificando-ofrutodafe.jpg",
-    "/images/os-salmos.jpg",
-    "/images/recom-fm.png",
-    "/images/reforma-desktop.jpg",
-    "/images/reforma-mobile.jpg",
-  ];
-
-  const bannerSlides: BannerSlide[] = allowedBannerFiles.map((src) => ({
+  // Banners do Mês da Reforma: metadados com título e descrição
+  const bannerSlides: BannerSlide[] = reformationBanners.map((b) => ({
     kind: "banner",
-    data: { src, alt: "Banner" },
+    data: {
+      src: b.src,
+      title: b.title,
+      description: b.description,
+      category: b.category ?? "Reforma Protestante",
+      alt: b.alt ?? b.title,
+      link: b.link,
+    },
   }));
 
   // Intercalar fontes para evitar blocos de uma mesma origem
@@ -73,15 +58,20 @@ const NewsSlider: React.FC = () => {
     const balancedNews = roundRobinBySource(newsItems);
     const newsSlides: SlideItem[] = balancedNews.map((n) => ({ kind: "news", data: n }));
     if (bannerSlides.length === 0) return newsSlides;
+    // Intercalar 1:1 (uma notícia seguida de um banner), sobrando banners ao final se houver
     const result: SlideItem[] = [];
     let bIndex = 0;
-    newsSlides.forEach((s, i) => {
+    for (const s of newsSlides) {
       result.push(s);
-      if ((i + 1) % 2 === 0 && bIndex < bannerSlides.length) {
+      if (bIndex < bannerSlides.length) {
         result.push(bannerSlides[bIndex]);
         bIndex++;
       }
-    });
+    }
+    while (bIndex < bannerSlides.length) {
+      result.push(bannerSlides[bIndex]);
+      bIndex++;
+    }
     return result;
   })();
 
@@ -291,41 +281,48 @@ const NewsSlider: React.FC = () => {
                     </div>
                   </div>
                 ) : (
-                  <div className="w-full">
-                    {/* Mobile: mostrar banner no mesmo tamanho das imagens das notícias e textos abaixo */}
-                    <div className="block md:hidden w-full px-8 pt-10 pb-6">
-                      <div className="flex items-center justify-center">
-                        <div className="relative w-full max-w-md aspect-video rounded-lg overflow-hidden shadow-2xl">
-                          <img
-                            src={slide.data.src}
-                            alt={slide.data.alt ?? "Banner"}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full px-8">
+                    {/* Coluna de Imagem (banner) - ajustar para não cortar: object-contain + fundo preto */}
+                    <div className="flex items-center justify-center">
+                      <div className="relative w-full max-w-md aspect-video rounded-lg overflow-hidden shadow-2xl bg-black">
+                        <img
+                          src={slide.data.src}
+                          alt={slide.data.alt ?? slide.data.title ?? "Banner"}
+                          className="w-full h-full object-contain object-center"
+                        />
                       </div>
+                    </div>
 
-                      {/* Botão opcional do banner (somente se houver link) */}
+                    {/* Coluna de Conteúdo (título e texto abaixo, padrão das notícias) */}
+                    <div className="flex flex-col justify-center space-y-6">
+                      {slide.data.category && (
+                        <span className="inline-block w-fit bg-yellow-500 text-black text-xs font-semibold rounded-full px-3 py-1">
+                          {slide.data.category}
+                        </span>
+                      )}
+                      {slide.data.title && (
+                        <h3 className="text-3xl lg:text-4xl font-bold text-white leading-tight">
+                          {slide.data.title}
+                        </h3>
+                      )}
+                      {slide.data.description && (
+                        <p className="text-gray-200 text-lg leading-relaxed">
+                          {slide.data.description}
+                        </p>
+                      )}
+
                       {slide.data.link && (
-                        <div className="mt-4 flex justify-center">
+                        <div className="pt-2">
                           <a
                             href={slide.data.link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 bg-yellow-500 hover:bg-yellow-600 text-black px-5 py-2.5 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
+                            className="inline-flex items-center gap-2 bg-yellow-500 hover:bg-yellow-600 text-black px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
                           >
                             Saiba mais
                           </a>
                         </div>
                       )}
-                    </div>
-
-                    {/* Desktop/Tablet: manter o comportamento atual com imagem ocupando toda a área */}
-                    <div className="hidden md:block w-full pt-6">
-                      <img
-                        src={slide.data.src}
-                        alt={slide.data.alt ?? "Banner"}
-                        className="w-full h-full object-cover"
-                      />
                     </div>
                   </div>
                 )}

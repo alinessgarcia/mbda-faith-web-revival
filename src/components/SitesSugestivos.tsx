@@ -61,7 +61,7 @@ const SitesSugestivos = () => {
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
                 <div className="flex items-center mb-4">
-                  <IconComponent className="w-8 h-8 text-lime mr-3" />
+                  <IconComponent className="w-8 h-8 text-blue-light mr-3" />
                   <h3 className="text-xl font-bold text-yellow-title">{site.name}</h3>
                 </div>
                 

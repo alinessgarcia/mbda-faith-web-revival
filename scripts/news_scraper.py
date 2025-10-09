@@ -436,7 +436,9 @@ class ChristianNewsScraper:
             'cafetorah.com', 'folhagospel.com', 'cpadnews.com.br', 'cpad.com.br',
             'bbc.com', 'bbc.co.uk', 'bbc.com.br', 'cnnbrasil.com.br',
             'nationalgeographic.com', 'nationalgeographicbrasil.com', 'abril.com.br',
-            'uol.com.br', 'terra.com.br'
+            'uol.com.br', 'terra.com.br',
+            # Confiar em domínios da Galileu para evitar descarte indevido
+            'globo.com', 'globo.com.br', 'revistagalileu.globo.com'
         ]
         
         filtered_news = []
@@ -455,7 +457,7 @@ class ChristianNewsScraper:
             # Fonte confiável por nome
             trusted_sources = ['Voltemos ao Evangelho', 'Monergismo', 'Portas Abertas', 
                               'Portas Abertas - Cristãos Perseguidos', 'Cafetorah - Notícias de Israel',
-                              'Folha Gospel']
+                              'Folha Gospel', 'Revista Galileu', 'Revista Galileu - Arqueologia']
             
             # Verificar domínio do link
             domain = ''
@@ -797,44 +799,79 @@ class ChristianNewsScraper:
         """Scrape news from Portas Abertas"""
         news_list = []
         try:
-            # Scrape main news page
-            response = self.session.get(f"{self.sources['portas_abertas']['url']}/noticias", timeout=10)
+            base = self.sources['portas_abertas']['url']
+            list_url = f"{base}/noticias"
+
+            response = self.session.get(list_url, timeout=15)
             if response.status_code == 200:
                 soup = BeautifulSoup(response.content, 'html.parser')
-                
-                # Look for news articles (this might need adjustment based on actual site structure)
-                articles = soup.find_all(['article', 'div'], class_=re.compile(r'(news|article|post)', re.I))[:6]
-                
-                for article in articles:
+
+                # Estratégia mais robusta: coletar links com padrão /noticias/ e depois abrir cada artigo
+                links = set()
+                for a in soup.find_all('a', href=True):
+                    href = a['href']
+                    if '/noticias/' in href:
+                        links.add(urljoin(base, href))
+
+                links = list(links)[:8]
+
+                for link in links:
                     try:
-                        title_elem = article.find(['h1', 'h2', 'h3', 'h4'], class_=re.compile(r'(title|headline)', re.I))
-                        if not title_elem:
-                            title_elem = article.find(['h1', 'h2', 'h3', 'h4'])
-                        
-                        link_elem = article.find('a', href=True)
-                        summary_elem = article.find(['p', 'div'], class_=re.compile(r'(summary|excerpt|description)', re.I))
-                        
-                        if title_elem and link_elem:
-                            title = self.clean_text(title_elem.get_text())
-                            link = urljoin(self.sources['portas_abertas']['url'], link_elem['href'])
-                            summary = self.clean_text(summary_elem.get_text() if summary_elem else "")
-                            
-                            if title and 'portas' in link.lower():
-                                news_list.append({
-                                    'title': title,
-                                    'summary': summary[:200] + "..." if len(summary) > 200 else summary,
-                                    'url': link,
-                                    'source': 'Portas Abertas',
-                                    'date': datetime.now().strftime('%a, %d %b %Y %H:%M:%S GMT'),
-                                    'category': 'Perseguição Religiosa'
-                                })
-                    except Exception as e:
-                        logger.warning(f"Error parsing Portas Abertas item: {e}")
-                        continue
-                        
+                        art_resp = self.session.get(link, timeout=15)
+                        if art_resp.status_code != 200:
+                            continue
+                        art = BeautifulSoup(art_resp.content, 'html.parser')
+
+                        # Título: meta og:title ou h1
+                        title = None
+                        og_title = art.find('meta', attrs={'property': 'og:title'})
+                        if og_title and og_title.get('content'):
+                            title = self.clean_text(og_title['content'])
+                        if not title:
+                            h1 = art.find('h1')
+                            if h1:
+                                title = self.clean_text(h1.get_text())
+
+                        # Resumo: meta description/og:description ou primeiro parágrafo
+                        summary = ''
+                        og_desc = art.find('meta', attrs={'property': 'og:description'})
+                        if og_desc and og_desc.get('content'):
+                            summary = self.clean_text(og_desc['content'])
+                        if not summary:
+                            meta_desc = art.find('meta', attrs={'name': 'description'})
+                            if meta_desc and meta_desc.get('content'):
+                                summary = self.clean_text(meta_desc['content'])
+                        if not summary:
+                            p = art.find('article') or art
+                            p_tag = p.find('p') if p else None
+                            if p_tag:
+                                summary = self.clean_text(p_tag.get_text())
+
+                        # Imagem: og:image
+                        image_url = None
+                        og_img = art.find('meta', attrs={'property': 'og:image'})
+                        if og_img and og_img.get('content'):
+                            image_url = urljoin(base, og_img['content'])
+                        if not image_url:
+                            # fallback: tentar extrair do conteúdo
+                            image_url = self.extract_image_from_content(link)
+
+                        if title and link:
+                            news_list.append({
+                                'title': title,
+                                'summary': summary[:200] + "..." if len(summary) > 200 else summary,
+                                'url': link,
+                                'source': 'Portas Abertas',
+                                'date': datetime.now().strftime('%a, %d %b %Y %H:%M:%S GMT'),
+                                'category': 'Perseguição Religiosa',
+                                'image_url': image_url
+                            })
+                            if len(news_list) >= 6:
+                                break
+
         except Exception as e:
             logger.error(f"Error scraping Portas Abertas: {e}")
-            
+
         return news_list
 
     def scrape_portas_abertas_perseguidos(self) -> List[Dict]:
@@ -2566,18 +2603,50 @@ class ChristianNewsScraper:
             logger.info("Adding fallback news due to insufficient scraped content")
             all_news.extend(self.get_fallback_news())
         
-        # Remover duplicatas (título + URL)
-        seen_titles = set()
-        seen_pairs = set()
+        # Remover duplicatas com canonicalização de URL e título
+        # Alguns sites (como Revista Galileu) publicam o mesmo artigo em mais de uma listagem
+        # com parâmetros/fragmentos diferentes no URL. Para evitar artigos duplicados no frontend,
+        # normalizamos o URL (sem query/fragment) e, especificamente para Galileu, também o título.
+        from urllib.parse import urlparse, urlunparse
+
+        def _normalize_url(u: str) -> str:
+            try:
+                p = urlparse(u or '')
+                # Remove query e fragmentos de rastreamento; padroniza caminho sem barra final
+                normalized = urlunparse((p.scheme, p.netloc, (p.path or '').rstrip('/'), '', '', ''))
+                return normalized.lower().strip()
+            except Exception:
+                return (u or '').lower().strip()
+
+        def _normalize_title(t: str) -> str:
+            t = (t or '').lower().strip()
+            # Colapsa espaços e remove alguns sufixos comuns de portais
+            t = ' '.join(t.split())
+            return t
+
+        seen_keys = set()
         unique_news = []
         for news in all_news:
-            title = (news.get('title') or '').strip()
-            url = (news.get('url') or '').strip()
-            key = (title.lower(), url)
-            if title and key not in seen_pairs:
-                seen_pairs.add(key)
-                seen_titles.add(title)
-                unique_news.append(news)
+            source = (news.get('source') or '').strip()
+            source_base = source.split(' - ')[0].strip().lower()
+            title_norm = _normalize_title(news.get('title'))
+            url_norm = _normalize_url(news.get('url'))
+
+            # Chave baseada em URL canonicalizado por fonte
+            key_url = (source_base, url_norm)
+            # Para Galileu, também chave baseada em título (mesmo artigo pode sair em mais de uma editoria)
+            is_galileu = source_base.startswith('revista galileu')
+            key_title = (source_base, title_norm)
+
+            if key_url in seen_keys:
+                continue
+            if is_galileu and key_title in seen_keys:
+                continue
+
+            unique_news.append(news)
+            seen_keys.add(key_url)
+            if is_galileu:
+                seen_keys.add(key_title)
 
         # Garantir imagens: tentar preencher imagem ausente; depois filtrar sem imagem
         for item in unique_news:

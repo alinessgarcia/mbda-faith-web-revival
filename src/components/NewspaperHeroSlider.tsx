@@ -1,6 +1,7 @@
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useMemo } from "react";
 import { ChevronLeft, ChevronRight, RefreshCw, ExternalLink } from "lucide-react";
 import { loadChristianNews, refreshChristianNews, NewsItem } from "../api/newsApi";
+import { reformationBanners, BannerMeta } from "../data/reformation_banners";
 
 const formatDate = (date: Date) =>
   date.toLocaleDateString("pt-BR", {
@@ -18,6 +19,10 @@ const formatDateShort = (date: Date) =>
     year: "numeric",
   });
 
+type Slide =
+  | { kind: "news"; item: NewsItem }
+  | { kind: "banner"; banner: BannerMeta };
+
 const NewspaperHeroSlider: React.FC = () => {
   const PLACEHOLDER_IMG = "/images/boletim-placeholder.svg";
   const [items, setItems] = useState<NewsItem[]>([]);
@@ -25,6 +30,24 @@ const NewspaperHeroSlider: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  // Constrói os slides intercalando 1:1 notícias e banners da Reforma Protestante
+  const slides: Slide[] = useMemo(() => {
+    const newsSlides: Slide[] = items.map((n) => ({ kind: "news", item: n }));
+    const bannerSlides: Slide[] = reformationBanners.map((b) => ({ kind: "banner", banner: b }));
+
+    // Se não houver notícias, mostra apenas banners
+    if (newsSlides.length === 0) return bannerSlides;
+    if (bannerSlides.length === 0) return newsSlides;
+
+    const result: Slide[] = [];
+    const maxLen = Math.max(newsSlides.length, bannerSlides.length);
+    for (let i = 0; i < maxLen; i++) {
+      if (i < newsSlides.length) result.push(newsSlides[i]);
+      if (i < bannerSlides.length) result.push(bannerSlides[i]);
+    }
+    return result;
+  }, [items]);
 
   const load = useCallback(async () => {
     try {
@@ -47,21 +70,21 @@ const NewspaperHeroSlider: React.FC = () => {
   }, [load]);
 
   useEffect(() => {
-    if (items.length === 0) return;
+    if (slides.length === 0) return;
     const id = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % items.length);
-    }, 15000); // ajuste: 15s por slide (reduzido de 30s)
+      setCurrent((prev) => (prev + 1) % slides.length);
+    }, 15000); // 15s por slide
     return () => clearInterval(id);
-  }, [items.length]);
+  }, [slides.length]);
 
   const handlePrev = () => {
-    if (items.length === 0) return;
-    setCurrent((prev) => (prev - 1 + items.length) % items.length);
+    if (slides.length === 0) return;
+    setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
   const handleNext = () => {
-    if (items.length === 0) return;
-    setCurrent((prev) => (prev + 1) % items.length);
+    if (slides.length === 0) return;
+    setCurrent((prev) => (prev + 1) % slides.length);
   };
 
   const handleRefresh = async () => {
@@ -78,8 +101,8 @@ const NewspaperHeroSlider: React.FC = () => {
     }
   };
 
-  const featured = items[current];
-  const featuredDate = featured?.date ? new Date(featured.date) : null;
+  const featured = slides[current];
+  const featuredDate = featured?.kind === "news" && featured.item?.date ? new Date(featured.item.date) : null;
   const dmy = featuredDate
     ? {
         day: featuredDate.toLocaleDateString("pt-BR", { day: "2-digit" }),
@@ -153,12 +176,24 @@ const NewspaperHeroSlider: React.FC = () => {
           <div className="bg-neutral-100/5 rounded-md overflow-hidden shadow-2xl">
             {featured && (
               <div className="grid grid-cols-1 md:grid-cols-2">
-                {/* Imagem */}
-                <div className="relative">
+                {/* Imagem com tamanho padronizado, sem vazamento e sem cortes (object-contain) */}
+                <div className="relative h-[260px] md:h-[380px] lg:h-[420px] overflow-hidden bg-black">
                   <img
-                    src={featured?.image_url || PLACEHOLDER_IMG}
-                    alt={featured?.title || "Reconciliação News"}
-                    className="w-full h-full object-cover sepia-img"
+                    src={
+                      featured?.kind === "news"
+                        ? featured.item?.image_url || PLACEHOLDER_IMG
+                        : featured?.kind === "banner"
+                        ? featured.banner.src
+                        : PLACEHOLDER_IMG
+                    }
+                    alt={
+                      featured?.kind === "news"
+                        ? featured.item?.title || "Reconciliação News"
+                        : featured?.kind === "banner"
+                        ? featured.banner.title
+                        : "Reconciliação News"
+                    }
+                    className="w-full h-full object-contain object-center sepia-img"
                     onError={(e) => {
                       e.currentTarget.src = PLACEHOLDER_IMG;
                     }}
@@ -182,46 +217,63 @@ const NewspaperHeroSlider: React.FC = () => {
 
                 {/* Texto */}
                 <div className="p-5">
-                  {featured?.category && (
-                    <span className="inline-block mb-2 bg-yellow-400 text-black text-xs font-bold px-2 py-1 rounded">
-                      {featured.category}
-                    </span>
-                  )}
-                  <a href={featured.url} target="_blank" rel="noopener noreferrer">
-                    <h2 className="text-xl md:text-2xl font-serif text-neutral-100 tracking-wide hover:text-yellow-200 transition-colors">
-                      {featured.title}
-                    </h2>
-                  </a>
-                  <p className="mt-3 text-neutral-200/90 leading-relaxed dropcap line-clamp-4 font-serif">
-                    {featured.summary}
-                  </p>
-                  <div className="mt-4 text-neutral-400 text-sm flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3">
-                    <span className="font-medium text-neutral-300">{featured.source}</span>
-                    {dmy && (
-                      <>
-                        {/* Mobile: dia, mês, ano organizados em linha mais legível */}
-                        <div className="sm:hidden flex items-baseline gap-2 text-neutral-300">
-                          <span className="text-lg font-semibold">{dmy.day}</span>
-                          <span className="text-sm capitalize">{dmy.month}</span>
-                          <span className="text-sm">{dmy.year}</span>
-                        </div>
-                        {/* Desktop/tablet: formato curto em uma única linha */}
-                        <span className="hidden sm:inline">{`${dmy.day} de ${dmy.month} de ${dmy.year}`}</span>
-                      </>
-                    )}
-                    {/* Botão para navegar à fonte real */}
-                    {featured.url && (
-                      <a
-                        href={featured.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 px-3 py-1 bg-yellow-400 text-black rounded hover:bg-yellow-300 transition-colors"
-                        title="Abrir na fonte"
-                      >
-                        <ExternalLink className="w-4 h-4" /> Ver na fonte
+                  {featured?.kind === "news" ? (
+                    <>
+                      {featured.item?.category && (
+                        <span className="inline-block mb-2 bg-yellow-400 text-black text-xs font-bold px-2 py-1 rounded">
+                          {featured.item.category}
+                        </span>
+                      )}
+                      <a href={featured.item.url} target="_blank" rel="noopener noreferrer">
+                        <h2 className="text-xl md:text-2xl font-serif text-neutral-100 tracking-wide hover:text-yellow-200 transition-colors">
+                          {featured.item.title}
+                        </h2>
                       </a>
-                    )}
-                  </div>
+                      <p className="mt-3 text-neutral-200/90 leading-relaxed dropcap line-clamp-4 font-serif">
+                        {featured.item.summary}
+                      </p>
+                      <div className="mt-4 text-neutral-400 text-sm flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3">
+                        <span className="font-medium text-neutral-300">{featured.item.source}</span>
+                        {dmy && (
+                          <>
+                            {/* Mobile: dia, mês, ano organizados em linha mais legível */}
+                            <div className="sm:hidden flex items-baseline gap-2 text-neutral-300">
+                              <span className="text-lg font-semibold">{dmy.day}</span>
+                              <span className="text-sm capitalize">{dmy.month}</span>
+                              <span className="text-sm">{dmy.year}</span>
+                            </div>
+                            {/* Desktop/tablet: formato curto em uma única linha */}
+                            <span className="hidden sm:inline">{`${dmy.day} de ${dmy.month} de ${dmy.year}`}</span>
+                          </>
+                        )}
+                        {/* Botão para navegar à fonte real */}
+                        {featured.item.url && (
+                          <a
+                            href={featured.item.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 px-3 py-1 bg-yellow-400 text-black rounded hover:bg-yellow-300 transition-colors"
+                            title="Abrir na fonte"
+                          >
+                            <ExternalLink className="w-4 h-4" /> Ver na fonte
+                          </a>
+                        )}
+                      </div>
+                    </>
+                  ) : (
+                    // Banner da Reforma Protestante
+                    <>
+                      <span className="inline-block mb-2 bg-yellow-400 text-black text-xs font-bold px-2 py-1 rounded">
+                        {featured.banner.category}
+                      </span>
+                      <h2 className="text-xl md:text-2xl font-serif text-neutral-100 tracking-wide">
+                        {featured.banner.title}
+                      </h2>
+                      <p className="mt-3 text-neutral-200/90 leading-relaxed font-serif">
+                        {featured.banner.description}
+                      </p>
+                    </>
+                  )}
                 </div>
               </div>
             )}
@@ -250,7 +302,7 @@ const NewspaperHeroSlider: React.FC = () => {
 
         {/* Indicadores de páginas (bolinhas) */}
         <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-2 z-20">
-          {items.map((_, idx) => (
+          {slides.map((_, idx) => (
             <button
               key={`dot-${idx}`}
               type="button"
