@@ -50,7 +50,7 @@ const NewspaperHeroSlider: React.FC = () => {
     if (items.length === 0) return;
     const id = setInterval(() => {
       setCurrent((prev) => (prev + 1) % items.length);
-    }, 30000); // ajuste: 30s por slide
+    }, 15000); // ajuste: 15s por slide (reduzido de 30s)
     return () => clearInterval(id);
   }, [items.length]);
 
@@ -163,11 +163,6 @@ const NewspaperHeroSlider: React.FC = () => {
                       e.currentTarget.src = PLACEHOLDER_IMG;
                     }}
                   />
-                  {featured.category && (
-                    <span className="absolute top-4 left-4 bg-yellow-400 text-black text-xs font-bold px-2 py-1 rounded">
-                      {featured.category}
-                    </span>
-                  )}
                   {/* Navegação mobile sobre a área da imagem (não cobre os textos) */}
                   <button
                     onClick={handlePrev}
@@ -187,6 +182,11 @@ const NewspaperHeroSlider: React.FC = () => {
 
                 {/* Texto */}
                 <div className="p-5">
+                  {featured?.category && (
+                    <span className="inline-block mb-2 bg-yellow-400 text-black text-xs font-bold px-2 py-1 rounded">
+                      {featured.category}
+                    </span>
+                  )}
                   <a href={featured.url} target="_blank" rel="noopener noreferrer">
                     <h2 className="text-xl md:text-2xl font-serif text-neutral-100 tracking-wide hover:text-yellow-200 transition-colors">
                       {featured.title}

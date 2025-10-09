@@ -128,7 +128,7 @@ const NewsSlider: React.FC = () => {
 
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 30000); // ajuste: 30s por slide
+    }, 15000); // ajuste: 15s por slide (reduzido de 30s)
 
     return () => clearInterval(interval);
   }, [slides.length]);
@@ -257,19 +257,17 @@ const NewsSlider: React.FC = () => {
                           }}
                         />
 
-                        {/* Overlay com categoria */}
-                        {slide.data.category && (
-                          <div className="absolute top-4 left-4">
-                            <div className="inline-block px-3 py-1 bg-yellow-500/90 text-black text-xs font-semibold rounded-full backdrop-blur-sm">
-                              {slide.data.category}
-                            </div>
-                          </div>
-                        )}
+                        {/* Categoria movida para fora da imagem para não cobrir textos */}
                       </div>
                     </div>
 
                     {/* Coluna de Conteúdo */}
                     <div className="flex flex-col justify-center space-y-6">
+                      {slide.data.category && (
+                        <span className="inline-block w-fit bg-yellow-500 text-black text-xs font-semibold rounded-full px-3 py-1">
+                          {slide.data.category}
+                        </span>
+                      )}
                       <h3 className="text-3xl lg:text-4xl font-bold text-white leading-tight">
                         {slide.data.title}
                       </h3>
