@@ -868,6 +868,9 @@ class ChristianNewsScraper:
                             })
                             if len(news_list) >= 6:
                                 break
+                    except Exception as e:
+                        logger.error(f"Error processing article {link}: {e}")
+                        continue
 
         except Exception as e:
             logger.error(f"Error scraping Portas Abertas: {e}")

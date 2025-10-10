@@ -67,7 +67,8 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				'yellow-title': '#FFFFFF' // Cor branca para os títulos
+				'yellow-title': '#FFFFFF', // Cor branca para os títulos
+				'blue-light': '#33a3ef' // Cor azul clara para ícones
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

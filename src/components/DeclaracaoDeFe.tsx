@@ -114,7 +114,7 @@ const DeclaracaoDeFe = () => {
               onClick={() => setIsModalOpen(true)}
               className="glass-card-modern px-8 py-4 font-bold text-white hover:text-yellow transition-colors inline-flex items-center mt-8"
             >
-              <BookOpen className="w-6 h-6 mr-2" />
+              <BookOpen className="w-6 h-6 mr-2 text-blue-light" />
               Ver Declaração de Fé
             </button>
           </div>

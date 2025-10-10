@@ -47,17 +47,17 @@ const Seterec = () => {
             {/* Cards de cursos centralizados */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
               <div className="glass-card-agenda p-8 text-center">
-                <BookOpen className="w-10 h-10 text-lime mx-auto mb-4" />
+                <BookOpen className="w-10 h-10 text-white mx-auto mb-4" />
                 <h4 className="font-bold text-yellow-custom mb-3 text-lg">Teologia</h4>
                 <p className="text-white">Fundamentos bíblicos e doutrinários</p>
               </div>
               <div className="glass-card-agenda p-8 text-center">
-                <Users className="w-10 h-10 text-lime mx-auto mb-4" />
+                <Users className="w-10 h-10 text-white mx-auto mb-4" />
                 <h4 className="font-bold text-yellow-custom mb-3 text-lg">Liderança</h4>
                 <p className="text-white">Gestão ministerial e pastoral</p>
               </div>
               <div className="glass-card-agenda p-8 text-center">
-                <Award className="w-10 h-10 text-lime mx-auto mb-4" />
+                <Award className="w-10 h-10 text-white mx-auto mb-4" />
                 <h4 className="font-bold text-yellow-custom mb-3 text-lg">Aconselhamento</h4>
                 <p className="text-white">Técnicas pastorais e cuidado</p>
               </div>
@@ -114,7 +114,7 @@ const Seterec = () => {
 
             <div>
               <h3 className="text-xl font-bold mb-4 flex items-center">
-                <BookOpen className="w-6 h-6 mr-2 text-amber-400" />
+                <BookOpen className="w-6 h-6 mr-2 text-blue-light" />
                 Nossos Cursos Extras
               </h3>
               <div className="space-y-3">
