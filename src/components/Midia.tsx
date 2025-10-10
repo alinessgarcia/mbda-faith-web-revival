@@ -39,6 +39,11 @@ const imagens = [
     srcDesktop: "/images/reforma-desktop.jpg",
     srcMobile: "/images/reforma-mobile.jpg",
     alt: "Celebração da Reforma Protestante na MBdA Reconciliação"
+  },
+  {
+    srcDesktop: "/images/agenda-semanal.png",
+    srcMobile: "/images/agenda-semanal.png",
+    alt: "Agenda Semanal da MBdA Reconciliação - Programação de cultos e atividades"
   }
 ];
 

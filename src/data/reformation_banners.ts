@@ -59,5 +59,12 @@ export const reformationBanners: BannerMeta[] = [
       "Uma síntese visual dos fundamentos da Reforma e sua relevância para a fé cristã.",
     category: "Reforma Protestante",
   },
+  {
+    src: "/images/agenda-semanal.png",
+    title: "Agenda Semanal",
+    description:
+      "Confira nossa programação semanal de cultos, estudos bíblicos e atividades da igreja.",
+    category: "Programação",
+  },
   // Removidos conforme solicitação: 5solas-mobile2.jpg, reforma-desktop.jpg, reforma-mobile.jpg
 ];

@@ -9,7 +9,6 @@ import Seterec from "../components/Seterec";
 import Agenda from "../components/Agenda";
 import EspacoFamilia from "../components/EspacoFamilia";
 import Midia from "../components/Midia";
-import SitesSugestivos from "../components/SitesSugestivos";
 import ContatoForm from "../components/ContatoForm";
 import Footer from "../components/Footer";
 import FloatingButtons from "../components/FloatingButtons";
@@ -34,7 +33,6 @@ const Index = () => {
         <Agenda />
         <EspacoFamilia />
         <Midia />
-        <SitesSugestivos />
         <ContatoForm />
       </main>
       <Footer />
