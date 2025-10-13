@@ -1,12 +1,10 @@
 import { useState, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight, ExternalLink, RefreshCw } from "lucide-react";
-import { loadChristianNews, refreshChristianNews, NewsItem } from "../api/newsApi";
-import { reformationBanners } from "../data/reformation_banners";
+import { loadChristianNews, refreshChristianNews, NewsItem, resetNewsLocalState } from "../api/newsApi";
 
-// Tipos de slides: notícias e banners de imagens
-type BannerSlide = { kind: "banner"; data: { src: string; title?: string; description?: string; category?: string; alt?: string; link?: string } };
+// Tipos de slides: somente notícias
 type NewsSlide = { kind: "news"; data: NewsItem };
-type SlideItem = BannerSlide | NewsSlide;
+type SlideItem = NewsSlide;
 
 const NewsSlider: React.FC = () => {
   const PLACEHOLDER_IMG = "/images/boletim-placeholder.svg";
@@ -15,19 +13,6 @@ const NewsSlider: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isRefreshing, setIsRefreshing] = useState(false);
   const [error, setError] = useState<string | null>(null);
-
-  // Banners do Mês da Reforma: metadados com título e descrição
-  const bannerSlides: BannerSlide[] = reformationBanners.map((b) => ({
-    kind: "banner",
-    data: {
-      src: b.src,
-      title: b.title,
-      description: b.description,
-      category: b.category ?? "Reforma Protestante",
-      alt: b.alt ?? b.title,
-      link: b.link,
-    },
-  }));
 
   // Intercalar fontes para evitar blocos de uma mesma origem
   const roundRobinBySource = (items: NewsItem[]): NewsItem[] => {
@@ -57,22 +42,8 @@ const NewsSlider: React.FC = () => {
   const slides: SlideItem[] = (() => {
     const balancedNews = roundRobinBySource(newsItems);
     const newsSlides: SlideItem[] = balancedNews.map((n) => ({ kind: "news", data: n }));
-    if (bannerSlides.length === 0) return newsSlides;
-    // Intercalar 1:1 (uma notícia seguida de um banner), sobrando banners ao final se houver
-    const result: SlideItem[] = [];
-    let bIndex = 0;
-    for (const s of newsSlides) {
-      result.push(s);
-      if (bIndex < bannerSlides.length) {
-        result.push(bannerSlides[bIndex]);
-        bIndex++;
-      }
-    }
-    while (bIndex < bannerSlides.length) {
-      result.push(bannerSlides[bIndex]);
-      bIndex++;
-    }
-    return result;
+    // Exibir somente notícias, sem banners
+    return newsSlides;
   })();
 
   const loadNews = useCallback(async () => {
@@ -160,7 +131,7 @@ const NewsSlider: React.FC = () => {
             <p className="text-red-400 text-lg">{error}</p>
             <button
               onClick={loadNews}
-              className="px-4 py-2 bg-yellow-500 hover:bg-yellow-600 text-black rounded-lg transition-colors duration-300"
+              className="px-4 py-2 bg-yellow-500 hover:bg-yellow-600 text-black rounded-lg transition-colors duração-300"
             >
               Tentar Novamente
             </button>
@@ -191,14 +162,35 @@ const NewsSlider: React.FC = () => {
       
       <div className="relative h-full z-10">
         {/* Refresh Button */}
-        <button
-          onClick={handleRefreshNews}
-          disabled={isRefreshing}
-          className="absolute top-4 right-4 z-20 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-2 transition-all duration-300 group disabled:opacity-50"
-          title="Atualizar notícias"
-        >
-          <RefreshCw className={`w-4 h-4 text-white group-hover:text-yellow-300 ${isRefreshing ? 'animate-spin' : ''}`} />
-        </button>
+        <div className="absolute top-4 right-4 z-20 flex gap-2">
+          <button
+            onClick={handleRefreshNews}
+            disabled={isRefreshing}
+            className="bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-2 transition-all duration-300 group disabled:opacity-50"
+            title="Atualizar notícias"
+          >
+            <RefreshCw className={`w-4 h-4 text-white group-hover:text-yellow-300 ${isRefreshing ? 'animate-spin' : ''}`} />
+          </button>
+          <button
+            onClick={async () => {
+              setIsRefreshing(true);
+              try {
+                const news = await resetNewsLocalState();
+                setNewsItems(news);
+                setCurrentSlide(0);
+                console.log('🧹 Limpeza de cache local + refresh executada');
+              } catch (e) {
+                console.error('Erro ao limpar estado local', e);
+              } finally {
+                setIsRefreshing(false);
+              }
+            }}
+            className="bg-red-500/60 hover:bg-red-500/80 text-white rounded-full px-3 py-1 text-xs font-semibold backdrop-blur-sm"
+            title="Forçar atualização (limpa cache local)"
+          >
+            Forçar Atualização
+          </button>
+        </div>
         {/* Navigation Arrows */}
         <button
           onClick={prevSlide}
@@ -232,100 +224,53 @@ const NewsSlider: React.FC = () => {
               }`}
             >
               <div className="h-full flex items-center">
-                {slide.kind === "news" ? (
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full px-8">
-                    {/* Coluna de Imagem - usa placeholder se faltar ou falhar */}
-                    <div className="flex items-center justify-center">
-                      <div className="relative w-full max-w-md aspect-video rounded-lg overflow-hidden shadow-2xl">
-                        <img
-                          src={slide.data.image_url || PLACEHOLDER_IMG}
-                          alt={slide.data.title || "Reconciliação News"}
-                          className="w-full h-full object-cover"
-                          onError={(e) => {
-                            // Se a imagem falhar, substitui pelo placeholder
-                            e.currentTarget.src = PLACEHOLDER_IMG;
-                          }}
-                        />
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full px-8">
+                  {/* Coluna de Imagem - usa placeholder se faltar ou falhar */}
+                  <div className="flex items-center justify-center">
+                    <div className="relative w-full max-w-md aspect-video rounded-lg overflow-hidden shadow-2xl">
+                      <img
+                        src={slide.data.image_url || PLACEHOLDER_IMG}
+                        alt={slide.data.title || "Reconciliação News"}
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          // Se a imagem falhar, substitui pelo placeholder
+                          e.currentTarget.src = PLACEHOLDER_IMG;
+                        }}
+                      />
 
-                        {/* Categoria movida para fora da imagem para não cobrir textos */}
-                      </div>
-                    </div>
-
-                    {/* Coluna de Conteúdo */}
-                    <div className="flex flex-col justify-center space-y-6">
-                      {slide.data.category && (
-                        <span className="inline-block w-fit bg-yellow-500 text-black text-xs font-semibold rounded-full px-3 py-1">
-                          {slide.data.category}
-                        </span>
-                      )}
-                      <h3 className="text-3xl lg:text-4xl font-bold text-white leading-tight">
-                        {slide.data.title}
-                      </h3>
-
-                      <p className="text-gray-200 text-lg leading-relaxed line-clamp-4">
-                        {slide.data.summary}
-                      </p>
-
-                      <div className="flex items-center justify-between pt-4">
-                        <span className="text-sm text-gray-300 font-medium">{slide.data.source}</span>
-                        <a
-                          href={slide.data.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 bg-yellow-500 hover:bg-yellow-600 text-black px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
-                        >
-                          Ler mais
-                          <ExternalLink className="w-4 h-4" />
-                        </a>
-                      </div>
+                      {/* Categoria movida para fora da imagem para não cobrir textos */}
                     </div>
                   </div>
-                ) : (
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full px-8">
-                    {/* Coluna de Imagem (banner) - ajustar para não cortar: object-contain + fundo preto */}
-                    <div className="flex items-center justify-center">
-                      <div className="relative w-full max-w-md aspect-video rounded-lg overflow-hidden shadow-2xl bg-black">
-                        <img
-                          src={slide.data.src}
-                          alt={slide.data.alt ?? slide.data.title ?? "Banner"}
-                          className="w-full h-full object-contain object-center"
-                        />
-                      </div>
-                    </div>
 
-                    {/* Coluna de Conteúdo (título e texto abaixo, padrão das notícias) */}
-                    <div className="flex flex-col justify-center space-y-6">
-                      {slide.data.category && (
-                        <span className="inline-block w-fit bg-yellow-500 text-black text-xs font-semibold rounded-full px-3 py-1">
-                          {slide.data.category}
-                        </span>
-                      )}
-                      {slide.data.title && (
-                        <h3 className="text-3xl lg:text-4xl font-bold text-white leading-tight">
-                          {slide.data.title}
-                        </h3>
-                      )}
-                      {slide.data.description && (
-                        <p className="text-gray-200 text-lg leading-relaxed">
-                          {slide.data.description}
-                        </p>
-                      )}
+                  {/* Coluna de Conteúdo */}
+                  <div className="flex flex-col justify-center space-y-6">
+                    {slide.data.category && (
+                      <span className="inline-block w-fit bg-yellow-500 text-black text-xs font-semibold rounded-full px-3 py-1">
+                        {slide.data.category}
+                      </span>
+                    )}
+                    <h3 className="text-3xl lg:text-4xl font-bold text-white leading-tight">
+                      {slide.data.title}
+                    </h3>
 
-                      {slide.data.link && (
-                        <div className="pt-2">
-                          <a
-                            href={slide.data.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 bg-yellow-500 hover:bg-yellow-600 text-black px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
-                          >
-                            Saiba mais
-                          </a>
-                        </div>
-                      )}
+                    <p className="text-gray-200 text-lg leading-relaxed line-clamp-4">
+                      {slide.data.summary}
+                    </p>
+
+                    <div className="flex items-center justify-between pt-4">
+                      <span className="text-sm text-gray-300 font-medium">{slide.data.source}</span>
+                      <a
+                        href={slide.data.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 bg-yellow-500 hover:bg-yellow-600 text-black px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
+                      >
+                        Ler mais
+                        <ExternalLink className="w-4 h-4" />
+                      </a>
                     </div>
                   </div>
-                )}
+                </div>
               </div>
             </div>
           ))}
@@ -337,7 +282,7 @@ const NewsSlider: React.FC = () => {
             <button
               type="button"
               aria-label={`Ir para slide ${index + 1}`}
-              key={s.kind === "news" ? `news-${s.data.url}` : `banner-${s.data.src}`}
+              key={`news-${s.data.url}`}
               onClick={() => setCurrentSlide(index)}
               className={`h-2 rounded-full transition-all duration-300 ${
                 index === currentSlide ? "bg-yellow-400 w-6" : "bg-white/40 w-2 hover:bg-white/60"

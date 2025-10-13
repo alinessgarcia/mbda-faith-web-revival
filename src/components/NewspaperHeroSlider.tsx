@@ -1,7 +1,7 @@
 import { useEffect, useState, useCallback, useMemo } from "react";
 import { ChevronLeft, ChevronRight, RefreshCw, ExternalLink } from "lucide-react";
 import { loadChristianNews, refreshChristianNews, NewsItem } from "../api/newsApi";
-import { reformationBanners, BannerMeta } from "../data/reformation_banners";
+
 
 const formatDate = (date: Date) =>
   date.toLocaleDateString("pt-BR", {
@@ -19,9 +19,7 @@ const formatDateShort = (date: Date) =>
     year: "numeric",
   });
 
-type Slide =
-  | { kind: "news"; item: NewsItem }
-  | { kind: "banner"; banner: BannerMeta };
+type Slide = { kind: "news"; item: NewsItem };
 
 const NewspaperHeroSlider: React.FC = () => {
   const PLACEHOLDER_IMG = "/images/boletim-placeholder.svg";
@@ -31,22 +29,11 @@ const NewspaperHeroSlider: React.FC = () => {
   const [refreshing, setRefreshing] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  // Constrói os slides intercalando 1:1 notícias e banners da Reforma Protestante
+  // Constrói os slides com notícias
   const slides: Slide[] = useMemo(() => {
     const newsSlides: Slide[] = items.map((n) => ({ kind: "news", item: n }));
-    const bannerSlides: Slide[] = reformationBanners.map((b) => ({ kind: "banner", banner: b }));
-
-    // Se não houver notícias, mostra apenas banners
-    if (newsSlides.length === 0) return bannerSlides;
-    if (bannerSlides.length === 0) return newsSlides;
-
-    const result: Slide[] = [];
-    const maxLen = Math.max(newsSlides.length, bannerSlides.length);
-    for (let i = 0; i < maxLen; i++) {
-      if (i < newsSlides.length) result.push(newsSlides[i]);
-      if (i < bannerSlides.length) result.push(bannerSlides[i]);
-    }
-    return result;
+    // Exibir somente notícias
+    return newsSlides;
   }, [items]);
 
   const load = useCallback(async () => {
@@ -102,14 +89,7 @@ const NewspaperHeroSlider: React.FC = () => {
   };
 
   const featured = slides[current];
-  const featuredDate = featured?.kind === "news" && featured.item?.date ? new Date(featured.item.date) : null;
-  const dmy = featuredDate
-    ? {
-        day: featuredDate.toLocaleDateString("pt-BR", { day: "2-digit" }),
-        month: featuredDate.toLocaleDateString("pt-BR", { month: "long" }),
-        year: featuredDate.toLocaleDateString("pt-BR", { year: "numeric" }),
-      }
-    : null;
+  // Datas por item removidas: manter apenas a data atual no cabeçalho ao lado de "Reconciliação News"
 
   if (loading) {
     return (
@@ -182,15 +162,11 @@ const NewspaperHeroSlider: React.FC = () => {
                     src={
                       featured?.kind === "news"
                         ? featured.item?.image_url || PLACEHOLDER_IMG
-                        : featured?.kind === "banner"
-                        ? featured.banner.src
                         : PLACEHOLDER_IMG
                     }
                     alt={
                       featured?.kind === "news"
                         ? featured.item?.title || "Reconciliação News"
-                        : featured?.kind === "banner"
-                        ? featured.banner.title
                         : "Reconciliação News"
                     }
                     className="w-full h-full object-contain object-center sepia-img"
@@ -217,7 +193,7 @@ const NewspaperHeroSlider: React.FC = () => {
 
                 {/* Texto */}
                 <div className="p-5">
-                  {featured?.kind === "news" ? (
+                  {featured?.kind === "news" && (
                     <>
                       {featured.item?.category && (
                         <span className="inline-block mb-2 bg-yellow-400 text-black text-xs font-bold px-2 py-1 rounded">
@@ -234,18 +210,7 @@ const NewspaperHeroSlider: React.FC = () => {
                       </p>
                       <div className="mt-4 text-neutral-400 text-sm flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3">
                         <span className="font-medium text-neutral-300">{featured.item.source}</span>
-                        {dmy && (
-                          <>
-                            {/* Mobile: dia, mês, ano organizados em linha mais legível */}
-                            <div className="sm:hidden flex items-baseline gap-2 text-neutral-300">
-                              <span className="text-lg font-semibold">{dmy.day}</span>
-                              <span className="text-sm capitalize">{dmy.month}</span>
-                              <span className="text-sm">{dmy.year}</span>
-                            </div>
-                            {/* Desktop/tablet: formato curto em uma única linha */}
-                            <span className="hidden sm:inline">{`${dmy.day} de ${dmy.month} de ${dmy.year}`}</span>
-                          </>
-                        )}
+                        {/* Datas por notícia removidas */}
                         {/* Botão para navegar à fonte real */}
                         {featured.item.url && (
                           <a
@@ -259,19 +224,6 @@ const NewspaperHeroSlider: React.FC = () => {
                           </a>
                         )}
                       </div>
-                    </>
-                  ) : (
-                    // Banner da Reforma Protestante
-                    <>
-                      <span className="inline-block mb-2 bg-yellow-400 text-black text-xs font-bold px-2 py-1 rounded">
-                        {featured.banner.category}
-                      </span>
-                      <h2 className="text-xl md:text-2xl font-serif text-neutral-100 tracking-wide">
-                        {featured.banner.title}
-                      </h2>
-                      <p className="mt-3 text-neutral-200/90 leading-relaxed font-serif">
-                        {featured.banner.description}
-                      </p>
                     </>
                   )}
                 </div>

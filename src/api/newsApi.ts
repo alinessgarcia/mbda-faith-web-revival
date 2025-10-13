@@ -7,8 +7,10 @@ import { supabase, NewsArticle } from '../config/supabase';
 
 // Limite de tempo para tentar Supabase antes de cair para JSON local
 const SUPABASE_TIMEOUT_MS = 5000;
+// Janela máxima para considerar artigos "recentes" (mantido em 12h)
+const STALE_JSON_MAX_AGE_MS = 48 * 60 * 60 * 1000;
 
-function withTimeout<T>(promise: Promise<T>, ms: number): Promise<T> {
+function withTimeout<T>(promise: Promise<T> | PromiseLike<T>, ms: number): Promise<T> {
   return new Promise((resolve, reject) => {
     const id = setTimeout(() => reject(new Error('SUPABASE_TIMEOUT')), ms);
     promise.then(
@@ -42,14 +44,75 @@ class NewsAPI {
   private readonly MAX_AGE_MS = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
   private readonly MIN_ARTICLES = 6; // Ensure we always show at least this many
 
+  // Persistência local para política de retenção de 12h e blacklist permanente
+  private readonly BLACKLIST_KEY = 'newsBlacklist';
+  private readonly FIRST_SEEN_KEY = 'newsFirstSeen';
+  private readonly RETENTION_MS = 24 * 60 * 60 * 1000; // 24 hours on site
+
+  private getBlacklist(): Set<string> {
+    try {
+      const raw = localStorage.getItem(this.BLACKLIST_KEY);
+      const arr = raw ? JSON.parse(raw) as string[] : [];
+      return new Set(arr);
+    } catch {
+      return new Set<string>();
+    }
+  }
+
+  private saveBlacklist(blacklist: Set<string>) {
+    try {
+      localStorage.setItem(this.BLACKLIST_KEY, JSON.stringify(Array.from(blacklist)));
+    } catch {}
+  }
+
+  private getFirstSeenMap(): Record<string, number> {
+    try {
+      const raw = localStorage.getItem(this.FIRST_SEEN_KEY);
+      return raw ? JSON.parse(raw) as Record<string, number> : {};
+    } catch {
+      return {};
+    }
+  }
+
+  private saveFirstSeenMap(map: Record<string, number>) {
+    try {
+      localStorage.setItem(this.FIRST_SEEN_KEY, JSON.stringify(map));
+    } catch {}
+  }
+
+  private applyRetentionPolicy(items: NewsItem[]): NewsItem[] {
+    const now = Date.now();
+    const blacklist = this.getBlacklist();
+    const firstSeen = this.getFirstSeenMap();
+
+    // Atualiza firstSeen e move para blacklist se passou de 12h no site
+    for (const it of items) {
+      if (!it.url) continue;
+      if (blacklist.has(it.url)) continue;
+      const seenAt = firstSeen[it.url];
+      if (seenAt === undefined) {
+        firstSeen[it.url] = now;
+      } else if (now - seenAt > this.RETENTION_MS) {
+        blacklist.add(it.url);
+      }
+    }
+
+    // Persistir alterações
+    this.saveFirstSeenMap(firstSeen);
+    this.saveBlacklist(blacklist);
+
+    // Filtrar itens em blacklist
+    return items.filter(it => it.url && !blacklist.has(it.url));
+  }
+
   // Allowlist de fontes no frontend para evitar conteúdo irrelevante
   private readonly allowedSources: Set<string> = (() => {
-    const fromEnv = (import.meta as any)?.env?.VITE_NEWS_SOURCES_ALLOWLIST as string | undefined;
-    const list = (fromEnv || '').split(',').map(s => s.trim()).filter(Boolean);
-    if (list.length > 0) return new Set(list);
-    // Lista padrão ampliada para contemplar fontes teológicas/edificantes usadas pelo scraper
+    const allowlistEnv = (import.meta.env.VITE_NEWS_SOURCES_ALLOWLIST || '').trim();
+    if (allowlistEnv) {
+      return new Set(allowlistEnv.split(',').map(s => s.trim()).filter(Boolean));
+    }
     return new Set([
-      // Notícias gerais cristãs
+      // Principais fontes cristãs e reformadas
       'Gospel Prime',
       'Guiame',
       'Portas Abertas',
@@ -58,12 +121,27 @@ class NewsAPI {
       'Folha Gospel',
       'Radio 93 - Giro Cristão',
       'CPAD News',
-      // Conteúdos teológicos e edificantes frequentemente presentes no JSON
+      'Notícias de Israel',
       'Voltemos ao Evangelho',
-      'Bereianos',
+      'Ministério Fiel',
+      'Biblical Archaeology Society',
+      'Teologia Brasileira',
       'Monergismo',
+      'IPB Nacional',
+      'Instituto Mackenzie',
       'Cinco Solas',
-      'Púlpito Cristão'
+      'Cristianismo Hoje',
+      'Patrística News',
+      'Arqueologia Bíblica BR',
+      'Teologia Sistemática',
+      'Editora Fiel',
+      'CPAD Editora',
+      'Livros Teológicos',
+      'IPB Eventos',
+      'Luís Sayão',
+      'Hernandes Dias Lopes',
+      'Augustus Nicodemus',
+      'Revista Galileu'
     ]);
   })();
 
@@ -73,9 +151,41 @@ class NewsAPI {
 
   private isRecent(dateStr?: string): boolean {
     if (!dateStr) return false;
-    const ts = Date.parse(dateStr);
-    if (isNaN(ts)) return false;
+    const ts = this.parseDateFlexible(dateStr);
+    if (ts === null) return false;
     return (Date.now() - ts) <= this.MAX_AGE_MS;
+  }
+
+  // Parser resiliente para datas em pt-BR (ex: "12 de outubro de 2025"),
+  // além de formatos RFC/ISO comuns (Date.parse cobre estes).
+  private parseDateFlexible(dateStr?: string): number | null {
+    if (!dateStr) return null;
+    let ts = Date.parse(dateStr);
+    if (!isNaN(ts)) return ts;
+
+    // Tenta parse pt-BR: "12 de outubro de 2025" ou com hora
+    const months: Record<string, number> = {
+      'janeiro': 0, 'fevereiro': 1, 'março': 2, 'marco': 2, 'abril': 3, 'maio': 4, 'junho': 5,
+      'julho': 6, 'agosto': 7, 'setembro': 8, 'outubro': 9, 'novembro': 10, 'dezembro': 11
+    };
+    const m = dateStr
+      .toLowerCase()
+      .replace(/\s+/g, ' ')
+      .match(/(\d{1,2})\s+de\s+([a-zçãáéíóú]+)\s+de\s+(\d{4})(?:\s+(\d{1,2}):(\d{2})(?::(\d{2}))?)?/);
+    if (m) {
+      const day = parseInt(m[1], 10);
+      const monthName = m[2];
+      const year = parseInt(m[3], 10);
+      const hour = m[4] ? parseInt(m[4], 10) : 0;
+      const minute = m[5] ? parseInt(m[5], 10) : 0;
+      const second = m[6] ? parseInt(m[6], 10) : 0;
+      const monthIndex = months[monthName] ?? months[monthName.normalize('NFD').replace(/[^a-z]/g, '')] ?? -1;
+      if (monthIndex >= 0) {
+        const d = new Date(year, monthIndex, day, hour, minute, second);
+        return d.getTime();
+      }
+    }
+    return null;
   }
 
   private mergeWithFallback(items: NewsItem[], minCount: number): NewsItem[] {
@@ -109,9 +219,10 @@ class NewsAPI {
           .from('news_articles')
           .select('*')
           .order('created_at', { ascending: false })
-          .limit(20);
+          .limit(20)
+          .then((res: any) => res);
 
-        let supabaseResp;
+        let supabaseResp: any;
         try {
           supabaseResp = await withTimeout(supabaseQuery, SUPABASE_TIMEOUT_MS);
         } catch (e) {
@@ -119,7 +230,7 @@ class NewsAPI {
           return this.loadFromLocalJSON();
         }
 
-        const { data: supabaseNews, error } = supabaseResp as any;
+        const { data: supabaseNews, error } = supabaseResp || {};
 
         if (!error && supabaseNews && supabaseNews.length > 0) {
           // Filter by recency (use created_at when available, otherwise date)
@@ -141,6 +252,9 @@ class NewsAPI {
 
           // Filtrar por allowlist
           newsItems = this.filterByAllowedSources(newsItems);
+
+          // Aplicar política de retenção (12h no site + blacklist permanente)
+          newsItems = this.applyRetentionPolicy(newsItems);
 
           // Se o dataset vindo do Supabase estiver pobre (poucos itens ou sem imagens),
           // preferimos o JSON local recém gerado pelo scraper para garantir boa experiência visual.
@@ -189,7 +303,9 @@ class NewsAPI {
       console.log('📰 Loading from local JSON file');
       
       // Use JSON em /public/data para funcionar em produção e desenvolvimento
-      const response = await fetch('/data/christian_news.json');
+      // Evita cache CDN/browser: muda o query param a cada minuto e força no-store
+      const cacheBust = Math.floor(Date.now() / 60000); // muda a cada 60s
+      const response = await fetch(`/data/christian_news.json?cb=${cacheBust}`, { cache: 'no-store' as RequestCache });
       
       if (!response.ok) {
         console.warn('Failed to load local news data, using hardcoded fallback');
@@ -200,7 +316,7 @@ class NewsAPI {
 
       // If the JSON itself is older than 48h, consider it stale and use fallback
       const lastUpdatedTs = Date.parse(newsData.last_updated);
-      const isJsonStale = isNaN(lastUpdatedTs) ? true : (Date.now() - lastUpdatedTs) > this.MAX_AGE_MS;
+      const isJsonStale = isNaN(lastUpdatedTs) ? true : (Date.now() - lastUpdatedTs) > STALE_JSON_MAX_AGE_MS;
       if (isJsonStale) {
         console.warn('Local JSON is stale (>48h), using themed fallback news');
         const fallbackItems = this.getFallbackNews();
@@ -209,13 +325,17 @@ class NewsAPI {
         return fallbackItems;
       }
       
-      // Filter articles older than 48h using article.date (fallback to last_updated if missing)
+      // Filter articles by their own date when available; only fallback to last_updated if the article has no date
       let filtered = (newsData.articles || []).filter(a => {
-        return this.isRecent(a.date || newsData.last_updated);
+        if (a.date) return this.isRecent(a.date);
+        return this.isRecent(newsData.last_updated);
       });
 
       // Filtrar por allowlist
       filtered = this.filterByAllowedSources(filtered);
+
+      // Aplicar política de retenção (12h no site + blacklist permanente)
+      filtered = this.applyRetentionPolicy(filtered);
 
       // Ensure minimum number of articles using themed fallback
       filtered = this.mergeWithFallback(filtered, this.MIN_ARTICLES);
@@ -310,3 +430,11 @@ export const newsAPI = new NewsAPI();
 export const loadChristianNews = () => newsAPI.loadNews();
 export const refreshChristianNews = () => newsAPI.refreshNews();
 export const getNewsCacheInfo = () => newsAPI.getCacheInfo();
+// Função auxiliar para limpar estado local e forçar atualização
+export const resetNewsLocalState = () => {
+  try {
+    localStorage.removeItem('newsBlacklist');
+    localStorage.removeItem('newsFirstSeen');
+  } catch {}
+  return newsAPI.refreshNews();
+};

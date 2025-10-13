@@ -48,11 +48,11 @@ class ChristianNewsScraper:
         })
         
         # Configurações ajustáveis via ambiente
-        # Quantas horas considerar como "recentes" (padrão 48h) e quantos itens exibir (padrão 30)
+        # Quantas horas considerar como "recentes" (padrão 24h) e quantos itens exibir (padrão 30)
         try:
-            self.max_age_hours = int(os.getenv('NEWS_MAX_AGE_HOURS', '48'))
+            self.max_age_hours = int(os.getenv('NEWS_MAX_AGE_HOURS', '24'))
         except Exception:
-            self.max_age_hours = 48
+            self.max_age_hours = 24
         try:
             self.max_items = int(os.getenv('NEWS_MAX_ITEMS', '30'))
         except Exception:
@@ -72,7 +72,8 @@ class ChristianNewsScraper:
         
         # Initialize Supabase client
         self.supabase_url = os.getenv('VITE_SUPABASE_URL')
-        self.supabase_key = os.getenv('VITE_SUPABASE_ANON_KEY')
+        # Prefer service role key for write operations; fallback to anon key for read-only environments
+        self.supabase_key = os.getenv('SUPABASE_SERVICE_ROLE_KEY') or os.getenv('VITE_SUPABASE_ANON_KEY')
         
         if not self.supabase_url or not self.supabase_key:
             logger.warning("Supabase credentials not found. Will save to JSON only.")
@@ -140,6 +141,11 @@ class ChristianNewsScraper:
                 'rss': 'https://radio93.com.br/categoria/giro-cristao/feed/',
                 'categories': ['noticias-cristas', 'igreja', 'evangelicos', 'reconciliacao']
             },
+            'cpad_news': {
+                'name': 'CPAD News',
+                'url': 'https://www.cpadnews.com.br',
+                'categories': ['educacao-crista', 'teologia', 'igreja']
+            },
             'bbc_portuguese': {
                 'name': 'BBC News Brasil',
                 'url': 'https://www.bbc.com/portuguese',
@@ -199,8 +205,9 @@ class ChristianNewsScraper:
         dt = None
         if 'date' in article:
             dt = self.parse_article_date(article.get('date'))
-        if dt is None:
-            return True
+        # Exigir data parsável e limitar ao ano de 2025
+        if dt is None or dt.year != 2025:
+            return False
         age = datetime.utcnow() - dt
         return age <= timedelta(hours=max_age_hours)
 
@@ -1168,44 +1175,97 @@ class ChristianNewsScraper:
         return news_list
 
     def scrape_cpad_news(self) -> List[Dict]:
-        """Scrape news from CPAD News"""
+        """Scrape news from CPAD News, extracting title, link, summary and image"""
         news_list = []
         try:
-            # Scrape main news page
-            response = self.session.get(f"{self.sources['cpad_news']['url']}/noticias", timeout=10)
+            base_url = self.sources['cpad_news']['url']
+            list_url = urljoin(base_url, '/noticias')
+            response = self.session.get(list_url, timeout=15)
             if response.status_code == 200:
                 soup = BeautifulSoup(response.content, 'html.parser')
-                
-                # Look for news articles
-                articles = soup.find_all(['article', 'div'], class_=re.compile(r'(news|article|post)', re.I))[:5]
-                
-                for article in articles:
+
+                candidate_blocks = []
+                selectors = [
+                    ('article', re.compile(r'(news|post|article|card|entry|item|list|grid)', re.I)),
+                    ('div', re.compile(r'(news|post|article|card|entry|listing|item|noticia)', re.I)),
+                    ('li', re.compile(r'(news|post|article|item|noticia)', re.I)),
+                ]
+                for tag, cls_re in selectors:
+                    blocks = soup.find_all(tag, class_=cls_re)
+                    if blocks:
+                        candidate_blocks = blocks
+                        break
+                if not candidate_blocks:
+                    container = soup.find(['section', 'div'], class_=re.compile(r'(noticia|noticias|news|posts|lista)', re.I)) or soup
+                    candidate_blocks = container.find_all('a', href=True) if container else []
+
+                count = 0
+                for article in candidate_blocks:
+                    if count >= 10:
+                        break
                     try:
-                        title_elem = article.find(['h1', 'h2', 'h3', 'h4'])
-                        link_elem = article.find('a', href=True)
-                        summary_elem = article.find(['p', 'div'], class_=re.compile(r'(summary|excerpt)', re.I))
-                        
-                        if title_elem and link_elem:
-                            title = self.clean_text(title_elem.get_text())
-                            link = urljoin(self.sources['cpad_news']['url'], link_elem['href'])
-                            summary = self.clean_text(summary_elem.get_text() if summary_elem else "")
-                            
-                            if title:
-                                news_list.append({
-                                    'title': title,
-                                    'summary': summary[:200] + "..." if len(summary) > 200 else summary,
-                                    'url': link,
-                                    'source': 'CPAD News',
-                                    'date': datetime.now().strftime('%a, %d %b %Y %H:%M:%S GMT'),
-                                    'category': 'Educação Cristã'
-                                })
+                        title_elem = article.find(['h1', 'h2', 'h3', 'h4']) or article.find('a', href=True)
+                        link_elem = article.find('a', href=True) or (title_elem if title_elem and getattr(title_elem, 'name', '') == 'a' else None)
+                        if not link_elem:
+                            continue
+
+                        raw_title = (title_elem.get_text() if title_elem else (link_elem.get('title') or link_elem.get_text()))
+                        title = self.clean_text(raw_title)
+                        link = urljoin(base_url, link_elem['href'])
+                        if not title or len(title) < 10:
+                            continue
+
+                        summary_elem = article.find(['p', 'div'], class_=re.compile(r'(summary|excerpt|lead|deck|resume|description)', re.I)) or article.find('p')
+                        summary = self.clean_text(summary_elem.get_text() if summary_elem else '')
+
+                        pub_date = datetime.now().strftime('%a, %d %b %Y %H:%M:%S GMT')
+                        if not summary or len(summary) < 30:
+                            try:
+                                a_resp = self.session.get(link, timeout=15)
+                                if a_resp.status_code == 200:
+                                    a_soup = BeautifulSoup(a_resp.content, 'html.parser')
+                                    meta_desc = a_soup.find('meta', attrs={'name': 'description'})
+                                    if meta_desc and meta_desc.get('content'):
+                                        summary = self.clean_text(meta_desc.get('content'))
+                                    time_meta = a_soup.find('meta', attrs={'property': 'article:published_time'}) or a_soup.find('time')
+                                    if time_meta:
+                                        pub_date = time_meta.get('datetime') or self.clean_text(time_meta.get_text()) or pub_date
+                            except Exception as e:
+                                logger.debug(f"Fallback to meta description failed for CPAD article: {e}")
+
+                        image_url = self.extract_image_from_content(link)
+
+                        news_list.append({
+                            'title': title,
+                            'summary': summary[:200] + '...' if len(summary) > 200 else summary,
+                            'url': link,
+                            'source': 'CPAD News',
+                            'date': pub_date,
+                            'category': 'Educação Cristã',
+                            'image_url': image_url
+                        })
+                        count += 1
                     except Exception as e:
                         logger.warning(f"Error parsing CPAD News item: {e}")
                         continue
-                        
+            
+            # Fallback: usar feed RSS se página de listagem não retornar artigos
+            if len(news_list) == 0:
+                try:
+                    rss_items = self.scrape_generic_rss('CPAD News', urljoin(base_url, '/feed/'), category='Educação Cristã', limit=8)
+                    news_list.extend(rss_items)
+                except Exception as e:
+                    logger.debug(f"Fallback RSS CPAD News falhou: {e}")
+            # Fallback adicional: tentar /noticias/feed/
+            if len(news_list) == 0:
+                try:
+                    rss_items2 = self.scrape_generic_rss('CPAD News', urljoin(base_url, '/noticias/feed/'), category='Educação Cristã', limit=8)
+                    news_list.extend(rss_items2)
+                except Exception as e:
+                    logger.debug(f"Fallback adicional RSS /noticias/feed/ CPAD News falhou: {e}")
         except Exception as e:
             logger.error(f"Error scraping CPAD News: {e}")
-            
+        
         return news_list
 
     def scrape_bbc_portuguese(self) -> List[Dict]:
@@ -2012,116 +2072,34 @@ class ChristianNewsScraper:
         return news_list
 
     def scrape_bereianos(self) -> List[Dict]:
-        """Scrape Bereianos - Apologética Cristã"""
-        news_list = []
-        try:
-            url = "https://bereianos.blogspot.com/"
-            response = self.session.get(url, timeout=10)
-            response.raise_for_status()
-            
-            soup = BeautifulSoup(response.content, 'html.parser')
-            
-            # Find blog posts
-            articles = soup.find_all(['article', 'div'], class_=['post', 'blog-post'])[:5]
-            
-            for article in articles:
-                try:
-                    title_elem = article.find(['h1', 'h2', 'h3'], class_=['post-title', 'entry-title'])
-                    if not title_elem:
-                        title_elem = article.find(['h1', 'h2', 'h3'])
-                    
-                    link_elem = title_elem.find('a') if title_elem else None
-                    if not link_elem:
-                        link_elem = article.find('a')
-                    
-                    if title_elem and link_elem:
-                        title = self.clean_text(title_elem.get_text())
-                        link = link_elem.get('href')
-                        
-                        # Extract summary
-                        summary_elem = article.find(['div', 'p'], class_=['post-body', 'entry-content'])
-                        if not summary_elem:
-                            summary_elem = article.find('p')
-                        summary = self.clean_text(summary_elem.get_text()[:300]) if summary_elem else title[:200] + "..."
-                        
-                        # Extract image
-                        img_elem = article.find('img')
-                        image_url = img_elem.get('src') if img_elem else None
-                        
-                        news_list.append({
-                            'title': title,
-                            'summary': summary,
-                            'url': link,
-                            'source': 'Bereianos',
-                            'date': datetime.now().strftime('%a, %d %b %Y %H:%M:%S GMT'),
-                            'category': 'Apologética',
-                            'image_url': image_url
-                        })
-                        
-                except Exception as e:
-                    logger.error(f"Error parsing Bereianos article: {e}")
-                    continue
-                    
-        except Exception as e:
-            logger.error(f"Error scraping Bereianos: {e}")
-            
-        return news_list
+        """Deprecated: Bereianos removido da lista de fontes"""
+        return []
 
     def scrape_cinco_solas(self) -> List[Dict]:
-        """Scrape Cinco Solas - Teologia Reformada"""
-        news_list = []
+        """Scrape Cinco Solas - Teologia Reformada via RSS para preservar a data correta dos artigos"""
         try:
-            url = "https://www.cincosolas.com.br/"
-            response = self.session.get(url, timeout=10)
-            response.raise_for_status()
-            
-            soup = BeautifulSoup(response.content, 'html.parser')
-            
-            # Find articles
-            articles = soup.find_all(['article', 'div'], class_=['post', 'entry'])[:5]
-            
-            for article in articles:
+            rss_candidates = [
+                "https://www.cincosolas.com.br/feed/",
+                "https://www.cincosolas.com.br/feeds/posts/default?alt=rss",
+                "https://cincosolas.com.br/feed/",
+                "https://cincosolas.com.br/feeds/posts/default?alt=rss",
+            ]
+            for rss_url in rss_candidates:
                 try:
-                    title_elem = article.find(['h1', 'h2', 'h3'], class_=['title', 'entry-title'])
-                    if not title_elem:
-                        title_elem = article.find(['h1', 'h2', 'h3'])
-                    
-                    link_elem = title_elem.find('a') if title_elem else None
-                    if not link_elem:
-                        link_elem = article.find('a')
-                    
-                    if title_elem and link_elem:
-                        title = self.clean_text(title_elem.get_text())
-                        link = urljoin(url, link_elem.get('href'))
-                        
-                        # Extract summary
-                        summary_elem = article.find(['p', 'div'], class_=['excerpt', 'summary'])
-                        if not summary_elem:
-                            summary_elem = article.find('p')
-                        summary = self.clean_text(summary_elem.get_text()) if summary_elem else title[:200] + "..."
-                        
-                        # Extract image
-                        img_elem = article.find('img')
-                        image_url = urljoin(url, img_elem.get('src')) if img_elem else None
-                        
-                        news_list.append({
-                            'title': title,
-                            'summary': summary,
-                            'url': link,
-                            'source': 'Cinco Solas',
-                            'date': datetime.now().strftime('%a, %d %b %Y %H:%M:%S GMT'),
-                            'category': 'Teologia Reformada',
-                            'image_url': image_url
-                        })
-                        
-                except Exception as e:
-                    logger.error(f"Error parsing Cinco Solas article: {e}")
-                    continue
-                    
+                    items = self.scrape_generic_rss(
+                        source_name="Cinco Solas",
+                        rss_url=rss_url,
+                        category="Teologia Reformada",
+                        limit=10,
+                    )
+                    if items:
+                        return items
+                except Exception as inner:
+                    logger.debug(f"Cinco Solas RSS fallback failed for {rss_url}: {inner}")
+            return []
         except Exception as e:
             logger.error(f"Error scraping Cinco Solas: {e}")
-            
-        return news_list
+            return []
 
     def scrape_patristica(self) -> List[Dict]:
         """Scrape conteúdo sobre Patrística"""
@@ -2513,7 +2491,6 @@ class ChristianNewsScraper:
                 'Monergismo',
                 'IPB Nacional',
                 'Instituto Mackenzie',
-                'Bereianos',
                 'Cinco Solas',
                 'Patrística News',
                 'Arqueologia Bíblica BR',
@@ -2525,7 +2502,8 @@ class ChristianNewsScraper:
                 'Luís Sayão',
                 'Hernandes Dias Lopes',
                 'Augustus Nicodemus',
-                'Revista Galileu'
+                'Revista Galileu',
+                'Cristianismo Hoje'
             }
 
         logger.info(f"Allowed sources: {sorted(list(allowed_sources))}")
@@ -2548,7 +2526,6 @@ class ChristianNewsScraper:
             ('Monergismo', self.scrape_monergismo),
             ('IPB Nacional', self.scrape_ipb_nacional),
             ('Instituto Mackenzie', self.scrape_instituto_mackenzie),
-            ('Bereianos', self.scrape_bereianos),
             ('Cinco Solas', self.scrape_cinco_solas),
             ('Patrística News', self.scrape_patristica),
             ('Arqueologia Bíblica BR', self.scrape_arqueologia_biblica_br),
