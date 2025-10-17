@@ -1,10 +1,8 @@
 {
-  "last_updated": "2025-10-16T22:22:36.657670",
-  "total_articles": 30,
+  "last_updated": "2025-10-17T10:29:19.530368",
+  "total_articles": 19,
   "sources": [
-    "CPAD News",
     "Cafetorah - Notícias de Israel",
-    "Folha Gospel",
     "Monergismo",
     "Notícias de Israel",
     "Portas Abertas",
@@ -15,81 +13,63 @@
     {
       "title": "Arqueólogos encontram antigo poço cheio de ossos de soldados romanos; fotos",
       "summary": "Enterro coletivo descoberto na Croácia revela os corpos de sete homens, provavelmente vítimas da Batalha de Mursa em 260 d.C., um episódio brutal da Crise do Terceiro Século do Império Romano",
-      "url": "https://revistagalileu.globo.com/ciencia/arqueologia/noticia/2025/10/arqueologos-encontram-antigo-poco-cheio-de-ossos-de-soldados-romanos-fotos.ghtml#GALILEU-POST-TOP-24H-item,top,d0554610-7a80-431c-9a0d-19235854c9a6",
+      "url": "https://revistagalileu.globo.com/ciencia/arqueologia/noticia/2025/10/arqueologos-encontram-antigo-poco-cheio-de-ossos-de-soldados-romanos-fotos.ghtml#GALILEU-POST-TOP-24H-item,top,cdd0a75e-9de1-44dd-8663-b906159834e3",
       "source": "Revista Galileu",
-      "date": "Thu, 16 Oct 2025 22:21:55 GMT",
+      "date": "Fri, 17 Oct 2025 10:28:43 GMT",
       "category": "Arqueologia e História",
       "image_url": "https://s2-galileu.glbimg.com/AfAQ94nMfulTsac_0DdvNky2aMs=/1200x/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_fde5cd494fb04473a83fa5fd57ad4542/internal_photos/bs/2025/H/K/eCaVBURI6A3fAHKO0AWg/journal.pone-.0333440.g002-952x1280-1-.jpg"
     },
     {
+      "title": "Maior ilha do mundo está diminuindo de tamanho, indica estudo",
+      "summary": "Modelo computacional conseguiu simular os movimentos geológicos que ocorreram na Groenlândia nos últimos 26.000 anos. E notou que certas áreas ficaram menores",
+      "url": "https://revistagalileu.globo.com/ciencia/meio-ambiente/noticia/2025/10/maior-ilha-do-mundo-esta-diminuindo-de-tamanho-indica-estudo.ghtml#GALILEU-POST-TOP-24H-item,top,cdd0a75e-9de1-44dd-8663-b906159834e3",
+      "source": "Revista Galileu",
+      "date": "Fri, 17 Oct 2025 10:28:43 GMT",
+      "category": "Ciência e Tecnologia",
+      "image_url": "https://s2-galileu.glbimg.com/NUjQWFtNdxl98q7sd9aoq-GP3Go=/1200x/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_fde5cd494fb04473a83fa5fd57ad4542/internal_photos/bs/2025/9/A/ooDZVYTCCDg9UiwbdyZg/pexels-mikhail-nilov-8318506.jpg"
+    },
+    {
+      "title": "Exercício físico pode treinar sistema imune, diz estudo brasileiro",
+      "summary": "Estudo mostra que células de defesa de idosos com histórico de treino de endurance são mais eficientes contra inflamações",
+      "url": "https://revistagalileu.globo.com/saude/noticia/2025/10/exercicio-fisico-pode-treinar-sistema-imune-diz-estudo-brasileiro.ghtml#GALILEU-POST-TOP-24H-item,top,cdd0a75e-9de1-44dd-8663-b906159834e3",
+      "source": "Revista Galileu",
+      "date": "Fri, 17 Oct 2025 10:28:43 GMT",
+      "category": "Ciência e Tecnologia",
+      "image_url": "https://s2-galileu.glbimg.com/339vnvLI9oDVgOttTS9LmlAQnxs=/1200x/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_fde5cd494fb04473a83fa5fd57ad4542/internal_photos/bs/2025/O/9/Jy8qmMTfiufbn5SXYsAw/terceira-idadeesportesfotomarcossantos008.jpg"
+    },
+    {
       "title": "Planeta vai ter 57 dias superquentes por ano até o fim do século, estima estudo",
       "summary": "Relatório feito por consórcio internacional de cientistas climáticos mostra que, mesmo após dez anos de tentativas para cumprir as metas do Acordo de Paris, o mundo ainda caminha em direção a um cenário preocupante",
-      "url": "https://revistagalileu.globo.com/ciencia/meio-ambiente/noticia/2025/10/planeta-vai-ter-57-dias-superquentes-por-ano-ate-o-fim-do-seculo-estima-estudo.ghtml#GALILEU-POST-TOP-24H-item,top,d0554610-7a80-431c-9a0d-19235854c9a6",
+      "url": "https://revistagalileu.globo.com/ciencia/meio-ambiente/noticia/2025/10/planeta-vai-ter-57-dias-superquentes-por-ano-ate-o-fim-do-seculo-estima-estudo.ghtml#GALILEU-POST-TOP-24H-item,top,cdd0a75e-9de1-44dd-8663-b906159834e3",
       "source": "Revista Galileu",
-      "date": "Thu, 16 Oct 2025 22:21:55 GMT",
+      "date": "Fri, 17 Oct 2025 10:28:43 GMT",
       "category": "Astronomia",
       "image_url": "https://s2-galileu.glbimg.com/tL2Hwh_4bLNHcjikChTuCnGYG2E=/1200x/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_fde5cd494fb04473a83fa5fd57ad4542/internal_photos/bs/2025/S/7/ySUt1PQtmRvAk6AJ0Weg/d6a3932.jpg"
     },
     {
-      "title": "\"Água pesada\" é encontrada em disco de formação de planetas pela 1ª vez",
-      "summary": "Evidências encontradas no disco protoplanetário da estrela V883 Ori revelam forma de água herdada dos estágios mais antigos e frios da formação estelar",
-      "url": "https://revistagalileu.globo.com/ciencia/espaco/noticia/2025/10/agua-pesada-e-encontrada-em-disco-de-formacao-de-planetas-pela-1a-vez.ghtml#GALILEU-POST-TOP-24H-item,top,d0554610-7a80-431c-9a0d-19235854c9a6",
-      "source": "Revista Galileu",
-      "date": "Thu, 16 Oct 2025 22:21:55 GMT",
-      "category": "Astronomia",
-      "image_url": "https://s2-galileu.glbimg.com/kFplQm_FPcxUed6tvDffOCNYdOA=/1200x/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_fde5cd494fb04473a83fa5fd57ad4542/internal_photos/bs/2025/H/M/3hLSAHTAuofrBpdZV4Jw/image1.png"
-    },
-    {
       "title": "Pelo menos 54 mil crianças estão com desnutrição em Gaza, estima estudo",
-      "summary": "Pesquisa com cerca de 220 mil crianças em idade pré-escolar mostra aumento acentuado dos índices de desnutrição entre 2024 e 2024, após severas restrições à ajuda humanitária",
-      "url": "https://revistagalileu.globo.com/sociedade/noticia/2025/10/pelo-menos-54-mil-criancas-estao-com-desnutricao-em-gaza-estima-estudo.ghtml#GALILEU-POST-TOP-24H-item,top,d0554610-7a80-431c-9a0d-19235854c9a6",
+      "summary": "Pesquisa com cerca de 220 mil crianças em idade pré-escolar mostra aumento acentuado dos índices de desnutrição entre 2024 e 2025, após severas restrições à ajuda humanitária",
+      "url": "https://revistagalileu.globo.com/sociedade/noticia/2025/10/pelo-menos-54-mil-criancas-estao-com-desnutricao-em-gaza-estima-estudo.ghtml#GALILEU-POST-TOP-24H-item,top,cdd0a75e-9de1-44dd-8663-b906159834e3",
       "source": "Revista Galileu",
-      "date": "Thu, 16 Oct 2025 22:21:55 GMT",
+      "date": "Fri, 17 Oct 2025 10:28:43 GMT",
       "category": "Ciência e Tecnologia",
       "image_url": "https://s2-galileu.glbimg.com/zQxwQvrkFnDBmS2Wgi02BjT_H38=/1200x/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_fde5cd494fb04473a83fa5fd57ad4542/internal_photos/bs/2025/1/i/A6rJtdSHuVJw0H4z1sDw/image1.png"
-    },
-    {
-      "title": "Satélite revela armadilha em forma de funil usada por povos antigos da América do Sul",
-      "summary": "Sistema chegava a 150 metros de comprimento e foi feito para encurralar vicunhas, espécie prima das lhamas muito comum em países andinos",
-      "url": "https://revistagalileu.globo.com/ciencia/arqueologia/noticia/2025/10/satelite-revela-armadilha-em-forma-de-funil-usada-por-povos-antigos-da-america-do-sul.ghtml#GALILEU-POST-TOP-24H-item,top,d0554610-7a80-431c-9a0d-19235854c9a6",
-      "source": "Revista Galileu",
-      "date": "Thu, 16 Oct 2025 22:21:55 GMT",
-      "category": "Arqueologia e História",
-      "image_url": "https://s2-galileu.glbimg.com/EZ0MnKRAXwEVGHiKIAETBtbCjfA=/1200x/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_fde5cd494fb04473a83fa5fd57ad4542/internal_photos/bs/2025/4/c/9Pqoi0S1OPd1WRs52sZA/satellite-images-revea-3.jpg"
     },
     {
       "title": "Lembrando Voddie Baucham",
       "summary": "Em 2015 tive uma longa conversa com Voddie Baucham1, em um cruzeiro, na costa de Cuba. Sério. Lembrando Voddie Baucham",
       "url": "https://monergismo.com/lembrando-voddie-baucham/",
       "source": "Monergismo",
-      "date": "Thu, 16 Oct 2025 22:21:12 GMT",
+      "date": "Fri, 17 Oct 2025 10:28:04 GMT",
       "category": "Teologia Reformada",
       "image_url": "https://i0.wp.com/monergismo.com/wp-content/uploads/2025/09/071755000_1758859315-G1uY03JXwAAcxFU.webp?resize=800%2C450&ssl=1"
-    },
-    {
-      "title": "Por que afinal existe um universo? Por que existe algo em vez de nada?",
-      "summary": "O universo é fruto de um ato livre, gracioso e amoroso do SENHOR Deus, não de forças externas, eventos cíclicos ou flutuações suspeitas.",
-      "url": "https://voltemosaoevangelho.com/blog/2025/10/por-que-afinal-existe-um-universo-por-que-existe-algo-em-vez-de-nada/",
-      "source": "Voltemos ao Evangelho",
-      "date": "Thu, 16 Oct 2025 22:20:59 GMT",
-      "category": "Teologia Reformada",
-      "image_url": "https://i0.wp.com/voltemosaoevangelho.com/blog/wp-content/uploads/2025/10/djnw.png?fit=837%2C470&ssl=1"
-    },
-    {
-      "title": "Sou cristão, mas gosto mais dos não crentes",
-      "summary": "John Piper faz dois questionamentos às pessoas que dizem preferir a amizade e companhia de não cristãos, isso pode significar algo bem grave.",
-      "url": "https://voltemosaoevangelho.com/blog/2025/10/sou-cristao-mas-gosto-mais-dos-nao-crentes/",
-      "source": "Voltemos ao Evangelho",
-      "date": "Thu, 16 Oct 2025 22:20:59 GMT",
-      "category": "Teologia Reformada",
-      "image_url": "https://voltemosaoevangelho.com/blog/wp-content/uploads/2025/10/kfemp.png"
     },
     {
       "title": "Quando nos sentimos em uma profunda escuridão espiritual",
       "summary": "Em um período de profunda escuridão espiritual, a alegria em Deus pode parecer um lindo sonho que tivemos. Por mais que tentemos, parece que não conseguimos recapturar o sentimento.",
       "url": "https://voltemosaoevangelho.com/blog/2025/10/quando-nos-sentimos-em-uma-profunda-escuridao-espiritual/",
       "source": "Voltemos ao Evangelho",
-      "date": "Thu, 16 Oct 2025 22:20:59 GMT",
+      "date": "Fri, 17 Oct 2025 10:27:50 GMT",
       "category": "Teologia Reformada",
       "image_url": "https://i0.wp.com/voltemosaoevangelho.com/blog/wp-content/uploads/2025/10/glkmhl.png?fit=837%2C470&ssl=1"
     },
@@ -98,7 +78,7 @@
       "summary": "Neste episódio, John Piper Responde sobre esta provável tensão entre a onisciência de Deus e os testes e provações que ele nos sujeita para conhecer o que há em nossos corações.",
       "url": "https://voltemosaoevangelho.com/blog/2025/10/se-deus-conhece-nossos-coracoes-por-que-ele-nos-prova/",
       "source": "Voltemos ao Evangelho",
-      "date": "Thu, 16 Oct 2025 22:20:59 GMT",
+      "date": "Fri, 17 Oct 2025 10:27:50 GMT",
       "category": "Teologia Reformada",
       "image_url": "https://i0.wp.com/voltemosaoevangelho.com/blog/wp-content/uploads/2025/10/vfegi.png?fit=837%2C470&ssl=1"
     },
@@ -107,7 +87,7 @@
       "summary": "A Bíblia revela Deus como Senhor pessoal e infinito. Sua revelação confronta a idolatria da autonomia e conduz o homem da especulação à adoração",
       "url": "https://voltemosaoevangelho.com/blog/2025/10/o-valor-metafisico-da-revelacao-biblica/",
       "source": "Voltemos ao Evangelho",
-      "date": "Thu, 16 Oct 2025 22:20:59 GMT",
+      "date": "Fri, 17 Oct 2025 10:27:50 GMT",
       "category": "Teologia Reformada",
       "image_url": "https://i0.wp.com/voltemosaoevangelho.com/blog/wp-content/uploads/2025/10/ldmg.png?fit=837%2C470&ssl=1"
     },
@@ -116,16 +96,34 @@
       "summary": "Mesmo as leis difíceis do Antigo Testamento revelam um Deus bom, que protege, restaura e cumpre sua justiça em Cristo. A Bíblia culpa as mulheres pelo estupro?",
       "url": "https://voltemosaoevangelho.com/blog/2025/10/a-biblia-culpa-as-mulheres-pelo-estupro/",
       "source": "Voltemos ao Evangelho",
-      "date": "Thu, 16 Oct 2025 22:20:58 GMT",
+      "date": "Fri, 17 Oct 2025 10:27:49 GMT",
       "category": "Teologia Reformada",
       "image_url": "https://i0.wp.com/voltemosaoevangelho.com/blog/wp-content/uploads/2025/10/dohnj.png?fit=837%2C470&ssl=1"
+    },
+    {
+      "title": "Por que afinal existe um universo? Por que existe algo em vez de nada?",
+      "summary": "O universo é fruto de um ato livre, gracioso e amoroso do SENHOR Deus, não de forças externas, eventos cíclicos ou flutuações suspeitas.",
+      "url": "https://voltemosaoevangelho.com/blog/2025/10/por-que-afinal-existe-um-universo-por-que-existe-algo-em-vez-de-nada/",
+      "source": "Voltemos ao Evangelho",
+      "date": "Fri, 17 Oct 2025 10:27:49 GMT",
+      "category": "Teologia Reformada",
+      "image_url": "https://i0.wp.com/voltemosaoevangelho.com/blog/wp-content/uploads/2025/10/djnw.png?fit=837%2C470&ssl=1"
+    },
+    {
+      "title": "Sou cristão, mas gosto mais dos não crentes",
+      "summary": "John Piper faz dois questionamentos às pessoas que dizem preferir a amizade e companhia de não cristãos, isso pode significar algo bem grave.",
+      "url": "https://voltemosaoevangelho.com/blog/2025/10/sou-cristao-mas-gosto-mais-dos-nao-crentes/",
+      "source": "Voltemos ao Evangelho",
+      "date": "Fri, 17 Oct 2025 10:27:49 GMT",
+      "category": "Teologia Reformada",
+      "image_url": "https://voltemosaoevangelho.com/blog/wp-content/uploads/2025/10/kfemp.png"
     },
     {
       "title": "Desmantelando a estratégia islã-nazista",
       "summary": "Notícias de IsraelDesmantelando a estratégia islã-nazista Notícias de IsraelGaza: exploração sexual em meio a guerra Notícias de IsraelÀ Beira da Tempestade: O mundo caminha para um conflito global No...",
       "url": "https://cafetorah.com/desmantelando-a-estrategia-isla-nazista/",
       "source": "Notícias de Israel",
-      "date": "Thu, 16 Oct 2025 22:20:54 GMT",
+      "date": "Fri, 17 Oct 2025 10:27:45 GMT",
       "category": "Israel e Oriente Médio",
       "image_url": "https://cafetorah.com/wp-content/uploads/2025/10/pexels-mohammed-abubakr-201794886-19488937.jpg"
     },
@@ -134,7 +132,7 @@
       "summary": "Mulheres em Gaza denunciam exploração sexual em troca de ajuda humanitária Relatos revelam que alimentos e assistência estão sendo usados como moeda de troca em meio à crise humanitária. Histórias de ...",
       "url": "https://cafetorah.com/gaza-exploracao-sexual-em-meio-a-guerra/",
       "source": "Cafetorah - Notícias de Israel",
-      "date": "Thu, 16 Oct 2025 22:20:29 GMT",
+      "date": "Fri, 17 Oct 2025 10:27:21 GMT",
       "category": "Israel e Oriente Médio",
       "image_url": "https://cafetorah.com/wp-content/uploads/2025/09/pexels-mart-production-7699317.jpg"
     },
@@ -143,144 +141,45 @@
       "summary": "Os primeiros passos da seita nazista entre os palestinos galgou o líder árabe Amin al-Husseini, o Grande Mufti(líder supremo) de Jerusalém. Quando ele nasceu não havia um povo árabe palestino. Os árab...",
       "url": "https://cafetorah.com/desmantelando-a-estrategia-isla-nazista/",
       "source": "Cafetorah - Notícias de Israel",
-      "date": "Thu, 16 Oct 2025 22:20:28 GMT",
+      "date": "Fri, 17 Oct 2025 10:27:20 GMT",
       "category": "Israel e Oriente Médio",
       "image_url": "https://cafetorah.com/wp-content/uploads/2025/10/pexels-mohammed-abubakr-201794886-19488937.jpg"
-    },
-    {
-      "title": "Estudante é expulso de escola por compartilhar a fé em Jesus",
-      "summary": "O estudante Alim, de 16 anos, foi alvo de perseguição por sua fé na Ásia Central. Alim contou a parceiros locais da Portas Abertas o que aconteceu na escola e como estava se sentindo. Veja o relato a ...",
-      "url": "https://portasabertas.org.br/noticias/cristaos-perseguidos/estudante-e-expulso-de-escola-por-compartilhar-a-fe-em-jesus/",
-      "source": "Portas Abertas",
-      "date": "Thu, 16 Oct 2025 22:20:21 GMT",
-      "category": "Perseguição Religiosa",
-      "image_url": "https://sitepa.s3.amazonaws.com/wp-content/uploads/br/2025/10/Escola-na-Asia-Central.avif"
     },
     {
       "title": "Portas Abertas participou do Congresso Brasileiro de Missões",
       "summary": "Entre os dias 6 e 10 de outubro, o secretário-geral da Portas Abertas, Marco Cruz, esteve com representantes da organização no Congresso Brasileiro de Missões (CBM) em Águas de Lindoia, São Paulo. É u...",
       "url": "https://portasabertas.org.br/noticias/cristaos-perseguidos/portas-abertas-participa-do-congresso-brasileiro-de-missoes/",
       "source": "Portas Abertas",
-      "date": "Thu, 16 Oct 2025 22:20:21 GMT",
+      "date": "Fri, 17 Oct 2025 10:27:14 GMT",
       "category": "Perseguição Religiosa",
       "image_url": "https://sitepa.s3.amazonaws.com/wp-content/uploads/br/2025/10/Marco-Cruz-em-palestra-no-Congresso-de-Missoes-2-scaled.avif"
-    },
-    {
-      "title": "A fuga milagrosa de um cristão marcado para morrer",
-      "summary": "A atuação do grupo extremista Boko Haram na África Subsaariana tem deixado diversas marcas na igreja local. A história de Adam, um cristão de Camarões que foi sequestrado duas vezes pelos extremistas,...",
-      "url": "https://portasabertas.org.br/noticias/cristaos-perseguidos/a-fuga-milagrosa-de-um-cristao-marcado-para-morrer/",
-      "source": "Portas Abertas",
-      "date": "Thu, 16 Oct 2025 22:20:20 GMT",
-      "category": "Perseguição Religiosa",
-      "image_url": "https://sitepa.s3.amazonaws.com/wp-content/uploads/br/2025/09/BR-RODAPE-DOACAO-Etiopia-projetos-de-geracao-de-renda.avif"
     },
     {
       "title": "Professor cristão é humilhado publicamente em Bangladesh",
       "summary": "Hoje, no Dia dos Professores, reconhecemos com admiração a dedicação e o amor com que os educadores ensinam seus alunos. O cristão Nirmal Das, de Nalitabari, na parte centro-norte de Bangladesh, compa...",
       "url": "https://portasabertas.org.br/noticias/cristaos-perseguidos/professor-cristao-e-humilhado-publicamente-em-bangladesh/",
       "source": "Portas Abertas",
-      "date": "Thu, 16 Oct 2025 22:20:17 GMT",
+      "date": "Fri, 17 Oct 2025 10:27:13 GMT",
       "category": "Perseguição Religiosa",
       "image_url": "https://sitepa.s3.amazonaws.com/wp-content/uploads/br/2025/08/BR-RODAPE-DOACAO-CAMPANHA-GLOBAL-ATEMPORAL-Ajuda-para-quem-mais-precisa.avif"
     },
     {
-      "title": "Governo anuncia classificação indicativa para apps e nova faixa etária",
-      "summary": "Nesta quarta-feira (15), uma portaria do Ministério da Justiça e Segurança Pública, anunciou a criação de uma nova faixa etária indicativa, de 6 anos, que será atribuída a produtos audiovisuais e a ap...",
-      "url": "https://www.cpadnews.com.br/governo-anuncia-classificacao-indicativa-para-apps-e-nova-faixa-etaria/",
-      "source": "CPAD News",
-      "date": "Thu, 16 Oct 2025 19:20:41 +0000",
-      "category": "Educação Cristã",
-      "image_url": "https://www.cpadnews.com.br/wp-content/uploads/2025/10/classificacap.jpg"
+      "title": "A fuga milagrosa de um cristão marcado para morrer",
+      "summary": "A atuação do grupo extremista Boko Haram na África Subsaariana tem deixado diversas marcas na igreja local. A história de Adam, um cristão de Camarões que foi sequestrado duas vezes pelos extremistas,...",
+      "url": "https://portasabertas.org.br/noticias/cristaos-perseguidos/a-fuga-milagrosa-de-um-cristao-marcado-para-morrer/",
+      "source": "Portas Abertas",
+      "date": "Fri, 17 Oct 2025 10:27:10 GMT",
+      "category": "Perseguição Religiosa",
+      "image_url": "https://sitepa.s3.amazonaws.com/wp-content/uploads/br/2025/09/BR-RODAPE-DOACAO-Etiopia-projetos-de-geracao-de-renda.avif"
     },
     {
-      "title": "Convenção de Ministros das Assembleias de Deus no Japão e Ásia celebra Jubileu de Prata",
-      "summary": "No próximo sábado (18) acontecerá a celebração de 25 anos da Convenção de Ministros das Assembleias de Deus no Japão e Ásia (COMADEJA). O Jubileu de Prata será realizado na Igreja Assembleia de Deus M...",
-      "url": "https://www.cpadnews.com.br/convencao-de-ministros-das-assembleias-de-deus-no-japao-e-asia-celebra-jubileu-de-prata/",
-      "source": "CPAD News",
-      "date": "Thu, 16 Oct 2025 18:20:51 +0000",
-      "category": "Educação Cristã",
-      "image_url": "https://www.cpadnews.com.br/wp-content/uploads/2025/10/COMADEJA.jpg"
-    },
-    {
-      "title": "Fiéis estão perdendo a convicção bíblica sobre família, vida e moralidade nos EUA, mostra estudo",
-      "summary": "Um novo estudo nacional realizado pelo Family Research Council (FRC) e pelo Cultural Research Center (CRC) da Arizona Christian University revela um declínio impressionante na convicção bíblica entre ...",
-      "url": "https://folhagospel.com/fieis-estao-perdendo-a-conviccao-biblica-sobre-familia-vida-e-moralidade-nos-eua-mostra-estudo/",
-      "source": "Folha Gospel",
-      "date": "Thu, 16 Oct 2025 17:30:00 +0000",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2025/02/Culto-em-igreja-nos-EUA.jpg"
-    },
-    {
-      "title": "Aprovada a legalização da Eutanásia no Uruguai",
-      "summary": "Apelidada de Morte Digna, o projeto de lei que legaliza a eutanásia no Uruguai foi aprovado pelo Senado daquele país nesta quarta-feira (15). Em agosto, o projeto havia sido aprovado pela Câmara dos D...",
-      "url": "https://www.cpadnews.com.br/aprovada-a-legalizacao-da-eutanasia-no-uruguai/",
-      "source": "CPAD News",
-      "date": "Thu, 16 Oct 2025 17:29:21 +0000",
-      "category": "Educação Cristã",
-      "image_url": "https://www.cpadnews.com.br/wp-content/uploads/2025/10/Uruguai.jpg"
-    },
-    {
-      "title": "Igrejas evangélicas levam cultos para salas de cinema",
-      "summary": "Em meio aos desafios urbanos e à falta de espaço nas grandes cidades, igrejas evangélicas têm adotado uma alternativa inusitada para realizar seus cultos: as salas de cinema. O movimento, crescente em...",
-      "url": "https://folhagospel.com/igrejas-evangelicas-levam-cultos-para-salas-de-cinema/",
-      "source": "Folha Gospel",
-      "date": "Thu, 16 Oct 2025 15:40:00 +0000",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2025/10/image-19-e1760616203788.png"
-    },
-    {
-      "title": "Evangelismo interdenominacional promove cultos a moradores de rua no Sul",
-      "summary": "De acordo com a prefeitura de Porto Alegre, em fevereiro de 2025, cerca de 5,3 mil pessoas estavam vivendo em situação de rua na capital do Rio Grande do Sul. A realidade não é uma exclusividade local...",
-      "url": "https://www.cpadnews.com.br/evangelismo-interdenominacional-promove-cultos-a-moradores-de-rua-no-sul/",
-      "source": "CPAD News",
-      "date": "Thu, 16 Oct 2025 15:03:14 +0000",
-      "category": "Educação Cristã",
-      "image_url": "https://www.cpadnews.com.br/wp-content/uploads/2025/10/culto.jpg"
-    },
-    {
-      "title": "Congresso Estadual de Escola Dominical em Campina Grande (PB) reúne mais de 1.000 pessoas",
-      "summary": "Nos dias 11 e 12 de outubro, aconteceu no Templo Sede da Assembleia de Deus em Campina Grande (PB) o Congresso Estadual da Escola Bíblica Dominical 2025, reunindo 610 inscritos entre professores, supe...",
-      "url": "https://www.cpadnews.com.br/congresso-estadual-de-escola-dominical-em-campina-grande-pb-reune-mais-de-1-000-pessoas/",
-      "source": "CPAD News",
-      "date": "Thu, 16 Oct 2025 15:00:59 +0000",
-      "category": "Educação Cristã",
-      "image_url": "https://www.cpadnews.com.br/wp-content/uploads/2025/10/capa_congresso-ebd.jpg"
-    },
-    {
-      "title": "Mais de 12 pessoas morrem durante confrontos entre Paquistão e Afeganistão",
-      "summary": "Confrontos ao longo da fronteira entre Paquistão e Afeganistão mataram mais de 12 civis e soldados nesta quarta-feira (15). Outras dezenas de pessoas foram mortas no último final de semana. Os últimos...",
-      "url": "https://www.cpadnews.com.br/mais-de-12-pessoas-morrem-durante-confrontos-entre-paquistao-e-afeganistao/",
-      "source": "CPAD News",
-      "date": "Thu, 16 Oct 2025 14:02:58 +0000",
-      "category": "Educação Cristã",
-      "image_url": "https://www.cpadnews.com.br/wp-content/uploads/2025/10/Confronto.jpg"
-    },
-    {
-      "title": "STF suspende leis municipais que proibiam ensino sobre gênero nas escolas",
-      "summary": "O Supremo Tribunal Federal (STF) decidiu suspender leis dos municípios de Tubarão (SC), Petrolina e Garanhuns, em Pernambuco, que vetavam o ensino de conteúdos relacionados à identidade de gênero e or...",
-      "url": "https://folhagospel.com/stf-suspende-leis-municipais-que-proibiam-ensino-sobre-genero-nas-escolas/",
-      "source": "Folha Gospel",
-      "date": "Thu, 16 Oct 2025 13:10:00 +0000",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2025/05/Linguagem-neutra-escrita-no-quadro-em-uma-sala-de-aula-Foto-MontagemFolhaGospel.jpg"
-    },
-    {
-      "title": "Missão leva amor e transformação a moradores de rua em Porto Alegre",
-      "summary": "Em meio ao cenário de vulnerabilidade que marca as ruas de Porto Alegre (RS), um movimento evangelístico tem se tornado símbolo de acolhimento e restauração. A missão Sul, Missões e Graça (SMG) realiz...",
-      "url": "https://folhagospel.com/missao-leva-amor-e-transformacao-a-moradores-de-rua-em-porto-alegre/",
-      "source": "Folha Gospel",
-      "date": "Thu, 16 Oct 2025 12:00:00 +0000",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2025/10/image-18.png"
-    },
-    {
-      "title": "Perseguição afeta a saúde mental de cristãos no México",
-      "summary": "Um dos fatores que mais afetam os cristãos que enfrentam perseguição é a saúde mental. Conviver com o medo, a desconfiança e a angústia torna tudo mais difícil. Um dos projetos da Portas Abertas no Mé...",
-      "url": "https://folhagospel.com/perseguicao-afeta-a-saude-mental-de-cristaos-no-mexico/",
-      "source": "Folha Gospel",
-      "date": "Thu, 16 Oct 2025 10:44:46 +0000",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2025/10/image-17.png"
+      "title": "Estudante é expulso de escola por compartilhar a fé em Jesus",
+      "summary": "O estudante Alim, de 16 anos, foi alvo de perseguição por sua fé na Ásia Central. Alim contou a parceiros locais da Portas Abertas o que aconteceu na escola e como estava se sentindo. Veja o relato a ...",
+      "url": "https://portasabertas.org.br/noticias/cristaos-perseguidos/estudante-e-expulso-de-escola-por-compartilhar-a-fe-em-jesus/",
+      "source": "Portas Abertas",
+      "date": "Fri, 17 Oct 2025 10:27:09 GMT",
+      "category": "Perseguição Religiosa",
+      "image_url": "https://sitepa.s3.amazonaws.com/wp-content/uploads/br/2025/10/Escola-na-Asia-Central.avif"
     }
   ]
 }
