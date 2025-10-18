@@ -1,6 +1,7 @@
-import { useState, useEffect, useCallback } from "react";
-import { ChevronLeft, ChevronRight, ExternalLink, RefreshCw } from "lucide-react";
+import { useState, useEffect, useCallback, useMemo } from "react";
+import { ChevronLeft, ChevronRight, ExternalLink, RefreshCw, Star } from "lucide-react";
 import { loadChristianNews, refreshChristianNews, NewsItem, resetNewsLocalState } from "../api/newsApi";
+import NewsFilters, { NewsFilterState } from "./NewsFilters";
 
 // Tipos de slides: somente notícias
 type NewsSlide = { kind: "news"; data: NewsItem };
@@ -13,6 +14,99 @@ const NewsSlider: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isRefreshing, setIsRefreshing] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  
+  // Estado dos filtros
+  const [filters, setFilters] = useState<NewsFilterState>({
+    searchTerm: '',
+    selectedTags: [],
+    selectedCategories: [],
+    minRelevanceScore: 0,
+  });
+
+  // Busca inteligente com sinônimos e termos relacionados
+  const searchNews = (items: NewsItem[], searchTerm: string): NewsItem[] => {
+    if (!searchTerm.trim()) return items;
+
+    const normalizedSearch = searchTerm.toLowerCase().trim();
+    const searchTerms = normalizedSearch.split(/\s+/);
+
+    // Mapa de sinônimos para busca mais inteligente
+    const synonyms: Record<string, string[]> = {
+      'arqueologia': ['arqueológico', 'escavação', 'sítio', 'ruínas', 'descoberta'],
+      'israel': ['jerusalém', 'galileia', 'terra santa'],
+      'criacionismo': ['criacionista', 'design inteligente'],
+      'egito': ['egípcio', 'faraó', 'pirâmide'],
+      'babilônia': ['babilônico', 'nabucodonosor'],
+    };
+
+    return items.filter(item => {
+      const text = `${item.title} ${item.summary} ${item.detectedKeywords?.join(' ') || ''}`.toLowerCase();
+      
+      return searchTerms.some(term => {
+        // Busca direta
+        if (text.includes(term)) return true;
+        
+        // Busca por sinônimos
+        for (const [key, syns] of Object.entries(synonyms)) {
+          if (term === key || syns.includes(term)) {
+            if (text.includes(key) || syns.some(syn => text.includes(syn))) {
+              return true;
+            }
+          }
+        }
+        
+        return false;
+      });
+    });
+  };
+
+  // Aplicar todos os filtros
+  const filteredNews = useMemo(() => {
+    let result = [...newsItems];
+
+    // Filtro de busca inteligente
+    result = searchNews(result, filters.searchTerm);
+
+    // Filtro de tags
+    if (filters.selectedTags.length > 0) {
+      result = result.filter(item => 
+        item.autoTags?.some(tag => filters.selectedTags.includes(tag))
+      );
+    }
+
+    // Filtro de categorias
+    if (filters.selectedCategories.length > 0) {
+      result = result.filter(item => 
+        filters.selectedCategories.includes(item.category)
+      );
+    }
+
+    // Filtro de relevância
+    if (filters.minRelevanceScore > 0) {
+      result = result.filter(item => 
+        (item.relevanceScore || 0) >= filters.minRelevanceScore
+      );
+    }
+
+    return result;
+  }, [newsItems, filters]);
+
+  // Extrair tags e categorias únicas para os filtros
+  const availableTags = useMemo(() => {
+    const tags = new Set<string>();
+    newsItems.forEach(item => {
+      item.autoTags?.forEach(tag => tags.add(tag));
+    });
+    return Array.from(tags).sort();
+  }, [newsItems]);
+
+  const availableCategories = useMemo(() => {
+    const categories = new Set<string>();
+    newsItems.forEach(item => {
+      if (item.category) categories.add(item.category);
+    });
+    return Array.from(categories).sort();
+  }, [newsItems]);
 
   // Intercalar fontes para evitar blocos de uma mesma origem
   const roundRobinBySource = (items: NewsItem[]): NewsItem[] => {
@@ -40,7 +134,7 @@ const NewsSlider: React.FC = () => {
   };
 
   const slides: SlideItem[] = (() => {
-    const balancedNews = roundRobinBySource(newsItems);
+    const balancedNews = roundRobinBySource(filteredNews);
     const newsSlides: SlideItem[] = balancedNews.map((n) => ({ kind: "news", data: n }));
     // Exibir somente notícias, sem banners
     return newsSlides;
@@ -141,12 +235,29 @@ const NewsSlider: React.FC = () => {
     );
   }
 
-  const currentNews = newsItems[currentSlide];
+  // Reset slide quando filtros mudam
+  useEffect(() => {
+    setCurrentSlide(0);
+  }, [filters]);
+
+  const isHighRelevance = (score?: number) => score && score >= 5;
 
   return (
-    <div className="w-full h-full relative overflow-hidden">
+    <div className="w-full h-full relative overflow-hidden flex flex-col">
+      {/* Filtros no topo */}
+      <div className="relative z-30 p-4">
+        <NewsFilters
+          availableTags={availableTags}
+          availableCategories={availableCategories}
+          filters={filters}
+          onFiltersChange={setFilters}
+          totalNews={newsItems.length}
+          filteredNews={filteredNews.length}
+        />
+      </div>
+
       {/* Background de papel amassado mais visível */}
-      <div 
+      <div
         className="absolute inset-0 opacity-40"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.3'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
@@ -160,7 +271,7 @@ const NewsSlider: React.FC = () => {
       {/* Overlay gradiente com textura de papel */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/60 backdrop-blur-sm" />
       
-      <div className="relative h-full z-10">
+      <div className="relative flex-1 z-10 overflow-hidden">
         {/* Refresh Button */}
         <div className="absolute top-4 right-4 z-20 flex gap-2">
           <button
@@ -244,11 +355,24 @@ const NewsSlider: React.FC = () => {
 
                   {/* Coluna de Conteúdo */}
                   <div className="flex flex-col justify-center space-y-6">
-                    {slide.data.category && (
-                      <span className="inline-block w-fit bg-yellow-500 text-black text-xs font-semibold rounded-full px-3 py-1">
-                        {slide.data.category}
-                      </span>
-                    )}
+                    <div className="flex flex-wrap items-center gap-2">
+                      {slide.data.category && (
+                        <span className="inline-block bg-yellow-500 text-black text-xs font-semibold rounded-full px-3 py-1">
+                          {slide.data.category}
+                        </span>
+                      )}
+                      {isHighRelevance(slide.data.relevanceScore) && (
+                        <span className="inline-flex items-center gap-1 bg-orange-500 text-white text-xs font-semibold rounded-full px-3 py-1 animate-pulse">
+                          <Star className="w-3 h-3 fill-current" />
+                          Alta Relevância
+                        </span>
+                      )}
+                      {slide.data.autoTags?.map(tag => (
+                        <span key={tag} className="inline-block bg-blue-500/80 text-white text-xs font-medium rounded-full px-2 py-1">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
                     <h3 className="text-3xl lg:text-4xl font-bold text-white leading-tight">
                       {slide.data.title}
                     </h3>

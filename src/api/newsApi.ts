@@ -28,6 +28,9 @@ export interface NewsItem {
   date: string;
   category: string;
   image_url?: string;
+  relevanceScore?: number;
+  detectedKeywords?: string[];
+  autoTags?: string[];
 }
 
 export interface NewsData {
@@ -43,6 +46,13 @@ class NewsAPI {
   private readonly CACHE_DURATION = 30 * 60 * 1000; // 30 minutes in milliseconds
   private readonly MAX_AGE_MS = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
   private readonly MIN_ARTICLES = 6; // Ensure we always show at least this many
+
+  // Palavras-chave de alta relevância para scoring
+  private readonly archaeologyKeywords = {
+    locations: ['sítio', 'museu', 'israel', 'egito', 'grécia', 'roma', 'pérsia', 'babilônia', 'nínive', 'síria', 'terra santa', 'crescente fértil', 'jerusalém', 'galileia'],
+    topics: ['arqueologia', 'arqueológico', 'escavação', 'descoberta', 'artefato', 'ruínas', 'criacionismo', 'fóssil', 'antigo testamento'],
+    weights: { location: 3, topic: 2, general: 1 }
+  };
 
   // Persistência local para política de retenção de 12h e blacklist permanente
   private readonly BLACKLIST_KEY = 'newsBlacklist';
@@ -147,6 +157,59 @@ class NewsAPI {
 
   private filterByAllowedSources(items: NewsItem[]): NewsItem[] {
     return items.filter(i => this.allowedSources.has(i.source));
+  }
+
+  // Sistema de scoring e categorização automática
+  private calculateRelevanceScore(item: NewsItem): NewsItem {
+    const text = `${item.title} ${item.summary}`.toLowerCase();
+    let score = 0;
+    const detectedKeywords: string[] = [];
+    const autoTags: string[] = [];
+
+    // Detecta palavras-chave de localizações arqueológicas
+    this.archaeologyKeywords.locations.forEach(keyword => {
+      if (text.includes(keyword)) {
+        score += this.archaeologyKeywords.weights.location;
+        detectedKeywords.push(keyword);
+        
+        // Auto-tag baseado em região
+        if (['israel', 'jerusalém', 'galileia', 'terra santa'].includes(keyword)) {
+          autoTags.push('Israel e Terra Santa');
+        } else if (['egito', 'pérsia', 'babilônia', 'nínive', 'síria', 'crescente fértil'].includes(keyword)) {
+          autoTags.push('Oriente Médio Antigo');
+        } else if (['grécia', 'roma'].includes(keyword)) {
+          autoTags.push('Mundo Greco-Romano');
+        }
+      }
+    });
+
+    // Detecta palavras-chave de tópicos
+    this.archaeologyKeywords.topics.forEach(keyword => {
+      if (text.includes(keyword)) {
+        score += this.archaeologyKeywords.weights.topic;
+        detectedKeywords.push(keyword);
+        
+        if (keyword === 'criacionismo') {
+          autoTags.push('Criacionismo');
+        } else if (['arqueologia', 'arqueológico', 'escavação', 'descoberta'].includes(keyword)) {
+          autoTags.push('Arqueologia Bíblica');
+        }
+      }
+    });
+
+    return {
+      ...item,
+      relevanceScore: score,
+      detectedKeywords: [...new Set(detectedKeywords)],
+      autoTags: [...new Set(autoTags)]
+    };
+  }
+
+  // Aplica scoring e ordena por relevância
+  private applyScoring(items: NewsItem[]): NewsItem[] {
+    return items
+      .map(item => this.calculateRelevanceScore(item))
+      .sort((a, b) => (b.relevanceScore || 0) - (a.relevanceScore || 0));
   }
 
   private isRecent(dateStr?: string): boolean {
@@ -256,6 +319,9 @@ class NewsAPI {
           // Aplicar política de retenção (12h no site + blacklist permanente)
           newsItems = this.applyRetentionPolicy(newsItems);
 
+          // Aplicar scoring e categorização automática
+          newsItems = this.applyScoring(newsItems);
+
           // Se o dataset vindo do Supabase estiver pobre (poucos itens ou sem imagens),
           // preferimos o JSON local recém gerado pelo scraper para garantir boa experiência visual.
           const MIN_REQUIRED = 10; // queremos pelo menos 10 itens
@@ -336,6 +402,9 @@ class NewsAPI {
 
       // Aplicar política de retenção (12h no site + blacklist permanente)
       filtered = this.applyRetentionPolicy(filtered);
+
+      // Aplicar scoring e categorização automática
+      filtered = this.applyScoring(filtered);
 
       // Ensure minimum number of articles using themed fallback
       filtered = this.mergeWithFallback(filtered, this.MIN_ARTICLES);
