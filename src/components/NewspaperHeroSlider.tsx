@@ -1,6 +1,7 @@
 import { useEffect, useState, useCallback, useMemo } from "react";
-import { ChevronLeft, ChevronRight, RefreshCw, ExternalLink } from "lucide-react";
+import { ChevronLeft, ChevronRight, RefreshCw, ExternalLink, Star } from "lucide-react";
 import { loadChristianNews, refreshChristianNews, NewsItem } from "../api/newsApi";
+import NewsFilters, { NewsFilterState } from "./NewsFilters";
 
 
 const formatDate = (date: Date) =>
@@ -28,13 +29,98 @@ const NewspaperHeroSlider: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  
+  // Estado dos filtros
+  const [filters, setFilters] = useState<NewsFilterState>({
+    searchTerm: '',
+    selectedTags: [],
+    selectedCategories: [],
+    minRelevanceScore: 0,
+  });
 
-  // Constrói os slides com notícias
-  const slides: Slide[] = useMemo(() => {
-    const newsSlides: Slide[] = items.map((n) => ({ kind: "news", item: n }));
-    // Exibir somente notícias
-    return newsSlides;
+  // Busca inteligente com sinônimos
+  const searchNews = (newsItems: NewsItem[], searchTerm: string): NewsItem[] => {
+    if (!searchTerm.trim()) return newsItems;
+
+    const normalizedSearch = searchTerm.toLowerCase().trim();
+    const searchTerms = normalizedSearch.split(/\s+/);
+
+    const synonyms: Record<string, string[]> = {
+      'arqueologia': ['arqueológico', 'escavação', 'sítio', 'ruínas', 'descoberta'],
+      'israel': ['jerusalém', 'galileia', 'terra santa'],
+      'criacionismo': ['criacionista', 'design inteligente'],
+      'egito': ['egípcio', 'faraó', 'pirâmide'],
+      'babilônia': ['babilônico', 'nabucodonosor'],
+    };
+
+    return newsItems.filter(item => {
+      const text = `${item.title} ${item.summary} ${item.detectedKeywords?.join(' ') || ''}`.toLowerCase();
+      
+      return searchTerms.some(term => {
+        if (text.includes(term)) return true;
+        
+        for (const [key, syns] of Object.entries(synonyms)) {
+          if (term === key || syns.includes(term)) {
+            if (text.includes(key) || syns.some(syn => text.includes(syn))) {
+              return true;
+            }
+          }
+        }
+        
+        return false;
+      });
+    });
+  };
+
+  // Aplicar todos os filtros
+  const filteredNews = useMemo(() => {
+    let result = [...items];
+
+    result = searchNews(result, filters.searchTerm);
+
+    if (filters.selectedTags.length > 0) {
+      result = result.filter(item => 
+        item.autoTags?.some(tag => filters.selectedTags.includes(tag))
+      );
+    }
+
+    if (filters.selectedCategories.length > 0) {
+      result = result.filter(item => 
+        filters.selectedCategories.includes(item.category)
+      );
+    }
+
+    if (filters.minRelevanceScore > 0) {
+      result = result.filter(item => 
+        (item.relevanceScore || 0) >= filters.minRelevanceScore
+      );
+    }
+
+    return result;
+  }, [items, filters]);
+
+  // Extrair tags e categorias únicas
+  const availableTags = useMemo(() => {
+    const tags = new Set<string>();
+    items.forEach(item => {
+      item.autoTags?.forEach(tag => tags.add(tag));
+    });
+    return Array.from(tags).sort();
   }, [items]);
+
+  const availableCategories = useMemo(() => {
+    const categories = new Set<string>();
+    items.forEach(item => {
+      if (item.category) categories.add(item.category);
+    });
+    return Array.from(categories).sort();
+  }, [items]);
+
+  // Constrói os slides com notícias filtradas
+  const slides: Slide[] = useMemo(() => {
+    const newsSlides: Slide[] = filteredNews.map((n) => ({ kind: "news", item: n }));
+    return newsSlides;
+  }, [filteredNews]);
 
   const load = useCallback(async () => {
     try {
@@ -89,7 +175,12 @@ const NewspaperHeroSlider: React.FC = () => {
   };
 
   const featured = slides[current];
-  // Datas por item removidas: manter apenas a data atual no cabeçalho ao lado de "Reconciliação News"
+  const isHighRelevance = (score?: number) => score && score >= 5;
+  
+  // Reset slide quando filtros mudam
+  useEffect(() => {
+    setCurrent(0);
+  }, [filters]);
 
   if (loading) {
     return (
@@ -125,8 +216,20 @@ const NewspaperHeroSlider: React.FC = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-neutral-900 via-neutral-800 to-neutral-900" />
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/60 backdrop-blur-sm" />
 
+      {/* Filtros no topo */}
+      <div className="relative z-30 px-4 pt-4">
+        <NewsFilters
+          availableTags={availableTags}
+          availableCategories={availableCategories}
+          filters={filters}
+          onFiltersChange={setFilters}
+          totalNews={items.length}
+          filteredNews={filteredNews.length}
+        />
+      </div>
+
       {/* Barra de topo estilo jornal */}
-      <div className="relative z-10 px-6 pt-6">
+      <div className="relative z-10 px-6 pt-4">
         <div className="mx-auto max-w-6xl bg-neutral-100/5 backdrop-blur-sm rounded-md newspaper-border">
           <div className="flex items-center justify-between px-4 py-3">
             <h1 className="text-3xl md:text-4xl font-serif tracking-wider text-yellow-300 drop-shadow">
@@ -195,11 +298,24 @@ const NewspaperHeroSlider: React.FC = () => {
                 <div className="p-5">
                   {featured?.kind === "news" && (
                     <>
-                      {featured.item?.category && (
-                        <span className="inline-block mb-2 bg-yellow-400 text-black text-xs font-bold px-2 py-1 rounded">
-                          {featured.item.category}
-                        </span>
-                      )}
+                      <div className="flex flex-wrap items-center gap-2 mb-3">
+                        {featured.item?.category && (
+                          <span className="inline-block bg-yellow-400 text-black text-xs font-bold px-2 py-1 rounded">
+                            {featured.item.category}
+                          </span>
+                        )}
+                        {isHighRelevance(featured.item.relevanceScore) && (
+                          <span className="inline-flex items-center gap-1 bg-orange-500 text-white text-xs font-semibold rounded-full px-3 py-1 animate-pulse">
+                            <Star className="w-3 h-3 fill-current" />
+                            Alta Relevância
+                          </span>
+                        )}
+                        {featured.item.autoTags?.map(tag => (
+                          <span key={tag} className="inline-block bg-blue-500/80 text-white text-xs font-medium rounded-full px-2 py-1">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
                       <a href={featured.item.url} target="_blank" rel="noopener noreferrer">
                         <h2 className="text-xl md:text-2xl font-serif text-neutral-100 tracking-wide hover:text-yellow-200 transition-colors">
                           {featured.item.title}
