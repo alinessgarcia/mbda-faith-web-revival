@@ -25,7 +25,16 @@ const NewsFilters: React.FC<NewsFiltersProps> = ({
   totalNews,
   filteredNews,
 }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
+  // Expandido por padrão para exibir os chips como antes
+  const [isExpanded, setIsExpanded] = useState(true);
+
+  // Palavras-chave rápidas ("botões de pesquisa" que você mencionou: sítio, síria, babilônia, grécia...)
+  const quickKeywords: string[] = [
+    'sítio', 'síria', 'babilônia', 'grécia', 'israel', 'egito', 'jerusalém', 'galileia',
+    'pérsia', 'crescente fértil', 'roma', 'assírio', 'helênico',
+    'arqueologia', 'escavação', 'descoberta', 'artefato', 'ruínas', 'criacionismo'
+  ];
+  const [selectedQuick, setSelectedQuick] = useState<string[]>([]);
 
   const updateFilter = (key: keyof NewsFilterState, value: any) => {
     onFiltersChange({ ...filters, [key]: value });
@@ -45,6 +54,18 @@ const NewsFilters: React.FC<NewsFiltersProps> = ({
     updateFilter('selectedCategories', newCategories);
   };
 
+  const toggleQuickKeyword = (kw: string) => {
+    let next: string[];
+    if (selectedQuick.includes(kw)) {
+      next = selectedQuick.filter(k => k !== kw);
+    } else {
+      next = [...selectedQuick, kw];
+    }
+    setSelectedQuick(next);
+    // Atualiza o campo de busca com todas as palavras selecionadas, permitindo múltiplas
+    updateFilter('searchTerm', next.join(' '));
+  };
+
   const clearAllFilters = () => {
     onFiltersChange({
       searchTerm: '',
@@ -52,10 +73,11 @@ const NewsFilters: React.FC<NewsFiltersProps> = ({
       selectedCategories: [],
       minRelevanceScore: 0,
     });
+    setSelectedQuick([]);
   };
 
   const hasActiveFilters = filters.searchTerm || filters.selectedTags.length > 0 || 
-    filters.selectedCategories.length > 0 || filters.minRelevanceScore > 0;
+    filters.selectedCategories.length > 0 || filters.minRelevanceScore > 0 || selectedQuick.length > 0;
 
   return (
     <div className="w-full bg-gradient-to-r from-slate-800/95 to-slate-900/95 backdrop-blur-sm rounded-lg shadow-lg border border-white/10">
@@ -100,6 +122,26 @@ const NewsFilters: React.FC<NewsFiltersProps> = ({
             placeholder="Buscar por palavras-chave (arqueologia, Israel, etc)..."
             className="w-full pl-10 pr-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400/50 focus:border-yellow-400"
           />
+        </div>
+
+        {/* Pesquisa rápida: sempre visível como os botões antigos */}
+        <div className="mt-3">
+          <div className="flex flex-wrap gap-2">
+            {quickKeywords.map((kw) => (
+              <button
+                key={kw}
+                onClick={() => toggleQuickKeyword(kw)}
+                className={`px-3 py-1 rounded-full text-xs font-medium transition-all duration-200 ${
+                  selectedQuick.includes(kw)
+                    ? 'bg-yellow-500 text-black shadow-lg scale-105'
+                    : 'bg-white/10 text-gray-300 hover:bg-white/20 border border-white/20'
+                }`}
+                title={`Pesquisar por: ${kw}`}
+              >
+                {kw}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
 
