@@ -1,8 +1,7 @@
-import { useEffect, useState, useCallback, useMemo } from "react";
+import { useEffect, useState, useCallback, useMemo, useRef } from "react";
 import { ChevronLeft, ChevronRight, RefreshCw, ExternalLink, Star } from "lucide-react";
 import { loadChristianNews, refreshChristianNews, NewsItem } from "../api/newsApi";
 import NewsFilters, { NewsFilterState } from "./NewsFilters";
-
 
 const formatDate = (date: Date) =>
   date.toLocaleDateString("pt-BR", {
@@ -29,7 +28,8 @@ const NewspaperHeroSlider: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  
+  const dotsRef = useRef<HTMLDivElement>(null);
+
   // Estado dos filtros
   const [filters, setFilters] = useState<NewsFilterState>({
     searchTerm: '',
@@ -95,6 +95,9 @@ const NewspaperHeroSlider: React.FC = () => {
         (item.relevanceScore || 0) >= filters.minRelevanceScore
       );
     }
+    
+    // Sort by derived relevance score
+    result.sort((a, b) => (b.relevanceScore ?? 0) - (a.relevanceScore ?? 0));
 
     return result;
   }, [items, filters]);
@@ -142,6 +145,16 @@ const NewspaperHeroSlider: React.FC = () => {
     load();
   }, [load]);
 
+  // Manter o indicador ativo visível/centralizado no container (mobile)
+  useEffect(() => {
+    const el = dotsRef.current;
+    if (!el) return;
+    const active = el.querySelector<HTMLButtonElement>(`button[data-dot-index="${current}"]`);
+    if (active) {
+      active.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+    }
+  }, [current]);
+
   useEffect(() => {
     if (slides.length === 0) return;
     const id = setInterval(() => {
@@ -182,6 +195,12 @@ const NewspaperHeroSlider: React.FC = () => {
     setCurrent(0);
   }, [filters]);
 
+  // Sanitiza HTML bruto vindo de alguns feeds (ex.: <a href="https://news.google.com/...">)
+  const sanitizeSummary = (s?: string) => {
+    if (!s) return "";
+    return s.replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim();
+  };
+
   if (loading) {
     return (
       <div className="w-full h-full flex items-center justify-center bg-black/60">
@@ -210,7 +229,7 @@ const NewspaperHeroSlider: React.FC = () => {
   }
 
   return (
-    <div className="w-full h-full relative overflow-hidden">
+    <div className="relative w-full">
       {/* Textura de papel e fundo */}
       <div className="absolute inset-0 paper-texture opacity-30" />
       <div className="absolute inset-0 bg-gradient-to-b from-neutral-900 via-neutral-800 to-neutral-900" />
@@ -229,8 +248,8 @@ const NewspaperHeroSlider: React.FC = () => {
       </div>
 
       {/* Barra de topo estilo jornal */}
-      <div className="relative z-10 px-6 pt-4">
-        <div className="mx-auto max-w-6xl bg-neutral-100/5 backdrop-blur-sm rounded-md newspaper-border">
+      <div className="relative z-10 px-6 pt-6">
+        <div className="mx-auto max-w-screen-2xl bg-neutral-100/5 backdrop-blur-sm rounded-md newspaper-border">
           <div className="flex items-center justify-between px-4 py-3">
             <h1 className="text-3xl md:text-4xl font-serif tracking-wider text-yellow-300 drop-shadow">
               Reconciliação News
@@ -251,16 +270,16 @@ const NewspaperHeroSlider: React.FC = () => {
           </div>
         </div>
       </div>
+      
+      {/* Conteúdo principal do slider */}
+      <div className="relative z-10 px-6 pb-16">
+        <div className="mx-auto max-w-screen-2xl grid grid-cols-1 gap-6 min-h-[620px] sm:min-h-[640px] lg:min-h-[720px] xl:min-h-[800px] 2xl:min-h-[860px]">
 
-      {/* Conteúdo do slider */}
-      <div className="relative z-10 px-6 pb-6">
-        <div className="mx-auto max-w-6xl grid grid-cols-1 gap-6 min-h-[600px] lg:min-h-[500px]">
-          {/* Destaque principal (full width) */}
           <div className="bg-neutral-100/5 rounded-md overflow-hidden shadow-2xl">
             {featured && (
               <div className="grid grid-cols-1 md:grid-cols-2">
-                {/* Imagem com tamanho padronizado, sem vazamento e sem cortes (object-contain) */}
-                <div className="relative h-[260px] md:h-[380px] lg:h-[420px] overflow-hidden bg-black">
+
+                <div className="relative h-[280px] md:h-[440px] lg:h-[520px] xl:h-[640px] 2xl:h-[720px] overflow-hidden bg-black">
                   <img
                     src={
                       featured?.kind === "news"
@@ -272,12 +291,12 @@ const NewspaperHeroSlider: React.FC = () => {
                         ? featured.item?.title || "Reconciliação News"
                         : "Reconciliação News"
                     }
-                    className="w-full h-full object-contain object-center sepia-img"
+                    className="w-full h-full object-cover object-center sepia-img"
                     onError={(e) => {
-                      e.currentTarget.src = PLACEHOLDER_IMG;
+                      (e.target as HTMLImageElement).src = PLACEHOLDER_IMG;
                     }}
                   />
-                  {/* Navegação mobile sobre a área da imagem (não cobre os textos) */}
+
                   <button
                     onClick={handlePrev}
                     className="md:hidden absolute bottom-3 left-3 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-2"
@@ -294,7 +313,6 @@ const NewspaperHeroSlider: React.FC = () => {
                   </button>
                 </div>
 
-                {/* Texto */}
                 <div className="p-5">
                   {featured?.kind === "news" && (
                     <>
@@ -321,13 +339,18 @@ const NewspaperHeroSlider: React.FC = () => {
                           {featured.item.title}
                         </h2>
                       </a>
+                      
                       <p className="mt-3 text-neutral-200/90 leading-relaxed dropcap line-clamp-4 font-serif">
-                        {featured.item.summary}
+                        {sanitizeSummary(featured.item.summary)}
                       </p>
+
                       <div className="mt-4 text-neutral-400 text-sm flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3">
                         <span className="font-medium text-neutral-300">{featured.item.source}</span>
-                        {/* Datas por notícia removidas */}
-                        {/* Botão para navegar à fonte real */}
+                        
+                        {featured.item.date && (
+                            <span className="text-neutral-400">{formatDateShort(new Date(featured.item.date))}</span>
+                        )}
+
                         {featured.item.url && (
                           <a
                             href={featured.item.url}
@@ -346,8 +369,6 @@ const NewspaperHeroSlider: React.FC = () => {
               </div>
             )}
           </div>
-
-          {/* Removida lista lateral e abas de secundárias */}
         </div>
 
         {/* Navegação */}
@@ -367,17 +388,21 @@ const NewspaperHeroSlider: React.FC = () => {
         >
           <ChevronRight className="w-5 h-5 text-white" />
         </button>
-
-        {/* Indicadores de páginas (bolinhas) */}
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-2 z-20">
+        
+        {/* Indicadores de Paginação */}
+        <div
+          ref={dotsRef}
+          className="absolute bottom-6 inset-x-0 px-4 sm:px-6 flex items-center justify-center gap-1.5 sm:gap-2 overflow-x-auto whitespace-nowrap snap-x snap-mandatory z-30"
+        >
           {slides.map((_, idx) => (
             <button
               key={`dot-${idx}`}
               type="button"
               aria-label={`Ir para página ${idx + 1}`}
+              data-dot-index={idx}
               onClick={() => setCurrent(idx)}
-              className={`h-2 rounded-full transition-all duration-300 ${
-                idx === current ? "bg-yellow-400 w-6" : "bg-white/40 w-2 hover:bg-white/60"
+              className={`h-2.5 sm:h-3 rounded-full transition-all duration-300 snap-center ${
+                idx === current ? "bg-yellow-400 w-6 sm:w-8" : "bg-white/60 w-2.5 sm:w-3 hover:bg-white/80"
               }`}
             />
           ))}

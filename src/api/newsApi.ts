@@ -4,6 +4,7 @@
  */
 
 import { supabase, NewsArticle } from '../config/supabase';
+import { extractTagsAndScore } from './newsKeywords';
 
 // Limite de tempo para tentar Supabase antes de cair para JSON local
 const SUPABASE_TIMEOUT_MS = 5000;
@@ -28,9 +29,15 @@ export interface NewsItem {
   date: string;
   category: string;
   image_url?: string;
+  // Relevance scoring and auto-tagging (used by filters and ranking)
   relevanceScore?: number;
   detectedKeywords?: string[];
   autoTags?: string[];
+  
+  // Derived client-side metadata (keyword extraction for display)
+  tags?: string[];
+  score?: number;
+  matched_keywords?: { tag: string; words: string[] }[];
 }
 
 export interface NewsData {
@@ -44,7 +51,7 @@ class NewsAPI {
   private cache: NewsItem[] | null = null;
   private cacheExpiry: number = 0;
   private readonly CACHE_DURATION = 30 * 60 * 1000; // 30 minutes in milliseconds
-  private readonly MAX_AGE_MS = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
+  private readonly MAX_AGE_MS = 72 * 60 * 60 * 1000; // 72 hours (3 dias)
   private readonly MIN_ARTICLES = 6; // Ensure we always show at least this many
 
   // Palavras-chave de alta relevância para scoring
@@ -57,7 +64,7 @@ class NewsAPI {
   // Persistência local para política de retenção de 12h e blacklist permanente
   private readonly BLACKLIST_KEY = 'newsBlacklist';
   private readonly FIRST_SEEN_KEY = 'newsFirstSeen';
-  private readonly RETENTION_MS = 24 * 60 * 60 * 1000; // 24 hours on site
+  private readonly RETENTION_MS = 72 * 60 * 60 * 1000; // 72 hours no site
 
   private getBlacklist(): Set<string> {
     try {
@@ -156,6 +163,9 @@ class NewsAPI {
   })();
 
   private filterByAllowedSources(items: NewsItem[]): NewsItem[] {
+    const allowlistEnv = (import.meta.env.VITE_NEWS_SOURCES_ALLOWLIST || '').trim();
+    if (allowlistEnv === '*' || allowlistEnv.toLowerCase() === 'all') return items;
+    if (this.allowedSources.size === 0) return items;
     return items.filter(i => this.allowedSources.has(i.source));
   }
 
@@ -262,6 +272,16 @@ class NewsAPI {
     return items;
   }
 
+  // Enrich items with derived keyword tags and a relevance score, then sort by score
+  private enrichWithKeywords(items: NewsItem[]): NewsItem[] {
+    const enriched = items.map((it) => {
+      const { tags, score, matchedKeywords } = extractTagsAndScore(it.title || '', it.summary || '');
+      return { ...it, tags, score, matched_keywords: matchedKeywords };
+    });
+    // Sort by score desc while keeping original order for equal scores
+    return enriched.sort((a, b) => (b.score ?? 0) - (a.score ?? 0));
+  }
+
   /**
    * Load news data from Supabase or fallback to local JSON
    */
@@ -282,7 +302,7 @@ class NewsAPI {
           .from('news_articles')
           .select('*')
           .order('created_at', { ascending: false })
-          .limit(20)
+          .limit(60)
           .then((res: any) => res);
 
         let supabaseResp: any;
@@ -325,7 +345,7 @@ class NewsAPI {
           // Se o dataset vindo do Supabase estiver pobre (poucos itens ou sem imagens),
           // preferimos o JSON local recém gerado pelo scraper para garantir boa experiência visual.
           const MIN_REQUIRED = 10; // queremos pelo menos 10 itens
-          const MIN_IMAGE_RATIO = 0.6; // pelo menos 60% com imagem
+          const MIN_IMAGE_RATIO = 0.3; // pelo menos 30% com imagem
           const imageCount = newsItems.filter(n => n.image_url && n.image_url.trim() !== '').length;
           const hasPoorQuality = newsItems.length < MIN_REQUIRED || imageCount < Math.ceil(newsItems.length * MIN_IMAGE_RATIO);
 
@@ -339,6 +359,9 @@ class NewsAPI {
 
           // Ensure minimum number of articles using themed fallback
           newsItems = this.mergeWithFallback(newsItems, this.MIN_ARTICLES);
+
+          // Derive keyword tags + relevance score and sort
+          newsItems = this.enrichWithKeywords(newsItems);
 
           // Update cache
           this.cache = newsItems;
@@ -408,6 +431,9 @@ class NewsAPI {
 
       // Ensure minimum number of articles using themed fallback
       filtered = this.mergeWithFallback(filtered, this.MIN_ARTICLES);
+
+      // Derive keyword tags + relevance score and sort
+      filtered = this.enrichWithKeywords(filtered);
       
       // Update cache
       this.cache = filtered;

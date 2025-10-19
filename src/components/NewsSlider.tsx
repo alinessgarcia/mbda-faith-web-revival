@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useMemo } from "react";
+import { useState, useEffect, useCallback, useMemo, useRef } from "react";
 import { ChevronLeft, ChevronRight, ExternalLink, RefreshCw, Star } from "lucide-react";
 import { loadChristianNews, refreshChristianNews, NewsItem, resetNewsLocalState } from "../api/newsApi";
 import NewsFilters, { NewsFilterState } from "./NewsFilters";
@@ -14,6 +14,7 @@ const NewsSlider: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isRefreshing, setIsRefreshing] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const dotsRef = useRef<HTMLDivElement>(null);
   
   // Estado dos filtros
   const [filters, setFilters] = useState<NewsFilterState>({
@@ -202,6 +203,16 @@ const NewsSlider: React.FC = () => {
     setCurrentSlide(index);
   };
 
+  // Manter o dot ativo visível e centralizado ao trocar de slide (mobile)
+  useEffect(() => {
+    const el = dotsRef.current;
+    if (!el) return;
+    const active = el.querySelector<HTMLButtonElement>(`button[data-dot-index="${currentSlide}"]`);
+    if (active) {
+      active.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+    }
+  }, [currentSlide]);
+
   // Show loading state
   if (isLoading) {
     return (
@@ -225,7 +236,7 @@ const NewsSlider: React.FC = () => {
             <p className="text-red-400 text-lg">{error}</p>
             <button
               onClick={loadNews}
-              className="px-4 py-2 bg-yellow-500 hover:bg-yellow-600 text-black rounded-lg transition-colors duração-300"
+              className="px-4 py-2 bg-yellow-500 hover:bg-yellow-600 text-black rounded-lg transition-colors duration-300"
             >
               Tentar Novamente
             </button>
@@ -335,10 +346,10 @@ const NewsSlider: React.FC = () => {
               }`}
             >
               <div className="h-full flex items-center">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full px-8">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full px-6 lg:px-8 xl:px-10 max-w-screen-2xl mx-auto">
                   {/* Coluna de Imagem - usa placeholder se faltar ou falhar */}
                   <div className="flex items-center justify-center">
-                    <div className="relative w-full max-w-md aspect-video rounded-lg overflow-hidden shadow-2xl">
+                    <div className="relative w-full aspect-video rounded-lg overflow-hidden shadow-2xl">
                       <img
                         src={slide.data.image_url || PLACEHOLDER_IMG}
                         alt={slide.data.title || "Reconciliação News"}
@@ -378,7 +389,7 @@ const NewsSlider: React.FC = () => {
                     </h3>
 
                     <p className="text-gray-200 text-lg leading-relaxed line-clamp-4">
-                      {slide.data.summary}
+                      {(slide.data.summary || "").replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim()}
                     </p>
 
                     <div className="flex items-center justify-between pt-4">
@@ -401,15 +412,19 @@ const NewsSlider: React.FC = () => {
         </div>
 
         {/* Slide Indicators */}
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex space-x-2 z-20">
+        <div
+          ref={dotsRef}
+          className="absolute bottom-6 inset-x-0 px-4 sm:px-6 z-20 flex items-center justify-center gap-1.5 sm:gap-2 overflow-x-auto whitespace-nowrap snap-x snap-mandatory"
+        >
           {slides.map((s, index) => (
             <button
               type="button"
               aria-label={`Ir para slide ${index + 1}`}
               key={`news-${s.data.url}`}
+              data-dot-index={index}
               onClick={() => setCurrentSlide(index)}
-              className={`h-2 rounded-full transition-all duration-300 ${
-                index === currentSlide ? "bg-yellow-400 w-6" : "bg-white/40 w-2 hover:bg-white/60"
+              className={`h-2 sm:h-2.5 rounded-full transition-all duration-300 snap-center ${
+                index === currentSlide ? "bg-yellow-400 w-5 sm:w-6" : "bg-white/40 w-2 sm:w-2.5 hover:bg-white/60"
               }`}
             />
           ))}
