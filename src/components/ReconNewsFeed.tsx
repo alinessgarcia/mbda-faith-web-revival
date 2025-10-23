@@ -278,7 +278,7 @@ const ReconNewsFeed: React.FC = () => {
       {/* Grade de cards */}
       <div className="px-4 mt-6">
         {pages.length === 0 ? (
-          <p className="text-slate-600">Nenhum resultado para sua busca.</p>
+          <p className="text-white">Nenhum resultado para sua busca.</p>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {pages[currentPage].map((item, idx) => (
@@ -294,7 +294,7 @@ const ReconNewsFeed: React.FC = () => {
           <button onClick={prevPage} className="inline-flex items-center gap-1 px-3 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200">
             <ChevronLeft className="w-4 h-4" /> Anterior
           </button>
-          <div className="text-sm text-slate-600">Página {currentPage + 1} de {totalPages}</div>
+          <div className="text-sm text-white">Página {currentPage + 1} de {totalPages}</div>
           <button onClick={nextPage} className="inline-flex items-center gap-1 px-3 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200">
             Próxima <ChevronRight className="w-4 h-4" />
           </button>
