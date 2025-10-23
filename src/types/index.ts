@@ -7,11 +7,7 @@ export interface SEOConfig {
   ogDescription: string;
 }
 
-export interface NavigationItem {
-  id: string;
-  label: string;
-  href: string;
-}
+// NavigationItem removido - não estava sendo usado
 
 export interface SocialLink {
   platform: string;

@@ -1,0 +1,719 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "Reconciliação News",
+  "home_page_url": "http://localhost:8080",
+  "feed_url": "http://localhost:8080/reconnews-feed.json",
+  "description": "Atualizações diárias de notícias cristãs e arqueologia bíblica.",
+  "language": "pt-BR",
+  "icon": "http://localhost:8080/favicon.ico",
+  "favicon": "http://localhost:8080/favicon.ico",
+  "authors": [
+    {
+      "name": "MB da Reconciliação"
+    }
+  ],
+  "expired": false,
+  "items": [
+    {
+      "id": "https://revistagalileu.globo.com/sociedade/noticia/2025/10/mulher-escolhe-numeros-pelo-chatgpt-e-ganha-mais-de-r-500-mil-em-loteria-nos-eua.ghtml#GALILEU-POST-TOP-24H-item,top,37d51a28-446a-4b67-99e1-8d65346d0374",
+      "url": "https://revistagalileu.globo.com/sociedade/noticia/2025/10/mulher-escolhe-numeros-pelo-chatgpt-e-ganha-mais-de-r-500-mil-em-loteria-nos-eua.ghtml#GALILEU-POST-TOP-24H-item,top,37d51a28-446a-4b67-99e1-8d65346d0374",
+      "title": "Mulher escolhe números pelo ChatGPT e ganha mais de R 500 mil em loteria nos EUA",
+      "content_text": "Aposta em números sugeridos por inteligência artificial deixou surpresa moradora do estado americano de Wyandotte, que pretende quitar sua casa com parte do dinheiro",
+      "date_published": "2025-10-18T21:14:15.000Z",
+      "image": "https://s2-galileu.glbimg.com/f_tDzAxmDGWqRemGtReRYvUm2Ik=/1200x/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_fde5cd494fb04473a83fa5fd57ad4542/internal_photos/bs/2025/x/W/llb9sLQsq2yltCHxBgEg/10.14.15-powerball-09.06.25-draw-powerball-100000-tammy-carvey-wayne-county.jpg",
+      "tags": [
+        "Ciência e Tecnologia"
+      ],
+      "authors": [
+        {
+          "name": "Revista Galileu"
+        }
+      ]
+    },
+    {
+      "id": "https://revistagalileu.globo.com/tecnologia/noticia/2025/10/cada-cor-de-detergente-tem-uma-aplicacao-propria-como-escolher-especialista-explica.ghtml#GALILEU-POST-TOP-24H-item,top,37d51a28-446a-4b67-99e1-8d65346d0374",
+      "url": "https://revistagalileu.globo.com/tecnologia/noticia/2025/10/cada-cor-de-detergente-tem-uma-aplicacao-propria-como-escolher-especialista-explica.ghtml#GALILEU-POST-TOP-24H-item,top,37d51a28-446a-4b67-99e1-8d65346d0374",
+      "title": "Cada cor de detergente tem uma aplicação própria. Como escolher? Especialista explica",
+      "content_text": "Para além do cheiro e da cor, a escolha do sabão líquido pode influenciar no rendimento, no cuidado com as mãos e na neutralização de odores. Veja como comprar",
+      "date_published": "2025-10-18T21:14:15.000Z",
+      "image": "https://s2-galileu.glbimg.com/JjdQQe6z6Z5dNJkp5zlvBl2cgyE=/1200x/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_fde5cd494fb04473a83fa5fd57ad4542/internal_photos/bs/2025/a/t/ONZJixSMSTF3wH3vvydw/image3.png",
+      "tags": [
+        "Ciência e Tecnologia"
+      ],
+      "authors": [
+        {
+          "name": "Revista Galileu"
+        }
+      ]
+    },
+    {
+      "id": "https://revistagalileu.globo.com/ciencia/biologia/noticia/2025/10/qual-animal-tem-mais-cromossomos-resposta-mudou-em-2025.ghtml#GALILEU-POST-TOP-24H-item,top,37d51a28-446a-4b67-99e1-8d65346d0374",
+      "url": "https://revistagalileu.globo.com/ciencia/biologia/noticia/2025/10/qual-animal-tem-mais-cromossomos-resposta-mudou-em-2025.ghtml#GALILEU-POST-TOP-24H-item,top,37d51a28-446a-4b67-99e1-8d65346d0374",
+      "title": "Qual animal tem mais cromossomos? Resposta mudou em 2025",
+      "content_text": "A estrutura cromossômica diferenciada dessa espécie deveria ser um problema, mas os cientistas descobriram que se trata do contrário",
+      "date_published": "2025-10-18T21:14:15.000Z",
+      "image": "https://s2-galileu.glbimg.com/gDvyvzz7E7uxZD9xZJQPp-18LGE=/1200x/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_fde5cd494fb04473a83fa5fd57ad4542/internal_photos/bs/2025/p/3/v3WPOZS2OXEixhB6NU8w/the-tale-of-the-creatu.jpg",
+      "tags": [
+        "Ciência e Tecnologia"
+      ],
+      "authors": [
+        {
+          "name": "Revista Galileu"
+        }
+      ]
+    },
+    {
+      "id": "https://revistagalileu.globo.com/ciencia/arqueologia/noticia/2025/10/antigas-tabuas-de-madeira-romanas-sao-encontradas-dentro-de-poco-na-franca.ghtml#GALILEU-POST-TOP-24H-item,top,37d51a28-446a-4b67-99e1-8d65346d0374",
+      "url": "https://revistagalileu.globo.com/ciencia/arqueologia/noticia/2025/10/antigas-tabuas-de-madeira-romanas-sao-encontradas-dentro-de-poco-na-franca.ghtml#GALILEU-POST-TOP-24H-item,top,37d51a28-446a-4b67-99e1-8d65346d0374",
+      "title": "Antigas tábuas de madeira romanas são encontradas dentro de poço na França",
+      "content_text": "Entre pentes, itens decorativos e solas de sapato produzidos com madeira; pesquisadores franceses encontraram também 15 tábuas antigas no local; veja imagens",
+      "date_published": "2025-10-18T21:14:15.000Z",
+      "image": "https://s2-galileu.glbimg.com/CFH4LIKCdwFQomVPqWDaJnnDuHI=/1200x/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_fde5cd494fb04473a83fa5fd57ad4542/internal_photos/bs/2025/N/H/vntCFAQNm378MWd2jRzA/tablet.jpg",
+      "tags": [
+        "Ciência e Tecnologia"
+      ],
+      "authors": [
+        {
+          "name": "Revista Galileu"
+        }
+      ]
+    },
+    {
+      "id": "https://revistagalileu.revistadigital.globo.com/",
+      "url": "https://revistagalileu.revistadigital.globo.com/",
+      "title": "Revista digital",
+      "content_text": "Tudo sobre ciência, tecnologia, cultura, cinema, artes, séries de tv, sociedade, comportamento, vestibular e Enem e lifehacks.",
+      "date_published": "2025-10-18T21:14:13.000Z",
+      "tags": [
+        "Arqueologia e História"
+      ],
+      "authors": [
+        {
+          "name": "Revista Galileu - Arqueologia"
+        }
+      ]
+    },
+    {
+      "id": "https://revistagalileu.globo.com/ciencia/arqueologia/noticia/2025/10/fornos-e-massa-conservada-sao-achados-em-fortaleza-militar-de-3500-anos-no-egito.ghtml",
+      "url": "https://revistagalileu.globo.com/ciencia/arqueologia/noticia/2025/10/fornos-e-massa-conservada-sao-achados-em-fortaleza-militar-de-3500-anos-no-egito.ghtml",
+      "title": "Fornos e massa conservada são achados em fortaleza militar de 3.500 anos no Egito",
+      "content_text": "Local frequentado por pelo menos 400 soldados era composto por 11 torres defensivas e foi erguido pelo faraó Tutmés I, que expandiu o império egípcio até a atual Síria",
+      "date_published": "2025-10-18T21:14:13.000Z",
+      "image": "https://s2-galileu.glbimg.com/u09acRTcTIrxbTdl-j9YlpupuJM=/1200x/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_fde5cd494fb04473a83fa5fd57ad4542/internal_photos/bs/2025/A/f/XHopRfQkiI91xF6wvsdA/559455527-1212389790922565-476323085669381549-n.jpg",
+      "tags": [
+        "Arqueologia e História"
+      ],
+      "authors": [
+        {
+          "name": "Revista Galileu - Arqueologia"
+        }
+      ]
+    },
+    {
+      "id": "https://www.bbc.com/portuguese/articles/cpv07371vl1o",
+      "url": "https://www.bbc.com/portuguese/articles/cpv07371vl1o",
+      "title": "Aenaria: a fascinante história da cidade italiana que desapareceu há 2 mil anos após uma erupção vulcânica",
+      "content_text": "Um sítio arqueológico na ilha napolitana de Ísquia revela segredos da vida romana há 2 mil anos. Aenaria: a fascinante história da cidade italiana que desapareceu há 2 mil anos após uma erupção vulcânica",
+      "date_published": "2025-10-18T21:14:10.000Z",
+      "image": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/6d76/live/f40c0a30-60cc-11f0-a40e-a1af2950b220.jpg",
+      "tags": [
+        "Arqueologia e História"
+      ],
+      "authors": [
+        {
+          "name": "BBC News Brasil - Arqueologia"
+        }
+      ]
+    },
+    {
+      "id": "https://www.bbc.com/portuguese/articles/c0m4391l0kxo",
+      "url": "https://www.bbc.com/portuguese/articles/c0m4391l0kxo",
+      "title": "O afundamento do solo em mais de 25 centímetros por ano que ameaça relíquias do Império Persa",
+      "content_text": "As escadas e colunas de pedra esculpida de Persépolis, a capital cerimonial do Império Persa, permaneceram de pé por 2,5 mil anos. Mas, agora, o solo em volta deste e de outros locais próximos declarados como Patrimônio Mundial da Unesco está afundando.",
+      "date_published": "2025-10-18T21:14:09.000Z",
+      "image": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/73dc/live/b68995d0-9e14-11f0-9227-0916afba36bd.jpg",
+      "tags": [
+        "Arqueologia e História"
+      ],
+      "authors": [
+        {
+          "name": "BBC News Brasil - Arqueologia"
+        }
+      ]
+    },
+    {
+      "id": "https://www.bbc.com/portuguese/articles/cj9zrjv8rn3o",
+      "url": "https://www.bbc.com/portuguese/articles/cj9zrjv8rn3o",
+      "title": "Crânio de milhões de anos reescreve a história da evolução humana, segundo cientistas",
+      "content_text": "Análises recentes indicam que a nossa espécie começou a surgir pelo menos meio milhão de anos antes do que imaginávamos.",
+      "date_published": "2025-10-18T21:14:09.000Z",
+      "image": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/7293/live/6123b2f0-865f-11f0-8c3f-f11535c1796a.jpg",
+      "tags": [
+        "Arqueologia e História"
+      ],
+      "authors": [
+        {
+          "name": "BBC News Brasil - Arqueologia"
+        }
+      ]
+    },
+    {
+      "id": "https://www.bbc.com/portuguese/articles/c0ezqr047rno",
+      "url": "https://www.bbc.com/portuguese/articles/c0ezqr047rno",
+      "title": "A recém-descoberta cidade desértica no Peru que está reescrevendo a história das Américas",
+      "content_text": "Nas encostas do deserto peruano, arqueólogos descobriram uma cidade construída 3,8 mil anos atrás, que pode alterar nossa compreensão da história do continente americano e que traz escondida uma importante lição sobre como lidar com as mudanças climáticas.",
+      "date_published": "2025-10-18T21:14:09.000Z",
+      "image": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/e968/live/9f6a0930-9279-11f0-8447-89d0c49c75e5.jpg",
+      "tags": [
+        "Arqueologia e História"
+      ],
+      "authors": [
+        {
+          "name": "BBC News Brasil - Arqueologia"
+        }
+      ]
+    },
+    {
+      "id": "https://www.bbc.com/portuguese/articles/c4gz27k31wqo",
+      "url": "https://www.bbc.com/portuguese/articles/c4gz27k31wqo",
+      "title": "'Pior do que começar do zero': por que reconstrução em Gaza é tão desafiadora",
+      "content_text": "A BBC Verify investigou o dano causado em Gaza durante os dois anos de guerra, que pode levar décadas para ser reparado e custar cerca de US 70 bilhões.",
+      "date_published": "2025-10-18T21:14:07.000Z",
+      "image": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/875f/live/d2b0dca0-ac51-11f0-bf12-67c1f4bdac34.jpg",
+      "tags": [
+        "Arqueologia e História"
+      ],
+      "authors": [
+        {
+          "name": "BBC News Brasil"
+        }
+      ]
+    },
+    {
+      "id": "https://www.bbc.com/portuguese/articles/cn0gxrp6791o",
+      "url": "https://www.bbc.com/portuguese/articles/cn0gxrp6791o",
+      "title": "Protestos contra Trump levam multidão às ruas nos EUA",
+      "content_text": "Manifestação em Nova York deu início às mais de 2,5 mil programadas pelo país para o sábado. Protestos contra Trump levam multidão às ruas nos EUA",
+      "date_published": "2025-10-18T21:14:07.000Z",
+      "image": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/7a63/live/14db48e0-ac4d-11f0-80da-bb3137bb460a.jpg",
+      "tags": [
+        "Arqueologia e História"
+      ],
+      "authors": [
+        {
+          "name": "BBC News Brasil"
+        }
+      ]
+    },
+    {
+      "id": "https://www.bbc.com/portuguese/articles/cvgk71mjnz2o",
+      "url": "https://www.bbc.com/portuguese/articles/cvgk71mjnz2o",
+      "title": "A revolução discreta da cidade italiana que virou alternativa ao turismo excessivo de Veneza",
+      "content_text": "Enquanto Veneza luta contra multidões de visitantes e poluição, a vizinha Treviso coloca em prática um ambicioso programa de sustentabilidade, mantendo tradições que incluem o tiramisù e o prosecco.",
+      "date_published": "2025-10-18T21:14:07.000Z",
+      "image": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/0cb4/live/c0cb1c20-ac6b-11f0-b2a1-6f537f66f9aa.png",
+      "tags": [
+        "Arqueologia e História"
+      ],
+      "authors": [
+        {
+          "name": "BBC News Brasil"
+        }
+      ]
+    },
+    {
+      "id": "https://www.bbc.com/portuguese/articles/c1k0e0ypwl2o",
+      "url": "https://www.bbc.com/portuguese/articles/c1k0e0ypwl2o",
+      "title": "O edifício desenhado para combater a solidão reconhecido com prestigiado prêmio de arquitetura",
+      "content_text": "Projeto em Londres reimaginou moradia social para idosos, privilegiando espaços coletivos. O edifício desenhado para combater a solidão reconhecido com prestigiado prêmio de arquitetura",
+      "date_published": "2025-10-18T21:14:07.000Z",
+      "image": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/7eab/live/abca03f0-ac5b-11f0-bf12-67c1f4bdac34.png",
+      "tags": [
+        "Arqueologia e História"
+      ],
+      "authors": [
+        {
+          "name": "BBC News Brasil"
+        }
+      ]
+    },
+    {
+      "id": "https://monergismo.com/lembrando-voddie-baucham/",
+      "url": "https://monergismo.com/lembrando-voddie-baucham/",
+      "title": "Lembrando Voddie Baucham",
+      "content_text": "Em 2015 tive uma longa conversa com Voddie Baucham1, em um cruzeiro, na costa de Cuba. Sério. Lembrando Voddie Baucham",
+      "date_published": "2025-10-18T21:13:25.000Z",
+      "image": "https://i0.wp.com/monergismo.com/wp-content/uploads/2025/09/071755000_1758859315-G1uY03JXwAAcxFU.webp?resize=800%2C450&ssl=1",
+      "tags": [
+        "Teologia Reformada"
+      ],
+      "authors": [
+        {
+          "name": "Monergismo"
+        }
+      ]
+    },
+    {
+      "id": "https://voltemosaoevangelho.com/blog/2025/10/sou-cristao-mas-gosto-mais-dos-nao-crentes/",
+      "url": "https://voltemosaoevangelho.com/blog/2025/10/sou-cristao-mas-gosto-mais-dos-nao-crentes/",
+      "title": "Sou cristão, mas gosto mais dos não crentes",
+      "content_text": "John Piper faz dois questionamentos às pessoas que dizem preferir a amizade e companhia de não cristãos, isso pode significar algo bem grave.",
+      "date_published": "2025-10-18T21:13:08.000Z",
+      "image": "https://voltemosaoevangelho.com/blog/wp-content/uploads/2025/10/kfemp.png",
+      "tags": [
+        "Teologia Reformada"
+      ],
+      "authors": [
+        {
+          "name": "Voltemos ao Evangelho"
+        }
+      ]
+    },
+    {
+      "id": "https://voltemosaoevangelho.com/blog/2025/10/quando-nos-sentimos-em-uma-profunda-escuridao-espiritual/",
+      "url": "https://voltemosaoevangelho.com/blog/2025/10/quando-nos-sentimos-em-uma-profunda-escuridao-espiritual/",
+      "title": "Quando nos sentimos em uma profunda escuridão espiritual",
+      "content_text": "Em um período de profunda escuridão espiritual, a alegria em Deus pode parecer um lindo sonho que tivemos. Por mais que tentemos, parece que não conseguimos recapturar o sentimento.",
+      "date_published": "2025-10-18T21:13:08.000Z",
+      "image": "https://i0.wp.com/voltemosaoevangelho.com/blog/wp-content/uploads/2025/10/glkmhl.png?fit=837%2C470&ssl=1",
+      "tags": [
+        "Teologia Reformada"
+      ],
+      "authors": [
+        {
+          "name": "Voltemos ao Evangelho"
+        }
+      ]
+    },
+    {
+      "id": "https://voltemosaoevangelho.com/blog/2025/10/o-valor-metafisico-da-revelacao-biblica/",
+      "url": "https://voltemosaoevangelho.com/blog/2025/10/o-valor-metafisico-da-revelacao-biblica/",
+      "title": "O Valor Metafísico da Revelação Bíblica",
+      "content_text": "A Bíblia revela Deus como Senhor pessoal e infinito. Sua revelação confronta a idolatria da autonomia e conduz o homem da especulação à adoração",
+      "date_published": "2025-10-18T21:13:08.000Z",
+      "image": "https://i0.wp.com/voltemosaoevangelho.com/blog/wp-content/uploads/2025/10/ldmg.png?fit=837%2C470&ssl=1",
+      "tags": [
+        "Teologia Reformada"
+      ],
+      "authors": [
+        {
+          "name": "Voltemos ao Evangelho"
+        }
+      ]
+    },
+    {
+      "id": "https://voltemosaoevangelho.com/blog/2025/10/devemos-nos-alegrar-quando-deus-destroi-nossos-inimigos/",
+      "url": "https://voltemosaoevangelho.com/blog/2025/10/devemos-nos-alegrar-quando-deus-destroi-nossos-inimigos/",
+      "title": "Devemos nos alegrar quando Deus destrói nossos inimigos?",
+      "content_text": "John Piper Responde neste episódio qual deve ser a postura correta do coração do cristão quando ele finalmente dá um fim aos inimigos da Igreja de Cristo.",
+      "date_published": "2025-10-18T21:13:07.000Z",
+      "image": "https://i0.wp.com/voltemosaoevangelho.com/blog/wp-content/uploads/2025/10/djiip.png?fit=837%2C470&ssl=1",
+      "tags": [
+        "Teologia Reformada"
+      ],
+      "authors": [
+        {
+          "name": "Voltemos ao Evangelho"
+        }
+      ]
+    },
+    {
+      "id": "https://voltemosaoevangelho.com/blog/2025/10/a-biblia-culpa-as-mulheres-pelo-estupro/",
+      "url": "https://voltemosaoevangelho.com/blog/2025/10/a-biblia-culpa-as-mulheres-pelo-estupro/",
+      "title": "A Bíblia culpa as mulheres pelo estupro?",
+      "content_text": "Mesmo as leis difíceis do Antigo Testamento revelam um Deus bom, que protege, restaura e cumpre sua justiça em Cristo. A Bíblia culpa as mulheres pelo estupro?",
+      "date_published": "2025-10-18T21:13:07.000Z",
+      "image": "https://i0.wp.com/voltemosaoevangelho.com/blog/wp-content/uploads/2025/10/dohnj.png?fit=837%2C470&ssl=1",
+      "tags": [
+        "Teologia Reformada"
+      ],
+      "authors": [
+        {
+          "name": "Voltemos ao Evangelho"
+        }
+      ]
+    },
+    {
+      "id": "https://voltemosaoevangelho.com/blog/2025/10/por-que-afinal-existe-um-universo-por-que-existe-algo-em-vez-de-nada/",
+      "url": "https://voltemosaoevangelho.com/blog/2025/10/por-que-afinal-existe-um-universo-por-que-existe-algo-em-vez-de-nada/",
+      "title": "Por que afinal existe um universo? Por que existe algo em vez de nada?",
+      "content_text": "O universo é fruto de um ato livre, gracioso e amoroso do SENHOR Deus, não de forças externas, eventos cíclicos ou flutuações suspeitas.",
+      "date_published": "2025-10-18T21:13:07.000Z",
+      "image": "https://i0.wp.com/voltemosaoevangelho.com/blog/wp-content/uploads/2025/10/djnw.png?fit=837%2C470&ssl=1",
+      "tags": [
+        "Teologia Reformada"
+      ],
+      "authors": [
+        {
+          "name": "Voltemos ao Evangelho"
+        }
+      ]
+    },
+    {
+      "id": "https://cafetorah.com/desmantelando-a-estrategia-isla-nazista/",
+      "url": "https://cafetorah.com/desmantelando-a-estrategia-isla-nazista/",
+      "title": "Desmantelando a estratégia islã-nazista",
+      "content_text": "Notícias de IsraelDesmantelando a estratégia islã-nazista Notícias de IsraelGaza: exploração sexual em meio a guerra Notícias de IsraelÀ Beira da Tempestade: O mundo caminha para um conflito global No...",
+      "date_published": "2025-10-18T21:13:01.000Z",
+      "image": "https://cafetorah.com/wp-content/uploads/2025/10/pexels-mohammed-abubakr-201794886-19488937.jpg",
+      "tags": [
+        "Israel e Oriente Médio"
+      ],
+      "authors": [
+        {
+          "name": "Notícias de Israel"
+        }
+      ]
+    },
+    {
+      "id": "https://cafetorah.com/gaza-exploracao-sexual-em-meio-a-guerra/",
+      "url": "https://cafetorah.com/gaza-exploracao-sexual-em-meio-a-guerra/",
+      "title": "Gaza: exploração sexual em meio a guerra",
+      "content_text": "Mulheres em Gaza denunciam exploração sexual em troca de ajuda humanitária Relatos revelam que alimentos e assistência estão sendo usados como moeda de troca em meio à crise humanitária. Histórias de ...",
+      "date_published": "2025-10-18T21:12:33.000Z",
+      "image": "https://cafetorah.com/wp-content/uploads/2025/09/pexels-mart-production-7699317.jpg",
+      "tags": [
+        "Israel e Oriente Médio"
+      ],
+      "authors": [
+        {
+          "name": "Cafetorah - Notícias de Israel"
+        }
+      ]
+    },
+    {
+      "id": "https://cafetorah.com/desmantelando-a-estrategia-isla-nazista/",
+      "url": "https://cafetorah.com/desmantelando-a-estrategia-isla-nazista/",
+      "title": "Desmantelando a estratégia islã-nazista",
+      "content_text": "Os primeiros passos da seita nazista entre os palestinos galgou o líder árabe Amin al-Husseini, o Grande Mufti(líder supremo) de Jerusalém. Quando ele nasceu não havia um povo árabe palestino. Os árab...",
+      "date_published": "2025-10-18T21:12:31.000Z",
+      "image": "https://cafetorah.com/wp-content/uploads/2025/10/pexels-mohammed-abubakr-201794886-19488937.jpg",
+      "tags": [
+        "Israel e Oriente Médio"
+      ],
+      "authors": [
+        {
+          "name": "Cafetorah - Notícias de Israel"
+        }
+      ]
+    },
+    {
+      "id": "https://portasabertas.org.br/noticias/fake-news/",
+      "url": "https://portasabertas.org.br/noticias/fake-news/",
+      "title": "Fake News",
+      "content_text": "Fake News",
+      "date_published": "2025-10-18T21:12:24.000Z",
+      "tags": [
+        "Perseguição Religiosa"
+      ],
+      "authors": [
+        {
+          "name": "Portas Abertas"
+        }
+      ]
+    },
+    {
+      "id": "https://portasabertas.org.br/noticias/cristaos-perseguidos/violencia-contra-cristaos-e-oculta-em-mocambique/",
+      "url": "https://portasabertas.org.br/noticias/cristaos-perseguidos/violencia-contra-cristaos-e-oculta-em-mocambique/",
+      "title": "Violência contra cristãos em Moçambique é silenciada",
+      "content_text": "Nossos parceiros de campo em Moçambique relatam a atual situação da igreja no país e pedem por orações após o pronunciamento do Estado Islâmico. O grupo afirmou que os cristãos que não se converterem ...",
+      "date_published": "2025-10-18T21:12:23.000Z",
+      "image": "https://sitepa.s3.amazonaws.com/wp-content/uploads/br/2025/09/BR-RODAPE-DOACAO-MD-Mocambique-2025.avif",
+      "tags": [
+        "Perseguição Religiosa"
+      ],
+      "authors": [
+        {
+          "name": "Portas Abertas"
+        }
+      ]
+    },
+    {
+      "id": "https://portasabertas.org.br/noticias/cristaos-perseguidos/estado-islamico-exige-conversao-de-cristaos-africanos/",
+      "url": "https://portasabertas.org.br/noticias/cristaos-perseguidos/estado-islamico-exige-conversao-de-cristaos-africanos/",
+      "title": "Estado Islâmico exige conversão de cristãos africanos",
+      "content_text": "Em uma de suas publicações semanais de outubro, o Estado Islâmico divulgou um aviso aos cristãos africanos: Se os cristãos da África desejam permanecer seguros e escapar do ciclo de matança, eles deve...",
+      "date_published": "2025-10-18T21:12:23.000Z",
+      "image": "https://sitepa.s3.amazonaws.com/wp-content/uploads/br/2025/08/rodape-desperta-africa.avif",
+      "tags": [
+        "Perseguição Religiosa"
+      ],
+      "authors": [
+        {
+          "name": "Portas Abertas"
+        }
+      ]
+    },
+    {
+      "id": "https://portasabertas.org.br/noticias/cristaos-perseguidos/a-fuga-milagrosa-de-um-cristao-marcado-para-morrer/",
+      "url": "https://portasabertas.org.br/noticias/cristaos-perseguidos/a-fuga-milagrosa-de-um-cristao-marcado-para-morrer/",
+      "title": "A fuga milagrosa de um cristão marcado para morrer",
+      "content_text": "A atuação do grupo extremista Boko Haram na África Subsaariana tem deixado diversas marcas na igreja local. A história de Adam, um cristão de Camarões que foi sequestrado duas vezes pelos extremistas,...",
+      "date_published": "2025-10-18T21:12:22.000Z",
+      "image": "https://sitepa.s3.amazonaws.com/wp-content/uploads/br/2025/09/BR-RODAPE-DOACAO-Etiopia-projetos-de-geracao-de-renda.avif",
+      "tags": [
+        "Perseguição Religiosa"
+      ],
+      "authors": [
+        {
+          "name": "Portas Abertas"
+        }
+      ]
+    },
+    {
+      "id": "https://portasabertas.org.br/noticias/cristaos-perseguidos/",
+      "url": "https://portasabertas.org.br/noticias/cristaos-perseguidos/",
+      "title": "A fuga milagrosa de um cristão marcado para morrer",
+      "content_text": "A atuação do grupo extremista Boko Haram na África Subsaariana tem deixado diversas marcas na igreja local. A história de Adam, um cristão de Camarões que foi sequestrado duas vezes pelos extremistas,...",
+      "date_published": "2025-10-18T21:12:21.000Z",
+      "tags": [
+        "Perseguição Religiosa"
+      ],
+      "authors": [
+        {
+          "name": "Portas Abertas"
+        }
+      ]
+    },
+    {
+      "id": "https://portasabertas.org.br/noticias/cristaos-perseguidos/estudante-e-expulso-de-escola-por-compartilhar-a-fe-em-jesus/",
+      "url": "https://portasabertas.org.br/noticias/cristaos-perseguidos/estudante-e-expulso-de-escola-por-compartilhar-a-fe-em-jesus/",
+      "title": "Estudante é expulso de escola por compartilhar a fé em Jesus",
+      "content_text": "O estudante Alim, de 16 anos, foi alvo de perseguição por sua fé na Ásia Central. Alim contou a parceiros locais da Portas Abertas o que aconteceu na escola e como estava se sentindo. Veja o relato a ...",
+      "date_published": "2025-10-18T21:12:21.000Z",
+      "image": "https://sitepa.s3.amazonaws.com/wp-content/uploads/br/2025/10/Escola-na-Asia-Central.avif",
+      "tags": [
+        "Perseguição Religiosa"
+      ],
+      "authors": [
+        {
+          "name": "Portas Abertas"
+        }
+      ]
+    },
+    {
+      "id": "https://folhagospel.com/uruguai-aprova-lei-que-legaliza-a-eutanasia-e-reacende-debate-sobre-o-valor-da-vida/",
+      "url": "https://folhagospel.com/uruguai-aprova-lei-que-legaliza-a-eutanasia-e-reacende-debate-sobre-o-valor-da-vida/",
+      "title": "Uruguai aprova lei que legaliza a eutanásia e reacende debate sobre o valor da vida",
+      "content_text": "O Senado do Uruguai aprovou na quarta-feira (15) o projeto de lei conhecido como Morte Digna, que autoriza a eutanásia em determinadas circunstâncias. A decisão, que recebeu 20 votos favoráveis entre ...",
+      "date_published": "2025-10-18T20:45:06.000Z",
+      "image": "https://folhagospel.com/wp-content/uploads/2025/10/Bandeira-do-Uruguai-Foto-Canva-Pro.jpg",
+      "tags": [
+        "Notícias Cristãs"
+      ],
+      "authors": [
+        {
+          "name": "Folha Gospel"
+        }
+      ]
+    },
+    {
+      "id": "https://folhagospel.com/igreja-que-mais-cresce-no-reino-unido-tem-sede-na-nigeria-pais-que-persegue-cristaos/",
+      "url": "https://folhagospel.com/igreja-que-mais-cresce-no-reino-unido-tem-sede-na-nigeria-pais-que-persegue-cristaos/",
+      "title": "Igreja que mais cresce no Reino Unido tem sede na Nigéria, país que persegue cristãos",
+      "content_text": "A Igreja Cristã Redimida de Deus (RCCG), fundada na Nigéria em 1952, tem protagonizado um movimento surpreendente de expansão no Reino Unido, onde já soma cerca de 870 congregações. O avanço, que vem ...",
+      "date_published": "2025-10-18T20:17:37.000Z",
+      "image": "https://folhagospel.com/wp-content/uploads/2025/10/image-23-e1760818364883.png",
+      "tags": [
+        "Notícias Cristãs"
+      ],
+      "authors": [
+        {
+          "name": "Folha Gospel"
+        }
+      ]
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMifEFVX3lxTE03VGpKVmpJV0ZvVHFxa0JxX3VNaVBPRWh4ck1veHhmbU5Ua2FFcmVPX3VTNC12SGhlcjdoVFZZZ0pWcWJYTUg5RzdONGthM0dvc0F0bFFna3AzRk5oUk85NkdRXzhVQWFodTJlTTdRbmZYbzMzX1ZjaGFSTGLSAYIBQVVfeXFMTkNwYXM0RDhuSmlNTWxiYkxhWlk0cF83ZEZkLWpITFFtOHNyNkV6RFFDUGpJaWdwY094ekhlczVlQ0lwUVBhN0FTWGxld0o5ZjN6dnpsOGxDVmFRVDNxcUZ3bGgxMm0zamttZHRmZ2pEZzFweFFuelBzb0Z5dTJnRFZfdw?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE03VGpKVmpJV0ZvVHFxa0JxX3VNaVBPRWh4ck1veHhmbU5Ua2FFcmVPX3VTNC12SGhlcjdoVFZZZ0pWcWJYTUg5RzdONGthM0dvc0F0bFFna3AzRk5oUk85NkdRXzhVQWFodTJlTTdRbmZYbzMzX1ZjaGFSTGLSAYIBQVVfeXFMTkNwYXM0RDhuSmlNTWxiYkxhWlk0cF83ZEZkLWpITFFtOHNyNkV6RFFDUGpJaWdwY094ekhlczVlQ0lwUVBhN0FTWGxld0o5ZjN6dnpsOGxDVmFRVDNxcUZ3bGgxMm0zamttZHRmZ2pEZzFweFFuelBzb0Z5dTJnRFZfdw?oc=5",
+      "title": "Concurso GCM Terra Santa PA: 20 vagas  CR. Inscreva-se! - Estratégia Concursos",
+      "content_text": "a href\"https:news.google.comrssarticlesCBMifEFVX3lxTE03VGpKVmpJV0ZvVHFxa0JxX3VNaVBPRWh4ck1veHhmbU5Ua2FFcmVPX3VTNC12SGhlcjdoVFZZZ0pWcWJYTUg5RzdONGthM0dvc0F0bFFna3AzRk5oUk85NkdRXzhVQWFodTJlTTdRbmZYbzMzX...",
+      "date_published": "2025-10-18T19:57:35.000Z",
+      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "tags": [
+        "Arqueologia Bíblica"
+      ],
+      "authors": [
+        {
+          "name": "Google News - Terra Santa"
+        }
+      ]
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQWkMxTmhUcjVwajVQdkI4TW9DZ1NRcHBrTVBPUVExUjZVMjlGTE9pMHZOOW1WcTFBNWhKbmlYbXJGRzFpclhOMWlDWnNQSTlmSW9HR0xXT1h6dHlIWW42TjMyQXVtNVQ2U19BSEpCQTR5eFJ6T1ZLTlJfQk1mcEVkbzBkZlpxTUZLWGp0Y29MOHUtc3RIWXphNzViaURwN1JiWTZ4VW5QZmY2OHJCMmhYNzVVdnFMd1VROXk4MnZRVGtfZXRLSzVPWVd6XzhMdm8?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQWkMxTmhUcjVwajVQdkI4TW9DZ1NRcHBrTVBPUVExUjZVMjlGTE9pMHZOOW1WcTFBNWhKbmlYbXJGRzFpclhOMWlDWnNQSTlmSW9HR0xXT1h6dHlIWW42TjMyQXVtNVQ2U19BSEpCQTR5eFJ6T1ZLTlJfQk1mcEVkbzBkZlpxTUZLWGp0Y29MOHUtc3RIWXphNzViaURwN1JiWTZ4VW5QZmY2OHJCMmhYNzVVdnFMd1VROXk4MnZRVGtfZXRLSzVPWVd6XzhMdm8?oc=5",
+      "title": "Policial reformado morre após carro cair de ponte próximo ao aterro sanitário de Patos de Minas - Patos Já",
+      "content_text": "a href\"https:news.google.comrssarticlesCBMizwFBVV95cUxQWkMxTmhUcjVwajVQdkI4TW9DZ1NRcHBrTVBPUVExUjZVMjlGTE9pMHZOOW1WcTFBNWhKbmlYbXJGRzFpclhOMWlDWnNQSTlmSW9HR0xXT1h6dHlIWW42TjMyQXVtNVQ2U19BSEpCQTR5eFJ6T...",
+      "date_published": "2025-10-18T14:19:00.000Z",
+      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "tags": [
+        "Teologia Reformada"
+      ],
+      "authors": [
+        {
+          "name": "Google News - Calvinismo"
+        }
+      ]
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQUkV4dVJPU0tuM01RYWZOTmVOM0FHd0lQaWRsWE9oLWFuRGJRRjhTdWo3Z3F3Q1NHazZTeDFoVUdUUjBzRnE5aE1EN1RXX1RHNXhzN3VYcVJKUy03QzhsbGRRbFpsNDRJTjlQemh1aklzdW14SXJYLUlMb3dUUmlxTUx30gGHAUFVX3lxTFAzc3Y1NGk3ZGlyUC1pc3BZSVN3dDRybXR4SUVxTldUSW1OVkduTG1RYnJJUHdrWGtuN05oZnVKbFI2TFB4QVIwZFdjdVRpNmR5Q0UwZV92RHVMM2tZaGs4LUItQXZlQXgyQ0JHd0VBbU12aWFqSkIxclo2bXNCa01OT0dGVERvQQ?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQUkV4dVJPU0tuM01RYWZOTmVOM0FHd0lQaWRsWE9oLWFuRGJRRjhTdWo3Z3F3Q1NHazZTeDFoVUdUUjBzRnE5aE1EN1RXX1RHNXhzN3VYcVJKUy03QzhsbGRRbFpsNDRJTjlQemh1aklzdW14SXJYLUlMb3dUUmlxTUx30gGHAUFVX3lxTFAzc3Y1NGk3ZGlyUC1pc3BZSVN3dDRybXR4SUVxTldUSW1OVkduTG1RYnJJUHdrWGtuN05oZnVKbFI2TFB4QVIwZFdjdVRpNmR5Q0UwZV92RHVMM2tZaGs4LUItQXZlQXgyQ0JHd0VBbU12aWFqSkIxclo2bXNCa01OT0dGVERvQQ?oc=5",
+      "title": "Concurso Terra Santa PA: cronograma é retificado! - Estratégia Concursos",
+      "content_text": "a href\"https:news.google.comrssarticlesCBMiggFBVV95cUxQUkV4dVJPU0tuM01RYWZOTmVOM0FHd0lQaWRsWE9oLWFuRGJRRjhTdWo3Z3F3Q1NHazZTeDFoVUdUUjBzRnE5aE1EN1RXX1RHNXhzN3VYcVJKUy03QzhsbGRRbFpsNDRJTjlQemh1aklzdW14S...",
+      "date_published": "2025-10-18T13:50:23.000Z",
+      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "tags": [
+        "Arqueologia Bíblica"
+      ],
+      "authors": [
+        {
+          "name": "Google News - Terra Santa"
+        }
+      ]
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOZ294RVNpUmJLUmtJS3dhbmFrRkxBUjhXdURSVjNvX0NweV9rUWRmem53bWFGUHl1dUwwclZCcmFSUW9Lb1dKUXhwYWRCNlVtX3dhUC1ocHJwcDk2empBUFluQU5KUWQzWEZWREU0OFdIR2RGMTRqRGJ3Nm5kVmJMRUlFSDE5VDBfTUFEcUh2dUdtWTl0QlV0LUJGUm1CQ0FNNUE?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOZ294RVNpUmJLUmtJS3dhbmFrRkxBUjhXdURSVjNvX0NweV9rUWRmem53bWFGUHl1dUwwclZCcmFSUW9Lb1dKUXhwYWRCNlVtX3dhUC1ocHJwcDk2empBUFluQU5KUWQzWEZWREU0OFdIR2RGMTRqRGJ3Nm5kVmJMRUlFSDE5VDBfTUFEcUh2dUdtWTl0QlV0LUJGUm1CQ0FNNUE?oc=5",
+      "title": "Prédio do Cridac será reformado e receberá delegacias da PJC - FOLHAMAX",
+      "content_text": "a href\"https:news.google.comrssarticlesCBMiogFBVV95cUxOZ294RVNpUmJLUmtJS3dhbmFrRkxBUjhXdURSVjNvX0NweV9rUWRmem53bWFGUHl1dUwwclZCcmFSUW9Lb1dKUXhwYWRCNlVtX3dhUC1ocHJwcDk2empBUFluQU5KUWQzWEZWREU0OFdIR2RGM...",
+      "date_published": "2025-10-18T12:51:00.000Z",
+      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "tags": [
+        "Teologia Reformada"
+      ],
+      "authors": [
+        {
+          "name": "Google News - Calvinismo"
+        }
+      ]
+    },
+    {
+      "id": "https://www.cpadnews.com.br/azerbaijao-rejeita-pedido-de-registro-de-igreja/",
+      "url": "https://www.cpadnews.com.br/azerbaijao-rejeita-pedido-de-registro-de-igreja/",
+      "title": "Azerbaijão rejeita pedido de registro de igreja",
+      "content_text": "Apesar da garantia de liberdade religiosa, prevista em Constituição, as autoridades do Azerbaijão se recusam a aceitar o pedido de registro oficial da Peace Church (Igreja da Paz), localizada em Sumga...",
+      "date_published": "2025-10-18T12:00:45.000Z",
+      "image": "https://www.cpadnews.com.br/wp-content/uploads/2025/10/bandeira-azerbaijao-scaled.jpg",
+      "tags": [
+        "Educação Cristã"
+      ],
+      "authors": [
+        {
+          "name": "CPAD News"
+        }
+      ]
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPeHE0V0tNX2NXQ3VRdUFsZE41STNkaEl5NXZEeWNXY3hvR09EUWNkS1g2VEk4dVBHbERCa3JLbzVGUk5nOGQ5bFNuOG5ZaGJSV3VUNjdieEFVZnh6d1BCd1FGZGhnbng1dnVITzVCclZpREZLRG8xY1EtMjUtbS1raXZQbmpRZjc0aDZ3TU0wclFoNlNKbVlBT1JZVm12N0pDYkdwaEFaRFhQcWd6?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPeHE0V0tNX2NXQ3VRdUFsZE41STNkaEl5NXZEeWNXY3hvR09EUWNkS1g2VEk4dVBHbERCa3JLbzVGUk5nOGQ5bFNuOG5ZaGJSV3VUNjdieEFVZnh6d1BCd1FGZGhnbng1dnVITzVCclZpREZLRG8xY1EtMjUtbS1raXZQbmpRZjc0aDZ3TU0wclFoNlNKbVlBT1JZVm12N0pDYkdwaEFaRFhQcWd6?oc=5",
+      "title": "Violência contra cristãos em Moçambique é silenciada - Portas Abertas",
+      "content_text": "a href\"https:news.google.comrssarticlesCBMirAFBVV95cUxPeHE0V0tNX2NXQ3VRdUFsZE41STNkaEl5NXZEeWNXY3hvR09EUWNkS1g2VEk4dVBHbERCa3JLbzVGUk5nOGQ5bFNuOG5ZaGJSV3VUNjdieEFVZnh6d1BCd1FGZGhnbng1dnVITzVCclZpREZLR...",
+      "date_published": "2025-10-18T11:00:00.000Z",
+      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "tags": [
+        "Igreja Perseguida"
+      ],
+      "authors": [
+        {
+          "name": "Google News - Cristãos Perseguidos"
+        }
+      ]
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9UOHNRREZkQmhjT05ESHFMbVpKZms1dlNVUEVDWFhxNk5NZkVjVW9CNy03YVZ1Y0dZTldULVRnWkJ4TFZDSjFqNURMWjFPN2Nlc0E?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9UOHNRREZkQmhjT05ESHFMbVpKZms1dlNVUEVDWFhxNk5NZkVjVW9CNy03YVZ1Y0dZTldULVRnWkJ4TFZDSjFqNURMWjFPN2Nlc0E?oc=5",
+      "title": "Spartacus: House of Ashur to Premiere on December 5 - IMDb",
+      "content_text": "a href\"https:news.google.comrssarticlesCBMiUkFVX3lxTE9UOHNRREZkQmhjT05ESHFMbVpKZms1dlNVUEVDWFhxNk5NZkVjVW9CNy03YVZ1Y0dZTldULVRnWkJ4TFZDSjFqNURMWjFPN2Nlc0E?oc5\" target\"_blank\"Spartacus: House of Ashur ...",
+      "date_published": "2025-10-18T09:21:23.000Z",
+      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "tags": [
+        "Arqueologia e História"
+      ],
+      "authors": [
+        {
+          "name": "Google News - Nínive e Assíria"
+        }
+      ]
+    },
+    {
+      "id": "https://radio93.com.br/noticias/giro-cristao/espanha-ultrapassa-marca-de-100-mil-abortos-em-um-ano/",
+      "url": "https://radio93.com.br/noticias/giro-cristao/espanha-ultrapassa-marca-de-100-mil-abortos-em-um-ano/",
+      "title": "Espanha ultrapassa marca de 100 mil abortos em um ano",
+      "content_text": "Pesquisa revela acréscimo de 2,9. The post Espanha ultrapassa marca de 100 mil abortos em um ano appeared first on Rádio 93FM-RJ.",
+      "date_published": "2025-10-18T09:00:13.000Z",
+      "image": "https://radio93.com.br/wp-content/uploads/2025/10/Bandeira-da-Espanha_11.jpg",
+      "tags": [
+        "Notícias Cristãs"
+      ],
+      "authors": [
+        {
+          "name": "Radio 93 - Giro Cristão"
+        }
+      ]
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOYlVlUVVXYkFzWGZGOHNweUxtTkktU2w2MlZtaS1ITDA2MmU5QS1VNXZPTEVycnJ3ckFqbmtobmR3dUtmdUpsemdtbC04WjhFU0x5T3FfQmlDZzc5cEE5UXI5QWowTlJ4c01PR2RCNExXVEZkU2pyNnV3S3M3Q1BZVHBCUDJOV3pvMl9Ja0VTVkhhT1Myb1VocHBfMjAzYVcwOU9HYkRrSEd6cVpDclZNYm1kUDJLM1RTZFJfTVJIWFM3cDZJ?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOYlVlUVVXYkFzWGZGOHNweUxtTkktU2w2MlZtaS1ITDA2MmU5QS1VNXZPTEVycnJ3ckFqbmtobmR3dUtmdUpsemdtbC04WjhFU0x5T3FfQmlDZzc5cEE5UXI5QWowTlJ4c01PR2RCNExXVEZkU2pyNnV3S3M3Q1BZVHBCUDJOV3pvMl9Ja0VTVkhhT1Myb1VocHBfMjAzYVcwOU9HYkRrSEd6cVpDclZNYm1kUDJLM1RTZFJfTVJIWFM3cDZJ?oc=5",
+      "title": "Esta construção de 5 mil anos foi uma resposta às mudanças climáticas - Olhar Digital",
+      "content_text": "a href\"https:news.google.comrssarticlesCBMixAFBVV95cUxOYlVlUVVXYkFzWGZGOHNweUxtTkktU2w2MlZtaS1ITDA2MmU5QS1VNXZPTEVycnJ3ckFqbmtobmR3dUtmdUpsemdtbC04WjhFU0x5T3FfQmlDZzc5cEE5UXI5QWowTlJ4c01PR2RCNExXVEZkU...",
+      "date_published": "2025-10-18T07:50:00.000Z",
+      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "tags": [
+        "Arqueologia e História"
+      ],
+      "authors": [
+        {
+          "name": "Google News - Achados Arqueológicos"
+        }
+      ]
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNMnJBRktfUENueU1WS01fcWNRN0F1VzFidTVNRmw4QWRqQk1POVFQY1ZTeUNhT1Axd0MtZkxCTW1NR2c2VFhuaTBzUFVBTWMzUk9HMmxoY29JaFhLc0tkZVAyZV9YYk16MDJIV1RBLVFtYmZBQ2dpTEVkQlFTcFdQdzBKQ3J4cFFBcGloRXBseS1VX3JrU0w2S0ppU2xicmx3NjNaVzJZSVRhTEZHRS1qMS1GLWpyTUxxdlVZak0xVlRIQklEbnlSUXZfbG4yeXNOR183ZA?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNMnJBRktfUENueU1WS01fcWNRN0F1VzFidTVNRmw4QWRqQk1POVFQY1ZTeUNhT1Axd0MtZkxCTW1NR2c2VFhuaTBzUFVBTWMzUk9HMmxoY29JaFhLc0tkZVAyZV9YYk16MDJIV1RBLVFtYmZBQ2dpTEVkQlFTcFdQdzBKQ3J4cFFBcGloRXBseS1VX3JrU0w2S0ppU2xicmx3NjNaVzJZSVRhTEZHRS1qMS1GLWpyTUxxdlVZak0xVlRIQklEbnlSUXZfbG4yeXNOR183ZA?oc=5",
+      "title": "Veja tudo o que se sabe sobre caso de policial reformado que matou mulher em Belo Horizonte - R7",
+      "content_text": "a href\"https:news.google.comrssarticlesCBMi1AFBVV95cUxNMnJBRktfUENueU1WS01fcWNRN0F1VzFidTVNRmw4QWRqQk1POVFQY1ZTeUNhT1Axd0MtZkxCTW1NR2c2VFhuaTBzUFVBTWMzUk9HMmxoY29JaFhLc0tkZVAyZV9YYk16MDJIV1RBLVFtYmZBQ...",
+      "date_published": "2025-10-18T05:00:01.000Z",
+      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "tags": [
+        "Teologia Reformada"
+      ],
+      "authors": [
+        {
+          "name": "Google News - Calvinismo"
+        }
+      ]
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQWDFRa0o5QTZyQ2ZTdFRXS1RHaHJ6VUVvVk1GMkRmUnc2QXdhRnNVR3NRVURlUUNsQ0pFNXo4TVZGdUJUYjlGekgyUExpMWxSNy1BZzc2R3UyQ0R1Z1dSQkNsXzlNYTd5aTZNbHJ5LWp5TXRTWXc3OXRUWVVMejFXSGQ2MXNkemJleU1ZOUpwdTc5NlhTdTRlZi1zbVVQRkJtNXFLTVlnaFRTeVZfYmliTjh1empoNTdqcVlOU0VORVlJeHA5QkgzSFIwYWZQQTA?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQWDFRa0o5QTZyQ2ZTdFRXS1RHaHJ6VUVvVk1GMkRmUnc2QXdhRnNVR3NRVURlUUNsQ0pFNXo4TVZGdUJUYjlGekgyUExpMWxSNy1BZzc2R3UyQ0R1Z1dSQkNsXzlNYTd5aTZNbHJ5LWp5TXRTWXc3OXRUWVVMejFXSGQ2MXNkemJleU1ZOUpwdTc5NlhTdTRlZi1zbVVQRkJtNXFLTVlnaFRTeVZfYmliTjh1empoNTdqcVlOU0VORVlJeHA5QkgzSFIwYWZQQTA?oc=5",
+      "title": "Cabo de Santo Agostinho deve ter um dia de céu nublado com pancadas rápidas neste sábado (18) - O TEMPO",
+      "content_text": "a href\"https:news.google.comrssarticlesCBMizwFBVV95cUxQWDFRa0o5QTZyQ2ZTdFRXS1RHaHJ6VUVvVk1GMkRmUnc2QXdhRnNVR3NRVURlUUNsQ0pFNXo4TVZGdUJUYjlGekgyUExpMWxSNy1BZzc2R3UyQ0R1Z1dSQkNsXzlNYTd5aTZNbHJ5LWp5TXRTW...",
+      "date_published": "2025-10-18T03:35:58.000Z",
+      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "tags": [
+        "História da Igreja"
+      ],
+      "authors": [
+        {
+          "name": "Google News - Patrística"
+        }
+      ]
+    },
+    {
+      "id": "https://radio93.com.br/noticias/giro-cristao/cristaos-americanos-estao-perdendo-conviccao-biblica-sobre-familia-e-moralidade/",
+      "url": "https://radio93.com.br/noticias/giro-cristao/cristaos-americanos-estao-perdendo-conviccao-biblica-sobre-familia-e-moralidade/",
+      "title": "Cristãos americanos estão perdendo convicção bíblica sobre família e moralidade",
+      "content_text": "Pesquisa revelou que menos da metade dos convertidos se identifica como pró-vida. The post Cristãos americanos estão perdendo convicção bíblica sobre família e moralidade appeared first on Rádio 93FM-...",
+      "date_published": "2025-10-18T03:05:58.000Z",
+      "image": "https://radio93.com.br/wp-content/uploads/2025/10/Familia_Biblia.jpg",
+      "tags": [
+        "Notícias Cristãs"
+      ],
+      "authors": [
+        {
+          "name": "Radio 93 - Giro Cristão"
+        }
+      ]
+    }
+  ]
+}

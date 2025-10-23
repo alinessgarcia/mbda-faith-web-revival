@@ -1,4 +1,4 @@
-import { SEOConfig, NavigationItem, SocialLink } from '../types';
+import { SEOConfig, SocialLink } from '../types';
 
 // Configurações SEO centralizadas
 export const SEO_CONFIG: SEOConfig = {
@@ -9,21 +9,7 @@ export const SEO_CONFIG: SEOConfig = {
   ogDescription: "Igreja cristã voltada ao ensino profundo da Palavra de Deus, comunhão familiar e edificação espiritual."
 };
 
-// Navegação principal
-export const NAVIGATION_ITEMS: NavigationItem[] = [
-  { id: "inicio", label: "Início", href: "#" },
-  { id: "quem-somos", label: "Quem Somos", href: "#quem-somos" },
-  { id: "declaracao-de-fe", label: "Declaração de Fé", href: "#declaracao-de-fe" },
-  { id: "devocional", label: "Devocional", href: "#devocional" },
-  { id: "estudos-biblicos", label: "Estudos Bíblicos", href: "#estudos-biblicos" },
-  { id: "seterec", label: "S.E.T.E.R.E.C", href: "#seterec" },
-  { id: "agenda", label: "Agenda", href: "#agenda" },
-  { id: "espaco-familia", label: "Espaço Família", href: "#espaco-familia" },
-  { id: "midia", label: "Mídia", href: "#midia" },
-  { id: "sites", label: "Sites", href: "#sites" },
-  { id: "contato", label: "Contato", href: "#contato" }
-];
-
+// NAVIGATION_ITEMS removido - não estava sendo usado (navegação implementada diretamente nos componentes)
 // CONTACT_INFO removido - não estava sendo usado (dados hardcoded no Footer)
 
 // Links sociais
@@ -50,20 +36,13 @@ const SCHEDULE_COLORS = {
   sunday: '#f97316',    // Laranja
   wednesday: '#eab308', // Amarelo
   friday: '#8b5cf6',    // Roxo
-  seterec: '#06b6d4'    // Ciano
+
 } as const;
 
 // Agenda da igreja
 export const CHURCH_SCHEDULE = [
   // COLUNA ESQUERDA (3 cards)
-  {
-    day: 'Terças e Quintas',
-    color: SCHEDULE_COLORS.seterec,
-    activities: [
-      { time: '20h', activity: 'S.E.T.E.R.E.C', type: 'Seminário Teológico', icon: '🎓' }
-    ],
-    position: 'left'
-  },
+
   {
     day: 'Quarta-feira',
     color: SCHEDULE_COLORS.wednesday,

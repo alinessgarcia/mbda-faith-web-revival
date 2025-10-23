@@ -73,7 +73,6 @@ npm audit fix --force
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
-import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
   server: {
@@ -81,12 +80,8 @@ export default defineConfig(({ mode }) => ({
     port: 8080,
   },
   plugins: [
-    react(),
-    mode === 'development' &&
-    componentTagger({
-      tagPrefix: 'lovable'
-    })
-  ].filter(Boolean),
+    react()
+  ],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
@@ -100,8 +95,7 @@ export default defineConfig(({ mode }) => ({
 {
   "devDependencies": {
     "vite": "^5.4.1",
-    "@vitejs/plugin-react-swc": "^3.5.0",
-    "lovable-tagger": "^1.1.9"
+    "@vitejs/plugin-react-swc": "^3.5.0"
   }
 }
 ```
@@ -148,7 +142,7 @@ export default defineConfig(({ mode }) => ({
 
 ### **4. Plugins:**
 - `@vitejs/plugin-react-swc` pode precisar de atualização
-- `lovable-tagger` pode ter incompatibilidades
+- Removido o uso de `lovable-tagger` do projeto
 
 ---
 

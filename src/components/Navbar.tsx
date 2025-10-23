@@ -1,11 +1,26 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Radio } from "lucide-react";
 import { useScrollTo } from "../hooks/useScrollTo";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { scrollToTop, scrollToSection } = useScrollTo();
+
+  // Atualiza a variável CSS --navbar-height com a altura real da navbar para compensação global
+  useEffect(() => {
+    const updateNavbarHeight = () => {
+      const navEl = document.querySelector("nav") as HTMLElement | null;
+      const height = navEl?.offsetHeight || 0;
+      document.documentElement.style.setProperty("--navbar-height", `${height}px`);
+    };
+
+    updateNavbarHeight();
+    window.addEventListener("resize", updateNavbarHeight);
+    return () => {
+      window.removeEventListener("resize", updateNavbarHeight);
+    };
+  }, []);
 
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
@@ -56,9 +71,7 @@ const Navbar = () => {
             <button onClick={() => scrollToSection("estudos-biblicos")} className="nav-link" type="button">
               Estudos Bíblicos
             </button>
-            <button onClick={() => scrollToSection("seterec")} className="nav-link" type="button">
-              S.E.T.E.R.E.C
-            </button>
+
             <button onClick={() => scrollToSection("agenda")} className="nav-link" type="button">
               Agenda
             </button>
@@ -171,16 +184,7 @@ const Navbar = () => {
               >
                 Estudos Bíblicos
               </button>
-              <button
-                onClick={() => {
-                  scrollToSection("seterec");
-                  closeMenu();
-                }}
-                className="nav-link"
-                type="button"
-              >
-                S.E.T.E.R.E.C
-              </button>
+
               <button
                 onClick={() => {
                   scrollToSection("agenda");

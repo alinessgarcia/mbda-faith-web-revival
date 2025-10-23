@@ -445,5 +445,5 @@ O Hero ficará assim:
 - **Detalhes:** Linhas decorativas, bordas duplas, drop caps
 - **Navegação:** Botões "Edição Anterior/Próxima"
 
-**Cole no Lovable e tenha um jornal digital reformado!** 📰✨
+**Implemente no site e tenha um jornal digital reformado!** 📰✨
 

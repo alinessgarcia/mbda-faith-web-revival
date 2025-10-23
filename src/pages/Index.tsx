@@ -1,11 +1,11 @@
 
 import Navbar from "../components/Navbar";
-import Hero from "../components/Hero";
+
 import QuemSomos from "../components/QuemSomos";
 import DeclaracaoDeFe from "../components/DeclaracaoDeFe";
 import Devocional from "../components/Devocional";
 import EstudosBiblicos from "../components/EstudosBiblicos";
-import Seterec from "../components/Seterec";
+
 import Agenda from "../components/Agenda";
 import EspacoFamilia from "../components/EspacoFamilia";
 import Midia from "../components/Midia";
@@ -15,6 +15,7 @@ import FloatingButtons from "../components/FloatingButtons";
 import ChatBox from "../components/ChatBox";
 import { useSEO } from "../hooks/useSEO";
 import { SEO_CONFIG } from "../constants";
+import ReconNewsFeed from "../components/ReconNewsFeed";
 
 const Index = () => {
   // Configuração SEO centralizada
@@ -23,13 +24,13 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <Hero />
       <main>
+        <ReconNewsFeed />
         <QuemSomos />
         <DeclaracaoDeFe />
         <Devocional />
         <EstudosBiblicos />
-        <Seterec />
+
         <Agenda />
         <EspacoFamilia />
         <Midia />

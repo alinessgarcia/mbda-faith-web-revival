@@ -54,9 +54,9 @@ class ChristianNewsScraper:
         except Exception:
             self.max_age_hours = 24
         try:
-            self.max_items = int(os.getenv('NEWS_MAX_ITEMS', '30'))
+            self.max_items = int(os.getenv('NEWS_MAX_ITEMS', '60'))
         except Exception:
-            self.max_items = 30
+            self.max_items = 60
 
         # Configurações de resumo e timezone
         try:
@@ -174,6 +174,7 @@ class ChristianNewsScraper:
             'google_news': {
                 'name': 'Google News',
                 'queries': [
+                    # EXISTENTES
                     {'label': 'Arqueologia Bíblica', 'q': '"arqueologia bíblica" OR "biblical archaeology" OR "manuscritos do Mar Morto" OR "Dead Sea Scrolls" OR Qumran OR Israel arqueologia', 'category': 'Arqueologia e História'},
                     {'label': 'Cristãos Perseguidos', 'q': '"cristãos perseguidos" OR "igreja perseguida" OR "Portas Abertas" OR site:portasabertas.org.br', 'category': 'Igreja Perseguida'},
                     {'label': 'Reconciliação Cristã', 'q': '"reconciliação cristã" OR "perdão bíblico" OR "unidade da igreja"', 'category': 'Ministério da Reconciliação'},
@@ -185,7 +186,26 @@ class ChristianNewsScraper:
                     {'label': 'Calvinismo', 'q': 'calvinismo OR reformado OR "João Calvino"', 'category': 'Teologia Reformada'},
                     {'label': 'Arminianismo', 'q': 'arminianismo OR "Jacó Armínio" OR "livre arbítrio"', 'category': 'Teologia'},
                     {'label': 'Seitas da Época de Jesus', 'q': 'fariseus OR saduceus OR essênios OR zelotes OR "seitas da época de Jesus"', 'category': 'Contexto Histórico'},
-                    {'label': 'Usos e Costumes da Bíblia', 'q': '"usos e costumes da bíblia" OR "costumes bíblicos" OR "contexto judaico" OR "cultura bíblica"', 'category': 'Contexto Cultural'}
+                    {'label': 'Usos e Costumes da Bíblia', 'q': '"usos e costumes da bíblia" OR "costumes bíblicos" OR "contexto judaico" OR "cultura bíblica"', 'category': 'Contexto Cultural'},
+
+                    # NOVOS ALVOS (regiões)
+                    {'label': 'Nínive e Assíria', 'q': 'Nínive OR Ninive OR Assíria OR Assyria OR Nimrud OR Ashur OR Mosul OR "arqueologia no Iraque" OR "Iraq archaeology"', 'category': 'Arqueologia e História'},
+                    {'label': 'Síria e Damasco', 'q': 'Síria OR Syria OR Damasco OR Ugarit OR Ebla OR "arqueologia na Síria" OR "Syria archaeology"', 'category': 'Arqueologia e História'},
+                    {'label': 'Terra Santa', 'q': '"Terra Santa" OR "Holy Land" OR "arqueologia em Israel" OR "Cidade de Davi" OR "Jerusalém antiga"', 'category': 'Arqueologia Bíblica'},
+                    {'label': 'Crescente Fértil', 'q': '"Crescente Fértil" OR "Fertile Crescent" OR Mesopotâmia OR Sumer OR Akkad OR Babilônia OR Assíria', 'category': 'História Antiga'},
+                    {'label': 'Grécia Antiga e Helenismo', 'q': '"Grécia Antiga" OR "Ancient Greece" OR helenismo OR helênico OR "período helenístico" OR "Alexandre o Grande" OR "Antíoco Epifânio"', 'category': 'Contexto Histórico'},
+
+                    # TIPOS DE EVIDÊNCIAS
+                    {'label': 'Museus e Artefatos', 'q': 'museu bíblico OR "biblical museum" OR "artefatos bíblicos" OR "biblical artifacts" OR "exposição arqueologia bíblica" OR "museum Dead Sea Scrolls"', 'category': 'Arqueologia e História'},
+                    {'label': 'Achados Arqueológicos', 'q': '"achados arqueológicos" OR "descobertas arqueológicas" OR "archaeological finds" OR "escavações" OR "sítio arqueológico"', 'category': 'Arqueologia e História'},
+                    {'label': 'Cópias e Manuscritos', 'q': '"cópias de manuscritos" OR "manuscritos bíblicos" OR "biblical manuscripts" OR fragmentos OR papiros OR codex', 'category': 'Arqueologia Bíblica'},
+
+                    # CIÊNCIA E FÉ
+                    {'label': 'Criacionismo', 'q': 'criacionismo OR "criação bíblica" OR "Answers in Genesis" OR "intelligent design" OR "desenho inteligente"', 'category': 'Ciência e Fé'},
+
+                    # MONITORES DE DOMÍNIOS REGIONAIS
+                    {'label': 'NSC Total (SC)', 'q': 'site:nsctotal.com.br igreja OR cristão OR bíblia OR arqueologia OR história', 'category': 'Notícias Regionais'},
+                    {'label': 'Itatiaia (MG)', 'q': 'site:itatiaia.com.br igreja OR cristão OR bíblia OR arqueologia OR história', 'category': 'Notícias Regionais'}
                 ]
             }
         }
@@ -205,8 +225,8 @@ class ChristianNewsScraper:
         dt = None
         if 'date' in article:
             dt = self.parse_article_date(article.get('date'))
-        # Exigir data parsável e limitar ao ano de 2025
-        if dt is None or dt.year != 2025:
+        # Permitir qualquer ano desde que esteja dentro da janela configurada
+        if dt is None:
             return False
         age = datetime.utcnow() - dt
         return age <= timedelta(hours=max_age_hours)
@@ -397,8 +417,13 @@ class ChristianNewsScraper:
         except Exception as e:
             logger.error(f"Erro ao limpar registros antigos no Supabase: {e}")
 
-    def filter_content_for_reconciliation(self, news_list: List[Dict]) -> List[Dict]:
-        """Filter news content to align with Reconciliation brotherhood values"""
+    def filter_content_for_reconciliation(self, news_list: List[Dict], mode: str = 'STRICT') -> List[Dict]:
+        """Filter news content to align with Reconciliation brotherhood values
+        Modes:
+        - STRICT: original rules (positive keywords/domain/source required, no negatives)
+        - RELAXED: approve any article that does not contain negative keywords
+        - OFF: disable filtering (pass-through)
+        """
         
         # Keywords that align with reformed theology and reconciliation ministry
         positive_keywords = [
@@ -418,23 +443,27 @@ class ChristianNewsScraper:
             'mesopotâmia', 'mesopotamia', 'israel antigo', 'ancient israel', 'jericó', 'jericho',
             'jerusalém antiga', 'ancient jerusalem', 'mar morto', 'dead sea', 'qumran', 'caverna', 'cave',
             'manuscritos do mar morto', 'dead sea scrolls', 'tabernáculo', 'templo', 'arqueólogos', 'archaeologists',
-            'escavação', 'excavation', 'achados', 'finds', 'descoberta', 'discovery', 'civilizações', 'civilizations'
-            # Novos temas solicitados
+            'escavação', 'excavation', 'achados', 'finds', 'descoberta', 'discovery', 'civilizações', 'civilizations',
             'período interbíblico', 'intertestamental', 'patrística', 'pais da igreja',
             'escavações bíblicas', 'idade média', 'história da igreja',
             'debates teológicos', 'controvérsias teológicas',
             'arminianismo',
             'fariseus', 'saduceus', 'essênios', 'zelotes',
-            'usos e costumes da bíblia', 'costumes bíblicos', 'cultura bíblica', 'cultura judaica'
+            'usos e costumes da bíblia', 'costumes bíblicos', 'cultura bíblica', 'cultura judaica',
+            # Ciência e fé
+            'criacionismo', 'criação bíblica', 'intelligent design', 'desenho inteligente'
         ]
         
-        # Keywords to avoid (prosperity gospel, extreme charismatic, liberal theology)
+        # Keywords to avoid (prosperity gospel, extreme charismatic, liberal theology, fofocas/entretenimento)
         negative_keywords = [
             'prosperidade', 'prosperity', 'determinação', 'confissão positiva',
             'teologia liberal', 'liberal theology', 'universalismo', 'universalism',
             'barganhar com deus', 'bargain with god', 'milagres financeiros',
             'unção do riso', 'holy laughter', 'cair no espírito', 'slain in spirit',
-            'profetadas', 'prophetic words', 'revelações extras', 'extra revelations'
+            'profetadas', 'prophetic words', 'revelações extras', 'extra revelations',
+            # Evitar fofoca/celebridades/moda/entretenimento
+            'fofoca', 'celebridade', 'celebridades', 'famosos', 'moda', 'novela', 'entretenimento', 'reality show', 'bbb',
+            'astrologia', 'signos', 'zodíaco', 'tarot'
         ]
         
         # Whitelist de domínios confiáveis
@@ -460,6 +489,21 @@ class ChristianNewsScraper:
             
             # Check for negative keywords
             has_negative = any(keyword.lower() in content for keyword in negative_keywords)
+
+            # Política sem contexto bíblico: caso o texto trate de política/legislação
+            # sem conexão clara com fé/ética cristã, filtramos como negativo
+            politics_keywords = [
+                'política', 'eleição', 'partido', 'candidato', 'campanha', 'senador', 'deputado', 'vereador',
+                'presidente', 'governo', 'congresso', 'assembleia', 'parlamento', 'projeto de lei', 'lei', 'decisão judicial'
+            ]
+            politics_context_keywords = [
+                'bíblia', 'bíblico', 'igreja', 'cristão', 'cristãos', 'ética cristã', 'valores cristãos', 'teologia',
+                'reconciliação', 'perdão', 'vida', 'família', 'defesa da fé'
+            ]
+            has_politics = any(k in content for k in politics_keywords)
+            has_biblical_context = any(k in content for k in politics_context_keywords)
+            if has_politics and not has_biblical_context:
+                has_negative = True
             
             # Fonte confiável por nome
             trusted_sources = ['Voltemos ao Evangelho', 'Monergismo', 'Portas Abertas', 
@@ -474,12 +518,29 @@ class ChristianNewsScraper:
                 domain = ''
             domain_is_trusted = any(domain.endswith(d) for d in trusted_domains if d)
             
-            # Regras de aprovação:
+            # Modo de filtro baseado em env
+            mode_upper = (mode or 'STRICT').strip().upper()
+            is_google_news = str(article.get('source', '')).startswith('Google News - ')
+            
+            if mode_upper == 'OFF':
+                filtered_news.append(article)
+                logger.info(f"✅ Approved (OFF) article: {article['title'][:50]}...")
+                continue
+            
+            if mode_upper == 'RELAXED':
+                # Aprovamos tudo que não tenha palavras negativas
+                if not has_negative:
+                    filtered_news.append(article)
+                    logger.info(f"✅ Approved (RELAXED) article: {article['title'][:50]}...")
+                else:
+                    logger.info(f"❌ Filtered out (RELAXED) article: {article['title'][:50]}...")
+                continue
+            
+            # STRICT (padrão anterior): regras completas
             # - possui palavras positivas e não possui negativas
             # - OU é de fonte confiável por nome
             # - OU é de domínio confiável
             # - Para Google News (Temas): permitir se (has_positive OU domínio confiável) e não negativo
-            is_google_news = str(article.get('source', '')).startswith('Google News - ')
             if is_google_news:
                 if (has_positive or domain_is_trusted) and not has_negative:
                     filtered_news.append(article)
@@ -1841,6 +1902,295 @@ class ChristianNewsScraper:
             
         return news_list
 
+    def scrape_christianity_today_pt(self) -> List[Dict]:
+        """Scrape artigos do Christianity Today em Português"""
+        news_list = []
+        try:
+            url = 'https://pt.christianitytoday.com/'
+            response = self.session.get(url, timeout=12)
+            response.raise_for_status()
+            soup = BeautifulSoup(response.content, 'html.parser')
+
+            articles = soup.find_all(['article','div'], class_=lambda x: x and any(
+                k in x.lower() for k in ['post','article','entry','card','news']
+            ))[:10]
+
+            for article in articles:
+                try:
+                    title_elem = article.find(['h1','h2','h3','h4'])
+                    if not title_elem:
+                        continue
+                    title = self.clean_text(title_elem.get_text())
+                    link_elem = title_elem.find('a') or article.find('a', href=True)
+                    if not link_elem:
+                        continue
+                    link = urljoin(url, link_elem.get('href',''))
+                    summary_elem = article.find('p')
+                    summary = self.clean_text(summary_elem.get_text()) if summary_elem else title[:120] + '...'
+                    image_url = self.extract_image_from_content(link)
+                    if not image_url:
+                        img = article.find('img')
+                        if img and img.get('src'):
+                            image_url = urljoin(url, img.get('src'))
+                    news_list.append({
+                        'title': title,
+                        'summary': summary[:200] + '...' if len(summary) > 200 else summary,
+                        'url': link,
+                        'source': 'Christianity Today (PT)',
+                        'date': datetime.now().strftime('%a, %d %b %Y %H:%M:%S GMT'),
+                        'category': 'Teologia e Igreja',
+                        'image_url': image_url
+                    })
+                except Exception as e:
+                    logger.warning(f"Error parsing Christianity Today PT item: {e}")
+                    continue
+        except Exception as e:
+            logger.error(f"Error scraping Christianity Today PT: {e}")
+        return news_list
+
+    def scrape_sabnet_revista(self) -> List[Dict]:
+        """Scrape artigos da revista SABNET (OJS)"""
+        news_list = []
+        try:
+            url = 'https://revista.sabnet.org/'
+            response = self.session.get(url, timeout=12)
+            response.raise_for_status()
+            soup = BeautifulSoup(response.content, 'html.parser')
+            # Padrões comuns do OJS (obj_article_summary)
+            articles = soup.find_all(['div','li','article'], class_=lambda x: x and any(
+                k in x.lower() for k in ['obj_article_summary','post','entry','article']
+            ))[:10]
+            for article in articles:
+                try:
+                    title_elem = article.find(['h2','h3','h4']) or article.find('a', class_=lambda x: x and 'title' in x.lower())
+                    if not title_elem:
+                        continue
+                    title = self.clean_text(title_elem.get_text())
+                    link_elem = title_elem.find('a') if hasattr(title_elem, 'find') else None
+                    if not link_elem:
+                        link_elem = article.find('a', href=True)
+                    if not link_elem:
+                        continue
+                    link = urljoin(url, link_elem.get('href',''))
+                    summary_elem = article.find('p')
+                    summary = self.clean_text(summary_elem.get_text()) if summary_elem else title[:120] + '...'
+                    image_url = self.extract_image_from_content(link)
+                    news_list.append({
+                        'title': title,
+                        'summary': summary[:200] + '...' if len(summary) > 200 else summary,
+                        'url': link,
+                        'source': 'SABNET Revista',
+                        'date': datetime.now().strftime('%a, %d %b %Y %H:%M:%S GMT'),
+                        'category': 'Arqueologia e História',
+                        'image_url': image_url
+                    })
+                except Exception as e:
+                    logger.warning(f"Error parsing SABNET item: {e}")
+                    continue
+        except Exception as e:
+            logger.error(f"Error scraping SABNET Revista: {e}")
+        return news_list
+
+    def scrape_mae_usp(self) -> List[Dict]:
+        """Scrape notícias do MAE USP"""
+        news_list = []
+        try:
+            url = 'https://mae.usp.br/'
+            response = self.session.get(url, timeout=12)
+            response.raise_for_status()
+            soup = BeautifulSoup(response.content, 'html.parser')
+            articles = soup.find_all(['article','div'], class_=lambda x: x and any(
+                k in x.lower() for k in ['post','article','entry','noticia','news']
+            ))[:10]
+            for article in articles:
+                try:
+                    title_elem = article.find(['h2','h3','h4'])
+                    if not title_elem:
+                        continue
+                    title = self.clean_text(title_elem.get_text())
+                    link_elem = title_elem.find('a') or article.find('a', href=True)
+                    if not link_elem:
+                        continue
+                    link = urljoin(url, link_elem.get('href',''))
+                    summary_elem = article.find('p')
+                    summary = self.clean_text(summary_elem.get_text()) if summary_elem else title[:120] + '...'
+                    image_url = self.extract_image_from_content(link)
+                    news_list.append({
+                        'title': title,
+                        'summary': summary[:200] + '...' if len(summary) > 200 else summary,
+                        'url': link,
+                        'source': 'MAE USP',
+                        'date': datetime.now().strftime('%a, %d %b %Y %H:%M:%S GMT'),
+                        'category': 'Arqueologia e História',
+                        'image_url': image_url
+                    })
+                except Exception as e:
+                    logger.warning(f"Error parsing MAE USP item: {e}")
+                    continue
+        except Exception as e:
+            logger.error(f"Error scraping MAE USP: {e}")
+        return news_list
+
+    def scrape_iab(self) -> List[Dict]:
+        """Scrape IAB - Instituto de Arqueologia Brasileira"""
+        news_list = []
+        try:
+            url = 'https://arqueologia-iab.com.br/'
+            response = self.session.get(url, timeout=12)
+            response.raise_for_status()
+            soup = BeautifulSoup(response.content, 'html.parser')
+            articles = soup.find_all(['article','div'], class_=lambda x: x and any(
+                k in x.lower() for k in ['post','entry','article','news']
+            ))[:10]
+            for article in articles:
+                try:
+                    title_elem = article.find(['h2','h3','h4'])
+                    if not title_elem:
+                        continue
+                    title = self.clean_text(title_elem.get_text())
+                    link_elem = title_elem.find('a') or article.find('a', href=True)
+                    if not link_elem:
+                        continue
+                    link = urljoin(url, link_elem.get('href',''))
+                    summary_elem = article.find('p')
+                    summary = self.clean_text(summary_elem.get_text()) if summary_elem else title[:120] + '...'
+                    image_url = self.extract_image_from_content(link)
+                    news_list.append({
+                        'title': title,
+                        'summary': summary[:200] + '...' if len(summary) > 200 else summary,
+                        'url': link,
+                        'source': 'IAB - Instituto de Arqueologia Brasileira',
+                        'date': datetime.now().strftime('%a, %d %b %Y %H:%M:%S GMT'),
+                        'category': 'Arqueologia e História',
+                        'image_url': image_url
+                    })
+                except Exception as e:
+                    logger.warning(f"Error parsing IAB item: {e}")
+                    continue
+        except Exception as e:
+            logger.error(f"Error scraping IAB: {e}")
+        return news_list
+
+    def scrape_ibarq(self) -> List[Dict]:
+        """Scrape IBArq - foco em artigos e notícias de arqueologia bíblica"""
+        news_list = []
+        try:
+            url = 'https://ibarq.org.br/'
+            response = self.session.get(url, timeout=12)
+            response.raise_for_status()
+            soup = BeautifulSoup(response.content, 'html.parser')
+            articles = soup.find_all(['article','div'], class_=lambda x: x and any(
+                k in x.lower() for k in ['post','entry','article','news']
+            ))[:10]
+            for article in articles:
+                try:
+                    title_elem = article.find(['h2','h3','h4'])
+                    if not title_elem:
+                        continue
+                    title = self.clean_text(title_elem.get_text())
+                    link_elem = title_elem.find('a') or article.find('a', href=True)
+                    if not link_elem:
+                        continue
+                    link = urljoin(url, link_elem.get('href',''))
+                    summary_elem = article.find('p')
+                    summary = self.clean_text(summary_elem.get_text()) if summary_elem else title[:120] + '...'
+                    image_url = self.extract_image_from_content(link)
+                    news_list.append({
+                        'title': title,
+                        'summary': summary[:200] + '...' if len(summary) > 200 else summary,
+                        'url': link,
+                        'source': 'IBArq',
+                        'date': datetime.now().strftime('%a, %d %b %Y %H:%M:%S GMT'),
+                        'category': 'Arqueologia Bíblica',
+                        'image_url': image_url
+                    })
+                except Exception as e:
+                    logger.warning(f"Error parsing IBArq item: {e}")
+                    continue
+        except Exception as e:
+            logger.error(f"Error scraping IBArq: {e}")
+        return news_list
+
+    def scrape_incrivel_historia(self) -> List[Dict]:
+        """Scrape posts de Incrível História (categoria arqueologia/história)"""
+        news_list = []
+        try:
+            url = 'https://www.incrivelhistoria.com.br/'
+            response = self.session.get(url, timeout=12)
+            response.raise_for_status()
+            soup = BeautifulSoup(response.content, 'html.parser')
+            articles = soup.find_all(['article','div'], class_=lambda x: x and any(
+                k in x.lower() for k in ['post','entry','article','news','card']
+            ))[:10]
+            for article in articles:
+                try:
+                    title_elem = article.find(['h2','h3','h4'])
+                    if not title_elem:
+                        continue
+                    title = self.clean_text(title_elem.get_text())
+                    link_elem = title_elem.find('a') or article.find('a', href=True)
+                    if not link_elem:
+                        continue
+                    link = urljoin(url, link_elem.get('href',''))
+                    summary_elem = article.find('p')
+                    summary = self.clean_text(summary_elem.get_text()) if summary_elem else title[:120] + '...'
+                    image_url = self.extract_image_from_content(link)
+                    news_list.append({
+                        'title': title,
+                        'summary': summary[:200] + '...' if len(summary) > 200 else summary,
+                        'url': link,
+                        'source': 'Incrível História',
+                        'date': datetime.now().strftime('%a, %d %b %Y %H:%M:%S GMT'),
+                        'category': 'História e Arqueologia',
+                        'image_url': image_url
+                    })
+                except Exception as e:
+                    logger.warning(f"Error parsing Incrível História item: {e}")
+                    continue
+        except Exception as e:
+            logger.error(f"Error scraping Incrível História: {e}")
+        return news_list
+
+    def scrape_arqueologia_e_prehistoria(self) -> List[Dict]:
+        """Scrape posts de Arqueologia e Pré-História"""
+        news_list = []
+        try:
+            url = 'https://www.arqueologiaeprehistoria.com/'
+            response = self.session.get(url, timeout=12)
+            response.raise_for_status()
+            soup = BeautifulSoup(response.content, 'html.parser')
+            articles = soup.find_all(['article','div'], class_=lambda x: x and any(
+                k in x.lower() for k in ['post','entry','article','news']
+            ))[:10]
+            for article in articles:
+                try:
+                    title_elem = article.find(['h2','h3','h4'])
+                    if not title_elem:
+                        continue
+                    title = self.clean_text(title_elem.get_text())
+                    link_elem = title_elem.find('a') or article.find('a', href=True)
+                    if not link_elem:
+                        continue
+                    link = urljoin(url, link_elem.get('href',''))
+                    summary_elem = article.find('p')
+                    summary = self.clean_text(summary_elem.get_text()) if summary_elem else title[:120] + '...'
+                    image_url = self.extract_image_from_content(link)
+                    news_list.append({
+                        'title': title,
+                        'summary': summary[:200] + '...' if len(summary) > 200 else summary,
+                        'url': link,
+                        'source': 'Arqueologia e Pré-História',
+                        'date': datetime.now().strftime('%a, %d %b %Y %H:%M:%S GMT'),
+                        'category': 'Arqueologia e História',
+                        'image_url': image_url
+                    })
+                except Exception as e:
+                    logger.warning(f"Error parsing Arqueologia e Pré-História item: {e}")
+                    continue
+        except Exception as e:
+            logger.error(f"Error scraping Arqueologia e Pré-História: {e}")
+        return news_list
+
     def scrape_teologia_brasileira(self) -> List[Dict]:
         """Scrape news from Teologia Brasileira"""
         news_list = []
@@ -2470,41 +2820,29 @@ class ChristianNewsScraper:
         # Allowlist de fontes: pode ser configurado por env NEWS_SOURCES_ALLOWLIST
         # Exemplo: NEWS_SOURCES_ALLOWLIST="Gospel Prime,Guiame,Portas Abertas,Folha Gospel"
         allowlist_env = os.getenv('NEWS_SOURCES_ALLOWLIST', '').strip()
+        # Lista completa de fontes conhecidas no scraper (deve casar com scrapers_all)
+        all_source_names = {
+            'Gospel Prime','Guiame','Portas Abertas','Portas Abertas - Cristãos Perseguidos',
+            'Cafetorah - Notícias de Israel','Folha Gospel','Radio 93 - Giro Cristão','CPAD News',
+            'Notícias de Israel','Voltemos ao Evangelho','Ministério Fiel','Biblical Archaeology Society',
+            'Teologia Brasileira','Monergismo','IPB Nacional','Instituto Mackenzie','Cinco Solas',
+            'Patrística News','Arqueologia Bíblica BR','Teologia Sistemática','Editora Fiel','CPAD Editora',
+            'Livros Teológicos','IPB Eventos','Luís Sayão','Hernandes Dias Lopes','Augustus Nicodemus',
+            'BBC News Brasil','BBC News Brasil - Arqueologia','Revista Galileu - Arqueologia','Revista Galileu',
+            'CNN Brasil - Arqueologia','National Geographic Brasil - Arqueologia','Google News (Temas)',
+            'Cristianismo Hoje',
+            'Christianity Today (PT)','SABNET Revista','MAE USP','IAB - Instituto de Arqueologia Brasileira','IBArq',
+            'Incrível História','Arqueologia e Pré-História'
+        }
         if allowlist_env:
-            allowed_sources = {s.strip() for s in allowlist_env.split(',') if s.strip()}
+            # Tratar curingas: '*' ou 'ALL'/'TODAS' significam todas as fontes
+            if allowlist_env.upper() in {'*', 'ALL', 'TODAS'}:
+                allowed_sources = set(all_source_names)
+            else:
+                allowed_sources = {s.strip() for s in allowlist_env.split(',') if s.strip()}
         else:
-            # Padrão: todas as fontes cristãs solicitadas pelo usuário
-            allowed_sources = {
-                'Gospel Prime',
-                'Guiame',
-                'Portas Abertas',
-                'Portas Abertas - Cristãos Perseguidos',
-                'Cafetorah - Notícias de Israel',
-                'Folha Gospel',
-                'Radio 93 - Giro Cristão',
-                'CPAD News',
-                'Notícias de Israel',
-                'Voltemos ao Evangelho',
-                'Ministério Fiel',
-                'Biblical Archaeology Society',
-                'Teologia Brasileira',
-                'Monergismo',
-                'IPB Nacional',
-                'Instituto Mackenzie',
-                'Cinco Solas',
-                'Patrística News',
-                'Arqueologia Bíblica BR',
-                'Teologia Sistemática',
-                'Editora Fiel',
-                'CPAD Editora',
-                'Livros Teológicos',
-                'IPB Eventos',
-                'Luís Sayão',
-                'Hernandes Dias Lopes',
-                'Augustus Nicodemus',
-                'Revista Galileu',
-                'Cristianismo Hoje'
-            }
+            # Padrão: todas as fontes cristãs e arqueológicas relevantes
+            allowed_sources = set(all_source_names)
 
         logger.info(f"Allowed sources: {sorted(list(allowed_sources))}")
         
@@ -2543,7 +2881,14 @@ class ChristianNewsScraper:
             ('Revista Galileu', self.scrape_galileu_daily),
             ('CNN Brasil - Arqueologia', self.scrape_cnnbrasil_arqueologia),
             ('National Geographic Brasil - Arqueologia', self.scrape_nationalgeo_br_arqueologia),
-            ('Google News (Temas)', self.scrape_google_news)
+            ('Google News (Temas)', self.scrape_google_news),
+            ('Christianity Today (PT)', self.scrape_christianity_today_pt),
+            ('SABNET Revista', self.scrape_sabnet_revista),
+            ('MAE USP', self.scrape_mae_usp),
+            ('IAB - Instituto de Arqueologia Brasileira', self.scrape_iab),
+            ('IBArq', self.scrape_ibarq),
+            ('Incrível História', self.scrape_incrivel_historia),
+            ('Arqueologia e Pré-História', self.scrape_arqueologia_e_prehistoria)
         ]
 
         # Filtra para rodar apenas as fontes permitidas
@@ -2636,7 +2981,11 @@ class ChristianNewsScraper:
             except Exception:
                 # Ignorar falhas de extração pontuais
                 pass
-        unique_news = [n for n in unique_news if n.get('image_url') and str(n.get('image_url')).startswith('http')]
+        # Permitir notícias sem imagem válida, mas tentar preencher; manter apenas URLs http/https quando presentes
+        unique_news = [
+            n for n in unique_news
+            if (not n.get('image_url')) or (str(n.get('image_url')).startswith('http'))
+        ]
 
         # Ordenar por data (mais recentes primeiro)
         try:
@@ -2661,8 +3010,9 @@ class ChristianNewsScraper:
                 item['summary'] = self._truncate_summary(item.get('summary') or '')
         
         # Apply content filter for Reconciliation brotherhood
-        logger.info("Applying content filter for Reconciliation brotherhood...")
-        filtered_news = self.filter_content_for_reconciliation(unique_news)
+        mode = os.getenv('NEWS_FILTER_MODE', 'RELAXED').strip().upper()
+        logger.info(f"Applying content filter for Reconciliation brotherhood (mode={mode})...")
+        filtered_news = self.filter_content_for_reconciliation(unique_news, mode=mode)
 
         # Aplicar política de saída: hoje primeiro, senão recentes (<= max_age_hours)
         recent_filtered_news = self.filter_for_output(filtered_news)

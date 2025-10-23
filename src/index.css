@@ -51,6 +51,8 @@ html {
     --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
+    /* Altura da navbar fixa para compensação global */
+    --navbar-height: 0px;
   }
 
   html {
@@ -61,18 +63,12 @@ html {
     @apply text-foreground font-sans;
     margin: 0;
     padding: 0;
+    /* Compensação global do topo com base na altura real da navbar */
+    padding-top: calc(var(--navbar-height, 64px) + 24px);
   }
 
-  section:not(.hero-section) {
+  section {
     scroll-margin-top: 80px;
-  }
-
-  /* Hero específico */
-  .hero-section {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 }
 
@@ -187,69 +183,9 @@ html {
     background-attachment: fixed;
   }
 
-  /* Hero específico */
-  .hero-section {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    z-index: 1;
-    overflow: hidden;
-  }
 
-  @media (max-width: 768px) {
-    .hero-bg {
-      background-attachment: scroll;
-      background-position: center top;
-      background-size: cover;
-    }
-  }
 
-  .hero-bg::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-  }
 
-  .hero-content-position {
-    padding-top: 6rem;
-  }
-
-  @media (max-width: 768px) {
-    .hero-content-position {
-      padding-top: calc(3.9rem + 14.7vh);
-    }
-  }
-
-  @media (min-width: 769px) {
-    .hero-content-desktop-lower {
-      padding-top: calc(6rem + 25vh);
-    }
-  }
-
-  .hero-decorative-circle-1 {
-    animation-delay: 0s;
-  }
-
-  .hero-decorative-circle-2 {
-    animation-delay: 1s;
-  }
-
-  .hero-content-delay-1 {
-    animation-delay: 0.2s;
-  }
-
-  .hero-content-delay-2 {
-    animation-delay: 0.4s;
-  }
-
-  .hero-section h1 span {
-    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif !important;
-  }
 
   .text-yellow-custom {
     color: #fffb00;
@@ -318,24 +254,7 @@ html {
   }
 }
 
-/* News Slider Styles */
-.news-slider-height {
-  height: calc(100vh - 120px);
-  max-height: 600px;
-}
 
-.news-slider-container {
-  height: 100%;
-  position: relative;
-  overflow: hidden;
-  border-radius: 0 0 0 12px;
-}
-
-@media (max-width: 768px) {
-  .news-slider-height {
-    display: none;
-  }
-}
 
 /* Modal glassmorphism */
 .glass-modal {
@@ -362,47 +281,11 @@ html {
   animation: modalIn 0.3s ease-out;
 }
 
-/* Newspaper Hero Slider styles */
+/* Utilitários de clamp para evitar transbordamento de texto */
 @layer components {
-  /* Textura de papel com padrão sutil */
-  .paper-texture {
-    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.25'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    background-size: 60px 60px;
-    filter: contrast(1.2) brightness(0.95);
-  }
-
-  /* Borda superior e inferior típica de jornal */
-  .newspaper-border {
-    border-top: 2px solid rgba(255, 255, 255, 0.15);
-    border-bottom: 2px solid rgba(255, 255, 255, 0.15);
-  }
-
-  /* Efeito sépia/grayscale leve para imagens de capa */
-  .sepia-img {
-    filter: sepia(0.4) grayscale(0.2) contrast(1.08) brightness(0.98);
-  }
-
-  /* Capitular no primeiro parágrafo do destaque */
-  .dropcap::first-letter {
-    float: left;
-    font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-    font-size: 2.6rem;
-    line-height: 1;
-    padding-right: 0.45rem;
-    font-weight: 700;
-    color: #f5f5f5;
-  }
-
-  /* Utilitários de clamp para evitar transbordamento de texto */
   .line-clamp-3 {
     display: -webkit-box;
     -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-  .line-clamp-4 {
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }

@@ -50,9 +50,9 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-4">Horários</h3>
             <ul className="space-y-2">
               <li>Domingo: 08:00hrs / 09:00hrs / 11:00hrs</li>
-              <li>Terça-feira: 20:00hrs (SETEREC)</li>
+
               <li>Quarta-feira: 20:00hrs Oração e Palavra</li>
-              <li>Quinta-feira: 20:00hrs (SETEREC)</li>
+
               <li>Sexta-feira: 20:00hrs Oração e Palavra (Online)</li>
             </ul>
             <div className="mt-4">

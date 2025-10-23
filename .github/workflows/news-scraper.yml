@@ -42,6 +42,8 @@ jobs:
         VITE_SUPABASE_ANON_KEY_VAR: ${{ vars.VITE_SUPABASE_ANON_KEY }}
         NEWS_SOURCES_ALLOWLIST: ${{ secrets.NEWS_SOURCES_ALLOWLIST }}
         NEWS_SOURCES_ALLOWLIST_VAR: ${{ vars.NEWS_SOURCES_ALLOWLIST }}
+        SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        SUPABASE_SERVICE_ROLE_KEY_VAR: ${{ vars.SUPABASE_SERVICE_ROLE_KEY }}
       run: |
         python --version
         pip list | sed -n '1,50p'
@@ -53,10 +55,13 @@ jobs:
         if [ -n "$VITE_SUPABASE_ANON_KEY_VAR" ]; then echo "ℹ️ Supabase ANON KEY variable: PRESENT"; else echo "ℹ️ Supabase ANON KEY variable: MISSING"; fi
         if [ -n "$NEWS_SOURCES_ALLOWLIST" ]; then echo "🔒 Allowlist secret: PRESENT"; else echo "ℹ️ Allowlist secret: MISSING"; fi
         if [ -n "$NEWS_SOURCES_ALLOWLIST_VAR" ]; then echo "ℹ️ Allowlist variable: PRESENT"; else echo "ℹ️ Allowlist variable: MISSING"; fi
+        if [ -n "$SUPABASE_SERVICE_ROLE_KEY" ]; then echo "🔒 Supabase SERVICE ROLE KEY secret: PRESENT"; else echo "ℹ️ Supabase SERVICE ROLE KEY secret: MISSING"; fi
+        if [ -n "$SUPABASE_SERVICE_ROLE_KEY_VAR" ]; then echo "ℹ️ Supabase SERVICE ROLE KEY variable: PRESENT"; else echo "ℹ️ Supabase SERVICE ROLE KEY variable: MISSING"; fi
         # Export fallbacks so subsequent steps have them available
         export VITE_SUPABASE_URL="${VITE_SUPABASE_URL:-$VITE_SUPABASE_URL_VAR}"
         export VITE_SUPABASE_ANON_KEY="${VITE_SUPABASE_ANON_KEY:-$VITE_SUPABASE_ANON_KEY_VAR}"
         export NEWS_SOURCES_ALLOWLIST="${NEWS_SOURCES_ALLOWLIST:-$NEWS_SOURCES_ALLOWLIST_VAR}"
+        export SUPABASE_SERVICE_ROLE_KEY="${SUPABASE_SERVICE_ROLE_KEY:-$SUPABASE_SERVICE_ROLE_KEY_VAR}"
         # Show summary (without revealing secrets)
         if [ -n "$VITE_SUPABASE_URL" ]; then echo "✅ Using Supabase URL (length $(echo -n "$VITE_SUPABASE_URL" | wc -c))"; else echo "❌ Supabase URL not set"; fi
         if [ -n "$VITE_SUPABASE_ANON_KEY" ]; then echo "✅ Using Supabase ANON KEY (length $(echo -n "$VITE_SUPABASE_ANON_KEY" | wc -c))"; else echo "❌ Supabase ANON KEY not set"; fi
@@ -71,6 +76,13 @@ jobs:
         VITE_SUPABASE_ANON_KEY_VAR: ${{ vars.VITE_SUPABASE_ANON_KEY }}
         NEWS_SOURCES_ALLOWLIST: ${{ secrets.NEWS_SOURCES_ALLOWLIST }}
         NEWS_SOURCES_ALLOWLIST_VAR: ${{ vars.NEWS_SOURCES_ALLOWLIST }}
+        SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        SUPABASE_SERVICE_ROLE_KEY_VAR: ${{ vars.SUPABASE_SERVICE_ROLE_KEY }}
+        # Volume e janela de recência
+        NEWS_MAX_ITEMS: '200'
+        NEWS_MAX_AGE_HOURS: '72'
+        # Modo de filtro (STRICT, RELAXED, OFF)
+        NEWS_FILTER_MODE: 'RELAXED'
         # Discord webhook integration (optional)
         NEWS_DISCORD_NOTIFY: 'true'
         DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
@@ -81,6 +93,12 @@ jobs:
         export VITE_SUPABASE_URL="${VITE_SUPABASE_URL:-$VITE_SUPABASE_URL_VAR}"
         export VITE_SUPABASE_ANON_KEY="${VITE_SUPABASE_ANON_KEY:-$VITE_SUPABASE_ANON_KEY_VAR}"
         export NEWS_SOURCES_ALLOWLIST="${NEWS_SOURCES_ALLOWLIST:-$NEWS_SOURCES_ALLOWLIST_VAR}"
+        export SUPABASE_SERVICE_ROLE_KEY="${SUPABASE_SERVICE_ROLE_KEY:-$SUPABASE_SERVICE_ROLE_KEY_VAR}"
+        # Volume e janela
+        export NEWS_MAX_ITEMS="${NEWS_MAX_ITEMS}"
+        export NEWS_MAX_AGE_HOURS="${NEWS_MAX_AGE_HOURS}"
+        # Filtro
+        export NEWS_FILTER_MODE="${NEWS_FILTER_MODE}"
         # Pass-through optional Discord integration flags
         export NEWS_DISCORD_NOTIFY="${NEWS_DISCORD_NOTIFY}"
         export DISCORD_WEBHOOK_URL="${DISCORD_WEBHOOK_URL}"
