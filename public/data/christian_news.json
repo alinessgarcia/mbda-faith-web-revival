@@ -1,14 +1,23 @@
 {
-  "last_updated": "2025-12-14T10:31:21.502762",
-  "total_articles": 50,
+  "last_updated": "2025-12-14T22:29:49.455956",
+  "total_articles": 67,
   "sources": [
     "Arqueologia e Pré-História",
     "BBC News Brasil",
     "BBC News Brasil - Arqueologia",
+    "CPAD News",
     "Cafetorah - Notícias de Israel",
     "Christianity Today (PT)",
+    "Folha Gospel",
+    "Google News - Calvinismo",
+    "Google News - Cristãos Perseguidos",
+    "Google News - Cópias e Manuscritos",
+    "Google News - Idade Média",
     "Google News - Itatiaia (MG)",
+    "Google News - Nínive e Assíria",
     "Google News - Patrística",
+    "Google News - Síria e Damasco",
+    "Google News - Terra Santa",
     "IBArq",
     "Incrível História",
     "MAE USP",
@@ -26,7 +35,7 @@
       "summary": "A origem da produção cerâmica foi uma etapa crucial no desenvolvimento tecnológico e cultural das sociedades humanas. Pesquisas recentes mostram que as primeiras cerâmicas, interpretadas como recipien...",
       "url": "https://arqueologiaeprehistoria.com/2025/12/12/analises-de-datacoes-radiocarbonicas-sugerem-multiplas-origens-da-tecnologia-ceramica-na-africa/",
       "source": "Arqueologia e Pré-História",
-      "date": "Sun, 14 Dec 2025 10:30:28 GMT",
+      "date": "Sun, 14 Dec 2025 22:28:40 GMT",
       "category": "Arqueologia e História",
       "image_url": "https://arqueologiaeprehistoria.com/wp-content/uploads/2021/03/cropped-logo-fundo-vazio.png"
     },
@@ -35,7 +44,7 @@
       "summary": "Biografia de Al Capone, o mais notório e um dos mais gângsteres que o mundo já conheceu. Dos primeiros anos até a sua morte.",
       "url": "https://incrivelhistoria.com.br/al-capone-biografia/",
       "source": "Incrível História",
-      "date": "Sun, 14 Dec 2025 10:30:23 GMT",
+      "date": "Sun, 14 Dec 2025 22:28:35 GMT",
       "category": "História e Arqueologia",
       "image_url": "https://incrivelhistoria.com.br/app/uploads/2015/05/biografia-al-capone-historia-crime-morte-incrivel-historia_1.webp"
     },
@@ -44,7 +53,7 @@
       "summary": "Descubra o papel vital dos caporegimes na máfia, os chefes responsáveis pelas operações, disciplinadores e importantes intermediários.",
       "url": "https://incrivelhistoria.com.br/caporegimes-mafia-crime-organizado/",
       "source": "Incrível História",
-      "date": "Sun, 14 Dec 2025 10:30:23 GMT",
+      "date": "Sun, 14 Dec 2025 22:28:35 GMT",
       "category": "História e Arqueologia",
       "image_url": "https://incrivelhistoria.com.br/app/uploads/2024/08/caporegime-estrutura-mafia-incrivel-historia.png"
     },
@@ -53,7 +62,7 @@
       "summary": "O último mês do ano reservou boas supresas para os amantes da arqueologia bíblica. Curiosamente, todos tem relação com o Novo Testamento e nos auxiliarão a ter mais compreensão sobre o contexto histórico-cultural da época de Jesus Cristo.1. O Crucificado InglêsRaridade encontrada em Cambridgeshire traz mais luz sobre a cruz, instrumento de tortura e morte do Império RomanoQuem nos segue no Instagr...",
       "url": "https://www.ibarq.org.br/post/as-3-incríveis-descobertas-da-arqueologia-bíblica-em-dezembro-de-2021",
       "source": "IBArq",
-      "date": "Sun, 14 Dec 2025 10:30:20 GMT",
+      "date": "Sun, 14 Dec 2025 22:28:31 GMT",
       "category": "Arqueologia Bíblica",
       "image_url": "https://static.wixstatic.com/media/5a70b4_a416af5b047b4d519140bf08f0f83a46~mv2.jpg/v1/fill/w_936,h_526,al_c,lg_1,q_85/5a70b4_a416af5b047b4d519140bf08f0f83a46~mv2.jpg"
     },
@@ -62,7 +71,7 @@
       "summary": "Quando pensamos nos tempos antigos descritos na Bíblia, uma das perguntas mais frequentes entre estudiosos e curiosos é: Israel realmente possuía um reino organizado e letrado no século X a.C.? Apesar do ceticismo de muitos estudioso, a resposta, sustentada por descobertas arqueológicas recentes e impactantes, é cada vez mais afirmativa.Achados arqueológicos surgiram nos últimos anos para reforçar...",
       "url": "https://www.ibarq.org.br/post/3-evidências-arqueológicas-do-reino-de-davi",
       "source": "IBArq",
-      "date": "Sun, 14 Dec 2025 10:30:18 GMT",
+      "date": "Sun, 14 Dec 2025 22:28:30 GMT",
       "category": "Arqueologia Bíblica",
       "image_url": "https://static.wixstatic.com/media/5a70b4_f57390de86e144afb7f7db962e445c71~mv2.jpg/v1/fill/w_280,h_399,al_c,lg_1,q_80/5a70b4_f57390de86e144afb7f7db962e445c71~mv2.jpg"
     },
@@ -71,25 +80,16 @@
       "summary": "O MAE-USP oferece os seguintes cursos de pós-graduação: Mestrado e Doutorado em Arqueologia do Programa de Pós-graduação",
       "url": "https://mae.usp.br/pos-graduacao-no-mae/",
       "source": "MAE USP",
-      "date": "Sun, 14 Dec 2025 10:30:06 GMT",
+      "date": "Sun, 14 Dec 2025 22:28:20 GMT",
       "category": "Arqueologia e História",
       "image_url": null
-    },
-    {
-      "title": "Os pescadores cerriteiros do pampa e litoral sul do Brasil e Uruguai: arqueologia, história indígena e conservação ambiental",
-      "summary": "Os pescadores cerriteiros do pampa e litoral sul do Brasil e Uruguai: arqueologia, história indígena e conservação ambie...",
-      "url": "https://revista.sabnet.org/ojs/index.php/sab/article/view/1292",
-      "source": "SABNET Revista",
-      "date": "Sun, 14 Dec 2025 10:29:56 GMT",
-      "category": "Arqueologia e História",
-      "image_url": "https://revista.sabnet.org/ojs/public/journals/1/cover_issue_67_pt_BR.png"
     },
     {
       "title": "Narrativas pré-colombianas sobre as serpentes: um olhar sob a ótica das Novas Materialidades na Arqueologia",
       "summary": "As serpentes são animais que aparecem com muita frequência na iconografia pré-colombiana, assim como nos relatos etnográficos e nas mitologias, de norte a sul do continente Americano. Foram estudadas, em sua maioria, como símbolos ou representações de esferas sociais e religiosas. Neste artigo busca-se rever esse tema sob o olhar das Novas Materialidades na Arqueologia, cuja agência da serpente se...",
       "url": "https://revista.sabnet.org/ojs/index.php/sab/article/view/1252",
       "source": "SABNET Revista",
-      "date": "Sun, 14 Dec 2025 10:29:56 GMT",
+      "date": "Sun, 14 Dec 2025 22:28:10 GMT",
       "category": "Arqueologia e História",
       "image_url": "https://revista.sabnet.org/ojs/public/journals/1/cover_issue_67_pt_BR.png"
     },
@@ -98,16 +98,7 @@
       "summary": "Por uma arqueologia da infância: brincadeiras, jogos e aprendizagens nas práticas cotidianas das crianças nos séculos XI...",
       "url": "https://revista.sabnet.org/ojs/index.php/sab/article/view/1296",
       "source": "SABNET Revista",
-      "date": "Sun, 14 Dec 2025 10:29:56 GMT",
-      "category": "Arqueologia e História",
-      "image_url": "https://revista.sabnet.org/ojs/public/journals/1/cover_issue_67_pt_BR.png"
-    },
-    {
-      "title": "Arqueologia indígena na Amazônia, Brasil: concepções e panoramas",
-      "summary": "Este trabalho abarca uma revisão sobre a arqueologia indígena e suas práticas baseadas no conhecimento tradicional e na cosmovisão que não seguem exclusivamente os paradigmas da arqueologia ocidental. A arqueologia indígena trata da coleta e análise de artefatos, preservação e conservação ambiental, recuperação e valorização de saberes. Desenvolve-se uma discussão abrangente a partir das pesquisas...",
-      "url": "https://revista.sabnet.org/ojs/index.php/sab/article/view/1286",
-      "source": "SABNET Revista",
-      "date": "Sun, 14 Dec 2025 10:29:55 GMT",
+      "date": "Sun, 14 Dec 2025 22:28:10 GMT",
       "category": "Arqueologia e História",
       "image_url": "https://revista.sabnet.org/ojs/public/journals/1/cover_issue_67_pt_BR.png"
     },
@@ -116,16 +107,16 @@
       "summary": "Este artigo discute as insurgências decoloniais como resposta à apropriação reducionista dos saberes ancestrais na academia, especialmente na arqueologia, historicamente marcada por um viés eurocêntrico. A descolonização do conhecimento emerge das lutas de povos indígenas, afrodescendentes e comunidades tradicionais, exigindo o reconhecimento de suas epistemologias e narrativas. A apropriação inde...",
       "url": "https://revista.sabnet.org/ojs/index.php/sab/article/view/1210",
       "source": "SABNET Revista",
-      "date": "Sun, 14 Dec 2025 10:29:55 GMT",
+      "date": "Sun, 14 Dec 2025 22:28:09 GMT",
       "category": "Arqueologia e História",
       "image_url": "https://revista.sabnet.org/ojs/public/journals/1/cover_issue_67_pt_BR.png"
     },
     {
-      "title": "Liberdades intramuros: as materialidades táticas no Hospital Colônia de Barbacena",
-      "summary": "Inaugurado no início do século XX, na cidade de Barbacena, o Hospital Colônia foi a primeira instituição psiquiátrica de Minas Gerais. Como característico de uma típica instituição total, o Colônia fez uso de um conjunto material para o controle e homogeneização de suasseus pacientes, o qual analiso neste artigo a partir de uma abordagem hermenêutica. Não obstante o poder disciplinar imposto, asos...",
-      "url": "https://revista.sabnet.org/ojs/index.php/sab/article/view/1297",
+      "title": "Os pescadores cerriteiros do pampa e litoral sul do Brasil e Uruguai: arqueologia, história indígena e conservação ambiental",
+      "summary": "Os pescadores cerriteiros do pampa e litoral sul do Brasil e Uruguai: arqueologia, história indígena e conservação ambie...",
+      "url": "https://revista.sabnet.org/ojs/index.php/sab/article/view/1292",
       "source": "SABNET Revista",
-      "date": "Sun, 14 Dec 2025 10:29:54 GMT",
+      "date": "Sun, 14 Dec 2025 22:28:09 GMT",
       "category": "Arqueologia e História",
       "image_url": "https://revista.sabnet.org/ojs/public/journals/1/cover_issue_67_pt_BR.png"
     },
@@ -134,16 +125,16 @@
       "summary": "A coleção de pontas líticas lascadas do Laboratório de Arqueologia, Etnologia e Etno-História: morfometria e espacializa...",
       "url": "https://revista.sabnet.org/ojs/index.php/sab/article/view/1289",
       "source": "SABNET Revista",
-      "date": "Sun, 14 Dec 2025 10:29:54 GMT",
+      "date": "Sun, 14 Dec 2025 22:28:08 GMT",
       "category": "Arqueologia e História",
       "image_url": "https://revista.sabnet.org/ojs/public/journals/1/cover_issue_67_pt_BR.png"
     },
     {
-      "title": "Codigos e assemblagens no registro arqueológico alagoano",
-      "summary": "Neste artigo, a partir da teoria das assemblagens, abordamos a estrutura dos dados e dos registros de sítios arqueológicos localizados no estado de Alagoas. Introduzimos os principais elementos desta proposta teórica e identificamos, na arquitetura dos sistemas informatizados utilizados pelo Instituto do Patrimônio Histórico e Artístico Nacional (Iphan) desde 1998, uma classe de objeto-deus que li...",
-      "url": "https://revista.sabnet.org/ojs/index.php/sab/article/view/1278",
+      "title": "Arqueologia indígena na Amazônia, Brasil: concepções e panoramas",
+      "summary": "Este trabalho abarca uma revisão sobre a arqueologia indígena e suas práticas baseadas no conhecimento tradicional e na cosmovisão que não seguem exclusivamente os paradigmas da arqueologia ocidental. A arqueologia indígena trata da coleta e análise de artefatos, preservação e conservação ambiental, recuperação e valorização de saberes. Desenvolve-se uma discussão abrangente a partir das pesquisas...",
+      "url": "https://revista.sabnet.org/ojs/index.php/sab/article/view/1286",
       "source": "SABNET Revista",
-      "date": "Sun, 14 Dec 2025 10:29:53 GMT",
+      "date": "Sun, 14 Dec 2025 22:28:08 GMT",
       "category": "Arqueologia e História",
       "image_url": "https://revista.sabnet.org/ojs/public/journals/1/cover_issue_67_pt_BR.png"
     },
@@ -152,7 +143,16 @@
       "summary": "Geofísica Arqueológica no Centro de Belo Horizonte (MG): Prospecção GPR da Capela da Irmandade de Nossa Senhora do Rosár...",
       "url": "https://revista.sabnet.org/ojs/index.php/sab/article/view/1275",
       "source": "SABNET Revista",
-      "date": "Sun, 14 Dec 2025 10:29:53 GMT",
+      "date": "Sun, 14 Dec 2025 22:28:07 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://revista.sabnet.org/ojs/public/journals/1/cover_issue_67_pt_BR.png"
+    },
+    {
+      "title": "Liberdades intramuros: as materialidades táticas no Hospital Colônia de Barbacena",
+      "summary": "Inaugurado no início do século XX, na cidade de Barbacena, o Hospital Colônia foi a primeira instituição psiquiátrica de Minas Gerais. Como característico de uma típica instituição total, o Colônia fez uso de um conjunto material para o controle e homogeneização de suasseus pacientes, o qual analiso neste artigo a partir de uma abordagem hermenêutica. Não obstante o poder disciplinar imposto, asos...",
+      "url": "https://revista.sabnet.org/ojs/index.php/sab/article/view/1297",
+      "source": "SABNET Revista",
+      "date": "Sun, 14 Dec 2025 22:28:07 GMT",
       "category": "Arqueologia e História",
       "image_url": "https://revista.sabnet.org/ojs/public/journals/1/cover_issue_67_pt_BR.png"
     },
@@ -161,124 +161,115 @@
       "summary": "Este trabalho está licenciado sob uma licença Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.",
       "url": "https://revista.sabnet.org/ojs/index.php/sab/article/view/1343",
       "source": "SABNET Revista",
-      "date": "Sun, 14 Dec 2025 10:29:52 GMT",
+      "date": "Sun, 14 Dec 2025 22:28:06 GMT",
       "category": "Arqueologia e História",
       "image_url": "https://revista.sabnet.org/ojs/public/journals/1/cover_issue_67_pt_BR.png"
     },
     {
-      "title": "O Natal perfeito não existe",
-      "summary": "O importante não é a celebração em si, mas sim o motivo pelo qual celebramos O Natal perfeito não existe",
-      "url": "https://pt.christianitytoday.com/2025/12/natal-perfeito-ceia-festa-conflitos-pessoas-pt/",
-      "source": "Christianity Today (PT)",
-      "date": "Sun, 14 Dec 2025 10:29:49 GMT",
-      "category": "Teologia e Igreja",
-      "image_url": "https://pt.christianitytoday.com/wp-content/uploads/sites/15/2025/12/epistle-1.jpg?resize=1200,628"
+      "title": "Codigos e assemblagens no registro arqueológico alagoano",
+      "summary": "Neste artigo, a partir da teoria das assemblagens, abordamos a estrutura dos dados e dos registros de sítios arqueológicos localizados no estado de Alagoas. Introduzimos os principais elementos desta proposta teórica e identificamos, na arquitetura dos sistemas informatizados utilizados pelo Instituto do Patrimônio Histórico e Artístico Nacional (Iphan) desde 1998, uma classe de objeto-deus que li...",
+      "url": "https://revista.sabnet.org/ojs/index.php/sab/article/view/1278",
+      "source": "SABNET Revista",
+      "date": "Sun, 14 Dec 2025 22:28:06 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://revista.sabnet.org/ojs/public/journals/1/cover_issue_67_pt_BR.png"
     },
     {
       "title": "Quem são e onde estão os povos não alcançados hoje?",
       "summary": "Um mobilizador de missões britânico pretende que o termo grupos de povos não alcançados seja repensado, diante de um mundo com novos padrões migratórios e digitalmente conectado.",
       "url": "https://pt.christianitytoday.com/2025/12/evangelismo-povos-nao-alcancados-globalizacao-imigracao-pt/",
       "source": "Christianity Today (PT)",
-      "date": "Sun, 14 Dec 2025 10:29:49 GMT",
+      "date": "Sun, 14 Dec 2025 22:28:03 GMT",
       "category": "Teologia e Igreja",
       "image_url": "https://pt.christianitytoday.com/wp-content/uploads/sites/15/2025/12/roundtable-Howell-online.jpg?resize=1200,628"
-    },
-    {
-      "title": "Christianity Today em Português",
-      "summary": "Christianity Today em Português",
-      "url": "https://www.facebook.com/ChristianityTodayPT/",
-      "source": "Christianity Today (PT)",
-      "date": "Sun, 14 Dec 2025 10:29:48 GMT",
-      "category": "Teologia e Igreja",
-      "image_url": "https://pt.christianitytoday.com/wp-content/uploads/sites/15/2025/12/Haarsma-online-main.jpg?w=1265"
     },
     {
       "title": "O que a Encarnação tem a ver com a vastidão do universo?",
       "summary": "Os céus declaram a glória de Deus na pessoa de Jesus Cristo. O que a Encarnação tem a ver com a vastidão do universo?",
       "url": "https://pt.christianitytoday.com/2025/12/ciencia-fe-deus-espaco-encarnacao-astrofisica-pt/",
       "source": "Christianity Today (PT)",
-      "date": "Sun, 14 Dec 2025 10:29:48 GMT",
+      "date": "Sun, 14 Dec 2025 22:28:02 GMT",
       "category": "Teologia e Igreja",
       "image_url": "https://pt.christianitytoday.com/wp-content/uploads/sites/15/2025/12/Haarsma-online-main.jpg?resize=1200,628"
     },
     {
-      "title": "Treinar em jejum pode trazer mais riscos do que benefícios, alerta estudo",
-      "summary": "Revisão mostra que estratégia usada para emagrecer não turbina queima de gordura; especialistas alertam para riscos e orientam como devem ser as refeições pré-treino",
-      "url": "https://revistagalileu.globo.com/saude/noticia/2025/12/treinar-em-jejum-pode-trazer-mais-riscos-do-que-beneficios-alerta-estudo-1.ghtml#GALILEU-POST-TOP-24H-item,top,069a9b3e-f7a5-4608-8f53-468560d68860",
-      "source": "Revista Galileu",
-      "date": "Sun, 14 Dec 2025 10:29:09 GMT",
-      "category": "Ciência e Tecnologia",
-      "image_url": "https://s2-galileu.glbimg.com/ZiFMbitqJ_jee_L2vOVdKJ8DeU4=/1200x/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_fde5cd494fb04473a83fa5fd57ad4542/internal_photos/bs/2025/z/2/FAu3UoT4uLNNGmFb6AJA/aparelho-musculacao-026-16-foto-cecilia-bastos-20.jpg"
+      "title": "O Natal perfeito não existe",
+      "summary": "O importante não é a celebração em si, mas sim o motivo pelo qual celebramos O Natal perfeito não existe",
+      "url": "https://pt.christianitytoday.com/2025/12/natal-perfeito-ceia-festa-conflitos-pessoas-pt/",
+      "source": "Christianity Today (PT)",
+      "date": "Sun, 14 Dec 2025 22:28:02 GMT",
+      "category": "Teologia e Igreja",
+      "image_url": "https://pt.christianitytoday.com/wp-content/uploads/sites/15/2025/12/epistle-1.jpg?resize=1200,628"
     },
     {
-      "title": "Fotógrafo italiano registra dois fenômenos atmosféricos raros ao mesmo tempo",
-      "summary": "A imagem mostra um ELVE e um sprite vermelho surgindo simultaneamente na alta atmosfera após um raio poderoso no norte da Itália",
-      "url": "https://revistagalileu.globo.com/ciencia/espaco/noticia/2025/12/fotografo-italiano-registra-dois-fenomenos-atmosfericos-raros-ao-mesmo-tempo.ghtml#GALILEU-POST-TOP-24H-item,top,069a9b3e-f7a5-4608-8f53-468560d68860",
-      "source": "Revista Galileu",
-      "date": "Sun, 14 Dec 2025 10:29:09 GMT",
-      "category": "Ciência e Tecnologia",
-      "image_url": "https://s2-galileu.glbimg.com/bpldsAO9s2fQncKLVxNQSOmszZU=/1200x/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_fde5cd494fb04473a83fa5fd57ad4542/internal_photos/bs/2025/f/0/iF7HyVRXis65qApWxw3w/elve-sprite-l.jpg"
+      "title": "Christianity Today em Português",
+      "summary": "Christianity Today em Português",
+      "url": "https://www.facebook.com/ChristianityTodayPT/",
+      "source": "Christianity Today (PT)",
+      "date": "Sun, 14 Dec 2025 22:28:01 GMT",
+      "category": "Teologia e Igreja",
+      "image_url": "https://pt.christianitytoday.com/wp-content/uploads/sites/15/2025/12/Haarsma-online-main.jpg?w=1265"
     },
     {
-      "title": "O que a história da matemática tem a ver com Alice no País das Maravilhas",
-      "summary": "A lógica por trás do nonsense: entenda quando a fantasia de Alice dialoga com debates matemáticos reais O que a história da matemática tem a ver com Alice no País das Maravilhas",
-      "url": "https://revistagalileu.globo.com/colunistas/the-conversation/coluna/2025/12/o-que-a-historia-da-matematica-tem-a-ver-com-alice-no-pais-das-maravilhas.ghtml#GALILEU-POST-TOP-24H-item,top,069a9b3e-f7a5-4608-8f53-468560d68860",
+      "title": "Os 5 achados vikings mais impressionantes de 2025",
+      "summary": "De restos mortais até joias preciosas, o resquícios da cultura dos vikings permanece sendo desvendado em escavações arqueológicas",
+      "url": "https://revistagalileu.globo.com/ciencia/arqueologia/noticia/2025/12/os-5-achados-vikings-mais-impressionantes-de-2025.ghtml#GALILEU-POST-TOP-24H-item,top,5be6e82b-c3ae-401a-9e10-9298622ab379",
       "source": "Revista Galileu",
-      "date": "Sun, 14 Dec 2025 10:29:09 GMT",
-      "category": "Arqueologia e História",
-      "image_url": "https://s2-galileu.glbimg.com/FBLuYfXCAoVQ8FOjzawnjwShAqM=/1200x/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_fde5cd494fb04473a83fa5fd57ad4542/internal_photos/bs/2025/D/v/RBOIUzSyelB4e08P6cqw/0-5gw2-3cz2wrbs8tn.jpg"
+      "date": "Sun, 14 Dec 2025 22:27:17 GMT",
+      "category": "Ciência e Tecnologia",
+      "image_url": "https://s2-galileu.glbimg.com/BhAkEuBbwZy0rH4Heb6VEpvkAHY=/1200x/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_fde5cd494fb04473a83fa5fd57ad4542/internal_photos/bs/2025/U/9/O6D6ZJTHKOTTR50NNw8Q/image5.png"
     },
     {
-      "title": "Piscar menos significa que o cérebro está trabalhando mais, sugere estudo",
-      "summary": "Em testes com cerca de 50 voluntários, a taxa variou de 10 a 70 piscadas por minuto e reduziu quando a compreensão da fala exigiu maior esforço mental",
-      "url": "https://revistagalileu.globo.com/ciencia/noticia/2025/12/piscar-menos-significa-que-o-cerebro-esta-trabalhando-mais-sugere-estudo.ghtml#GALILEU-POST-TOP-24H-item,top,069a9b3e-f7a5-4608-8f53-468560d68860",
+      "title": "Como se sentir injustiçado pode intensificar a dor crônica",
+      "summary": "Pesquisa com mais de 700 pacientes mostra que emoções ligadas à percepção de tratamento desigual podem influenciar a intensidade, a duração e o impacto da dor ao longo prazo",
+      "url": "https://revistagalileu.globo.com/saude/noticia/2025/12/como-se-sentir-injusticado-pode-intensificar-a-dor-cronica.ghtml#GALILEU-POST-TOP-24H-item,top,5be6e82b-c3ae-401a-9e10-9298622ab379",
       "source": "Revista Galileu",
-      "date": "Sun, 14 Dec 2025 10:29:09 GMT",
+      "date": "Sun, 14 Dec 2025 22:27:17 GMT",
       "category": "Ciência e Tecnologia",
-      "image_url": "https://s2-galileu.glbimg.com/__-5E89la901A9fSjCNUHecHyMI=/1200x/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_fde5cd494fb04473a83fa5fd57ad4542/internal_photos/bs/2025/o/1/XAzJDCTvaxBrHCpOHZYg/blinking-less-may-mean.jpg"
+      "image_url": "https://s2-galileu.glbimg.com/f9PaXnaAv-s_m6rpFRJ7zJvZ080=/1200x/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_fde5cd494fb04473a83fa5fd57ad4542/internal_photos/bs/2025/q/Q/NNTVpsTci5EBX77KH2fg/pexels-kindelmedia-7298881.jpg"
     },
     {
-      "title": "Bronzeamento artificial provoca mutações profundas no DNA da pele, revela estudo",
-      "summary": "Análise genética revela que a exposição à radiação UV artificial acelera o envelhecimento da pele e amplia o risco do câncer de pele mais letal",
-      "url": "https://revistagalileu.globo.com/ciencia/noticia/2025/12/bronzeamento-artificial-provoca-mutacoes-profundas-no-dna-da-pele-revela-estudo.ghtml#GALILEU-POST-TOP-24H-item,top,069a9b3e-f7a5-4608-8f53-468560d68860",
+      "title": "IA aprende a ser altruísta observando o comportamento humano, mostra estudo",
+      "summary": "Pesquisa indica que sistemas artificiais conseguem incorporar princípios morais a partir de decisões reais tomadas por pessoas de diferentes contextos sociais",
+      "url": "https://revistagalileu.globo.com/tecnologia/noticia/2025/12/ia-aprende-a-ser-altruista-observando-o-comportamento-humano-mostra-estudo.ghtml#GALILEU-POST-TOP-24H-item,top,5be6e82b-c3ae-401a-9e10-9298622ab379",
       "source": "Revista Galileu",
-      "date": "Sun, 14 Dec 2025 10:29:09 GMT",
+      "date": "Sun, 14 Dec 2025 22:27:17 GMT",
       "category": "Ciência e Tecnologia",
-      "image_url": "https://s2-galileu.glbimg.com/esphGeF_frbxWbOyievcTEaNIOE=/1200x/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_fde5cd494fb04473a83fa5fd57ad4542/internal_photos/bs/2025/u/A/XjPQKsQ42xzM0TefIgaA/715px-sunbedoff-large.jpg"
+      "image_url": "https://s2-galileu.glbimg.com/BHDWyPffnsJDAGfFOlqsnlkvZpw=/1200x/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_fde5cd494fb04473a83fa5fd57ad4542/internal_photos/bs/2024/Z/U/Ew0C1xTtW9TTuRCwosGw/scott-graham-5fnmwej4taa-unsplash.jpg"
+    },
+    {
+      "title": "\"It: bem-vindos a Derry\": atores falam sobre a série que lançou capítulo final hoje",
+      "summary": "Último episódio da série estreou neste domingo (14). Durante evento no Brasil, atores, produtora e o diretor da série, que conta a história de Pennywise, falaram sobre a produção; confira",
+      "url": "https://revistagalileu.globo.com/cultura/noticia/2025/12/it-bem-vindos-a-derry-atores-falam-sobre-a-serie-que-lancou-capitulo-final-hoje.ghtml#GALILEU-POST-TOP-24H-item,top,5be6e82b-c3ae-401a-9e10-9298622ab379",
+      "source": "Revista Galileu",
+      "date": "Sun, 14 Dec 2025 22:27:17 GMT",
+      "category": "Ciência e Tecnologia",
+      "image_url": "https://s2-galileu.glbimg.com/5w-kpSwrqnSnRU92pFNUnXI1P4E=/1200x/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_fde5cd494fb04473a83fa5fd57ad4542/internal_photos/bs/2025/G/U/j89e6bTKO6ohhHzJphww/hf-ccxp25-071225-thunder-diegopadilha-0879.jpg"
     },
     {
       "title": "Revista digital",
       "summary": "Tudo sobre ciência, tecnologia, cultura, cinema, artes, séries de tv, sociedade, comportamento, vestibular e Enem e lifehacks.",
       "url": "https://revistagalileu.revistadigital.globo.com/",
       "source": "Revista Galileu - Arqueologia",
-      "date": "Sun, 14 Dec 2025 10:29:06 GMT",
+      "date": "Sun, 14 Dec 2025 22:27:14 GMT",
       "category": "Arqueologia e História",
       "image_url": null
     },
     {
-      "title": "Descoberta muralha de 2,1 mil anos que pode ter sido derrubada por rei bíblico; vídeo",
-      "summary": "Achado arqueológico reabre debate sobre disputas políticas e militares que moldaram a Jerusalém do período hasmoneu Descoberta muralha de 2,1 mil anos que pode ter sido derrubada por rei bíblico; vídeo",
-      "url": "https://revistagalileu.globo.com/ciencia/arqueologia/noticia/2025/12/descoberta-muralha-de-21-mil-anos-que-pode-ter-sido-derrubada-por-rei-biblico-video.ghtml",
+      "title": "Relíquia da Segunda Guerra é encontrada em floresta polonesa após mais de 80 anos",
+      "summary": "Objeto do 12º Regimento de Artilharia Leve, unidade destruída na invasão nazista, provavelmente enterrado para não cair em mãos inimigas, foi encontrado de forma acidental por detectonistas",
+      "url": "https://revistagalileu.globo.com/ciencia/arqueologia/noticia/2025/12/reliquia-da-segunda-guerra-e-encontrada-em-floresta-polonesa-apos-mais-de-80-anos.ghtml",
       "source": "Revista Galileu - Arqueologia",
-      "date": "Sun, 14 Dec 2025 10:29:06 GMT",
+      "date": "Sun, 14 Dec 2025 22:27:14 GMT",
       "category": "Arqueologia e História",
-      "image_url": "https://s2-galileu.glbimg.com/W03OrPdFV2Z4QNUcpllPkvQSMgA=/1200x/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_fde5cd494fb04473a83fa5fd57ad4542/internal_photos/bs/2025/x/w/MBgBHZRB2iIa7mROELLg/4-kishle-compound.jpg"
-    },
-    {
-      "title": "O menino de 140 mil anos que pode ser híbrido mais antigo entre Homo sapiens e neandertais",
-      "summary": "Um novo estudo sobre o crânio e a mandíbula de uma criança que viveu milhares de anos atrás traz novas descobertas sobre a hibridização entre o Homo sapiens e os neandertais",
-      "url": "https://www.bbc.com/portuguese/articles/cy404ezqlg7o",
-      "source": "BBC News Brasil - Arqueologia",
-      "date": "Sun, 14 Dec 2025 10:29:02 GMT",
-      "category": "Arqueologia e História",
-      "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/a115/live/e505b6b0-97bf-11f0-aa86-15e424e83c50.jpg"
+      "image_url": "https://s2-galileu.glbimg.com/axtF92TgEYmkKqLHkOG9aGB8uPU=/1200x/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_fde5cd494fb04473a83fa5fd57ad4542/internal_photos/bs/2025/H/M/qZMe3oTViq8A3WoPAhNg/eag1.jpg"
     },
     {
       "title": "A descoberta arqueológica que revela violência escravocrata em bairro japonês de SP",
       "summary": "Restos mortais encontrados em escavação na Capela dos Aflitos terão sua origem analisada em laboratório, mas acredita-se que eles podem ser de escravizados negros enterrados ali.",
       "url": "https://www.bbc.com/portuguese/articles/c629p029y55o",
       "source": "BBC News Brasil - Arqueologia",
-      "date": "Sun, 14 Dec 2025 10:29:02 GMT",
+      "date": "Sun, 14 Dec 2025 22:27:09 GMT",
       "category": "Arqueologia e História",
       "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/30e9/live/5d81b440-c4ed-11f0-bf7b-db7c049674ab.jpg"
     },
@@ -287,7 +278,7 @@
       "summary": "Os denisovanos, um grupo de humanos arcaicos descoberto no século 21, compartilharam por um período a Terra com os neandertais e os Homo sapiens",
       "url": "https://www.bbc.com/portuguese/articles/cr439krylqko",
       "source": "BBC News Brasil - Arqueologia",
-      "date": "Sun, 14 Dec 2025 10:29:02 GMT",
+      "date": "Sun, 14 Dec 2025 22:27:09 GMT",
       "category": "Arqueologia e História",
       "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/6108/live/5a6f4b10-c082-11f0-8669-5560f5c90fbe.jpg"
     },
@@ -296,43 +287,70 @@
       "summary": "Em um sítio arqueológico no leste da Inglaterra, cientistas encontraram evidências de que seres humanos já sabiam acender fogueiras há 400 mil anos, muito antes do que se acreditava até agora.",
       "url": "https://www.bbc.com/portuguese/articles/cvgrkk7xv93o",
       "source": "BBC News Brasil - Arqueologia",
-      "date": "Sun, 14 Dec 2025 10:29:01 GMT",
+      "date": "Sun, 14 Dec 2025 22:27:08 GMT",
       "category": "Arqueologia e História",
       "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/daf5/live/460d6ca0-d609-11f0-9fb5-5f3a3703a365.jpg"
     },
     {
-      "title": "O que se sabe sobre ataque que deixou mortos e feridos em universidade nos EUA",
-      "summary": "Polícia afirma que ao menos duas pessoas morreram e oito ficaram feridas na Universidade Brown e que busca suspeito está em andamento.",
-      "url": "https://www.bbc.com/portuguese/articles/cr5z7dlvervo",
-      "source": "BBC News Brasil",
-      "date": "Sun, 14 Dec 2025 10:28:59 GMT",
+      "title": "O menino de 140 mil anos que pode ser híbrido mais antigo entre Homo sapiens e neandertais",
+      "summary": "Um novo estudo sobre o crânio e a mandíbula de uma criança que viveu milhares de anos atrás traz novas descobertas sobre a hibridização entre o Homo sapiens e os neandertais",
+      "url": "https://www.bbc.com/portuguese/articles/cy404ezqlg7o",
+      "source": "BBC News Brasil - Arqueologia",
+      "date": "Sun, 14 Dec 2025 22:27:08 GMT",
       "category": "Arqueologia e História",
-      "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/d7eb/live/267d7770-d877-11f0-a8dc-93c15fe68710.jpg"
+      "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/a115/live/e505b6b0-97bf-11f0-aa86-15e424e83c50.jpg"
     },
     {
-      "title": "Humanos são monogâmicos? O que revela nova 'escala romântica' dos animais",
-      "summary": "Quando o assunto é monogamia, os seres humanos estão mais próximos dos suricatos e dos castores do que de nossos parentes primatas, segundo um estudo recente.",
-      "url": "https://www.bbc.com/portuguese/articles/c3v1nn9pvkxo",
+      "title": "Ataque contra evento da comunidade judaica deixa 15 mortos na Austrália",
+      "summary": "Cerca de 40 pessoas estão hospitalizadas, incluindo 4 crianças. Um dos atiradores morreu e um segundo suspeito está em estado crítico, segundo a polícia.",
+      "url": "https://www.bbc.com/portuguese/articles/clyknn2wpdko",
       "source": "BBC News Brasil",
-      "date": "Sun, 14 Dec 2025 10:28:59 GMT",
+      "date": "Sun, 14 Dec 2025 22:27:05 GMT",
       "category": "Arqueologia e História",
-      "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/94f6/live/1f188d00-d5cd-11f0-8c06-f5d460985095.jpg"
+      "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/3df6/live/8fd8be40-d8d7-11f0-aae2-2191c0e48a3b.jpg"
+    },
+    {
+      "title": "Autores de ataque na Austrália são pai e filho, diz polícia",
+      "summary": "Cerca de 40 pessoas estão hospitalizadas, incluindo 4 crianças. Um dos atiradores morreu e o segundo está em estado crítico, segundo a polícia.",
+      "url": "https://www.bbc.com/portuguese/articles/cn412ne7lvlo",
+      "source": "BBC News Brasil",
+      "date": "Sun, 14 Dec 2025 22:27:05 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/f5ae/live/215c7430-d8db-11f0-b67b-690eb873de1b.png"
+    },
+    {
+      "title": "'Inacreditável que famílias e crianças sejam massacradas por serem judias': os relatos do ataque na Austrália",
+      "summary": "Mais de mil pessoas participavam de um festival judaico em uma das praias mais famosas da Austrália quando atiradores começaram a alvejar a multidão.",
+      "url": "https://www.bbc.com/portuguese/articles/c1m872m4ppdo",
+      "source": "BBC News Brasil",
+      "date": "Sun, 14 Dec 2025 22:27:05 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/ca64/live/e340c250-d8f3-11f0-9fa0-335f4e960573.jpg"
     },
     {
       "title": "Um lembrete constante",
       "summary": "Trechos do Discurso da Conferência do Corpo Docente Outono de 2005 Um lembrete constante",
       "url": "https://monergismo.com/um-lembrete-constante/",
       "source": "Monergismo",
-      "date": "Sun, 14 Dec 2025 10:28:18 GMT",
+      "date": "Sun, 14 Dec 2025 22:26:24 GMT",
       "category": "Teologia Reformada",
       "image_url": "https://i0.wp.com/monergismo.com/wp-content/uploads/2025/10/prompte_Calvin.jpg?resize=930%2C620&ssl=1"
+    },
+    {
+      "title": "A pornografia desqualifica um pastor para o ministério?",
+      "summary": "John Piper responde neste episódio acerca do problema da pornografia na vida de pastores, se eles devem ou não continuar no ministério caso caiam neste pecado.",
+      "url": "https://voltemosaoevangelho.com/blog/2025/12/a-pornografia-desqualifica-um-pastor-para-o-ministerio/",
+      "source": "Voltemos ao Evangelho",
+      "date": "Sun, 14 Dec 2025 22:26:09 GMT",
+      "category": "Teologia Reformada",
+      "image_url": "https://i0.wp.com/voltemosaoevangelho.com/blog/wp-content/uploads/2025/11/dlfj.png?fit=837%2C470&ssl=1"
     },
     {
       "title": "Dia 12  Maravilhamento e mistério (Lucas 1-31-35)",
       "summary": "Voltemos ao Evangelho - um site cristão por Cristo e pelo Evangelho Utilize o cupom VOLTEMOS15 e tenha acesso ao Fiel Digital com 15 OFF em todos os planos.",
       "url": "https://voltemosaoevangelho.com/blog/2025/12/dia-12-maravilhamento-e-misterio-lucas-1-31-35/",
       "source": "Voltemos ao Evangelho",
-      "date": "Sun, 14 Dec 2025 10:28:03 GMT",
+      "date": "Sun, 14 Dec 2025 22:26:09 GMT",
       "category": "Teologia Reformada",
       "image_url": "https://voltemosaoevangelho.com/blog/wp-content/uploads/2025/12/dswofiwo-1.png"
     },
@@ -341,7 +359,7 @@
       "summary": "Não existe nada mais pleno que a plenitude, e não há nada mais duradouro que aquilo que é eterno. O prazer à destra de Deus é incomparável e insuperável.",
       "url": "https://voltemosaoevangelho.com/blog/2025/12/a-plenitude-e-eternidade-dos-prazeres-da-presenca-de-deus/",
       "source": "Voltemos ao Evangelho",
-      "date": "Sun, 14 Dec 2025 10:28:03 GMT",
+      "date": "Sun, 14 Dec 2025 22:26:09 GMT",
       "category": "Teologia Reformada",
       "image_url": "https://i0.wp.com/voltemosaoevangelho.com/blog/wp-content/uploads/2025/12/shfboh.png?fit=837%2C470&ssl=1"
     },
@@ -350,7 +368,7 @@
       "summary": "Só permanece na condição de verdadeiro o que é verdade. A verdade, por proceder de Deus, é eterna. A Palavra de Deus é base segura e confiável",
       "url": "https://voltemosaoevangelho.com/blog/2025/12/a-palavra-de-deus-e-base-segura-e-confiavel/",
       "source": "Voltemos ao Evangelho",
-      "date": "Sun, 14 Dec 2025 10:28:03 GMT",
+      "date": "Sun, 14 Dec 2025 22:26:09 GMT",
       "category": "Teologia Reformada",
       "image_url": "https://voltemosaoevangelho.com/blog/wp-content/uploads/2025/12/snf.png"
     },
@@ -359,7 +377,7 @@
       "summary": "Voltemos ao Evangelho - um site cristão por Cristo e pelo Evangelho Utilize o cupom VOLTEMOS15 e tenha acesso ao Fiel Digital com 15 OFF em todos os planos.",
       "url": "https://voltemosaoevangelho.com/blog/2025/12/dia-14-uma-historia-sobrenatural-lucas-2-1-6/",
       "source": "Voltemos ao Evangelho",
-      "date": "Sun, 14 Dec 2025 10:28:02 GMT",
+      "date": "Sun, 14 Dec 2025 22:26:08 GMT",
       "category": "Teologia Reformada",
       "image_url": "https://i0.wp.com/voltemosaoevangelho.com/blog/wp-content/uploads/2025/12/dswofiwo-1.png?fit=837%2C470&ssl=1"
     },
@@ -368,52 +386,52 @@
       "summary": "Voltemos ao Evangelho - um site cristão por Cristo e pelo Evangelho Utilize o cupom VOLTEMOS15 e tenha acesso ao Fiel Digital com 15 OFF em todos os planos.",
       "url": "https://voltemosaoevangelho.com/blog/2025/12/dia-13-quao-doce-e-o-nome-mateus-1-20-21/",
       "source": "Voltemos ao Evangelho",
-      "date": "Sun, 14 Dec 2025 10:28:02 GMT",
+      "date": "Sun, 14 Dec 2025 22:26:08 GMT",
       "category": "Teologia Reformada",
       "image_url": "https://i0.wp.com/voltemosaoevangelho.com/blog/wp-content/uploads/2025/12/dswofiwo-1.png?fit=837%2C470&ssl=1"
     },
     {
-      "title": "A pornografia desqualifica um pastor para o ministério?",
-      "summary": "John Piper responde neste episódio acerca do problema da pornografia na vida de pastores, se eles devem ou não continuar no ministério caso caiam neste pecado.",
-      "url": "https://voltemosaoevangelho.com/blog/2025/12/a-pornografia-desqualifica-um-pastor-para-o-ministerio/",
-      "source": "Voltemos ao Evangelho",
-      "date": "Sun, 14 Dec 2025 10:28:02 GMT",
-      "category": "Teologia Reformada",
-      "image_url": "https://i0.wp.com/voltemosaoevangelho.com/blog/wp-content/uploads/2025/11/dlfj.png?fit=837%2C470&ssl=1"
-    },
-    {
-      "title": "Atentado gravíssimo na Austrália contra comunidade judaica, muitos mortos e feridos",
-      "summary": "Notícias de IsraelAtentado gravíssimo na Austrália contra comunidade judaica, muitos mortos e feridos Notícias de IsraelEx-reféns e familiares pressionam Netanyahu: Investigação do estado ou renúncia ...",
-      "url": "https://cafetorah.com/atentado-gravissimo-na-australia-contra-comunidade-judaica-muitos-mortos-e-feridos/",
+      "title": "Notícias de Israel",
+      "summary": "Notícias de Israel",
+      "url": "https://noticiasdeisrael.com.br/",
       "source": "Notícias de Israel",
-      "date": "Sun, 14 Dec 2025 10:27:57 GMT",
+      "date": "Sun, 14 Dec 2025 22:26:05 GMT",
       "category": "Israel e Oriente Médio",
-      "image_url": "https://cafetorah.com/wp-content/uploads/2025/12/pexels-ramazphotos-31583280.jpg"
-    },
-    {
-      "title": "Ex-reféns e familiares pressionam Netanyahu: Investigação do estado ou renúncia",
-      "summary": "Sobreviventes do cativeiro e familiares de soldados mortos pedem a Netanyahu: Crie uma comissão estatal de investigação ou renuncie ao cargo Mais de 200 sobreviventes do cativeiro, familiares de seque...",
-      "url": "https://cafetorah.com/ex-refens-e-familiares-pressionam-netanyahu-investigacao-do-estado-ou-renuncia/",
-      "source": "Cafetorah - Notícias de Israel",
-      "date": "Sun, 14 Dec 2025 10:27:33 GMT",
-      "category": "Israel e Oriente Médio",
-      "image_url": "https://cafetorah.com/wp-content/uploads/2021/04/Benjamin-Netanyahu-Antes-de-Reuniao-do-Gabinete.jpg"
+      "image_url": "https://noticiasdeisrael.com.br/wp-content/uploads/2024/04/cropped-DOME_OF_THE_ROCK_JERUSALEM-scaled-1.jpg"
     },
     {
       "title": "Atentado gravíssimo na Austrália contra comunidade judaica, muitos mortos e feridos",
       "summary": "Testemunhas em uma festa de Hanukkah em Bondi Beach, na Austrália, disseram que um homem saiu de um veículo próximo ao local da festa e abriu fogo. A informação foi divulgada pelo Daily Mail. A políci...",
       "url": "https://cafetorah.com/atentado-gravissimo-na-australia-contra-comunidade-judaica-muitos-mortos-e-feridos/",
       "source": "Cafetorah - Notícias de Israel",
-      "date": "Sun, 14 Dec 2025 10:27:31 GMT",
+      "date": "Sun, 14 Dec 2025 22:25:40 GMT",
       "category": "Israel e Oriente Médio",
       "image_url": "https://cafetorah.com/wp-content/uploads/2025/12/pexels-ramazphotos-31583280.jpg"
     },
     {
-      "title": "Pastor perde igreja e filho durante ataque em Burkina Faso",
-      "summary": "Burkina Faso já foi um país pacífico, onde cristãos e muçulmanos conviviam em paz e havia tolerância religiosa. O pastor John servia sua igreja e cuidava da esposa e dos sete filhos, além de visitar o...",
-      "url": "https://portasabertas.org.br/noticias/cristaos-perseguidos/pastor-perde-igreja-e-filho-durante-ataque-em-burkina-faso/",
+      "title": "Talibã verifica celulares para encontrar aplicativo da Bíblia",
+      "summary": "No Dia da Bíblia, a Portas Abertas conta o testemunho de Mohammad (pseudônimo), que arriscou tudo para encontrar Jesus no Afeganistão. Se sua fé fosse descoberta, ele poderia ser agredido, preso e mor...",
+      "url": "https://portasabertas.org.br/noticias/cristaos-perseguidos/taliba-verifica-celulares-para-encontrar-aplicativos-de-biblias/",
       "source": "Portas Abertas",
-      "date": "Sun, 14 Dec 2025 10:27:24 GMT",
+      "date": "Sun, 14 Dec 2025 22:25:32 GMT",
+      "category": "Perseguição Religiosa",
+      "image_url": null
+    },
+    {
+      "title": "Fake News",
+      "summary": "Fake News",
+      "url": "https://portasabertas.org.br/noticias/fake-news/",
+      "source": "Portas Abertas",
+      "date": "Sun, 14 Dec 2025 22:25:31 GMT",
+      "category": "Perseguição Religiosa",
+      "image_url": null
+    },
+    {
+      "title": "Crianças sequestradas são resgatadas na Nigéria",
+      "summary": "Na segunda-feira, 8 de dezembro de 2025, o governo da Nigéria anunciou que 100 das 312 vítimas sequestradas em novembro na Escola St. Mary, na Nigéria, foram resgatadas. O líder cristão, reverendo Bul...",
+      "url": "https://portasabertas.org.br/noticias/cristaos-perseguidos/",
+      "source": "Portas Abertas",
+      "date": "Sun, 14 Dec 2025 22:25:30 GMT",
       "category": "Perseguição Religiosa",
       "image_url": null
     },
@@ -422,36 +440,180 @@
       "summary": "Todos os anos, a Portas Abertas compartilha a campanha Presentes de Esperança, nossa campanha de Natal. Ela reúne cinco projetos diferentes que são oportunidades de a igreja livre fortalecer e abençoa...",
       "url": "https://portasabertas.org.br/noticias/cristaos-perseguidos/presentes-de-esperanca-para-cristaos-perseguidos/",
       "source": "Portas Abertas",
-      "date": "Sun, 14 Dec 2025 10:27:23 GMT",
+      "date": "Sun, 14 Dec 2025 22:25:29 GMT",
       "category": "Perseguição Religiosa",
       "image_url": "https://sitepa.s3.amazonaws.com/wp-content/uploads/br/2025/11/Banner-noticia_Campanha-1.avif"
     },
     {
-      "title": "Toda pessoa tem o direito de saber quem é Jesus",
-      "summary": "Toda pessoa no mundo tem o direito de saber quem é Jesus. Essa frase do Irmão André mostra a convicção do Contrabandista de Deus, disposto a arriscar tudo e apoiar aqueles que arriscam suas vidas por ...",
-      "url": "https://portasabertas.org.br/noticias/cristaos-perseguidos/",
+      "title": "Pastor perde igreja e filho durante ataque em Burkina Faso",
+      "summary": "Burkina Faso já foi um país pacífico, onde cristãos e muçulmanos conviviam em paz e havia tolerância religiosa. O pastor John servia sua igreja e cuidava da esposa e dos sete filhos, além de visitar o...",
+      "url": "https://portasabertas.org.br/noticias/cristaos-perseguidos/pastor-perde-igreja-e-filho-durante-ataque-em-burkina-faso/",
       "source": "Portas Abertas",
-      "date": "Sun, 14 Dec 2025 10:27:23 GMT",
+      "date": "Sun, 14 Dec 2025 22:25:27 GMT",
       "category": "Perseguição Religiosa",
       "image_url": null
     },
     {
-      "title": "Crianças sequestradas são resgatadas na Nigéria",
-      "summary": "Na segunda-feira, 8 de dezembro de 2025, o governo da Nigéria anunciou que 100 das 312 vítimas sequestradas em novembro na Escola St. Mary, na Nigéria, foram resgatadas. O líder cristão, reverendo Bul...",
-      "url": "https://portasabertas.org.br/noticias/cristaos-perseguidos/criancas-sequestradas-sao-resgatadas-na-nigeria/",
-      "source": "Portas Abertas",
-      "date": "Sun, 14 Dec 2025 10:27:22 GMT",
-      "category": "Perseguição Religiosa",
-      "image_url": "https://sitepa.s3.amazonaws.com/wp-content/uploads/br/2025/12/Rodape_Presentes.avif"
+      "title": "Policial reformado saca arma em vagão de metrô em Salvador; veja vídeo - Folha de S.Paulo",
+      "summary": "a href\"https:news.google.comrssarticlesCBMiwAFBVV95cUxPVGFHa1NPSG1nd2U1azE0eGhTZ3Q3R3hPaUlic2xMaTJTaTRHdXlROWxwS2JyZ2ZUNlF4dm1DS3RLUTJSbEc2emNyVEJhWVMzd1VyNVZqc00yeG9FQzJRejM4UzYxR3g2cFoxMXZ0ZHo0SDJUd...",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPVGFHa1NPSG1nd2U1azE0eGhTZ3Q3R3hPaUlic2xMaTJTaTRHdXlROWxwS2JyZ2ZUNlF4dm1DS3RLUTJSbEc2emNyVEJhWVMzd1VyNVZqc00yeG9FQzJRejM4UzYxR3g2cFoxMXZ0ZHo0SDJUdHlIT1RuVWt1RllfUUNCMUVIWVl1V0t3YjNhVk54X1RJLWpfcU9zaWNZVzZfS1E5VW5jZFk0TnptUTRpVFNIU01BR3VzcnVpNE1zUkLSAcYBQVVfeXFMUFhKeTJQSHB5anNmM3hfazN2RWtKSncyZUZSX1pXbG5uMDBrSkF5ZF92dnY3Zk5VVXM2SXhmdUhkNEtOeFpna3ZvTG1xT0NFc1NCTmpiUUtDSTN3NFd5WUpyNkFkeTUyYUFYWFV5X3FjZ1g5T0xTWEkwc3BUay1LeHJxZnRvTDRSUllFUDZNeHllZEoyZTF6R3l6TkRoeG5wVjNGY1pCeWlBVHcyNDFOZzVORjR2cVdhRjlnOFR2Rm52ODQ5QkpR?oc=5",
+      "source": "Google News - Calvinismo",
+      "date": "Sun, 14 Dec 2025 20:34:00 GMT",
+      "category": "Teologia Reformada",
+      "image_url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw"
     },
     {
-      "title": "Fake News",
-      "summary": "Fake News",
-      "url": "https://portasabertas.org.br/noticias/fake-news/",
-      "source": "Portas Abertas",
-      "date": "Sun, 14 Dec 2025 10:27:21 GMT",
-      "category": "Perseguição Religiosa",
-      "image_url": null
+      "title": "O que se sabe sobre ataque contra militares dos EUA na Síria - Terra",
+      "summary": "a href\"https:news.google.comrssarticlesCBMi1wFBVV95cUxNeFhXcTdZVUgxY3JhRll6anJrTGkzb1VlbFVGWjM5ZUVFVkVxWl9SRkpKX0MtUF9ycUZsNEs4SjU1cTJRMWZrSzAzRFpGRUdwNl9pQjB0cnBhWk56aTJFbUdld2pJcERxbjBna2hja28tZUhWM...",
+      "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNeFhXcTdZVUgxY3JhRll6anJrTGkzb1VlbFVGWjM5ZUVFVkVxWl9SRkpKX0MtUF9ycUZsNEs4SjU1cTJRMWZrSzAzRFpGRUdwNl9pQjB0cnBhWk56aTJFbUdld2pJcERxbjBna2hja28tZUhWMzlSVzl2UTVnNG9jN2VhQVBvOHlSRjA2S1lDN3VyYWRvWUk5RTJsZHptRFNLTEZjVGxjbjJYcUR6YThqNDRzamZKN1ZKZXIxMVVibGRlc3o2ZHprTjVHT0pBSXlXYVJqNHlJSQ?oc=5",
+      "source": "Google News - Síria e Damasco",
+      "date": "Sun, 14 Dec 2025 19:50:49 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw"
+    },
+    {
+      "title": "Taylor Swift distribui R 1 bilhão em bônus para equipe após turnê mais lucrativa da história - Rádio Itatiaia",
+      "summary": "a href\"https:news.google.comrssarticlesCBMi0AFBVV95cUxPY3pJcDZMdUFfNVhNSllWbjdIRVA5Y3JURmVPZlEzZkU4V0ViejU5c25fSzB2ckZ5ZGRRM3ZTVk51OXFOMjZMRVNORE5QLTBZald6N0JiWC1oTjNfUTIxWW1PbEpHeUdjRzFzR1V5QjZaa25XN...",
+      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPY3pJcDZMdUFfNVhNSllWbjdIRVA5Y3JURmVPZlEzZkU4V0ViejU5c25fSzB2ckZ5ZGRRM3ZTVk51OXFOMjZMRVNORE5QLTBZald6N0JiWC1oTjNfUTIxWW1PbEpHeUdjRzFzR1V5QjZaa25XN3dUWk5XV1pOQ2VpRW1iWlgyTHAxTkJ6RUkxOXVCcFl5VWk2UF9VQzZlYy1wTEFNVFhBNGFXeTFFUGpqWTgyM2duV2dzZVl1aVFKX3RwVFpxV3RiZDVqUzlDY09O?oc=5",
+      "source": "Google News - Itatiaia (MG)",
+      "date": "Sun, 14 Dec 2025 19:29:08 GMT",
+      "category": "Notícias Regionais",
+      "image_url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw"
+    },
+    {
+      "title": "Síria prende cinco suspeitos pelo ataque contra tropas dos EUA em Palmira - CNN Brasil",
+      "summary": "a href\"https:news.google.comrssarticlesCBMiuAFBVV95cUxQTW80eHdneG5RaldlbjJDM1l3eUpuYWNxcG1XcmhMUU9JRVFVSFA3UXNZNWxQNWg1aGIwc19LT0E0TXZhMjRUbzJteDZWUzVBallxenFrSW1rVGFhYy00RDBzM0dTVk9YbXoyc094cnhvdENsZ...",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQTW80eHdneG5RaldlbjJDM1l3eUpuYWNxcG1XcmhMUU9JRVFVSFA3UXNZNWxQNWg1aGIwc19LT0E0TXZhMjRUbzJteDZWUzVBallxenFrSW1rVGFhYy00RDBzM0dTVk9YbXoyc094cnhvdENsZ1F3eGxDcjh4ZWIwWE50YjlIV2RJWmdsMTl5ZHZpclRNRjBuR2NpZmt6ejJETUhjUHNvd3JiMTgwM3lLd21YMWxPVnVC?oc=5",
+      "source": "Google News - Síria e Damasco",
+      "date": "Sun, 14 Dec 2025 18:53:36 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw"
+    },
+    {
+      "title": "Cidade medieval italiana oferece 20 mil euros para novos moradores - O Antagonista",
+      "summary": "a href\"https:news.google.comrssarticlesCBMiowFBVV95cUxORTVCZUdWMlk2bmo0ZERsSWlDVVRFcksyb2dMd0pEdXd1RWVid1plU0FjejUwMm92OHFWY2s4QWtocXQ3dTZQcWJWZ2F1cjRzdmIzZ29pVVRSc0NoYlMzNVZqNkNTemRCbl9lVC12cWtpVzdpW...",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxORTVCZUdWMlk2bmo0ZERsSWlDVVRFcksyb2dMd0pEdXd1RWVid1plU0FjejUwMm92OHFWY2s4QWtocXQ3dTZQcWJWZ2F1cjRzdmIzZ29pVVRSc0NoYlMzNVZqNkNTemRCbl9lVC12cWtpVzdpWWZiMF9EWDB6NUMyeEFPV3NpUGxmMmN0RWNEM0dVekxrWEszUEJ1dll0TDFxaTFZ?oc=5",
+      "source": "Google News - Idade Média",
+      "date": "Sun, 14 Dec 2025 18:35:00 GMT",
+      "category": "História da Igreja",
+      "image_url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw"
+    },
+    {
+      "title": "Arqueólogos recuperam fragmentos de palácio real polonês do fundo do rio - Correio Braziliense",
+      "summary": "a href\"https:news.google.comrssarticlesCBMi4wFBVV95cUxQR2VPUUN3Z2NnU2h5SE5OYUlGOFMtT2l6QjQ5T1dJejNPcnFPREsxdEw2cHRBcC01R0htWjI4VVE2YTJkc243VHJOc1MwVGJLV0F5dFVZZ0Z2d2Zab25XVkdzaGlfbmZ5RmF1MDctMG9waGVUb...",
+      "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQR2VPUUN3Z2NnU2h5SE5OYUlGOFMtT2l6QjQ5T1dJejNPcnFPREsxdEw2cHRBcC01R0htWjI4VVE2YTJkc243VHJOc1MwVGJLV0F5dFVZZ0Z2d2Zab25XVkdzaGlfbmZ5RmF1MDctMG9waGVUbHpUSzlXdHJRdTAybUlmMENHODUyaGJZQnJWOWRYVjRWQ1E4RUIzc25nOHpudVVuU1VsX2RjajFRRTFmMjNvbU1wazA4bUk0WVJhblZiZXUwUVdWeDdIVFhyYVNyUG5iU1ZnbUl4X3pTTXVmakxDUdIB4wFBVV95cUxQR2VPUUN3Z2NnU2h5SE5OYUlGOFMtT2l6QjQ5T1dJejNPcnFPREsxdEw2cHRBcC01R0htWjI4VVE2YTJkc243VHJOc1MwVGJLV0F5dFVZZ0Z2d2Zab25XVkdzaGlfbmZ5RmF1MDctMG9waGVUbHpUSzlXdHJRdTAybUlmMENHODUyaGJZQnJWOWRYVjRWQ1E4RUIzc25nOHpudVVuU1VsX2RjajFRRTFmMjNvbU1wazA4bUk0WVJhblZiZXUwUVdWeDdIVFhyYVNyUG5iU1ZnbUl4X3pTTXVmakxDUQ?oc=5",
+      "source": "Google News - Cópias e Manuscritos",
+      "date": "Sun, 14 Dec 2025 18:02:44 GMT",
+      "category": "Arqueologia Bíblica",
+      "image_url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw"
+    },
+    {
+      "title": "O ator de Ashur em Spartacus: House of Ashur  Quem é Nick E. Tarabay? - Mix de Séries",
+      "summary": "a href\"https:news.google.comrssarticlesCBMiekFVX3lxTFA3eHpKUnFjN1duX0NidkhnVmRiSDF3emc2V0hPVzE2TGVkdy12dkRpbVBPbmxSTEk0NXV3T0pnVjBvaHU5MHgydk4yc18tOWJUeUZxSENIdWN3ZzlFdTJBQ0lkVW85czNsZW1oM0tnQ3k1X1VpN...",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFA3eHpKUnFjN1duX0NidkhnVmRiSDF3emc2V0hPVzE2TGVkdy12dkRpbVBPbmxSTEk0NXV3T0pnVjBvaHU5MHgydk4yc18tOWJUeUZxSENIdWN3ZzlFdTJBQ0lkVW85czNsZW1oM0tnQ3k1X1VpNzZyQU1R?oc=5",
+      "source": "Google News - Nínive e Assíria",
+      "date": "Sun, 14 Dec 2025 17:30:00 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw"
+    },
+    {
+      "title": "Autor do ataque contra soldados dos EUA na Síria pertencia às forças de segurança - UOL Notícias",
+      "summary": "a href\"https:news.google.comrssarticlesCBMi3gFBVV95cUxQZFBYSngyV3BCMFdNbFhCRGxVMzNpdno3c0F3c1lib2o2eDdnYUM1R2RrV29kM3JKZndXc1JqWEp4VTJnOHRuLVpCY2RaMkFUTEZpcmZTZ0dFeUFrZlFNWGQ4ZTV1YXliWHh5MlBBY243U1FYd...",
+      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQZFBYSngyV3BCMFdNbFhCRGxVMzNpdno3c0F3c1lib2o2eDdnYUM1R2RrV29kM3JKZndXc1JqWEp4VTJnOHRuLVpCY2RaMkFUTEZpcmZTZ0dFeUFrZlFNWGQ4ZTV1YXliWHh5MlBBY243U1FYdUZLbEZLT3NQR01LbmZSLW0taDYxZW9sdlR0R0g3NTV5REZ6bENGb1VuOC1FVzJ0Mnh2bE5KY1hsYWVEU2luUnMtR190T1dxSS11UkdNOHlMa3lVMjFfMnVZa1duRVd6b2o1c3FQcktSRFE?oc=5",
+      "source": "Google News - Síria e Damasco",
+      "date": "Sun, 14 Dec 2025 16:22:49 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw"
+    },
+    {
+      "title": "Quarto Episódio de Spartacus: House of Ashur Estreia em Dezembro - partiurolecwb.com.br",
+      "summary": "a href\"https:news.google.comrssarticlesCBMimAFBVV95cUxNZ0d4VUNMNC0wVDRBeXJwemtQSWlTZFRYSjNTRlhUaVZJaFh6NTljRERBZmxPU0IycnQ3VXU4UWlVdHZKbi1lYjBhNzdkWmQ4Y053cUQ5V1FCUGJlVVdVY2IySEFueHAxaVNPc3Y4eWhFa3pJe...",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNZ0d4VUNMNC0wVDRBeXJwemtQSWlTZFRYSjNTRlhUaVZJaFh6NTljRERBZmxPU0IycnQ3VXU4UWlVdHZKbi1lYjBhNzdkWmQ4Y053cUQ5V1FCUGJlVVdVY2IySEFueHAxaVNPc3Y4eWhFa3pJel9mTUJOcVhXTDJqb0lQZUxoT21GVjZMZS1RTnBzUDI0b3FISg?oc=5",
+      "source": "Google News - Nínive e Assíria",
+      "date": "Sun, 14 Dec 2025 15:30:51 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw"
+    },
+    {
+      "title": "Dia da Bíblia: a influência histórica e cultural do livro sagrado",
+      "summary": "O Dia da Bíblia é celebrado anualmente no segundo domingo de dezembro e marca a relevância histórica, espiritual e cultural das Escrituras Sagradas. A data teve origem na Inglaterra, em 1549, como uma...",
+      "url": "https://folhagospel.com/dia-da-biblia-a-influencia-historica-e-cultural-do-livro-sagrado/",
+      "source": "Folha Gospel",
+      "date": "Sun, 14 Dec 2025 13:59:23 +0000",
+      "category": "Notícias Cristãs",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2025/12/biblia-sagrada-2021-scaled-e16396584945581.jpg"
+    },
+    {
+      "title": "Sniper que matou três americanos na Síria integrava forças de segurança sírias - Midiamax",
+      "summary": "a href\"https:news.google.comrssarticlesCBMipwFBVV95cUxNSHUzY21scVctZy1mR3ZldGhrT1VycWJfbmhOYWxPbjROWVpYaFI2VGp0THJ5QXFPZGFXaGZNTnRNaWJFbXd3RzZmQjB3YkNkWkhfeU9CNkE2Q1QwWjF1YlptbmlnV0h4enY5QklJVUhKZUZ3e...",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNSHUzY21scVctZy1mR3ZldGhrT1VycWJfbmhOYWxPbjROWVpYaFI2VGp0THJ5QXFPZGFXaGZNTnRNaWJFbXd3RzZmQjB3YkNkWkhfeU9CNkE2Q1QwWjF1YlptbmlnV0h4enY5QklJVUhKZUZ3emxXSGxobmlfYl9FN3JVQ2hRdVNyMnlOd2ZvODVtbzV2aEUzSndEMnlvbzc1dTNoTzk3TQ?oc=5",
+      "source": "Google News - Síria e Damasco",
+      "date": "Sun, 14 Dec 2025 13:38:00 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw"
+    },
+    {
+      "title": "Dia da Bíblia é comemorado hoje no Brasil",
+      "summary": "O Dia da Bíblia foi instituído em 1549, na Grã-Bretanha. A data foi criada para encorajar cristãos a ler as Escrituras e estimular outras pessoas a fazerem o mesmo. A primeira vez que o Dia da Bíblia ...",
+      "url": "https://folhagospel.com/dia-da-biblia-e-comemorado-hoje-no-brasil/",
+      "source": "Folha Gospel",
+      "date": "Sun, 14 Dec 2025 13:32:50 +0000",
+      "category": "Notícias Cristãs",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2025/03/Cristao-lendo-a-Biblia-Africa.jpg"
+    },
+    {
+      "title": "Polícia apreende drogas e prende dois suspeitos durante operação em evento em Terra Santa - G1",
+      "summary": "a href\"https:news.google.comrssarticlesCBMi6gFBVV95cUxOTlpJWVgyLTVxWms0bmd1WmtCZjRlRlNmVmwxUVhRZXJhNUloeXpiOTJvT1VHZEJPb085ZTMxZi16S2QtcHVOeUVQRmd3bjNGdEZOMUxEMjcyajlnOF9ETXRJT3JpUHpjdkZhNEtWbk0xdVppS...",
+      "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOTlpJWVgyLTVxWms0bmd1WmtCZjRlRlNmVmwxUVhRZXJhNUloeXpiOTJvT1VHZEJPb085ZTMxZi16S2QtcHVOeUVQRmd3bjNGdEZOMUxEMjcyajlnOF9ETXRJT3JpUHpjdkZhNEtWbk0xdVppSURSelRWUmZ4T1JuQ3lnZGJFNXRuNWVsTmtwOUp2OE85blFBcmY0R3UtQkhxTTlaVlVQZWdPNml5bDRVUXRVODZlWGpseDVacHNMSGpGLUg0OXhtNGdSaDBrOWNVSFVwMDNCR1Atb2pLYzlFcF9FTklOMDNLZ3fSAfgBQVVfeXFMT1pIcWpTSDhqMnFQZFNGQ2hVWmFxc2NhSXZGYkxlTk51TVJHLU5iT0otOGZDMG1OcE1FTWdnbXdfMHR6Vkh3aTByZ3o5ZnRQcU50X1BLUzRTc2RNallqaWNFZThPWkdkTXJ2ZXhoOUZIUXVMeWhLaklTbjRMb01EdWZPbkdDa2NfZUtHREd2My1Mb09mTWE1YXVrdF9jM3kteE5CNXRHZHRQdWI1eDFYdG52b09jSUI1R2VCeGVPZGFrX29QRUc4OWc2MDJsbUR0TEU1UjNjc3RnYmNmQVlBOHZ6d1ZPRjJfc2l2S003MkIzWWhkeDBqNkc?oc=5",
+      "source": "Google News - Terra Santa",
+      "date": "Sun, 14 Dec 2025 12:27:21 GMT",
+      "category": "Arqueologia Bíblica",
+      "image_url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw"
+    },
+    {
+      "title": "Este RPG 2D ambientado na época medieval está disponível com um desconto de 90 no Steam - Notebookcheck.info",
+      "summary": "a href\"https:news.google.comrssarticlesCBMizgFBVV95cUxPamhoQzNBUHBZVHBVRGlTcU1sZGxRVmVQMk5TLTNWY2I5TU95WFMyZHlaV1Q4bk1TQzhFOHZwYkEwOVBpY1lJYUttQXVHUm1ZNjg2b0RfUU9hM3JRZmVvOXRXWVVVZjE1V0g3NVlBZkFGOGpXY...",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPamhoQzNBUHBZVHBVRGlTcU1sZGxRVmVQMk5TLTNWY2I5TU95WFMyZHlaV1Q4bk1TQzhFOHZwYkEwOVBpY1lJYUttQXVHUm1ZNjg2b0RfUU9hM3JRZmVvOXRXWVVVZjE1V0g3NVlBZkFGOGpXY2NMdDU3YV9IRnpZME43ZUZVTmZIUXFFMkg4Q19sQTlqOWpMWUdqMUM5WDdFZTNsOE1wMjRtZGR4T1ZtV201ZHVfSWU2R0c5czlJOU5HTHBYX3RQTTFIeGZhdw?oc=5",
+      "source": "Google News - Idade Média",
+      "date": "Sun, 14 Dec 2025 12:24:00 GMT",
+      "category": "História da Igreja",
+      "image_url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw"
+    },
+    {
+      "title": "Do Bororo ao português medieval: linguista explica cuiabanês - MidiaNews",
+      "summary": "a href\"https:news.google.comrssarticlesCBMiqAFBVV95cUxQRDhyLWU2b2tiNE9wWnFGbHlGcm5RNm85M1FrcGlhcDRGTkhtbkI5QlJsTDF2OG1fTW9iSHhhTlhSenJzLTdRTEtLQW1tYWpUSmNLOU51aHcwUWFEQlhEaUJyWV9mdEFaTmtwbWdpOHVTdlZYN...",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQRDhyLWU2b2tiNE9wWnFGbHlGcm5RNm85M1FrcGlhcDRGTkhtbkI5QlJsTDF2OG1fTW9iSHhhTlhSenJzLTdRTEtLQW1tYWpUSmNLOU51aHcwUWFEQlhEaUJyWV9mdEFaTmtwbWdpOHVTdlZYNHozRkpRT0dyRElBRWlTRUhaRWF5ZXV0cGE1ZUVHUWtzb2IxX0NhZjh4b0dzSXp6X2RRYzY?oc=5",
+      "source": "Google News - Idade Média",
+      "date": "Sun, 14 Dec 2025 12:02:00 GMT",
+      "category": "História da Igreja",
+      "image_url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw"
+    },
+    {
+      "title": "Membro da Assembleia de Deus transcreve a Bíblia completa à mão",
+      "summary": "Neste domingo, 14 de dezembro, celebramos o Dia da Bíblia em todo o território brasileiro. A data passou a integrar o calendário oficial do país, em 2001, por meio da Lei Federal 10.335, que instituiu...",
+      "url": "https://www.cpadnews.com.br/membro-da-assembleia-de-deus-transcreve-a-biblia-completa-a-mao/",
+      "source": "CPAD News",
+      "date": "Sun, 14 Dec 2025 12:00:50 +0000",
+      "category": "Educação Cristã",
+      "image_url": "https://www.cpadnews.com.br/wp-content/uploads/2025/12/manuscrita.jpg"
+    },
+    {
+      "title": "Casa medieval de R 6,3 milhões surpreende com ambientes inesperados (e um banheiro impressionante); veja - Casa Vogue",
+      "summary": "a href\"https:news.google.comrssarticlesCBMi_AFBVV95cUxPcEN1V3NreUhDTDVQSnU0OXBEbzRpa2hsTTBTeThMSDlmZWhwM3AzQUQtM3NVQ0dfWi16X1pVTGlnVGZoN2l0STlkNWthaVd5U3lKMV9IYXJRV0tYb044UG1QeG1FX3JTcFJIMFFiWE5rMmQ3M...",
+      "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxPcEN1V3NreUhDTDVQSnU0OXBEbzRpa2hsTTBTeThMSDlmZWhwM3AzQUQtM3NVQ0dfWi16X1pVTGlnVGZoN2l0STlkNWthaVd5U3lKMV9IYXJRV0tYb044UG1QeG1FX3JTcFJIMFFiWE5rMmQ3M1dhNHFRVFM4UjRjUjh3ME5pa01vUklBVlRodDhLYWdORWx6d2Zmd3Jxc3VJcG5NMFBOQnFVMzUyOUl5UjFRT3ZvSHZ4Y2JjU2RMWG4zaDdvTlZkeW9EbU5QbUUySEpTaFZTVTNIcDNXLXlvRWtPUldxRGgyZlExTUtsWFZBdkNweVhCY1FSNjjSAYsCQVVfeXFMUDQ5Nk5IbHRMa2xxSDJxRDR2LUwtVHRKci1mOGViQWY0dmNOLXZ6Mlhtd0xXT0pKcVFMczBkeVRoX0x4c0p3TXQzWUZfZ3N6WVBfVWlkQ2ZNb2VqNGhzQjhLY1JjOU0zYjY0SDNsaWUtb0VNZEhjSWp6U2hPNkRsX1FjRTRDeENNd2pQenRiY1U5WDVxN2xuMzN4U0dXZmFLdVVUT05PRkw4WllLMUI0dmxMRXJoMkFNMUZ0X19aQUVLcE5PanEzNXVlb3cwVVNnc0xTVmNzZUpROHQ3NnQwVm5RNWs5eU53WmZKNEg0dHM3SjNkN2FsQVpveE9MTW8xOWRKc05mMlF4M0Zz?oc=5",
+      "source": "Google News - Idade Média",
+      "date": "Sun, 14 Dec 2025 11:22:03 GMT",
+      "category": "História da Igreja",
+      "image_url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw"
+    },
+    {
+      "title": "Talibã verifica celulares para encontrar aplicativo da Bíblia - Portas Abertas",
+      "summary": "a href\"https:news.google.comrssarticlesCBMiwAFBVV95cUxOeHBublI1UUZUcE9NR1pteTM2dm8yTmlmSmk3endHeFhkT2p0Q25zYUUyXzF5NjYxeFh5WnZzMlRUM09uMWRCWFFIc2Rub2pjdGo3OWhZMEFBRlVUdFhYVVFZYUFIVlMyT2VmeVFQSzA1OHBFd...",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOeHBublI1UUZUcE9NR1pteTM2dm8yTmlmSmk3endHeFhkT2p0Q25zYUUyXzF5NjYxeFh5WnZzMlRUM09uMWRCWFFIc2Rub2pjdGo3OWhZMEFBRlVUdFhYVVFZYUFIVlMyT2VmeVFQSzA1OHBFdG9ySHB3eWNXUWlnWXpZN3psRTBaTU9nd2I3T1VicWl6c29FWkQydXpyQWt5QVl6cVNhVHYySnVPYWtzRnloU3otcWl2Mi1kNERlN2s?oc=5",
+      "source": "Google News - Cristãos Perseguidos",
+      "date": "Sun, 14 Dec 2025 11:00:00 GMT",
+      "category": "Igreja Perseguida",
+      "image_url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw"
     },
     {
       "title": "Passagens da Bíblia, com Gutemberg Gomes (1412) - Rádio Itatiaia",
