@@ -1,10 +1,513 @@
 {
-  "last_updated": "2026-01-06T22:18:22.128934",
-  "total_articles": 1,
+  "last_updated": "2026-01-07T10:37:41.873840",
+  "total_articles": 55,
   "sources": [
-    "Radio 93 - Giro Cristão"
+    "Arqueologia e Pré-História",
+    "BBC News Brasil",
+    "BBC News Brasil - Arqueologia",
+    "Cafetorah - Notícias de Israel",
+    "Christianity Today (PT)",
+    "Google News - Debates Teológicos",
+    "Google News - Itatiaia (MG)",
+    "Google News - Patrística",
+    "IBArq",
+    "Incrível História",
+    "MAE USP",
+    "Monergismo",
+    "Notícias de Israel",
+    "Portas Abertas",
+    "Radio 93 - Giro Cristão",
+    "Revista Galileu",
+    "Revista Galileu - Arqueologia",
+    "SABNET Revista"
   ],
   "articles": [
+    {
+      "title": "Análises de datações radiocarbônicas sugerem múltiplas origens da tecnologia cerâmica na África",
+      "summary": "A origem da produção cerâmica foi uma etapa crucial no desenvolvimento tecnológico e cultural das sociedades humanas. Pesquisas recentes mostram que as primeiras cerâmicas, interpretadas como recipien...",
+      "url": "https://arqueologiaeprehistoria.com/2025/12/12/analises-de-datacoes-radiocarbonicas-sugerem-multiplas-origens-da-tecnologia-ceramica-na-africa/",
+      "source": "Arqueologia e Pré-História",
+      "date": "Wed, 07 Jan 2026 10:36:44 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://arqueologiaeprehistoria.com/wp-content/uploads/2021/03/cropped-logo-fundo-vazio.png"
+    },
+    {
+      "title": "Al Capone, o poderoso chefão de Chicago",
+      "summary": "Biografia de Al Capone, o mais notório e um dos mais gângsteres que o mundo já conheceu. Dos primeiros anos até a sua morte.",
+      "url": "https://incrivelhistoria.com.br/al-capone-biografia/",
+      "source": "Incrível História",
+      "date": "Wed, 07 Jan 2026 10:36:39 GMT",
+      "category": "História e Arqueologia",
+      "image_url": "https://incrivelhistoria.com.br/app/uploads/2015/05/biografia-al-capone-historia-crime-morte-incrivel-historia_1.webp"
+    },
+    {
+      "title": "Caporegime: entre o Don e o gatilho",
+      "summary": "Descubra o papel vital dos caporegimes na máfia, os chefes responsáveis pelas operações, disciplinadores e importantes intermediários.",
+      "url": "https://incrivelhistoria.com.br/caporegimes-mafia-crime-organizado/",
+      "source": "Incrível História",
+      "date": "Wed, 07 Jan 2026 10:36:39 GMT",
+      "category": "História e Arqueologia",
+      "image_url": "https://incrivelhistoria.com.br/app/uploads/2024/08/caporegime-estrutura-mafia-incrivel-historia.png"
+    },
+    {
+      "title": "As 3 incríveis descobertas da Arqueologia Bíblica em Dezembro de 2021",
+      "summary": "O último mês do ano reservou boas supresas para os amantes da arqueologia bíblica. Curiosamente, todos tem relação com o Novo Testamento e nos auxiliarão a ter mais compreensão sobre o contexto histórico-cultural da época de Jesus Cristo.1. O Crucificado InglêsRaridade encontrada em Cambridgeshire traz mais luz sobre a cruz, instrumento de tortura e morte do Império RomanoQuem nos segue no Instagr...",
+      "url": "https://www.ibarq.org.br/post/as-3-incríveis-descobertas-da-arqueologia-bíblica-em-dezembro-de-2021",
+      "source": "IBArq",
+      "date": "Wed, 07 Jan 2026 10:36:36 GMT",
+      "category": "Arqueologia Bíblica",
+      "image_url": "https://static.wixstatic.com/media/5a70b4_a416af5b047b4d519140bf08f0f83a46~mv2.jpg/v1/fill/w_936,h_526,al_c,lg_1,q_85/5a70b4_a416af5b047b4d519140bf08f0f83a46~mv2.jpg"
+    },
+    {
+      "title": "3 Evidências Arqueológicas do Reino de Davi",
+      "summary": "Quando pensamos nos tempos antigos descritos na Bíblia, uma das perguntas mais frequentes entre estudiosos e curiosos é: Israel realmente possuía um reino organizado e letrado no século X a.C.? Apesar do ceticismo de muitos estudioso, a resposta, sustentada por descobertas arqueológicas recentes e impactantes, é cada vez mais afirmativa.Achados arqueológicos surgiram nos últimos anos para reforçar...",
+      "url": "https://www.ibarq.org.br/post/3-evidências-arqueológicas-do-reino-de-davi",
+      "source": "IBArq",
+      "date": "Wed, 07 Jan 2026 10:36:35 GMT",
+      "category": "Arqueologia Bíblica",
+      "image_url": "https://static.wixstatic.com/media/5a70b4_f57390de86e144afb7f7db962e445c71~mv2.jpg/v1/fill/w_280,h_399,al_c,lg_1,q_80/5a70b4_f57390de86e144afb7f7db962e445c71~mv2.jpg"
+    },
+    {
+      "title": "Pós-Graduação no MAE",
+      "summary": "O MAE-USP oferece os seguintes cursos de pós-graduação: Mestrado e Doutorado em Arqueologia do Programa de Pós-graduação",
+      "url": "https://mae.usp.br/pos-graduacao-no-mae/",
+      "source": "MAE USP",
+      "date": "Wed, 07 Jan 2026 10:36:26 GMT",
+      "category": "Arqueologia e História",
+      "image_url": null
+    },
+    {
+      "title": "Narrativas pré-colombianas sobre as serpentes: um olhar sob a ótica das Novas Materialidades na Arqueologia",
+      "summary": "As serpentes são animais que aparecem com muita frequência na iconografia pré-colombiana, assim como nos relatos etnográficos e nas mitologias, de norte a sul do continente Americano. Foram estudadas, em sua maioria, como símbolos ou representações de esferas sociais e religiosas. Neste artigo busca-se rever esse tema sob o olhar das Novas Materialidades na Arqueologia, cuja agência da serpente se...",
+      "url": "https://revista.sabnet.org/ojs/index.php/sab/article/view/1252",
+      "source": "SABNET Revista",
+      "date": "Wed, 07 Jan 2026 10:36:17 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://revista.sabnet.org/ojs/public/journals/1/cover_issue_67_pt_BR.png"
+    },
+    {
+      "title": "Por uma arqueologia da infância: brincadeiras, jogos e aprendizagens nas práticas cotidianas das crianças nos séculos XIX e XX",
+      "summary": "Por uma arqueologia da infância: brincadeiras, jogos e aprendizagens nas práticas cotidianas das crianças nos séculos XI...",
+      "url": "https://revista.sabnet.org/ojs/index.php/sab/article/view/1296",
+      "source": "SABNET Revista",
+      "date": "Wed, 07 Jan 2026 10:36:17 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://revista.sabnet.org/ojs/public/journals/1/cover_issue_67_pt_BR.png"
+    },
+    {
+      "title": "Insurgências na decolonialidade: combatendo a apropriação reducionista na arqueologia",
+      "summary": "Este artigo discute as insurgências decoloniais como resposta à apropriação reducionista dos saberes ancestrais na academia, especialmente na arqueologia, historicamente marcada por um viés eurocêntrico. A descolonização do conhecimento emerge das lutas de povos indígenas, afrodescendentes e comunidades tradicionais, exigindo o reconhecimento de suas epistemologias e narrativas. A apropriação inde...",
+      "url": "https://revista.sabnet.org/ojs/index.php/sab/article/view/1210",
+      "source": "SABNET Revista",
+      "date": "Wed, 07 Jan 2026 10:36:16 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://revista.sabnet.org/ojs/public/journals/1/cover_issue_67_pt_BR.png"
+    },
+    {
+      "title": "Os pescadores cerriteiros do pampa e litoral sul do Brasil e Uruguai: arqueologia, história indígena e conservação ambiental",
+      "summary": "Os pescadores cerriteiros do pampa e litoral sul do Brasil e Uruguai: arqueologia, história indígena e conservação ambie...",
+      "url": "https://revista.sabnet.org/ojs/index.php/sab/article/view/1292",
+      "source": "SABNET Revista",
+      "date": "Wed, 07 Jan 2026 10:36:16 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://revista.sabnet.org/ojs/public/journals/1/cover_issue_67_pt_BR.png"
+    },
+    {
+      "title": "A coleção de pontas líticas lascadas do Laboratório de Arqueologia, Etnologia e Etno-História: morfometria e espacialização",
+      "summary": "A coleção de pontas líticas lascadas do Laboratório de Arqueologia, Etnologia e Etno-História: morfometria e espacializa...",
+      "url": "https://revista.sabnet.org/ojs/index.php/sab/article/view/1289",
+      "source": "SABNET Revista",
+      "date": "Wed, 07 Jan 2026 10:36:15 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://revista.sabnet.org/ojs/public/journals/1/cover_issue_67_pt_BR.png"
+    },
+    {
+      "title": "Arqueologia indígena na Amazônia, Brasil: concepções e panoramas",
+      "summary": "Este trabalho abarca uma revisão sobre a arqueologia indígena e suas práticas baseadas no conhecimento tradicional e na cosmovisão que não seguem exclusivamente os paradigmas da arqueologia ocidental. A arqueologia indígena trata da coleta e análise de artefatos, preservação e conservação ambiental, recuperação e valorização de saberes. Desenvolve-se uma discussão abrangente a partir das pesquisas...",
+      "url": "https://revista.sabnet.org/ojs/index.php/sab/article/view/1286",
+      "source": "SABNET Revista",
+      "date": "Wed, 07 Jan 2026 10:36:15 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://revista.sabnet.org/ojs/public/journals/1/cover_issue_67_pt_BR.png"
+    },
+    {
+      "title": "Geofísica Arqueológica no Centro de Belo Horizonte (MG): Prospecção GPR da Capela da Irmandade de Nossa Senhora do Rosário dos Homens Pretos do Curral Del-Rey",
+      "summary": "Geofísica Arqueológica no Centro de Belo Horizonte (MG): Prospecção GPR da Capela da Irmandade de Nossa Senhora do Rosár...",
+      "url": "https://revista.sabnet.org/ojs/index.php/sab/article/view/1275",
+      "source": "SABNET Revista",
+      "date": "Wed, 07 Jan 2026 10:36:14 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://revista.sabnet.org/ojs/public/journals/1/cover_issue_67_pt_BR.png"
+    },
+    {
+      "title": "Liberdades intramuros: as materialidades táticas no Hospital Colônia de Barbacena",
+      "summary": "Inaugurado no início do século XX, na cidade de Barbacena, o Hospital Colônia foi a primeira instituição psiquiátrica de Minas Gerais. Como característico de uma típica instituição total, o Colônia fez uso de um conjunto material para o controle e homogeneização de suasseus pacientes, o qual analiso neste artigo a partir de uma abordagem hermenêutica. Não obstante o poder disciplinar imposto, asos...",
+      "url": "https://revista.sabnet.org/ojs/index.php/sab/article/view/1297",
+      "source": "SABNET Revista",
+      "date": "Wed, 07 Jan 2026 10:36:14 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://revista.sabnet.org/ojs/public/journals/1/cover_issue_67_pt_BR.png"
+    },
+    {
+      "title": "Editorial",
+      "summary": "Este trabalho está licenciado sob uma licença Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.",
+      "url": "https://revista.sabnet.org/ojs/index.php/sab/article/view/1343",
+      "source": "SABNET Revista",
+      "date": "Wed, 07 Jan 2026 10:36:13 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://revista.sabnet.org/ojs/public/journals/1/cover_issue_67_pt_BR.png"
+    },
+    {
+      "title": "Codigos e assemblagens no registro arqueológico alagoano",
+      "summary": "Neste artigo, a partir da teoria das assemblagens, abordamos a estrutura dos dados e dos registros de sítios arqueológicos localizados no estado de Alagoas. Introduzimos os principais elementos desta proposta teórica e identificamos, na arquitetura dos sistemas informatizados utilizados pelo Instituto do Patrimônio Histórico e Artístico Nacional (Iphan) desde 1998, uma classe de objeto-deus que li...",
+      "url": "https://revista.sabnet.org/ojs/index.php/sab/article/view/1278",
+      "source": "SABNET Revista",
+      "date": "Wed, 07 Jan 2026 10:36:13 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://revista.sabnet.org/ojs/public/journals/1/cover_issue_67_pt_BR.png"
+    },
+    {
+      "title": "Christianity Today em Português",
+      "summary": "Christianity Today em Português",
+      "url": "https://www.facebook.com/ChristianityTodayPT/",
+      "source": "Christianity Today (PT)",
+      "date": "Wed, 07 Jan 2026 10:36:10 GMT",
+      "category": "Teologia e Igreja",
+      "image_url": "https://pt.christianitytoday.com/wp-content/uploads/sites/15/2025/12/Listile_2025_PT.jpg?w=1265"
+    },
+    {
+      "title": "Os 10 artigos da Christianity Today mais lidos em português em 2025",
+      "summary": "Fique por dentro dos artigos mais acessados em 2025 pelo público da Christianity Today em Português. Os 10 artigos da Christianity Today mais lidos em português em 2025",
+      "url": "https://pt.christianitytoday.com/2025/12/artigos-mais-lidos-christianity-today-2025-pt/",
+      "source": "Christianity Today (PT)",
+      "date": "Wed, 07 Jan 2026 10:36:10 GMT",
+      "category": "Teologia e Igreja",
+      "image_url": "https://pt.christianitytoday.com/wp-content/uploads/sites/15/2025/12/Listile_2025_PT.jpg?resize=1200,628"
+    },
+    {
+      "title": "Os verdadeiros perigos da pornografia",
+      "summary": "Christine Emba conversa com Russell Moore sobre como as descobertas da psicologia apoiam os preceitos bíblicos. Os verdadeiros perigos da pornografia",
+      "url": "https://pt.christianitytoday.com/2025/12/pornografia-efeito-psicologiacristaos-pt/",
+      "source": "Christianity Today (PT)",
+      "date": "Wed, 07 Jan 2026 10:36:10 GMT",
+      "category": "Teologia e Igreja",
+      "image_url": "https://pt.christianitytoday.com/wp-content/uploads/sites/15/2025/12/porn-does-to-us-psychology.jpg?resize=1200,628"
+    },
+    {
+      "title": "Exército dos EUA é proibido de atirar em animais para treinar médicos de guerra",
+      "summary": "A proibição põe fim à prática de treinamentos com munição real, mas ainda permite outros tipos de lesões envolvendo animais",
+      "url": "https://revistagalileu.globo.com/sociedade/curiosidade/noticia/2026/01/exercito-dos-eua-e-proibido-de-atirar-em-animais-para-treinar-medicos-de-guerra.ghtml#GALILEU-POST-TOP-24H-item,top,6101cd9f-fc93-41af-99d2-e55515bfb03c",
+      "source": "Revista Galileu",
+      "date": "Wed, 07 Jan 2026 10:35:30 GMT",
+      "category": "Ciência e Tecnologia",
+      "image_url": "https://s2-galileu.glbimg.com/jhLT6E4Dgsm4S8dwAa9LLL4c-es=/1999x0/filters:format(jpeg)/https://i.s3.glbimg.com/v1/AUTH_fde5cd494fb04473a83fa5fd57ad4542/internal_photos/bs/2026/U/a/GH0JpCQ1KyIuPDo9tpyg/image1.jpg"
+    },
+    {
+      "title": "Centenas de botas da Era Vitoriana apareceram em praia  e ninguém sabe a origem delas",
+      "summary": "Botas do século 19 emergem das marés no sul do País de Gales e levantam hipóteses sobre naufrágios, comércio marítimo e histórias esquecidas da região",
+      "url": "https://revistagalileu.globo.com/ciencia/arqueologia/noticia/2026/01/centenas-de-botas-da-era-vitoriana-apareceram-em-praia-e-ninguem-sabe-sua-origem.ghtml#GALILEU-POST-TOP-24H-item,top,6101cd9f-fc93-41af-99d2-e55515bfb03c",
+      "source": "Revista Galileu",
+      "date": "Wed, 07 Jan 2026 10:35:30 GMT",
+      "category": "Ciência e Tecnologia",
+      "image_url": "https://s2-galileu.glbimg.com/u9351rTRFqHw13LJi4ru6Mcjdwk=/1080x0/filters:format(jpeg)/https://i.s3.glbimg.com/v1/AUTH_fde5cd494fb04473a83fa5fd57ad4542/internal_photos/bs/2026/B/o/r5CD2dQCKiyHcI7naI9Q/saveclip.app-603868649-1345802477558317-4687936295323996507-n.jpg"
+    },
+    {
+      "title": "Droga para artrite reumatoide pode melhorar qualidade de rins para transplante",
+      "summary": "Estudo da Faculdade de Medicina de São José do Rio Preto pode ampliar o aproveitamento do órgão, o mais procurado no Brasil: há quase 30 mil pessoas na fila de espera",
+      "url": "https://revistagalileu.globo.com/saude/noticia/2026/01/droga-para-artrite-reumatoide-tem-potencial-para-melhorar-qualidade-de-rins-para-transplante.ghtml#GALILEU-POST-TOP-24H-item,top,6101cd9f-fc93-41af-99d2-e55515bfb03c",
+      "source": "Revista Galileu",
+      "date": "Wed, 07 Jan 2026 10:35:30 GMT",
+      "category": "Ciência e Tecnologia",
+      "image_url": "https://s2-galileu.glbimg.com/U-UjUTHIKt8RHHF1LtuaCE-yuI0=/800x0/filters:format(jpeg)/https://i.s3.glbimg.com/v1/AUTH_fde5cd494fb04473a83fa5fd57ad4542/internal_photos/bs/2026/0/e/c6VKrvQ2m17y8PB9kIKw/56790.jpg"
+    },
+    {
+      "title": "Encontradas em Pompeia pinturas que sobreviveram à erupção do Vesúvio; fotos",
+      "summary": "Afrescos recém-revelados lançam nova luz sobre o luxo, a arte e a paisagem de uma residência ligada à elite romana às vésperas da catástrofe de 79 d.C.",
+      "url": "https://revistagalileu.globo.com/ciencia/arqueologia/noticia/2026/01/encontradas-em-pompeia-pinturas-que-sobreviveram-a-erupcao-do-vesuvio-fotos.ghtml#GALILEU-POST-TOP-24H-item,top,6101cd9f-fc93-41af-99d2-e55515bfb03c",
+      "source": "Revista Galileu",
+      "date": "Wed, 07 Jan 2026 10:35:30 GMT",
+      "category": "Ciência e Tecnologia",
+      "image_url": "https://s2-galileu.glbimg.com/yhcKivzhb5wP3clJ_jDrtUNsbPQ=/1200x0/filters:format(jpeg)/https://i.s3.glbimg.com/v1/AUTH_fde5cd494fb04473a83fa5fd57ad4542/internal_photos/bs/2026/I/5/RtMD5TSu2AUjJue2wtbQ/cantiere-scavo-oplontis-8-1-1200x801.jpg"
+    },
+    {
+      "title": "Revista digital",
+      "summary": "Tudo sobre ciência, tecnologia, cultura, cinema, artes, séries de tv, sociedade, comportamento, vestibular e Enem e lifehacks.",
+      "url": "https://revistagalileu.revistadigital.globo.com/",
+      "source": "Revista Galileu - Arqueologia",
+      "date": "Wed, 07 Jan 2026 10:35:27 GMT",
+      "category": "Arqueologia e História",
+      "image_url": null
+    },
+    {
+      "title": "Análise de DNA da Idade do Ferro encontra vírus que causa doenças em bebês até hoje",
+      "summary": "Vírus da roséola infantil tem registro de infectar humanos em diferentes partes da Europa e de ser transmitido hereditariamente",
+      "url": "https://revistagalileu.globo.com/ciencia/arqueologia/noticia/2026/01/analise-de-dna-da-idade-do-ferro-encontra-virus-que-causa-doencas-em-bebes-ate-hoje.ghtml",
+      "source": "Revista Galileu - Arqueologia",
+      "date": "Wed, 07 Jan 2026 10:35:27 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://s2-galileu.glbimg.com/F5119WdTYdPqLBoAij9NFuR_mkI=/800x0/filters:format(jpeg)/https://i.s3.glbimg.com/v1/AUTH_fde5cd494fb04473a83fa5fd57ad4542/internal_photos/bs/2026/i/U/PCFKfRTaWGCB8nTfT4lQ/image2.png"
+    },
+    {
+      "title": "A descoberta arqueológica que revela violência escravocrata em bairro japonês de SP",
+      "summary": "Restos mortais encontrados em escavação na Capela dos Aflitos terão sua origem analisada em laboratório, mas acredita-se que eles podem ser de escravizados negros enterrados ali.",
+      "url": "https://www.bbc.com/portuguese/articles/c629p029y55o",
+      "source": "BBC News Brasil - Arqueologia",
+      "date": "Wed, 07 Jan 2026 10:35:23 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/30e9/live/5d81b440-c4ed-11f0-bf7b-db7c049674ab.jpg"
+    },
+    {
+      "title": "Os humanos poderão ser esquecidos daqui a milhões de anos?",
+      "summary": "Se algum dia formos extintos e outra espécie inteligente tomar o nosso lugar daqui a milhões de anos, ainda haverá vestígios de que habitávamos a Terra antes dela?",
+      "url": "https://www.bbc.com/portuguese/articles/cx2dj5zgjj8o",
+      "source": "BBC News Brasil - Arqueologia",
+      "date": "Wed, 07 Jan 2026 10:35:22 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/701c/live/931e5a70-a5e1-11f0-928c-71dbb8619e94.jpg"
+    },
+    {
+      "title": "Descoberta arqueológica aponta que humanos dominaram fogo 350 mil anos antes do que se pensava",
+      "summary": "Em um sítio arqueológico no leste da Inglaterra, cientistas encontraram evidências de que seres humanos já sabiam acender fogueiras há 400 mil anos, muito antes do que se acreditava até agora.",
+      "url": "https://www.bbc.com/portuguese/articles/cvgrkk7xv93o",
+      "source": "BBC News Brasil - Arqueologia",
+      "date": "Wed, 07 Jan 2026 10:35:22 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/daf5/live/460d6ca0-d609-11f0-9fb5-5f3a3703a365.jpg"
+    },
+    {
+      "title": "O menino de 140 mil anos que pode ser híbrido mais antigo entre Homo sapiens e neandertais",
+      "summary": "Um novo estudo sobre o crânio e a mandíbula de uma criança que viveu milhares de anos atrás traz novas descobertas sobre a hibridização entre o Homo sapiens e os neandertais",
+      "url": "https://www.bbc.com/portuguese/articles/cy404ezqlg7o",
+      "source": "BBC News Brasil - Arqueologia",
+      "date": "Wed, 07 Jan 2026 10:35:22 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/a115/live/e505b6b0-97bf-11f0-aa86-15e424e83c50.jpg"
+    },
+    {
+      "title": "As churrascarias e restaurantes japoneses acusados de manter trabalhadores em condições análogas à escravidão: 'Parece presídio'",
+      "summary": "Resgates por trabalho análogo à escravidão em restaurantes do Brasil aumentaram a partir de 2023; concentração de casos em São Paulo chama a atenção.",
+      "url": "https://www.bbc.com/portuguese/articles/cvgjj4j550jo",
+      "source": "BBC News Brasil",
+      "date": "Wed, 07 Jan 2026 10:35:20 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/20b0/live/d9f165e0-eba6-11f0-a422-4ba8a094a8fa.png"
+    },
+    {
+      "title": "4 maneiras de ajudar seu corpo a fazer um 'detox' para limpar o organismo",
+      "summary": "O corpo possui mecanismos naturais de eliminação de resíduos. Veja como apoiá-los. 4 maneiras de ajudar seu corpo a fazer um 'detox' para limpar o organismo",
+      "url": "https://www.bbc.com/portuguese/articles/c5y5e34y003o",
+      "source": "BBC News Brasil",
+      "date": "Wed, 07 Jan 2026 10:35:20 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/5d86/live/b4248f20-eaf4-11f0-b5f7-49f0357294ff.jpg"
+    },
+    {
+      "title": "Os tumores com mais de 100 anos que são esperança para explicar por que câncer de intestino aumentou tanto entre jovens",
+      "summary": "O câncer de intestino em pessoas com menos de 50 anos está aumentando em todo o mundo, e os cientistas querem descobrir o porquê",
+      "url": "https://www.bbc.com/portuguese/articles/c8j38rwdrvmo",
+      "source": "BBC News Brasil",
+      "date": "Wed, 07 Jan 2026 10:35:20 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/7dc3/live/70dc9010-ea58-11f0-98b9-2ba4e58a3949.jpg"
+    },
+    {
+      "title": "Trump afirma que Venezuela 'entregará entre 30 e 50 milhões de barris de petróleo' aos EUA",
+      "summary": "Anteriormente, o republicano havia afirmado que as empresas petrolíferas americanas poderiam estar 'em pleno funcionamento' dentro de 18 meses no país sul-americano. Analistas apontam, porém, que a realidade é mais complexa.",
+      "url": "https://www.bbc.com/portuguese/articles/cgm4yw9kw7wo",
+      "source": "BBC News Brasil",
+      "date": "Wed, 07 Jan 2026 10:35:20 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/26af/live/bbdbc4a0-eaf3-11f0-8a5c-81e1c85f6b52.jpg"
+    },
+    {
+      "title": "O que é um clássico?",
+      "summary": "O conceito de clássico estende-se virtualmente a todas as esferas da vida e não se limita às obras de literatura e arte. É um clássico, diz minha esposa",
+      "url": "https://monergismo.com/o-que-e-um-classico/",
+      "source": "Monergismo",
+      "date": "Wed, 07 Jan 2026 10:34:41 GMT",
+      "category": "Teologia Reformada",
+      "image_url": "https://monergismo.com/wp-content/uploads/2026/01/Depositphotos_309136542_XL-930x620.jpg"
+    },
+    {
+      "title": "Substituta de Maduro é antissemita e acusa Israel",
+      "summary": "Substituta de Maduro é antissemita e acusa Israeljaneiro 4, 2026Não se impressione com o rostinho simpático desta antissemita. Sem provas, sem pudor, sem moral, sem pensar nas consequências de...",
+      "url": "https://noticiasdeisrael.com.br/substituta-de-maduro-e-antissemita-e-acusa-israel/",
+      "source": "Notícias de Israel",
+      "date": "Wed, 07 Jan 2026 10:34:21 GMT",
+      "category": "Israel e Oriente Médio",
+      "image_url": "https://noticiasdeisrael.com.br/wp-content/uploads/2026/01/Secretary_Kerry_Shakes_Hands_With_Venezuelan_Foreign_Minister_Rodriguez_Before_Their_Meeting_in_Santo_Domingo_27571633682.jpg"
+    },
+    {
+      "title": "Ditadura do Irã recebe cartão vermelho dos EUA e ameaça Trump",
+      "summary": "Ditadura do Irã recebe cartão vermelho dos EUA e ameaça Trumpjaneiro 2, 2026Nos últimos dias apenas o Estado de Israel, através de seu primeiro ministro, Benjamin Netanyahu, vinha se posicionando publ...",
+      "url": "https://noticiasdeisrael.com.br/ditadura-do-ira-recebe-cartao-vermelho-dos-eua-e-ameaca-trump/",
+      "source": "Notícias de Israel",
+      "date": "Wed, 07 Jan 2026 10:34:21 GMT",
+      "category": "Israel e Oriente Médio",
+      "image_url": "https://noticiasdeisrael.com.br/wp-content/uploads/2026/01/tehran-5931140.jpg"
+    },
+    {
+      "title": "IDF continua realizando ataques preventivos no Líbano e em Gaza",
+      "summary": "IDF emite alertas de evacuação e realiza ataques contra alvos do Hezbollah e do Hamas no sul do Líbano As Forças de Defesa de Israel (IDF) emitiram, nesta terça",
+      "url": "https://noticiasdeisrael.com.br/idf-continua-realizando-ataques-preventivos-no-libano-e-em-gaza/",
+      "source": "Notícias de Israel",
+      "date": "Wed, 07 Jan 2026 10:34:18 GMT",
+      "category": "Israel e Oriente Médio",
+      "image_url": "https://noticiasdeisrael.com.br/wp-content/uploads/2026/01/pexels-jokassis-5054991-1.jpg"
+    },
+    {
+      "title": "Netanyahu alerta: as consequências serão gravíssimas se o Irã nos atacar",
+      "summary": "IDF continua realizando ataques preventivos no Líbano e em Gazajaneiro 6, 2026IDF emite alertas de evacuação e realiza ataques contra alvos do Hezbollah e do Hamas no sul do Líbano As...",
+      "url": "https://noticiasdeisrael.com.br/netanyahu-alerta-as-consequencias-serao-gravissimas-se-o-ira-nos-atacar/",
+      "source": "Notícias de Israel",
+      "date": "Wed, 07 Jan 2026 10:34:16 GMT",
+      "category": "Israel e Oriente Médio",
+      "image_url": "https://noticiasdeisrael.com.br/wp-content/uploads/2023/09/Benjamin_Netanyahu_February_2023-1.jpg"
+    },
+    {
+      "title": "Ex-reféns e familiares pressionam Netanyahu: Investigação do estado ou renúncia",
+      "summary": "Ex-reféns e familiares pressionam Netanyahu: Investigação do estado ou renúnciadezembro 14, 2025No CommentsSobreviventes do cativeiro e familiares de soldados mortos pedem a Netanyahu: Crie uma comiss...",
+      "url": "https://cafetorah.com/ex-refens-e-familiares-pressionam-netanyahu-investigacao-do-estado-ou-renuncia/",
+      "source": "Cafetorah - Notícias de Israel",
+      "date": "Wed, 07 Jan 2026 10:33:47 GMT",
+      "category": "Israel e Oriente Médio",
+      "image_url": "https://cafetorah.com/wp-content/uploads/2021/04/Benjamin-Netanyahu-Antes-de-Reuniao-do-Gabinete.jpg"
+    },
+    {
+      "title": "Atentado gravíssimo na Austrália contra comunidade judaica, muitos mortos e feridos",
+      "summary": "Atentado gravíssimo na Austrália contra comunidade judaica, muitos mortos e feridosdezembro 14, 2025No CommentsTestemunhas em uma festa de Hanukkah em Bondi Beach, na Austrália, disseram que um homem ...",
+      "url": "https://cafetorah.com/atentado-gravissimo-na-australia-contra-comunidade-judaica-muitos-mortos-e-feridos/",
+      "source": "Cafetorah - Notícias de Israel",
+      "date": "Wed, 07 Jan 2026 10:33:46 GMT",
+      "category": "Israel e Oriente Médio",
+      "image_url": "https://cafetorah.com/wp-content/uploads/2025/12/pexels-ramazphotos-31583280.jpg"
+    },
+    {
+      "title": "Especial de Hanukkah",
+      "summary": "Especial de Hanukkahdezembro 14, 2025No CommentsEspecial de Hanukkah no Cafetorah.com, está na hora de acender as velinhas. A História de Hanukkah De tragédia a vitória...Read More",
+      "url": "https://cafetorah.com/especial-de-hanukkah/",
+      "source": "Cafetorah - Notícias de Israel",
+      "date": "Wed, 07 Jan 2026 10:33:45 GMT",
+      "category": "Israel e Oriente Médio",
+      "image_url": "https://cafetorah.com/wp-content/uploads/2019/12/hanukkah-e-judas-macabeu.jpg"
+    },
+    {
+      "title": "Ataque antissemita na Austrália durante Hanukkah deixa mortos e feridos e gera comoção internacional",
+      "summary": "Ataque antissemita na Austrália durante Hanukkah deixa mortos e feridos e gera comoção internacionaldezembro 15, 2025No CommentsComunidades judaicas em Israel, na diáspora e no Brasil manifestam pesar...",
+      "url": "https://cafetorah.com/ataque-antissemita-na-australia-durante-hanukkah-deixa-mortos-e-feridos-e-gera-comocao-internacional/",
+      "source": "Cafetorah - Notícias de Israel",
+      "date": "Wed, 07 Jan 2026 10:33:44 GMT",
+      "category": "Israel e Oriente Médio",
+      "image_url": "https://cafetorah.com/wp-content/uploads/2025/12/pexels-pixelcop-1619854-1.jpg"
+    },
+    {
+      "title": "Como Israel desmantelou unidade secreta do Hezbollah?",
+      "summary": "Como Israel desmantelou unidade secreta do Hezbollah?dezembro 19, 2025No CommentsOperação Por Trás das Costas: Israel divulga detalhes de ataque da Shayetet 13 que desmantelou unidade naval secreta do...",
+      "url": "https://cafetorah.com/como-israel-desmantelou-unidade-secreta-do-hezbollah/",
+      "source": "Cafetorah - Notícias de Israel",
+      "date": "Wed, 07 Jan 2026 10:33:43 GMT",
+      "category": "Israel e Oriente Médio",
+      "image_url": "https://cafetorah.com/wp-content/uploads/2025/12/storm-3041241_1920.jpg"
+    },
+    {
+      "title": "Para onde os primeiros crentes fugiram da perseguição em Jerusalém?",
+      "summary": "Para onde os primeiros crentes fugiram da perseguição em Jerusalém?dezembro 21, 2025No CommentsPella: O Refúgio dos Primeiros Crentes e a Cidade que Ouviu o Aviso de Jesus Entre colinas verdes e vales...",
+      "url": "https://cafetorah.com/para-onde-os-primeiros-crentes-fugiram-da-perseguicao-em-jerusalem/",
+      "source": "Cafetorah - Notícias de Israel",
+      "date": "Wed, 07 Jan 2026 10:33:42 GMT",
+      "category": "Israel e Oriente Médio",
+      "image_url": "https://cafetorah.com/wp-content/uploads/2025/12/temple-8811728_1920.jpg"
+    },
+    {
+      "title": "As Vigas do Templo: Madeira que Pode Ter Presenciado Legados Bíblicos",
+      "summary": "As Vigas do Templo: Madeira que Pode Ter Presenciado Legados Bíblicosdezembro 24, 2025No CommentsPor Miguel Nicolaevsky Exclusivo CaféTorah.com Entre as colinas sagradas de Jerusalém repousam testemu...",
+      "url": "https://cafetorah.com/as-vigas-do-templo-madeira-que-pode-ter-presenciado-legados-biblicos/",
+      "source": "Cafetorah - Notícias de Israel",
+      "date": "Wed, 07 Jan 2026 10:33:41 GMT",
+      "category": "Israel e Oriente Médio",
+      "image_url": "https://cafetorah.com/wp-content/uploads/2025/12/IMG_3129.jpeg"
+    },
+    {
+      "title": "O que as Portas de Jerusalém Revelam Sobre a História, a Fé e o Destino da Cidade Santa?",
+      "summary": "O que as Portas de Jerusalém Revelam Sobre a História, a Fé e o Destino da Cidade Santa?janeiro 5, 2026No CommentsNeste artigo, eu vou te levar a desvendar alguns detalhes muito interessantes sobre as...",
+      "url": "https://cafetorah.com/o-que-as-portas-de-jerusalem-revelam-sobre-a-historia-a-fe-e-o-destino-da-cidade-santa/",
+      "source": "Cafetorah - Notícias de Israel",
+      "date": "Wed, 07 Jan 2026 10:33:40 GMT",
+      "category": "Israel e Oriente Médio",
+      "image_url": "https://cafetorah.com/wp-content/uploads/2016/12/porta-dos-leoes.jpg"
+    },
+    {
+      "title": "Esperança para a igreja secreta na Coreia do Norte",
+      "summary": "Neste Natal, enquanto cristãos perseguidos enfrentavam vigilância, prisões e discriminações por amor a Jesus, a igreja brasileira decidiu ser luz. Graças à sua generosidade na campanha Presentes de Es...",
+      "url": "https://portasabertas.org.br/noticias/cristaos-perseguidos/esperanca-para-a-igreja-secreta-na-coreia-do-norte/",
+      "source": "Portas Abertas",
+      "date": "Wed, 07 Jan 2026 10:33:33 GMT",
+      "category": "Perseguição Religiosa",
+      "image_url": null
+    },
+    {
+      "title": "Fake News",
+      "summary": "Fake News",
+      "url": "https://portasabertas.org.br/noticias/fake-news/",
+      "source": "Portas Abertas",
+      "date": "Wed, 07 Jan 2026 10:33:33 GMT",
+      "category": "Perseguição Religiosa",
+      "image_url": null
+    },
+    {
+      "title": "Crise no Irã aumenta risco para cristãos",
+      "summary": "Os protestos nas ruas estão se expandindo novamente em várias cidades do Irã, impulsionados pelo colapso da moeda, pela inflação e pela escassez de alimentos. As forças de segurança têm respondido a e...",
+      "url": "https://portasabertas.org.br/noticias/cristaos-perseguidos/crise-no-ira-aumenta-risco-para-cristaos/",
+      "source": "Portas Abertas",
+      "date": "Wed, 07 Jan 2026 10:33:32 GMT",
+      "category": "Perseguição Religiosa",
+      "image_url": null
+    },
+    {
+      "title": "Boko Haram e ISWAP atacam comunidades na Nigéria",
+      "summary": "Pouco antes do Ano Novo, em 29 de dezembro de 2025, combatentes dos grupos Boko Haram e Estado Islâmico da Província da África Ocidental (ISWAP) atacaram vilarejos no estado de Adamawa, Norte da Nigér...",
+      "url": "https://portasabertas.org.br/noticias/cristaos-perseguidos/boko-haram-e-iswap-atacam-comunidades-em-adamawa-nigeria/",
+      "source": "Portas Abertas",
+      "date": "Wed, 07 Jan 2026 10:33:30 GMT",
+      "category": "Perseguição Religiosa",
+      "image_url": "https://sitepa.s3.amazonaws.com/wp-content/uploads/br/2025/08/rodape-desperta-africa.avif"
+    },
+    {
+      "title": "Igreja em Goiânia está há mais de 100 dias em oração ininterrupta",
+      "summary": "Membros se revezam em \"Torre de Oração\". The post Igreja em Goiânia está há mais de 100 dias em oração ininterrupta appeared first on Rádio 93FM-RJ.",
+      "url": "https://radio93.com.br/noticias/giro-cristao/igreja-em-goiania-esta-ha-mais-de-100-dias-em-oracao-ininterrupta/",
+      "source": "Radio 93 - Giro Cristão",
+      "date": "Wed, 07 Jan 2026 09:00:36 +0000",
+      "category": "Notícias Cristãs",
+      "image_url": "https://radio93.com.br/wp-content/uploads/2026/01/Torre-de-Oracao_Goiania.jpg"
+    },
+    {
+      "title": "Passagens da Bíblia, com Gutemberg Gomes (0701) - Rádio Itatiaia",
+      "summary": "a href\"https:news.google.comrssarticlesCBMijgFBVV95cUxOSzhCU0hhQjJ2TmJRaHItaFR3UDZ6dXRDdFkxU3NhSktWQmxEQnZFWWtPXzlZYVhMMXZKYnNIRThZYjRIRGZreDJzNUUyY2Z3Y2pUd3lTREZDMUNldVZWckYzbG1ZeG4tcHpmY0czYzh5Qmdpd...",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOSzhCU0hhQjJ2TmJRaHItaFR3UDZ6dXRDdFkxU3NhSktWQmxEQnZFWWtPXzlZYVhMMXZKYnNIRThZYjRIRGZreDJzNUUyY2Z3Y2pUd3lTREZDMUNldVZWckYzbG1ZeG4tcHpmY0czYzh5Qmdpdld0OXh4by00eUxGSkc3SlhfcUc3T3dGUnF3?oc=5",
+      "source": "Google News - Itatiaia (MG)",
+      "date": "Wed, 07 Jan 2026 09:00:00 GMT",
+      "category": "Notícias Regionais",
+      "image_url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw"
+    },
+    {
+      "title": "O Universo é um Relógio? A Física Clássica e a Morte do Livre-Arbítrio - Space Today",
+      "summary": "a href\"https:news.google.comrssarticlesCBMinAFBVV95cUxPY3dkSTBmREhSSU1UVjB4cEhBMDVRTmptTDFrZmp3NkROemp5VHRlUUdnRkNVZl9Zd2pQZldfdi04MXM2cGxiTmZDVGtpeVZJcXJpbDdxSkdfS0JXMjNMX3RKOFBhNU9COFRFdERrTFdQUkxqd...",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPY3dkSTBmREhSSU1UVjB4cEhBMDVRTmptTDFrZmp3NkROemp5VHRlUUdnRkNVZl9Zd2pQZldfdi04MXM2cGxiTmZDVGtpeVZJcXJpbDdxSkdfS0JXMjNMX3RKOFBhNU9COFRFdERrTFdQUkxqd2ZKU3IwSnVJd0NOVkZjSXVXaUQ1TFU4N1JRODh0X1Z0VS0zVnpQX1o?oc=5",
+      "source": "Google News - Debates Teológicos",
+      "date": "Wed, 07 Jan 2026 04:32:33 GMT",
+      "category": "Teologia",
+      "image_url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw"
+    },
+    {
+      "title": "Cabo de Santo Agostinho deve ter um dia de céu nublado nesta quarta-feira (07) - O TEMPO",
+      "summary": "a href\"https:news.google.comrssarticlesCBMiuAFBVV95cUxNTWpxcmNWMW5sc0ktQVVuM09lMmhISDhFeUl0TW5nX3RqaDg5ekNWOWlfVE1SZXhodV93Nlhkcno3NHVMSmRaUDN3bE1mRnMyY21FNFV1N3FrRkd4QVFxV2h1TnUxMGlMc05OV2RyOTBBYzVyZ...",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNTWpxcmNWMW5sc0ktQVVuM09lMmhISDhFeUl0TW5nX3RqaDg5ekNWOWlfVE1SZXhodV93Nlhkcno3NHVMSmRaUDN3bE1mRnMyY21FNFV1N3FrRkd4QVFxV2h1TnUxMGlMc05OV2RyOTBBYzVyZU9YMTdjNk0zeDIxdTVFcTNleC02dzBXbkdELS0tcm5GNGxoMzRnZXRjNHlEMGhHcUZFSmFzWnlaSlNrdkt5MWpnRWlF?oc=5",
+      "source": "Google News - Patrística",
+      "date": "Wed, 07 Jan 2026 03:45:56 GMT",
+      "category": "História da Igreja",
+      "image_url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw"
+    },
     {
       "title": "Ataque com drones mata 11 cristãos no Sudão",
       "summary": "Cristãos estavam caminhando para culto natalino em igreja. The post Ataque com drones mata 11 cristãos no Sudão appeared first on Rádio 93FM-RJ.",
