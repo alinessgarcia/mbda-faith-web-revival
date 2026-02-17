@@ -1,13 +1,21 @@
 {
-  "last_updated": "2026-02-17T10:58:38.240607",
-  "total_articles": 44,
+  "last_updated": "2026-02-17T22:44:49.120164",
+  "total_articles": 60,
   "sources": [
     "Arqueologia e Pré-História",
     "BBC News Brasil",
     "BBC News Brasil - Arqueologia",
+    "CPAD News",
+    "Cafetorah - Notícias de Israel",
     "Christianity Today (PT)",
+    "Folha Gospel",
+    "Google News - Cristãos Perseguidos",
+    "Google News - Cópias e Manuscritos",
+    "Google News - Escavações Bíblicas",
     "Google News - Itatiaia (MG)",
+    "Google News - NSC Total (SC)",
     "Google News - Patrística",
+    "Google News - Síria e Damasco",
     "Google News - Terra Santa",
     "IBArq",
     "Incrível História",
@@ -24,7 +32,7 @@
       "summary": "Cientista da arqueologia e da antropologia, Walter Neves narra detalhes de sua vidaenquanto pesquisador do passado humano e seu contato com o fóssil humano de Luzia. Há décadas estudando a",
       "url": "https://arqueologiaeprehistoria.com/2026/02/12/walter-neves-lanca-sua-segunda-autobiografiadesta-vez-focada-nos-estudos-sobre-luzia-oesqueleto-mais-antigo-das-americas/",
       "source": "Arqueologia e Pré-História",
-      "date": "Tue, 17 Feb 2026 10:57:55 GMT",
+      "date": "Tue, 17 Feb 2026 22:43:50 GMT",
       "category": "Arqueologia e História",
       "image_url": "https://arqueologiaeprehistoria.com/wp-content/uploads/2021/03/cropped-logo-fundo-vazio.png"
     },
@@ -33,7 +41,7 @@
       "summary": "Biografia de Al Capone, o mais notório e um dos mais gângsteres que o mundo já conheceu. Dos primeiros anos até a sua morte.",
       "url": "https://incrivelhistoria.com.br/al-capone-biografia/",
       "source": "Incrível História",
-      "date": "Tue, 17 Feb 2026 10:57:50 GMT",
+      "date": "Tue, 17 Feb 2026 22:43:45 GMT",
       "category": "História e Arqueologia",
       "image_url": "https://incrivelhistoria.com.br/app/uploads/2015/05/biografia-al-capone-historia-crime-morte-incrivel-historia_1.webp"
     },
@@ -42,7 +50,7 @@
       "summary": "5 Curiosidades sobre Nabucodonosor II, o Destruição de Nações (o Leão da Babilônia), o maior rei do Segundo Império da Babilônia.",
       "url": "https://incrivelhistoria.com.br/5-curiosidades-sobre-nabucodonosor-ii/",
       "source": "Incrível História",
-      "date": "Tue, 17 Feb 2026 10:57:50 GMT",
+      "date": "Tue, 17 Feb 2026 22:43:45 GMT",
       "category": "História e Arqueologia",
       "image_url": "https://incrivelhistoria.com.br/app/uploads/2026/01/nabucodonosor-ii-curiosidades-incrivel-historia.jpg"
     },
@@ -51,7 +59,7 @@
       "summary": "O último mês do ano reservou boas supresas para os amantes da arqueologia bíblica. Curiosamente, todos tem relação com o Novo Testamento e nos auxiliarão a ter mais compreensão sobre o contexto histórico-cultural da época de Jesus Cristo.1. O Crucificado InglêsRaridade encontrada em Cambridgeshire traz mais luz sobre a cruz, instrumento de tortura e morte do Império RomanoQuem nos segue no Instagr...",
       "url": "https://www.ibarq.org.br/post/as-3-incríveis-descobertas-da-arqueologia-bíblica-em-dezembro-de-2021",
       "source": "IBArq",
-      "date": "Tue, 17 Feb 2026 10:57:47 GMT",
+      "date": "Tue, 17 Feb 2026 22:43:41 GMT",
       "category": "Arqueologia Bíblica",
       "image_url": "https://static.wixstatic.com/media/5a70b4_a416af5b047b4d519140bf08f0f83a46~mv2.jpg/v1/fill/w_936,h_526,al_c,lg_1,q_85/5a70b4_a416af5b047b4d519140bf08f0f83a46~mv2.jpg"
     },
@@ -60,7 +68,7 @@
       "summary": "Quando pensamos nos tempos antigos descritos na Bíblia, uma das perguntas mais frequentes entre estudiosos e curiosos é: Israel realmente possuía um reino organizado e letrado no século X a.C.? Apesar do ceticismo de muitos estudioso, a resposta, sustentada por descobertas arqueológicas recentes e impactantes, é cada vez mais afirmativa.Achados arqueológicos surgiram nos últimos anos para reforçar...",
       "url": "https://www.ibarq.org.br/post/3-evidências-arqueológicas-do-reino-de-davi",
       "source": "IBArq",
-      "date": "Tue, 17 Feb 2026 10:57:44 GMT",
+      "date": "Tue, 17 Feb 2026 22:43:40 GMT",
       "category": "Arqueologia Bíblica",
       "image_url": "https://static.wixstatic.com/media/5a70b4_f57390de86e144afb7f7db962e445c71~mv2.jpg/v1/fill/w_280,h_399,al_c,lg_1,q_80/5a70b4_f57390de86e144afb7f7db962e445c71~mv2.jpg"
     },
@@ -69,7 +77,7 @@
       "summary": "O MAE-USP oferece os seguintes cursos de pós-graduação: Mestrado e Doutorado em Arqueologia do Programa de Pós-graduação",
       "url": "https://mae.usp.br/pos-graduacao-no-mae/",
       "source": "MAE USP",
-      "date": "Tue, 17 Feb 2026 10:57:32 GMT",
+      "date": "Tue, 17 Feb 2026 22:43:33 GMT",
       "category": "Arqueologia e História",
       "image_url": null
     },
@@ -78,34 +86,7 @@
       "summary": "É impossível pensar em Arqueologia sem suas imagens: sua vocação visual é amplamente reconhecida. Este artigo propõe uma genealogia crítica das práticas imagéticas na disciplina, articulando a constituição do observador arqueológico e dos aparatos visuais à sua institucionalização. Com base em autores como Crary, analisa-se como os modelos epistemológicos da câmara escura e da câmera fotográfica i...",
       "url": "https://revista.sabnet.org/ojs/index.php/sab/article/view/1327",
       "source": "SABNET Revista",
-      "date": "Tue, 17 Feb 2026 10:57:26 GMT",
-      "category": "Arqueologia e História",
-      "image_url": "https://revista.sabnet.org/ojs/public/journals/1/cover_issue_68_pt_BR.png"
-    },
-    {
-      "title": "As pederneiras e a ocupação histórica do Seridó potiguar a partir do século XVIII  São Fernando (RN)",
-      "summary": "As pederneiras são objetos líticos encontrados em diferentes sítios arqueológicos históricos no continente americano e frequentemente associadas a armas de fogo. A partir da coleta de pederneiras em contextos de ocupação histórica em três sítios arqueológicos no município de São Fernando (RN), foram realizadas ações de curadoria e análise visando identificar e compreender esses bens arqueológicos....",
-      "url": "https://revista.sabnet.org/ojs/index.php/sab/article/view/1250",
-      "source": "SABNET Revista",
-      "date": "Tue, 17 Feb 2026 10:57:25 GMT",
-      "category": "Arqueologia e História",
-      "image_url": "https://revista.sabnet.org/ojs/public/journals/1/cover_issue_68_pt_BR.png"
-    },
-    {
-      "title": "Terreiro do Bogum: arqueologia da repressão e da resistência em diálogo com o legado religioso das Guerreiras Mino",
-      "summary": "Este artigo investiga como os artefatos e os rituais do Terreiro do Bogum, em Salvador, Bahia, preservam a memória do antigo Reino do Dahomé por meio das Guerreiras Mino, refletindo os processos de resistência da tradição Jeje na diáspora africana. Com base nos aportes da Arqueologia da Repressão e da Resistência e da Arqueologia da Diáspora Africana, analisa-se a transformação simbólica de artefa...",
-      "url": "https://revista.sabnet.org/ojs/index.php/sab/article/view/1280",
-      "source": "SABNET Revista",
-      "date": "Tue, 17 Feb 2026 10:57:24 GMT",
-      "category": "Arqueologia e História",
-      "image_url": "https://revista.sabnet.org/ojs/public/journals/1/cover_issue_68_pt_BR.png"
-    },
-    {
-      "title": "Adaptação de sítios arqueológicos aos impactos das mudanças climáticas",
-      "summary": "O objetivo desta pesquisa é propor uma metodologia de ação voltada à adaptação dos sítios arqueológicos aos impactos das mudanças climáticas, no âmbito das prioridades recomendadas no Livro Branco da Comissão Europeia sobre Patrimônio Cultural e Mudanças Climáticas. Para tanto, foi realizada uma revisão das estratégias de adaptação no setor patrimonial, divididas em prevenção de eventos extremos e...",
-      "url": "https://revista.sabnet.org/ojs/index.php/sab/article/view/1305",
-      "source": "SABNET Revista",
-      "date": "Tue, 17 Feb 2026 10:57:24 GMT",
+      "date": "Tue, 17 Feb 2026 22:43:29 GMT",
       "category": "Arqueologia e História",
       "image_url": "https://revista.sabnet.org/ojs/public/journals/1/cover_issue_68_pt_BR.png"
     },
@@ -114,16 +95,34 @@
       "summary": "A manifestação arqueológica dos construtores de cerritos revela diversidade nos contextos funerários, geralmente associada a processos de complexificação social. Este trabalho propõe uma revisão crítica dessas expressões com base em dados arqueológicos, bioarqueológicos e históricos, argumentando que a variabilidade dos conjuntos ósseos secundários e incompletos, predominante nesses registros, res...",
       "url": "https://revista.sabnet.org/ojs/index.php/sab/article/view/1317",
       "source": "SABNET Revista",
-      "date": "Tue, 17 Feb 2026 10:57:24 GMT",
+      "date": "Tue, 17 Feb 2026 22:43:27 GMT",
       "category": "Arqueologia e História",
       "image_url": "https://revista.sabnet.org/ojs/public/journals/1/cover_issue_68_pt_BR.png"
     },
     {
-      "title": "Propostas de engajamento público do projeto Paisagens em Branco do Laboratório de Estudos Antárticos em Ciências Humanas da Universidade Federal de Minas Gerais: novas tecnologias e experiências imersivas nas ações de mediação",
-      "summary": "Propostas de engajamento público do projeto Paisagens em Branco do Laboratório de Estudos Antárticos em Ciências Humanas...",
-      "url": "https://revista.sabnet.org/ojs/index.php/sab/article/view/1329",
+      "title": "As pederneiras e a ocupação histórica do Seridó potiguar a partir do século XVIII  São Fernando (RN)",
+      "summary": "As pederneiras são objetos líticos encontrados em diferentes sítios arqueológicos históricos no continente americano e frequentemente associadas a armas de fogo. A partir da coleta de pederneiras em contextos de ocupação histórica em três sítios arqueológicos no município de São Fernando (RN), foram realizadas ações de curadoria e análise visando identificar e compreender esses bens arqueológicos....",
+      "url": "https://revista.sabnet.org/ojs/index.php/sab/article/view/1250",
       "source": "SABNET Revista",
-      "date": "Tue, 17 Feb 2026 10:57:22 GMT",
+      "date": "Tue, 17 Feb 2026 22:43:27 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://revista.sabnet.org/ojs/public/journals/1/cover_issue_68_pt_BR.png"
+    },
+    {
+      "title": "Terreiro do Bogum: arqueologia da repressão e da resistência em diálogo com o legado religioso das Guerreiras Mino",
+      "summary": "Este artigo investiga como os artefatos e os rituais do Terreiro do Bogum, em Salvador, Bahia, preservam a memória do antigo Reino do Dahomé por meio das Guerreiras Mino, refletindo os processos de resistência da tradição Jeje na diáspora africana. Com base nos aportes da Arqueologia da Repressão e da Resistência e da Arqueologia da Diáspora Africana, analisa-se a transformação simbólica de artefa...",
+      "url": "https://revista.sabnet.org/ojs/index.php/sab/article/view/1280",
+      "source": "SABNET Revista",
+      "date": "Tue, 17 Feb 2026 22:43:26 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://revista.sabnet.org/ojs/public/journals/1/cover_issue_68_pt_BR.png"
+    },
+    {
+      "title": "Adaptação de sítios arqueológicos aos impactos das mudanças climáticas",
+      "summary": "O objetivo desta pesquisa é propor uma metodologia de ação voltada à adaptação dos sítios arqueológicos aos impactos das mudanças climáticas, no âmbito das prioridades recomendadas no Livro Branco da Comissão Europeia sobre Patrimônio Cultural e Mudanças Climáticas. Para tanto, foi realizada uma revisão das estratégias de adaptação no setor patrimonial, divididas em prevenção de eventos extremos e...",
+      "url": "https://revista.sabnet.org/ojs/index.php/sab/article/view/1305",
+      "source": "SABNET Revista",
+      "date": "Tue, 17 Feb 2026 22:43:26 GMT",
       "category": "Arqueologia e História",
       "image_url": "https://revista.sabnet.org/ojs/public/journals/1/cover_issue_68_pt_BR.png"
     },
@@ -132,79 +131,97 @@
       "summary": "Este trabalho está licenciado sob uma licença Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.",
       "url": "https://revista.sabnet.org/ojs/index.php/sab/article/view/1384",
       "source": "SABNET Revista",
-      "date": "Tue, 17 Feb 2026 10:57:21 GMT",
+      "date": "Tue, 17 Feb 2026 22:43:24 GMT",
       "category": "Arqueologia e História",
       "image_url": "https://revista.sabnet.org/ojs/public/journals/1/cover_issue_68_pt_BR.png"
     },
     {
-      "title": "Você idolatra aquilo que prioriza",
-      "summary": "Não desejamos mudar nossas rotinas e prioridades até entender por que precisamos mudar e qual idolatria está nos impedindo.",
-      "url": "https://pt.christianitytoday.com/2026/02/habitos-disciplina-espiritual-comportamento-cristao-pt/",
-      "source": "Christianity Today (PT)",
-      "date": "Tue, 17 Feb 2026 10:57:18 GMT",
-      "category": "Teologia e Igreja",
-      "image_url": "https://pt.christianitytoday.com/wp-content/uploads/sites/15/2026/02/heart-habits-change.jpg?resize=1200,628"
-    },
-    {
-      "title": "A Grande Omissão",
-      "summary": "Com agendas lotadas, grupos pequenos cujo foco é socializar e momentos de meditação personalizados ao gosto do freguês, nós estamos negligenciamos o rigor do estudo da Bíblia.",
-      "url": "https://pt.christianitytoday.com/2026/02/plano-leitura-biblia-estudo-discipulado-negligenciar-pt/",
-      "source": "Christianity Today (PT)",
-      "date": "Tue, 17 Feb 2026 10:57:17 GMT",
-      "category": "Teologia e Igreja",
-      "image_url": "https://pt.christianitytoday.com/wp-content/uploads/sites/15/2026/02/ct-web-wilkiin.jpg?resize=1200,628"
+      "title": "Propostas de engajamento público do projeto Paisagens em Branco do Laboratório de Estudos Antárticos em Ciências Humanas da Universidade Federal de Minas Gerais: novas tecnologias e experiências imersivas nas ações de mediação",
+      "summary": "Propostas de engajamento público do projeto Paisagens em Branco do Laboratório de Estudos Antárticos em Ciências Humanas...",
+      "url": "https://revista.sabnet.org/ojs/index.php/sab/article/view/1329",
+      "source": "SABNET Revista",
+      "date": "Tue, 17 Feb 2026 22:43:24 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://revista.sabnet.org/ojs/public/journals/1/cover_issue_68_pt_BR.png"
     },
     {
       "title": "O cristianismo não é uma religião imposta por colonizadores.",
       "summary": "Seguir Jesus não exige que eu rejeite a cultura da minha família. Deus ama a minha latinidade. O cristianismo não é uma religião imposta por colonizadores.",
       "url": "https://pt.christianitytoday.com/2026/02/descolonizacao-religiao-colonizadores-latinidade-pt/",
       "source": "Christianity Today (PT)",
-      "date": "Tue, 17 Feb 2026 10:57:17 GMT",
+      "date": "Tue, 17 Feb 2026 22:43:20 GMT",
       "category": "Teologia e Igreja",
       "image_url": "https://pt.christianitytoday.com/wp-content/uploads/sites/15/2026/02/religion-christianity-colonizer.jpg?resize=1200,628"
+    },
+    {
+      "title": "Você idolatra aquilo que prioriza",
+      "summary": "Não desejamos mudar nossas rotinas e prioridades até entender por que precisamos mudar e qual idolatria está nos impedindo.",
+      "url": "https://pt.christianitytoday.com/2026/02/habitos-disciplina-espiritual-comportamento-cristao-pt/",
+      "source": "Christianity Today (PT)",
+      "date": "Tue, 17 Feb 2026 22:43:20 GMT",
+      "category": "Teologia e Igreja",
+      "image_url": "https://pt.christianitytoday.com/wp-content/uploads/sites/15/2026/02/heart-habits-change.jpg?resize=1200,628"
     },
     {
       "title": "Christianity Today em Português",
       "summary": "Christianity Today em Português",
       "url": "https://www.facebook.com/ChristianityTodayPT/",
       "source": "Christianity Today (PT)",
-      "date": "Tue, 17 Feb 2026 10:57:16 GMT",
+      "date": "Tue, 17 Feb 2026 22:43:19 GMT",
       "category": "Teologia e Igreja",
       "image_url": "https://pt.christianitytoday.com/wp-content/uploads/sites/15/2026/02/ct-web-wilkiin.jpg?w=1265"
     },
     {
-      "title": "Homogenoceno: como os humanos estão tornando a vida selvagem perigosamente igual",
-      "summary": "Em todo o planeta, plantas e animais diversificados estão desaparecendo, substituídos por espécies que têm a sorte de prosperar ao lado das pessoas e viajar facilmente com a nossa espécie",
-      "url": "https://revistagalileu.globo.com/colunistas/the-conversation/coluna/2026/02/homogenoceno-como-os-humanos-estao-tornando-a-vida-selvagem-perigosamente-igual.ghtml#GALILEU-POST-TOP-24H-item,top,58a62065-887e-4432-a7b7-9f8b52492de0",
-      "source": "Revista Galileu",
-      "date": "Tue, 17 Feb 2026 10:56:40 GMT",
-      "category": "Ciência e Tecnologia",
-      "image_url": "https://s2-galileu.glbimg.com/dxfDwTDfTef22TIUPdGwqvGT4B0=/4215x0/filters:format(jpeg)/https://i.s3.glbimg.com/v1/AUTH_fde5cd494fb04473a83fa5fd57ad4542/internal_photos/bs/2026/L/W/BSIZADS36LXnxhYgaXCA/ashe-walker-pw6vqeqw1oa-unsplash.jpg"
+      "title": "A Grande Omissão",
+      "summary": "Com agendas lotadas, grupos pequenos cujo foco é socializar e momentos de meditação personalizados ao gosto do freguês, nós estamos negligenciamos o rigor do estudo da Bíblia.",
+      "url": "https://pt.christianitytoday.com/2026/02/plano-leitura-biblia-estudo-discipulado-negligenciar-pt/",
+      "source": "Christianity Today (PT)",
+      "date": "Tue, 17 Feb 2026 22:43:19 GMT",
+      "category": "Teologia e Igreja",
+      "image_url": "https://pt.christianitytoday.com/wp-content/uploads/sites/15/2026/02/ct-web-wilkiin.jpg?resize=1200,628"
     },
     {
-      "title": "Pesquisa mostra dados sobre a diminuição do número de católicos no Brasil",
-      "summary": "A religião ainda é muito forte por aqui, mas vem perdendo fiéis ao longo dos anos Pesquisa mostra dados sobre a diminuição do número de católicos no Brasil",
-      "url": "https://revistagalileu.globo.com/sociedade/comportamento/noticia/2026/02/pesquisa-mostra-dados-sobre-a-diminuicao-do-numero-de-catolicos-no-brasil.ghtml#GALILEU-POST-TOP-24H-item,top,58a62065-887e-4432-a7b7-9f8b52492de0",
+      "title": "Imagem rara: golfinho aparece andando sobre o mar com a cauda",
+      "summary": "Turistas conseguiram registrar a façanha do golfinho-liso-do-norte na costa da Califórnia Imagem rara: golfinho aparece andando sobre o mar com a cauda",
+      "url": "https://revistagalileu.globo.com/sociedade/curiosidade/noticia/2026/02/imagem-rara-golfinho-aparece-andando-sobre-o-mar-com-a-cauda.ghtml#GALILEU-POST-TOP-24H-item,top,406d0830-aa66-4903-8a1b-4c50f6308497",
       "source": "Revista Galileu",
-      "date": "Tue, 17 Feb 2026 10:56:40 GMT",
+      "date": "Tue, 17 Feb 2026 22:42:36 GMT",
       "category": "Ciência e Tecnologia",
-      "image_url": "https://s2-galileu.glbimg.com/On6JA8uhXV8auOvVLbJTRHbqULU=/6544x0/filters:format(jpeg)/https://i.s3.glbimg.com/v1/AUTH_fde5cd494fb04473a83fa5fd57ad4542/internal_photos/bs/2026/j/h/hS1T7vQGi2OcGnsuZujA/pexels-karola-g-5311314.jpg"
+      "image_url": "https://s2-galileu.glbimg.com/0iaV0JSwhA1HQF5u7tNfOq8GKZw=/4316x0/filters:format(jpeg)/https://i.s3.glbimg.com/v1/AUTH_fde5cd494fb04473a83fa5fd57ad4542/internal_photos/bs/2026/I/a/O6aYDbR0G6CZNyoJ7eCA/unnamed.jpg"
     },
     {
-      "title": "Os encantos do parque nacional mais antigo do Brasil, que fica no Sudeste",
-      "summary": "O Parque Nacional do Itatiaia conta com pontos de montanhismo e diversas cachoeiras incluindo uma adaptada a pessoas com deficiência",
-      "url": "https://revistagalileu.globo.com/ciencia/meio-ambiente/noticia/2026/02/os-encantos-do-parque-nacional-mais-antigo-do-brasil-que-fica-no-sudeste.ghtml#GALILEU-POST-TOP-24H-item,top,58a62065-887e-4432-a7b7-9f8b52492de0",
+      "title": "UNICEF lança levantamento inédito sobre impacto de ultraprocessados na infância",
+      "summary": "O documento reúne evidências que relacionam esses alimentos a problemas como atraso no crescimento, maior risco de diabetes tipo 2 e possíveis impactos na saúde mental",
+      "url": "https://revistagalileu.globo.com/saude/noticia/2026/02/unicef-lanca-levantamento-inedito-sobre-impacto-de-ultraprocessados-na-infancia.ghtml#GALILEU-POST-TOP-24H-item,top,406d0830-aa66-4903-8a1b-4c50f6308497",
       "source": "Revista Galileu",
-      "date": "Tue, 17 Feb 2026 10:56:40 GMT",
-      "category": "Arqueologia e História",
-      "image_url": "https://s2-galileu.glbimg.com/cTy_z9nDF8hpKFeQRV5jS9QQkqQ=/1280x0/filters:format(jpeg)/https://i.s3.glbimg.com/v1/AUTH_fde5cd494fb04473a83fa5fd57ad4542/internal_photos/bs/2026/z/r/R4vBmRSRSFVX6dVt9dfw/1280px-parque-nacional-do-itatiaia-alessandro-augusto-alves-pinto-11-.jpg"
+      "date": "Tue, 17 Feb 2026 22:42:36 GMT",
+      "category": "Ciência e Tecnologia",
+      "image_url": "https://s2-galileu.glbimg.com/N_eEFiBgO5vFwifirQy2MjKPSp4=/4608x0/filters:format(jpeg)/https://i.s3.glbimg.com/v1/AUTH_fde5cd494fb04473a83fa5fd57ad4542/internal_photos/bs/2026/O/K/xJ8A9XS9ytHem0AKxa7g/pexels-joseph-d-ng-276311264-12927649.jpg"
+    },
+    {
+      "title": "Como as cobras passam vários meses sem comer? Novo estudo aponta resposta",
+      "summary": "A pesquisa analisou genomas de 112 espécies de répteis e fez uma descoberta sobre a grelina, conhecida como hormônio da fome",
+      "url": "https://revistagalileu.globo.com/ciencia/biologia/noticia/2026/02/como-as-cobras-passam-varios-meses-sem-comer-novo-estudo-aponta-resposta.ghtml#GALILEU-POST-TOP-24H-item,top,406d0830-aa66-4903-8a1b-4c50f6308497",
+      "source": "Revista Galileu",
+      "date": "Tue, 17 Feb 2026 22:42:36 GMT",
+      "category": "Ciência e Tecnologia",
+      "image_url": "https://s2-galileu.glbimg.com/CPt_-MHWnwMginQe0fsP1py63-s=/4192x0/filters:format(jpeg)/https://i.s3.glbimg.com/v1/AUTH_fde5cd494fb04473a83fa5fd57ad4542/internal_photos/bs/2026/7/4/CBAkCMRuybDHhBis82gg/pexels-pixabay-53140.jpg"
+    },
+    {
+      "title": "Por que escovar os dentes sem pressa faz diferença na prevenção da cárie",
+      "summary": "Estudos da Unicamp analisaram quanto do flúor presente nos cremes dentais chega aos dentes e concluem que as variações são significativas",
+      "url": "https://revistagalileu.globo.com/saude/noticia/2026/02/por-que-escovar-os-dentes-sem-pressa-faz-diferenca-na-prevencao-da-carie.ghtml#GALILEU-POST-TOP-24H-item,top,406d0830-aa66-4903-8a1b-4c50f6308497",
+      "source": "Revista Galileu",
+      "date": "Tue, 17 Feb 2026 22:42:36 GMT",
+      "category": "Ciência e Tecnologia",
+      "image_url": "https://s2-galileu.glbimg.com/t856M6W20sXbRQLNi3t1KLbzOOM=/5040x0/filters:format(jpeg)/https://i.s3.glbimg.com/v1/AUTH_fde5cd494fb04473a83fa5fd57ad4542/internal_photos/bs/2024/g/Q/5QSTVBTPiDAkA0B7nSew/pexels-sarah-chai-7262938.jpg"
     },
     {
       "title": "Herpes humana existe há pelo menos 2,5 mil anos, mostra estudo",
       "summary": "Pesquisadores analisaram 4 mil amostras de esqueletos e identificaram onze genomas virais milenares Herpes humana existe há pelo menos 2,5 mil anos, mostra estudo",
       "url": "https://revistagalileu.globo.com/ciencia/arqueologia/noticia/2026/02/herpes-humana-existe-ha-pelo-menos-25-mil-anos-mostra-estudo.ghtml",
       "source": "Revista Galileu - Arqueologia",
-      "date": "Tue, 17 Feb 2026 10:56:38 GMT",
+      "date": "Tue, 17 Feb 2026 22:42:33 GMT",
       "category": "Arqueologia e História",
       "image_url": "https://s2-galileu.glbimg.com/EZB6rBU7_vhjKvsxFgo74nfV7GY=/1280x0/filters:format(jpeg)/https://i.s3.glbimg.com/v1/AUTH_fde5cd494fb04473a83fa5fd57ad4542/internal_photos/bs/2026/s/J/CFPClATzyPsFXuHYeMoA/herpes-simplex-tracheobronchitis-case-260-8539430239-.jpg"
     },
@@ -213,7 +230,7 @@
       "summary": "Tudo sobre ciência, tecnologia, cultura, cinema, artes, séries de tv, sociedade, comportamento, vestibular e Enem e lifehacks.",
       "url": "https://revistagalileu.revistadigital.globo.com/",
       "source": "Revista Galileu - Arqueologia",
-      "date": "Tue, 17 Feb 2026 10:56:37 GMT",
+      "date": "Tue, 17 Feb 2026 22:42:32 GMT",
       "category": "Arqueologia e História",
       "image_url": null
     },
@@ -222,7 +239,7 @@
       "summary": "Em um sítio arqueológico no leste da Inglaterra, cientistas encontraram evidências de que seres humanos já sabiam acender fogueiras há 400 mil anos, muito antes do que se acreditava até agora.",
       "url": "https://www.bbc.com/portuguese/articles/cvgrkk7xv93o",
       "source": "BBC News Brasil - Arqueologia",
-      "date": "Tue, 17 Feb 2026 10:56:34 GMT",
+      "date": "Tue, 17 Feb 2026 22:42:28 GMT",
       "category": "Arqueologia e História",
       "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/daf5/live/460d6ca0-d609-11f0-9fb5-5f3a3703a365.jpg"
     },
@@ -231,7 +248,7 @@
       "summary": "Caminho conectava o que é hoje o Brasil às estradas incas. Segundo arqueólogos, alguns trechos já eram percorridos há mais de 10 mil anos.",
       "url": "https://www.bbc.com/portuguese/articles/cy5qlk75k4no",
       "source": "BBC News Brasil - Arqueologia",
-      "date": "Tue, 17 Feb 2026 10:56:33 GMT",
+      "date": "Tue, 17 Feb 2026 22:42:27 GMT",
       "category": "Arqueologia e História",
       "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/3675/live/f0bfa680-f315-11f0-a422-4ba8a094a8fa.jpg"
     },
@@ -240,7 +257,7 @@
       "summary": "Se algum dia formos extintos e outra espécie inteligente tomar o nosso lugar, ainda haverá vestígios de que habitávamos a Terra antes dela?",
       "url": "https://www.bbc.com/portuguese/articles/cx2dj5zgjj8o",
       "source": "BBC News Brasil - Arqueologia",
-      "date": "Tue, 17 Feb 2026 10:56:33 GMT",
+      "date": "Tue, 17 Feb 2026 22:42:27 GMT",
       "category": "Arqueologia e História",
       "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/701c/live/931e5a70-a5e1-11f0-928c-71dbb8619e94.jpg"
     },
@@ -249,70 +266,115 @@
       "summary": "Achados arqueológicos da linha ferroviária HS2 planejada foram apresentados com exclusividade pela BBC. Os surpreendentes tesouros encontrados nas obras de controversa ferrovia na Inglaterra",
       "url": "https://www.bbc.com/portuguese/articles/cgrdkrrz8r5o",
       "source": "BBC News Brasil - Arqueologia",
-      "date": "Tue, 17 Feb 2026 10:56:32 GMT",
+      "date": "Tue, 17 Feb 2026 22:42:26 GMT",
       "category": "Arqueologia e História",
       "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/dedb/live/ef1ca240-fd44-11f0-b7e1-afb6d0884c18.png"
     },
     {
-      "title": "Pressão de Trump e aumento da militarização provocam divisões na Europa",
-      "summary": "Países europeus se perguntam se as alianças tradicionais bastam ou se é preciso ampliar parcerias. Pressão de Trump e aumento da militarização provocam divisões na Europa",
-      "url": "https://www.bbc.com/portuguese/articles/cwy8jz7yygno",
+      "title": "Moraes determina operação contra servidores da Receita suspeitos de vazamento de dados de ministros do STF: o que se sabe até agora",
+      "summary": "Suspeitos foram afastados de suas funções e estão proibidos de deixar o país Moraes determina operação contra servidores da Receita suspeitos de vazamento de dados de ministros do STF: o que se sabe até agora",
+      "url": "https://www.bbc.com/portuguese/articles/clyvrvz7jy5o",
       "source": "BBC News Brasil",
-      "date": "Tue, 17 Feb 2026 10:56:30 GMT",
+      "date": "Tue, 17 Feb 2026 22:42:24 GMT",
       "category": "Arqueologia e História",
-      "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/f4ce/live/85c83cd0-0bd8-11f1-b7e1-afb6d0884c18.jpg"
+      "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/3012/live/6117f590-0c16-11f1-b5e2-dd58fc65f0f6.jpg"
     },
     {
-      "title": "'Vivo sob ameaças constantes': a australiana que tenta tirar crianças das redes sociais",
-      "summary": "Depois de trabalhar na indústria de tecnologia por décadas no setor privado, Julia Inman Grant agora chama à responsabilidade algumas das empresas de maior sucesso do mundo e é ameaçada por isso.",
-      "url": "https://www.bbc.com/portuguese/articles/cn8z9gld8v5o",
+      "title": "Moraes usa 'inquérito absurdo' para agir contra vazamento de dados da Receita, critica professor da USP",
+      "summary": "Ministro determinou operação da PF em novo desdobramento do Inquérito das Fake News Moraes usa 'inquérito absurdo' para agir contra vazamento de dados da Receita, critica professor da USP",
+      "url": "https://www.bbc.com/portuguese/articles/cj982pv07p2o",
       "source": "BBC News Brasil",
-      "date": "Tue, 17 Feb 2026 10:56:30 GMT",
+      "date": "Tue, 17 Feb 2026 22:42:24 GMT",
       "category": "Arqueologia e História",
-      "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/9ebb/live/dd0e8440-0327-11f1-9deb-9fec290cc1e6.jpg"
-    },
-    {
-      "title": "A controversa aposta da China para 'fabricar' chuva - e por que muitos ainda duvidam dos resultados",
-      "summary": "A China espera controlar cada vez mais quando e onde chove no país. Aqui avaliamos por que seu ambicioso plano de semeadura de nuvens é tão controverso, e se ele realmente funciona.",
-      "url": "https://www.bbc.com/portuguese/articles/cx2lyr1nk9go",
-      "source": "BBC News Brasil",
-      "date": "Tue, 17 Feb 2026 10:56:30 GMT",
-      "category": "Arqueologia e História",
-      "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/d913/live/94cc3330-0b47-11f1-b5e2-dd58fc65f0f6.jpg"
+      "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/372b/live/01af2570-0c3d-11f1-b7e1-afb6d0884c18.jpg"
     },
     {
       "title": "O que é um clássico?",
       "summary": "O conceito de clássico estende-se virtualmente a todas as esferas da vida e não se limita às obras de literatura e arte. É um clássico, diz minha esposa",
       "url": "https://monergismo.com/o-que-e-um-classico/",
       "source": "Monergismo",
-      "date": "Tue, 17 Feb 2026 10:55:52 GMT",
+      "date": "Tue, 17 Feb 2026 22:41:39 GMT",
       "category": "Teologia Reformada",
       "image_url": "https://monergismo.com/wp-content/uploads/2026/01/Depositphotos_309136542_XL-930x620.jpg"
     },
     {
-      "title": "Fake News",
-      "summary": "Fake News",
-      "url": "https://portasabertas.org.br/noticias/fake-news/",
-      "source": "Portas Abertas",
-      "date": "Tue, 17 Feb 2026 10:54:55 GMT",
-      "category": "Perseguição Religiosa",
-      "image_url": null
+      "title": "Atentado gravíssimo na Austrália contra comunidade judaica, muitos mortos e feridos",
+      "summary": "Atentado gravíssimo na Austrália contra comunidade judaica, muitos mortos e feridosdezembro 14, 2025Testemunhas em uma festa de Hanukkah em Bondi Beach, na Austrália, disseram que um homem saiu de um ...",
+      "url": "https://cafetorah.com/atentado-gravissimo-na-australia-contra-comunidade-judaica-muitos-mortos-e-feridos/",
+      "source": "Cafetorah - Notícias de Israel",
+      "date": "Tue, 17 Feb 2026 22:40:52 GMT",
+      "category": "Israel e Oriente Médio",
+      "image_url": "https://cafetorah.com/wp-content/uploads/2025/12/pexels-ramazphotos-31583280.jpg"
     },
     {
-      "title": "Tribunal adia indenização destinada à família Koh",
-      "summary": "[Atualizado em 13 de fevereiro de 2026 às 9h30] No fim de janeiro de 2026, o tribunal suspendeu a execução da ordem anterior do Tribunal Superior que determinava que o governo pagasse mais de 37 milhõ...",
-      "url": "https://portasabertas.org.br/noticias/cristaos-perseguidos/tribunal-adia-indenizacao-destinada-a-familia-koh/",
-      "source": "Portas Abertas",
-      "date": "Tue, 17 Feb 2026 10:54:54 GMT",
-      "category": "Perseguição Religiosa",
-      "image_url": null
+      "title": "Especial de Hanukkah",
+      "summary": "Especial de Hanukkahdezembro 14, 2025Especial de Hanukkah no Cafetorah.com, está na hora de acender as velinhas. A História de Hanukkah De tragédia a vitória...Read More",
+      "url": "https://cafetorah.com/especial-de-hanukkah/",
+      "source": "Cafetorah - Notícias de Israel",
+      "date": "Tue, 17 Feb 2026 22:40:50 GMT",
+      "category": "Israel e Oriente Médio",
+      "image_url": "https://cafetorah.com/wp-content/uploads/2019/12/hanukkah-e-judas-macabeu.jpg"
     },
     {
-      "title": "Tribunal adia indenização destinada à família Koh",
-      "summary": "[Atualizado em 13 de fevereiro de 2026 às 9h30] No fim de janeiro de 2026, o tribunal suspendeu a execução da ordem anterior do Tribunal Superior que determinava que o governo pagasse mais de 37 milhõ...",
-      "url": "https://portasabertas.org.br/noticias/cristaos-perseguidos/",
+      "title": "Ataque antissemita na Austrália durante Hanukkah deixa mortos e feridos e gera comoção internacional",
+      "summary": "Ataque antissemita na Austrália durante Hanukkah deixa mortos e feridos e gera comoção internacionaldezembro 15, 2025Comunidades judaicas em Israel, na diáspora e no Brasil manifestam pesar; liderança...",
+      "url": "https://cafetorah.com/ataque-antissemita-na-australia-durante-hanukkah-deixa-mortos-e-feridos-e-gera-comocao-internacional/",
+      "source": "Cafetorah - Notícias de Israel",
+      "date": "Tue, 17 Feb 2026 22:40:49 GMT",
+      "category": "Israel e Oriente Médio",
+      "image_url": "https://cafetorah.com/wp-content/uploads/2025/12/pexels-pixelcop-1619854-1.jpg"
+    },
+    {
+      "title": "Como Israel desmantelou unidade secreta do Hezbollah?",
+      "summary": "Como Israel desmantelou unidade secreta do Hezbollah?dezembro 19, 2025Operação Por Trás das Costas: Israel divulga detalhes de ataque da Shayetet 13 que desmantelou unidade naval secreta do Hezbollah....",
+      "url": "https://cafetorah.com/como-israel-desmantelou-unidade-secreta-do-hezbollah/",
+      "source": "Cafetorah - Notícias de Israel",
+      "date": "Tue, 17 Feb 2026 22:40:47 GMT",
+      "category": "Israel e Oriente Médio",
+      "image_url": "https://cafetorah.com/wp-content/uploads/2025/12/storm-3041241_1920.jpg"
+    },
+    {
+      "title": "Para onde os primeiros crentes fugiram da perseguição em Jerusalém?",
+      "summary": "Para onde os primeiros crentes fugiram da perseguição em Jerusalém?dezembro 21, 2025Pella: O Refúgio dos Primeiros Crentes e a Cidade que Ouviu o Aviso de Jesus Entre colinas verdes e vales...Read Mor...",
+      "url": "https://cafetorah.com/para-onde-os-primeiros-crentes-fugiram-da-perseguicao-em-jerusalem/",
+      "source": "Cafetorah - Notícias de Israel",
+      "date": "Tue, 17 Feb 2026 22:40:46 GMT",
+      "category": "Israel e Oriente Médio",
+      "image_url": "https://cafetorah.com/wp-content/uploads/2025/12/temple-8811728_1920.jpg"
+    },
+    {
+      "title": "As Vigas do Templo: Madeira que Pode Ter Presenciado Legados Bíblicos",
+      "summary": "As Vigas do Templo: Madeira que Pode Ter Presenciado Legados Bíblicosdezembro 24, 2025Por Miguel Nicolaevsky Exclusivo CaféTorah.com Entre as colinas sagradas de Jerusalém repousam testemunhas discre...",
+      "url": "https://cafetorah.com/as-vigas-do-templo-madeira-que-pode-ter-presenciado-legados-biblicos/",
+      "source": "Cafetorah - Notícias de Israel",
+      "date": "Tue, 17 Feb 2026 22:40:44 GMT",
+      "category": "Israel e Oriente Médio",
+      "image_url": "https://cafetorah.com/wp-content/uploads/2025/12/IMG_3129.jpeg"
+    },
+    {
+      "title": "O que as Portas de Jerusalém Revelam Sobre a História, a Fé e o Destino da Cidade Santa?",
+      "summary": "O que as Portas de Jerusalém Revelam Sobre a História, a Fé e o Destino da Cidade Santa?janeiro 5, 2026Neste artigo, eu vou te levar a desvendar alguns detalhes muito interessantes sobre as Portas da ...",
+      "url": "https://cafetorah.com/o-que-as-portas-de-jerusalem-revelam-sobre-a-historia-a-fe-e-o-destino-da-cidade-santa/",
+      "source": "Cafetorah - Notícias de Israel",
+      "date": "Tue, 17 Feb 2026 22:40:43 GMT",
+      "category": "Israel e Oriente Médio",
+      "image_url": "https://cafetorah.com/wp-content/uploads/2016/12/porta-dos-leoes.jpg"
+    },
+    {
+      "title": "Orde Charles Wingate: O Amigo que Moldou a Defesa de Israel",
+      "summary": "Orde Charles Wingate: O Amigo que Moldou a Defesa de Israelfevereiro 5, 2026No CommentsIntrodução Orde Charles Wingate (1903-1944) foi um oficial do Exército Britânico, especialista em guerra de guerr...",
+      "url": "https://cafetorah.com/orde-charles-wingate-o-amigo-que-moldou-a-defesa-de-israel/",
+      "source": "Cafetorah - Notícias de Israel",
+      "date": "Tue, 17 Feb 2026 22:40:41 GMT",
+      "category": "Israel e Oriente Médio",
+      "image_url": "https://cafetorah.com/wp-content/uploads/2026/02/Orde-Charles-Wingate.jpg"
+    },
+    {
+      "title": "Novas ameaças contra a igreja são vistas na Síria",
+      "summary": "Mensagens ameaçadoras contra os cristãos continuam a ser espalhadas na Síria. Recentemente, uma de nossas parceiras locais visitou uma igreja em Alepo e se assustou com uma ameaça escrita em um dos mu...",
+      "url": "https://portasabertas.org.br/noticias/cristaos-perseguidos/novas-ameacas-contra-a-igreja-sao-vistas-na-siria/",
       "source": "Portas Abertas",
-      "date": "Tue, 17 Feb 2026 10:54:54 GMT",
+      "date": "Tue, 17 Feb 2026 22:40:32 GMT",
       "category": "Perseguição Religiosa",
       "image_url": null
     },
@@ -321,7 +383,16 @@
       "summary": "As enfermeiras cristãs Mariam Lal e Newosh Arooj foram absolvidas após quatro anos e meio de prisão no Paquistão. Elas estavam detidas pelo crime de blasfêmia e foram inocentadas porque o denunciante ...",
       "url": "https://portasabertas.org.br/noticias/cristaos-perseguidos/duas-enfermeiras-cristas-sao-absolvidas-no-paquistao/",
       "source": "Portas Abertas",
-      "date": "Tue, 17 Feb 2026 10:54:52 GMT",
+      "date": "Tue, 17 Feb 2026 22:40:30 GMT",
+      "category": "Perseguição Religiosa",
+      "image_url": null
+    },
+    {
+      "title": "Fake News",
+      "summary": "Fake News",
+      "url": "https://portasabertas.org.br/noticias/fake-news/",
+      "source": "Portas Abertas",
+      "date": "Tue, 17 Feb 2026 22:40:30 GMT",
       "category": "Perseguição Religiosa",
       "image_url": null
     },
@@ -330,18 +401,108 @@
       "summary": "Onze membros de uma igreja cristã no município de Zinacantán, México, foram agredidos e detidos por moradores locais ao realizarem um culto ao ar livre. O incidente ocorreu em 16 de janeiro de 2026, n...",
       "url": "https://portasabertas.org.br/noticias/cristaos-perseguidos/onze-cristaos-sao-espancados-e-detidos-no-mexico/",
       "source": "Portas Abertas",
-      "date": "Tue, 17 Feb 2026 10:54:51 GMT",
+      "date": "Tue, 17 Feb 2026 22:40:28 GMT",
       "category": "Perseguição Religiosa",
       "image_url": "https://sitepa.s3.amazonaws.com/wp-content/uploads/br/2025/11/Rodape-tema-do-mes_2025-11-2.jpg"
     },
     {
-      "title": "Novas ameaças contra a igreja são vistas na Síria",
-      "summary": "Mensagens ameaçadoras contra os cristãos continuam a ser espalhadas na Síria. Recentemente, uma de nossas parceiras locais visitou uma igreja em Alepo e se assustou com uma ameaça escrita em um dos mu...",
-      "url": "https://portasabertas.org.br/noticias/cristaos-perseguidos/novas-ameacas-contra-a-igreja-sao-vistas-na-siria/",
+      "title": "Duas enfermeiras cristãs são absolvidas no Paquistão",
+      "summary": "As enfermeiras cristãs Mariam Lal e Newosh Arooj foram absolvidas após quatro anos e meio de prisão no Paquistão. Elas estavam detidas pelo crime de blasfêmia e foram inocentadas porque o denunciante ...",
+      "url": "https://portasabertas.org.br/noticias/cristaos-perseguidos/",
       "source": "Portas Abertas",
-      "date": "Tue, 17 Feb 2026 10:54:50 GMT",
+      "date": "Tue, 17 Feb 2026 22:40:27 GMT",
       "category": "Perseguição Religiosa",
       "image_url": null
+    },
+    {
+      "title": "Cristãos perseguidos se reúnem no Iêmen apesar dos riscos",
+      "summary": "Os riscos para os cristãos perseguidos no Iêmen estão maiores do que nunca. Apesar disso, grupos cristãos secretos continuam a se encontrar em algumas regiões do 3º país em que é mais perigoso seguir ...",
+      "url": "https://portasabertas.org.br/noticias/cristaos-perseguidos/cristaos-perseguidos-se-reunem-no-iemen-apesar-dos-riscos/",
+      "source": "Portas Abertas",
+      "date": "Tue, 17 Feb 2026 22:40:25 GMT",
+      "category": "Perseguição Religiosa",
+      "image_url": "https://sitepa.s3.amazonaws.com/wp-content/uploads/br/2025/11/Rodape_DIP1.jpg"
+    },
+    {
+      "title": "Principal estrada de Jerusalém na época de Jesus é aberta após 2.000 anos - BOL",
+      "summary": "a href\"https:news.google.comrssarticlesCBMiugFBVV95cUxNQXZocTlrOEFjZ0VhUjhDbVVLbjFnOXpBbDFqTmE0aXNLTVl6N0VSVldzdzVmWmxudURWUmxfQzl5S1ozQU4xWGVYdXBvb2FnOFdpeTJna0FjQWc4VFRRdlMxbVZNN3VMVkE1aEJ1N3hoNnN1Z...",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNQXZocTlrOEFjZ0VhUjhDbVVLbjFnOXpBbDFqTmE0aXNLTVl6N0VSVldzdzVmWmxudURWUmxfQzl5S1ozQU4xWGVYdXBvb2FnOFdpeTJna0FjQWc4VFRRdlMxbVZNN3VMVkE1aEJ1N3hoNnN1ZkJlRzI0eEd4d0RlRS03SjFkaS1uLTk5QmRVclFRY2lEZUpiWW53R0c2YWtXMDZOU0FESF9RV1c4MGlrdURVVUFLZFdHdEHSAboBQVVfeXFMTUF2aHE5azhBY2dFYVI4Q21VS24xZzl6QWwxak5hNGlzS01ZejdFUlZXc3c1ZlpsbnVEVlJsX0M5eUtaM0FOMVhlWHVwb29hZzhXaXkyZ2tBY0FnOFRUUXZTMW1WTTd1TFZBNWhCdTd4aDZzdWZCZUcyNHhHeHdEZUUtN0oxZGktbi05OUJkVXJRUWNpRGVKYllud0dHNmFrVzA2TlNBREhfUVdXODBpa3VEVVVBS2RXR3RB?oc=5",
+      "source": "Google News - Escavações Bíblicas",
+      "date": "Tue, 17 Feb 2026 22:22:32 GMT",
+      "category": "Arqueologia Bíblica",
+      "image_url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw"
+    },
+    {
+      "title": "Havan tem faturamento recorde e projeta R 22 bilhões para 2026: \"Melhor desempenho da história\" - nsctotal.com.br",
+      "summary": "a href\"https:news.google.comrssarticlesCBMiyAFBVV95cUxNY1otT3FldWY2VHROdlRkOWljeUZoOVdiVGVDMTdYWTJHZnYtNHRDNk1mZE1sUUNtcVZ2aHctckNoUVJJN2JUeWl1Y2UydG1rQXJQdHpua2pnM0JmbjNSYlZXYmZ4X1BSbms0QXE1YkZXZVVMa...",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNY1otT3FldWY2VHROdlRkOWljeUZoOVdiVGVDMTdYWTJHZnYtNHRDNk1mZE1sUUNtcVZ2aHctckNoUVJJN2JUeWl1Y2UydG1rQXJQdHpua2pnM0JmbjNSYlZXYmZ4X1BSbms0QXE1YkZXZVVMaG9XeGgtaGJqQTZBV2lwR3RvMElQZlB5R0prNGVMbTd4OFRFMUNpUndzQ3ZMR0ZEVXBjYUFMX2pmbkNkUGFJSGZKOVRrWGFpNVNBcnpsN0o2aTBmaQ?oc=5",
+      "source": "Google News - NSC Total (SC)",
+      "date": "Tue, 17 Feb 2026 21:26:10 GMT",
+      "category": "Notícias Regionais",
+      "image_url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw"
+    },
+    {
+      "title": "Mais de seis mil anos de história repousam no maior sambaqui do mundo em SC - nsctotal.com.br",
+      "summary": "a href\"https:news.google.comrssarticlesCBMisgFBVV95cUxON1NoVzZGeUtGUnBXVXlVcjcwYlotRHBNU2xWb0xUUS1tZGdmYmhwckxYN1lWWExRWFgwNmhoNWw5Z1VhVDUwUHhWMlJ1VE5rY29uWGxKTE5vZF9ZUktCUzdybnN2b2ZZSHMwVEdNcG4weUdSa...",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxON1NoVzZGeUtGUnBXVXlVcjcwYlotRHBNU2xWb0xUUS1tZGdmYmhwckxYN1lWWExRWFgwNmhoNWw5Z1VhVDUwUHhWMlJ1VE5rY29uWGxKTE5vZF9ZUktCUzdybnN2b2ZZSHMwVEdNcG4weUdSaFlBZHZJb0V5QTJjWU9FdjRtQ3JNMF9rcWw4RFNBaU1JMGlZZXhqc0U1bGRnMTVyM01KdVlwUE5PR0hGTGJn?oc=5",
+      "source": "Google News - NSC Total (SC)",
+      "date": "Tue, 17 Feb 2026 18:00:00 GMT",
+      "category": "Notícias Regionais",
+      "image_url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw"
+    },
+    {
+      "title": "Demo de Ariana and the Elder Codex está disponível para PS5 - PSX Brasil",
+      "summary": "a href\"https:news.google.comrssarticlesCBMijgFBVV95cUxNRFFYdGtTbnIweUs4cEpfYjJwRk1QWjM3dXRQV0tLbEg1dzFWY3dLTkFTQ1J5bG16b0hEOEdqcmlFS2NrYUZCaGhIMWJIanVYWXJLdjdUSTJEYTNTX19OQnhuQ2pkc043Z2kxRDlISVUwMUtac...",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNRFFYdGtTbnIweUs4cEpfYjJwRk1QWjM3dXRQV0tLbEg1dzFWY3dLTkFTQ1J5bG16b0hEOEdqcmlFS2NrYUZCaGhIMWJIanVYWXJLdjdUSTJEYTNTX19OQnhuQ2pkc043Z2kxRDlISVUwMUtacGtfbGRRYzBjNl9nUE1SM0pJSEFoUlphT01B?oc=5",
+      "source": "Google News - Cópias e Manuscritos",
+      "date": "Tue, 17 Feb 2026 16:58:49 GMT",
+      "category": "Arqueologia Bíblica",
+      "image_url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw"
+    },
+    {
+      "title": "Síria, frei Ielpo: cristãos de Idlib, um grande sinal de paz e esperança - Vatican News",
+      "summary": "a href\"https:news.google.comrssarticlesCBMiswFBVV95cUxOcHhuMlI5N0RWRVY2ZDQ2bTI0NXZqeDVQeVU5T2ZUemdwYTh1dEhLNDA5b0hpUUVTUXBHdlJZWWJDQWxPMHJqR0JLM1JnODdCOTI0aXhXanJ5N3hBR19OcXpNTHFxbTFmZXJCRTB4dmhmTWNxW...",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOcHhuMlI5N0RWRVY2ZDQ2bTI0NXZqeDVQeVU5T2ZUemdwYTh1dEhLNDA5b0hpUUVTUXBHdlJZWWJDQWxPMHJqR0JLM1JnODdCOTI0aXhXanJ5N3hBR19OcXpNTHFxbTFmZXJCRTB4dmhmTWNxWU1tenVNSkdxQTE2YUdERk5ZcFZPbUs0aDcwdWdqWWUydzVQWFdITXNJSGZDV0tKS1RILTB0MUs1QzNnaDF3cw?oc=5",
+      "source": "Google News - Síria e Damasco",
+      "date": "Tue, 17 Feb 2026 13:04:01 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw"
+    },
+    {
+      "title": "Onze cristãos detidos após serem espancados, no México",
+      "summary": "Onze membros de uma igreja cristã no município de Zinacantán, México, foram agredidos e detidos por moradores locais ao realizarem um culto ao ar livre. O incidente ocorreu em 16 de janeiro de 2026, n...",
+      "url": "https://folhagospel.com/onze-cristaos-detidos-apos-serem-espancados-no-mexico/",
+      "source": "Folha Gospel",
+      "date": "Tue, 17 Feb 2026 12:12:34 +0000",
+      "category": "Notícias Cristãs",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2025/10/image-17.png"
+    },
+    {
+      "title": "Missão leva mais de 130 moradores de rua para rodízio",
+      "summary": "Mais de 130 moradores de rua participaram no início de fevereiro de um rodízio de pizzas com direito a refrigerantes e sorvetes na cidade de São Leopoldo (RS). A ação foi promovida pela missão Sul, Mi...",
+      "url": "https://www.cpadnews.com.br/missao-leva-mais-de-130-moradores-de-rua-para-rodizio/",
+      "source": "CPAD News",
+      "date": "Tue, 17 Feb 2026 12:00:40 +0000",
+      "category": "Educação Cristã",
+      "image_url": "https://www.cpadnews.com.br/wp-content/uploads/2026/02/missao_pizzaria.jpg"
+    },
+    {
+      "title": "Cristãos perseguidos se reúnem no Iêmen apesar dos riscos - Portas Abertas",
+      "summary": "a href\"https:news.google.comrssarticlesCBMiuAFBVV95cUxPRVRpeFJfVEx0blA3MERRazE2LXpHVEtBX0pYaHRGMXlHVnZDaHpKUE80TGREN25yZnN5Q0R4N2VzVE9KNVRndjlmaFBUTGVBSVI3STJUQmVPVXVWTDRPdHIxVnVXN19EbnhLNGJQSVJCYldoS...",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPRVRpeFJfVEx0blA3MERRazE2LXpHVEtBX0pYaHRGMXlHVnZDaHpKUE80TGREN25yZnN5Q0R4N2VzVE9KNVRndjlmaFBUTGVBSVI3STJUQmVPVXVWTDRPdHIxVnVXN19EbnhLNGJQSVJCYldoSzFldVRadDl4Uk9URDgydWlPdW44TENNUDNlTXdNN3FQbVZUX1JYbXp1VHNPMU4taTVUOUloVXptVURCQm1ILUVLVEx4?oc=5",
+      "source": "Google News - Cristãos Perseguidos",
+      "date": "Tue, 17 Feb 2026 11:00:00 GMT",
+      "category": "Igreja Perseguida",
+      "image_url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw"
+    },
+    {
+      "title": "Passagens da Bíblia, com Gutemberg Gomes (1702) - itatiaia.com.br",
+      "summary": "a href\"https:news.google.comrssarticlesCBMikwFBVV95cUxNWktCTXB2dVlYaUFqS3hDc04xUXZxd3FaR0FCbXp1MmJDenYyeGNzWGRJZ3d5aGI3OEhyWlduX0pwWDJYNHk1LTNvalBqaHdiMm1XcExwMFY0bXo0a0szOWt6S2NYXy1tbVVvb3hUTVMxVDBUe...",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNWktCTXB2dVlYaUFqS3hDc04xUXZxd3FaR0FCbXp1MmJDenYyeGNzWGRJZ3d5aGI3OEhyWlduX0pwWDJYNHk1LTNvalBqaHdiMm1XcExwMFY0bXo0a0szOWt6S2NYXy1tbVVvb3hUTVMxVDBUeFBBSi01U2ZrcTVBQXU4Z0NqNS1Fd0dUbW12TVVhM3M?oc=5",
+      "source": "Google News - Itatiaia (MG)",
+      "date": "Tue, 17 Feb 2026 09:00:00 GMT",
+      "category": "Notícias Regionais",
+      "image_url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw"
     },
     {
       "title": "Europa: Conferências Episcopais lançam cadeia de oração pela paz na Ucrânia e Terra Santa - Agencia Ecclesia",
@@ -353,16 +514,7 @@
       "image_url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw"
     },
     {
-      "title": "Copa do Mundo: veja os números do Irã na história dos Mundiais - Rádio Itatiaia",
-      "summary": "a href\"https:news.google.comrssarticlesCBMiwwFBVV95cUxQdWxMV2V3R0lHd3pnamFFVlZ0NG5KUUhWNHVfSkVKNFBiWHkxMVI5WnFBSEY2MzJ0TVcwbmx6TlhuckNTcXFQbk1ZYzNKUFRsczYwazRLNzVkSFhWczdnT0tSeDBwTmJ1dHA5TGpyNlZhbHhXZ...",
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQdWxMV2V3R0lHd3pnamFFVlZ0NG5KUUhWNHVfSkVKNFBiWHkxMVI5WnFBSEY2MzJ0TVcwbmx6TlhuckNTcXFQbk1ZYzNKUFRsczYwazRLNzVkSFhWczdnT0tSeDBwTmJ1dHA5TGpyNlZhbHhXZEc1U1lieTdXTWNKLUpwTEd1cmRQSl9aUmljYzlEVzRISVY4V0pDelg5dDVLb3J3bjhJVTgyNC01ZDdGeVRySkg1Nmp6YWlsSDV0NHFmZkU?oc=5",
-      "source": "Google News - Itatiaia (MG)",
-      "date": "Tue, 17 Feb 2026 07:13:00 GMT",
-      "category": "Notícias Regionais",
-      "image_url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw"
-    },
-    {
-      "title": "Copa do Mundo: veja os números do Egito na história dos Mundiais - Rádio Itatiaia",
+      "title": "Copa do Mundo: veja os números do Egito na história dos Mundiais - itatiaia.com.br",
       "summary": "a href\"https:news.google.comrssarticlesCBMi3AFBVV95cUxOdmVNeFVrTkNySm9rZnVoN0FVOUhabFBtN1UzOUxmckhyRzBvMHpHUUhYOGlVVHZ2QzJFSUtkUGpFd1pqTnR5ZUxpWEZ2b2VxSEpyUGx0X0JjUVlzZmtVWUtYTnY3Zmx4RV9uWDZSUF9lby1KT...",
       "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxOdmVNeFVrTkNySm9rZnVoN0FVOUhabFBtN1UzOUxmckhyRzBvMHpHUUhYOGlVVHZ2QzJFSUtkUGpFd1pqTnR5ZUxpWEZ2b2VxSEpyUGx0X0JjUVlzZmtVWUtYTnY3Zmx4RV9uWDZSUF9lby1KTEo5RWdPdGxCd3Z1YkFDZEVLNkwtWHpaSXJVWDk3d29acGNXVXR3U0J5c1lmZFFGaVVBRHJaNjRCVGRYR1lodDR5aS1LSXNIaWloSVhsTkRkUzlRbkwyUENuV0VZbVVkd2NfWDU5c3V1?oc=5",
       "source": "Google News - Itatiaia (MG)",
@@ -371,7 +523,7 @@
       "image_url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw"
     },
     {
-      "title": "Copa do Mundo: veja os números da Bélgica na história dos Mundiais - Rádio Itatiaia",
+      "title": "Copa do Mundo: veja os números da Bélgica na história dos Mundiais - itatiaia.com.br",
       "summary": "a href\"https:news.google.comrssarticlesCBMi3wFBVV95cUxQbnRIell5eWI1c29UQnpEM3JxVzVNcHZDSWtlVjVWWktnQllURlBERXJsMktnd2tyQUd1Qkh5SFNlbmNXY09LajRUMWVsLTZlVXQwazZBQUg3bFREanFsYV9OX085OEI2MUpMRHRDV1BhTzY0W...",
       "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQbnRIell5eWI1c29UQnpEM3JxVzVNcHZDSWtlVjVWWktnQllURlBERXJsMktnd2tyQUd1Qkh5SFNlbmNXY09LajRUMWVsLTZlVXQwazZBQUg3bFREanFsYV9OX085OEI2MUpMRHRDV1BhTzY0WmhGQWQxLVZ1QTNoYkM3bXFIeEUzaVdITXR2d3V0c0pMbUhmdkxwY1Btd0FwM1o5ZVlaVHZ1QUxhT2laVHpiWEpoOE4wOGp6c2FLaEpNTVlnUlpDVFY0dGxvbHVyRzJtRFR4OGhhVDJNTlFn?oc=5",
       "source": "Google News - Itatiaia (MG)",
@@ -380,7 +532,7 @@
       "image_url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw"
     },
     {
-      "title": "Copa do Mundo: veja os números da Tunísia na história dos Mundiais - Rádio Itatiaia",
+      "title": "Copa do Mundo: veja os números da Tunísia na história dos Mundiais - itatiaia.com.br",
       "summary": "a href\"https:news.google.comrssarticlesCBMi3wFBVV95cUxOMzVaeG51ellBSzZFNkl5bXZiLWJ6dFU0TmpDMkYtem52bW1hRGRLQmluUHVVeTZfMU9ka25jNEl5ZW96V0xmVTQ5MmVRTXYwUjM3N1JScXBwaUNPYjhUeVJrZnVHdTlyZVFxREZEZ1hZZWVtO...",
       "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOMzVaeG51ellBSzZFNkl5bXZiLWJ6dFU0TmpDMkYtem52bW1hRGRLQmluUHVVeTZfMU9ka25jNEl5ZW96V0xmVTQ5MmVRTXYwUjM3N1JScXBwaUNPYjhUeVJrZnVHdTlyZVFxREZEZ1hZZWVtOUV2M1hRU2FEcDRVZDhzMlVCRm9SVTZ2T2hmcnRCbG1oMEpVMkxsbFlhdkljT2ZHRVQyWWNBaFQ3djNBZWNBTVFIZGlJdnFwOXA3TENRRElOcVhrdktzMDd1YVljblZPV2VvT1NYUXhSVXpF?oc=5",
       "source": "Google News - Itatiaia (MG)",
@@ -389,7 +541,7 @@
       "image_url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw"
     },
     {
-      "title": "Copa do Mundo: veja os números do Japão na história dos Mundiais - Rádio Itatiaia",
+      "title": "Copa do Mundo: veja os números do Japão na história dos Mundiais - itatiaia.com.br",
       "summary": "a href\"https:news.google.comrssarticlesCBMi3AFBVV95cUxQTFN1cmZjRjlQZjkxUWllblZySWJacktWZFUwVENhOXY1Mm44bUR6cWpRTkd5MGNsT3ZMVXhHMFFFV29nSURkcUdfZlN1LTctNTRoTGpzazQ1cFB6a2oxRVdTLWxxV1hyYUZiTUd3czRfVTZBR...",
       "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQTFN1cmZjRjlQZjkxUWllblZySWJacktWZFUwVENhOXY1Mm44bUR6cWpRTkd5MGNsT3ZMVXhHMFFFV29nSURkcUdfZlN1LTctNTRoTGpzazQ1cFB6a2oxRVdTLWxxV1hyYUZiTUd3czRfVTZBR0FfSzNIM0VEdTd0V0I4Y0xGd3QzTXY1cnZicDZlQUJRVWpOaGNQalI4Y2s2dVh3SDhYZ0F6d2ZXeVN6MHJhdXoteTdvRW9yWHdlNVlZRS1IWUdRRER0SXJUbS0xdV9MWDNtcktNT2M2?oc=5",
       "source": "Google News - Itatiaia (MG)",
@@ -398,7 +550,7 @@
       "image_url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw"
     },
     {
-      "title": "Copa do Mundo: veja os números da Holanda na história dos Mundiais - Rádio Itatiaia",
+      "title": "Copa do Mundo: veja os números da Holanda na história dos Mundiais - itatiaia.com.br",
       "summary": "a href\"https:news.google.comrssarticlesCBMi3wFBVV95cUxQVEVDMVFobHdXbHNTX0JnaDVRajFWTEd4clpXbFdXa3h2WWUzb3JQRzBxVS1DaTRCX2hVSVo3RVdKMUZfX0k4alQ4YV90d25BZW5jN2R4TS1MbGJaUm9FVGFqRTI2UFR6Wm0xcHJSWFFDQ09ac...",
       "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQVEVDMVFobHdXbHNTX0JnaDVRajFWTEd4clpXbFdXa3h2WWUzb3JQRzBxVS1DaTRCX2hVSVo3RVdKMUZfX0k4alQ4YV90d25BZW5jN2R4TS1MbGJaUm9FVGFqRTI2UFR6Wm0xcHJSWFFDQ09ac2xaYXN2cWNJUWVVTjRUUzRDSWNoR1FDVC1QUFAwUVFvdEpmeHdlSDJVV1Zfb1NsdlVfM3Jvc09ja1MtN1UwSmczbC04Q1BqRjZ4YkN0NHFhQi1PUUtUMzAyaXZYQ0htRm9ra3ZFWDFsOXZF?oc=5",
       "source": "Google News - Itatiaia (MG)",
