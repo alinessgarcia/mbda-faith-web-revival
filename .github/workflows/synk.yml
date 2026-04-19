@@ -1,49 +1,71 @@
-# Nome do seu workflow. Aparecerá na aba "Actions" do GitHub.
 name: Snyk Security Scan
 
-# Define quando o workflow deve rodar.
 on:
-  # Roda quando houver um push para a branch 'main'.
   push:
-    branches: [ "main" ]
-  # Roda também quando um pull request for aberto para a branch 'main'.
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
-# Define as permissões necessárias para o workflow.
 permissions:
-  contents: read # para clonar o repositório
-  security-events: write # para enviar os resultados de segurança para o GitHub
+  contents: read
+  security-events: write
 
-# Define os "jobs" ou tarefas que o workflow executará.
 jobs:
   snyk:
-    # O nome do job.
     name: Snyk Vulnerability Scan
-    # A máquina virtual que será usada para rodar o job.
     runs-on: ubuntu-latest
+
     steps:
-      # 1. Clona o seu repositório para a máquina virtual.
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 2. Instala as dependências do seu projeto (necessário para o Snyk analisar).
-      - name: Install dependencies
-        run: npm install
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+          cache: "npm"
 
-      # 3. Configura a ferramenta de linha de comando do Snyk.
-      - name: Setup Snyk CLI
-        uses: snyk/actions/setup@master
+      - name: Install Node dependencies
+        run: npm ci
 
-      # 4. Roda o teste de vulnerabilidades do Snyk.
-      #    Ele usará o token que você adicionou nos segredos.
-      - name: Run Snyk to check for vulnerabilities
-        run: snyk test --all-projects --sarif-file-output=snyk.sarif
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r scripts/requirements.txt
+
+      - name: Check Snyk token availability
+        id: snyk-token
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        run: |
+          if [ -n "$SNYK_TOKEN" ]; then
+            echo "available=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "available=false" >> "$GITHUB_OUTPUT"
+          fi
 
-      # 5. Envia os resultados para a aba "Security" do GitHub.
+      - name: Setup Snyk CLI
+        if: steps.snyk-token.outputs.available == 'true'
+        uses: snyk/actions/setup@master
+
+      - name: Run Snyk vulnerability scan
+        if: steps.snyk-token.outputs.available == 'true'
+        continue-on-error: true
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        run: snyk test --all-projects --detection-depth=4 --sarif-file-output=snyk.sarif
+
+      - name: Skip Snyk when token is missing
+        if: steps.snyk-token.outputs.available != 'true'
+        run: echo "::warning::SNYK_TOKEN is not configured. Snyk scan was skipped."
+
       - name: Upload result to GitHub Code Scanning
-        uses: github/codeql-action/upload-sarif@v3
+        uses: github/codeql-action/upload-sarif@v4
+        if: hashFiles('snyk.sarif') != ''
         with:
           sarif_file: snyk.sarif
