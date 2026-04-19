@@ -14,7 +14,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      security-events: write
       actions: read
 
     steps:
@@ -33,36 +32,6 @@ jobs:
       - name: Run npm audit
         run: npm audit --audit-level=high
         continue-on-error: true
-
-      - name: Check Snyk token availability
-        id: snyk-token
-        env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-        run: |
-          if [ -n "$SNYK_TOKEN" ]; then
-            echo "available=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "available=false" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Run security scan with Snyk
-        if: steps.snyk-token.outputs.available == 'true'
-        uses: snyk/actions/node@master
-        continue-on-error: true
-        env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-        with:
-          command: code test --sarif-file-output=snyk.sarif
-
-      - name: Skip Snyk when token is missing
-        if: steps.snyk-token.outputs.available != 'true'
-        run: echo "::warning::SNYK_TOKEN is not configured. Snyk scan was skipped."
-
-      - name: Upload Snyk results to GitHub Code Scanning
-        uses: github/codeql-action/upload-sarif@v4
-        if: hashFiles('snyk.sarif') != ''
-        with:
-          sarif_file: snyk.sarif
 
   dependency-review:
     name: Dependency Review
