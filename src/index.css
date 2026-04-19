@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap&v=2');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Roboto:wght@400;500;700&display=swap&v=2');
 
 @tailwind base;
 @tailwind components;
@@ -288,6 +288,233 @@ html {
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+  }
+}
+
+/* Stitch-inspired home shell (professional/minimal) */
+.stitch-shell {
+  background: linear-gradient(160deg, #0f4ca5 0%, #0b3f8b 55%, #0a3374 100%);
+}
+
+.stitch-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.stitch-brand {
+  border: 0;
+  background: transparent;
+  color: #f8fbff;
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.stitch-top-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.stitch-top-actions button {
+  border: 0;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.92);
+  padding: 0.45rem 0.8rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.stitch-search {
+  border-radius: 0.95rem;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.75rem 1rem;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+
+.stitch-hero-card {
+  position: relative;
+  min-height: 330px;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 20px 44px rgba(0, 21, 62, 0.35);
+}
+
+.stitch-hero-card-minimal {
+  background: #0b2d63;
+}
+
+.stitch-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(95deg, rgba(8, 20, 45, 0.82) 0%, rgba(8, 20, 45, 0.42) 52%, rgba(8, 20, 45, 0.08) 100%);
+}
+
+.stitch-hero-content {
+  position: absolute;
+  left: 1.2rem;
+  top: 1.2rem;
+  right: 1.2rem;
+}
+
+.stitch-eyebrow {
+  display: inline-flex;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  color: rgba(255, 255, 255, 0.92);
+  padding: 0.25rem 0.6rem;
+  margin-bottom: 0.7rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.stitch-gradient-btn {
+  border: 0;
+  border-radius: 0.85rem;
+  color: #fff;
+  font-weight: 700;
+  padding: 0.72rem 1.1rem;
+  background: #1d64d8;
+  transition: background-color 150ms ease;
+}
+
+.stitch-gradient-btn:hover {
+  background: #1958bf;
+}
+
+.stitch-outline-btn {
+  border-radius: 0.85rem;
+  color: #fff;
+  font-weight: 700;
+  padding: 0.72rem 1.1rem;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.stitch-scroll-row {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(260px, 1fr);
+  gap: 0.75rem;
+  overflow-x: auto;
+  padding-bottom: 0.4rem;
+  scrollbar-width: thin;
+}
+
+.stitch-event-card {
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 0.95rem;
+  color: white;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+.stitch-event-card-minimal {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.stitch-event-meta {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.72);
+  letter-spacing: 0.03em;
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+}
+
+.stitch-story-card,
+.stitch-simple-card,
+.stitch-ministry-card {
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 1rem;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 10px 24px rgba(4, 24, 70, 0.22);
+}
+
+.stitch-story-card {
+  display: flex;
+  gap: 0.9rem;
+  align-items: center;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.stitch-simple-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.15rem;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.stitch-ministry-card {
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.07);
+  transition: background-color 160ms ease;
+}
+
+.stitch-ministry-card:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.stitch-bottom-dock {
+  position: fixed;
+  left: 50%;
+  bottom: 0.65rem;
+  transform: translateX(-50%);
+  width: calc(100% - 1.1rem);
+  max-width: 720px;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.27);
+  background: rgba(14, 66, 140, 0.92);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 25px rgba(4, 22, 62, 0.32);
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  padding: 0.35rem 0.25rem;
+  z-index: 40;
+}
+
+.stitch-dock-item {
+  border: 0;
+  color: rgba(255, 255, 255, 0.9);
+  background: transparent;
+  display: grid;
+  justify-items: center;
+  gap: 0.15rem;
+  padding: 0.4rem 0.2rem;
+  font-size: 0.74rem;
+  line-height: 1;
+}
+
+@media (min-width: 768px) {
+  .stitch-brand {
+    font-size: 1.35rem;
+  }
+
+  .stitch-top-actions button {
+    font-size: 0.9rem;
+  }
+
+  .stitch-hero-card {
+    min-height: 470px;
+  }
+
+  .stitch-hero-content {
+    left: 2rem;
+    top: 1.9rem;
+    max-width: 64%;
   }
 }
 

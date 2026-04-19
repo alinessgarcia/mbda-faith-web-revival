@@ -10,7 +10,7 @@ const FloatingButtons = () => {
         href="https://wa.me/+5513981517913"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed right-4 md:right-6 bottom-20 md:bottom-24 z-40 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition-all"
+        className="fixed right-4 md:right-6 bottom-24 md:bottom-24 z-40 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition-all"
         aria-label="Aconselhamento"
       >
         <svg
@@ -29,7 +29,7 @@ const FloatingButtons = () => {
         href="https://share.google/EHGmpIZA2tg4CKlzP"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed left-4 md:left-6 bottom-4 z-40 bg-primary text-white p-3 rounded-full shadow-lg hover:bg-primary/90 transition-all"
+        className="fixed left-4 md:left-6 bottom-24 md:bottom-4 z-40 bg-primary text-white p-3 rounded-full shadow-lg hover:bg-primary/90 transition-all"
         aria-label="Localização"
       >
         <MapPin size={24} />

@@ -1,4 +1,4 @@
-
+﻿
 import { useState } from "react";
 import { BookOpen, ChevronLeft, ChevronRight } from "lucide-react";
 import { Modal } from "./ui/Modal";
@@ -22,7 +22,7 @@ const declaracoes = [
   {
     id: 4,
     title: "4. Dom de línguas",
-    content: "O dom de línguas era a capacidade sobrenatural dada por Deus a alguns crentes de falar das grandezas do Senhor em um outro idioma jamais aprendido por quem recebia essa graça (At 2.4-11; 1 Co 12.30), sendo certo que tal capacitação, uma vez que servia como um sinal do juízo iminente de Deus sobre a geração que rejeitou o Filho (1 Co 14.21-22 – compare com Dt 28.45, 46, 49), deixou de existir já no primeiro século, tão logo o castigo do Senhor caiu sobre os judeus no ano 70 d.C., por mão de Tito, general romano, conforme o próprio Senhor Jesus havia predito (Lc 13.34-35)."
+    content: "O dom de línguas era a capacidade sobrenatural dada por Deus a alguns crentes de falar das grandezas do Senhor em um outro idioma jamais aprendido por quem recebia essa graça (At 2.4-11; 1 Co 12.30), sendo certo que tal capacitação, uma vez que servia como um sinal do juízo iminente de Deus sobre a geração que rejeitou o Filho (1 Co 14.21-22 â€“ compare com Dt 28.45, 46, 49), deixou de existir já no primeiro século, tão logo o castigo do Senhor caiu sobre os judeus no ano 70 d.C., por mão de Tito, general romano, conforme o próprio Senhor Jesus havia predito (Lc 13.34-35)."
   },
   {
     id: 5,
@@ -32,7 +32,7 @@ const declaracoes = [
   {
     id: 6,
     title: "6. Homem e mulher: criação de Deus",
-    content: "Homem e mulher foram criados por Deus que os fez à sua imagem e semelhança (Gn 1.27; 5.1-2; Tg 3.9), sem pecado (Ec 7.29), com um corpo maravilhosamente formado (Gn 2.7, 21-22 – veja também Sl 139.14) e uma alma imortal (Ec 12.7; Mt 10.28), dando-lhes, em seguida, o domínio sobre toda a criação (Gn 1.26, 29-30) e impondo-lhes o dever de dela cuidar (Gn 2.15)."
+    content: "Homem e mulher foram criados por Deus que os fez à sua imagem e semelhança (Gn 1.27; 5.1-2; Tg 3.9), sem pecado (Ec 7.29), com um corpo maravilhosamente formado (Gn 2.7, 21-22 â€“ veja também Sl 139.14) e uma alma imortal (Ec 12.7; Mt 10.28), dando-lhes, em seguida, o domínio sobre toda a criação (Gn 1.26, 29-30) e impondo-lhes o dever de dela cuidar (Gn 2.15)."
   },
   {
     id: 7,
@@ -42,7 +42,7 @@ const declaracoes = [
   {
     id: 8,
     title: "8. O pecado",
-    content: "O pecado entrou no mundo por um ato voluntário do primeiro ser humano (1 Tm 2.14) que, no Éden, desobedeceu a ordem expressa de Deus, comendo do fruto proibido (Gn 3.6 – compare com Gn 2.16-17). Como resultado disso, toda a raça, representada em Adão, tornou-se pecadora (Rm 3.23; 5.18). A morte, que é o salário do pecado (Rm 6.23), passou a todos os homens (Rm 5.12), os quais, agora, estão separados de Deus (Ef 4.18), eternamente perdidos (Mt 25.41, 46) e vivendo conforme os ditames de suas próprias paixões e raciocínios vãos (Ef 2.1-3; 4.17)."
+    content: "O pecado entrou no mundo por um ato voluntário do primeiro ser humano (1 Tm 2.14) que, no Ã‰den, desobedeceu a ordem expressa de Deus, comendo do fruto proibido (Gn 3.6 â€“ compare com Gn 2.16-17). Como resultado disso, toda a raça, representada em Adão, tornou-se pecadora (Rm 3.23; 5.18). A morte, que é o salário do pecado (Rm 6.23), passou a todos os homens (Rm 5.12), os quais, agora, estão separados de Deus (Ef 4.18), eternamente perdidos (Mt 25.41, 46) e vivendo conforme os ditames de suas próprias paixões e raciocínios vãos (Ef 2.1-3; 4.17)."
   },
   {
     id: 9,
@@ -95,33 +95,41 @@ const DeclaracaoDeFe = () => {
 
   return (
     <>
-      <section id="declaracao-de-fe" className="section-padding bg-black/60">
-        <div className="container mx-auto">
-          {/* Título */}
-          <div className="text-center mb-16">
+      <section id="declaracao-de-fe" className="section-padding relative overflow-hidden bg-[#0a3674]/95">
+        <div className="absolute inset-0 pointer-events-none bg-gradient-to-br from-[#0f4ea8]/20 via-transparent to-[#072a59]/60" />
 
-            <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold text-yellow-title drop-shadow-lg mb-4">
-              📖 Declaração de Fé
-            </h2>
-
-            <p className="text-xl text-white max-w-3xl mx-auto mt-4">
-              Nossa fé é fundamentada nas Escrituras Sagradas. Confira nossa declaração
-              de fé para conhecer os princípios que norteiam nossa comunidade.
+        <div className="container mx-auto relative z-10">
+          <div className="mb-10 md:mb-12">
+            <p className="inline-flex rounded-full border border-white/30 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.08em] text-white/90">
+              Doutrina
             </p>
-
-            {/* Botão glassmorphism */}
-            <button
-              onClick={() => setIsModalOpen(true)}
-              className="glass-card-modern px-8 py-4 font-bold text-white hover:text-yellow transition-colors inline-flex items-center mt-8"
-            >
-              <BookOpen className="w-6 h-6 mr-2 text-blue-light" />
-              Ver Declaração de Fé
-            </button>
+            <h2 className="mt-3 text-3xl md:text-4xl font-bold text-white">Declaração de Fé</h2>
+            <p className="mt-2 text-white/75 max-w-3xl">
+              Nossa fé é fundamentada nas Escrituras Sagradas. Consulte os princípios doutrinários que orientam
+              nosso ministério.
+            </p>
           </div>
+
+          <article className="rounded-2xl border border-white/20 bg-white/10 backdrop-blur-md shadow-[0_14px_30px_rgba(2,22,64,0.32)] p-6 md:p-8 max-w-4xl">
+            <h3 className="text-xl md:text-2xl font-bold text-white">{declaracoes[currentDeclaracao].title}</h3>
+            <p className="mt-3 text-white/85 leading-relaxed line-clamp-3">{declaracoes[currentDeclaracao].content}</p>
+
+            <div className="mt-6 flex flex-wrap items-center gap-3">
+              <button
+                onClick={() => setIsModalOpen(true)}
+                className="inline-flex items-center gap-2 rounded-lg bg-[#1d64d8] px-5 py-3 text-white font-semibold hover:bg-[#1958bf] transition-colors"
+              >
+                <BookOpen className="h-4 w-4" />
+                Ler declaração completa
+              </button>
+              <span className="text-sm text-white/75">
+                Item {currentDeclaracao + 1} de {declaracoes.length}
+              </span>
+            </div>
+          </article>
         </div>
       </section>
 
-      {/* Modal glassmorphism */}
       <Modal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
@@ -129,33 +137,32 @@ const DeclaracaoDeFe = () => {
         size="xl"
       >
         <div className="space-y-6 text-white">
-          <div className="bg-white/10 rounded-lg p-6">
-            <p className="text-white/90 leading-relaxed text-lg">
+          <div className="rounded-xl border border-white/15 bg-white/10 p-5 md:p-6">
+            <p className="text-white/90 leading-relaxed text-base md:text-lg">
               {declaracoes[currentDeclaracao].content}
             </p>
           </div>
 
-          {/* Navegação */}
-          <div className="flex justify-between items-center pt-6 border-t border-white/20">
-            <span className="text-white/80">
+          <div className="flex flex-wrap justify-between items-center gap-4 pt-4 border-t border-white/20">
+            <span className="text-white/80 font-medium">
               {currentDeclaracao + 1} de {declaracoes.length}
             </span>
 
-            <div className="flex space-x-4">
+            <div className="flex items-center gap-3">
               <button
                 onClick={prevDeclaracao}
-                className="glass-card-agenda p-3 rounded-full hover:bg-white/20 transition-colors"
+                className="rounded-full border border-white/25 bg-white/10 p-2.5 hover:bg-white/20 transition-colors"
                 aria-label="Item anterior"
               >
-                <ChevronLeft className="w-5 h-5 text-white" />
+                <ChevronLeft className="h-5 w-5 text-white" />
               </button>
 
               <button
                 onClick={nextDeclaracao}
-                className="glass-card-agenda p-3 rounded-full hover:bg-white/20 transition-colors"
+                className="rounded-full border border-white/25 bg-white/10 p-2.5 hover:bg-white/20 transition-colors"
                 aria-label="Próximo item"
               >
-                <ChevronRight className="w-5 h-5 text-white" />
+                <ChevronRight className="h-5 w-5 text-white" />
               </button>
             </div>
           </div>
@@ -166,3 +173,4 @@ const DeclaracaoDeFe = () => {
 };
 
 export default DeclaracaoDeFe;
+

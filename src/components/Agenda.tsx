@@ -1,144 +1,113 @@
-
 import { Clock } from "lucide-react";
 import { CHURCH_SCHEDULE } from "../constants";
 
 const Agenda = () => {
+  const leftSchedules = CHURCH_SCHEDULE.filter((schedule) => schedule.position === "left");
+  const rightSchedules = CHURCH_SCHEDULE.filter((schedule) => schedule.position === "right");
+
   return (
-    <section id="agenda" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black/60">
-      {/* Background decorativo menor */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-1/4 left-1/4 w-48 h-48 bg-blue-400 rounded-full blur-3xl animate-pulse shape-blob" />
-        <div className="absolute bottom-1/4 right-1/4 w-32 h-32 bg-yellow-400 rounded-full blur-3xl animate-pulse shape-blob animate-delay-300" />
-      </div>
+    <section id="agenda" className="section-padding relative overflow-hidden bg-[#0a3779]/95">
+      <div className="absolute inset-0 pointer-events-none bg-gradient-to-br from-[#0f4ea8]/30 via-transparent to-[#0a2f63]/55" />
 
-      <div className="container mx-auto px-4 relative z-10">
-        {/* Título com glassmorphism */}
-        <div className="text-center mb-16 pt-8 md:pt-0">
-
-          <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold text-yellow-title drop-shadow-lg">
-            📅 Agenda Semanal
-          </h2>
-
+      <div className="container mx-auto relative z-10">
+        <div className="mb-10 md:mb-12">
+          <p className="inline-flex rounded-full border border-white/30 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.08em] text-white/90">
+            Programação
+          </p>
+          <h2 className="mt-3 text-3xl md:text-4xl font-bold text-white">Agenda Semanal</h2>
+          <p className="mt-2 text-white/75 max-w-2xl">
+            Horários oficiais de reuniões, oração e ministração da Palavra.
+          </p>
         </div>
 
-        {/* Layout customizado: Esquerda (3 cards) + Direita (1 card grande) */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-
-          {/* COLUNA ESQUERDA - 3 cards pequenos */}
-          <div className="space-y-6">
-            {CHURCH_SCHEDULE.filter(schedule => schedule.position === 'left').map((schedule, index) => (
-              <div
+        <div className="grid grid-cols-1 xl:grid-cols-5 gap-6">
+          <div className="xl:col-span-2 space-y-5">
+            {leftSchedules.map((schedule) => (
+              <article
                 key={schedule.day}
-                className="glass-card-agenda p-6 animate-fade-in agenda-card"
-                style={{
-                  '--schedule-color': schedule.color,
-                  '--schedule-color-light': `${schedule.color}20`,
-                  '--schedule-color-lighter': `${schedule.color}10`,
-                  animationDelay: `${index * 0.1}s`
-                } as React.CSSProperties}
+                className="rounded-2xl border border-white/20 bg-white/10 backdrop-blur-md shadow-[0_12px_28px_rgba(2,22,64,0.28)] p-5"
               >
-                {/* Cabeçalho do dia */}
-                <div className="flex items-center mb-4">
-                  <div className="w-4 h-4 rounded-full mr-3 agenda-day-indicator" />
-                  <h3 className="text-xl font-bold text-yellow-title">
-                    {schedule.day}
-                  </h3>
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-xl font-bold text-white">{schedule.day}</h3>
+                  <span className="text-xs font-semibold uppercase tracking-[0.08em] text-white/70">
+                    Reunião
+                  </span>
                 </div>
 
-                {/* Atividades */}
-                <div className="space-y-3 mb-4">
-                  {schedule.activities.map((activity, actIndex) => (
-                    <div key={actIndex} className="flex items-center justify-between bg-white/30 rounded-lg p-3">
-                      <div className="flex items-center">
-                        <span className="text-xl mr-3">{activity.icon}</span>
+                <div className="space-y-3">
+                  {schedule.activities.map((activity, index) => (
+                    <div
+                      key={`${schedule.day}-${activity.time}-${index}`}
+                      className="rounded-xl border border-white/15 bg-white/10 px-3 py-3"
+                    >
+                      <div className="flex items-start justify-between gap-3">
                         <div>
-                          <p className="font-semibold text-white text-sm">{activity.activity}</p>
-                          <p className="text-xs text-yellow-custom">{activity.type}</p>
+                          <p className="text-white font-semibold leading-tight">{activity.activity}</p>
+                          <p className="text-white/70 text-sm mt-1">{activity.type}</p>
                         </div>
-                      </div>
-                      <div className="flex items-center bg-lime text-white px-2 py-1 rounded-full text-xs font-bold">
-                        <Clock className="w-3 h-3 mr-1" />
-                        {activity.time}
+                        <div className="inline-flex items-center gap-1 rounded-lg bg-[#1d64d8] px-2.5 py-1 text-sm font-bold text-white whitespace-nowrap">
+                          <Clock className="h-4 w-4" />
+                          {activity.time}
+                        </div>
                       </div>
                     </div>
                   ))}
                 </div>
 
-                {/* Informação especial */}
                 {schedule.special && (
-                  <div className="bg-white/40 rounded-lg p-3 border-l-4 agenda-special-border">
-                    <p className="text-xs font-medium text-white">
-                      ✨ {schedule.special}
-                    </p>
-                  </div>
+                  <p className="mt-4 rounded-lg border border-white/15 bg-white/10 px-3 py-2 text-sm text-white/90">
+                    {schedule.special}
+                  </p>
                 )}
-              </div>
+              </article>
             ))}
           </div>
 
-          {/* COLUNA DIREITA - 1 card grande (Domingo) */}
-          <div>
-            {CHURCH_SCHEDULE.filter(schedule => schedule.position === 'right').map((schedule) => (
-              <div
+          <div className="xl:col-span-3 space-y-5">
+            {rightSchedules.map((schedule) => (
+              <article
                 key={schedule.day}
-                className="glass-card-agenda p-8 animate-fade-in agenda-card h-full"
-                style={{
-                  '--schedule-color': schedule.color,
-                  '--schedule-color-light': `${schedule.color}20`,
-                  '--schedule-color-lighter': `${schedule.color}10`,
-                  animationDelay: '0.3s'
-                } as React.CSSProperties}
+                className="rounded-2xl border border-white/20 bg-white/10 backdrop-blur-md shadow-[0_14px_32px_rgba(2,22,64,0.32)] p-6 md:p-7"
               >
-                {/* Cabeçalho do dia */}
-                <div className="flex items-center mb-6">
-                  <div className="w-6 h-6 rounded-full mr-4 agenda-day-indicator" />
-                  <h3 className="text-3xl font-bold text-yellow-title">
-                    {schedule.day}
-                  </h3>
+                <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
+                  <h3 className="text-2xl md:text-3xl font-bold text-white">{schedule.day}</h3>
+                  <span className="text-sm font-semibold text-white/75">
+                    Dia principal de comunhão
+                  </span>
                 </div>
 
-                {/* Atividades */}
-                <div className="space-y-4 mb-6">
-                  {schedule.activities.map((activity, actIndex) => (
-                    <div key={actIndex} className="flex items-center justify-between bg-white/30 rounded-lg p-4">
-                      <div className="flex items-center">
-                        <span className="text-3xl mr-4">{activity.icon}</span>
-                        <div>
-                          <p className="font-semibold text-white text-lg">{activity.activity}</p>
-                          <p className="text-sm text-yellow-custom">{activity.type}</p>
-                        </div>
-                      </div>
-                      <div className="flex items-center bg-lime text-white px-4 py-2 rounded-full text-sm font-bold">
-                        <Clock className="w-4 h-4 mr-2" />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {schedule.activities.map((activity, index) => (
+                    <div
+                      key={`${schedule.day}-${activity.time}-${index}`}
+                      className="rounded-xl border border-white/15 bg-white/10 p-4"
+                    >
+                      <p className="text-white font-semibold">{activity.activity}</p>
+                      <p className="text-white/70 text-sm mt-1">{activity.type}</p>
+                      <div className="mt-3 inline-flex items-center gap-1 rounded-lg bg-[#1d64d8] px-2.5 py-1 text-sm font-bold text-white">
+                        <Clock className="h-4 w-4" />
                         {activity.time}
                       </div>
                     </div>
                   ))}
                 </div>
 
-                {/* Informações especiais */}
-                <div className="space-y-3">
+                <div className="mt-5 space-y-3">
                   {schedule.special && (
-                    <div className="bg-white/40 rounded-lg p-4 border-l-4 agenda-special-border">
-                      <p className="text-sm font-medium text-white">
-                        ✨ {schedule.special}
-                      </p>
-                    </div>
+                    <p className="rounded-lg border border-white/15 bg-white/10 px-3 py-2 text-sm text-white/90">
+                      {schedule.special}
+                    </p>
                   )}
                   {schedule.specialExtra && (
-                    <div className="bg-white/40 rounded-lg p-4 border-l-4 agenda-special-border">
-                      <p className="text-sm font-medium text-white">
-                        ✨ {schedule.specialExtra}
-                      </p>
-                    </div>
+                    <p className="rounded-lg border border-white/15 bg-white/10 px-3 py-2 text-sm text-white/90">
+                      {schedule.specialExtra}
+                    </p>
                   )}
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </div>
-
-
       </div>
     </section>
   );

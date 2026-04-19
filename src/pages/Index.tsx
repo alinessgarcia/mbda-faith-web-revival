@@ -16,6 +16,7 @@ import ChatBox from "../components/ChatBox";
 import { useSEO } from "../hooks/useSEO";
 import { SEO_CONFIG } from "../constants";
 import ReconNewsFeed from "../components/ReconNewsFeed";
+import StitchHomeShell from "../components/StitchHomeShell";
 
 const Index = () => {
   // Configuração SEO centralizada
@@ -25,6 +26,7 @@ const Index = () => {
     <div className="min-h-screen">
       <Navbar />
       <main>
+        <StitchHomeShell />
         <ReconNewsFeed />
         <QuemSomos />
         <DeclaracaoDeFe />

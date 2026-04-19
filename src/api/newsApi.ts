@@ -40,12 +40,30 @@ export interface NewsData {
   articles: NewsItem[];
 }
 
+interface ReconNewsArticleRow {
+  id?: string;
+  title?: string;
+  description?: string;
+  title_pt?: string;
+  description_pt?: string;
+  extended_summary_pt?: string;
+  url?: string;
+  source?: string;
+  published_at?: string;
+  image_url?: string;
+  category?: string;
+  scraped_at?: string;
+}
+
 class NewsAPI {
   private cache: NewsItem[] | null = null;
   private cacheExpiry: number = 0;
   private readonly CACHE_DURATION = 30 * 60 * 1000; // 30 minutes in milliseconds
   private readonly MAX_AGE_MS = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
   private readonly MIN_ARTICLES = 6; // Ensure we always show at least this many
+  private readonly RECONNEWS_LIMIT = 120;
+  private readonly RECONNEWS_SUPABASE_URL = 'https://kkhqybinqwrndcoeotnu.supabase.co';
+  private readonly RECONNEWS_SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtraHF5YmlucXdybmRjb2VvdG51Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjE0NDQzODMsImV4cCI6MjA3NzAyMDM4M30.6RGWFvbG0BGdYcKlXWd5SQuGYPCGlnhOJBuO9GPlSUE';
 
   // Palavras-chave de alta relevância para scoring
   private readonly archaeologyKeywords = {
@@ -262,6 +280,93 @@ class NewsAPI {
     return items;
   }
 
+  private makeArticleKey(item: NewsItem): string {
+    const rawUrl = (item.url || '').trim();
+    if (rawUrl) {
+      try {
+        return new URL(rawUrl).toString().toLowerCase();
+      } catch {
+        return rawUrl.toLowerCase();
+      }
+    }
+    return `${item.source}|${item.title}|${item.date}`.toLowerCase();
+  }
+
+  private mergeUniqueNews(primary: NewsItem[], extra: NewsItem[]): NewsItem[] {
+    if (extra.length === 0) return primary;
+    const merged = [...primary];
+    const seen = new Set(merged.map(item => this.makeArticleKey(item)));
+
+    for (const item of extra) {
+      const key = this.makeArticleKey(item);
+      if (!seen.has(key)) {
+        seen.add(key);
+        merged.push(item);
+      }
+    }
+    return merged;
+  }
+
+  private async loadReconNewsArticles(): Promise<NewsItem[]> {
+    try {
+      const selectFields = encodeURIComponent(
+        'id,title,description,title_pt,description_pt,extended_summary_pt,url,source,published_at,image_url,category,scraped_at'
+      );
+      const endpoint = `${this.RECONNEWS_SUPABASE_URL}/rest/v1/articles?select=${selectFields}&order=scraped_at.desc&limit=${this.RECONNEWS_LIMIT}`;
+
+      const response = await fetch(endpoint, {
+        method: 'GET',
+        headers: {
+          apikey: this.RECONNEWS_SUPABASE_ANON_KEY,
+          Authorization: `Bearer ${this.RECONNEWS_SUPABASE_ANON_KEY}`,
+          'Content-Type': 'application/json'
+        }
+      });
+
+      if (!response.ok) {
+        throw new Error(`RECONNEWS_HTTP_${response.status}`);
+      }
+
+      const rows = (await response.json()) as ReconNewsArticleRow[];
+      if (!Array.isArray(rows) || rows.length === 0) {
+        return [];
+      }
+
+      return rows
+        .map((row): NewsItem | null => {
+          const title = (row.title_pt || row.title || '').trim();
+          const summary = (row.extended_summary_pt || row.description_pt || row.description || '').trim();
+          const url = (row.url || '').trim();
+          const source = (row.source || 'ReconNews').trim();
+          const date = (row.published_at || row.scraped_at || '').trim();
+          const category = (row.category || 'ReconNews').trim();
+          const imageUrl = (row.image_url || '').trim();
+
+          if (!title || !url || !date) return null;
+
+          return {
+            title,
+            summary,
+            url,
+            source,
+            date,
+            category,
+            image_url: imageUrl || undefined
+          };
+        })
+        .filter((item): item is NewsItem => Boolean(item))
+        .filter(item => this.isRecent(item.date));
+    } catch (error) {
+      console.warn('Falha ao carregar artigos do ReconNews externo:', error);
+      return [];
+    }
+  }
+
+  private async mergeWithExternalReconNews(items: NewsItem[]): Promise<NewsItem[]> {
+    const externalItems = await this.loadReconNewsArticles();
+    return this.mergeUniqueNews(items, externalItems);
+  }
+
   /**
    * Load news data from Supabase or fallback to local JSON
    */
@@ -315,6 +420,8 @@ class NewsAPI {
 
           // Filtrar por allowlist
           newsItems = this.filterByAllowedSources(newsItems);
+          // Mesclar com feed externo do ReconNews
+          newsItems = await this.mergeWithExternalReconNews(newsItems);
 
           // Aplicar política de retenção (12h no site + blacklist permanente)
           newsItems = this.applyRetentionPolicy(newsItems);
@@ -399,6 +506,8 @@ class NewsAPI {
 
       // Filtrar por allowlist
       filtered = this.filterByAllowedSources(filtered);
+      // Mesclar com feed externo do ReconNews
+      filtered = await this.mergeWithExternalReconNews(filtered);
 
       // Aplicar política de retenção (12h no site + blacklist permanente)
       filtered = this.applyRetentionPolicy(filtered);

@@ -42,6 +42,7 @@ scripts/__pycache__/
 # Backups and temporary files
 backups/
 _local_backups/
+_stitch/
 *.tmp
 *.temp
 .temp_historico.txt
