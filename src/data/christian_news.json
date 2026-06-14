@@ -1,39 +1,31 @@
 {
-  "last_updated": "2026-06-14T12:07:52.420599",
-  "total_articles": 47,
+  "last_updated": "2026-06-14T23:20:20.231533",
+  "total_articles": 37,
   "sources": [
-    "Arqueologia e Pré-História",
     "BBC News Brasil",
     "BBC News Brasil - Arqueologia",
-    "Cafetorah - Notícias de Israel",
     "Christianity Today (PT)",
+    "Google News - Achados Arqueológicos",
     "Google News - Cópias e Manuscritos",
+    "Google News - Grécia Antiga e Helenismo",
+    "Google News - Idade Média",
+    "Google News - Itatiaia (MG)",
+    "Google News - Síria e Damasco",
     "IBArq",
     "Incrível História",
     "MAE USP",
-    "Monergismo",
     "National Geographic Brasil - Arqueologia",
     "Portas Abertas",
     "Revista Galileu",
-    "Revista Galileu - Arqueologia",
-    "SABNET Revista"
+    "Revista Galileu - Arqueologia"
   ],
   "articles": [
-    {
-      "title": "O oceano e os Tupinambá",
-      "summary": "Segundo as teorias mais aceitas, os povos Tupi se originaram na região amazônica, a partir de onde teriam começado a se expandir por volta de 5000 AP (antes do Presente).",
-      "url": "https://arqueologiaeprehistoria.com/2026/06/13/o-oceano-e-os-tupinamba/",
-      "source": "Arqueologia e Pré-História",
-      "date": "Sun, 14 Jun 2026 12:07:14 GMT",
-      "category": "Arqueologia e História",
-      "image_url": "https://arqueologiaeprehistoria.com/wp-content/uploads/2021/03/cropped-logo-fundo-vazio.png"
-    },
     {
       "title": "Al Capone, o poderoso chefão de Chicago",
       "summary": "Biografia de Al Capone, o mais notório e um dos mais gângsteres que o mundo já conheceu. Dos primeiros anos até a sua morte.",
       "url": "https://incrivelhistoria.com.br/al-capone-biografia/",
       "source": "Incrível História",
-      "date": "Sun, 14 Jun 2026 12:07:09 GMT",
+      "date": "Sun, 14 Jun 2026 23:19:24 GMT",
       "category": "História e Arqueologia",
       "image_url": "https://incrivelhistoria.com.br/app/uploads/2015/05/biografia-al-capone-historia-crime-morte-incrivel-historia_1.webp"
     },
@@ -42,7 +34,7 @@
       "summary": "5 Curiosidades sobre Nabucodonosor II, o Destruição de Nações (o Leão da Babilônia), o maior rei do Segundo Império da Babilônia.",
       "url": "https://incrivelhistoria.com.br/5-curiosidades-sobre-nabucodonosor-ii/",
       "source": "Incrível História",
-      "date": "Sun, 14 Jun 2026 12:07:09 GMT",
+      "date": "Sun, 14 Jun 2026 23:19:24 GMT",
       "category": "História e Arqueologia",
       "image_url": "https://incrivelhistoria.com.br/app/uploads/2026/01/nabucodonosor-ii-curiosidades-incrivel-historia.jpg"
     },
@@ -51,7 +43,7 @@
       "summary": "O último mês do ano reservou boas supresas para os amantes da arqueologia bíblica. Curiosamente, todos tem relação com o Novo Testamento e nos auxiliarão a ter mais compreensão sobre o contexto histórico-cultural da época de Jesus Cristo.1. O Crucificado InglêsRaridade encontrada em Cambridgeshire traz mais luz sobre a cruz, instrumento de tortura e morte do Império RomanoQuem nos segue no Instagr...",
       "url": "https://www.ibarq.org.br/post/as-3-incríveis-descobertas-da-arqueologia-bíblica-em-dezembro-de-2021",
       "source": "IBArq",
-      "date": "Sun, 14 Jun 2026 12:07:06 GMT",
+      "date": "Sun, 14 Jun 2026 23:19:21 GMT",
       "category": "Arqueologia Bíblica",
       "image_url": "https://static.wixstatic.com/media/5a70b4_a416af5b047b4d519140bf08f0f83a46~mv2.jpg/v1/fill/w_936,h_526,al_c,lg_1,q_85/5a70b4_a416af5b047b4d519140bf08f0f83a46~mv2.jpg"
     },
@@ -60,7 +52,7 @@
       "summary": "Quando pensamos nos tempos antigos descritos na Bíblia, uma das perguntas mais frequentes entre estudiosos e curiosos é: Israel realmente possuía um reino organizado e letrado no século X a.C.? Apesar do ceticismo de muitos estudioso, a resposta, sustentada por descobertas arqueológicas recentes e impactantes, é cada vez mais afirmativa.Achados arqueológicos surgiram nos últimos anos para reforçar...",
       "url": "https://www.ibarq.org.br/post/3-evidências-arqueológicas-do-reino-de-davi",
       "source": "IBArq",
-      "date": "Sun, 14 Jun 2026 12:07:05 GMT",
+      "date": "Sun, 14 Jun 2026 23:19:19 GMT",
       "category": "Arqueologia Bíblica",
       "image_url": "https://static.wixstatic.com/media/5a70b4_f57390de86e144afb7f7db962e445c71~mv2.jpg/v1/fill/w_280,h_399,al_c,lg_1,q_80/5a70b4_f57390de86e144afb7f7db962e445c71~mv2.jpg"
     },
@@ -69,7 +61,7 @@
       "summary": "O MAE-USP oferece os seguintes cursos de pós-graduação: Mestrado e Doutorado em Arqueologia do Programa de Pós-graduação",
       "url": "https://mae.usp.br/pos-graduacao-no-mae/",
       "source": "MAE USP",
-      "date": "Sun, 14 Jun 2026 12:06:57 GMT",
+      "date": "Sun, 14 Jun 2026 23:18:57 GMT",
       "category": "Arqueologia e História",
       "image_url": null
     },
@@ -78,142 +70,52 @@
       "summary": "Oportunidade de bolsa FAPESP TT-4 no projeto Palynofacies Analysis in Archaeological Sediments from Amazonian Sites: Reconstructing the",
       "url": "https://mae.usp.br/bolsa-fapesp-tt-iv/",
       "source": "MAE USP",
-      "date": "Sun, 14 Jun 2026 12:06:56 GMT",
+      "date": "Sun, 14 Jun 2026 23:18:55 GMT",
       "category": "Arqueologia e História",
       "image_url": null
-    },
-    {
-      "title": "Explorando adaptações tecnoculturais iniciais na Amazônia: o conjunto lítico de Teotônio do holoceno inicial, noroeste do Brasil",
-      "summary": "Explorando adaptações tecnoculturais iniciais na Amazônia: o conjunto lítico de Teotônio do holoceno inicial, noroeste d...",
-      "url": "https://revista.sabnet.org/ojs/index.php/sab/article/view/1350",
-      "source": "SABNET Revista",
-      "date": "Sun, 14 Jun 2026 12:06:53 GMT",
-      "category": "Arqueologia e História",
-      "image_url": "https://revista.sabnet.org/ojs/public/journals/1/cover_issue_69_pt_BR.png"
-    },
-    {
-      "title": "Abordagens multidisciplinares à arqueologia forense: tópicos discutidos durante as reuniões europeias de arqueologia forense (EMFA)",
-      "summary": "Abordagens multidisciplinares à arqueologia forense: tópicos discutidos durante as reuniões europeias de arqueologia for...",
-      "url": "https://revista.sabnet.org/ojs/index.php/sab/article/view/1383",
-      "source": "SABNET Revista",
-      "date": "Sun, 14 Jun 2026 12:06:53 GMT",
-      "category": "Arqueologia e História",
-      "image_url": "https://revista.sabnet.org/ojs/public/journals/1/cover_issue_69_pt_BR.png"
-    },
-    {
-      "title": "A salvaguarda das coleções arqueológicas sob a guarda da reserva técnica da Universidade Federal do Maranhão (2020-2023): histórico dos acervos, processos curatoriais e extroversão do conhecimento",
-      "summary": "A salvaguarda das coleções arqueológicas sob a guarda da reserva técnica da Universidade Federal do Maranhão (2020-2023)...",
-      "url": "https://revista.sabnet.org/ojs/index.php/sab/article/view/1385",
-      "source": "SABNET Revista",
-      "date": "Sun, 14 Jun 2026 12:06:52 GMT",
-      "category": "Arqueologia e História",
-      "image_url": "https://revista.sabnet.org/ojs/public/journals/1/cover_issue_69_pt_BR.png"
-    },
-    {
-      "title": "Identidade local e patrimônio arqueológico da população do distrito de Llata, Huánuco, Peru",
-      "summary": "A pesquisa teve como objetivo analisar a relação entre a identidade local e o patrimônio arqueológico no distrito de Llata (Huánuco, Peru), identificando o nível de percepção dos cidadãos e sua influência na valorização cultural. O estudo foi básico, com enfoque quantitativo correlacional e desenho transversal não experimental. Foi aplicada uma pesquisa a 116 habitantes da área urbana, selecionado...",
-      "url": "https://revista.sabnet.org/ojs/index.php/sab/article/view/1298",
-      "source": "SABNET Revista",
-      "date": "Sun, 14 Jun 2026 12:06:52 GMT",
-      "category": "Arqueologia e História",
-      "image_url": "https://revista.sabnet.org/ojs/public/journals/1/cover_issue_69_pt_BR.png"
-    },
-    {
-      "title": "Primeira evidência de oxalatos e sua datação no substrato rochoso da Toca do Baixão do Milho, Caracol, Piauí, Brasil",
-      "summary": "Sítios arqueológicos no estado do Piauí, Brasil, apresentam eflorescências salinas em abrigos rochosos. No sítio arqueológico Toca do Baixão do Milho, os minerais whewellita (CaC₂O₄H₂O) e weddellita (CaC₂O₄2H₂O) foram identificados e datados por radiocarbono. Dada a relevância da área de pesquisa para a história das Américas, os dados de radiocarbono da Serra das Confusões, Piauí, Brasil, foram co...",
-      "url": "https://revista.sabnet.org/ojs/index.php/sab/article/view/1405",
-      "source": "SABNET Revista",
-      "date": "Sun, 14 Jun 2026 12:06:51 GMT",
-      "category": "Arqueologia e História",
-      "image_url": "https://revista.sabnet.org/ojs/public/journals/1/cover_issue_69_pt_BR.png"
-    },
-    {
-      "title": "Estruturas, agencialidade e paisagem  a arte rupestre nos sítios Matão 1 e Siriema 2, Alto Araçuaí, Minas Gerais, Brasil",
-      "summary": "Estruturas, agencialidade e paisagem a arte rupestre nos sítios Matão 1 e Siriema 2, Alto Araçuaí, Minas Gerais, Brasil...",
-      "url": "https://revista.sabnet.org/ojs/index.php/sab/article/view/1336",
-      "source": "SABNET Revista",
-      "date": "Sun, 14 Jun 2026 12:06:50 GMT",
-      "category": "Arqueologia e História",
-      "image_url": "https://revista.sabnet.org/ojs/public/journals/1/cover_issue_69_pt_BR.png"
-    },
-    {
-      "title": "Alimentação e ferramentas marinhas: a importância da fauna tetrápode marinha nas práticas culturais dos construtores de sambaquis no sul do Brasil",
-      "summary": "Alimentação e ferramentas marinhas: a importância da fauna tetrápode marinha nas práticas culturais dos construtores de ...",
-      "url": "https://revista.sabnet.org/ojs/index.php/sab/article/view/1332",
-      "source": "SABNET Revista",
-      "date": "Sun, 14 Jun 2026 12:06:50 GMT",
-      "category": "Arqueologia e História",
-      "image_url": "https://revista.sabnet.org/ojs/public/journals/1/cover_issue_69_pt_BR.png"
-    },
-    {
-      "title": "Isso não é arqueologia",
-      "summary": "Este artigo investiga o sentido e as implicações da expressão isso não é arqueologia, frequentemente ouvida em alguns espaços de poder como bancas, congressos, salas de aula e corredores de instituições de ensino , mas raramente escrita, como dispositivo discursivo de exclusão e demarcação disciplinar. Argumenta-se que tal afirmação opera como uma fronteira que busca preservar um ideal de cientifi...",
-      "url": "https://revista.sabnet.org/ojs/index.php/sab/article/view/1359",
-      "source": "SABNET Revista",
-      "date": "Sun, 14 Jun 2026 12:06:49 GMT",
-      "category": "Arqueologia e História",
-      "image_url": "https://revista.sabnet.org/ojs/public/journals/1/cover_issue_69_pt_BR.png"
-    },
-    {
-      "title": "A arqueologia de Belo Horizonte: reconectando memórias e vislumbrando futuros de uma cidade potencial",
-      "summary": "Este artigo tem como objetivo abordar os sítios arqueológicos indígenas identificados no município de Belo Horizonte (MG) entre as décadas de 1930 e 1950, com destaque para o sítio arqueológico Córrego do Cardoso. A partir da articulação entre dados documentais, paisagísticos e de cultura material, localizados em distintas instituições, buscamos recriar um vínculo referencial sobre o contexto arqu...",
-      "url": "https://revista.sabnet.org/ojs/index.php/sab/article/view/1301",
-      "source": "SABNET Revista",
-      "date": "Sun, 14 Jun 2026 12:06:49 GMT",
-      "category": "Arqueologia e História",
-      "image_url": "https://revista.sabnet.org/ojs/public/journals/1/cover_issue_69_pt_BR.png"
-    },
-    {
-      "title": "Editorial",
-      "summary": "Este trabalho está licenciado sob uma licença Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.",
-      "url": "https://revista.sabnet.org/ojs/index.php/sab/article/view/1417",
-      "source": "SABNET Revista",
-      "date": "Sun, 14 Jun 2026 12:06:48 GMT",
-      "category": "Arqueologia e História",
-      "image_url": "https://revista.sabnet.org/ojs/public/journals/1/cover_issue_69_pt_BR.png"
     },
     {
       "title": "Naqueles dias, não havia rei sobre a IA",
       "summary": "Como os cristãos devem interagir com a inteligência artificial, quando cada um faz o que lhe parece certo? Naqueles dias, não havia rei sobre a IA",
       "url": "https://pt.christianitytoday.com/2026/06/ia-inteligencia-artificial-regulamentacao-uso-etico-cristaos-pt/",
       "source": "Christianity Today (PT)",
-      "date": "Sun, 14 Jun 2026 12:06:45 GMT",
+      "date": "Sun, 14 Jun 2026 23:18:48 GMT",
       "category": "Teologia e Igreja",
       "image_url": "https://pt.christianitytoday.com/wp-content/uploads/sites/15/2026/06/no-king-over-AI.jpg?resize=1200,628"
-    },
-    {
-      "title": "Christianity Today em Português",
-      "summary": "Christianity Today em Português",
-      "url": "https://www.facebook.com/ChristianityTodayPT/",
-      "source": "Christianity Today (PT)",
-      "date": "Sun, 14 Jun 2026 12:06:44 GMT",
-      "category": "Teologia e Igreja",
-      "image_url": "https://pt.christianitytoday.com/wp-content/uploads/sites/15/2026/06/world-cup-christian-athletes.jpg?w=1265"
-    },
-    {
-      "title": "14 estrelas da Copa do Mundo que seguem Jesus",
-      "summary": "Craques do futebol mundial que entraram no torneio gigantesco da FIFA para glorificar a Deus. 14 estrelas da Copa do Mundo que seguem Jesus",
-      "url": "https://pt.christianitytoday.com/2026/06/copa-do-mundo-fifa-estrelas-copa-seguem-jesus-pt/",
-      "source": "Christianity Today (PT)",
-      "date": "Sun, 14 Jun 2026 12:06:44 GMT",
-      "category": "Teologia e Igreja",
-      "image_url": "https://pt.christianitytoday.com/wp-content/uploads/sites/15/2026/06/world-cup-christian-athletes.jpg?resize=1200,628"
     },
     {
       "title": "No Brasil, psicólogos cristãos lutam para expressar sua fé",
       "summary": "Profissionais da área correm o risco de perder a licença, se falarem sobre sua religião nas redes sociais. No Brasil, psicólogos cristãos lutam para expressar sua fé",
       "url": "https://pt.christianitytoday.com/2026/06/psicologos-cristaos-lutam-para-expressar-sua-fe-pt/",
       "source": "Christianity Today (PT)",
-      "date": "Sun, 14 Jun 2026 12:06:44 GMT",
+      "date": "Sun, 14 Jun 2026 23:18:47 GMT",
       "category": "Teologia e Igreja",
       "image_url": "https://pt.christianitytoday.com/wp-content/uploads/sites/15/2026/06/brazil-christian-pyschologists-persecution.jpg?resize=1200,628"
+    },
+    {
+      "title": "14 estrelas da Copa do Mundo que seguem Jesus",
+      "summary": "Craques do futebol mundial que entraram no torneio gigantesco da FIFA para glorificar a Deus. 14 estrelas da Copa do Mundo que seguem Jesus",
+      "url": "https://pt.christianitytoday.com/2026/06/copa-do-mundo-fifa-estrelas-copa-seguem-jesus-pt/",
+      "source": "Christianity Today (PT)",
+      "date": "Sun, 14 Jun 2026 23:18:46 GMT",
+      "category": "Teologia e Igreja",
+      "image_url": "https://pt.christianitytoday.com/wp-content/uploads/sites/15/2026/06/world-cup-christian-athletes.jpg?resize=1200,628"
+    },
+    {
+      "title": "Christianity Today em Português",
+      "summary": "Christianity Today em Português",
+      "url": "https://www.facebook.com/ChristianityTodayPT/",
+      "source": "Christianity Today (PT)",
+      "date": "Sun, 14 Jun 2026 23:18:45 GMT",
+      "category": "Teologia e Igreja",
+      "image_url": "https://pt.christianitytoday.com/wp-content/uploads/sites/15/2026/06/world-cup-christian-athletes.jpg?w=1265"
     },
     {
       "title": "História e Cultura",
       "summary": "CulturaPsicologiaCiências sociaisEmoçõesAmor GenéticaIdade AntigaOssoDNACachorrosLoboPaleontologia JesusReligiãoArqueologiaBíbliaCristianismoFeriados",
       "url": "https://www.nationalgeographicbrasil.com/historia",
       "source": "National Geographic Brasil - Arqueologia",
-      "date": "Sun, 14 Jun 2026 12:06:09 GMT",
+      "date": "Sun, 14 Jun 2026 23:18:13 GMT",
       "category": "Arqueologia e História",
       "image_url": "https://static.nationalgeographicbrasil.com/files/styles/image_3200/public/queen-victoria-og.jpg?w=1600&h=1067"
     },
@@ -222,88 +124,70 @@
       "summary": "Para revelar uma antiga rua com degraus em Jerusalém, arqueólogos e engenheiros israelenses estão construindo uma espécie de túnel de metrô sob um bairro...",
       "url": "https://www.nationalgeographicbrasil.com/assunto/temas/historia/idade-antiga/civilizacoes-antigas/roma-antiga",
       "source": "National Geographic Brasil - Arqueologia",
-      "date": "Sun, 14 Jun 2026 12:06:09 GMT",
+      "date": "Sun, 14 Jun 2026 23:18:13 GMT",
       "category": "Arqueologia e História",
       "image_url": "https://static.nationalgeographicbrasil.com/files/styles/image_3200/public/og-jerusalem-street.jpg?w=1600&h=1600"
     },
     {
-      "title": "A dignidade menstrual não se limita ao acesso a absorventes",
-      "summary": "Infraestrutura de qualidade e apoio dos núcleos pessoas e das escolas também devem ser garantidos para pessoas que menstruam",
-      "url": "https://revistagalileu.globo.com/saude/noticia/2026/06/a-dignidade-menstrual-nao-se-limita-ao-acesso-a-absorventes.ghtml#GALILEU-POST-TOP-24H-item,top,e6cbaf8a-fcef-41ff-ba53-dae3389b43a9",
+      "title": "A Copa do Mundo vai desencadear um surto de doenças?",
+      "summary": "Pesquisa traz preocupações científicas e um pouco de alívio para os torcedores A Copa do Mundo vai desencadear um surto de doenças?",
+      "url": "https://revistagalileu.globo.com/saude/noticia/2026/06/a-copa-do-mundo-vai-desencadear-um-surto-de-doencas.ghtml#GALILEU-POST-TOP-24H-item,top,7eef8da2-d8d9-4660-a079-a7879a06f66b",
       "source": "Revista Galileu",
-      "date": "Sun, 14 Jun 2026 12:06:03 GMT",
-      "category": "Ciência e Tecnologia",
-      "image_url": "https://s2-galileu.glbimg.com/Kff_dbNP_G1s4qlhbr7VNtMOcsI=/6720x0/filters:format(jpeg)/https://i.s3.glbimg.com/v1/AUTH_fde5cd494fb04473a83fa5fd57ad4542/internal_photos/bs/2026/d/b/NfKDT9TmKEiagZUJ5Oaw/pexels-karola-g-7282109.jpg"
+      "date": "Sun, 14 Jun 2026 23:18:09 GMT",
+      "category": "Saúde e Medicina",
+      "image_url": "https://s2-galileu.glbimg.com/lCkxOOHXUg6Oee2j75xTyQiGguk=/1620x0/filters:format(jpeg)/https://i.s3.glbimg.com/v1/AUTH_fde5cd494fb04473a83fa5fd57ad4542/internal_photos/bs/2026/z/c/ABXLUjR8qA1pTyv92TqQ/fifa-world-cup-2010-uruguay-ghana.jpg"
     },
     {
-      "title": "Saiba o que são as síndromes insulares e por que elas intrigam os cientistas",
-      "summary": "Subespécies de carriças encontradas em ilhas de um dos arquipélagos da Escócia desenvolveram gigantismo insular, fenômeno evolutivo",
-      "url": "https://revistagalileu.globo.com/ciencia/biologia/noticia/2026/06/saiba-o-que-sao-as-sindromes-insulares-e-por-que-elas-intrigam-os-cientistas.ghtml#GALILEU-POST-TOP-24H-item,top,e6cbaf8a-fcef-41ff-ba53-dae3389b43a9",
+      "title": "5 benefícios que tomar chá pode trazer à sua saúde",
+      "summary": "Do matcha ao cafeinado: entenda como o chá que você toma todos os dias pode te fazer bem 5 benefícios que tomar chá pode trazer à sua saúde",
+      "url": "https://revistagalileu.globo.com/saude/noticia/2026/06/5-beneficios-que-tomar-cha-pode-trazer-a-sua-saude.ghtml#GALILEU-POST-TOP-24H-item,top,7eef8da2-d8d9-4660-a079-a7879a06f66b",
       "source": "Revista Galileu",
-      "date": "Sun, 14 Jun 2026 12:06:03 GMT",
-      "category": "Ciência e Tecnologia",
-      "image_url": "https://s2-galileu.glbimg.com/oK4aJklJpYO9be01iYi2BkYUC1w=/992x0/filters:format(jpeg)/https://i.s3.glbimg.com/v1/AUTH_fde5cd494fb04473a83fa5fd57ad4542/internal_photos/bs/2026/p/Z/dJsfP2SuAPWnGOXLAr3Q/lead-image-uob-news-items-1440-x-853-px-1100-x-824-px-2.x2f4b387e.jpg"
+      "date": "Sun, 14 Jun 2026 23:18:09 GMT",
+      "category": "Saúde e Medicina",
+      "image_url": "https://s2-galileu.glbimg.com/f1hE7h9MS-IotMMOjlhYfvsTL4o=/2268x0/filters:format(jpeg)/https://i.s3.glbimg.com/v1/AUTH_fde5cd494fb04473a83fa5fd57ad4542/internal_photos/bs/2026/8/d/ralZEUQ1S8g9OO6M98kQ/pexels-esranurkalay-36953360.jpg"
     },
     {
-      "title": "Macacos da Amazônia contraem hepatite B humana em áreas degradadas, diz estudo",
-      "summary": "Pesquisadores da Inglaterra e do Brasil encontraram evidências de que primatas adquiriram o vírus em regiões fortemente impactadas pela atividade humana",
-      "url": "https://revistagalileu.globo.com/ciencia/meio-ambiente/noticia/2026/06/macacos-da-amazonia-contraem-hepatite-b-humana-em-areas-degradadas-diz-estudo.ghtml#GALILEU-POST-TOP-24H-item,top,e6cbaf8a-fcef-41ff-ba53-dae3389b43a9",
+      "title": "Além do futebol: qual é a relação entre Brasil e Marrocos?",
+      "summary": "Confira curiosidades sobre os laços políticos, comerciais e culturais entre os dois países que se enfrentam neste sábado (13) na Copa de 2026",
+      "url": "https://revistagalileu.globo.com/sociedade/curiosidade/noticia/2026/06/alem-do-futebol-qual-e-a-relacao-entre-brasil-e-marrocos.ghtml#GALILEU-POST-TOP-24H-item,top,7eef8da2-d8d9-4660-a079-a7879a06f66b",
       "source": "Revista Galileu",
-      "date": "Sun, 14 Jun 2026 12:06:03 GMT",
+      "date": "Sun, 14 Jun 2026 23:18:09 GMT",
       "category": "Ciência e Tecnologia",
-      "image_url": "https://s2-galileu.glbimg.com/DeoG0zUuYAw5gcWsqJqbTOO6XO8=/735x0/filters:format(jpeg)/https://i.s3.glbimg.com/v1/AUTH_fde5cd494fb04473a83fa5fd57ad4542/internal_photos/bs/2026/Q/I/dHq2kpRPWgM6IA3MCwvA/macaco-prego-cebus-appella-.jpg"
+      "image_url": "https://s2-galileu.glbimg.com/qLsn4jnkU2aUawvC6pzzVPwO7K4=/7396x0/filters:format(jpeg)/https://i.s3.glbimg.com/v1/AUTH_fde5cd494fb04473a83fa5fd57ad4542/internal_photos/bs/2026/z/A/YOGFrfQSOBA0RwHSRiZw/pexels-george-piskov-289673052-35509025.jpg"
     },
     {
-      "title": "Se saneamento fosse critério da Copa, Brasil seria eliminado na 2ª fase e Japão venceria",
-      "summary": "Considerando qualidade de abastecimento de água e tratamento de esgoto, estudo estipulou resultados de embates entre nações",
-      "url": "https://revistagalileu.globo.com/sociedade/curiosidade/noticia/2026/06/se-saneamento-fosse-criterio-da-copa-brasil-seria-eliminado-na-2a-fase-e-japao-venceria.ghtml#GALILEU-POST-TOP-24H-item,top,e6cbaf8a-fcef-41ff-ba53-dae3389b43a9",
+      "title": "5 livros para conhecer Fernando Pessoa",
+      "summary": "De um guia de como ler Pessoa e seus heterônimos até novas edições, descubra algumas obras imperdíveis do autor português",
+      "url": "https://revistagalileu.globo.com/cultura/noticia/2026/06/5-livros-para-conhecer-fernando-pessoa.ghtml#GALILEU-POST-TOP-24H-item,top,7eef8da2-d8d9-4660-a079-a7879a06f66b",
       "source": "Revista Galileu",
-      "date": "Sun, 14 Jun 2026 12:06:03 GMT",
+      "date": "Sun, 14 Jun 2026 23:18:09 GMT",
       "category": "Ciência e Tecnologia",
-      "image_url": "https://s2-galileu.glbimg.com/lGe4Pu_zzxfn-_N_9k-bILHCPEg=/1536x0/filters:format(jpeg)/https://i.s3.glbimg.com/v1/AUTH_fde5cd494fb04473a83fa5fd57ad4542/internal_photos/bs/2026/B/A/LjqyUrRVKAAyIQYNtRHA/image2.png"
-    },
-    {
-      "title": "Humanos podem ter começado a usar o fogo 700 mil anos antes do que pensávamos",
-      "summary": "Evidências encontradas na África do Sul indicam que ancestrais humanos já manipulavam chamas há 1,8 milhão de anos, o que alteraria de uma das cronologias mais importantes da evolução humana",
-      "url": "https://revistagalileu.globo.com/ciencia/arqueologia/noticia/2026/06/humanos-podem-ter-comecado-a-usar-o-fogo-700-mil-anos-antes-do-que-pensavamos.ghtml",
-      "source": "Revista Galileu - Arqueologia",
-      "date": "Sun, 14 Jun 2026 12:06:00 GMT",
-      "category": "Arqueologia e História",
-      "image_url": "https://s2-galileu.glbimg.com/h_Bjwor8rkKDE6xqKRDIlIyLMCw=/1280x0/filters:format(jpeg)/https://i.s3.glbimg.com/v1/AUTH_fde5cd494fb04473a83fa5fd57ad4542/internal_photos/bs/2026/L/S/CgwMjnSgWwh9GvvDfnEg/homo-erectus-the-natural-history-museum-vienna-20210730-1228-1282-1-.jpg"
+      "image_url": "https://s2-galileu.glbimg.com/eN6RvhEOvbI9sIv699CT9_Bqo4w=/1084x0/filters:format(jpeg)/https://i.s3.glbimg.com/v1/AUTH_fde5cd494fb04473a83fa5fd57ad4542/internal_photos/bs/2026/h/Z/6vSiz5QLu8Ab1UEpcHfg/fernando-pessoa.jpg"
     },
     {
       "title": "Revista digital",
       "summary": "Tudo sobre ciência, tecnologia, cultura, cinema, artes, séries de tv, sociedade, comportamento, vestibular e Enem e lifehacks.",
       "url": "https://revistagalileu.revistadigital.globo.com/",
       "source": "Revista Galileu - Arqueologia",
-      "date": "Sun, 14 Jun 2026 12:05:59 GMT",
+      "date": "Sun, 14 Jun 2026 23:18:06 GMT",
       "category": "Arqueologia e História",
       "image_url": null
     },
     {
-      "title": "O momento da descoberta da tumba de Tutancâmon, lacrada há mais de 3 mil anos: 'Um suspiro escapou dos nossos lábios de tão bela que era a visão'",
-      "summary": "Dos arquivos da BBC, uma gravação de 1936 mostra o arqueólogo britânico Howard Carter descrevendo sua emoção ao descobrir a tumba do faraó egípcio Tutancâmon, ocorrida 14 anos antes.",
-      "url": "https://www.bbc.com/portuguese/articles/cly14gy0pngo",
-      "source": "BBC News Brasil - Arqueologia",
-      "date": "Sun, 14 Jun 2026 12:05:56 GMT",
+      "title": "Arábia Saudita anuncia 1.774 achados arqueológicos, incluindo inscrições pré-islâmicas",
+      "summary": "Entre inscrições antigas e mais de uma centena de novos sítios arqueológicos, a Arábia Saudita analisou e identificou descobertas relevantes para a cultura e a história da região",
+      "url": "https://revistagalileu.globo.com/ciencia/arqueologia/noticia/2026/06/arabia-saudita-anuncia-1774-achados-arqueologicos-incluindo-inscricoes-pre-islamicas.ghtml",
+      "source": "Revista Galileu - Arqueologia",
+      "date": "Sun, 14 Jun 2026 23:18:06 GMT",
       "category": "Arqueologia e História",
-      "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/93aa/live/fda88ac0-1362-11f1-b048-c9424b2cf5fd.jpg"
-    },
-    {
-      "title": "6 tecnologias antigas que intrigam a ciência moderna (e ainda são difíceis de replicar)",
-      "summary": "Durante séculos, as técnicas de artesãos romanos, incas, etruscos e maias permaneceram inexplicáveis. 6 tecnologias antigas que intrigam a ciência moderna (e ainda são difíceis de replicar)",
-      "url": "https://www.bbc.com/portuguese/articles/cgkpxvyyy4no",
-      "source": "BBC News Brasil - Arqueologia",
-      "date": "Sun, 14 Jun 2026 12:05:55 GMT",
-      "category": "Arqueologia e História",
-      "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/d861/live/88b51ad0-378e-11f1-9d5c-8ba507d7dbde.jpg"
+      "image_url": "https://s2-galileu.glbimg.com/2-GvVa3U97SgE-26NQrIeOCZbvw=/1080x0/filters:format(jpeg)/https://i.s3.glbimg.com/v1/AUTH_fde5cd494fb04473a83fa5fd57ad4542/internal_photos/bs/2026/V/8/psvDOnSvuAXHLhfOC2fg/kshfn-bnhy-lmwsm-lwl-wlthny-mn-ml-lmsh-lthry-fy-mhfz-lmhd-blmdyn-lmnwr-n-mw-2-.jpg"
     },
     {
       "title": "O zoológico de Montezuma que surpreendeu os espanhóis há 500 anos  e que só agora começamos a entender",
       "summary": "Uma nova pesquisa revela detalhes sobre os animais mantidos pelo imperador asteca Montezuma II na antiga cidade de Tenochtitlán. Entre eles, aves, serpentes, onças-pintadas, pumas e lobos",
       "url": "https://www.bbc.com/portuguese/articles/clyx5ewj8p9o",
       "source": "BBC News Brasil - Arqueologia",
-      "date": "Sun, 14 Jun 2026 12:05:55 GMT",
+      "date": "Sun, 14 Jun 2026 23:18:02 GMT",
       "category": "Arqueologia e História",
       "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/597a/live/46aeda70-3448-11f1-acfc-bb3dca3045bc.jpg"
     },
@@ -312,126 +196,153 @@
       "summary": "A civilização do Vale do Indo era contemporânea dos mesopotâmicos e dos egípcios e existiu por milhares de anos; mas por que sabemos tão pouco sobre ela?",
       "url": "https://www.bbc.com/portuguese/articles/c248qzqvzqpo",
       "source": "BBC News Brasil - Arqueologia",
-      "date": "Sun, 14 Jun 2026 12:05:55 GMT",
+      "date": "Sun, 14 Jun 2026 23:18:02 GMT",
       "category": "Arqueologia e História",
       "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/d5e3/live/a0f0a870-0bf7-11f1-b830-51fcdb0e0c16.jpg"
     },
     {
-      "title": "As desculpas de joelho que o Vaticano fez a povoado no Peru: 'Fizeram o que queriam conosco porque somos pobres'",
-      "summary": "Um grupo de camponeses indígenas do Peru vem há anos acusando empresas ligadas ao Sodalício de Vida Cristã, um agrupamento religioso ultraconservador que teria tomado suas terras.",
-      "url": "https://www.bbc.com/portuguese/articles/cqx1wyvn4rpo",
-      "source": "BBC News Brasil",
-      "date": "Sun, 14 Jun 2026 12:05:52 GMT",
+      "title": "O momento da descoberta da tumba de Tutancâmon, lacrada há mais de 3 mil anos: 'Um suspiro escapou dos nossos lábios de tão bela que era a visão'",
+      "summary": "Dos arquivos da BBC, uma gravação de 1936 mostra o arqueólogo britânico Howard Carter descrevendo sua emoção ao descobrir a tumba do faraó egípcio Tutancâmon, ocorrida 14 anos antes.",
+      "url": "https://www.bbc.com/portuguese/articles/cly14gy0pngo",
+      "source": "BBC News Brasil - Arqueologia",
+      "date": "Sun, 14 Jun 2026 23:18:02 GMT",
       "category": "Arqueologia e História",
-      "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/e4ae/live/b36d8c80-6448-11f1-b85d-d958efe4702d.jpg"
+      "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/93aa/live/fda88ac0-1362-11f1-b048-c9424b2cf5fd.jpg"
     },
     {
-      "title": "Trump afirma que assinatura de acordo entre EUA e Irã está prevista para domingo; Teerã expressa dúvida",
-      "summary": "Premiê do país que tem atuado como mediador entre os lados em conflito afirmou que acordo de paz \"está mais perto do que nunca\", reforçando declaração iraniana do dia anterior.",
-      "url": "https://www.bbc.com/portuguese/articles/cm20vke424zo",
-      "source": "BBC News Brasil",
-      "date": "Sun, 14 Jun 2026 12:05:52 GMT",
+      "title": "6 tecnologias antigas que intrigam a ciência moderna (e ainda são difíceis de replicar)",
+      "summary": "Durante séculos, as técnicas de artesãos romanos, incas, etruscos e maias permaneceram inexplicáveis. 6 tecnologias antigas que intrigam a ciência moderna (e ainda são difíceis de replicar)",
+      "url": "https://www.bbc.com/portuguese/articles/cgkpxvyyy4no",
+      "source": "BBC News Brasil - Arqueologia",
+      "date": "Sun, 14 Jun 2026 23:18:01 GMT",
       "category": "Arqueologia e História",
-      "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/19ee/live/31485490-661b-11f1-ac3e-c1a2e88f59e9.jpg"
+      "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/d861/live/88b51ad0-378e-11f1-9d5c-8ba507d7dbde.jpg"
     },
     {
-      "title": "Haiti: Tudo o que você precisa saber sobre o próximo adversário do Brasil na Copa",
-      "summary": "Esta é apenas a segunda Copa do Mundo da seleção haitiana, que chega ao torneio em meio à violência e à pobreza em casa.",
-      "url": "https://www.bbc.com/portuguese/articles/cly7nv9ed78o",
+      "title": "Queda de helicópteros no Rio deixa 6 mortos; cantor americano e YouTuber argentino estavam na lista de passageiros",
+      "summary": "Aeronaves colidiram no ar e caíram logo em seguida, nos arredores da Avenida das Américas. Queda de helicópteros no Rio deixa 6 mortos; cantor americano e YouTuber argentino estavam na lista de passageiros",
+      "url": "https://www.bbc.com/portuguese/articles/c17yekjzvw0o",
       "source": "BBC News Brasil",
-      "date": "Sun, 14 Jun 2026 12:05:52 GMT",
+      "date": "Sun, 14 Jun 2026 23:17:59 GMT",
       "category": "Arqueologia e História",
-      "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/99e4/live/403c1750-5e84-11f1-82d1-3f140356d043.jpg"
+      "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/fcb6/live/b7b695a0-681e-11f1-8546-8f19e4fe30f4.jpg"
     },
     {
-      "title": "Protestantismo Communio",
-      "summary": "Contrariamente à mitologia que talvez tenhas ouvido dos lábios de apologetas católicos-romanos, a Reforma não foi um movimento individualista, mas um movimento católico e eclesial. Um esforço para restaurar à igreja sua catolicidade, e isto se evidencia de várias formas.",
-      "url": "https://monergismo.com/protestantismo-communio/",
-      "source": "Monergismo",
-      "date": "Sun, 14 Jun 2026 12:05:08 GMT",
-      "category": "Teologia Reformada",
-      "image_url": "https://monergismo.com/wp-content/uploads/2026/06/Generatedimage_1781199443721-930x620.png"
+      "title": "EUA e Irã chegam a acordo de paz, diz Trump",
+      "summary": "Primeiro-ministro do Paquistão anunciou que assinatura deve acontecer na próxima sexta-feira na Suíça. EUA e Irã chegam a acordo de paz, diz Trump",
+      "url": "https://www.bbc.com/portuguese/articles/clyerlv4kzro",
+      "source": "BBC News Brasil",
+      "date": "Sun, 14 Jun 2026 23:17:59 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/1ac3/live/d7725a20-683f-11f1-8e1d-bbbb1017d210.jpg"
     },
     {
-      "title": "Israel: Israelis say they were attacked at Bologna Pride for",
-      "summary": "Israel: Israelis say they were attacked at Bologna Pride forjunho 14, 2026No CommentsIsraelis they: Um incidente chocante ocorreu na comemoração do Orgulho LGBTQI em Bologna, na Itália, quando um grup...",
-      "url": "https://cafetorah.com/israel-israelis-say-they-were-attacked-at-bologna-pride-for/",
-      "source": "Cafetorah - Notícias de Israel",
-      "date": "Sun, 14 Jun 2026 12:04:37 GMT",
-      "category": "Israel e Oriente Médio",
-      "image_url": "https://cafetorah.com/wp-content/uploads/2026/04/Banner-Livro-Desvendando.jpg"
-    },
-    {
-      "title": "Imigração em Israel: Tensões e Protestos em Roma",
-      "summary": "Imigração em Israel: Tensões e Protestos em Romajunho 14, 2026No CommentsImigração divide Roma: Israel não está presente em manifestações de extrema-direita e defesa dos migrantes em Itália.Read More",
-      "url": "https://cafetorah.com/imigracao-em-israel-tensoes-e-protestos-em-roma/",
-      "source": "Cafetorah - Notícias de Israel",
-      "date": "Sun, 14 Jun 2026 12:04:36 GMT",
-      "category": "Israel e Oriente Médio",
-      "image_url": "https://cafetorah.com/wp-content/uploads/2026/04/Banner-Livro-Desvendando.jpg"
-    },
-    {
-      "title": "Coronel Netanel Lasri Morre Em Tragédia Chocante Israel",
-      "summary": "Coronel Netanel Lasri Morre Em Tragédia Chocante Israeljunho 14, 2026No CommentsHead ground: Recentemente, a comunidade israelense lamentou a perda de um dos seus mais destacados militares, o Coronel ...",
-      "url": "https://cafetorah.com/coronel-netanel-lasri-morre-em-tragedia-chocante-israel/",
-      "source": "Cafetorah - Notícias de Israel",
-      "date": "Sun, 14 Jun 2026 12:04:35 GMT",
-      "category": "Israel e Oriente Médio",
-      "image_url": "https://cafetorah.com/wp-content/uploads/2026/04/Banner-Livro-Desvendando.jpg"
-    },
-    {
-      "title": "Israel Avião Comercial Desencadeia Alto Alerta na Hungria",
-      "summary": "Israel Avião Comercial Desencadeia Alto Alerta na Hungriajunho 14, 2026No CommentsAvião israel hungria: Avião israelense entra em contato irregular com a autoridade de controle do aeroporto na Hungria...",
-      "url": "https://cafetorah.com/israel-aviao-comercial-desencadeia-alto-alerta-na-hungria/",
-      "source": "Cafetorah - Notícias de Israel",
-      "date": "Sun, 14 Jun 2026 12:04:35 GMT",
-      "category": "Israel e Oriente Médio",
-      "image_url": "https://cafetorah.com/wp-content/uploads/2026/04/Banner-Livro-Desvendando.jpg"
-    },
-    {
-      "title": "Israel: 'Joseph Albo': A sweeping map of Jewish be",
-      "summary": "Israel: 'Joseph Albo': A sweeping map of Jewish bejunho 14, 2026No Comments'joseph albo':: O pensamento teológico de Joseph Albo, um dos principais expoentes da filosofia judaica medieval, ganha desta...",
-      "url": "https://cafetorah.com/israel-joseph-albo-a-sweeping-map-of-jewish-be/",
-      "source": "Cafetorah - Notícias de Israel",
-      "date": "Sun, 14 Jun 2026 12:04:34 GMT",
-      "category": "Israel e Oriente Médio",
-      "image_url": "https://cafetorah.com/wp-content/uploads/2026/04/Banner-Livro-Desvendando.jpg"
-    },
-    {
-      "title": "Israel investiga UNRWA após demissão de funcionários susp",
-      "summary": "Israel investiga UNRWA após demissão de funcionários suspjunho 14, 2026No CommentsUNRWA demite funcionários Hamas: 70 colaboradores afastados após acusações de vínculos com a organização terrorista.Re...",
-      "url": "https://cafetorah.com/israel-investiga-unrwa-apos-demissao-de-funcionarios-susp/",
-      "source": "Cafetorah - Notícias de Israel",
-      "date": "Sun, 14 Jun 2026 12:04:33 GMT",
-      "category": "Israel e Oriente Médio",
-      "image_url": "https://cafetorah.com/wp-content/uploads/2026/04/Banner-Livro-Desvendando.jpg"
-    },
-    {
-      "title": "Copa do Mundo 2026: 14 países onde cristãos são perseguidos",
-      "summary": "Saiba quais seleções da Copa do Mundo 2026 estão na Lista Mundial da Perseguição e como orar pela Igreja Perseguida nesses países.",
-      "url": "https://portasabertas.org.br/noticias/cristaos-perseguidos/copa-do-mundo-2026-14-paises-onde-cristaos-sao-perseguidos/",
-      "source": "Portas Abertas",
-      "date": "Sun, 14 Jun 2026 12:04:25 GMT",
-      "category": "Perseguição Religiosa",
-      "image_url": "https://sitepa.s3.amazonaws.com/wp-content/uploads/br/2026/06/08133530/Landscape-MX_Josias-playing-soccer_20.avif"
+      "title": "O que café de R 34 no Reino Unido revela sobre a turbulenta economia global",
+      "summary": "Por trás dos recordes de preços que têm surpreendido consumidores em cafeterias de Londres há uma história que mistura tarifas, clima, hábitos da geração Z e cafeicultores 'especuladores'.",
+      "url": "https://www.bbc.com/portuguese/articles/clyp7l3921mo",
+      "source": "BBC News Brasil",
+      "date": "Sun, 14 Jun 2026 23:17:59 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://ichef.bbci.co.uk/news/1024/branded_portuguese/6c44/live/f68672f0-60cb-11f1-862f-e3bcf1b4e54e.jpg"
     },
     {
       "title": "Fake News - Portas Abertas",
       "summary": "Fake News - Portas Abertas",
       "url": "https://portasabertas.org.br/noticias/fake-news/",
       "source": "Portas Abertas",
-      "date": "Sun, 14 Jun 2026 12:04:25 GMT",
+      "date": "Sun, 14 Jun 2026 23:16:50 GMT",
       "category": "Perseguição Religiosa",
       "image_url": "https://sitepa.s3.amazonaws.com/wp-content/uploads/br/2026/03/27145251/Prancheta-1-4.webp"
+    },
+    {
+      "title": "Copa do Mundo 2026: 14 países onde cristãos são perseguidos",
+      "summary": "Saiba quais seleções da Copa do Mundo 2026 estão na Lista Mundial da Perseguição e como orar pela Igreja Perseguida nesses países.",
+      "url": "https://portasabertas.org.br/noticias/cristaos-perseguidos/copa-do-mundo-2026-14-paises-onde-cristaos-sao-perseguidos/",
+      "source": "Portas Abertas",
+      "date": "Sun, 14 Jun 2026 23:16:49 GMT",
+      "category": "Perseguição Religiosa",
+      "image_url": "https://sitepa.s3.amazonaws.com/wp-content/uploads/br/2026/06/08133530/Landscape-MX_Josias-playing-soccer_20.avif"
     },
     {
       "title": "México: a realidade oculta de um dos países sede da Copa do Mundo 2026",
       "summary": "Enquanto o México se prepara para sediar a Copa do Mundo 2026, cristãos enfrentam perseguição em áreas remotas. Conheça Juan e veja como orar pela igreja local.",
       "url": "https://portasabertas.org.br/noticias/cristaos-perseguidos/mexico-a-realidade-oculta-de-um-dos-paises-sede-da-copa-do-mundo-2026/",
       "source": "Portas Abertas",
-      "date": "Sun, 14 Jun 2026 12:04:25 GMT",
+      "date": "Sun, 14 Jun 2026 23:16:49 GMT",
       "category": "Perseguição Religiosa",
       "image_url": "https://sitepa.s3.amazonaws.com/wp-content/uploads/br/2026/06/06232944/8640x4860.avif"
+    },
+    {
+      "title": "Conheça Visby, a impressionante cidade medieval das rosas e ruínas na Suécia - Gazeta de São Paulo",
+      "summary": "a href\"https:news.google.comrssarticlesCBMioAFBVV95cUxNS1R0NFM0X01JMnVPNHc5OTJFWmh4R0Z2OEpIZk5MTkRhQVc2a1hId0dmSlY1WEszNDVSLWpQd3V5Vm5uVHlMTHI0X0puY0oydU1RSTdzaTAtVmZEQWROQ05ZdEZ1dzFTUkRxVzM1VjQ2NlRtL...",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNS1R0NFM0X01JMnVPNHc5OTJFWmh4R0Z2OEpIZk5MTkRhQVc2a1hId0dmSlY1WEszNDVSLWpQd3V5Vm5uVHlMTHI0X0puY0oydU1RSTdzaTAtVmZEQWROQ05ZdEZ1dzFTUkRxVzM1VjQ2NlRtLXVKeGNpMHZuZGxiS0FhMzdVN2h5WGVqek96ZmhLRjdVbWFTRVBUN3kyckU1?oc=5",
+      "source": "Google News - Idade Média",
+      "date": "Sun, 14 Jun 2026 22:15:00 GMT",
+      "category": "História da Igreja",
+      "image_url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw"
+    },
+    {
+      "title": "Guarda-chuva na Idade Média? Joaquim interrompe sequência de acertos ao detonar bomba de R 4.000 - R7",
+      "summary": "a href\"https:news.google.comrssarticlesCBMi0wFBVV95cUxQcW5POG9Ma3hCYTBteDNobmpvODZRenprSng1bkNUb2p2SmlEOVJ5dGRha2hsdGNDZDRFNW1NQy1HLWg4M3p4WnJCOVVFeTFONDdKUjZXWkY2QS1paDB6UHl1V2RDODlkU2hNYjBNN21wNFRfN...",
+      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQcW5POG9Ma3hCYTBteDNobmpvODZRenprSng1bkNUb2p2SmlEOVJ5dGRha2hsdGNDZDRFNW1NQy1HLWg4M3p4WnJCOVVFeTFONDdKUjZXWkY2QS1paDB6UHl1V2RDODlkU2hNYjBNN21wNFRfN3VFei1SdEZGT0VyNnk5Ul9YRlAwYm5sMzQ5T3N6NFVBZUlnY2U1eVpnT1R1Mi1IWFRQV3JYTkhOUFBjM1hzYjc4ZXd6RkR0V0o2dHF1TmRHZFF0RkFqUVp2eUpCWC1j?oc=5",
+      "source": "Google News - Idade Média",
+      "date": "Sun, 14 Jun 2026 18:27:19 GMT",
+      "category": "História da Igreja",
+      "image_url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw"
+    },
+    {
+      "title": "Curaçao faz história com primeiro gol em Copas do Mundo contra a Alemanha - Rádio Itatiaia",
+      "summary": "a href\"https:news.google.comrssarticlesCBMi6wFBVV95cUxNQUJybFg2WDJ5T0JaVVlUTXJFdldqeHE4NklnTWFoRGc1M0J1SkZtbk5ITHFqS3o2ME8xTlotdTNzXzdYUkVKTHNLZlRMbHJWQnc5aU9TT0pXMGZSMGtqeFV6YkZLTTdLeXh3RjJpOG4xbEJoS...",
+      "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNQUJybFg2WDJ5T0JaVVlUTXJFdldqeHE4NklnTWFoRGc1M0J1SkZtbk5ITHFqS3o2ME8xTlotdTNzXzdYUkVKTHNLZlRMbHJWQnc5aU9TT0pXMGZSMGtqeFV6YkZLTTdLeXh3RjJpOG4xbEJoSkV0R3BCVEcyWkV5S0dqVnc0YTRyQUtTZ2MtWkNucHVCY0lXVU1vVXY0RXgyLW95blhBTzZIcjRjODVCNE1SdTctSVFZNTVXazEzLUs3S0NFZThsVjdtLVVWZ2tYWGhVWURKSG9IS0YxXzdpeFByWXN0LUNzUTFJ?oc=5",
+      "source": "Google News - Itatiaia (MG)",
+      "date": "Sun, 14 Jun 2026 18:06:32 GMT",
+      "category": "Notícias Regionais",
+      "image_url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw"
+    },
+    {
+      "title": "Etihad Airways retoma operações aéreas na Síria após 14 anos de interrupção - Lusa",
+      "summary": "a href\"https:news.google.comrssarticlesCBMi4AFBVV95cUxPSnJsTFhrdWJPLTcyUWVuOUtvWUpfM203cXk2UC1DeTdwYlYxR1FpcmZHTU45V2I5YlVqckhHNHU1OElRaG9jWmY1UTBqc2xGVGlRTVZmc3BicUhFM1gtdFlUOFdvN1l3Z1RqZ2Y4OEFrTENLV...",
+      "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPSnJsTFhrdWJPLTcyUWVuOUtvWUpfM203cXk2UC1DeTdwYlYxR1FpcmZHTU45V2I5YlVqckhHNHU1OElRaG9jWmY1UTBqc2xGVGlRTVZmc3BicUhFM1gtdFlUOFdvN1l3Z1RqZ2Y4OEFrTENLVlkzWl9nUlhrWF94T3VIZHZQei1QX0lwU0tfSV9QU3pHZTFtOVpvTGxnc0JDdmpYVGZJRmd5SVpaaGdmVEdJQ1ZaYklMOUZWblVLQWs4SHQtUEh0VEE4Z3lhZHBKdXA0c2d0SnFQUDNON3VwOQ?oc=5",
+      "source": "Google News - Síria e Damasco",
+      "date": "Sun, 14 Jun 2026 18:04:00 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw"
+    },
+    {
+      "title": "Arábia Saudita anuncia 1.774 achados arqueológicos, incluindo inscrições pré-islâmicas - Globo",
+      "summary": "a href\"https:news.google.comrssarticlesCBMi8AFBVV95cUxPX2VQU2VzeV94Z3Vad0xDSFJwVng0eEZ5TzB3ZGJwX082MFptaTVldHlmXy1rcF9nWnlXWEFIbkh6TGhjRDhreGZsN19jdndNUC1kODljc3A3UU5abTgwQmFUQzJ0eFphYlktNzdjWjFFV3JPb...",
+      "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPX2VQU2VzeV94Z3Vad0xDSFJwVng0eEZ5TzB3ZGJwX082MFptaTVldHlmXy1rcF9nWnlXWEFIbkh6TGhjRDhreGZsN19jdndNUC1kODljc3A3UU5abTgwQmFUQzJ0eFphYlktNzdjWjFFV3JPbkZJZEtXSFVCWGlzQzhhNjhCV3RNMnVheWpWVUFsa05DWC1BS0dsV25YUTQtZmZ0WmtoMUZxU3kxZUxvZWFDdkc5aXBmZGpST1JFQlZwRGpZTlU1TEFFT2dscjZIemExc2FWQUVaMGFrbXhrZzZGQmlObzVsUU1VRVhkblDSAf8BQVVfeXFMTWZhS0g4RHRaNm9YSFNfSTdyeUtuVHIzUVRnbllwa001cW1UdGpvanlXUEE0ZTdFVk1KZFY0UlotWm1rc2xiRFBxM2ViNjE5enBSMW8zVUQ2MzlsY19mVk93MlQxSWt2dWU0MXQ5SXplbHRyTXdSOFJLU3hxbldxWGNVVkZXZ0VHeXpIQW95V2FCWjlHYURGVUltcm9VZUplTG5kMUcwaTlJTVBobGZFdzhXUXhDVjZwRkw2Umw2ZXN3cTBjOGV4eVNQMTcxYUp1c21aVWRQcFVORURxUEtiTHNFX2pnZ3Q1MkY1OXZmNlVDWVFsM3JRMVR6eUJzc1p3?oc=5",
+      "source": "Google News - Achados Arqueológicos",
+      "date": "Sun, 14 Jun 2026 17:00:08 GMT",
+      "category": "Arqueologia e História",
+      "image_url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw"
+    },
+    {
+      "title": "Platão, fundador da primeira academia da história, afirmou: a maior vitória é a vitória sobre si mesmo - Revista Oeste",
+      "summary": "a href\"https:news.google.comrssarticlesCBMi4AFBVV95cUxOM3ZiandPb2tTcnhHTlJ5UlpGeFowOXZDOXFGdWhZR0szYUltcXJZT0cwV2pCWVBBT1hwUE5jV3pYcXFkc19XMWV0cE5PS2l1bmFNd2JRUWU1RGlKSHowY3VrUnRBVVNVVGhTUmNsaVp2WUZMa...",
+      "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxOM3ZiandPb2tTcnhHTlJ5UlpGeFowOXZDOXFGdWhZR0szYUltcXJZT0cwV2pCWVBBT1hwUE5jV3pYcXFkc19XMWV0cE5PS2l1bmFNd2JRUWU1RGlKSHowY3VrUnRBVVNVVGhTUmNsaVp2WUZMa1pSR3NyV25ibl9nLVd3Y2dPN0hJNFpQUVRISlZCWE42bmJCa0xYdGhKenUxc0RVTUhxdlYwV0dDWncyaXhEdVFhMjRKemYtdV9uQm15SmhGZUNCcG1oMGhFZ25lY3Mydk1odnI4RXhVek9tRQ?oc=5",
+      "source": "Google News - Grécia Antiga e Helenismo",
+      "date": "Sun, 14 Jun 2026 15:34:50 GMT",
+      "category": "Contexto Histórico",
+      "image_url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw"
+    },
+    {
+      "title": "UFC Freedom: como Alex Poatan pode entrar para a história com luta na Casa Branca - Rádio Itatiaia",
+      "summary": "a href\"https:news.google.comrssarticlesCBMiwgFBVV95cUxQSmZmMTNieW9nVmxuZy1aQnNWalFHZFc3c0twak9VSUFPLWtVd1Fiams0SHVKMXRKMklMRC0zV0RibTBzOWlOalZhZ2RLY3BtTWtMNzNZUHpLOFZYaE9NVlE2V0k5R1E4VHh0RDZ3MDM1Q21Gb...",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQSmZmMTNieW9nVmxuZy1aQnNWalFHZFc3c0twak9VSUFPLWtVd1Fiams0SHVKMXRKMklMRC0zV0RibTBzOWlOalZhZ2RLY3BtTWtMNzNZUHpLOFZYaE9NVlE2V0k5R1E4VHh0RDZ3MDM1Q21GbnYtMHpONkpGOC1pY2hOS05VaXIwZ2JhXzBGV1EwZ1lwSk9DXzBFN3B6TnVBbXRQMlRaWXgwa0JSQktLWFZmamluZ3pSTUNhMkVyRHlVQQ?oc=5",
+      "source": "Google News - Itatiaia (MG)",
+      "date": "Sun, 14 Jun 2026 14:20:17 GMT",
+      "category": "Notícias Regionais",
+      "image_url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw"
+    },
+    {
+      "title": "Vikings Creator Michael Hirst on Dream Project About Medieval Heretics and New Show Bloodaxe: Its a New World - IMDb",
+      "summary": "a href\"https:news.google.comrssarticlesCBMiakFVX3lxTE9EakdPNEtmTGkwdU1yUGk3VHROdHdncWc2Y3F5ZjFUY29VRUh4UVBUWE82LTRMZ2lIdzZvTE9rdXdTRVNRXzJjT1pSdEhvX3lwNmhvdWlHR3Z5UU9yb3ZsaG8yTXp2RXJiWnc?oc5\" target\"_...",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9EakdPNEtmTGkwdU1yUGk3VHROdHdncWc2Y3F5ZjFUY29VRUh4UVBUWE82LTRMZ2lIdzZvTE9rdXdTRVNRXzJjT1pSdEhvX3lwNmhvdWlHR3Z5UU9yb3ZsaG8yTXp2RXJiWnc?oc=5",
+      "source": "Google News - Idade Média",
+      "date": "Sun, 14 Jun 2026 13:55:31 GMT",
+      "category": "História da Igreja",
+      "image_url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw"
     },
     {
       "title": "Projeto do IF Baiano identifica quase 30 espécies da Mata Atlântica e aponta importância de fragmento florestal em Teixeira de Freitas - Jornal Grande Bahia",
